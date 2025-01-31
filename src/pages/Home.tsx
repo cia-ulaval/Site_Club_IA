@@ -11,9 +11,10 @@ function Home() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
-        <h1 className="text-6xl font-bold gradient-text mb-4">TEST TEXT</h1>
+        <h1 className="text-6xl font-bold gradient-text mb-4">C.I.A.</h1>
         <p className="text-xl text-gray-400">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Welcome to the Club d'Intelligence Artificielle (CIA) of the Laval
+          University!
         </p>
       </header>
 
@@ -78,22 +79,22 @@ function Home() {
 
       <section className="mb-20">
         <h2 className="text-4xl font-bold gradient-text text-center mb-12">
-          TEMP MAIN TITLE
+          What do we do?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "TITLE1",
+              title: "Brain Controlled Video Game",
               image: "", // Add the path to the image
               description: "", // Add the description
             },
             {
-              title: "TITLE2",
+              title: "Automatic Manga Translator",
               image: "", // Add the path to the image
               description: "", // Add the description
             },
             {
-              title: "TITLE3",
+              title: "Lenia",
               image: "", // Add the path to the image
               description: "", // Add the description
             },
@@ -125,14 +126,17 @@ function Home() {
       </section>
 
       <section className="text-center mb-20">
-        <h2 className="text-4xl font-bold gradient-text mb-8">Lorem Ipsum</h2>
+        <h2 className="text-4xl font-bold gradient-text mb-8">
+          Care to join us?
+        </h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras auctor,
-          felis id tincidunt interdum, mi justo gravida arcu, nec placerat
-          lectus quam id ligula.
+          We are looking for passionnate people who want to learn and share
+          their knowledge with others. We are open to everyone, no matter your
+          level of expertise. Apply now by joining our Discord server and
+          getting in touch with one of the admins mentionned down below.
         </p>
         <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors">
-          BOUTON TEST
+          Join our Discord
         </button>
       </section>
     </div>

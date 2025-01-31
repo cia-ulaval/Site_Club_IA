@@ -7,30 +7,30 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
-              Club d'intelligence artificelle de l'université Laval
+              Laval University Artificial Intelligence Club
             </h3>
             <p className="text-gray-400">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Shape the unknown, code the impossible.
             </p>
           </div>
           <div>
             <h4 className="text-lg font-semibold text-purple-400 mb-4">
-              Liens Rapides
+              Links
             </h4>
             <ul className="space-y-2 text-gray-400">
               <li>
                 <a href="#" className="hover:text-purple-400 transition-colors">
-                  À propos
+                  About Us
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-purple-400 transition-colors">
-                  Projets
+                  Projects
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-purple-400 transition-colors">
-                  Team
+                  Our Team
                 </a>
               </li>
               <li>

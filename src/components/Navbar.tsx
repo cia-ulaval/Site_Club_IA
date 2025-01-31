@@ -8,9 +8,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
             <Sparkles className="w-6 h-6 text-purple-400" />
-            <span className="text-xl font-bold gradient-text">
-              Club IA de l'université Laval
-            </span>
+            <span className="text-xl font-bold gradient-text">CIA</span>
           </NavLink>
           <div className="flex space-x-8">
             <NavLink
@@ -31,7 +29,7 @@ function Navbar() {
                 }`
               }
             >
-              FlappyEEG
+              Projects
             </NavLink>
           </div>
         </div>
