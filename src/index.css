@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-gray-100;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600;
+}
+
+.video-container {
+  @apply relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl;
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.2);
+}
+
+.hero-card {
+  @apply backdrop-blur-lg bg-black/40 rounded-xl p-6 border border-purple-500/20;
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(168, 85, 247, 0.4);
+  }
+}
