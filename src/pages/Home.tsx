@@ -12,7 +12,7 @@ function Home() {
     <div className="max-w-7xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
         <h1 className="text-6xl font-bold gradient-text mb-4">C.I.A.</h1>
-        <p className="text-xl text-gray-400">
+        <p className="text-2xl text-gray-400">
           Welcome to the Club d'Intelligence Artificielle (CIA) of the Laval
           University!
         </p>
@@ -56,30 +56,24 @@ function Home() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+      <div className="mb-16">
         <div className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
-          <h2 className="text-2xl font-bold mb-4 gradient-text">TEST H2</h2>
-          <p className="text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            auctor, felis id tincidunt interdum, mi justo gravida arcu, nec
-            placerat lectus quam id ligula.
-          </p>
-        </div>
-        <div className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
-          <h2 className="text-2xl font-bold mb-4 gradient-text">
-            TEMPORARY H2
-          </h2>
-          <p className="text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-            auctor, felis id tincidunt interdum, mi justo gravida arcu, nec
-            placerat lectus quam id ligula.
+          <h2 className="text-2xl font-bold mb-4 gradient-text">About Us</h2>
+          <p className="text-gray-400 text-lg">
+            The CIA is the artificial intelligence club of the Laval University.
+            As the name suggests, we are a group of students interested in
+            artificial intelligence and machine learning. Every year, we work on
+            different projects that allow us to explore the field of AI and to
+            learn new things. We are open to everyone, no matter your level of
+            expertise. Keep scrolling to learn more about our projects and how
+            to join us!
           </p>
         </div>
       </div>
 
       <section className="mb-20">
         <h2 className="text-4xl font-bold gradient-text text-center mb-12">
-          What do we do?
+          Some of our work
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
@@ -135,9 +129,14 @@ function Home() {
           level of expertise. Apply now by joining our Discord server and
           getting in touch with one of the admins mentionned down below.
         </p>
-        <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors">
+        <a
+          href="https://discord.gg/BWNbhNJNkR"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors"
+        >
           Join our Discord
-        </button>
+        </a>
       </section>
     </div>
   );

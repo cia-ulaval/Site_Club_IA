@@ -1,4 +1,4 @@
-import { Github, Twitter, Instagram } from "lucide-react";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 function Footer() {
   return (
@@ -73,22 +73,22 @@ function Footer() {
             </h4>
             <div className="flex space-x-4">
               <a
-                href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/ciaulaval/"
                 className="text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/cia-ulaval/"
+                className="text-gray-400 hover:text-purple-400 transition-colors"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                className="text-gray-400 hover:text-purple-400 transition-colors"
+              >
+                <Facebook className="w-6 h-6" />
               </a>
             </div>
           </div>
