@@ -1,4 +1,16 @@
-import { Users, Lightbulb, Target, Rocket } from "lucide-react";
+import {
+  Users,
+  Lightbulb,
+  Target,
+  Rocket,
+  Braces,
+  Rotate3d,
+  UserRoundCog,
+  Radical,
+  TextCursorInput,
+  SwatchBook,
+  Rss,
+} from "lucide-react";
 
 function About() {
   return (
@@ -25,7 +37,7 @@ function About() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-3xl font-bold gradient-text mb-6">FlappyEEG</h2>
+            <h2 className="text-5xl font-bold gradient-text mb-6">FlappyEEG</h2>
             <p className="text-gray-400 mb-6">
               FlappyEEG is a video game that is controlled by thought. We have
               trained an AI model to interpret brain signals and translate them
@@ -53,8 +65,10 @@ function About() {
         </div>
       </section>
 
-      <section className="mb-20">
-        <h2 className="text-4xl font-bold gradient-text text-center mb-12">
+      <section className="mb-20 mt-20">
+        {" "}
+        {/* Ajout de la marge supérieure */}
+        <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           The Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -72,15 +86,37 @@ function About() {
                 "VP and partnership manager. He is the one who finds the best partners for our projects.",
             },
             {
-              icon: <Target className="w-8 h-8" />,
+              icon: <UserRoundCog className="w-8 h-8" />,
+              title: "Nathaniel D'Amours",
+              description:
+                "President of the CIA. He is the one who makes sure the team is always coordinated.",
+            },
+            {
+              icon: <Rotate3d className="w-8 h-8" />,
               title: "Dereck Bélanger",
               description:
                 "The author of this website and contributor to FlappyEEG's early beginnings.",
             },
             {
+              icon: <Braces className="w-8 h-8" />,
+              title: "Amen Ouannes",
+              description: "Responsible of the AI model.",
+            },
+            {
+              icon: <Target className="w-8 h-8" />,
+              title: "Estelle Tournassat",
+              description:
+                "Responsible for the AI model's training and testing.",
+            },
+            {
+              icon: <Radical className="w-8 h-8" />,
+              title: "Hedi Braham",
+              description: "Dealt with the data and it's collection.",
+            },
+            {
               icon: <Rocket className="w-8 h-8" />,
-              title: "ADD THE REST OF THE MEMBERS",
-              description: "AND THEIR ROLES",
+              title: "William Blanchet Lafrenière",
+              description: "Helped with the game's development.",
             },
           ].map((value, index) => (
             <div
@@ -99,9 +135,9 @@ function About() {
         </div>
       </section>
 
-      <section className="mb-20">
+      <section className="mb-20 ">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold gradient-text mb-6">
+          <h2 id="test" className="text-5xl font-bold gradient-text mb-6">
             Automatic Manga Translator
           </h2>
           <p className="text-xl text-gray-400 mb-8">
@@ -115,30 +151,30 @@ function About() {
             choice.
           </p>
           <section className="mb-20">
-            <h2 className="text-4xl font-bold gradient-text text-center mb-12">
+            <h2 className="text-3xl font-bold gradient-text text-center mb-12">
               The Team
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
                 {
-                  icon: <Users className="w-8 h-8" />,
+                  icon: <TextCursorInput className="w-8 h-8" />,
                   title: "Théophile Berteloot",
                   description: "", // Add the description
                 },
                 {
-                  icon: <Lightbulb className="w-8 h-8" />,
+                  icon: <SwatchBook className="w-8 h-8" />,
                   title: "Loïc Baret",
                   description: "", // Add the description
                 },
                 {
-                  icon: <Target className="w-8 h-8" />,
+                  icon: <Rss className="w-8 h-8" />,
                   title: "Xavier Legault",
                   description: "", // Add the description
                 },
                 {
-                  icon: <Rocket className="w-8 h-8" />,
-                  title: "ADD REST OF THE MEMBERS",
-                  description: "AND THEIR ROLES",
+                  icon: <Braces className="w-8 h-8" />,
+                  title: "And others",
+                  description: "",
                 },
               ].map((value, index) => (
                 <div
