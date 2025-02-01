@@ -55,7 +55,7 @@ function About() {
 
       <section className="mb-20">
         <h2 className="text-4xl font-bold gradient-text text-center mb-12">
-          Collaborators
+          The Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {[
@@ -79,8 +79,8 @@ function About() {
             },
             {
               icon: <Rocket className="w-8 h-8" />,
-              title: "AJOUTER LES AUTRES MEMBRES",
-              description: "Ajouter leur rôles",
+              title: "ADD THE REST OF THE MEMBERS",
+              description: "AND THEIR ROLES",
             },
           ].map((value, index) => (
             <div
@@ -101,10 +101,10 @@ function About() {
 
       <section className="mb-20">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold gradient-text mb-8">
+          <h2 className="text-3xl font-bold gradient-text mb-6">
             Automatic Manga Translator
           </h2>
-          <p className="text-gray-400 mb-8">
+          <p className="text-xl text-gray-400 mb-8">
             If you are a manga enthusiast, you've probably been in a situation
             where you wanted to read a manga that wasn't translated yet. This is
             where our project comes in! We have developed an automatic manga
@@ -114,6 +114,48 @@ function About() {
             text in the manga panels and translate it into the language of your
             choice.
           </p>
+          <section className="mb-20">
+            <h2 className="text-4xl font-bold gradient-text text-center mb-12">
+              The Team
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Théophile Berteloot",
+                  description: "", // Add the description
+                },
+                {
+                  icon: <Lightbulb className="w-8 h-8" />,
+                  title: "Loïc Baret",
+                  description: "", // Add the description
+                },
+                {
+                  icon: <Target className="w-8 h-8" />,
+                  title: "Xavier Legault",
+                  description: "", // Add the description
+                },
+                {
+                  icon: <Rocket className="w-8 h-8" />,
+                  title: "ADD REST OF THE MEMBERS",
+                  description: "AND THEIR ROLES",
+                },
+              ].map((value, index) => (
+                <div
+                  key={index}
+                  className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors text-center"
+                >
+                  <div className="text-purple-400 mb-4 flex justify-center">
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-400">{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
           <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors">
             Wanna try it out?
           </button>
