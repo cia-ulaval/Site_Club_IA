@@ -38,31 +38,31 @@ function Navbar() {
               {dropdownOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
                   <NavLink
-                    to="/FlappyEEG.tsx"
+                    to="/flappyeeg"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
                     FlappyEEG
                   </NavLink>
                   <NavLink
-                    to="/MangaAI.tsx"
+                    to="/mangaai"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
                     Manga AI Tranlator
                   </NavLink>
                   <NavLink
-                    to="/F1Tenth.tsx"
+                    to="/f1tenth"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
                     F1 Tenth
                   </NavLink>
                   <NavLink
-                    to="/TEST.tsx"
+                    to="/lenia"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
                     LENIA
                   </NavLink>
                   <NavLink
-                    to="/DecisionTree.tsx"
+                    to="/decisiontree"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
                     Decision Tree

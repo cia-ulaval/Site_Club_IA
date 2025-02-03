@@ -1,6 +1,6 @@
 import React from "react";
 
-function TEST() {
+function Lenia() {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold">Lenia</h1>
@@ -9,4 +9,4 @@ function TEST() {
   );
 }
 
-export default TEST;
+export default Lenia;

@@ -5,7 +5,7 @@ import FlappyEEG from "./pages/FlappyEEG";
 import Footer from "./components/Footer";
 import DecisionTree from "./pages/DecisionTree";
 import MangaAI from "./pages/MangaAI";
-import Lenia from "./pages/TEST";
+import Lenia from "./pages/Lenia";
 import F1Tenth from "./pages/F1Tenth";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
           <Route path="/mangaai" element={<MangaAI />} />
           <Route path="/f1tenth" element={<F1Tenth />} />
           <Route path="/decisiontree" element={<DecisionTree />} />
-          <Route path="/TEST" element={<Lenia />} />
+          <Route path="/lenia" element={<Lenia />} />
         </Routes>
         <Footer />
       </div>
