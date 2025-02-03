@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-b from-black via-purple-900/20 to-black">
+      <div className="min-h-screen bg-gradient-to-b from-black via-red-800/20 to-black">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

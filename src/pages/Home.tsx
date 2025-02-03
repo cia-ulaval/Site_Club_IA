@@ -12,7 +12,7 @@ function Home() {
     <div className="max-w-7xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
         <h1 className="text-6xl font-bold gradient-text mb-4">C.I.A.</h1>
-        <p className="text-2xl text-gray-400">
+        <p className="text-2xl text-gray-300">
           Welcome to the Club d'Intelligence Artificielle (CIA) of the Laval
           University!
         </p>
@@ -33,22 +33,22 @@ function Home() {
             <div className="flex items-center justify-between">
               <button
                 onClick={togglePlay}
-                className="p-2 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors"
+                className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
               >
                 {isPlaying ? (
-                  <Pause className="w-6 h-6" />
+                  <Pause className="w-5 h-5" />
                 ) : (
-                  <Play className="w-6 h-6" />
+                  <Play className="w-5 h-5" />
                 )}
               </button>
               <button
                 onClick={toggleMute}
-                className="p-2 rounded-full bg-purple-600 hover:bg-purple-700 transition-colors"
+                className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
               >
                 {isMuted ? (
-                  <VolumeX className="w-6 h-6" />
+                  <VolumeX className="w-5 h-5" />
                 ) : (
-                  <Volume2 className="w-6 h-6" />
+                  <Volume2 className="w-5 h-5" />
                 )}
               </button>
             </div>
@@ -57,7 +57,7 @@ function Home() {
       </div>
 
       <div className="mb-16">
-        <div className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors">
+        <div className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors">
           <h2 className="text-2xl font-bold mb-4 gradient-text">About Us</h2>
           <p className="text-gray-400 text-lg">
             The CIA is the artificial intelligence club of the Laval University.
@@ -109,7 +109,7 @@ function Home() {
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <a
                   href="#"
-                  className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                  className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
                 >
                   Learn more <ArrowRight className="w-4 h-4 ml-2" />
                 </a>
@@ -133,7 +133,7 @@ function Home() {
           href="https://discord.gg/BWNbhNJNkR"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors"
+          className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
         >
           Join our Discord
         </a>

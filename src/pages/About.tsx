@@ -121,9 +121,9 @@ function About() {
           ].map((value, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors text-center"
+              className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
             >
-              <div className="text-purple-400 mb-4 flex justify-center">
+              <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
@@ -179,9 +179,9 @@ function About() {
               ].map((value, index) => (
                 <div
                   key={index}
-                  className="p-6 rounded-xl bg-purple-900/20 border border-purple-500/20 hover:border-purple-500/40 transition-colors text-center"
+                  className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
                 >
-                  <div className="text-purple-400 mb-4 flex justify-center">
+                  <div className="text-red-400 mb-4 flex justify-center">
                     {value.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2">
@@ -192,7 +192,7 @@ function About() {
               ))}
             </div>
           </section>
-          <button className="px-8 py-3 bg-purple-600 hover:bg-purple-700 rounded-full text-white font-semibold transition-colors">
+          <button className="px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors">
             Wanna try it out?
           </button>
         </div>
