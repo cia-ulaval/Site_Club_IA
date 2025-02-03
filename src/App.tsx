@@ -1,8 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import FlappyEEG from "./pages/FlappyEEG";
 import Footer from "./components/Footer";
+import DecisionTree from "./pages/DecisionTree";
+import MangaAI from "./pages/MangaAI";
+import Lenia from "./pages/TEST";
+import F1Tenth from "./pages/F1Tenth";
 
 function App() {
   return (
@@ -11,7 +15,11 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/flappyeeg" element={<FlappyEEG />} />
+          <Route path="/mangaai" element={<MangaAI />} />
+          <Route path="/f1tenth" element={<F1Tenth />} />
+          <Route path="/decisiontree" element={<DecisionTree />} />
+          <Route path="/TEST" element={<Lenia />} />
         </Routes>
         <Footer />
       </div>
