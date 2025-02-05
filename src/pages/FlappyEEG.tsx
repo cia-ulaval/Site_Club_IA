@@ -19,12 +19,12 @@ function About() {
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 w-50">
+    <div className="max-w-7xl mx-auto px-4 py-12">
       <section className="mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div>
             <img
-              src="/media/test.jpg" // Add the path to the image
+              src="/media/test.jpg"
               alt="test image (temporary)"
               className="rounded-xl shadow-2xl"
             />
@@ -59,8 +59,6 @@ function About() {
       </section>
 
       <section className="mb-20 mt-20">
-        {" "}
-        {/* Ajout de la marge supérieure */}
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           The Team
         </h2>
@@ -127,67 +125,74 @@ function About() {
           ))}
         </div>
       </section>
-      <section className="mb-20 ">
+
+      <section className="mb-20">
         <h2 className="text-3xl font-bold gradient-text mb-6">
           Our begginings (Week 1)
         </h2>
-        <div className="hero-card mb-16">
-          <div className="video-container mb-4 ">
-            <video
-              className="w-full h-full object-cover"
-              src="" // Add the path to the video
-              autoPlay
-              loop
-              muted={isMuted}
-              playsInline
-              poster="/media/test.jpg" // Add the path to the poster image
-            />
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-              <div className="flex items-center justify-between">
-                <button
-                  onClick={togglePlay}
-                  className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
-                >
-                  {isPlaying ? (
-                    <Pause className="w-5 h-5" />
-                  ) : (
-                    <Play className="w-5 h-5" />
-                  )}
-                </button>
-                <button
-                  onClick={toggleMute}
-                  className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
-                >
-                  {isMuted ? (
-                    <VolumeX className="w-5 h-5" />
-                  ) : (
-                    <Volume2 className="w-5 h-5" />
-                  )}
-                </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="hero-card">
+            <div className="video-container relative">
+              <video
+                className="w-full h-full object-cover rounded-xl"
+                src="/media/flappyproto.mp4"
+                autoPlay
+                loop
+                muted={isMuted}
+                playsInline
+                poster="/media/test.jpg"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <div className="flex items-center justify-between">
+                  <button
+                    onClick={togglePlay}
+                    className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
+                  >
+                    {isPlaying ? (
+                      <Pause className="w-5 h-5" />
+                    ) : (
+                      <Play className="w-5 h-5" />
+                    )}
+                  </button>
+                  <button
+                    onClick={toggleMute}
+                    className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
+                  >
+                    {isMuted ? (
+                      <VolumeX className="w-5 h-5" />
+                    ) : (
+                      <Volume2 className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+          <div>
+            <p className="text-gray-400">
+              Just like any other project, FlappyEEG had a beginning. It all
+              started during the the spring semester of 2024. It was a rough
+              start: we had many participants and loads of ideas, but the
+              organisation was very hard to manage. Members came and went, and
+              people of course had exmans and other things to attend which left
+              us with a very different load of work to do. All that to say, that
+              semester, we didn't get as much as we would've liked done, but in
+              winter of 2025, we leanrt from our experience and came back
+              strong! We approached the project with a new concept: instead of
+              open to everyone, we would screen the participants and make a
+              choice based on their skills, their availability but most
+              importantly, their interest in the project. This way, we were able
+              to work much more efficiently and adress any issues immediately.
+              It was indeed a great success! We were able to finish the first
+              step of FlappyEEG before our deadline: Make it work with a simple
+              algorithm that would detect blinks. Our member Dereck worked on
+              this and Louis-Étienne helped him fix the bugs. You can see on
+              this preview the first prototype. In the meantime, our other
+              members were working on finishing the game, researching and
+              collecting data.
+            </p>
+          </div>
         </div>
-        <p className="text-gray-400">
-          Just like any other project, FlappyEEG had a beginning. It all started
-          during the the spring semester of 2024. It was a rough start: we had
-          many participants and loads of ideas, but the organisation was very
-          hard to manage. Members came and went, and people of course had exmans
-          and other things to attend which left us with a very different load of
-          work to do. All that to say, that semester, we didn't get as much as
-          we would've liked done, but in winter of 2025, we leanrt from our
-          experience and came back strong! We approached the project with a new
-          concept: instead of open to everyone, we would screen the participants
-          and make a choice based on their skills, their availability but most
-          importantly, their interest in the project. This way, we were able to
-          work much more efficiently and adress any issues immediately. It was
-          indeed a great success! We were able to finish the first step of
-          FlappyEEG before our deadline: Make it work with a simple algorithm
-          that would detect blinks. Our member Dereck worked on this and
-          Louis-Étienne helped him fix the bugs. You can see on this preview the
-          first prototype. In the meantime, our other members were working on
-          finishing the game, researching and collecting data.
-        </p>
       </section>
     </div>
   );
