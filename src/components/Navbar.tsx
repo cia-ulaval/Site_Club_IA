@@ -28,6 +28,16 @@ function Navbar() {
             >
               Home
             </NavLink>
+            <NavLink
+              to="/managment"
+              className={({ isActive }) =>
+                `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  isActive ? "" : ""
+                }`
+              }
+            >
+              Managment
+            </NavLink>
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}

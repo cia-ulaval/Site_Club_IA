@@ -1,4 +1,3 @@
-import React from "react";
 import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
 
 function MangaAI() {

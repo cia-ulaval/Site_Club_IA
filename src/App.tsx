@@ -7,6 +7,7 @@ import DecisionTree from "./pages/DecisionTree";
 import MangaAI from "./pages/MangaAI";
 import Lenia from "./pages/Lenia";
 import F1Tenth from "./pages/F1Tenth";
+import Managment from "./pages/Managment";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/managment" element={<Managment />} />
           <Route path="/flappyeeg" element={<FlappyEEG />} />
           <Route path="/mangaai" element={<MangaAI />} />
           <Route path="/f1tenth" element={<F1Tenth />} />
