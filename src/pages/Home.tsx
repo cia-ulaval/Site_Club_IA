@@ -108,7 +108,7 @@ function Home() {
                 </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <a
-                  href="#"
+                  href="/pages/flappyeeg"
                   className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
                 >
                   Learn more <ArrowRight className="w-4 h-4 ml-2" />

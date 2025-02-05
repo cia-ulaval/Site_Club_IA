@@ -126,7 +126,7 @@ function About() {
         </div>
       </section>
 
-      <section className="mb-20">
+      <section id="Week1" className="mb-20">
         <h2 className="text-3xl font-bold gradient-text mb-6">
           Our begginings (Week 1)
         </h2>
@@ -169,30 +169,58 @@ function About() {
             </div>
           </div>
           <div>
-            <p className="text-gray-400">
+            <p className="text-gray-400 mb-6">
               Just like any other project, FlappyEEG had a beginning. It all
               started during the the spring semester of 2024. It was a rough
               start: we had many participants and loads of ideas, but the
               organisation was very hard to manage. Members came and went, and
               people of course had exmans and other things to attend which left
-              us with a very different load of work to do. All that to say, that
-              semester, we didn't get as much as we would've liked done, but in
-              winter of 2025, we leanrt from our experience and came back
-              strong! We approached the project with a new concept: instead of
-              open to everyone, we would screen the participants and make a
-              choice based on their skills, their availability but most
-              importantly, their interest in the project. This way, we were able
-              to work much more efficiently and adress any issues immediately.
-              It was indeed a great success! We were able to finish the first
-              step of FlappyEEG before our deadline: Make it work with a simple
-              algorithm that would detect blinks. Our member Dereck worked on
-              this and Louis-Étienne helped him fix the bugs. You can see on
-              this preview the first prototype. In the meantime, our other
-              members were working on finishing the game, researching and
-              collecting data.
+              us with a very different load of work to do.
+            </p>
+            <p className="text-gray-400">
+              All that to say, that semester, we didn't get as much as we
+              would've liked done, but in winter of 2025, we learnt from our
+              experience and came back strong! We approached the project with a
+              new concept: instead of open to everyone, we would screen the
+              participants and make a choice based on their skills, their
+              availability but most importantly, their interest in the project.
+              This way, we were able to work much more efficiently and adress
+              any issues immediately. It was indeed a great success! We were
+              able to finish the first step of FlappyEEG before our deadline:
+              Make it work with a simple algorithm that would detect blinks. Our
+              member Dereck worked on this and Louis-Étienne helped him fix the
+              bugs. You can see on this preview the first prototype. In the
+              meantime, our other members were working on finishing the game,
+              researching and collecting data.
             </p>
           </div>
         </div>
+        <p className="text-gray-400 mt-6">
+          It was only a rough prototype, as you can see, some latency was still
+          present and the game was not fully functional. But it was a step in
+          the right direction which led us to week 2...
+        </p>
+      </section>
+
+      <section id="Week2-4" className="mb-20">
+        <h2 className="text-3xl font-bold gradient-text mb-6">
+          Research (Week 2 - Week 4)
+        </h2>
+        <p className="text-gray-400">Coming soon...</p>
+      </section>
+
+      <section id="Week4-6" className="mb-20">
+        <h2 className="text-3xl font-bold gradient-text mb-6">
+          Research (Week 4 - Week 6)
+        </h2>
+        <p className="text-gray-400">Coming soon...</p>
+
+        <section id="Week6-9" className="mb-20">
+          <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
+            Research (Week 6 - Week 9)
+          </h2>
+          <p className="text-gray-400 p">Coming soon...</p>
+        </section>
       </section>
     </div>
   );
