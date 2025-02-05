@@ -22,12 +22,12 @@ function Home() {
         <div className="video-container mb-4">
           <video
             className="w-full h-full object-cover"
-            src="" // Add the path to the video
+            src="/media/testvideo.mp4" // Add the path to the video
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            poster="" // Add the path to the poster image
+            poster="/media/test.jpg" // Add the path to the poster image
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <div className="flex items-center justify-between">
@@ -79,17 +79,17 @@ function Home() {
           {[
             {
               title: "Brain Controlled Video Game",
-              image: "", // Add the path to the image
+              image: "/media/test.jpg", // Add the path to the image
               description: "", // Add the description
             },
             {
               title: "Automatic Manga Translator",
-              image: "", // Add the path to the image
+              image: "/media/test.jpg", // Add the path to the image
               description: "", // Add the description
             },
             {
               title: "Lenia",
-              image: "", // Add the path to the image
+              image: "/media/test.jpg", // Add the path to the image
               description: "", // Add the description
             },
           ].map((project, index) => (
