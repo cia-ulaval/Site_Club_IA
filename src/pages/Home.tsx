@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 
@@ -7,6 +8,10 @@ function Home() {
 
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">

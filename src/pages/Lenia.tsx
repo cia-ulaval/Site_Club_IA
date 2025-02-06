@@ -1,3 +1,9 @@
+import React, { useEffect } from "react";
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
 function Lenia() {
   return (
     <div className="container mx-auto p-4">

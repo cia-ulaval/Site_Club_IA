@@ -7,6 +7,12 @@ import {
   UserRoundCog,
 } from "lucide-react";
 
+import React, { useEffect } from "react";
+
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
 function F1Tenth() {
   return (
     <div className="container mx-auto p-4">
