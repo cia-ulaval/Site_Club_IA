@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -38,7 +39,7 @@ const cardData2 = [
   },
 ];
 
-const Managment = () => {
+const Management = () => {
   return (
     <div>
       <section className="max-w-7xl mx-auto px-4 py-12">
@@ -48,7 +49,7 @@ const Managment = () => {
         <Row xs={1} md={3} className="g-4">
           {cardData.map((card, idx) => (
             <Col key={idx}>
-              <Card className="bg-red-900/80 border">
+              <Card className="bg-red-900/80 border text-white">
                 <Card.Img variant="top" src={card.imgSrc} />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
@@ -61,7 +62,6 @@ const Managment = () => {
           ))}
         </Row>
       </section>
-
       <section className="max-w-7xl mx-auto px-4 py-12">
         <h1 className="text-center text-5xl font-bold gradient-text mt-10 mb-16">
           Leadership Team
@@ -69,7 +69,7 @@ const Managment = () => {
         <Row xs={1} md={3} className="g-4">
           {cardData2.map((card, idx) => (
             <Col key={idx}>
-              <Card className="bg-red-900/80 border">
+              <Card className="bg-red-900/80 border text-white">
                 <Card.Img variant="top" src={card.imgSrc} />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
@@ -86,4 +86,4 @@ const Managment = () => {
   );
 };
 
-export default Managment;
+export default Management;
