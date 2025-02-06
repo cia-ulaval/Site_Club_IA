@@ -1,3 +1,4 @@
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -77,14 +78,22 @@ const cardData2 = [
 const Management = () => {
   return (
     <div>
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-center text-5xl font-bold gradient-text mt-10 mb-16">
+      <section className="max-w-7xl mx-auto px-4 pb-8">
+        <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
           Executive Team
         </h1>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={3} className="g-3 justify-content-center">
           {cardData.map((card, idx) => (
-            <Col key={idx}>
-              <Card className="bg-red-900/80 border text-white">
+            <Col
+              key={idx}
+              sm={6}
+              md={cardData.length % 3 === 1 ? 6 : 4}
+              className="d-flex justify-content-center"
+            >
+              <Card
+                className="bg-red-900/80 border text-white mb-24"
+                style={{ width: "18rem" }}
+              >
                 <Card.Img variant="top" src={card.imgSrc} />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
@@ -97,14 +106,22 @@ const Management = () => {
           ))}
         </Row>
       </section>
-      <section className="max-w-7xl mx-auto px-4 py-12">
-        <h1 className="text-center text-5xl font-bold gradient-text mt-10 mb-16">
+      <section className="max-w-7xl mx-auto px-4 pt-12">
+        <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
           Leadership Team
         </h1>
-        <Row xs={1} md={3} className="g-4">
+        <Row xs={1} md={3} className="g-3 justify-content-center">
           {cardData2.map((card, idx) => (
-            <Col key={idx}>
-              <Card className="bg-red-900/80 border text-white">
+            <Col
+              key={idx}
+              sm={6}
+              md={cardData2.length % 3 === 1 ? 6 : 4}
+              className="d-flex justify-content-center"
+            >
+              <Card
+                className="bg-red-900/80 border text-white mb-24"
+                style={{ width: "18rem" }}
+              >
                 <Card.Img variant="top" src={card.imgSrc} />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
