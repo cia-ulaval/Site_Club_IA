@@ -11,7 +11,7 @@ const cardData = [
   },
   {
     title: "Louis-Étienne Messier",
-    text: "Team Lead (FlappyEEG)",
+    text: "Recruiting VP",
     imgSrc: "/media/test.jpg",
   },
   {
@@ -19,12 +19,37 @@ const cardData = [
     text: "Partnership VP",
     imgSrc: "/media/test.jpg",
   },
+  {
+    title: "Mathieu Bazinet",
+    text: "Formation VP",
+    imgSrc: "/media/test.jpg",
+  },
+  {
+    title: "Anthony Lavertu",
+    text: "External Affairs VP",
+    imgSrc: "/media/test.jpg",
+  },
+  {
+    title: "Alexandrine Lehoux",
+    text: "Partnership VP",
+    imgSrc: "/media/test.jpg",
+  },
+  {
+    title: "Almaoudata Walet Babahmed",
+    text: "Competition VP",
+    imgSrc: "/media/test.jpg",
+  },
+  {
+    title: "Yves Mamadou Faye",
+    text: "Communication VP",
+    imgSrc: "/media/test.jpg",
+  },
 ];
 
 const cardData2 = [
   {
     title: "Dereck Bélanger",
-    text: "Website Manager",
+    text: "CIA Website Manager",
     imgSrc: "/media/test.jpg",
   },
   {
@@ -33,8 +58,18 @@ const cardData2 = [
     imgSrc: "/media/test.jpg",
   },
   {
+    title: "Alban Sarrazin",
+    text: "Team Lead (F1 Tenth Team 2)",
+    imgSrc: "/media/test.jpg",
+  },
+  {
     title: "Benjamin Leblanc",
     text: "Team Lead (TreeCore)",
+    imgSrc: "/media/test.jpg",
+  },
+  {
+    title: "Louis-Étienne Messier",
+    text: "Team Lead (FlappyEEG)",
     imgSrc: "/media/test.jpg",
   },
 ];
