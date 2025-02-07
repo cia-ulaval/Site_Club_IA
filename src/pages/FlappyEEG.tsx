@@ -9,13 +9,8 @@ import {
   Radical,
 } from "lucide-react";
 
-import React, { useEffect } from "react";
 import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
 
 function About() {
   const [isPlaying, setIsPlaying] = useState(false);

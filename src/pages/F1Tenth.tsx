@@ -7,12 +7,6 @@ import {
   UserRoundCog,
 } from "lucide-react";
 
-import React, { useEffect } from "react";
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
-
 function F1Tenth() {
   return (
     <div className="container mx-auto p-4">
@@ -74,7 +68,7 @@ function F1Tenth() {
             },
             {
               icon: <Rotate3d className="w-8 h-8" />,
-              title: "Melek Sibri",
+              title: "Melek Sebri",
               description:
                 "Helped with software development, optimisation and validation",
             },
@@ -114,37 +108,27 @@ function F1Tenth() {
             {
               icon: <Users className="w-8 h-8" />,
               title: "Alban Sarrazin",
-              description:
-                "Team Lead: He is the one who makes sure everything goes smoothly.",
+              description: "Team Lead",
             },
             {
               icon: <Lightbulb className="w-8 h-8" />,
-              title: "Théophile Bertelot",
-              description:
-                "VP and partnership manager. He is the one who finds the best partners for our projects.",
+              title: "Alexandre Laforest",
+              description: "Member",
             },
             {
               icon: <UserRoundCog className="w-8 h-8" />,
-              title: "Felix Ly",
-              description:
-                "President of the CIA. He is the one who makes sure the team is always coordinated.",
+              title: "Jade Piller Cammal",
+              description: "Member",
             },
             {
               icon: <Rotate3d className="w-8 h-8" />,
-              title: "Melek Sibri",
-              description:
-                "The author of this website and contributor to FlappyEEG's early beginnings.",
+              title: "Karima Habbout",
+              description: "Member",
             },
             {
               icon: <Braces className="w-8 h-8" />,
-              title: "Amy Randianodiasan",
-              description: "Responsible of the AI model.",
-            },
-            {
-              icon: <Target className="w-8 h-8" />,
-              title: "Kahina Moulfi",
-              description:
-                "Responsible for the AI model's training and testing.",
+              title: "Simon Gouin",
+              description: "Member",
             },
           ].map((value, index) => (
             <div

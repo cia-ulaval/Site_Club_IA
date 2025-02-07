@@ -1,9 +1,4 @@
 import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
-import React, { useEffect } from "react";
-
-useEffect(() => {
-  window.scrollTo(0, 0);
-}, []);
 
 function MangaAI() {
   return (
