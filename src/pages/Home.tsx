@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
+import Carousel from "react-bootstrap/Carousel";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -142,6 +143,58 @@ function Home() {
         >
           Join our Discord
         </a>
+      </section>
+      <section className="w-1/2 mx-auto mb-16 p-4">
+        <Carousel className="">
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/test.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>First slide label</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/test.jpg"
+              alt="Second slide"
+            />
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/test.jpg"
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </section>
+
+      <section className="scroll-banner mb-16">
+        <h6 className="text-2xl text-gray-300 text-center mb-10 mt-24">
+          Our partners
+        </h6>
+        <div className="scroll-banner-content">
+          <img src="/media/test.jpg" alt="Partner 1" />
+          <img src="/media/test.jpg" alt="Partner 2" />
+          <img src="/media/test.jpg" alt="Partner 3" />
+          <img src="/media/test.jpg" alt="Partner 4" />
+          <img src="/media/test.jpg" alt="Partner 5" />
+        </div>
       </section>
     </div>
   );
