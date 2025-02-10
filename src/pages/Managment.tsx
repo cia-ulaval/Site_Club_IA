@@ -8,32 +8,32 @@ const cardData = [
   {
     title: "Nathaniel D'Amours",
     text: "President",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Nathaniel.jpg",
   },
   {
     title: "Louis-Étienne Messier",
     text: "Recruiting VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Louis.jpg",
   },
   {
     title: "Jordan Mathieu",
     text: "Partnership VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Jordan.jpg",
   },
   {
     title: "Mathieu Bazinet",
     text: "Formation VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Mathieu.jpg",
   },
   {
     title: "Anthony Lavertu",
     text: "External Affairs VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Anthony.jpg",
   },
   {
     title: "Alexandrine Lehoux",
     text: "Partnership VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Alexandrine.jpg",
   },
   {
     title: "Almaoudata Walet Babahmed",
@@ -43,7 +43,7 @@ const cardData = [
   {
     title: "Yves Mamadou Faye",
     text: "Communication VP",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Yves.png",
   },
 ];
 
@@ -51,7 +51,7 @@ const cardData2 = [
   {
     title: "Dereck Bélanger",
     text: "CIA Website Manager",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Dereck.HEIC",
   },
   {
     title: "Deoth Guei",
@@ -71,7 +71,7 @@ const cardData2 = [
   {
     title: "Louis-Étienne Messier",
     text: "Team Lead (FlappyEEG)",
-    imgSrc: "/media/test.jpg",
+    imgSrc: "/media/Louis.jpg",
   },
 ];
 
