@@ -149,36 +149,61 @@ function Home() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="/media/test.jpg"
+              src="/media/compétition.png"
               alt="First slide"
             />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <h3>Compétition CIA</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="/media/test.jpg"
+              src="/media/club2024.png"
               alt="Second slide"
             />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Première Rencontre 2024</h3>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="/media/test.jpg"
+              src="/media/clubrencontre.png"
               alt="Third slide"
             />
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
+              <h3>Début de FlappyEEG</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/testclub.png"
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>Démonstration du casque EEG</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/filleclub.png"
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>Démonstration du club</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="/media/presentation.png"
+              alt="Third slide"
+            />
+            <Carousel.Caption>
+              <h3>5-7 présentation</h3>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
