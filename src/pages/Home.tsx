@@ -152,11 +152,10 @@ function Home() {
           Our partners
         </h6>
         <div className="scroll-banner-content">
-          <img src="/media/test.jpg" alt="Partner 1" />
-          <img src="/media/test.jpg" alt="Partner 2" />
-          <img src="/media/test.jpg" alt="Partner 3" />
-          <img src="/media/test.jpg" alt="Partner 4" />
-          <img src="/media/test.jpg" alt="Partner 5" />
+          <img src="/media/aesgul.png" alt="Partner 1" />
+          <img src="/media/asetin.png" alt="Partner 2" />
+          <img src="/media/avenirti.png" alt="Partner 3" />
+          <img src="/media/laval.png" alt="Partner 4" />
         </div>
       </section>
     </div>
