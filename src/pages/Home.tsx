@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
-import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
+import StyledCarousel from "../components/Carousel.tsx";
 
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -19,7 +19,7 @@ function Home() {
       <header className="text-center mb-16">
         <h1 className="text-6xl font-bold gradient-text mb-4">C.I.A.</h1>
         <p className="text-2xl text-gray-300">
-          Welcome to the Club d'Intelligence Artificielle (CIA) of the Laval
+          Welcome to the Club d'Intelligence Artificielle (CIA) of Laval
           University!
         </p>
       </header>
@@ -144,70 +144,8 @@ function Home() {
           Join our Discord
         </a>
       </section>
-      <section className="w-1/2 mx-auto mb-16 p-4">
-        <Carousel className="">
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/compétition.png"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h3>Compétition CIA</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/club2024.png"
-              alt="Second slide"
-            />
-            <Carousel.Caption>
-              <h3>Première Rencontre 2024</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/clubrencontre.png"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>Début de FlappyEEG</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/testclub.png"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>Démonstration du casque EEG</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/filleclub.png"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>Démonstration du club</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="/media/presentation.png"
-              alt="Third slide"
-            />
-            <Carousel.Caption>
-              <h3>5-7 présentation</h3>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      </section>
+
+      <StyledCarousel />
 
       <section className="scroll-banner mb-16">
         <h6 className="text-2xl text-gray-300 text-center mb-10 mt-24">

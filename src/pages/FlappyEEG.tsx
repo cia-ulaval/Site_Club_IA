@@ -204,20 +204,44 @@ function About() {
 
       <section id="Week2-4" className="mb-20">
         <h2 className="text-3xl font-bold gradient-text mb-6">
-          Research (Week 2 - Week 4)
+          Collecting Data (Week 2 - Week 4)
         </h2>
-        <p className="text-gray-400">Coming soon...</p>
+        <p className="text-gray-400">
+          After successfully the baseline, it was time to get serious and start
+          implementing AI. The team came up with a series of scenarios to test
+          the AI model and see how it would react to different brain signals and
+          noise. Obviously, we could not train it in a single environment
+          because the game would be played in different places and by different
+          people. So we collected data for regular brain activity, while the
+          user was talking, while the user was solving complex problems and
+          more. This way, our model would be able to adapt to any situation and
+          be much more precise.
+        </p>
+
+        <p className="text-gray-400 mt-6">
+          In the meantime, Louis-Étienne installed a server to centralize our
+          datasets, William finished the game. Everything was slowly coming
+          together, but the hardest part was yet to come!
+        </p>
+
+        <div className="mt-12">
+          <img
+            src="/media/test.jpg"
+            alt="test image (temporary)"
+            className="rounded-xl shadow-2xl"
+          />
+        </div>
       </section>
 
       <section id="Week4-6" className="mb-20">
         <h2 className="text-3xl font-bold gradient-text mb-6">
-          Research (Week 4 - Week 6)
+          Training (Week 4 - Week 6)
         </h2>
         <p className="text-gray-400">Coming soon...</p>
 
         <section id="Week6-9" className="mb-20">
           <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
-            Research (Week 6 - Week 9)
+            Optimization (Week 6 - Week 9)
           </h2>
           <p className="text-gray-400 p">Coming soon...</p>
         </section>
