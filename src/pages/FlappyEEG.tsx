@@ -21,12 +21,12 @@ function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <section className="mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img
-              src="/media/test.jpg"
-              alt="test image (temporary)"
-              className="rounded-xl shadow-2xl"
+              src="/media/flappyeegmain.jpeg"
+              alt="3 managers of the club, one with the EEG headset, smiling during a meeting"
+              className="rounded-xl shadow-2xl mt-8"
             />
           </div>
           <div className="flex flex-col justify-center">
