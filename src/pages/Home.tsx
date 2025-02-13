@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 import StyledCarousel from "../components/Carousel.tsx";
 
 function Home() {
@@ -63,7 +63,7 @@ function Home() {
       </div>
 
       <div className="mb-16">
-        <div className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors">
+        <div className="p-6 rounded-xl bg-red-800/10 border border-red-900 hover:border-red-900 transition-colors">
           <h2 className="text-2xl font-bold mb-4 gradient-text">About Us</h2>
           <p className="text-gray-400 text-lg">
             The CIA is the artificial intelligence club of the Laval University.
@@ -85,18 +85,21 @@ function Home() {
           {[
             {
               title: "Brain Controlled Video Game",
-              image: "/media/test.jpg", // Add the path to the image
-              description: "", // Add the description
+              image: "/media/flappycard.jpg",
+              description: "",
+              link: "/flappyeeg",
             },
             {
-              title: "Automatic Manga Translator",
-              image: "/media/test.jpg", // Add the path to the image
-              description: "", // Add the description
+              title: "Muscle controlled race car",
+              image: "/media/f1tenth.jpg",
+              description: "",
+              link: "/f1tenth",
             },
             {
-              title: "Lenia",
-              image: "/media/test.jpg", // Add the path to the image
-              description: "", // Add the description
+              title: "Manga automatic translator",
+              image: "/media/test.jpg",
+              description: "",
+              link: "/mangaai",
             },
           ].map((project, index) => (
             <div
@@ -113,12 +116,16 @@ function Home() {
                   {project.title}
                 </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
-                <a
-                  href="/pages/flappyeeg"
+                <Link
+                  to={project.link}
                   className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = project.link;
+                  }}
                 >
                   Learn more <ArrowRight className="w-4 h-4 ml-2" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

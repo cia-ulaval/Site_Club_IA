@@ -11,9 +11,9 @@ const cardData = [
     imgSrc: "/media/Nathaniel.jpg",
   },
   {
-    title: "Louis-Étienne Messier",
-    text: "Recruiting VP",
-    imgSrc: "/media/Louis.jpg",
+    title: "Mathieu Bazinet",
+    text: "Formation VP",
+    imgSrc: "/media/Mathieu.jpg",
   },
   {
     title: "Jordan Mathieu",
@@ -21,9 +21,9 @@ const cardData = [
     imgSrc: "/media/Jordan.jpg",
   },
   {
-    title: "Mathieu Bazinet",
-    text: "Formation VP",
-    imgSrc: "/media/Mathieu.jpg",
+    title: "Louis-Étienne Messier",
+    text: "Recruiting VP",
+    imgSrc: "/media/Louis.jpg",
   },
   {
     title: "Anthony Lavertu",
@@ -98,7 +98,11 @@ const Management = () => {
                 className="bg-red-900/80 border text-white mb-24"
                 style={{ width: "18rem" }}
               >
-                <Card.Img variant="top" src={card.imgSrc} />
+                <Card.Img
+                  variant="top"
+                  src={card.imgSrc}
+                  style={{ height: "300px", objectFit: "cover" }} // Adjust the height as needed
+                />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
                     {card.title}
@@ -126,7 +130,11 @@ const Management = () => {
                 className="bg-red-900/80 border text-white mb-24"
                 style={{ width: "18rem" }}
               >
-                <Card.Img variant="top" src={card.imgSrc} />
+                <Card.Img
+                  variant="top"
+                  src={card.imgSrc}
+                  style={{ height: "300px", objectFit: "cover" }} // Adjust the height as needed
+                />
                 <Card.Body>
                   <Card.Title className="text-gray-200">
                     {card.title}

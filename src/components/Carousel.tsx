@@ -26,11 +26,6 @@ const StyledCarousel = () => {
       alt: "Démonstration du casque EEG",
     },
     {
-      image: "/media/filleclub.png",
-      title: "Démonstration du club",
-      alt: "Démonstration du club",
-    },
-    {
       image: "/media/presentation.png",
       title: "5-7 présentation",
       alt: "5-7 présentation",
@@ -52,7 +47,7 @@ const StyledCarousel = () => {
 
   return (
     <section className="w-full max-w-4xl mx-auto mb-16 p-4">
-      <div className="relative rounded-xl overflow-hidden border-4 border-red-900">
+      <div className="relative rounded-xl overflow-hidden border-5 border-red-900">
         {/* Main carousel container */}
         <div className="relative">
           {/* Image container */}
@@ -63,8 +58,8 @@ const StyledCarousel = () => {
               className="object-cover w-full h-full"
             />
             {/* Caption */}
-            <div className="absolute bottom-0 left-0 right-0 bg-red-900 p-4">
-              <h3 className="text-xl font-bold text-white text-center m-0">
+            <div className="absolute bottom-0 left-0 right-0 bg-red-900 p-2">
+              <h3 className="text-xl font-bold text-white text-center">
                 {slides[currentSlide].title}
               </h3>
             </div>
