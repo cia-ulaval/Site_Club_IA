@@ -64,8 +64,10 @@ function Home() {
 
       <div className="mb-16">
         <div className="p-6 rounded-xl bg-red-800/10 border border-red-900 hover:border-red-900 transition-colors">
-          <h2 className="text-2xl font-bold mb-4 gradient-text">About Us</h2>
-          <p className="text-gray-400 text-lg">
+          <h2 className="text-2xl font-bold mb-4 gradient-text pl-4">
+            About Us
+          </h2>
+          <p className="text-gray-400 text-lg text-justify p-3">
             The CIA is the artificial intelligence club of the Laval University.
             As the name suggests, we are a group of students interested in
             artificial intelligence and machine learning. Every year, we work on

@@ -19,7 +19,7 @@ function F1Tenth() {
               className="w-full rounded-xl shadow-2xl"
             />
           </div>
-          <div className="md:w-1/2 flex flex-col justify-center">
+          <div className="md:w-1/2 flex flex-col text-justify">
             <h2 className="text-5xl font-bold gradient-text mb-6">F1 Tenth</h2>
             <p className="text-gray-400 mb-6">
               Thrill-seeker? This project will capture your interest! F1 Tenth

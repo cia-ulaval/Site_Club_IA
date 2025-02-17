@@ -30,8 +30,10 @@ function About() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-5xl font-bold gradient-text mb-6">FlappyEEG</h2>
-            <p className="text-gray-400 mb-6">
+            <h2 className="text-5xl font-bold gradient-text mb-6 text-justify">
+              FlappyEEG
+            </h2>
+            <p className="text-gray-400 mb-6 text-justify">
               FlappyEEG is a video game that is controlled by thought. We have
               trained an AI model to interpret brain signals and translate them
               into actions in the game. For this to work, we equipped ourselves
@@ -42,7 +44,7 @@ function About() {
               brain signals. The game is now fully functional and every thought
               you have counts: that's how you control your caracter!
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-justify">
               The format of the game is simple; ever heard of flappy bird? Well,
               it's the same simple yet fun concept. The only difference is that
               you control the bird with your thoughts. The simple will to make
@@ -126,7 +128,7 @@ function About() {
         </div>
       </section>
 
-      <section id="Week1" className="mb-20">
+      <section id="Week1" className="mb-20 text-justify">
         <h2 className="text-3xl font-bold gradient-text mb-6">
           Our begginings (Week 1)
         </h2>
@@ -202,7 +204,7 @@ function About() {
         </p>
       </section>
 
-      <section id="Week2-4" className="mb-20">
+      <section id="Week2-4" className="mb-20 text-justify ">
         <h2 className="text-3xl font-bold gradient-text mb-6">
           Collecting Data (Week 2 - Week 4)
         </h2>
