@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Users,
   Lightbulb,
@@ -7,10 +8,11 @@ import {
   Rotate3d,
   UserRoundCog,
   Radical,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
-
-import { useState } from "react";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 
 function About() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -18,6 +20,54 @@ function About() {
 
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
+
+  const teamMembers = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Louis-Étienne Messier",
+      description:
+        "Team Lead and project manager. He is the one who makes sure everything goes smoothly.",
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Jordan Mathieu",
+      description:
+        "VP and partnership manager. He is the one who finds the best partners for our projects.",
+    },
+    {
+      icon: <UserRoundCog className="w-8 h-8" />,
+      title: "Nathaniel D'Amours",
+      description:
+        "President of the CIA. He is the one who makes sure the team is always coordinated.",
+    },
+    {
+      icon: <Rotate3d className="w-8 h-8" />,
+      title: "Dereck Bélanger",
+      description:
+        "The author of this website and contributor to FlappyEEG's early beginnings.",
+    },
+    {
+      icon: <Braces className="w-8 h-8" />,
+      title: "Amen Ouannes",
+      description: "Responsible of the AI model.",
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Estelle Tournassat",
+      description: "Responsible for the AI model's training and testing.",
+    },
+    {
+      icon: <Radical className="w-8 h-8" />,
+      title: "Hedi Braham",
+      description: "Dealt with the data and it's collection.",
+    },
+    {
+      icon: <Rocket className="w-8 h-8" />,
+      title: "William Blanchet Lafrenière",
+      description: "Helped with the game's development.",
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <section className="mb-20">
@@ -65,64 +115,18 @@ function About() {
           The Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            {
-              icon: <Users className="w-8 h-8" />,
-              title: "Louis-Étienne Messier",
-              description:
-                "Team Lead and project manager. He is the one who makes sure everything goes smoothly.",
-            },
-            {
-              icon: <Lightbulb className="w-8 h-8" />,
-              title: "Jordan Mathieu",
-              description:
-                "VP and partnership manager. He is the one who finds the best partners for our projects.",
-            },
-            {
-              icon: <UserRoundCog className="w-8 h-8" />,
-              title: "Nathaniel D'Amours",
-              description:
-                "President of the CIA. He is the one who makes sure the team is always coordinated.",
-            },
-            {
-              icon: <Rotate3d className="w-8 h-8" />,
-              title: "Dereck Bélanger",
-              description:
-                "The author of this website and contributor to FlappyEEG's early beginnings.",
-            },
-            {
-              icon: <Braces className="w-8 h-8" />,
-              title: "Amen Ouannes",
-              description: "Responsible of the AI model.",
-            },
-            {
-              icon: <Target className="w-8 h-8" />,
-              title: "Estelle Tournassat",
-              description:
-                "Responsible for the AI model's training and testing.",
-            },
-            {
-              icon: <Radical className="w-8 h-8" />,
-              title: "Hedi Braham",
-              description: "Dealt with the data and it's collection.",
-            },
-            {
-              icon: <Rocket className="w-8 h-8" />,
-              title: "William Blanchet Lafrenière",
-              description: "Helped with the game's development.",
-            },
-          ].map((value, index) => (
+          {teamMembers.map((member, index) => (
             <div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
             >
               <div className="text-red-400 mb-4 flex justify-center">
-                {value.icon}
+                {member.icon}
               </div>
               <h3 className="text-xl font-bold text-white mb-2">
-                {value.title}
+                {member.title}
               </h3>
-              <p className="text-gray-400">{value.description}</p>
+              <p className="text-gray-400">{member.description}</p>
             </div>
           ))}
         </div>

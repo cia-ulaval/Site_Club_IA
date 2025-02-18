@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Users,
   Lightbulb,
@@ -8,6 +9,70 @@ import {
 } from "lucide-react";
 
 function F1Tenth() {
+  const team1 = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Deoth Guei",
+      description: "Team Lead, feasability study, and much more",
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Théophile Bertelot",
+      description:
+        "Jack of all trades: Helped with conception, research, development, deployment communication and more",
+    },
+    {
+      icon: <UserRoundCog className="w-8 h-8" />,
+      title: "Felix Ly",
+      description:
+        "Helped with software development, optimisation and validation",
+    },
+    {
+      icon: <Rotate3d className="w-8 h-8" />,
+      title: "Melek Sebri",
+      description:
+        "Helped with software development, optimisation and validation",
+    },
+    {
+      icon: <Braces className="w-8 h-8" />,
+      title: "Amy Randianodiasan",
+      description: "Integration with F1 Tenth and partnership",
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Kahina Moulfi",
+      description: "Partnership optimization and integration",
+    },
+  ];
+
+  const team2 = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Alban Sarrazin",
+      description: "Team Lead",
+    },
+    {
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Alexandre Laforest",
+      description: "Member",
+    },
+    {
+      icon: <UserRoundCog className="w-8 h-8" />,
+      title: "Jade Piller Cammal",
+      description: "Member",
+    },
+    {
+      icon: <Rotate3d className="w-8 h-8" />,
+      title: "Karima Habbout",
+      description: "Member",
+    },
+    {
+      icon: <Braces className="w-8 h-8" />,
+      title: "Simon Gouin",
+      description: "Member",
+    },
+  ];
+
   return (
     <div className="container mx-auto p-4">
       <section className="mb-20">
@@ -43,46 +108,13 @@ function F1Tenth() {
           </div>
         </div>
       </section>
+
       <section id="team1" className="mb-20 mt-20">
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           Team 1
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            {
-              icon: <Users className="w-8 h-8" />,
-              title: "Deoth Guei",
-              description: "Team Lead, feasability study, and much more",
-            },
-            {
-              icon: <Lightbulb className="w-8 h-8" />,
-              title: "Théophile Bertelot",
-              description:
-                "Jack of all trades: Helped with conception, research, development, deployment communication and more",
-            },
-            {
-              icon: <UserRoundCog className="w-8 h-8" />,
-              title: "Felix Ly",
-              description:
-                "Helped with software development, optimisation and validation",
-            },
-            {
-              icon: <Rotate3d className="w-8 h-8" />,
-              title: "Melek Sebri",
-              description:
-                "Helped with software development, optimisation and validation",
-            },
-            {
-              icon: <Braces className="w-8 h-8" />,
-              title: "Amy Randianodiasan",
-              description: "Integration with F1 Tenth and partnership",
-            },
-            {
-              icon: <Target className="w-8 h-8" />,
-              title: "Kahina Moulfi",
-              description: "Partnership optimization and integration",
-            },
-          ].map((value, index) => (
+          {team1.map((value, index) => (
             <div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
@@ -104,33 +136,7 @@ function F1Tenth() {
           Team 2
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {[
-            {
-              icon: <Users className="w-8 h-8" />,
-              title: "Alban Sarrazin",
-              description: "Team Lead",
-            },
-            {
-              icon: <Lightbulb className="w-8 h-8" />,
-              title: "Alexandre Laforest",
-              description: "Member",
-            },
-            {
-              icon: <UserRoundCog className="w-8 h-8" />,
-              title: "Jade Piller Cammal",
-              description: "Member",
-            },
-            {
-              icon: <Rotate3d className="w-8 h-8" />,
-              title: "Karima Habbout",
-              description: "Member",
-            },
-            {
-              icon: <Braces className="w-8 h-8" />,
-              title: "Simon Gouin",
-              description: "Member",
-            },
-          ].map((value, index) => (
+          {team2.map((value, index) => (
             <div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"

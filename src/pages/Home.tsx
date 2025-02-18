@@ -14,6 +14,27 @@ function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const projects = [
+    {
+      title: "Brain Controlled Video Game",
+      image: "/media/flappycard.jpg",
+      description: "",
+      link: "/flappyeeg",
+    },
+    {
+      title: "Muscle controlled race car",
+      image: "/media/f1tenth.jpg",
+      description: "",
+      link: "/f1tenth",
+    },
+    {
+      title: "Manga automatic translator",
+      image: "/media/test.jpg",
+      description: "",
+      link: "/mangaai",
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
@@ -28,12 +49,12 @@ function Home() {
         <div className="video-container mb-4">
           <video
             className="w-full h-full object-cover"
-            src="/media/testvideo.mp4" // Add the path to the video
+            src="/media/testvideo.mp4"
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            poster="/media/test.jpg" // Add the path to the poster image
+            poster="/media/test.jpg"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <div className="flex items-center justify-between">
@@ -84,26 +105,7 @@ function Home() {
           Some of our work
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Brain Controlled Video Game",
-              image: "/media/flappycard.jpg",
-              description: "",
-              link: "/flappyeeg",
-            },
-            {
-              title: "Muscle controlled race car",
-              image: "/media/f1tenth.jpg",
-              description: "",
-              link: "/f1tenth",
-            },
-            {
-              title: "Manga automatic translator",
-              image: "/media/test.jpg",
-              description: "",
-              link: "/mangaai",
-            },
-          ].map((project, index) => (
+          {projects.map((project, index) => (
             <div
               key={index}
               className="group relative overflow-hidden rounded-xl"
@@ -121,10 +123,6 @@ function Home() {
                 <Link
                   to={project.link}
                   className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.location.href = project.link;
-                  }}
                 >
                   Learn more <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
