@@ -213,15 +213,13 @@ function About() {
           Collecting Data (Week 2 - Week 4)
         </h2>
         <p className="text-gray-400">
-          After successfully the baseline, it was time to get serious and start
-          implementing AI. The team came up with a series of scenarios to test
-          the AI model and see how it would react to different brain signals and
-          noise. Obviously, we could not train it in a single environment
-          because the game would be played in different places and by different
-          people. So we collected data for regular brain activity, while the
-          user was talking, while the user was solving complex problems and
-          more. This way, our model would be able to adapt to any situation and
-          be much more precise.
+          After successfully the baseline, it was time to start collecting data.
+          We needed to collect data from our participants to train our AI model
+          to interpret brain signals. We had to find a way to collect this data
+          and to make sure it was clean and usable. To do that, we asked many
+          participants to perform a series of tests with the headset. We then
+          hard Jordan and Dereck work on a way to clean the data and make it
+          usable.
         </p>
 
         <p className="text-gray-400 mt-6">

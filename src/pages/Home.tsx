@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import StyledCarousel from "../components/Carousel.tsx";
+import { motion } from "framer-motion";
 
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -14,23 +15,30 @@ function Home() {
     window.scrollTo(0, 0);
   }, []);
 
+  const partners = [
+    "/media/aesgul.png",
+    "/media/asetin.png",
+    "/media/avenirti.png",
+    "/media/laval.png",
+  ];
+
   const projects = [
     {
       title: "Brain Controlled Video Game",
       image: "/media/flappycard.jpg",
-      description: "",
+      description: "Group meeting for flappyeeg project",
       link: "/flappyeeg",
     },
     {
       title: "Muscle controlled race car",
-      image: "/media/f1tenth.jpg",
-      description: "",
+      image: "/media/f1cover.png",
+      description: "image representing the f1tenth device",
       link: "/f1tenth",
     },
     {
       title: "Manga automatic translator",
-      image: "/media/test.jpg",
-      description: "",
+      image: "/media/mangaai2.png",
+      description: "image representing the manga ai detection",
       link: "/mangaai",
     },
   ];
@@ -154,15 +162,42 @@ function Home() {
 
       <StyledCarousel />
 
-      <section className="scroll-banner mb-16">
-        <h6 className="text-2xl text-gray-300 text-center mb-10 mt-24">
+      <section className="overflow-hidden mt-24">
+        <h6 className="text-2xl text-gray-300 text-center mb-10">
           Our partners
         </h6>
-        <div className="scroll-banner-content">
-          <img src="/media/aesgul.png" alt="Partner 1" />
-          <img src="/media/asetin.png" alt="Partner 2" />
-          <img src="/media/avenirti.png" alt="Partner 3" />
-          <img src="/media/laval.png" alt="Partner 4" />
+        <div className="relative w-full">
+          <div className="flex overflow-hidden">
+            <motion.div
+              className="flex gap-24 items-center"
+              animate={{
+                x: [0, -1035],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear",
+                repeatType: "loop",
+              }}
+            >
+              {partners.map((src, index) => (
+                <img
+                  key={`first-${index}`}
+                  src={src}
+                  alt={`Partner ${index + 1}`}
+                  className="h-20 w-auto object-contain"
+                />
+              ))}
+              {partners.map((src, index) => (
+                <img
+                  key={`second-${index}`}
+                  src={src}
+                  alt={`Partner ${index + 1}`}
+                  className="h-20 w-auto object-contain"
+                />
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
