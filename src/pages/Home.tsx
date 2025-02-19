@@ -160,8 +160,6 @@ function Home() {
         </a>
       </section>
 
-      <StyledCarousel />
-
       <section className="overflow-hidden mt-24">
         <h6 className="text-2xl text-gray-300 text-center mb-10">
           Our partners

@@ -53,7 +53,17 @@ function Navbar() {
                 }`
               }
             >
-              Managment
+              Management
+            </NavLink>
+            <NavLink
+              to="/gallery"
+              className={({ isActive }) =>
+                `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  isActive ? "text-red-400" : ""
+                }`
+              }
+            >
+              Gallery
             </NavLink>
             <div className="relative" ref={dropdownRef}>
               <button
