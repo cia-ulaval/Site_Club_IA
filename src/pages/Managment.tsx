@@ -33,7 +33,7 @@ const cardData = [
     title: "Anthony Lavertu",
     text: "External Affairs VP",
     imgSrc: "/media/Anthony.jpg",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
   },
   {
     title: "Alexandrine Lehoux",
@@ -66,19 +66,19 @@ const cardData2 = [
     title: "Deoth Guei",
     text: "Team Lead (F1 Tenth Team 1)",
     imgSrc: "/media/test.jpg",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/deoth-guei-382269191/",
   },
   {
     title: "Alban Sarrazin",
     text: "Team Lead (F1 Tenth Team 2)",
     imgSrc: "/media/test.jpg",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/alban-sarrazin-561803252/",
   },
   {
     title: "Benjamin Leblanc",
     text: "Team Lead (TreeCore)",
     imgSrc: "/media/test.jpg",
-    linkedIn: "",
+    linkedIn: "https://www.linkedin.com/in/benjamin-leblanc-a9217128b/",
   },
   {
     title: "Louis-Étienne Messier",

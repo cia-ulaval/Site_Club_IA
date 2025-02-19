@@ -117,7 +117,7 @@ function F1Tenth() {
           {team1.map((value, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
+              className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
             >
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
@@ -139,7 +139,7 @@ function F1Tenth() {
           {team2.map((value, index) => (
             <div
               key={index}
-              className="p-6 rounded-xl bg-red-800/10 border border-red-950/90 hover:border-red-900/70 transition-colors text-center"
+              className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
             >
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
