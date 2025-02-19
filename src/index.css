@@ -19,15 +19,15 @@
 
 .hero-card {
   @apply backdrop-blur-lg bg-black/40 rounded-xl p-6 border border-red-500/20;
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 70px rgba(225, 125, 122, 0.2);
+    box-shadow: 0 0 100px rgba(246, 38, 38, 0.4);
   }
   50% {
-    box-shadow: 0 0 90px rgba(252, 25, 0, 0.2);
+    box-shadow: 0 0 150px rgba(43, 5, 1, 0.8);
   }
 }
 
