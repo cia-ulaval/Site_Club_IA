@@ -84,3 +84,11 @@
   display: inline-block;
   opacity: 0.8;
 }
+
+.custom-border-red {
+  border-color: #861010 !important;
+}
+
+.custom-hover-border-red:hover {
+  border-color: #bb2020 !important; 
+}

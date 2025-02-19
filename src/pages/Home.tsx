@@ -92,7 +92,7 @@ function Home() {
       </div>
 
       <div className="mb-16">
-        <div className="p-6 rounded-xl bg-red-800/10 border border-red-900 hover:border-red-900 transition-colors">
+        <div className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors">
           <h2 className="text-2xl font-bold mb-4 gradient-text pl-4">
             About Us
           </h2>

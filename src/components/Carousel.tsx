@@ -1,36 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const StyledCarousel = () => {
+const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const slides = [
-    {
-      image: "/media/compétition.png",
-      title: "Compétition CIA",
-      alt: "Compétition CIA",
-    },
-    {
-      image: "/media/club2024.png",
-      title: "Première Rencontre 2024",
-      alt: "Première Rencontre 2024",
-    },
-    {
-      image: "/media/clubrencontre.png",
-      title: "Début de FlappyEEG",
-      alt: "Début de FlappyEEG",
-    },
-    {
-      image: "/media/testclub.png",
-      title: "Démonstration du casque EEG",
-      alt: "Démonstration du casque EEG",
-    },
-    {
-      image: "/media/presentation.png",
-      title: "5-7 présentation",
-      alt: "5-7 présentation",
-    },
+    { image: "/media/compétition.png", title: "Compétition CIA" },
+    { image: "/media/club2024.png", title: "Première Rencontre 2024" },
+    { image: "/media/clubrencontre.png", title: "Début de FlappyEEG" },
+    { image: "/media/testclub.png", title: "Démonstration du casque EEG" },
+    { image: "/media/presentation.png", title: "5-7 présentation" },
   ];
 
   const nextSlide = () => {
@@ -42,82 +21,64 @@ const StyledCarousel = () => {
   };
 
   useEffect(() => {
-    if (!isHovered) {
-      const timer = setInterval(nextSlide, 4000);
-      return () => clearInterval(timer);
-    }
-  }, [isHovered]);
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section className="w-full max-w-4xl mx-auto mb-16 p-4">
-      <div
-        className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-red-900"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Progress bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-red-950/20 z-20">
-          <div
-            className="h-full bg-red-600 transition-all duration-300"
-            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-          />
-        </div>
-
-        <div className="relative group">
-          <div className="aspect-[16/9] relative">
-            <img
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].alt}
-              className="object-cover w-full h-full transition-transform duration-500"
-            />
-
+    <div className="relative w-full max-w-4xl mx-auto">
+      <div className="relative overflow-hidden border-2 border-red-600 rounded-lg">
+        <div className="relative w-full pt-[56.25%]">
+          {slides.map((slide, index) => (
             <div
-              className="absolute inset-0 bg-gradient-to-t from-red-950/90 via-transparent to-transparent"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(127, 29, 29, 0.9) 0%, rgba(127, 29, 29, 0) 30%)",
-              }}
-            />
-
-            {/* Caption */}
-            <div className="absolute bottom-0 left-0 right-0 p-4 transform transition-transform">
-              <h3 className="text-xl font-bold text-white">
-                {slides[currentSlide].title}
-              </h3>
-            </div>
-          </div>
-
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 bg-red-950/70 hover:bg-red-900 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-5 h-5" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 bg-red-950/70 hover:bg-red-900 text-white p-2 rounded-full transition-all opacity-0 group-hover:opacity-100 duration-300"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-5 h-5" />
-          </button>
-
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
-                  currentSlide === index ? "bg-red-500 w-4" : "bg-red-500/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
+              key={index}
+              className={`absolute top-0 left-0 w-full h-full transition-transform duration-500 ${
+                index === currentSlide
+                  ? "translate-x-0"
+                  : index < currentSlide
+                  ? "-translate-x-full"
+                  : "translate-x-full"
+              }`}
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="absolute inset-0 w-full h-full object-contain"
               />
-            ))}
-          </div>
+              <div className="absolute bottom-0 left-0 right-0 p-2 bg-red-600">
+                <p className="text-white text-center">{slide.title}</p>
+              </div>
+            </div>
+          ))}
         </div>
+
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-red-600 text-white p-2 rounded-full z-10"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-red-600 text-white p-2 rounded-full z-10"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
-    </section>
+
+      <div className="flex justify-center gap-2 mt-2">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-2 h-2 rounded-full transition-colors ${
+              currentSlide === index ? "bg-red-600" : "bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default StyledCarousel;
+export default Carousel;
