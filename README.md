@@ -9,4 +9,4 @@ The repo will be continuously updated as we add more content, develop new
 ideas and make progress along our journey
 <hr>
 <br>
-The technologies used are HTML, CSS, JS, React, Vue, Boostrap, and more
+The technologies used are HTML, CSS, JS, React, Vue, Bootstrap, and more
