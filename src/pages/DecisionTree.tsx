@@ -22,22 +22,22 @@ function DecisionTree() {
           <h2 className="text-3xl font-bold gradient-text text-center mb-12">
             The Team
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
             {[
               {
                 icon: <TextCursorInput className="w-8 h-8" />,
                 title: "Théophile Berteloot",
-                description: "", // Add the description
+                description: "", // Add description
               },
               {
                 icon: <SwatchBook className="w-8 h-8" />,
                 title: "Loïc Baret",
-                description: "", // Add the description
+                description: "", // Add description
               },
               {
                 icon: <Rss className="w-8 h-8" />,
                 title: "Xavier Legault",
-                description: "", // Add the description
+                description: "", // Add description
               },
               {
                 icon: <Braces className="w-8 h-8" />,

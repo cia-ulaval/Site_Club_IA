@@ -13,44 +13,7 @@ function Footer() {
               Shape the unknown, code the impossible.
             </p>
           </div>
-          <div>
-            <h4 className="text-lg font-semibold text-red-400 mb-4">Links</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-rose-500/60 transition-colors"
-                >
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-rose-500/60 transition-colors"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-rose-500/60 transition-colors"
-                >
-                  Our Team
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="hover:text-rose-500/60 transition-colors"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div>
+          <div className="">
             <h4 className="text-lg font-semibold text-red-400 mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a

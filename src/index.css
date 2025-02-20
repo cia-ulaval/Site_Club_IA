@@ -92,3 +92,10 @@
 .custom-hover-border-red:hover {
   border-color: #bb2020 !important; 
 }
+
+/* Add to your global CSS or Tailwind config file */
+@layer utilities {
+  .glow-red {
+    box-shadow: 0 0 100px 1px rgba(255, 0, 0, 0.5); /* Red glow */
+  }
+}

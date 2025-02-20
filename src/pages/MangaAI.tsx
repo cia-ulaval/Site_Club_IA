@@ -30,8 +30,9 @@ function MangaAI() {
             <img
               src="/media/manga109.png"
               alt="Manga 109"
-              className="w-3/4 rounded-xl"
+              className="w-3/4 rounded-xl glow-red"
             />
+
             <h5 className="text-xs">http://www.manga109.org/ja/index.html</h5>
           </div>
           <p className="mb-10 mx-10">
@@ -65,7 +66,7 @@ function MangaAI() {
             <img
               src="/media/mangaai.png"
               alt="Manga 109"
-              className="w-3/4 rounded-xl"
+              className="w-3/4 rounded-xl glow-red"
             />
           </div>
           <p className="mb-8 mx-10">
@@ -86,7 +87,7 @@ function MangaAI() {
           <h2 className="text-3xl font-bold gradient-text text-center mb-12">
             The Team
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
             {[
               {
                 icon: <TextCursorInput className="w-8 h-8" />,
