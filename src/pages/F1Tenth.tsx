@@ -8,71 +8,70 @@ import {
   UserRoundCog,
 } from "lucide-react";
 
+const team1 = [
+  {
+    icon: <Users className="w-8 h-8" />,
+    title: "Deoth Guei",
+    description: "Team Lead, feasability study, and much more",
+  },
+  {
+    icon: <Lightbulb className="w-8 h-8" />,
+    title: "Théophile Bertelot",
+    description:
+      "Jack of all trades: Helped with conception, research, development, deployment communication and more",
+  },
+  {
+    icon: <UserRoundCog className="w-8 h-8" />,
+    title: "Felix Ly",
+    description:
+      "Helped with software development, optimisation and validation",
+  },
+  {
+    icon: <Rotate3d className="w-8 h-8" />,
+    title: "Melek Sebri",
+    description:
+      "Helped with software development, optimisation and validation",
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "Amy Randianodiasan",
+    description: "Integration with F1 Tenth and partnership",
+  },
+  {
+    icon: <Target className="w-8 h-8" />,
+    title: "Kahina Moulfi",
+    description: "Partnership optimization and integration",
+  },
+];
+
+const team2 = [
+  {
+    icon: <Users className="w-8 h-8" />,
+    title: "Alban Sarrazin",
+    description: "Team Lead",
+  },
+  {
+    icon: <Lightbulb className="w-8 h-8" />,
+    title: "Alexandre Laforest",
+    description: "Member",
+  },
+  {
+    icon: <UserRoundCog className="w-8 h-8" />,
+    title: "Jade Piller Cammal",
+    description: "Member",
+  },
+  {
+    icon: <Rotate3d className="w-8 h-8" />,
+    title: "Karima Habbout",
+    description: "Member",
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "Simon Gouin",
+    description: "Member",
+  },
+];
 function F1Tenth() {
-  const team1 = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Deoth Guei",
-      description: "Team Lead, feasability study, and much more",
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Théophile Bertelot",
-      description:
-        "Jack of all trades: Helped with conception, research, development, deployment communication and more",
-    },
-    {
-      icon: <UserRoundCog className="w-8 h-8" />,
-      title: "Felix Ly",
-      description:
-        "Helped with software development, optimisation and validation",
-    },
-    {
-      icon: <Rotate3d className="w-8 h-8" />,
-      title: "Melek Sebri",
-      description:
-        "Helped with software development, optimisation and validation",
-    },
-    {
-      icon: <Braces className="w-8 h-8" />,
-      title: "Amy Randianodiasan",
-      description: "Integration with F1 Tenth and partnership",
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Kahina Moulfi",
-      description: "Partnership optimization and integration",
-    },
-  ];
-
-  const team2 = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Alban Sarrazin",
-      description: "Team Lead",
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Alexandre Laforest",
-      description: "Member",
-    },
-    {
-      icon: <UserRoundCog className="w-8 h-8" />,
-      title: "Jade Piller Cammal",
-      description: "Member",
-    },
-    {
-      icon: <Rotate3d className="w-8 h-8" />,
-      title: "Karima Habbout",
-      description: "Member",
-    },
-    {
-      icon: <Braces className="w-8 h-8" />,
-      title: "Simon Gouin",
-      description: "Member",
-    },
-  ];
-
   return (
     <div className="container mx-auto p-4">
       <section className="mb-20">

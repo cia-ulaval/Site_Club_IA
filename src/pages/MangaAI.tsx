@@ -1,8 +1,60 @@
 import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
 
+const teamMembers = [
+  {
+    icon: <TextCursorInput className="w-8 h-8" />,
+    title: "Théophile Berteloot",
+    description: "", // Add description
+  },
+  {
+    icon: <SwatchBook className="w-8 h-8" />,
+    title: "Loïc Baret",
+    description: "", // Add description
+  },
+  {
+    icon: <Rss className="w-8 h-8" />,
+    title: "Xavier Legault",
+    description: "", // Add description
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "And others",
+    description: "",
+  },
+];
+
+const ImageWithGlow = ({ src, alt }: { src: string; alt: string }) => (
+  <div className="text-center mb-8 grid place-items-center">
+    <img src={src} alt={alt} className="w-3/4 rounded-xl glow-red" />
+    <h5 className="text-xs mt-2">http://www.manga109.org/ja/index.html</h5>
+  </div>
+);
+
+const TeamSection = () => (
+  <section className="mb-20">
+    <h2 className="text-3xl font-bold gradient-text text-center mb-12">
+      The Team
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
+      {teamMembers.map((member, index) => (
+        <div
+          key={index}
+          className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+        >
+          <div className="text-red-400 mb-4 flex justify-center">
+            {member.icon}
+          </div>
+          <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
+          <p className="text-gray-400">{member.description}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
 function MangaAI() {
   return (
-    <section className="mb-20 ">
+    <section className="mb-20">
       <div className="text-center max-w-4xl mx-auto">
         <h2 id="test" className="text-5xl font-bold gradient-text mb-6">
           Automatic Manga Translator
@@ -26,15 +78,7 @@ function MangaAI() {
             for speech bubble detection, optical character recognition (OCR),
             and emotion recognition in illustrations.
           </p>
-          <div className="text-center mb-8 grid place-items-center">
-            <img
-              src="/media/manga109.png"
-              alt="Manga 109"
-              className="w-3/4 rounded-xl glow-red"
-            />
-
-            <h5 className="text-xs">http://www.manga109.org/ja/index.html</h5>
-          </div>
+          <ImageWithGlow src="/media/manga109.png" alt="Manga 109" />
           <p className="mb-10 mx-10">
             The initial goal was to develop a functional prototype by leveraging
             existing tools to quickly obtain a working solution. This first
@@ -62,13 +106,7 @@ function MangaAI() {
               </li>
             </ul>
           </p>
-          <div className="text-center mb-8 grid place-items-center">
-            <img
-              src="/media/mangaai.png"
-              alt="Manga 109"
-              className="w-3/4 rounded-xl glow-red"
-            />
-          </div>
+          <ImageWithGlow src="/media/mangaai.png" alt="Manga AI" />
           <p className="mb-8 mx-10">
             The next phase of the project focuses on replacing existing tools
             with custom models and improving translation quality by leveraging
@@ -83,48 +121,7 @@ function MangaAI() {
             while applying these techniques to a concrete and innovative domain.
           </p>
         </section>
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold gradient-text text-center mb-12">
-            The Team
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
-            {[
-              {
-                icon: <TextCursorInput className="w-8 h-8" />,
-                title: "Théophile Berteloot",
-                description: "", // Add the description
-              },
-              {
-                icon: <SwatchBook className="w-8 h-8" />,
-                title: "Loïc Baret",
-                description: "", // Add the description
-              },
-              {
-                icon: <Rss className="w-8 h-8" />,
-                title: "Xavier Legault",
-                description: "", // Add the description
-              },
-              {
-                icon: <Braces className="w-8 h-8" />,
-                title: "And others",
-                description: "",
-              },
-            ].map((value, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
-              >
-                <div className="text-red-400 mb-4 flex justify-center">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-gray-400">{value.description}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <TeamSection />
       </div>
     </section>
   );

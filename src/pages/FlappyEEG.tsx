@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Users,
   Lightbulb,
@@ -10,16 +10,28 @@ import {
   Radical,
   Play,
   Pause,
-  Volume2,
-  VolumeX,
 } from "lucide-react";
 
 function About() {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-  const togglePlay = () => setIsPlaying(!isPlaying);
-  const toggleMute = () => setIsMuted(!isMuted);
+  useEffect(() => {
+    if (videoRef.current) {
+      setIsPlaying(!videoRef.current.paused);
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   const teamMembers = [
     {
@@ -140,11 +152,11 @@ function About() {
           <div className="hero-card">
             <div className="video-container relative">
               <video
+                ref={videoRef}
                 className="w-full h-full object-cover rounded-xl"
                 src="/media/flappyproto.mp4"
                 autoPlay
                 loop
-                muted={isMuted}
                 playsInline
                 poster="/media/test.jpg"
               />
@@ -158,16 +170,6 @@ function About() {
                       <Pause className="w-5 h-5" />
                     ) : (
                       <Play className="w-5 h-5" />
-                    )}
-                  </button>
-                  <button
-                    onClick={toggleMute}
-                    className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
-                  >
-                    {isMuted ? (
-                      <VolumeX className="w-5 h-5" />
-                    ) : (
-                      <Volume2 className="w-5 h-5" />
                     )}
                   </button>
                 </div>
