@@ -46,7 +46,7 @@ function Navbar() {
               Home
             </NavLink>
             <NavLink
-              to="/managment"
+              to="/management"
               className={({ isActive }) =>
                 `text-gray-300 hover:text-rose-500/60 transition-colors ${
                   isActive ? "text-red-400" : ""

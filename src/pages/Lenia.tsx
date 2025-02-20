@@ -1,4 +1,3 @@
-import React from "react";
 import { Apple, Baby, Asterisk, Bean } from "lucide-react";
 
 const teamMembers = [

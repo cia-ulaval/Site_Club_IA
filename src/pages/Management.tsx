@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
@@ -89,10 +88,6 @@ const cardData2 = [
 ];
 
 const Management = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div>
       <section className="max-w-7xl mx-auto px-4 pb-8">

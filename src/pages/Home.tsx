@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import StyledCarousel from "../components/Carousel.tsx";
 import { motion } from "framer-motion";
 
 function Home() {
@@ -10,10 +9,6 @@ function Home() {
 
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const partners = [
     "/media/aesgul.png",
