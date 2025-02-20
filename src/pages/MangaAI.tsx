@@ -24,9 +24,8 @@ const teamMembers = [
 ];
 
 const ImageWithGlow = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="text-center mb-8 grid place-items-center">
+  <div className="text-center mb-2 grid place-items-center">
     <img src={src} alt={alt} className="w-3/4 rounded-xl glow-red" />
-    <h5 className="text-xs mt-2">http://www.manga109.org/ja/index.html</h5>
   </div>
 );
 
@@ -79,6 +78,9 @@ function MangaAI() {
             and emotion recognition in illustrations.
           </p>
           <ImageWithGlow src="/media/manga109.png" alt="Manga 109" />
+          <h5 className="text-xs text-center mb-10 mt-2">
+            http://www.manga109.org/ja/index.html
+          </h5>
           <p className="mb-10 mx-10">
             The initial goal was to develop a functional prototype by leveraging
             existing tools to quickly obtain a working solution. This first
@@ -107,7 +109,7 @@ function MangaAI() {
             </ul>
           </p>
           <ImageWithGlow src="/media/mangaai.png" alt="Manga AI" />
-          <p className="mb-8 mx-10">
+          <p className="mb-8 mx-10 mt-10">
             The next phase of the project focuses on replacing existing tools
             with custom models and improving translation quality by leveraging
             additional visual information. We will work on Dynamic text resizing
