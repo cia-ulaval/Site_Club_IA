@@ -5,11 +5,11 @@ const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: "/media/compétition.png", title: "Compétition CIA" },
-    { image: "/media/club2024.png", title: "Première Rencontre 2024" },
-    { image: "/media/clubrencontre.png", title: "Début de FlappyEEG" },
-    { image: "/media/testclub.png", title: "Démonstration du casque EEG" },
-    { image: "/media/presentation.png", title: "5-7 présentation" },
+    { image: "/compétition.png", title: "Compétition CIA" },
+    { image: "/club2024.png", title: "Première Rencontre 2024" },
+    { image: "/clubrencontre.png", title: "Début de FlappyEEG" },
+    { image: "/testclub.png", title: "Démonstration du casque EEG" },
+    { image: "/presentation.png", title: "5-7 présentation" },
   ];
 
   const nextSlide = () => {

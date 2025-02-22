@@ -1,39 +1,39 @@
 function Gallery() {
   const images = [
     {
-      src: "/media/club2024.png",
+      src: "/club2024.png",
       desc: "Beautiful Landscape",
     },
     {
-      src: "/media/clubrencontre.png",
+      src: "/clubrencontre.png",
       desc: "Mountain View",
     },
     {
-      src: "/media/compétition.png",
+      src: "/compétition.png",
       desc: "Sunset Over Water",
     },
     {
-      src: "/media/f1tenth.jpg",
+      src: "/f1tenth.jpg",
       desc: "Forest Pathway",
     },
     {
-      src: "/media/presentation.png",
+      src: "/presentation.png",
       desc: "City Lights",
     },
     {
-      src: "/media/testclub.png",
+      src: "/testclub.png",
       desc: "Snowy Mountains",
     },
     {
-      src: "/media/tuto2.jpg",
+      src: "/tuto2.jpg",
       desc: "Snowy Mountains",
     },
     {
-      src: "/media/rencontrecia.jpeg",
+      src: "/rencontrecia.jpeg",
       desc: "Snowy Mountains",
     },
     {
-      src: "/media/cialocal.jpg",
+      src: "/cialocal.jpg",
       desc: "Snowy Mountains",
     },
   ];

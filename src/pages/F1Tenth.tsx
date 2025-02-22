@@ -70,6 +70,7 @@ const team2 = [
     description: "Member",
   },
 ];
+
 function F1Tenth() {
   return (
     <div className="container mx-auto p-4">
@@ -77,7 +78,7 @@ function F1Tenth() {
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2 md:order-2">
             <img
-              src="/media/test.jpg"
+              src="/test.jpg"
               alt="test image (temporary)"
               className="w-full rounded-xl shadow-2xl"
             />
