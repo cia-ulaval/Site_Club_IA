@@ -9,7 +9,7 @@ function Gallery() {
       desc: "Mountain View",
     },
     {
-      src: "/compétition.png",
+      src: "/competition.png",
       desc: "Sunset Over Water",
     },
     {
