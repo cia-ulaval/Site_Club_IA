@@ -13,6 +13,7 @@
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@types/bootstrap": "^5.2.10",
+    "@vercel/speed-insights": "^1.2.0",
     "bootstrap": "^5.3.3",
     "framer-motion": "^12.4.4",
     "lucide-react": "^0.344.0",

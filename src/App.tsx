@@ -10,6 +10,7 @@ import F1Tenth from "./pages/F1Tenth";
 import Lenia from "./pages/Lenia";
 import DecisionTree from "./pages/DecisionTree";
 import Footer from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   return (
