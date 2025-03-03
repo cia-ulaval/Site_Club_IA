@@ -38,7 +38,7 @@ function About() {
       icon: <Users className="w-8 h-8" />,
       title: "Louis-Étienne Messier",
       description:
-        "Team Lead and project manager. He is the one who makes sure everything goes smoothly.",
+        "Team Lead and project manager. He is the one who makes sure everything goes smoothly",
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
@@ -61,7 +61,7 @@ function About() {
     {
       icon: <Braces className="w-8 h-8" />,
       title: "Amen Ouannes",
-      description: "Responsible of the AI model.",
+      description: "Responsible of the AI model.", //more details ?
     },
     {
       icon: <Target className="w-8 h-8" />,
@@ -76,7 +76,7 @@ function About() {
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "William Blanchet Lafrenière",
-      description: "Helped with the game's development.",
+      description: "Main contributor for the game's development and new helping hand in the development of this website",
     },
   ];
 
@@ -108,9 +108,9 @@ function About() {
             </p>
             <p className="text-gray-400 text-justify">
               The format of the game is simple; ever heard of flappy bird? Well,
-              it's the same simple yet fun concept. The only difference is that
-              you control the bird with your thoughts. The simple will to make
-              the little caracter avoid obstacles is enough to make it move. We
+              it's the same simple yet fun concept. The main difference is that
+              you can control the bird with your thoughts. The simple will to make
+              the little character avoid obstacles is enough to make it move. We
               are very proud of the work we have accomplished; it may only be
               the beginning of a video game revolution! Think about it, what if
               we combined this mechanic to a VR headset? 100% immersion, 100%
@@ -178,35 +178,34 @@ function About() {
           </div>
           <div>
             <p className="text-gray-400 mb-6">
-              Just like any other project, FlappyEEG had a beginning. It all
-              started during the the spring semester of 2024. It was a rough
+              FlappyEEG started during the the spring semester of 2024. It had a rough
               start: we had many participants and loads of ideas, but the
-              organisation was very hard to manage. Members came and went, and
-              people of course had exmans and other things to attend which left
-              us with a very different load of work to do.
+              organisation was very hard to manage. Members came and went and some
+              didn't contributed has much for the project to truly take it's full pace
+              witch leaded to uncoordinated and fragmented teams.
             </p>
             <p className="text-gray-400">
-              All that to say, that semester, we didn't get as much as we
-              would've liked done, but in winter of 2025, we learnt from our
-              experience and came back strong! We approached the project with a
-              new concept: instead of open to everyone, we would screen the
-              participants and make a choice based on their skills, their
+              All that to say, that semester, althrough we didn't get as much as we
+              would've liked to be done we learnt from our
+              mistakes and came back more prepared and much better planned. We approached the project with a
+              new concept: instead of opening the project to every members, we would screen the
+              participants and make a choice based on their specific skills, their
               availability but most importantly, their interest in the project.
-              This way, we were able to work much more efficiently and adress
-              any issues immediately. It was indeed a great success! We were
-              able to finish the first step of FlappyEEG before our deadline:
-              Make it work with a simple algorithm that would detect blinks. Our
-              member Dereck worked on this and Louis-Étienne helped him fix the
-              bugs. You can see on this preview the first prototype. In the
-              meantime, our other members were working on finishing the game,
-              researching and collecting data.
+              This way, we were able to work much more efficiently and address
+              any issues immediately. With this new approach, we were
+              able to finish the first step of FlappyEEG before the expected deadline.
+              Our objective was to create a simple algorithm based on AI that would detect blinks.
+              Two of our team members Dereck and Louis-Étienne mainly worked on this task.
+              The preview of our first prototype can be seed below. In the
+              meantime, our other members were working in the developpment of the FlappyEEG game,
+              researching and collecting data for the creating of new IA models. <!-- Serveur UDP ? -->
             </p>
           </div>
         </div>
         <p className="text-gray-400 mt-6">
-          It was only a rough prototype, as you can see, some latency was still
-          present and the game was not fully functional. But it was a step in
-          the right direction which led us to week 2...
+          It was only a simple prototype, some latency was still
+          present and this demo was made in a simpler version of the game without pipes.
+          Humble starts but, it was a step in the right direction which led us to week 2...
         </p>
       </section>
 
@@ -226,8 +225,8 @@ function About() {
 
         <p className="text-gray-400 mt-6">
           In the meantime, Louis-Étienne installed a server to centralize our
-          datasets, William finished the game. Everything was slowly coming
-          together, but the hardest part was yet to come!
+          datasets, William made some progress on some new features for the game.
+          Everything was slowly coming together, but the hardest part was yet to come!
         </p>
 
         <div className="mt-12">

@@ -1,6 +1,7 @@
 import { Instagram, Facebook, Linkedin } from "lucide-react";
 
 function Footer() {
+  // @ts-ignore
   return (
     <footer className="bg-black/60 border-t border-red-500/20 py-12 mt-20">
       <div className="max-w-7xl mx-auto px-4">
@@ -39,7 +40,7 @@ function Footer() {
         </div>
         <div className="text-center pt-8 border-t border-red-500/20">
           <p className="text-gray-400">
-            © 2025 Dereck Bélanger - All rights reserved.
+            © 2025 Dereck Bélanger - All rights reserved. <!-- Copyright CIA ? -->
           </p>
         </div>
       </div>
