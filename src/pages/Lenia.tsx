@@ -74,7 +74,7 @@ function Lenia() {
         grid, this process generates complex, lifelike behaviors from simple
         mathematical rules.
       </p>
-      <ImageWithGlow src="/lenia.png" alt="lenia" />
+      <ImageWithGlow src="/img/lenia.png" alt="lenia" />
       <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify">
         Our team successfully implemented a single-channel version of Lenia,
         where only one "chemical species" exists. However, we faced challenges
@@ -87,7 +87,7 @@ function Lenia() {
       </p>
       <img
         className="w-3/4 md:w-2/3 rounded-xl glow-red mx-auto mt-10"
-        src="/leniaexample.gif"
+        src="/videos/leniaexample.gif"
         alt="lenia gif"
       ></img>
       <h5 className="text-xs mb-16 mt-2 text-gray-400">

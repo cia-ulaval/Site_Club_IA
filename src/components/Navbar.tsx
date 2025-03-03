@@ -26,7 +26,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
-            <img src="/CIA_LOGO.png" alt="CIA Logo" width={35} height={35} />
+            <img src="/img/CIA_LOGO.png" alt="CIA Logo" width={35} height={35} />
             <span className="text-xl font-bold gradient-text">CIA</span>
           </NavLink>
           <div className="flex space-x-8 relative">

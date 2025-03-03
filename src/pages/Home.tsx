@@ -11,28 +11,28 @@ function Home() {
   const toggleMute = () => setIsMuted(!isMuted);
 
   const partners = [
-    "/aesgul.png",
-    "/asetin.png",
-    "/avenirti.png",
-    "/laval.png",
+    "/img/aesgul.png",
+    "/img/asetin.png",
+    "/img/avenirti.png",
+    "/img/laval.png",
   ];
 
   const projects = [
     {
       title: "Brain Controlled Video Game",
-      image: "/flappycard.jpg",
+      image: "/img/flappycard.jpg",
       description: "Group meeting for flappyeeg project",
       link: "/flappyeeg",
     },
     {
       title: "Muscle controlled race car",
-      image: "/f1cover.png",
+      image: "/img/f1cover.png",
       description: "image representing the f1tenth device",
       link: "/f1tenth",
     },
     {
       title: "Manga automatic translator",
-      image: "/mangaai2.png",
+      image: "/img/mangaai2.png",
       description: "image representing the manga ai detection",
       link: "/mangaai",
     },
@@ -52,12 +52,12 @@ function Home() {
         <div className="video-container mb-4">
           <video
             className="w-full h-full object-cover"
-            src="/testvideo.mp4"
+            src="/videos/testvideo.mp4"
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            poster="/test.jpg"
+            poster="/img/test.jpg"
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <div className="flex items-center justify-between">

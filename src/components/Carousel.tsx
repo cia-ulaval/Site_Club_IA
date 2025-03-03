@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    { image: "/compétition.png", title: "Compétition CIA" },
-    { image: "/club2024.png", title: "Première Rencontre 2024" },
-    { image: "/clubrencontre.png", title: "Début de FlappyEEG" },
-    { image: "/testclub.png", title: "Démonstration du casque EEG" },
-    { image: "/presentation.png", title: "5-7 présentation" },
+    { image: "/img/compétition.png", title: "Compétition CIA" },
+    { image: "/img/club2024.png", title: "Première Rencontre 2024" },
+    { image: "/img/clubrencontre.png", title: "Début de FlappyEEG" },
+    { image: "/img/testclub.png", title: "Démonstration du casque EEG" },
+    { image: "/img/presentation.png", title: "5-7 présentation" },
   ];
 
   const nextSlide = () => {
