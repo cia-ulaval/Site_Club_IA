@@ -40,7 +40,7 @@ function Footer() {
         </div>
         <div className="text-center pt-8 border-t border-red-500/20">
           <p className="text-gray-400">
-            © 2025 Dereck Bélanger - All rights reserved. <!-- Copyright CIA ? -->
+            © 2025 Dereck Bélanger - All rights reserved.
           </p>
         </div>
       </div>
