@@ -146,7 +146,7 @@ function Home() {
           getting in touch with one of the admins mentionned down below.
         </p>
         <a
-          href="https://discord.gg/BWNbhNJNkR"
+          href="https://discord.gg/ZPVwCjMpAq"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
