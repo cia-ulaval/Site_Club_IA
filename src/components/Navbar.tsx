@@ -70,10 +70,10 @@ function Navbar() {
               {dropdownOpen && (
                 <div className="absolute right-0 mt-2 w-40 bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
                   <NavLink
-                    to="/flappyeeg"
+                    to="/flapeeg"
                     className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
                   >
-                    FlappyEEG
+                    FlapEEG
                   </NavLink>
                   <NavLink
                     to="/mangaai"

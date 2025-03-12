@@ -18,7 +18,12 @@ const teamMembers = [
   },
   {
     icon: <Braces className="w-8 h-8" />,
-    title: "And others",
+    title: "Louis-Jacob Lebel",
+    description: "",
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "John-William Lebel",
     description: "",
   },
 ];

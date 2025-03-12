@@ -6,7 +6,6 @@ import {
   Rocket,
   Braces,
   Rotate3d,
-  UserRoundCog,
   Radical,
   Play,
   Pause,
@@ -45,12 +44,6 @@ function About() {
       title: "Jordan Mathieu",
       description:
         "VP and partnership manager. He is the one who finds the best partners for our projects.",
-    },
-    {
-      icon: <UserRoundCog className="w-8 h-8" />,
-      title: "Nathaniel D'Amours",
-      description:
-        "President of the CIA. He is the one who makes sure the team is always coordinated.",
     },
     {
       icon: <Rotate3d className="w-8 h-8" />,
@@ -93,10 +86,10 @@ function About() {
           </div>
           <div className="flex flex-col justify-center">
             <h2 className="text-5xl font-bold gradient-text mb-6 text-justify">
-              FlappyEEG
+              FlapEEG
             </h2>
             <p className="text-gray-400 mb-6 text-justify">
-              FlappyEEG is a video game that is controlled by thought. We have
+              FlapEEG is a video game that is controlled by thought. We have
               trained an AI model to interpret brain signals and translate them
               into actions in the game. For this to work, we equipped ourselves
               with the latest EEG (electroencephalogram) technology and and a
@@ -178,7 +171,7 @@ function About() {
           </div>
           <div>
             <p className="text-gray-400 mb-6">
-              Just like any other project, FlappyEEG had a beginning. It all
+              Just like any other project, FlapEEG had a beginning. It all
               started during the the spring semester of 2024. It was a rough
               start: we had many participants and loads of ideas, but the
               organisation was very hard to manage. Members came and went, and
@@ -194,8 +187,8 @@ function About() {
               availability but most importantly, their interest in the project.
               This way, we were able to work much more efficiently and adress
               any issues immediately. It was indeed a great success! We were
-              able to finish the first step of FlappyEEG before our deadline:
-              Make it work with a simple algorithm that would detect blinks. Our
+              able to finish the first step of FlapEEG before our deadline: Make
+              it work with a simple algorithm that would detect blinks. Our
               member Dereck worked on this and Louis-Étienne helped him fix the
               bugs. You can see on this preview the first prototype. In the
               meantime, our other members were working on finishing the game,
