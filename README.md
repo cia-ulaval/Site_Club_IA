@@ -19,11 +19,10 @@ The website is **under continuous development**, and we are excited to regularly
 
 This project relies on several modern technologies:  
 
-- **HTML / CSS / JavaScript** 🖥️  
-- **React.js** ⚛️  
-- **Vue.js** 🖼️  
-- **Bootstrap** 🎨  
-- And many more to come! 💡  
+- **HTML / CSS / JavaScript** 
+- **React.js**  
+- **Vue.js** 
+- **Bootstrap** 
 
 ---
 
@@ -45,8 +44,8 @@ We will carefully review each contribution. 🤝
 To follow us or get in touch, you can find us on:  
 
 - 💻 [Our Website]() *(under development)*  
-- 📸 [Instagram]([https://instagram.com/votre-compte](https://www.instagram.com/ciaulaval/))  
-- 📧 [LinkedIn]((https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all))  
+- 📸 [Instagram](https://www.instagram.com/ciaulaval/)
+- 📧 [LinkedIn](https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all)
 
 Don't hesitate to contact us for any questions, collaborations, or just to exchange ideas. 🧠✨
 
