@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --video-shadow-color: rgba(230, 0, 0, 0.2);
+  --pulse-shadow-color: rgba(246, 38, 38, 0.4);
+  --pulse-mid-shadow-color: rgba(43, 5, 1, 0.8);
+  --scroll-banner-before-background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  --scroll-banner-after-background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  --custom-border-red: #861010;
+  --custom-hover-border-red: #bb2020;
+  --glow-red-shadow-color: rgba(255, 0, 0, 0.5);
+}
+
+[data-bs-theme="light"] {
+  --video-shadow-color: rgba(200, 0, 0, 0.2);
+  --pulse-shadow-color: rgba(220, 30, 30, 0.4);
+  --pulse-mid-shadow-color: rgba(255, 180, 180, 0.8);
+  --scroll-banner-before-background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  --scroll-banner-after-background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+  --custom-border-red: #d02020;
+  --custom-hover-border-red: #ff4040;
+  --glow-red-shadow-color: rgba(255, 50, 50, 0.5);
+}
+
+
 @layer base {
   body {
     @apply bg-black text-gray-100;
@@ -14,7 +37,7 @@
 
 .video-container {
   @apply relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl;
-  box-shadow: 0 0 50px rgba(230, 0, 0, 0.2);
+  box-shadow: 0 0 50px var(--video-shadow-color);
 }
 
 .hero-card {
@@ -24,10 +47,10 @@
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 100px rgba(246, 38, 38, 0.4);
+    box-shadow: 0 0 100px var(--pulse-shadow-color);
   }
   50% {
-    box-shadow: 0 0 150px rgba(43, 5, 1, 0.8);
+    box-shadow: 0 0 150px var(--pulse-mid-shadow-color);
   }
 }
 
@@ -54,12 +77,12 @@
 
 .scroll-banner::before {
   left: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: var(--scroll-banner-before-background);
 }
 
 .scroll-banner::after {
   right: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background: var(--scroll-banner-after-background);
 }
 
 .scroll-banner-content {
@@ -86,16 +109,16 @@
 }
 
 .custom-border-red {
-  border-color: #861010 !important;
+  border-color: var(--custom-border-red) !important;
 }
 
 .custom-hover-border-red:hover {
-  border-color: #bb2020 !important; 
+  border-color: var(--custom-hover-border-red) !important;
 }
 
 /* Add to your global CSS or Tailwind config file */
 @layer utilities {
   .glow-red {
-    box-shadow: 0 0 100px 1px rgba(255, 0, 0, 0.5); /* Red glow */
+    box-shadow: 0 0 100px 1px var(--glow-red-shadow-color); /* Red glow */
   }
 }

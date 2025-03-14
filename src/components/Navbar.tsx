@@ -1,9 +1,28 @@
-import { useState, useEffect, useRef } from "react";
+import {useState, useEffect, useRef} from "react";
 import { NavLink } from "react-router-dom";
+import {Button} from "react-bootstrap";
+import {Moon, Sun} from "lucide-react";
 
 function Navbar() {
+  const [rendered, setRendered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isDarkMode, changeTheme] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const userTheme: string | null = localStorage.getItem("theme");
+
+  if(!rendered) {
+    if (userTheme) {
+      changeTheme(userTheme == "dark");
+    } else {
+      const darkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+      if (darkModeQuery !== undefined) {
+        changeTheme(darkModeQuery.matches);
+      }
+    }
+    changeTheme(isDarkMode);
+    setRendered(true);
+  }
+
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -13,6 +32,13 @@ function Navbar() {
       setDropdownOpen(false);
     }
   };
+
+  const handleThemeChange = () => {
+    document.documentElement.setAttribute("data-bs-theme", isDarkMode ? "dark" : "light");
+    localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+    changeTheme(!isDarkMode);
+    setRendered(false);
+  }
 
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
@@ -60,6 +86,7 @@ function Navbar() {
             >
               Gallery
             </NavLink>
+
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -102,6 +129,10 @@ function Navbar() {
                 </div>
               )}
             </div>
+            <Button className=""
+                    onClick={handleThemeChange}>
+              {isDarkMode ? <Sun /> : <Moon />}
+            </Button>
           </div>
         </div>
       </div>
