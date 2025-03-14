@@ -87,6 +87,15 @@ const cardData2 = [
   },
 ];
 
+const cardData3 = [
+  {
+    title: "Dereck Bélanger",
+    text: "CIA Website Manager",
+    imgSrc: "/Dereck.HEIC",
+    linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
+  },
+];
+
 const Management = () => {
   return (
     <div>
@@ -94,23 +103,18 @@ const Management = () => {
         <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
           Executive Team
         </h1>
-        <Row xs={1} md={3} className="g-3 justify-content-center">
+        <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
           {cardData.map((card, idx) => (
-            <Col
-              key={idx}
-              sm={6}
-              md={cardData.length % 3 === 1 ? 6 : 4}
-              className="d-flex justify-content-center"
-            >
+            <Col key={idx} className="d-flex justify-content-center">
               <a href={card.linkedIn} target="_blank" rel="noopener noreferrer">
                 <Card
                   className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
-                  style={{ width: "18rem" }}
+                  style={{ width: "14rem" }}
                 >
                   <Card.Img
                     variant="top"
                     src={card.imgSrc}
-                    style={{ height: "300px", objectFit: "cover" }} // Adjust the height as needed
+                    style={{ height: "200px", objectFit: "cover" }} // Adjust the height as needed
                   />
                   <Card.Body>
                     <Card.Title className="text-gray-200">
@@ -128,23 +132,47 @@ const Management = () => {
         <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
           Leadership Team
         </h1>
-        <Row xs={1} md={3} className="g-3 justify-content-center">
+        <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
           {cardData2.map((card, idx) => (
-            <Col
-              key={idx}
-              sm={6}
-              md={cardData2.length % 3 === 1 ? 6 : 4}
-              className="d-flex justify-content-center"
-            >
+            <Col key={idx} className="d-flex justify-content-center">
               <a href={card.linkedIn} target="_blank" rel="noopener noreferrer">
                 <Card
                   className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
-                  style={{ width: "18rem" }}
+                  style={{ width: "14rem" }}
                 >
                   <Card.Img
                     variant="top"
                     src={card.imgSrc}
-                    style={{ height: "300px", objectFit: "cover" }} // Adjust the height as needed
+                    style={{ height: "200px", objectFit: "cover" }} // Adjust the height as needed
+                  />
+                  <Card.Body>
+                    <Card.Title className="text-gray-200">
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text className="text-gray-400">{card.text}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </a>
+            </Col>
+          ))}
+        </Row>
+      </section>
+      <section className="max-w-7xl mx-auto px-4 pt-12">
+        <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
+          Associate
+        </h1>
+        <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
+          {cardData3.map((card, idx) => (
+            <Col key={idx} className="d-flex justify-content-center">
+              <a href={card.linkedIn} target="_blank" rel="noopener noreferrer">
+                <Card
+                  className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
+                  style={{ width: "14rem" }}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={card.imgSrc}
+                    style={{ height: "200px", objectFit: "cover" }} // Adjust the height as needed
                   />
                   <Card.Body>
                     <Card.Title className="text-gray-200">

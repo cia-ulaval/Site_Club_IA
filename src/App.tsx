@@ -4,13 +4,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Management from "./pages/Management";
 import Gallery from "./pages/Gallery";
-import FlappyEEG from "./pages/FlappyEEG";
+import FlapEEG from "./pages/FlapEEG";
 import MangaAI from "./pages/MangaAI";
 import F1Tenth from "./pages/F1Tenth";
 import Lenia from "./pages/Lenia";
 import DecisionTree from "./pages/DecisionTree";
 import Footer from "./components/Footer";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/management" element={<Management />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/flappyeeg" element={<FlappyEEG />} />
+          <Route path="/flapeeg" element={<FlapEEG />} />
           <Route path="/mangaai" element={<MangaAI />} />
           <Route path="/f1tenth" element={<F1Tenth />} />
           <Route path="/decisiontree" element={<DecisionTree />} />

@@ -8,7 +8,7 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
-              Laval University Artificial Intelligence Club
+              Laval University AI Club
             </h3>
             <p className="text-gray-400">
               Shape the unknown, code the impossible.
