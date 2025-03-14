@@ -112,7 +112,7 @@ function F1Tenth() {
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           Team 1
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {team1.map((value, index) => (
             <div
               key={index}
@@ -121,7 +121,7 @@ function F1Tenth() {
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-gray-600 dark:text-white mb-2">
                 {value.title}
               </h3>
               <p className="text-gray-400">{value.description}</p>
@@ -134,7 +134,7 @@ function F1Tenth() {
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           Team 2
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {team2.map((value, index) => (
             <div
               key={index}
@@ -143,7 +143,7 @@ function F1Tenth() {
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-gray-600 dark:text-white mb-2">
                 {value.title}
               </h3>
               <p className="text-gray-400">{value.description}</p>

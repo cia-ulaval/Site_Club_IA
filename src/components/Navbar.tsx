@@ -1,15 +1,33 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import { Moon, Sun } from "lucide-react";
 
 function Navbar() {
+  const [rendered, setRendered] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isDarkMode, changeTheme] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
+  const handleThemeChange = (newDarkMode: boolean) => {
+    changeTheme(newDarkMode);
+
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    document.documentElement.setAttribute("data-bs-theme", newDarkMode ? "dark" : "light");
+    localStorage.theme = newDarkMode ? "dark" : "light";
+  };
+
+  if (!rendered) {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    handleThemeChange(isDark);
+    setRendered(true);
+  }
+
   const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
       setDropdownOpen(false);
     }
   };
@@ -19,93 +37,100 @@ function Navbar() {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-red-500/20">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <NavLink to="/" className="flex items-center space-x-2">
-            <img src="/img/CIA_LOGO.png" alt="CIA Logo" width={35} height={35} />
-            <span className="text-xl font-bold gradient-text">CIA</span>
-          </NavLink>
-          <div className="flex space-x-8 relative">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Home
+      <nav className="sticky top-0 z-50 backdrop-blur-lg bg-white/60 dark:bg-black/60 border-b border-red-500/20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <NavLink to="/" className="flex items-center space-x-2">
+              <img src="/img/CIA_LOGO.png" alt="CIA Logo" width={35} height={35} />
+              <span className="text-xl font-bold gradient-text">CIA</span>
             </NavLink>
-            <NavLink
-              to="/management"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Management
-            </NavLink>
-            <NavLink
-              to="/gallery"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Gallery
-            </NavLink>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-gray-300 hover:text-rose-500/60 transition-colors"
+            <div className="flex space-x-8 items-center relative">
+              <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                      `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                          isActive ? "text-red-400" : ""
+                      }`
+                  }
               >
-                Projects
-              </button>
-              {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
-                  <NavLink
-                    to="/flapeeg"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    FlapEEG
-                  </NavLink>
-                  <NavLink
-                    to="/mangaai"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    Manga AI Tranlator
-                  </NavLink>
-                  <NavLink
-                    to="/f1tenth"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    F1 Tenth
-                  </NavLink>
-                  <NavLink
-                    to="/lenia"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    LENIA
-                  </NavLink>
-                  <NavLink
-                    to="/decisiontree"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    Decision Tree
-                  </NavLink>
-                </div>
-              )}
+                Home
+              </NavLink>
+              <NavLink
+                  to="/management"
+                  className={({ isActive }) =>
+                      `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                          isActive ? "text-red-400" : ""
+                      }`
+                  }
+              >
+                Management
+              </NavLink>
+              <NavLink
+                  to="/gallery"
+                  className={({ isActive }) =>
+                      `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                          isActive ? "text-red-400" : ""
+                      }`
+                  }
+              >
+                Gallery
+              </NavLink>
+
+              <div className="relative" ref={dropdownRef}>
+                <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="text-gray-300 hover:text-rose-500/60 transition-colors"
+                >
+                  Projects
+                </button>
+                {dropdownOpen && (
+                    <div className="absolute right-0 mt-2 w-40 bg-white/80 dark:bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
+                      <NavLink
+                          to="/flapeeg"
+                          className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
+                      >
+                        FlapEEG
+                      </NavLink>
+                      <NavLink
+                          to="/mangaai"
+                          className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
+                      >
+                        Manga AI Tranlator
+                      </NavLink>
+                      <NavLink
+                          to="/f1tenth"
+                          className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
+                      >
+                        F1 Tenth
+                      </NavLink>
+                      <NavLink
+                          to="/lenia"
+                          className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
+                      >
+                        LENIA
+                      </NavLink>
+                      <NavLink
+                          to="/decisiontree"
+                          className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
+                      >
+                        Decision Tree
+                      </NavLink>
+                    </div>
+                )}
+              </div>
+              <Button
+                className="flex items-center justify-center p-2 rounded-full bg-red-500/20 hover:bg-red-500/40 text-gray-300 transition-colors"
+                onClick={() => handleThemeChange(!isDarkMode)}
+              >
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </Button>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
   );
 }
 

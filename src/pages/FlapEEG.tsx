@@ -128,7 +128,7 @@ function About() {
               <div className="text-red-400 mb-4 flex justify-center">
                 {member.icon}
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">
+              <h3 className="text-xl font-bold text-gray-600 dark:text-white mb-2">
                 {member.title}
               </h3>
               <p className="text-gray-400">{member.description}</p>
