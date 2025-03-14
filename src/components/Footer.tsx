@@ -5,7 +5,7 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative bg-gradient-to-t from-red-950 via-red-900/10 to-black border-t border-red-500/30 py-12 mt-20 overflow-hidden">
+    <footer className="dark:bg-black/60relative bg-gradient-to-t from-red-950 via-red-900/10 to-black border-t border-red-500/30 py-12 mt-20 overflow-hidden">
       {/* Subtle animated background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-r from-red-500/25 to-rose-500/25 rounded-full blur-xl animate-pulse"></div>

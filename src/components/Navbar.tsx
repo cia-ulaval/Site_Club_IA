@@ -7,10 +7,29 @@ import LanguageToggle from "./LanguageToggle";
 function Navbar() {
   const { t } = useTranslation(); // Initialize the translation hook
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, changeTheme] = useState(false);
+  const [rendered, setRendered] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleThemeChange = (newDarkMode: boolean) => {
+    changeTheme(newDarkMode);
+
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    document.documentElement.setAttribute("data-bs-theme", newDarkMode ? "dark" : "light");
+    localStorage.theme = newDarkMode ? "dark" : "light";
+  };
+
+  if (!rendered) {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    handleThemeChange(isDark);
+    setRendered(true);
+  }
 
   const navLinks = [
     { to: "/", label: t("navbar.home") },
