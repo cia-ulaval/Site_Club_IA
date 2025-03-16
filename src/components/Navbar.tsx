@@ -2,25 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
-      setDropdownOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("click", handleClickOutside);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
-
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-red-500/20">
       <div className="max-w-7xl mx-auto px-4">
@@ -60,48 +41,16 @@ function Navbar() {
             >
               Gallery
             </NavLink>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="text-gray-300 hover:text-rose-500/60 transition-colors"
-              >
-                Projects
-              </button>
-              {dropdownOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
-                  <NavLink
-                    to="/flapeeg"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    FlapEEG
-                  </NavLink>
-                  <NavLink
-                    to="/mangaai"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    Manga AI Tranlator
-                  </NavLink>
-                  <NavLink
-                    to="/f1tenth"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    F1 Tenth
-                  </NavLink>
-                  <NavLink
-                    to="/lenia"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    LENIA
-                  </NavLink>
-                  <NavLink
-                    to="/decisiontree"
-                    className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
-                  >
-                    Decision Tree
-                  </NavLink>
-                </div>
-              )}
-            </div>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  isActive ? "text-red-400" : ""
+                }`
+              }
+            >
+              Projects
+            </NavLink>
           </div>
         </div>
       </div>

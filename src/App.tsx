@@ -9,6 +9,7 @@ import MangaAI from "./pages/MangaAI";
 import F1Tenth from "./pages/F1Tenth";
 import Lenia from "./pages/Lenia";
 import DecisionTree from "./pages/DecisionTree";
+import Projects from "./pages/Projects";
 import Footer from "./components/Footer";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/f1tenth" element={<F1Tenth />} />
           <Route path="/decisiontree" element={<DecisionTree />} />
           <Route path="/lenia" element={<Lenia />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </div>
