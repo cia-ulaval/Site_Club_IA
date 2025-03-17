@@ -82,7 +82,7 @@ function MangaAI() {
             for speech bubble detection, optical character recognition (OCR),
             and emotion recognition in illustrations.
           </p>
-          <ImageWithGlow src="/manga109.png" alt="Manga 109" />
+          <ImageWithGlow src="/project/manga109.png" alt="Manga 109" />
           <h5 className="text-xs text-center mb-10 mt-2">
             http://www.manga109.org/ja/index.html
           </h5>
@@ -113,7 +113,7 @@ function MangaAI() {
               </li>
             </ul>
           </p>
-          <ImageWithGlow src="/mangaai.png" alt="Manga AI" />
+          <ImageWithGlow src="/project/mangaai.png" alt="Manga AI" />
           <p className="mb-8 mx-10 mt-10">
             The next phase of the project focuses on replacing existing tools
             with custom models and improving translation quality by leveraging

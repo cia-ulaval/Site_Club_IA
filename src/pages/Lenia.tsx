@@ -74,7 +74,7 @@ function Lenia() {
         grid, this process generates complex, lifelike behaviors from simple
         mathematical rules.
       </p>
-      <ImageWithGlow src="/lenia.png" alt="lenia" />
+      <ImageWithGlow src="/project/lenia.png" alt="lenia" />
       <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify">
         Our team successfully implemented a single-channel version of Lenia,
         where only one "chemical species" exists. However, we faced challenges
@@ -85,7 +85,7 @@ function Lenia() {
         Lenia lacks a standardized library of known patterns, making it harder
         to find stable and fascinating structures.
       </p>
-      <ImageWithGlow src="/leniaexample.gif" alt="lenia gif" />
+      <ImageWithGlow src="/project/leniaexample.gif" alt="lenia gif" />
       <h5 className="text-xs mb-16 mt-2 text-gray-400">
         https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680
       </h5>

@@ -11,28 +11,28 @@ function Home() {
   const toggleMute = () => setIsMuted(!isMuted);
 
   const partners = [
-    "/aesgul.png",
-    "/asetin.png",
-    "/avenirti.png",
-    "/laval.png",
+    "/banner/aesgul.png",
+    "/banner/asetin.png",
+    "/banner/avenirti.png",
+    "/banner/laval.png",
   ];
 
   const projects = [
     {
       title: "Brain Controlled Video Game",
-      image: "/flappycard.jpg",
+      image: "/project/flappycard.jpg",
       description: "EEG controlled retro video game",
       link: "/flapeeg",
     },
     {
       title: "Muscle controlled race car",
-      image: "/f1tenthcar.png",
+      image: "/project/f1tenthcar.png",
       description: "EMG racing with 1/10th scale F1 cars",
       link: "/f1tenth",
     },
     {
       title: "Manga automatic translator",
-      image: "/mangaai2.png",
+      image: "/project/mangaai2.png",
       description: "AI tool that translates manga in real time",
       link: "/mangaai",
     },
