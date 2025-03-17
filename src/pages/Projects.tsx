@@ -52,41 +52,44 @@ function Projects() {
         </p>
       </header>
 
-      <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
+      <Row xs={1} sm={2} md={3} className="g-4 justify-content-center">
         {projects.map((project, index) => (
           <Col key={index} className="d-flex justify-content-center">
             <Card
-              className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
-              style={{ width: "18rem" }} // Increased width
+              className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white shadow-lg transition-transform duration-300 hover:scale-105"
+              style={{ width: "20rem" }}
             >
               <Card.Img
                 variant="top"
                 src={project.image}
-                style={{ height: "250px", objectFit: "cover" }} // Increased height
+                style={{ height: "220px", objectFit: "cover" }}
+                className="rounded-t-lg"
               />
-              <Card.Body>
-                <Card.Title className="text-gray-200">
+              <Card.Body className="flex flex-col h-full">
+                <Card.Title className="text-gray-200 text-xl font-semibold">
                   {project.title}
                 </Card.Title>
-                <Card.Text className="text-gray-400">
+                <Card.Text className="text-gray-400 flex-grow">
                   {project.description}
                 </Card.Text>
-                <div className="mt-4 flex space-x-3">
+                <div className="mt-4 flex flex-wrap gap-3">
                   <Link
                     to={project.link}
-                    className="px-4 py-1.5 text-sm text-white font-medium rounded-lg bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center"
+                    className="px-4 py-2 text-sm text-white font-medium rounded-md bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center justify-center w-full sm:w-auto"
                   >
                     Learn More →
                   </Link>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-1.5 text-sm text-white font-medium rounded-lg bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center space-x-2"
-                  >
-                    <Github className="w-4 h-4" />
-                    <span>GitHub</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 text-sm text-white font-medium rounded-md bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center justify-center w-full sm:w-auto space-x-2"
+                    >
+                      <Github className="w-5 h-5" />
+                      <span>GitHub</span>
+                    </a>
+                  )}
                 </div>
               </Card.Body>
             </Card>

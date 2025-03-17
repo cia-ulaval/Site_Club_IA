@@ -1,62 +1,220 @@
 function Gallery() {
-  const images = [
+  const formationImages = [
     {
-      src: "/club2024.png",
-      desc: "Beautiful Landscape",
+      src: "/formation/tuto2.jpg",
+      desc: "First CIA tutorial",
+    },
+  ];
+
+  const competitionImages = [
+    {
+      src: "/competition/competition-1.jpg",
+      desc: "Competition winners 2024",
     },
     {
-      src: "/clubrencontre.png",
-      desc: "Mountain View",
+      src: "/competition/competition-2.jpg",
+      desc: "During competition",
     },
     {
-      src: "/competition.png",
-      desc: "Sunset Over Water",
+      src: "/competition/competition-3.jpg",
+      desc: "During competition 2",
     },
     {
-      src: "/f1tenth.jpg",
-      desc: "Forest Pathway",
+      src: "/competition/competition-a2024-1.jpg",
+      desc: "During competition 3",
+    },
+  ];
+
+  const projectImages = [
+    {
+      src: "/project/club2024.png",
+      desc: "First meeting for flapeeg project 2024",
     },
     {
-      src: "/presentation.png",
-      desc: "City Lights",
+      src: "/project/clubrencontre.png",
+      desc: "Second meeting for flapeeg project 2024",
     },
     {
-      src: "/testclub.png",
-      desc: "Snowy Mountains",
+      src: "/project/f1cover.png",
+      desc: "EMG Bracelet for F1Tenth project",
     },
     {
-      src: "/tuto2.jpg",
-      desc: "Snowy Mountains",
+      src: "/project/f1tenth.jpg",
+      desc: "F1Tenth meeting",
     },
     {
-      src: "/rencontrecia.jpeg",
-      desc: "Snowy Mountains",
+      src: "/project/f1tenthcar.png",
+      desc: "F1Tenth car",
     },
     {
-      src: "/cialocal.jpg",
-      desc: "Snowy Mountains",
+      src: "/project/flappycard.jpg",
+      desc: "Flapeeg meeting winter 2025",
+    },
+    {
+      src: "/project/lenia.png",
+      desc: "Lenia concept",
+    },
+    {
+      src: "/project/mangaai.png",
+      desc: "Manga AI filter",
+    },
+    {
+      src: "/project/mangaai2.png",
+      desc: "Manga AI pannel detection",
+    },
+  ];
+
+  const communityImages = [
+    {
+      src: "/implication/filleclub.png",
+      desc: "Women and AI club",
+    },
+    {
+      src: "/implication/eeg-presentation.jpg",
+      desc: "EEG presentation to students",
+    },
+    {
+      src: "/implication/flappyeegmain.jpeg",
+      desc: "Executive team with flapeeg project",
+    },
+    {
+      src: "/implication/front-image.png",
+      desc: "CIA presentation to students",
+    },
+    {
+      src: "/implication/kalven-presenter.jpg",
+      desc: "Outside presentation",
+    },
+    {
+      src: "/implication/kiosque.jpg",
+      desc: "CIA stand presentation",
+    },
+    {
+      src: "/implication/kiosque.jpeg",
+      desc: "CIA stand presentation 2",
+    },
+    {
+      src: "/implication/presentation.png",
+      desc: "CIA presentation to students 2",
+    },
+    {
+      src: "/implication/rencontrecia.jpeg",
+      desc: "CIA presentation to students 3",
+    },
+    {
+      src: "/implication/second-image.png",
+      desc: "",
+    },
+    {
+      src: "/implication/table.jpeg",
+      desc: "Executive team at presentation stand",
+    },
+    {
+      src: "/implication/table2.jpeg",
+      desc: "Executive team at presentation stand 2",
+    },
+    {
+      src: "/implication/table3.jpeg",
+      desc: "Executive team at presentation stand 3",
+    },
+    {
+      src: "/implication/testclub.png",
+      desc: "EEG signal demonstration",
     },
   ];
 
   return (
     <section className="container mx-auto p-4 text-center">
       <h1 className="text-5xl font-bold gradient-text mb-6">Gallery</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative overflow-hidden rounded-lg shadow-lg group"
-          >
-            <img
-              src={image.src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              {image.desc}
+
+      <div className="mb-12">
+        <h2 className="text-3xl font-semibold gradient-text mb-4">
+          Formations/Cercles de lecture
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {formationImages.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg group"
+            >
+              <img
+                src={image.src}
+                alt={`Formation image ${index + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {image.desc}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <h2 className="text-3xl font-semibold gradient-text mb-4">
+          Compétitions internes
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {competitionImages.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg group"
+            >
+              <img
+                src={image.src}
+                alt={`Compétition image ${index + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {image.desc}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <h2 className="text-3xl font-semibold gradient-text mb-4">Projets</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {projectImages.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg group"
+            >
+              <img
+                src={image.src}
+                alt={`Projet image ${index + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {image.desc}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mb-12">
+        <h2 className="text-3xl font-semibold gradient-text mb-4">
+          Implications communautaires
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {communityImages.map((image, index) => (
+            <div
+              key={index}
+              className="relative overflow-hidden rounded-lg shadow-lg group"
+            >
+              <img
+                src={image.src}
+                alt={`Community image ${index + 1}`}
+                className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {image.desc}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

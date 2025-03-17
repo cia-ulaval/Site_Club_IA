@@ -79,7 +79,7 @@ function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img
-              src="/flappyeegmain.jpeg"
+              src="/implication/flappyeegmain.jpeg"
               alt="3 managers of the club, one with the EEG headset, smiling during a meeting"
               className="rounded-xl shadow-2xl mt-8"
             />
@@ -147,11 +147,11 @@ function About() {
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover rounded-xl"
-                src="/flappyproto.mp4"
+                src="/project/flappyproto.mp4"
                 autoPlay
                 loop
                 playsInline
-                poster="/test.jpg"
+                poster="" //ADD COVER PICTURE!!!
               />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
                 <div className="flex items-center justify-between">
