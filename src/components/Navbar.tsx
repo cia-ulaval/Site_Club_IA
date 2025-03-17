@@ -9,6 +9,13 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const navLinks = [
+    { to: "/", label: "Home" },
+    { to: "/management", label: "Management" },
+    { to: "/gallery", label: "Gallery" },
+    { to: "/projects", label: "Projects" },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-red-500/20">
       <div className="max-w-7xl mx-auto px-4">
@@ -23,46 +30,19 @@ function Navbar() {
             <span className="text-xl font-bold gradient-text">CIA</span>
           </NavLink>
           <div className="flex space-x-8 relative hidden md:flex">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/management"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Management
-            </NavLink>
-            <NavLink
-              to="/gallery"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Gallery
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Projects
-            </NavLink>
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                    isActive ? "text-red-400" : ""
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
           <button
             onClick={toggleMenu}
@@ -73,50 +53,20 @@ function Navbar() {
         </div>
         {isOpen && (
           <div className="md:hidden">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                } py-2`
-              }
-              onClick={toggleMenu}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/management"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                } py-2`
-              }
-              onClick={toggleMenu}
-            >
-              Management
-            </NavLink>
-            <NavLink
-              to="/gallery"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                } py-2`
-              }
-              onClick={toggleMenu}
-            >
-              Gallery
-            </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                } py-2`
-              }
-              onClick={toggleMenu}
-            >
-              Projects
-            </NavLink>
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  `block text-gray-300 hover:text-rose-500/60 transition-colors ${
+                    isActive ? "text-red-400" : ""
+                  } py-2`
+                }
+                onClick={toggleMenu}
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </div>
         )}
       </div>

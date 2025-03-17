@@ -85,11 +85,7 @@ function Lenia() {
         Lenia lacks a standardized library of known patterns, making it harder
         to find stable and fascinating structures.
       </p>
-      <img
-        className="w-3/4 md:w-2/3 rounded-xl glow-red mx-auto mt-10"
-        src="/leniaexample.gif"
-        alt="lenia gif"
-      ></img>
+      <ImageWithGlow src="/leniaexample.gif" alt="lenia gif" />
       <h5 className="text-xs mb-16 mt-2 text-gray-400">
         https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680
       </h5>

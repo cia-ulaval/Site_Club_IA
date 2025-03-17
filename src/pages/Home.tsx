@@ -49,7 +49,7 @@ function Home() {
       </header>
 
       <div className="hero-card mb-16">
-        <div className="video-container mb-4">
+        <div className="video-container mb-4 relative">
           <video
             className="w-full h-full object-cover"
             src=""
@@ -140,10 +140,10 @@ function Home() {
           Care to join us?
         </h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          We are looking for passionnate people who want to learn and share
-          their knowledge with others. We are open to everyone, no matter your
-          level of expertise. Apply now by joining our Discord server and
-          getting in touch with one of the admins mentionned down below.
+          We are looking for passionate people who want to learn and share their
+          knowledge with others. We are open to everyone, no matter your level
+          of expertise. Apply now by joining our Discord server and getting in
+          touch with one of the admins mentioned down below.
         </p>
         <a
           href="https://discord.gg/ZPVwCjMpAq"

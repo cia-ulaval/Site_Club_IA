@@ -13,7 +13,7 @@ function Footer() {
               Shape the unknown, code the impossible.
             </p>
           </div>
-          <div className="">
+          <div>
             <h4 className="text-lg font-semibold text-red-400 mb-4">Connect</h4>
             <div className="flex space-x-4">
               <a

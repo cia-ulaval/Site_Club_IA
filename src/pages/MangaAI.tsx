@@ -117,10 +117,10 @@ function MangaAI() {
           <p className="mb-8 mx-10 mt-10">
             The next phase of the project focuses on replacing existing tools
             with custom models and improving translation quality by leveraging
-            additional visual information. We will work on Dynamic text resizing
+            additional visual information. We will work on dynamic text resizing
             to ensure proper text fitting within speech bubbles, character
-            gender detection to refine translations, (particularly due to the
-            absence of grammatical gender in Japanese) and character
+            gender detection to refine translations (particularly due to the
+            absence of grammatical gender in Japanese), and character
             identification to maintain dialogue consistency and adapt
             translations based on narrative context. <br></br>
             This project provides an opportunity to explore challenges in

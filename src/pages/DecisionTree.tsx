@@ -62,7 +62,7 @@ function DecisionTree() {
         <h2 id="test" className="text-5xl font-bold gradient-text mb-6">
           Decision Tree
         </h2>
-        <p className="text-xl text-gray-400 mb-16">
+        <p className="text-xl text-gray-400 mb-16 text-justify mx-6">
           Decision trees are inherently interpretable as they provide a simple
           explanation (based on decision rules) of their decision-making
           process, making them essential tools for data scientists. However,
