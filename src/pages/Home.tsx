@@ -57,7 +57,7 @@ function Home() {
             loop
             muted={isMuted}
             playsInline
-            poster="/test.jpg"
+            poster=""
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <div className="flex items-center justify-between">
