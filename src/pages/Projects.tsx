@@ -17,7 +17,6 @@ const projects = [
     image: "/f1cover.png",
     description: "EMG racing with 1/10th scale F1 cars",
     link: "/f1tenth",
-    github: "https://github.com/yourusername/f1tenth",
   },
   {
     title: "MangaAI",
@@ -31,7 +30,6 @@ const projects = [
     image: "/decisiontree.jpg",
     description: "Research and development of decision trees",
     link: "/decisiontree",
-    github: "https://github.com/yourusername/decisiontree",
   },
   {
     title: "Lenia",

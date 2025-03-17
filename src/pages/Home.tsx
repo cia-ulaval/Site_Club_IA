@@ -21,19 +21,19 @@ function Home() {
     {
       title: "Brain Controlled Video Game",
       image: "/flappycard.jpg",
-      description: "Group meeting for flappyeeg project",
+      description: "EEG controlled retro video game",
       link: "/flappyeeg",
     },
     {
       title: "Muscle controlled race car",
-      image: "/f1cover.png",
-      description: "image representing the f1tenth device",
+      image: "/f1tenthcar.png",
+      description: "EMG racing with 1/10th scale F1 cars",
       link: "/f1tenth",
     },
     {
       title: "Manga automatic translator",
       image: "/mangaai2.png",
-      description: "image representing the manga ai detection",
+      description: "AI tool that translates manga in real time",
       link: "/mangaai",
     },
   ];
@@ -52,7 +52,7 @@ function Home() {
         <div className="video-container mb-4">
           <video
             className="w-full h-full object-cover"
-            src="/testvideo.mp4"
+            src=""
             autoPlay
             loop
             muted={isMuted}

@@ -3,22 +3,32 @@ import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
 const teamMembers = [
   {
     icon: <TextCursorInput className="w-8 h-8" />,
-    title: "Théophile Berteloot",
+    title: "Émylie-Rose Desmarais",
     description: "", // Add description
   },
   {
     icon: <SwatchBook className="w-8 h-8" />,
-    title: "Loïc Baret",
+    title: "Benjamin Leblanc",
     description: "", // Add description
   },
   {
     icon: <Rss className="w-8 h-8" />,
-    title: "Xavier Legault",
+    title: "Antoine Jean",
     description: "", // Add description
   },
   {
     icon: <Braces className="w-8 h-8" />,
-    title: "And others",
+    title: "Tadagbé Dhossou",
+    description: "",
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "Alamaoudata Walet",
+    description: "",
+  },
+  {
+    icon: <Braces className="w-8 h-8" />,
+    title: "Mathieu Bazinet",
     description: "",
   },
 ];

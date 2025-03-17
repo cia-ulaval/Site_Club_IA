@@ -78,8 +78,8 @@ function F1Tenth() {
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2 md:order-2">
             <img
-              src="/test.jpg"
-              alt="test image (temporary)"
+              src="/f1tenthcar.png"
+              alt="The cars we use for the f1tenth project"
               className="w-full rounded-xl shadow-2xl"
             />
           </div>
