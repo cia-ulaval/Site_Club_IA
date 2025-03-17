@@ -1,7 +1,7 @@
 # 🧠 Artificial Intelligence Club - Université Laval
 
 <p align="center">
-  <img src="./public/CIA_LOGO.png" alt="CIA Logo" width="150">
+  <img src="./public/banner/CIA_LOGO.png" alt="CIA Logo" width="150">
 </p>
 
 ## 🌐 Project Description
