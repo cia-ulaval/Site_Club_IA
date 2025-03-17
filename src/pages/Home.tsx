@@ -22,7 +22,7 @@ function Home() {
       title: "Brain Controlled Video Game",
       image: "/flappycard.jpg",
       description: "EEG controlled retro video game",
-      link: "/flappyeeg",
+      link: "/flapeeg",
     },
     {
       title: "Muscle controlled race car",

@@ -11,7 +11,7 @@ import {
   Pause,
 } from "lucide-react";
 
-function About() {
+function FlapEEG() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -64,7 +64,7 @@ function About() {
     {
       icon: <Radical className="w-8 h-8" />,
       title: "Hedi Braham",
-      description: "Dealt with the data and it's collection.",
+      description: "Dealt with the data and its collection.",
     },
     {
       icon: <Rocket className="w-8 h-8" />,
@@ -92,18 +92,18 @@ function About() {
               FlapEEG is a video game that is controlled by thought. We have
               trained an AI model to interpret brain signals and translate them
               into actions in the game. For this to work, we equipped ourselves
-              with the latest EEG (electroencephalogram) technology and and a
-              lot of patience. It was hard at first, we needed to test with
-              simple algorithms, but once we got the hang of it, we introduced
-              our AI model and with trial and error, got it to understand the
-              brain signals. The game is now fully functional and every thought
-              you have counts: that's how you control your caracter!
+              with the latest EEG (electroencephalogram) technology and a lot of
+              patience. It was hard at first, we needed to test with simple
+              algorithms, but once we got the hang of it, we introduced our AI
+              model and with trial and error, got it to understand the brain
+              signals. The game is now fully functional and every thought you
+              have counts: that's how you control your character!
             </p>
             <p className="text-gray-400 text-justify">
               The format of the game is simple; ever heard of flappy bird? Well,
               it's the same simple yet fun concept. The only difference is that
               you control the bird with your thoughts. The simple will to make
-              the little caracter avoid obstacles is enough to make it move. We
+              the little character avoid obstacles is enough to make it move. We
               are very proud of the work we have accomplished; it may only be
               the beginning of a video game revolution! Think about it, what if
               we combined this mechanic to a VR headset? 100% immersion, 100%
@@ -139,7 +139,7 @@ function About() {
 
       <section id="Week1" className="mb-20 text-justify">
         <h2 className="text-3xl font-bold gradient-text mb-6">
-          Our begginings (Week 1)
+          Our beginnings (Week 1)
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="hero-card">
@@ -172,11 +172,11 @@ function About() {
           <div>
             <p className="text-gray-400 mb-6">
               Just like any other project, FlapEEG had a beginning. It all
-              started during the the spring semester of 2024. It was a rough
-              start: we had many participants and loads of ideas, but the
-              organisation was very hard to manage. Members came and went, and
-              people of course had exmans and other things to attend which left
-              us with a very different load of work to do.
+              started during the spring semester of 2024. It was a rough start:
+              we had many participants and loads of ideas, but the organization
+              was very hard to manage. Members came and went, and people of
+              course had exams and other things to attend which left us with a
+              very different load of work to do.
             </p>
             <p className="text-gray-400">
               All that to say, that semester, we didn't get as much as we
@@ -185,7 +185,7 @@ function About() {
               new concept: instead of open to everyone, we would screen the
               participants and make a choice based on their skills, their
               availability but most importantly, their interest in the project.
-              This way, we were able to work much more efficiently and adress
+              This way, we were able to work much more efficiently and address
               any issues immediately. It was indeed a great success! We were
               able to finish the first step of FlapEEG before our deadline: Make
               it work with a simple algorithm that would detect blinks. Our
@@ -203,7 +203,7 @@ function About() {
         </p>
       </section>
 
-      <section id="Week2-4" className="mb-20 text-justify ">
+      <section id="Week2-4" className="mb-20 text-justify">
         <h2 className="text-3xl font-bold gradient-text mb-6">
           Collecting Data (Week 2 - Week 4)
         </h2>
@@ -213,7 +213,7 @@ function About() {
           to interpret brain signals. We had to find a way to collect this data
           and to make sure it was clean and usable. To do that, we asked many
           participants to perform a series of tests with the headset. We then
-          hard Jordan and Dereck work on a way to clean the data and make it
+          had Jordan and Dereck work on a way to clean the data and make it
           usable.
         </p>
 
@@ -237,16 +237,16 @@ function About() {
           Training (Week 4 - Week 6)
         </h2>
         <p className="text-gray-400">Coming soon...</p>
+      </section>
 
-        <section id="Week6-9" className="mb-20">
-          <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
-            Optimization (Week 6 - Week 9)
-          </h2>
-          <p className="text-gray-400 p">Coming soon...</p>
-        </section>
+      <section id="Week6-9" className="mb-20">
+        <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
+          Optimization (Week 6 - Week 9)
+        </h2>
+        <p className="text-gray-400">Coming soon...</p>
       </section>
     </div>
   );
 }
 
-export default About;
+export default FlapEEG;
