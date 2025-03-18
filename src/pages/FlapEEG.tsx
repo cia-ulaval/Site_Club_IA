@@ -60,7 +60,8 @@ function FlapEEG() {
     {
       icon: <Target className="w-8 h-8" />,
       title: "Estelle Tournassat",
-      description: "Trained the AI model and ",
+      description:
+        "Trained the AI model and helped the team understand the challenges",
     },
     {
       icon: <Radical className="w-8 h-8" />,
