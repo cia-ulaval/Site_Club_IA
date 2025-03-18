@@ -2,7 +2,9 @@ import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ImageCarousel } from "../components/Carousel";
+// import { ImageCarousel } from "../components/Carousel"; // Uncomment if you plan to use it
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -14,7 +16,7 @@ function Home() {
     "/banner/aesgul.png",
     "/banner/asetin.png",
     "/banner/avenirti.png",
-    "/banner/laval.png",
+    "/banner/ulaval.png",
   ];
 
   const projects = [
@@ -100,7 +102,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="mb-16">
+      <div className="mb-16 pt-20">
         <motion.div
           className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors"
           initial={{ opacity: 0 }}
@@ -122,7 +124,7 @@ function Home() {
         </motion.div>
       </div>
 
-      <section className="mb-20">
+      <section className="mb-20 pt-20">
         <motion.h2
           className="text-4xl font-bold gradient-text text-center mb-12"
           initial={{ opacity: 0 }}
@@ -162,14 +164,14 @@ function Home() {
         </div>
       </section>
 
-      <section className="text-center mb-20">
+      <section className="text-center mb-20 pt-20">
         <motion.h2
           className="text-4xl font-bold gradient-text mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          Interesting in collborating?
+          Interesting in collaborating?
         </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
           Sponsors help us to achieve our goals and to make our projects a
@@ -183,45 +185,7 @@ function Home() {
           View our plans
         </Link>
       </section>
-
-      <section className="overflow-hidden mt-24">
-        <h6 className="text-2xl text-gray-300 text-center mb-10">
-          Our partners
-        </h6>
-        <div className="relative w-full">
-          <div className="flex overflow-hidden">
-            <motion.div
-              className="flex gap-24 items-center"
-              animate={{
-                x: [0, -1035],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                ease: "linear",
-                repeatType: "loop",
-              }}
-            >
-              {partners.map((src, index) => (
-                <img
-                  key={`first-${index}`}
-                  src={src}
-                  alt={`Partner ${index + 1}`}
-                  className="h-20 w-auto object-contain"
-                />
-              ))}
-              {partners.map((src, index) => (
-                <img
-                  key={`second-${index}`}
-                  src={src}
-                  alt={`Partner ${index + 1}`}
-                  className="h-20 w-auto object-contain"
-                />
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      <ImageCarousel images={partners} />
     </div>
   );
 }
