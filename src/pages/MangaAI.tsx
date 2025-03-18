@@ -172,7 +172,7 @@ function MangaAI() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="w-3/4 mx-auto px-6 py-16 border border-red-800 hover:border-red-500 transition-colors rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-3/4 mx-auto px-6 py-16 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

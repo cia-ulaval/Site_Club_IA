@@ -96,3 +96,11 @@
 .glow-red {
   box-shadow: 0 0 100px 1px rgba(255, 0, 0, 0.5); /* Red glow */
 }
+
+.container {
+  @apply border border-red-800 transition-colors duration-300;
+}
+
+.container:hover {
+  @apply border-red-600;
+}

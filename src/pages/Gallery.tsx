@@ -35,10 +35,6 @@ function Gallery() {
       desc: "Second meeting for flapeeg project 2024",
     },
     {
-      src: "/project/f1cover.png",
-      desc: "EMG Bracelet for F1Tenth project",
-    },
-    {
       src: "/project/f1tenth.jpg",
       desc: "F1Tenth meeting",
     },
@@ -49,18 +45,6 @@ function Gallery() {
     {
       src: "/project/flappycard.jpg",
       desc: "Flapeeg meeting winter 2025",
-    },
-    {
-      src: "/project/lenia.png",
-      desc: "Lenia concept",
-    },
-    {
-      src: "/project/mangaai.png",
-      desc: "Manga AI filter",
-    },
-    {
-      src: "/project/mangaai2.png",
-      desc: "Manga AI pannel detection",
     },
   ];
 

@@ -169,24 +169,19 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          Care to join us?
+          Interesting in collborating?
         </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          We are looking for passionate people who want to learn and share their
-          knowledge with others. We are open to everyone, no matter your level
-          of expertise. Apply now by joining our Discord server and getting in
-          touch with one of the admins mentioned down below.
+          Sponsors help us to achieve our goals and to make our projects a
+          reality. If you are interested in collaborating with us, we offer
+          different plans that can suit your needs.
         </p>
-        <motion.a
-          href="https://discord.gg/ZPVwCjMpAq"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/collaboration"
           className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
-          Join our Discord
-        </motion.a>
+          View our plans
+        </Link>
       </section>
 
       <section className="overflow-hidden mt-24">

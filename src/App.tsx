@@ -10,6 +10,7 @@ import F1Tenth from "./pages/F1Tenth";
 import Lenia from "./pages/Lenia";
 import DecisionTree from "./pages/DecisionTree";
 import Projects from "./pages/Projects";
+import Collaboration from "./pages/Collaboration";
 import Footer from "./components/Footer";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/decisiontree" element={<DecisionTree />} />
           <Route path="/lenia" element={<Lenia />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/collaboration" element={<Collaboration />} />
         </Routes>
         <Footer />
       </div>
