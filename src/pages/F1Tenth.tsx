@@ -53,22 +53,22 @@ const team2 = [
   {
     icon: <Lightbulb className="w-8 h-8" />,
     title: "Alexandre Laforest",
-    description: "Member",
+    description: "",
   },
   {
     icon: <UserRoundCog className="w-8 h-8" />,
     title: "Jade Piller Cammal",
-    description: "Member",
+    description: "",
   },
   {
     icon: <Rotate3d className="w-8 h-8" />,
     title: "Karima Habbout",
-    description: "Member",
+    description: "",
   },
   {
     icon: <Braces className="w-8 h-8" />,
     title: "Simon Gouin",
-    description: "Member",
+    description: "",
   },
 ];
 

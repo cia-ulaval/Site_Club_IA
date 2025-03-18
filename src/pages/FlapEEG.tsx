@@ -38,39 +38,39 @@ function FlapEEG() {
       icon: <Users className="w-8 h-8" />,
       title: "Louis-Étienne Messier",
       description:
-        "Team Lead and project manager. He is the one who makes sure everything goes smoothly.",
+        "Main contributor to the project. Set up the server, custom interface and helped with coding",
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Jordan Mathieu",
-      description:
-        "VP and partnership manager. He is the one who finds the best partners for our projects.",
+      description: "Handled data collection, annotation and cleaning",
     },
     {
       icon: <Rotate3d className="w-8 h-8" />,
       title: "Dereck Bélanger",
       description:
-        "The author of this website and contributor to FlappyEEG's early beginnings.",
+        "Author of this website, coded the baseline treshold and feature extraction algorithms",
     },
     {
       icon: <Braces className="w-8 h-8" />,
       title: "Amen Ouannes",
-      description: "Responsible of the AI model.",
+      description:
+        "Trained the AI model and helped the team understand the challenges",
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Estelle Tournassat",
-      description: "Responsible for the AI model's training and testing.",
+      description: "Trained the AI model and ",
     },
     {
       icon: <Radical className="w-8 h-8" />,
       title: "Hedi Braham",
-      description: "Dealt with the data and its collection.",
+      description: "Dealt with the data collection and protocols",
     },
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "William Blanchet Lafrenière",
-      description: "Helped with the game's development.",
+      description: "Main contributor to the game development.",
     },
   ];
 
@@ -263,16 +263,38 @@ function FlapEEG() {
 
           <section id="Week4-6" className="mb-20">
             <h2 className="text-3xl font-bold gradient-text mb-6">
-              Training (Week 4 - Week 6)
+              Data Collection (Week 4 - Week 6)
             </h2>
-            <p className="text-gray-400">Coming soon...</p>
+            <p className="text-gray-400 pb-4">
+              At this point in the project, we hit a challenge. Louis found out
+              our data wasn't properly filtered and we had a lot of noise around
+              the 60Hz frequency which made it unusable. Jordan took care of
+              this and found a way to filter out the noise.
+            </p>
+            <p className="text-gray-400">
+              This leads us to the middle of the semester; everyone is preparing
+              for the exams so we decided to take the next week or two reading
+              scientific papers and sharing our discoveries with each other to
+              face the future challenges.
+            </p>
           </section>
 
           <section id="Week6-9" className="mb-20">
             <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
-              Optimization (Week 6 - Week 9)
+              Training (Week 6 - Week 9)
             </h2>
-            <p className="text-gray-400">Coming soon...</p>
+            <p className="text-gray-400">
+              Once the midterms out of the way, we regrouped and discussed of
+              the next steps. The key step was to take out any noise from
+              muscular or eye movements from our data and to focus on the
+              intention signals only. it was hard because our our first
+              protocols all included eye movements which were difficult to
+              isolate from the intention signals, but after a meeting where the
+              whole team shared their ideas, we were able to come up with a new
+              optimized protocol that would allow us to train our AI model to
+              understand the brain signals and to translate them into actions in
+              the game.
+            </p>
           </section>
         </div>
       </motion.div>

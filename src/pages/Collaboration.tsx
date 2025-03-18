@@ -151,7 +151,7 @@ interface SponsorshipTierProps {
 
 const SponsorshipTier = ({ tier }: SponsorshipTierProps) => (
   <motion.div
-    className={`p-6 rounded-xl bg-gradient-to-br ${tier.color} border border-red-800/30 hover:border-red-400/70 transition-all duration-300 flex flex-col h-full`}
+    className={`p-6 rounded-xl bg-gradient-to-br ${tier.color} border-2 border-red-800/30 hover:border-red-400/70 transition-all duration-300 flex flex-col h-full`}
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
