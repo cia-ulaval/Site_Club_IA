@@ -11,9 +11,9 @@ function Navbar() {
 
   const navLinks = [
     { to: "/", label: "Home" },
+    { to: "/projects", label: "Projects" },
     { to: "/management", label: "Management" },
     { to: "/gallery", label: "Gallery" },
-    { to: "/projects", label: "Projects" },
   ];
 
   return (

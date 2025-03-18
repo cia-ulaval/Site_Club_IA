@@ -1,5 +1,7 @@
 import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
+import { motion } from "framer-motion";
 
+// Team members data
 const teamMembers = [
   {
     icon: <TextCursorInput className="w-8 h-8" />,
@@ -33,36 +35,71 @@ const teamMembers = [
   },
 ];
 
+// Motion variants for animation
+const fadeInVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 const TeamSection = () => (
-  <section className="mb-20">
+  <motion.section
+    className="mb-20"
+    initial="hidden"
+    animate="visible"
+    variants={fadeInVariants}
+  >
     <h2 className="text-3xl font-bold gradient-text text-center mb-12">
       The Team
     </h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
+    <motion.div
+      className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6"
+      initial="hidden"
+      animate="visible"
+      variants={fadeInVariants}
+    >
       {teamMembers.map((member, index) => (
-        <div
+        <motion.div
           key={index}
           className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
         >
           <div className="text-red-400 mb-4 flex justify-center">
             {member.icon}
           </div>
           <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
           <p className="text-gray-400">{member.description}</p>
-        </div>
+        </motion.div>
       ))}
-    </div>
-  </section>
+    </motion.div>
+  </motion.section>
 );
 
 function DecisionTree() {
   return (
-    <section className="mb-20">
+    <motion.section
+      className="mb-20"
+      initial="hidden"
+      animate="visible"
+      variants={fadeInVariants}
+    >
       <div className="text-center max-w-3xl mx-auto">
-        <h2 id="test" className="text-5xl font-bold gradient-text mb-6">
+        <motion.h2
+          id="test"
+          className="text-5xl font-bold gradient-text mb-6"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
+        >
           Decision Tree
-        </h2>
-        <p className="text-xl text-gray-400 mb-16 text-justify mx-6">
+        </motion.h2>
+        <motion.p
+          className="text-xl text-gray-400 mb-16 text-justify mx-6"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
+        >
           Decision trees are inherently interpretable as they provide a simple
           explanation (based on decision rules) of their decision-making
           process, making them essential tools for data scientists. However,
@@ -72,10 +109,10 @@ function DecisionTree() {
           representative subset of the data that would produce simpler yet
           equally effective decision trees? This is the question we aim to
           answer in this research project.
-        </p>
+        </motion.p>
         <TeamSection />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

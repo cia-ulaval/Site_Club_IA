@@ -1,104 +1,258 @@
-import { Apple, Baby, Asterisk, Bean } from "lucide-react";
+import {
+  Apple,
+  Baby,
+  Asterisk,
+  Bean,
+  Grid,
+  ZoomIn,
+  Sparkles,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
+// Project features with icons
+const features = [
+  {
+    icon: <Grid className="w-6 h-6 text-red-400" />,
+    title: "Continuous Automaton",
+    description: "Beyond binary states of Game of Life",
+  },
+  {
+    icon: <Sparkles className="w-6 h-6 text-red-400" />,
+    title: "Emergent Behaviors",
+    description: "Complex lifelike patterns emerge",
+  },
+  {
+    icon: <ZoomIn className="w-6 h-6 text-red-400" />,
+    title: "Explorative Research",
+    description: "Pushing boundaries of self-organization",
+  },
+];
 
 const teamMembers = [
   {
     icon: <Apple className="w-8 h-8" />,
     title: "Théophile Berteloot",
+    role: "",
   },
   {
     icon: <Baby className="w-8 h-8" />,
     title: "Jordan Mathieu",
+    role: "",
   },
   {
     icon: <Bean className="w-8 h-8" />,
     title: "Louis-Étienne Messier",
+    role: "",
   },
   {
     icon: <Asterisk className="w-8 h-8" />,
     title: "And others",
+    role: "",
   },
 ];
 
+interface ImageWithGlowProps {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
+  <motion.div
+    className="text-center mb-4 relative overflow-hidden rounded-xl"
+    whileHover={{
+      scale: 1.03,
+      transition: { duration: 0.3 },
+    }}
+  >
+    <motion.img
+      src={src}
+      alt={alt}
+      className="w-full md:w-2/3 mx-auto rounded-xl shadow-xl border border-red-800/30"
+      initial={{ y: 10, opacity: 0.8 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-100px" }}
+    />
+    {caption && <div className="text-xs text-gray-500 mt-2">{caption}</div>}
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/20 to-red-900/20 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+  </motion.div>
+);
+
 const TeamSection = () => (
-  <section className="mb-20 mt-20">
-    <h2 className="text-3xl font-bold gradient-text text-center mb-12">
+  <section className="py-16 relative mb-10 mt-10">
+    {/* Background design element */}
+    <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+    <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
+
+    <motion.h2
+      className="text-4xl font-bold gradient-text text-center mb-12"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
       The Team
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    </motion.h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
       {teamMembers.map((member, index) => (
-        <div
+        <motion.div
           key={index}
-          className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+          className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
-          <div className="text-red-400 mb-4 flex justify-center">
+          <div className="text-red-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
             {member.icon}
           </div>
           <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
-        </div>
+          <p className="text-red-400/80 text-sm">{member.role}</p>
+        </motion.div>
       ))}
     </div>
   </section>
 );
 
-const ImageWithGlow = ({ src, alt }: { src: string; alt: string }) => (
-  <div className="text-center mb-8 grid place-items-center">
-    <img src={src} alt={alt} className="w-3/4 md:w-2/3 rounded-xl glow-red" />
-  </div>
-);
-
 function Lenia() {
   return (
-    <div className="container mx-auto p-4 text-center">
-      <h1 className="text-5xl font-bold gradient-text mb-6">Lenia</h1>
-      <h2 className="text-4xl mb-6">What is Lenia?</h2>
-      <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify mb-10">
-        Artificial intelligence isn't just about neural networks or traditional
-        algorithms. Some systems, based on simple rules, can generate
-        astonishingly complex behaviors. This is the case with Lenia, an
-        advanced cellular automaton inspired by the famous Game of Life by John
-        Conway. <br></br>
-        <br></br>Unlike the Game of Life, where cells are either alive or dead
-        and evolve in discrete steps, Lenia operates with continuous values and
-        fluid time. This allows for the emergence of dynamic, self-organizing
-        structures that behave in ways reminiscent of living organisms. Each
-        pixel (or "cell") in Lenia has a numerical value, which can be thought
-        of as the concentration of a chemical species. These cells interact with
-        their surroundings using convolution filters, which determine how a cell
-        "perceives" its neighbors. A convolution filter is essentially a
-        weighted sum of nearby cell values, meaning that instead of just
-        checking immediate neighbors, Lenia applies a structured pattern—often
-        in the shape of a ring—to determine how different distances contribute
-        to a cell’s evolution. The result is then passed through a growth
-        function, which decides whether a cell's value increases or decreases
-        based on the surrounding environment. When applied across the entire
-        grid, this process generates complex, lifelike behaviors from simple
-        mathematical rules.
-      </p>
-      <ImageWithGlow src="/project/lenia.png" alt="lenia" />
-      <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify">
-        Our team successfully implemented a single-channel version of Lenia,
-        where only one "chemical species" exists. However, we faced challenges
-        in extending it to three channels, where multiple interacting species
-        (represented as RGB values in visualization) would dramatically expand
-        the possibilities for emergent behaviors. Unlike the Game of Life, which
-        has a well-documented "bestiary" of interesting starting configurations,
-        Lenia lacks a standardized library of known patterns, making it harder
-        to find stable and fascinating structures.
-      </p>
-      <ImageWithGlow src="/project/leniaexample.gif" alt="lenia gif" />
-      <h5 className="text-xs mb-16 mt-2 text-gray-400">
-        https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680
-      </h5>
+    <section className="relative overflow-hidden">
+      {/* Abstract background elements */}
+      <div className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"></div>
 
-      <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify">
-        This project offers an exciting opportunity to explore emergence in
-        artificial intelligence, where complex behaviors arise from simple
-        interactions. We invite students, researchers, and AI enthusiasts to
-        join us in pushing the boundaries of self-organizing systems and
-        discovering the hidden potential of Lenia.
-      </p>
-      <TeamSection />
-    </div>
+      <motion.div
+        className="container mx-auto p-4 text-center max-w-5xl"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        {/* Hero section with animated title */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-12"
+        >
+          <h1 className="text-6xl font-bold mb-4">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+              Lenia
+            </span>
+          </h1>
+          <h2 className="text-4xl font-bold text-white mb-6">What is Lenia?</h2>
+        </motion.div>
+
+        {/* Feature badges */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="flex items-center gap-2 px-4 py-2 bg-red-900/20 rounded-full border border-red-800/30"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+            >
+              {feature.icon}
+              <span className="text-sm font-medium text-white">
+                {feature.title}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Main content section */}
+        <motion.section
+          className="mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <div className="bg-gradient-to-br from-red-900/20 to-black/40 rounded-2xl p-8 border border-red-800/20 shadow-xl mx-6">
+            <motion.p
+              className="w-full md:w-4/5 mx-auto text-lg text-gray-400 text-justify mb-10"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Artificial intelligence isn't just about neural networks or
+              traditional algorithms. Some systems, based on simple rules, can
+              generate astonishingly complex behaviors. This is the case with
+              Lenia, an advanced cellular automaton inspired by the famous Game
+              of Life by John Conway. <br></br>
+              <br></br>Unlike the Game of Life, where cells are either alive or
+              dead and evolve in discrete steps, Lenia operates with continuous
+              values and fluid time. This allows for the emergence of dynamic,
+              self-organizing structures that behave in ways reminiscent of
+              living organisms. Each pixel (or "cell") in Lenia has a numerical
+              value, which can be thought of as the concentration of a chemical
+              species. These cells interact with their surroundings using
+              convolution filters, which determine how a cell "perceives" its
+              neighbors. A convolution filter is essentially a weighted sum of
+              nearby cell values, meaning that instead of just checking
+              immediate neighbors, Lenia applies a structured pattern—often in
+              the shape of a ring—to determine how different distances
+              contribute to a cell's evolution. The result is then passed
+              through a growth function, which decides whether a cell's value
+              increases or decreases based on the surrounding environment. When
+              applied across the entire grid, this process generates complex,
+              lifelike behaviors from simple mathematical rules.
+            </motion.p>
+
+            <ImageWithGlow
+              src="/project/lenia.png"
+              alt="Lenia pattern example"
+            />
+
+            <motion.p
+              className="w-full md:w-4/5 mx-auto text-lg mt-8 text-gray-400 text-justify mb-10"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Our team successfully implemented a single-channel version of
+              Lenia, where only one "chemical species" exists. However, we faced
+              challenges in extending it to three channels, where multiple
+              interacting species (represented as RGB values in visualization)
+              would dramatically expand the possibilities for emergent
+              behaviors. Unlike the Game of Life, which has a well-documented
+              "bestiary" of interesting starting configurations, Lenia lacks a
+              standardized library of known patterns, making it harder to find
+              stable and fascinating structures.
+            </motion.p>
+
+            <ImageWithGlow
+              src="/project/leniaexample.gif"
+              alt="Lenia animation example"
+              caption="https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680"
+            />
+
+            <motion.p
+              className="w-full md:w-4/5 mx-auto text-lg mt-12 text-gray-400 text-justify"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              This project offers an exciting opportunity to explore emergence
+              in artificial intelligence, where complex behaviors arise from
+              simple interactions. We invite students, researchers, and AI
+              enthusiasts to join us in pushing the boundaries of
+              self-organizing systems and discovering the hidden potential of
+              Lenia.
+            </motion.p>
+          </div>
+        </motion.section>
+
+        {/* Team section */}
+        <TeamSection />
+      </motion.div>
+    </section>
   );
 }
 

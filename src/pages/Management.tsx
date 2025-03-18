@@ -90,8 +90,10 @@ const Management = () => {
     title: string
   ) => (
     <section className="max-w-7xl mx-auto px-4 pb-8">
-      <h1 className="text-center text-5xl font-bold gradient-text mt-20 mb-20">
-        {title}
+      <h1 className="text-6xl font-bold mb-4 text-center mt-20 pb-16">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+          {title}
+        </span>
       </h1>
       <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
         {cards.map((card, idx) => (
@@ -124,7 +126,7 @@ const Management = () => {
     <div>
       {renderCards(cardData.slice(0, 8), "Executive Team")}
       {renderCards(cardData.slice(8, 12), "Leadership Team")}
-      {renderCards(cardData.slice(12), "Associate")}
+      {renderCards(cardData.slice(12), "Associates")}
     </div>
   );
 };

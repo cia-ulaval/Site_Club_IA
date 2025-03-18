@@ -10,6 +10,7 @@ import {
   Play,
   Pause,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 function FlapEEG() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -75,7 +76,12 @@ function FlapEEG() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
-      <section className="mb-20">
+      <motion.section
+        className="mb-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <img
@@ -85,9 +91,11 @@ function FlapEEG() {
             />
           </div>
           <div className="flex flex-col justify-center">
-            <h2 className="text-5xl font-bold gradient-text mb-6 text-justify">
-              FlapEEG
-            </h2>
+            <h1 className="text-6xl font-bold mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                FlapEEG
+              </span>
+            </h1>
             <p className="text-gray-400 mb-6 text-justify">
               FlapEEG is a video game that is controlled by thought. We have
               trained an AI model to interpret brain signals and translate them
@@ -113,17 +121,25 @@ function FlapEEG() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="mb-20 mt-20">
+      <motion.section
+        className="mb-20 mt-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           The Team
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <div
+            <motion.div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 * index, duration: 1 }}
             >
               <div className="text-red-400 mb-4 flex justify-center">
                 {member.icon}
@@ -132,10 +148,10 @@ function FlapEEG() {
                 {member.title}
               </h3>
               <p className="text-gray-400">{member.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       <section id="Week1" className="mb-20 text-justify">
         <h2 className="text-3xl font-bold gradient-text mb-6">

@@ -41,11 +41,25 @@ function Home() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
-        <h1 className="text-6xl font-bold gradient-text mb-4">C.I.A.</h1>
-        <p className="text-2xl text-gray-300">
+        <motion.h1
+          className="text-6xl font-bold mb-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+            C.I.A
+          </span>
+        </motion.h1>
+        <motion.p
+          className="text-2xl text-gray-300"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+        >
           Welcome to the Club d'Intelligence Artificielle (CIA) of Laval
           University!
-        </p>
+        </motion.p>
       </header>
 
       <div className="hero-card mb-16">
@@ -87,31 +101,44 @@ function Home() {
       </div>
 
       <div className="mb-16">
-        <div className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors">
+        <motion.div
+          className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           <h2 className="text-2xl font-bold mb-4 gradient-text pl-4">
             About Us
           </h2>
           <p className="text-gray-400 text-lg text-justify p-3">
-            The CIA is the artificial intelligence club of the Laval University.
-            As the name suggests, we are a group of students interested in
+            The CIA is the artificial intelligence club of Laval University. As
+            the name suggests, we are a group of students interested in
             artificial intelligence and machine learning. Every year, we work on
             different projects that allow us to explore the field of AI and to
             learn new things. We are open to everyone, no matter your level of
             expertise. Keep scrolling to learn more about our projects and how
             to join us!
           </p>
-        </div>
+        </motion.div>
       </div>
 
       <section className="mb-20">
-        <h2 className="text-4xl font-bold gradient-text text-center mb-12">
+        <motion.h2
+          className="text-4xl font-bold gradient-text text-center mb-12"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.5 }}
+        >
           Some of our work
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
               className="group relative overflow-hidden rounded-xl"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 * index }}
             >
               <img
                 src={project.image}
@@ -130,29 +157,36 @@ function Home() {
                   Learn more <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       <section className="text-center mb-20">
-        <h2 className="text-4xl font-bold gradient-text mb-8">
+        <motion.h2
+          className="text-4xl font-bold gradient-text mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
           Care to join us?
-        </h2>
+        </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
           We are looking for passionate people who want to learn and share their
           knowledge with others. We are open to everyone, no matter your level
           of expertise. Apply now by joining our Discord server and getting in
           touch with one of the admins mentioned down below.
         </p>
-        <a
+        <motion.a
           href="https://discord.gg/ZPVwCjMpAq"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         >
           Join our Discord
-        </a>
+        </motion.a>
       </section>
 
       <section className="overflow-hidden mt-24">

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Users,
   Lightbulb,
@@ -74,7 +75,12 @@ const team2 = [
 function F1Tenth() {
   return (
     <div className="container mx-auto p-4">
-      <section className="mb-20">
+      <motion.section
+        className="mb-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <div className="flex flex-col md:flex-row gap-12">
           <div className="md:w-1/2 md:order-2">
             <img
@@ -84,7 +90,11 @@ function F1Tenth() {
             />
           </div>
           <div className="md:w-1/2 flex flex-col text-justify">
-            <h2 className="text-5xl font-bold gradient-text mb-6">F1 Tenth</h2>
+            <h1 className="text-6xl font-bold mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                F1Tenth
+              </span>
+            </h1>
             <p className="text-gray-400 mb-6">
               Thrill-seeker? This project will capture your interest! F1 Tenth
               is a team of students passionate about AI who have successfully
@@ -106,17 +116,26 @@ function F1Tenth() {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      <section id="team1" className="mb-20 mt-20">
+      <motion.section
+        id="team1"
+        className="mb-20 mt-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           Team 1
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {team1.map((value, index) => (
-            <div
+            <motion.div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
@@ -125,20 +144,29 @@ function F1Tenth() {
                 {value.title}
               </h3>
               <p className="text-gray-400">{value.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section id="team2" className="mb-20 mt-20">
+      <motion.section
+        id="team2"
+        className="mb-20 mt-20"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-3xl font-bold gradient-text text-center mb-12">
           Team 2
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {team2.map((value, index) => (
-            <div
+            <motion.div
               key={index}
               className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="text-red-400 mb-4 flex justify-center">
                 {value.icon}
@@ -147,10 +175,10 @@ function F1Tenth() {
                 {value.title}
               </h3>
               <p className="text-gray-400">{value.description}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

@@ -128,7 +128,9 @@ function Gallery() {
     title: string
   ) => (
     <div className="mb-16">
-      <h2 className="text-3xl font-semibold gradient-text mb-8">{title}</h2>
+      <h2 className="text-3xl font-semibold gradient-text mb-16 pt-20">
+        {title}
+      </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {images.map((image, index) => (
           <div
@@ -151,7 +153,11 @@ function Gallery() {
 
   return (
     <section className="container mx-auto p-4 text-center">
-      <h1 className="text-5xl font-bold gradient-text mb-12">Gallery</h1>
+      <h1 className="text-6xl font-bold mb-4">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+          Gallery
+        </span>
+      </h1>
       {renderImages(formationImages, "Formations/Cercles de lecture")}
       {renderImages(competitionImages, "Compétitions internes")}
       {renderImages(projectImages, "Projets")}

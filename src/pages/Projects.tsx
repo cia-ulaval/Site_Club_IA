@@ -45,7 +45,10 @@ function Projects() {
     <div className="max-w-7xl mx-auto px-6 py-16">
       <header className="text-center mb-12">
         <h1 className="text-5xl font-extrabold text-white tracking-wide">
-          Our <span className="text-red-500">Projects</span>
+          Our{" "}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+            Projects
+          </span>
         </h1>
         <p className="text-lg text-gray-300 mt-4">
           Explore the innovative projects our team is working on.
