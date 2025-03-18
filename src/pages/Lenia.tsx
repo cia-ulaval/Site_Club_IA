@@ -120,12 +120,8 @@ const TeamSection = () => (
 function Lenia() {
   return (
     <section className="relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"></div>
-
       <motion.div
-        className="container mx-auto p-4 text-center max-w-5xl"
+        className="w-3/4 mx-auto px-6 py-16 border border-red-800 hover:border-red-500 transition-colors rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -171,7 +167,7 @@ function Lenia() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="bg-gradient-to-br from-red-900/20 to-black/40 rounded-2xl p-8 border border-red-800/20 shadow-xl mx-6">
+          <div>
             <motion.p
               className="w-full md:w-4/5 mx-auto text-lg text-gray-400 text-justify mb-10"
               initial={{ opacity: 0, y: 10 }}

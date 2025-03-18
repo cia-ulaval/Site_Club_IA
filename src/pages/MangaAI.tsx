@@ -171,12 +171,8 @@ const TeamSection = () => (
 function MangaAI() {
   return (
     <section className="relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"></div>
-
       <motion.div
-        className="text-center max-w-5xl mx-auto py-16"
+        className="w-3/4 mx-auto px-6 py-16 border border-red-800 hover:border-red-500 transition-colors rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -189,10 +185,10 @@ function MangaAI() {
         >
           <h1 id="test" className="text-6xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-              Auto
+              Manga
             </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
-              Manga
+              Translator
             </span>
           </h1>
           <h2 className="text-4xl font-bold text-white mb-6">
@@ -238,7 +234,7 @@ function MangaAI() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="bg-gradient-to-br from-red-900/20 to-black/40 rounded-2xl p-8 border border-red-800/20 shadow-xl mx-6">
+          <div>
             <h3 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
               Our Approach
             </h3>
