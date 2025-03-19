@@ -112,10 +112,10 @@ function Gallery() {
     title: string
   ) => (
     <div className="mb-16">
-      <h2 className="text-3xl font-semibold gradient-text mb-16 pt-20">
+      <h2 className="text-3xl font-semibold gradient-text mb-8 pt-12 sm:pt-20">
         {title}
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
         {images.map((image, index) => (
           <div
             key={index}
@@ -124,9 +124,9 @@ function Gallery() {
             <img
               src={image.src}
               alt={`${title} image ${index + 1}`}
-              className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+              className="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 text-xs sm:text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {image.desc}
             </div>
           </div>
@@ -136,16 +136,16 @@ function Gallery() {
   );
 
   return (
-    <section className="container mx-auto p-4 text-center">
-      <h1 className="text-6xl font-bold mb-4">
+    <section className="container mx-auto p-4 text-center rounded-lg">
+      <h1 className="text-4xl sm:text-5xl font-bold mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
           Gallery
         </span>
       </h1>
-      {renderImages(formationImages, "Formations/Cercles de lecture")}
-      {renderImages(competitionImages, "Compétitions internes")}
-      {renderImages(projectImages, "Projets")}
-      {renderImages(communityImages, "Implications communautaires")}
+      {renderImages(formationImages, "Formations/Discussions")}
+      {renderImages(competitionImages, "Competitions")}
+      {renderImages(projectImages, "Projects")}
+      {renderImages(communityImages, "Community Implications")}
     </section>
   );
 }

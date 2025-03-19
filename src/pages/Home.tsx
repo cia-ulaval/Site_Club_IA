@@ -171,7 +171,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          Interesting in collaborating?
+          Interested in collaborating?
         </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
           Sponsors help us to achieve our goals and to make our projects a

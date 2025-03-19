@@ -257,12 +257,12 @@ interface Sponsor {
 
 const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
   <motion.div
-    className="p-4 rounded-lg bg-red-900/10 border border-red-800/20 hover:border-red-500/30 flex items-center justify-center transition-all"
+    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
   >
     <div className="text-white text-lg font-semibold">{sponsor.name}</div>
     {/* Placeholder for actual logo */}
-    <div className="text-xs text-red-400 ml-2">{sponsor.tier}</div>
+    <div className="text-xs text-red-400 mt-2">{sponsor.tier}</div>
   </motion.div>
 );
 
@@ -318,7 +318,7 @@ function SponsorshipPage() {
       <div className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"></div>
 
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-16 rounded-2xl bg-gradient-to-br shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -414,7 +414,7 @@ function SponsorshipPage() {
             Our Current Sponsors
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
             {currentSponsors.map((sponsor, index) => (
               <CurrentSponsorLogo key={index} sponsor={sponsor} />
             ))}
