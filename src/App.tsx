@@ -12,6 +12,7 @@ import DecisionTree from "./pages/DecisionTree";
 import Projects from "./pages/Projects";
 import Collaboration from "./pages/Collaboration";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/collaboration" element={<Collaboration />} />
         </Routes>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );

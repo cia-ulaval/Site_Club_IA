@@ -64,7 +64,7 @@ function Projects() {
             >
               <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300">
                 <div
-                  className="h-56 bg-cover bg-center"
+                  className="w-full h-56 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${
                       project.image || "/project/placeholder.jpg"
@@ -72,17 +72,17 @@ function Projects() {
                     backgroundSize: "cover",
                   }}
                 />
-                <div className="p-6 flex flex-col h-48">
+                <div className="p-6 flex flex-col h-auto sm:h-48">
                   <h3 className="text-xl font-semibold text-gray-200 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4 flex-grow">
+                  <p className="text-gray-400 mb-4 flex-grow overflow-hidden">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-3 mt-auto">
+                  <div className="flex flex-wrap gap-3 mt-auto sm:flex-row flex-col">
                     <Link
                       to={project.link}
-                      className="px-4 py-2 text-sm text-white font-medium rounded-md bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center justify-center flex-grow"
+                      className="px-4 py-2 text-sm text-white font-medium rounded-md bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center justify-center sm:flex-grow"
                     >
                       Learn More →
                     </Link>
@@ -91,7 +91,7 @@ function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-4 py-2 text-sm text-white font-medium rounded-md bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center justify-center flex-grow"
+                        className="px-4 py-2 text-sm text-white font-medium rounded-md bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center justify-center sm:flex-grow"
                       >
                         <Github className="w-4 h-4 mr-2" />
                         <span>GitHub</span>
