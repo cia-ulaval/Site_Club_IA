@@ -239,28 +239,33 @@ function FlapEEG() {
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
               Collecting Data (Week 2 - Week 4)
             </h2>
-            <p className="text-gray-400">
-              After successfully the baseline, it was time to start collecting
-              data. We needed to collect data from our participants to train our
-              AI model to interpret brain signals. We had to find a way to
-              collect this data and to make sure it was clean and usable. To do
-              that, we asked many participants to perform a series of tests with
-              the headset. We then had Jordan and Dereck work on a way to clean
-              the data and make it usable.
-            </p>
-
-            <p className="text-gray-400 mt-4 sm:mt-6">
-              In the meantime, Louis-Étienne installed a server to centralize
-              our datasets, William finished the game. Everything was slowly
-              coming together, but the hardest part was yet to come!
-            </p>
-
-            <div className="mt-8 sm:mt-12">
-              <img
-                src="/test.jpg"
-                alt="test image (temporary)"
-                className="rounded-xl shadow-2xl w-full"
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+              <div>
+                <p className="text-gray-400">
+                  After successfully the baseline, it was time to start
+                  collecting data. We needed to collect data from our
+                  participants to train our AI model to interpret brain signals.
+                  We had to find a way to collect this data and to make sure it
+                  was clean and usable. To do that, we asked many participants
+                  to perform a series of tests with the headset. We then had
+                  Jordan and Dereck work on a way to clean the data and make it
+                  usable.
+                </p>
+                <p className="text-gray-400 mt-4 sm:mt-6">
+                  In the meantime, Louis-Étienne installed a server to
+                  centralize our datasets, William finished the game. Everything
+                  was slowly coming together, but the hardest part was yet to
+                  come!
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img
+                  src="/project/FlappyBrain.png"
+                  alt="Picture of the game flapeeg"
+                  className="rounded-2xl shadow-2xl w-full max-w-lg border-4 border-red-500/50"
+                  style={{ boxShadow: "0 4px 20px rgba(255, 0, 0, 0.5)" }}
+                />
+              </div>
             </div>
           </section>
 

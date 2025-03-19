@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "FlapEEG",
-    image: "/project/flappycard.jpg",
+    image: "/project/FlappyBrain.png",
     description: "A mind controlled video game",
     link: "/flapeeg",
     github: "https://github.com/cia-ulaval/FlapEEG_interface_v1",
@@ -32,7 +32,7 @@ const projects = [
   },
   {
     title: "Decision Tree",
-    image: "/project/decisiontree.jpg", // Added placeholder path
+    image: "/project/decisiontree.jpg",
     description: "Research and development of decision trees",
     link: "/decisiontree",
   },
@@ -79,9 +79,9 @@ function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex justify-center"
             >
-              <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300">
+              <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm h-120 transition-all duration-300">
                 <div
-                  className="w-full h-56 bg-cover bg-center"
+                  className="w-full h-64 bg-cover bg-center"
                   style={{
                     backgroundImage: `url(${
                       project.image || "/project/placeholder.jpg"
@@ -89,11 +89,11 @@ function Projects() {
                     backgroundSize: "cover",
                   }}
                 />
-                <div className="p-6 flex flex-col h-auto sm:h-48">
+                <div className="p-6 flex flex-col h-48">
                   <h3 className="text-xl font-semibold text-gray-200 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-gray-400 mb-4 flex-grow overflow-hidden">
+                  <p className="text-gray-400 mb-4 flex-grow overflow-hidden line-clamp-3">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-3 mt-auto sm:flex-row flex-col">

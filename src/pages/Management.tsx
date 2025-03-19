@@ -113,14 +113,24 @@ const Management = () => {
             >
               <Card
                 className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
-                style={{ width: "14rem" }}
+                style={{
+                  width: "90%",
+                  maxWidth: "14rem",
+                  minHeight: "300px",
+                }}
               >
                 <Card.Img
                   variant="top"
                   src={card.imgSrc}
-                  style={{ height: "200px", objectFit: "cover" }}
+                  style={{
+                    height: "180px",
+                    objectFit: "cover",
+                  }}
                 />
-                <Card.Body>
+                <Card.Body
+                  className="text-center d-flex flex-column justify-content-between"
+                  style={{ flexGrow: 1 }}
+                >
                   <Card.Title className="text-gray-200">
                     {card.title}
                   </Card.Title>

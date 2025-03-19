@@ -22,7 +22,7 @@ function Home() {
   const projects = [
     {
       title: "Brain Controlled Video Game",
-      image: "/project/flappycard.jpg",
+      image: "/project/FlappyBrain.png",
       description: "EEG controlled retro video game",
       link: "/flapeeg",
     },

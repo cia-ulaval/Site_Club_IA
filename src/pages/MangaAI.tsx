@@ -71,7 +71,7 @@ interface ImageWithGlowProps {
 
 const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   <motion.div
-    className="text-center mb-2 relative overflow-hidden rounded-xl"
+    className="text-center mb-2 relative overflow-hidden rounded-xl max-w-sm md:max-w-lg mx-auto"
     whileHover={{
       scale: 1.03,
       transition: { duration: 0.3 },
