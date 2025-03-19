@@ -13,6 +13,7 @@ import Projects from "./pages/Projects";
 import Collaboration from "./pages/Collaboration";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import JoinUs from "./pages/JoinUs";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/lenia" element={<Lenia />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/collaboration" element={<Collaboration />} />
+          <Route path="/join-us" element={<JoinUs />} />
         </Routes>
         <Footer />
         <ScrollToTopButton />

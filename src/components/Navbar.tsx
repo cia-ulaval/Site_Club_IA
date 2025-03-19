@@ -43,6 +43,16 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/join-us"
+              className={({ isActive }) =>
+                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  isActive ? "text-red-400" : ""
+                }`
+              }
+            >
+              Join Us
+            </NavLink>
           </div>
           <button
             onClick={toggleMenu}
@@ -67,6 +77,17 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/join-us"
+              className={({ isActive }) =>
+                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  isActive ? "text-red-400" : ""
+                } py-2`
+              }
+              onClick={toggleMenu}
+            >
+              Join Us
+            </NavLink>
           </div>
         )}
       </div>

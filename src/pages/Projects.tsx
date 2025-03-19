@@ -26,13 +26,13 @@ const projects = [
   },
   {
     title: "F1Tenth",
-    image: "/project/f1cover.png",
+    image: "/project/f1tenthcar.png",
     description: "EMG racing with 1/10th scale F1 cars",
     link: "/f1tenth",
   },
   {
     title: "Decision Tree",
-    image: "/project/placeholder.jpg", // Added placeholder path
+    image: "/project/decisiontree.jpg", // Added placeholder path
     description: "Research and development of decision trees",
     link: "/decisiontree",
   },
