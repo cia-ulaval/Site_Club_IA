@@ -78,7 +78,7 @@ function FlapEEG() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-12 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -86,26 +86,26 @@ function FlapEEG() {
         <div>
           {/* Hero Section */}
           <motion.section
-            className="mb-20"
+            className="mb-12 sm:mb-20"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <img
                   src="/implication/flappyeegmain.jpeg"
                   alt="3 managers of the club, one with the EEG headset, smiling during a meeting"
-                  className="rounded-xl shadow-2xl mt-8"
+                  className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full"
                 />
               </div>
-              <div className="flex flex-col justify-center">
-                <h1 className="text-6xl font-bold mb-4">
+              <div className="flex flex-col justify-center mt-6 md:mt-0">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                     FlapEEG
                   </span>
                 </h1>
-                <p className="text-gray-400 mb-6 text-justify">
+                <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
                   FlapEEG is a video game that is controlled by thought. We have
                   trained an AI model to interpret brain signals and translate
                   them into actions in the game. For this to work, we equipped
@@ -136,41 +136,43 @@ function FlapEEG() {
 
           {/* Team Section */}
           <motion.section
-            className="mb-20 mt-20"
+            className="mb-12 sm:mb-20 mt-12 sm:mt-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold gradient-text text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
               The Team
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+                  className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 * index, duration: 0.8 }}
+                  transition={{ delay: 0.1 * index, duration: 0.6 }}
                 >
-                  <div className="text-red-400 mb-4 flex justify-center">
+                  <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {member.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-base md:text-xl font-bold text-white mb-1">
                     {member.title}
                   </h3>
-                  <p className="text-gray-400">{member.description}</p>
+                  <p className="text-gray-400 text-xs md:text-sm">
+                    {member.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </motion.section>
 
           {/* Remaining Sections */}
-          <section id="Week1" className="mb-20 text-justify">
-            <h2 className="text-3xl font-bold gradient-text mb-6">
+          <section id="Week1" className="mb-12 sm:mb-20 text-justify">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
               Our beginnings (Week 1)
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="hero-card">
                 <div className="video-container relative">
                   <video
@@ -199,7 +201,7 @@ function FlapEEG() {
                 </div>
               </div>
               <div>
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-400 mb-4 sm:mb-6">
                   Just like any other project, FlapEEG had a beginning. It all
                   started during the spring semester of 2024. It was a rough
                   start: we had many participants and loads of ideas, but the
@@ -226,15 +228,15 @@ function FlapEEG() {
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 mt-6">
+            <p className="text-gray-400 mt-4 sm:mt-6">
               It was only a rough prototype, as you can see, some latency was
               still present and the game was not fully functional. But it was a
               step in the right direction which led us to week 2...
             </p>
           </section>
 
-          <section id="Week2-4" className="mb-20 text-justify">
-            <h2 className="text-3xl font-bold gradient-text mb-6">
+          <section id="Week2-4" className="mb-12 sm:mb-20 text-justify">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
               Collecting Data (Week 2 - Week 4)
             </h2>
             <p className="text-gray-400">
@@ -247,26 +249,26 @@ function FlapEEG() {
               the data and make it usable.
             </p>
 
-            <p className="text-gray-400 mt-6">
+            <p className="text-gray-400 mt-4 sm:mt-6">
               In the meantime, Louis-Étienne installed a server to centralize
               our datasets, William finished the game. Everything was slowly
               coming together, but the hardest part was yet to come!
             </p>
 
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <img
                 src="/test.jpg"
                 alt="test image (temporary)"
-                className="rounded-xl shadow-2xl"
+                className="rounded-xl shadow-2xl w-full"
               />
             </div>
           </section>
 
-          <section id="Week4-6" className="mb-20">
-            <h2 className="text-3xl font-bold gradient-text mb-6">
+          <section id="Week4-6" className="mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
               Data Collection (Week 4 - Week 6)
             </h2>
-            <p className="text-gray-400 pb-4">
+            <p className="text-gray-400 pb-3 sm:pb-4">
               At this point in the project, we hit a challenge. Louis found out
               our data wasn't properly filtered and we had a lot of noise around
               the 60Hz frequency which made it unusable. Jordan took care of
@@ -280,8 +282,8 @@ function FlapEEG() {
             </p>
           </section>
 
-          <section id="Week6-9" className="mb-20">
-            <h2 className="text-3xl font-bold gradient-text mb-6 mt-20">
+          <section id="Week6-9" className="mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20">
               Training (Week 6 - Week 9)
             </h2>
             <p className="text-gray-400">

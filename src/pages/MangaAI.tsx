@@ -10,31 +10,31 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
   {
-    icon: <TextCursorInput className="w-8 h-8" />,
+    icon: <TextCursorInput className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Théophile Berteloot",
     role: "",
     description: "",
   },
   {
-    icon: <SwatchBook className="w-8 h-8" />,
+    icon: <SwatchBook className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Loïc Baret",
     role: "",
     description: "",
   },
   {
-    icon: <Rss className="w-8 h-8" />,
+    icon: <Rss className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Xavier Legault",
     role: "",
     description: "",
   },
   {
-    icon: <Layers className="w-8 h-8" />,
+    icon: <Layers className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Louis-Jacob Lebel",
     role: "",
     description: "",
   },
   {
-    icon: <Languages className="w-8 h-8" />,
+    icon: <Languages className="w-6 h-6 md:w-8 md:h-8" />,
     title: "John-William Lebel",
     role: "",
     description: "",
@@ -44,19 +44,19 @@ const teamMembers = [
 // Project features with icons
 const features = [
   {
-    icon: <Zap className="w-6 h-6 text-red-400" />,
+    icon: <Zap className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
     title: "Real-time Translation",
     description:
       "Instantly translate manga panels without waiting for official releases",
   },
   {
-    icon: <Languages className="w-6 h-6 text-red-400" />,
+    icon: <Languages className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
     title: "Multiple Languages",
     description:
       "Support for translations between Japanese, English, French, and more",
   },
   {
-    icon: <Layers className="w-6 h-6 text-red-400" />,
+    icon: <Layers className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
     title: "Context-Aware",
     description:
       "Our AI understands character relationships and narrative context",
@@ -80,7 +80,7 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
     <motion.img
       src={src}
       alt={alt}
-      className="w-full md:w-4/5 mx-auto rounded-xl shadow-xl border border-red-800/30"
+      className="w-full mx-auto rounded-xl shadow-xl border border-red-800/30"
       initial={{ y: 10, opacity: 0.8 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -100,32 +100,34 @@ interface ProcessStepProps {
 
 const ProcessStep = ({ number, title, description }: ProcessStepProps) => (
   <motion.div
-    className="flex items-start gap-4 mb-8"
+    className="flex items-start gap-3 md:gap-4 mb-6 md:mb-8"
     initial={{ x: -10, opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
     transition={{ duration: 0.4, delay: number * 0.1 }}
     viewport={{ once: true }}
   >
     <div className="flex-shrink-0">
-      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center text-white font-bold">
+      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-red-500 to-red-800 flex items-center justify-center text-white font-bold text-sm md:text-base">
         {number}
       </div>
     </div>
     <div>
-      <h4 className="text-xl font-semibold text-white mb-1">{title}</h4>
-      <p className="text-gray-400">{description}</p>
+      <h4 className="text-lg md:text-xl font-semibold text-white mb-1">
+        {title}
+      </h4>
+      <p className="text-sm md:text-base text-gray-400">{description}</p>
     </div>
   </motion.div>
 );
 
 const TeamSection = () => (
-  <section className="py-16 relative">
+  <section className="py-8 md:py-16 relative">
     {/* Background design element */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
+    <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+    <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
 
     <motion.h2
-      className="text-4xl font-bold gradient-text text-center mb-6"
+      className="text-3xl md:text-4xl font-bold gradient-text text-center mb-4 md:mb-6"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
@@ -135,7 +137,7 @@ const TeamSection = () => (
     </motion.h2>
 
     <motion.p
-      className="text-gray-400 text-center max-w-2xl mx-auto mb-12"
+      className="text-sm md:text-base text-gray-400 text-center max-w-2xl mx-auto mb-8 md:mb-12 px-4"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.6, delay: 0.2 }}
@@ -145,23 +147,29 @@ const TeamSection = () => (
       audiences through cutting-edge AI technology.
     </motion.p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mx-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
       {teamMembers.map((member, index) => (
         <motion.div
           key={index}
-          className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
+          className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: index * 0.1 }}
           viewport={{ once: true, margin: "-100px" }}
           whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
-          <div className="text-red-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
             {member.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-1">{member.title}</h3>
-          <p className="text-red-400/80 text-sm mb-2">{member.role}</p>
-          <p className="text-gray-400 text-sm">{member.description}</p>
+          <h3 className="text-base md:text-xl font-bold text-white mb-1">
+            {member.title}
+          </h3>
+          <p className="text-red-400/80 text-xs md:text-sm mb-1 md:mb-2">
+            {member.role}
+          </p>
+          <p className="text-gray-400 text-xs md:text-sm">
+            {member.description}
+          </p>
         </motion.div>
       ))}
     </div>
@@ -172,7 +180,7 @@ function MangaAI() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-16 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -182,8 +190,9 @@ function MangaAI() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center"
         >
-          <h1 id="test" className="text-6xl font-bold mb-4">
+          <h1 id="test" className="text-4xl md:text-6xl font-bold mb-2 md:mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
               Manga
             </span>
@@ -191,23 +200,23 @@ function MangaAI() {
               Translator
             </span>
           </h1>
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
             AI-Powered Manga Translation
           </h2>
         </motion.div>
 
         {/* Feature badges */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="flex items-center gap-2 px-4 py-2 bg-red-900/20 rounded-full border border-red-800/30"
+              className="flex items-center gap-1 md:gap-2 px-3 md:px-4 py-1 md:py-2 bg-red-900/20 rounded-full border border-red-800/30"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
             >
               {feature.icon}
-              <span className="text-sm font-medium text-white">
+              <span className="text-xs md:text-sm font-medium text-white whitespace-nowrap">
                 {feature.title}
               </span>
             </motion.div>
@@ -215,7 +224,7 @@ function MangaAI() {
         </div>
 
         <motion.p
-          className="text-xl text-gray-300 mb-12 text-center mx-6 max-w-3xl mx-auto"
+          className="text-base md:text-xl text-gray-300 mb-8 md:mb-12 text-center px-4 md:px-6 max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -228,27 +237,27 @@ function MangaAI() {
         {/* Main content section */}
         <motion.section
           id="learn-more"
-          className="mb-20 text-gray-300 text-lg"
+          className="mb-12 md:mb-20 text-gray-300 text-base md:text-lg"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, margin: "-100px" }}
         >
           <div>
-            <h3 className="text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
               Our Approach
             </h3>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
-              <div>
-                <p className="mb-6">
+            <div className="grid grid-cols-1 gap-8 md:gap-16 items-center mb-12 md:mb-16">
+              <div className="px-4 md:px-0">
+                <p className="mb-4 md:mb-6 text-sm md:text-base">
                   Our project utilizes{" "}
                   <span className="text-red-400 font-semibold">Manga109</span>,
                   a renowned dataset in the field, frequently employed for
                   speech bubble detection, optical character recognition (OCR),
                   and emotion recognition in illustrations.
                 </p>
-                <p>
+                <p className="text-sm md:text-base">
                   This comprehensive collection serves as the foundation for
                   training our AI models to understand the unique visual
                   language of manga and accurately translate text while
@@ -262,11 +271,11 @@ function MangaAI() {
               />
             </div>
 
-            <h4 className="text-2xl font-semibold mb-6 text-center text-red-300">
+            <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-red-300">
               Development Process
             </h4>
 
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12 px-4 md:px-0">
               <ProcessStep
                 number={1}
                 title="Prototype Development"
@@ -295,20 +304,20 @@ function MangaAI() {
               caption="Sample output from our automatic translation system"
             />
 
-            <div className="mt-12 pt-8 border-t border-red-800/20">
-              <h4 className="text-2xl font-semibold mb-6 text-center text-red-300">
+            <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-red-800/20">
+              <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-red-300">
                 Future Enhancements
               </h4>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 md:px-0">
                 <motion.div
-                  className="p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
+                  className="p-3 md:p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
-                  <h5 className="text-lg font-semibold mb-2 text-red-500">
+                  <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
                     Dynamic Text Resizing
                   </h5>
-                  <p className="text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-400">
                     Intelligent adjustment of font size and text layout to
                     ensure proper fitting within speech bubbles of varying sizes
                     and shapes.
@@ -316,13 +325,13 @@ function MangaAI() {
                 </motion.div>
 
                 <motion.div
-                  className="p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
+                  className="p-3 md:p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
-                  <h5 className="text-lg font-semibold mb-2 text-red-500">
+                  <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
                     Character Gender Detection
                   </h5>
-                  <p className="text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-400">
                     Analyzing visual cues to detect character gender, improving
                     translation accuracy for languages with grammatical gender
                     like French.
@@ -330,13 +339,13 @@ function MangaAI() {
                 </motion.div>
 
                 <motion.div
-                  className="p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
+                  className="p-3 md:p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
-                  <h5 className="text-lg font-semibold mb-2 text-red-500">
+                  <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
                     Character Identification
                   </h5>
-                  <p className="text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-400">
                     Recognizing recurring characters to maintain consistent
                     speech patterns and personality traits throughout
                     translations.
@@ -344,13 +353,13 @@ function MangaAI() {
                 </motion.div>
 
                 <motion.div
-                  className="p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
+                  className="p-3 md:p-5 rounded-xl bg-red-900/10 border border-red-800/30 hover:border-red-500/40 transition-colors"
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
-                  <h5 className="text-lg font-semibold mb-2 text-red-500">
+                  <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
                     Context-Aware Translation
                   </h5>
-                  <p className="text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-400">
                     Incorporating narrative context and visual information to
                     produce more natural and accurate translations that respect
                     the story's tone.
@@ -362,11 +371,14 @@ function MangaAI() {
         </motion.section>
 
         {/* Team section */}
-        <TeamSection />
+        <div id="team">
+          <TeamSection />
+        </div>
 
         {/* Footer/Contact section */}
         <motion.section
-          className="pt-8 pb-16 mx-6"
+          id="contact"
+          className="pt-6 md:pt-8 pb-8 md:pb-16 px-4 md:px-6"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}

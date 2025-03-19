@@ -76,19 +76,19 @@ function F1Tenth() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-12 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <div>
           <motion.section
-            className="mb-20"
+            className="mb-12 sm:mb-20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
-            <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col md:flex-row gap-6 sm:gap-12">
               <div className="md:w-1/2 md:order-2">
                 <img
                   src="/project/f1tenthcar.png"
@@ -97,12 +97,12 @@ function F1Tenth() {
                 />
               </div>
               <div className="md:w-1/2 flex flex-col text-justify">
-                <h1 className="text-6xl font-bold mb-4">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                     F1Tenth
                   </span>
                 </h1>
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-400 mb-4 sm:mb-6">
                   Thrill-seeker? This project will capture your interest! F1
                   Tenth is a team of students passionate about AI who have
                   successfully combined human and machine. Using an
@@ -128,30 +128,32 @@ function F1Tenth() {
 
           <motion.section
             id="team1"
-            className="mb-20 mt-20"
+            className="mb-12 sm:mb-20 mt-12 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold gradient-text text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
               Team 1
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
               {team1.map((value, index) => (
                 <motion.div
                   key={index}
-                  className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+                  className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="text-red-400 mb-4 flex justify-center">
+                  <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-base md:text-xl font-bold text-white mb-1">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400">{value.description}</p>
+                  <p className="text-gray-400 text-xs md:text-sm">
+                    {value.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -159,30 +161,32 @@ function F1Tenth() {
 
           <motion.section
             id="team2"
-            className="mb-20 mt-20"
+            className="mb-12 sm:mb-20 mt-12 sm:mt-20"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h2 className="text-3xl font-bold gradient-text text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
               Team 2
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
               {team2.map((value, index) => (
                 <motion.div
                   key={index}
-                  className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+                  className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="text-red-400 mb-4 flex justify-center">
+                  <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">
+                  <h3 className="text-base md:text-xl font-bold text-white mb-1">
                     {value.title}
                   </h3>
-                  <p className="text-gray-400">{value.description}</p>
+                  <p className="text-gray-400 text-xs md:text-sm">
+                    {value.description}
+                  </p>
                 </motion.div>
               ))}
             </div>

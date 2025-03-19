@@ -52,7 +52,7 @@ const TeamSection = () => (
       The Team
     </h2>
     <motion.div
-      className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6"
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6"
       initial="hidden"
       animate="visible"
       variants={fadeInVariants}
@@ -60,16 +60,20 @@ const TeamSection = () => (
       {teamMembers.map((member, index) => (
         <motion.div
           key={index}
-          className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors text-center"
+          className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
           initial="hidden"
           animate="visible"
           variants={fadeInVariants}
         >
-          <div className="text-red-400 mb-4 flex justify-center">
+          <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
             {member.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
-          <p className="text-gray-400">{member.description}</p>
+          <h3 className="text-base md:text-xl font-bold text-white mb-1">
+            {member.title}
+          </h3>
+          <p className="text-gray-400 text-xs md:text-sm">
+            {member.description}
+          </p>
         </motion.div>
       ))}
     </motion.div>
@@ -80,7 +84,7 @@ function DecisionTree() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-12 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}

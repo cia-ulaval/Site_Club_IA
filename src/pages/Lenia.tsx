@@ -95,22 +95,24 @@ const TeamSection = () => (
       The Team
     </motion.h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
       {teamMembers.map((member, index) => (
         <motion.div
           key={index}
-          className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
+          className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: index * 0.1 }}
           viewport={{ once: true, margin: "-100px" }}
           whileHover={{ y: -5, transition: { duration: 0.2 } }}
         >
-          <div className="text-red-400 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
             {member.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
-          <p className="text-red-400/80 text-sm">{member.role}</p>
+          <h3 className="text-base md:text-xl font-bold text-white mb-1">
+            {member.title}
+          </h3>
+          <p className="text-gray-400 text-xs md:text-sm">{member.role}</p>
         </motion.div>
       ))}
     </div>
@@ -121,7 +123,7 @@ function Lenia() {
   return (
     <section className="relative overflow-hidden">
       <motion.div
-        className="container w-3/4 mx-auto px-6 py-16 rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
@@ -131,7 +133,7 @@ function Lenia() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12"
+          className="text-center"
         >
           <h1 className="text-6xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
