@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 function Gallery() {
   const formationImages = [
     {
@@ -111,15 +113,22 @@ function Gallery() {
     images: { src: string; desc: string }[],
     title: string
   ) => (
-    <div className="mb-16">
+    <motion.div
+      className="mb-16"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <h2 className="text-3xl font-semibold gradient-text mb-8 pt-12 sm:pt-20">
         {title}
       </h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
         {images.map((image, index) => (
-          <div
+          <motion.div
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg group"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
           >
             <img
               src={image.src}
@@ -129,14 +138,19 @@ function Gallery() {
             <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 text-xs sm:text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {image.desc}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 
   return (
-    <section className="container mx-auto p-4 text-center rounded-lg">
+    <motion.section
+      className="container mx-auto p-4 text-center rounded-lg"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <h1 className="text-4xl sm:text-5xl font-bold mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
           Gallery
@@ -146,7 +160,7 @@ function Gallery() {
       {renderImages(competitionImages, "Competitions")}
       {renderImages(projectImages, "Projects")}
       {renderImages(communityImages, "Community Implications")}
-    </section>
+    </motion.section>
   );
 }
 

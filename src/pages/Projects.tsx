@@ -40,18 +40,33 @@ const projects = [
 
 function Projects() {
   return (
-    <section className="overflow-hidden mt-24">
+    <motion.section
+      className="overflow-hidden mt-24"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="max-w-7xl mx-auto px-6 pb-16">
         <header className="text-center mb-16">
-          <h1 className="text-5xl font-extrabold text-white tracking-wide">
+          <motion.h1
+            className="text-5xl font-extrabold text-white tracking-wide"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Our{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
               Projects
             </span>
-          </h1>
-          <p className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Explore the innovative projects our team is working on.
-          </p>
+          </motion.p>
         </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -59,7 +74,9 @@ function Projects() {
             <motion.div
               key={index}
               whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex justify-center"
             >
               <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300">
@@ -104,7 +121,7 @@ function Projects() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

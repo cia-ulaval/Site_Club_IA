@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import { motion } from "framer-motion";
 
 const cardData = [
   {
@@ -89,7 +90,12 @@ const Management = () => {
     cards: { title: string; text: string; imgSrc: string; linkedIn: string }[],
     title: string
   ) => (
-    <section className="max-w-7xl mx-auto px-4 pb-8">
+    <motion.section
+      className="max-w-7xl mx-auto px-4 pb-8"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <h1 className="text-6xl font-bold mb-4 text-center mt-20 pb-16">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
           {title}
@@ -98,7 +104,13 @@ const Management = () => {
       <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
         {cards.map((card, idx) => (
           <Col key={idx} className="d-flex justify-content-center">
-            <a href={card.linkedIn} target="_blank" rel="noopener noreferrer">
+            <motion.a
+              href={card.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Card
                 className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
                 style={{ width: "14rem" }}
@@ -115,19 +127,23 @@ const Management = () => {
                   <Card.Text className="text-gray-400">{card.text}</Card.Text>
                 </Card.Body>
               </Card>
-            </a>
+            </motion.a>
           </Col>
         ))}
       </Row>
-    </section>
+    </motion.section>
   );
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {renderCards(cardData.slice(0, 8), "Executive Team")}
       {renderCards(cardData.slice(8, 12), "Leadership Team")}
       {renderCards(cardData.slice(12), "Associates")}
-    </div>
+    </motion.div>
   );
 };
 
