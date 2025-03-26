@@ -19,7 +19,7 @@ const projects = [
   },
   {
     title: "Lenia",
-    image: "/project/lenia.png",
+    image: "/project/leniacover.png",
     description: "Autonomous cellular automata",
     link: "/lenia",
     github: "https://github.com/cia-ulaval/LENIA-frontend",
