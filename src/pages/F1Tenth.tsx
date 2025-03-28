@@ -7,6 +7,7 @@ import {
   Rotate3d,
   UserRoundCog,
 } from "lucide-react";
+import Head from "next/head";
 
 const team1 = [
   {
@@ -75,18 +76,18 @@ const team2 = [
 function F1Tenth() {
   return (
     <>
-      <head>
-        <title>F1Tenth Project - AI and Muscle-Controlled Cars</title>
+      <Head>
+        <title>F1Tenth - AI-Controlled Miniature Race Car</title>
         <meta
           name="description"
-          content="Discover the F1Tenth project where AI and electromyographic technology combine to control miniature race cars with muscle signals."
+          content="Discover F1Tenth, a student project combining AI and human muscle signals to control a miniature race car. Learn about the challenges and achievements of this innovative team."
         />
         <meta
           name="keywords"
-          content="F1Tenth, AI, electromyographic bracelet, muscle signals, miniature race cars, AI projects"
+          content="F1Tenth, AI, muscle signals, electromyographic bracelet, miniature race car, AI projects, student innovation"
         />
-        <link rel="canonical" href="https://cialaval.vercel.app/f1tenth" />
-      </head>
+        <meta name="author" content="Dereck Bélanger" />
+      </Head>
       <section className="relative overflow-hidden">
         <motion.div
           className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"

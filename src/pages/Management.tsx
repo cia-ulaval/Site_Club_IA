@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 const cardData = [
   {
@@ -145,15 +146,41 @@ const Management = () => {
   );
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      {renderCards(cardData.slice(0, 8), "Executive Team")}
-      {renderCards(cardData.slice(8, 12), "Leadership Team")}
-      {renderCards(cardData.slice(12), "Associates")}
-    </motion.div>
+    <>
+      <Head>
+        <title>Management Team | EEG Website</title>
+        <meta
+          name="description"
+          content="Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn."
+        />
+        <meta
+          name="keywords"
+          content="EEG, Management, Team, Leadership, Executive, Associates, LinkedIn"
+        />
+        <meta name="author" content="Dereck Bélanger" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="Management Team | EEG Website" />
+        <meta
+          property="og:description"
+          content="Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn."
+        />
+        <meta property="og:image" content="/banner/cia_ico.ico" />
+        <meta
+          property="og:url"
+          content="https://cialaval.vercel.app/management"
+        />
+        <meta property="og:type" content="website" />
+      </Head>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {renderCards(cardData.slice(0, 8), "Executive Team")}
+        {renderCards(cardData.slice(8, 12), "Leadership Team")}
+        {renderCards(cardData.slice(12), "Associates")}
+      </motion.div>
+    </>
   );
 };
 

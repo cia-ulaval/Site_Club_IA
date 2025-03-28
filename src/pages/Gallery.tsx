@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 function Gallery() {
   const formationImages = [
@@ -157,23 +158,37 @@ function Gallery() {
   );
 
   return (
-    <motion.section
-      className="container mx-auto p-4 text-center rounded-lg"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      role="main"
-    >
-      <h1 className="text-4xl sm:text-5xl font-bold mb-8">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-          Gallery
-        </span>
-      </h1>
-      {renderImages(formationImages, "Formations/Discussions")}
-      {renderImages(competitionImages, "Competitions")}
-      {renderImages(projectImages, "Projects")}
-      {renderImages(communityImages, "Community Implications")}
-    </motion.section>
+    <>
+      <Head>
+        <title>Gallery - EEG Projects and Events</title>
+        <meta
+          name="description"
+          content="Explore the gallery showcasing EEG projects, competitions, community implications, and formation discussions. Discover our journey and achievements."
+        />
+        <meta
+          name="keywords"
+          content="EEG, gallery, projects, competitions, community, AI, events, formations"
+        />
+      </Head>
+      <motion.section
+        className="container mx-auto p-4 text-center rounded-lg"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        role="main"
+        aria-label="Gallery showcasing EEG projects, competitions, and community involvement"
+      >
+        <h1 className="text-4xl sm:text-5xl font-bold mb-8">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+            Gallery
+          </span>
+        </h1>
+        {renderImages(formationImages, "Formations/Discussions")}
+        {renderImages(competitionImages, "Competitions")}
+        {renderImages(projectImages, "Projects")}
+        {renderImages(communityImages, "Community Implications")}
+      </motion.section>
+    </>
   );
 }
 

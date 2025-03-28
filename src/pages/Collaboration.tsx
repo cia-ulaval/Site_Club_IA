@@ -11,6 +11,7 @@ import {
   Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Head from "next/head";
 
 // Sponsorship tiers with benefits
 const sponsorshipTiers = [
@@ -312,150 +313,195 @@ const ContactForm = () => (
 
 function SponsorshipPage() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Abstract background elements */}
-      <div className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"></div>
+    <>
+      <Head>
+        <title>Become a Sponsor | AI Research Collaboration</title>
+        <meta
+          name="description"
+          content="Join our mission to advance AI research. Become a sponsor and support cutting-edge projects, empower student innovators, and transform industries."
+        />
+        <meta
+          name="keywords"
+          content="AI research, sponsorship, collaboration, innovation, student projects, industry partners"
+        />
+        <meta name="author" content="Dereck Bélanger" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          property="og:title"
+          content="Become a Sponsor | AI Research Collaboration"
+        />
+        <meta
+          property="og:description"
+          content="Support groundbreaking AI research and empower the next generation of innovators. Explore our sponsorship opportunities."
+        />
+        <meta property="og:image" content="/banner/cia_ico.ico" />
+        <meta
+          property="og:url"
+          content="https://cialaval.vercel.app/collaboration"
+        />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="/banner/cia_ico.ico" />
+        <meta
+          name="twitter:title"
+          content="Become a Sponsor | AI Research Collaboration"
+        />
+        <meta
+          name="twitter:description"
+          content="Join our mission to advance AI research. Become a sponsor and support cutting-edge projects, empower student innovators, and transform industries."
+        />
+        <meta name="twitter:image" content="/banner/cia_ico.ico" />
+      </Head>
+      <section className="relative overflow-hidden">
+        {/* Abstract background elements */}
+        <div
+          className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"
+          aria-hidden="true"
+        ></div>
+        <div
+          className="absolute top-96 right-20 w-80 h-80 bg-red-800/10 rounded-full blur-3xl -z-10"
+          aria-hidden="true"
+        ></div>
 
-      <motion.div
-        className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br shadow-xl"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        {/* Hero section */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h1 className="text-6xl font-bold mb-4">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-              Become a Sponsor
-            </span>
-          </h1>
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Invest in the Future of AI Research
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join our mission to push the boundaries of AI technology. Your
-            sponsorship fuels cutting-edge research, empowers student
-            innovators, and creates solutions that transform industries.
-          </p>
-        </motion.div>
-
-        {/* Impact metrics */}
-        <motion.div
-          className="mb-20"
+          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br shadow-xl"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-            Our Impact
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {impactMetrics.map((metric, index) => (
-              <MetricCard key={index} metric={metric} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Sponsorship tiers */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-            Sponsorship Tiers
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {sponsorshipTiers.map((tier, index) => (
-              <SponsorshipTier key={index} tier={tier} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Funded projects */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-            Projects You'll Fund
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {fundedProjects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Current sponsors */}
-        <motion.div
-          className="mb-20"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-            Our Current Sponsors
-          </h3>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
-            {currentSponsors.map((sponsor, index) => (
-              <CurrentSponsorLogo key={index} sponsor={sponsor} />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Contact Form */}
-        <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div>
-            <h3 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-              Ready to Partner?
-            </h3>
-            <p className="text-gray-300 mb-6">
-              Join forward-thinking organizations that are shaping the future of
-              artificial intelligence. Our partnerships provide more than just
-              exposure – they offer direct access to cutting-edge research,
-              talented students, and innovative solutions.
-            </p>
-            <p className="text-gray-300 mb-6">
-              Custom sponsorship packages are available for organizations with
-              specific research interests or collaboration goals. Let's discuss
-              how we can create value together.
-            </p>
-            <div className="flex items-center gap-4 text-red-400">
-              <CreditCard className="w-6 h-6" />
-              <span className="text-white">
-                Flexible payment options available
+          {/* Hero section */}
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h1 className="text-6xl font-bold mb-4">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+                Become a Sponsor
               </span>
-            </div>
-          </div>
+            </h1>
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Invest in the Future of AI Research
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join our mission to push the boundaries of AI technology. Your
+              sponsorship fuels cutting-edge research, empowers student
+              innovators, and creates solutions that transform industries.
+            </p>
+          </motion.div>
 
-          <ContactForm />
+          {/* Impact metrics */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+              Our Impact
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {impactMetrics.map((metric, index) => (
+                <MetricCard key={index} metric={metric} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Sponsorship tiers */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+              Sponsorship Tiers
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {sponsorshipTiers.map((tier, index) => (
+                <SponsorshipTier key={index} tier={tier} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Funded projects */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+              Projects You'll Fund
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {fundedProjects.map((project, index) => (
+                <ProjectCard key={index} project={project} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Current sponsors */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+              Our Current Sponsors
+            </h3>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+              {currentSponsors.map((sponsor, index) => (
+                <CurrentSponsorLogo key={index} sponsor={sponsor} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact Form */}
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div>
+              <h3 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+                Ready to Partner?
+              </h3>
+              <p className="text-gray-300 mb-6">
+                Join forward-thinking organizations that are shaping the future
+                of artificial intelligence. Our partnerships provide more than
+                just exposure – they offer direct access to cutting-edge
+                research, talented students, and innovative solutions.
+              </p>
+              <p className="text-gray-300 mb-6">
+                Custom sponsorship packages are available for organizations with
+                specific research interests or collaboration goals. Let's
+                discuss how we can create value together.
+              </p>
+              <div className="flex items-center gap-4 text-red-400">
+                <CreditCard className="w-6 h-6" />
+                <span className="text-white">
+                  Flexible payment options available
+                </span>
+              </div>
+            </div>
+
+            <ContactForm />
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </section>
+      </section>
+    </>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -8,6 +8,26 @@ import InfiniteScrollBanner from "../components/Carousel";
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+
+  useEffect(() => {
+    document.title = "Home | Club d'Intelligence Artificielle (CIA)";
+    const metaDescription = document.createElement("meta");
+    metaDescription.name = "description";
+    metaDescription.content =
+      "Welcome to the Club d'Intelligence Artificielle (CIA) of Laval University! Explore our AI projects and learn how to join us.";
+    document.head.appendChild(metaDescription);
+
+    const metaKeywords = document.createElement("meta");
+    metaKeywords.name = "keywords";
+    metaKeywords.content =
+      "Artificial Intelligence, Laval University, AI Club, Machine Learning, AI Projects, Student Club";
+    document.head.appendChild(metaKeywords);
+
+    return () => {
+      document.head.removeChild(metaDescription);
+      document.head.removeChild(metaKeywords);
+    };
+  }, []);
 
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
@@ -137,7 +157,7 @@ function Home() {
             >
               <img
                 src={project.image}
-                alt={project.title}
+                alt={`Image of ${project.title}`}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6 flex flex-col justify-end">
