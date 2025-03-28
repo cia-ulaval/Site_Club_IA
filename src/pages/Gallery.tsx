@@ -118,24 +118,36 @@ function Gallery() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
+      role="region"
+      aria-labelledby={`${title.toLowerCase().replace(/\s+/g, "-")}-heading`}
     >
-      <h2 className="text-3xl font-semibold gradient-text mb-8 pt-12 sm:pt-20">
+      <h2
+        id={`${title.toLowerCase().replace(/\s+/g, "-")}-heading`}
+        className="text-3xl font-semibold gradient-text mb-8 pt-12 sm:pt-20"
+      >
         {title}
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6"
+        role="list"
+      >
         {images.map((image, index) => (
           <motion.div
             key={index}
             className="relative overflow-hidden rounded-lg shadow-lg group"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
+            role="listitem"
           >
             <img
               src={image.src}
-              alt={`${title} image ${index + 1}`}
+              alt={image.desc || `${title} image ${index + 1}`}
               className="w-full h-40 sm:h-48 md:h-56 object-cover transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 text-xs sm:text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div
+              className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-center p-2 text-xs sm:text-sm md:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              aria-hidden="true"
+            >
               {image.desc}
             </div>
           </motion.div>
@@ -150,6 +162,7 @@ function Gallery() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
+      role="main"
     >
       <h1 className="text-4xl sm:text-5xl font-bold mb-8">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">

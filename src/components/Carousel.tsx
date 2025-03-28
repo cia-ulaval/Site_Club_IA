@@ -1,69 +1,35 @@
-import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
-interface ImageCarouselProps {
-  images: string[];
-  speed?: number; // seconds for one complete loop
-  height?: number; // height in pixels
-}
-
-export function ImageCarousel({
-  images,
-  speed = 10,
-  height = 50,
-}: ImageCarouselProps) {
-  const [containerWidth, setContainerWidth] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const updateWidth = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
-    };
-
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
-
-  // Calculate the number of copies needed to fill the container
-  const itemWidth = height * 1.5; // Maintain 3:2 aspect ratio
-  const itemsNeeded = Math.ceil((containerWidth * 2) / itemWidth) + 1;
-  const repeatedImages = Array(itemsNeeded).fill(images).flat();
-
+const images = [
+  "/banner/aesgul.png",
+  "/banner/asetin.png",
+  "/banner/avenirti.png",
+  "/banner/ulaval.png",
+];
+export default function InfiniteScrollBanner() {
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full overflow-hidden bg-black"
-      style={{ height }}
-    >
-      <div
-        className="animate-carousel flex"
-        style={{
-          animationDuration: `${speed}s`,
-          gap: "2rem",
-          paddingLeft: "2rem",
-          paddingRight: "2rem",
+    <div className="scroll-banner relative w-full bg-black py-4 overflow-hidden">
+      <motion.div
+        className="flex"
+        animate={{
+          x: [0, `-${images.length * 272}px`],
+        }}
+        transition={{
+          duration: 13,
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop",
         }}
       >
-        {repeatedImages.map((src, index) => (
-          <div
-            key={`${src}-${index}`}
-            className="flex-none"
-            style={{
-              width: `${itemWidth}px`,
-              height: "100%",
-            }}
-          >
-            <img
-              src={src}
-              alt={`Carousel image ${index}`}
-              className="h-full w-full object-cover rounded-lg"
-              loading={index < itemsNeeded ? "eager" : "lazy"}
-            />
-          </div>
+        {[...images, ...images, ...images].map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`banner image ${(index % images.length) + 1}`}
+            className="h-44 w-52 object-cover mr-24 inline-block opacity-80"
+          />
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

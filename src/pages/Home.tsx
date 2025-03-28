@@ -3,21 +3,14 @@ import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ImageCarousel } from "../components/Carousel";
-// import { ImageCarousel } from "../components/Carousel"; // Uncomment if you plan to use it
+import InfiniteScrollBanner from "../components/Carousel";
+
 function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
-
-  const partners = [
-    "/banner/aesgul.png",
-    "/banner/asetin.png",
-    "/banner/avenirti.png",
-    "/banner/ulaval.png",
-  ];
 
   const projects = [
     {
@@ -185,7 +178,7 @@ function Home() {
           View our plans
         </Link>
       </section>
-      <ImageCarousel images={partners} />
+      <InfiniteScrollBanner />
     </div>
   );
 }
