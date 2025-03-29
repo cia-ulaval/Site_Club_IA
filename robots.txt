@@ -1,4 +1,6 @@
+# Allow all user agents but restrict access to sensitive directories
 User-agent: *
 Disallow: /admin/
 Disallow: /private/
+# Allow everything else
 Allow: /

@@ -52,7 +52,7 @@ function Projects() {
           name="keywords"
           content="EEG projects, FlapEEG, MangaAI, Lenia, F1Tenth, Decision Tree, innovative technology, research"
         />
-        <meta name="author" content="EEG Team" />
+        <meta name="author" content="Dereck Bélanger" />
       </Head>
       <motion.section
         className="overflow-hidden mt-24"

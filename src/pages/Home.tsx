@@ -9,26 +9,6 @@ function Home() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    document.title = "Home | Club d'Intelligence Artificielle (CIA)";
-    const metaDescription = document.createElement("meta");
-    metaDescription.name = "description";
-    metaDescription.content =
-      "Welcome to the Club d'Intelligence Artificielle (CIA) of Laval University! Explore our AI projects and learn how to join us.";
-    document.head.appendChild(metaDescription);
-
-    const metaKeywords = document.createElement("meta");
-    metaKeywords.name = "keywords";
-    metaKeywords.content =
-      "Artificial Intelligence, Laval University, AI Club, Machine Learning, AI Projects, Student Club";
-    document.head.appendChild(metaKeywords);
-
-    return () => {
-      document.head.removeChild(metaDescription);
-      document.head.removeChild(metaKeywords);
-    };
-  }, []);
-
   const togglePlay = () => setIsPlaying(!isPlaying);
   const toggleMute = () => setIsMuted(!isMuted);
 

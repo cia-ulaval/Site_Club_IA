@@ -79,11 +79,14 @@ function FlapEEG() {
   return (
     <section className="relative overflow-hidden">
       <Head>
-        <title>FlapEEG - Thought-Controlled Video Game</title>
+        <title>
+          FlapEEG - Revolutionizing Gaming with Thought-Controlled AI
+        </title>
         <meta
           name="description"
-          content="FlapEEG is a revolutionary video game controlled by thought. Learn how we trained an AI model to interpret brain signals and control the game."
+          content="FlapEEG is a groundbreaking thought-controlled video game powered by AI and EEG technology. Discover how we trained an AI model to interpret brain signals and control the game."
         />
+        <link rel="canonical" href="https://cialaval.vercel.app/flapeeg" />
         <meta
           name="keywords"
           content="FlapEEG, EEG, thought-controlled game, brain signals, AI, video game, innovation"
@@ -119,6 +122,7 @@ function FlapEEG() {
         transition={{ duration: 0.8 }}
       >
         <div>
+          <h1 className="sr-only">FlapEEG - Thought-Controlled Video Game</h1>
           {/* Hero Section */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -126,6 +130,7 @@ function FlapEEG() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <h2 className="sr-only">Introduction to FlapEEG</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <img
@@ -209,7 +214,7 @@ function FlapEEG() {
           {/* Remaining Sections */}
           <section id="Week1" className="mb-12 sm:mb-20 text-justify">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
-              Our beginnings (Week 1)
+              Our Beginnings (Week 1)
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="hero-card">

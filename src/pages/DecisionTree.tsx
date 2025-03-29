@@ -85,16 +85,19 @@ function DecisionTree() {
   return (
     <>
       <Head>
-        <title>Decision Tree - Simplifying Complex Data</title>
+        <title>
+          Decision Tree - Simplifying Complex Data for Better Insights
+        </title>
         <meta
           name="description"
-          content="Explore how decision trees can simplify complex datasets while maintaining interpretability. Learn about our research project and the team behind it."
+          content="Discover how decision trees simplify complex datasets while maintaining interpretability. Learn about our research project and the team behind it."
         />
         <meta
           name="keywords"
           content="Decision Tree, Data Science, Interpretability, Research, Simplified Models"
         />
         <meta name="author" content="Dereck Bélanger" />
+        <link rel="canonical" href="https://cialaval.vercel.app/decisiontree" />
       </Head>
       <section className="relative overflow-hidden">
         <motion.div
@@ -111,6 +114,14 @@ function DecisionTree() {
               variants={fadeInVariants}
             >
               <div className="text-center max-w-3xl mx-auto">
+                <motion.h1
+                  className="text-6xl font-bold gradient-text mb-6"
+                  initial="hidden"
+                  animate="visible"
+                  variants={fadeInVariants}
+                >
+                  Decision Tree Research Project
+                </motion.h1>
                 <motion.h2
                   id="test"
                   className="text-5xl font-bold gradient-text mb-6"

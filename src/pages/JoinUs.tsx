@@ -5,16 +5,17 @@ function JoinUs() {
   return (
     <>
       <Head>
-        <title>Join Us - Be Part of Our Team</title>
+        <title>Join Us - Collaborate, Lead, and Grow with Our Team</title>
         <meta
           name="description"
-          content="Join our team and collaborate on exciting projects. Connect with us on Discord or apply for roles as a Team Lead or Associate."
+          content="Join our team to collaborate on exciting projects, connect with us on Discord, and apply for roles as a Team Lead or Associate."
         />
         <meta
           name="keywords"
           content="Join Us, Team, Discord, Apply, Team Lead, Associate, Projects, Collaboration"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://cialaval.vercel.app/join-us" />
       </Head>
       <section className="relative overflow-hidden pt-20">
         <motion.div
@@ -32,11 +33,11 @@ function JoinUs() {
           >
             <h1 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Join Us
+                Join Us - Be Part of Our Team
               </span>
             </h1>
             <h2 className="text-4xl font-bold text-white mb-6">
-              Be Part of Our Team
+              Collaborate, Lead, and Grow with Us
             </h2>
           </motion.div>
 

@@ -315,10 +315,10 @@ function SponsorshipPage() {
   return (
     <>
       <Head>
-        <title>Become a Sponsor | AI Research Collaboration</title>
+        <title>Become a Sponsor | Support AI Research and Innovation</title>
         <meta
           name="description"
-          content="Join our mission to advance AI research. Become a sponsor and support cutting-edge projects, empower student innovators, and transform industries."
+          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
         />
         <meta
           name="keywords"
@@ -328,11 +328,11 @@ function SponsorshipPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           property="og:title"
-          content="Become a Sponsor | AI Research Collaboration"
+          content="Become a Sponsor | Support AI Research and Innovation"
         />
         <meta
           property="og:description"
-          content="Support groundbreaking AI research and empower the next generation of innovators. Explore our sponsorship opportunities."
+          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
         />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta
@@ -343,15 +343,21 @@ function SponsorshipPage() {
         <meta name="twitter:card" content="/banner/cia_ico.ico" />
         <meta
           name="twitter:title"
-          content="Become a Sponsor | AI Research Collaboration"
+          content="Become a Sponsor | Support AI Research and Innovation"
         />
         <meta
           name="twitter:description"
-          content="Join our mission to advance AI research. Become a sponsor and support cutting-edge projects, empower student innovators, and transform industries."
+          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
         />
         <meta name="twitter:image" content="/banner/cia_ico.ico" />
+        <link
+          rel="canonical"
+          href="https://cialaval.vercel.app/collaboration"
+        />
       </Head>
       <section className="relative overflow-hidden">
+        {/* Add missing h1 */}
+        <h1 className="sr-only">Become a Sponsor | Support AI Research</h1>
         {/* Abstract background elements */}
         <div
           className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"
@@ -375,11 +381,12 @@ function SponsorshipPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-6xl font-bold mb-4">
+            {/* Add h2 for better SEO */}
+            <h2 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
                 Become a Sponsor
               </span>
-            </h1>
+            </h2>
             <h2 className="text-3xl font-bold text-white mb-6">
               Invest in the Future of AI Research
             </h2>

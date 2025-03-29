@@ -160,15 +160,18 @@ function Gallery() {
   return (
     <>
       <Head>
-        <title>Gallery - EEG Projects and Events</title>
+        <title>
+          Gallery - Explore EEG Projects, Competitions, and Community Events
+        </title>
         <meta
           name="description"
-          content="Explore the gallery showcasing EEG projects, competitions, community implications, and formation discussions. Discover our journey and achievements."
+          content="Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions. Explore our achievements and journey in the field of AI and EEG."
         />
         <meta
           name="keywords"
           content="EEG, gallery, projects, competitions, community, AI, events, formations"
         />
+        <link rel="canonical" href="https://cialaval.vercel.app/gallery" />
       </Head>
       <motion.section
         className="container mx-auto p-4 text-center rounded-lg"
@@ -180,7 +183,7 @@ function Gallery() {
       >
         <h1 className="text-4xl sm:text-5xl font-bold mb-8">
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            Gallery
+            EEG Projects, Competitions, and Community Gallery
           </span>
         </h1>
         {renderImages(formationImages, "Formations/Discussions")}

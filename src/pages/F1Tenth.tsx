@@ -77,16 +77,19 @@ function F1Tenth() {
   return (
     <>
       <Head>
-        <title>F1Tenth - AI-Controlled Miniature Race Car</title>
+        <title>
+          F1Tenth - AI-Controlled Miniature Race Car Using Muscle Signals
+        </title>
         <meta
           name="description"
-          content="Discover F1Tenth, a student project combining AI and human muscle signals to control a miniature race car. Learn about the challenges and achievements of this innovative team."
+          content="Explore F1Tenth, a groundbreaking student project that combines AI and electromyographic muscle signals to control a miniature race car. Learn about the innovative team's challenges and achievements."
         />
         <meta
           name="keywords"
           content="F1Tenth, AI, muscle signals, electromyographic bracelet, miniature race car, AI projects, student innovation"
         />
         <meta name="author" content="Dereck Bélanger" />
+        <link rel="canonical" href="https://cialaval.vercel.app/f1tenth" />
       </Head>
       <section className="relative overflow-hidden">
         <motion.div
@@ -113,7 +116,7 @@ function F1Tenth() {
                 <div className="md:w-1/2 flex flex-col text-justify">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                      F1Tenth
+                      F1Tenth - AI Meets Muscle Signals
                     </span>
                   </h1>
                   <p className="text-gray-400 mb-4 sm:mb-6">
@@ -149,7 +152,7 @@ function F1Tenth() {
               transition={{ duration: 1 }}
             >
               <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
-                Team 1
+                Meet Team 1
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
                 {team1.map((value, index) => (
@@ -182,7 +185,7 @@ function F1Tenth() {
               transition={{ duration: 1 }}
             >
               <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
-                Team 2
+                Meet Team 2
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
                 {team2.map((value, index) => (
