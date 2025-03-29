@@ -65,7 +65,6 @@ const fundedProjects = [
     description:
       "AI-powered manga translation system for real-time panel conversion.",
     progress: 85,
-    image: "/project/mangaai.png",
     icon: <Globe className="w-6 h-6" />,
   },
   {
@@ -73,7 +72,6 @@ const fundedProjects = [
     description:
       "A video game controlled by brain signals using EEG technology.",
     progress: 60,
-    image: "/project/voiceai.png",
     icon: <MessageCircle className="w-6 h-6" />,
   },
   {
@@ -81,7 +79,6 @@ const fundedProjects = [
     description:
       "F1 racing with 1/10th scale cars controlled by muscle signals.",
     progress: 60,
-    image: "/project/visionai.png",
     icon: <Zap className="w-6 h-6" />,
   },
 ];
@@ -193,7 +190,6 @@ interface ProjectProps {
     title: string;
     description: string;
     progress: number;
-    image: string;
     icon: JSX.Element;
   };
 }
@@ -253,7 +249,6 @@ const MetricCard = ({ metric }: MetricProps) => (
 interface Sponsor {
   name: string;
   tier: string;
-  logo: string;
 }
 
 const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
@@ -262,7 +257,6 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
   >
     <div className="text-white text-lg font-semibold">{sponsor.name}</div>
-    {/* Placeholder for actual logo */}
     <div className="text-xs text-red-400 mt-2">{sponsor.tier}</div>
   </motion.div>
 );
@@ -340,7 +334,7 @@ function SponsorshipPage() {
           content="https://cialaval.vercel.app/collaboration"
         />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="/banner/cia_ico.ico" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content="Become a Sponsor | Support AI Research and Innovation"
@@ -356,9 +350,7 @@ function SponsorshipPage() {
         />
       </Head>
       <section className="relative overflow-hidden">
-        {/* Add missing h1 */}
         <h1 className="sr-only">Become a Sponsor | Support AI Research</h1>
-        {/* Abstract background elements */}
         <div
           className="absolute top-40 left-20 w-72 h-72 bg-red-500/10 rounded-full blur-3xl -z-10"
           aria-hidden="true"
@@ -374,14 +366,12 @@ function SponsorshipPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Hero section */}
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {/* Add h2 for better SEO */}
             <h2 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
                 Become a Sponsor
@@ -397,7 +387,6 @@ function SponsorshipPage() {
             </p>
           </motion.div>
 
-          {/* Impact metrics */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -416,7 +405,6 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
-          {/* Sponsorship tiers */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -435,7 +423,6 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
-          {/* Funded projects */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -454,7 +441,6 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
-          {/* Current sponsors */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -473,7 +459,6 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             initial={{ opacity: 0 }}

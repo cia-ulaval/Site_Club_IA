@@ -7,32 +7,26 @@ const teamMembers = [
   {
     icon: <TextCursorInput className="w-8 h-8" />,
     title: "Émylie-Rose Desmarais",
-    description: "",
   },
   {
     icon: <SwatchBook className="w-8 h-8" />,
     title: "Benjamin Leblanc",
-    description: "",
   },
   {
     icon: <Rss className="w-8 h-8" />,
     title: "Antoine Jean",
-    description: "",
   },
   {
     icon: <Braces className="w-8 h-8" />,
     title: "Tadagbé Dhossou",
-    description: "",
   },
   {
     icon: <Braces className="w-8 h-8" />,
     title: "Alamaoudata Walet",
-    description: "",
   },
   {
     icon: <Braces className="w-8 h-8" />,
     title: "Mathieu Bazinet",
-    description: "",
   },
 ];
 
@@ -72,9 +66,6 @@ const TeamSection = () => (
           <h3 className="text-base md:text-xl font-bold text-white mb-1">
             {member.title}
           </h3>
-          <p className="text-gray-400 text-xs md:text-sm">
-            {member.description}
-          </p>
         </motion.div>
       ))}
     </motion.div>
@@ -123,7 +114,6 @@ function DecisionTree() {
                   Decision Tree Research Project
                 </motion.h1>
                 <motion.h2
-                  id="test"
                   className="text-5xl font-bold gradient-text mb-6"
                   initial="hidden"
                   animate="visible"

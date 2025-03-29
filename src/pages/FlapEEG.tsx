@@ -104,7 +104,7 @@ function FlapEEG() {
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/flapeeg" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="/banner/cia_ico.ico" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
           content="FlapEEG - Thought-Controlled Video Game"

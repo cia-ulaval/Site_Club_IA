@@ -9,29 +9,30 @@ import {
 } from "lucide-react";
 import Head from "next/head";
 
+// Team data for the two groups
 const team1 = [
   {
     icon: <Users className="w-8 h-8" />,
     title: "Deoth Guei",
-    description: "Team Lead, feasability study, and much more",
+    description: "Team Lead, feasibility study, and much more",
   },
   {
     icon: <Lightbulb className="w-8 h-8" />,
     title: "Théophile Bertelot",
     description:
-      "Jack of all trades: Helped with conception, research, development, deployment communication and more",
+      "Jack of all trades: Helped with conception, research, development, deployment communication, and more",
   },
   {
     icon: <UserRoundCog className="w-8 h-8" />,
     title: "Felix Ly",
     description:
-      "Helped with software development, optimisation and validation",
+      "Helped with software development, optimization, and validation",
   },
   {
     icon: <Rotate3d className="w-8 h-8" />,
     title: "Melek Sebri",
     description:
-      "Helped with software development, optimisation and validation",
+      "Helped with software development, optimization, and validation",
   },
   {
     icon: <Braces className="w-8 h-8" />,

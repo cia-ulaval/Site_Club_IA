@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
 import InfiniteScrollBanner from "../components/Carousel";
 
 function Home() {
@@ -61,12 +60,10 @@ function Home() {
         <div className="video-container mb-4 relative">
           <video
             className="w-full h-full object-cover"
-            src=""
             autoPlay
             loop
             muted={isMuted}
             playsInline
-            poster=""
           />
           <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
             <div className="flex items-center justify-between">
@@ -106,13 +103,10 @@ function Home() {
             About Us
           </h2>
           <p className="text-gray-400 text-lg text-justify p-3">
-            The CIA is the artificial intelligence club of Laval University. As
-            the name suggests, we are a group of students interested in
-            artificial intelligence and machine learning. Every year, we work on
-            different projects that allow us to explore the field of AI and to
-            learn new things. We are open to everyone, no matter your level of
-            expertise. Keep scrolling to learn more about our projects and how
-            to join us!
+            The CIA is the artificial intelligence club of Laval University. We
+            are a group of students exploring AI and machine learning through
+            various hands-on projects. Join us to learn and collaborate on
+            exciting AI endeavors!
           </p>
         </motion.div>
       </div>
@@ -167,9 +161,8 @@ function Home() {
           Interested in collaborating?
         </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          Sponsors help us to achieve our goals and to make our projects a
-          reality. If you are interested in collaborating with us, we offer
-          different plans that can suit your needs.
+          Sponsors help us achieve our goals and bring our projects to life.
+          Interested in collaborating with us? Check out our plans.
         </p>
         <Link
           to="/collaboration"

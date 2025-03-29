@@ -17,6 +17,7 @@ function JoinUs() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://cialaval.vercel.app/join-us" />
       </Head>
+
       <section className="relative overflow-hidden pt-20">
         <motion.div
           className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
@@ -79,7 +80,7 @@ function JoinUs() {
               our club and contribute to exciting projects.
             </p>
             <a
-              href="" //ADD THE GOOGLE FORM LINK HERE
+              href="" // ADD THE GOOGLE FORM LINK HERE
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"

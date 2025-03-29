@@ -2,113 +2,108 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 
 function Gallery() {
-  const formationImages = [
-    {
-      src: "/formation/tuto2.jpg",
-      desc: "First CIA tutorial",
-    },
-  ];
-
-  const competitionImages = [
-    {
-      src: "/competition/competition-1.jpg",
-      desc: "Competition winners 2024",
-    },
-    {
-      src: "/competition/competition-2.jpg",
-      desc: "During competition",
-    },
-    {
-      src: "/competition/competition-3.jpg",
-      desc: "During competition 2",
-    },
-    {
-      src: "/competition/competition-a2024-1.jpg",
-      desc: "During competition 3",
-    },
-  ];
-
-  const projectImages = [
-    {
-      src: "/project/club2024.png",
-      desc: "First meeting for flapeeg project 2024",
-    },
-    {
-      src: "/project/clubrencontre.png",
-      desc: "Second meeting for flapeeg project 2024",
-    },
-    {
-      src: "/project/f1tenth.jpg",
-      desc: "F1Tenth meeting",
-    },
-    {
-      src: "/project/f1tenthcar.png",
-      desc: "F1Tenth car",
-    },
-    {
-      src: "/project/flappycard.jpg",
-      desc: "Flapeeg meeting winter 2025",
-    },
-  ];
-
-  const communityImages = [
-    {
-      src: "/implication/filleclub.png",
-      desc: "Women and AI club",
-    },
-    {
-      src: "/implication/eeg-presentation.jpg",
-      desc: "EEG presentation to students",
-    },
-    {
-      src: "/implication/flappyeegmain.jpeg",
-      desc: "Executive team with flapeeg project",
-    },
-    {
-      src: "/implication/front-image.png",
-      desc: "CIA presentation to students",
-    },
-    {
-      src: "/implication/kalven-presenter.jpg",
-      desc: "Outside presentation",
-    },
-    {
-      src: "/implication/kiosque.jpg",
-      desc: "CIA stand presentation",
-    },
-    {
-      src: "/implication/kiosque.jpeg",
-      desc: "CIA stand presentation 2",
-    },
-    {
-      src: "/implication/presentation.png",
-      desc: "CIA presentation to students 2",
-    },
-    {
-      src: "/implication/rencontrecia.jpeg",
-      desc: "CIA presentation to students 3",
-    },
-    {
-      src: "/implication/second-image.png",
-      desc: "",
-    },
-    {
-      src: "/implication/table.jpeg",
-      desc: "Executive team at presentation stand",
-    },
-    {
-      src: "/implication/table2.jpeg",
-      desc: "Executive team at presentation stand 2",
-    },
-    {
-      src: "/implication/table3.jpeg",
-      desc: "Executive team at presentation stand 3",
-    },
-    {
-      src: "/implication/testclub.png",
-      desc: "EEG signal demonstration",
-    },
-  ];
+  const images = {
+    formation: [
+      {
+        src: "/formation/tuto2.jpg",
+        desc: "First CIA tutorial",
+      },
+    ],
+    competition: [
+      {
+        src: "/competition/competition-1.jpg",
+        desc: "Competition winners 2024",
+      },
+      {
+        src: "/competition/competition-2.jpg",
+        desc: "During competition",
+      },
+      {
+        src: "/competition/competition-3.jpg",
+        desc: "During competition 2",
+      },
+      {
+        src: "/competition/competition-a2024-1.jpg",
+        desc: "During competition 3",
+      },
+    ],
+    project: [
+      {
+        src: "/project/club2024.png",
+        desc: "First meeting for flapeeg project 2024",
+      },
+      {
+        src: "/project/clubrencontre.png",
+        desc: "Second meeting for flapeeg project 2024",
+      },
+      {
+        src: "/project/f1tenth.jpg",
+        desc: "F1Tenth meeting",
+      },
+      {
+        src: "/project/f1tenthcar.png",
+        desc: "F1Tenth car",
+      },
+      {
+        src: "/project/flappycard.jpg",
+        desc: "Flapeeg meeting winter 2025",
+      },
+    ],
+    community: [
+      {
+        src: "/implication/filleclub.png",
+        desc: "Women and AI club",
+      },
+      {
+        src: "/implication/eeg-presentation.jpg",
+        desc: "EEG presentation to students",
+      },
+      {
+        src: "/implication/flappyeegmain.jpeg",
+        desc: "Executive team with flapeeg project",
+      },
+      {
+        src: "/implication/front-image.png",
+        desc: "CIA presentation to students",
+      },
+      {
+        src: "/implication/kalven-presenter.jpg",
+        desc: "Outside presentation",
+      },
+      {
+        src: "/implication/kiosque.jpg",
+        desc: "CIA stand presentation",
+      },
+      {
+        src: "/implication/kiosque.jpeg",
+        desc: "CIA stand presentation 2",
+      },
+      {
+        src: "/implication/presentation.png",
+        desc: "CIA presentation to students 2",
+      },
+      {
+        src: "/implication/rencontrecia.jpeg",
+        desc: "CIA presentation to students 3",
+      },
+      {
+        src: "/implication/table.jpeg",
+        desc: "Executive team at presentation stand",
+      },
+      {
+        src: "/implication/table2.jpeg",
+        desc: "Executive team at presentation stand 2",
+      },
+      {
+        src: "/implication/table3.jpeg",
+        desc: "Executive team at presentation stand 3",
+      },
+      {
+        src: "/implication/testclub.png",
+        desc: "EEG signal demonstration",
+      },
+    ],
+  };
 
   const renderImages = (
     images: { src: string; desc: string }[],
@@ -165,13 +160,35 @@ function Gallery() {
         </title>
         <meta
           name="description"
-          content="Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions. Explore our achievements and journey in the field of AI and EEG."
+          content="Explore our gallery showcasing EEG projects, competitions, and community events. Learn more about our journey in AI, EEG technology, and community impact."
         />
         <meta
           name="keywords"
           content="EEG, gallery, projects, competitions, community, AI, events, formations"
         />
+        <meta name="author" content="Dereck Bélanger" />
         <link rel="canonical" href="https://cialaval.vercel.app/gallery" />
+        <meta
+          property="og:title"
+          content="Gallery - EEG Projects and Competitions"
+        />
+        <meta
+          property="og:description"
+          content="Explore EEG projects, competitions, and community involvement in our dynamic gallery."
+        />
+        <meta property="og:image" content="/banner/cia_ico.ico" />
+        <meta property="og:url" content="https://cialaval.vercel.app/gallery" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Gallery - EEG Projects and Competitions"
+        />
+        <meta
+          name="twitter:description"
+          content="Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions."
+        />
+        <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
       <motion.section
         className="container mx-auto p-4 text-center rounded-lg"
@@ -186,10 +203,10 @@ function Gallery() {
             EEG Projects, Competitions, and Community Gallery
           </span>
         </h1>
-        {renderImages(formationImages, "Formations/Discussions")}
-        {renderImages(competitionImages, "Competitions")}
-        {renderImages(projectImages, "Projects")}
-        {renderImages(communityImages, "Community Implications")}
+        {renderImages(images.formation, "Formations/Discussions")}
+        {renderImages(images.competition, "Competitions")}
+        {renderImages(images.project, "Projects")}
+        {renderImages(images.community, "Community Implications")}
       </motion.section>
     </>
   );
