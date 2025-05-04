@@ -117,10 +117,10 @@ const Management = () => {
                     style={{ height: "200px", objectFit: "cover" }} // Adjust the height as needed
                   />
                   <Card.Body>
-                    <Card.Title className="text-gray-200">
+                    <Card.Title className="text-gray-100">
                       {card.title}
                     </Card.Title>
-                    <Card.Text className="text-gray-400">{card.text}</Card.Text>
+                    <Card.Text className="text-gray-200">{card.text}</Card.Text>
                   </Card.Body>
                 </Card>
               </a>

@@ -22,10 +22,19 @@
   --custom-border-red: #d02020;
   --custom-hover-border-red: #ff4040;
   --glow-red-shadow-color: rgba(255, 50, 50, 0.5);
-
-  --color-grey-300: rgb(111, 115, 114, 1);
 }
 
+[data-bs-theme="light"] .text-gray-300 {
+    color: rgb(100 105 110) !important;
+}
+
+[data-bs-theme="light"] .text-gray-400 {
+  color: rgb(80 90 100) !important;
+}
+
+[data-bs-theme="light"] .text-gray-200 {
+  color: rgb(185 190 195) !important;
+}
 
 @layer base {
   body {
