@@ -47,7 +47,7 @@ function Navbar() {
               <img src="/img/CIA_LOGO.png" alt="CIA Logo" width={35} height={35} />
               <span className="text-xl font-bold gradient-text">CIA</span>
             </NavLink>
-            <div className="flex space-x-8 relative">
+            <div className="flex space-x-8 items-center relative">
               <NavLink
                   to="/"
                   className={({ isActive }) =>
@@ -87,7 +87,7 @@ function Navbar() {
                   Projects
                 </button>
                 {dropdownOpen && (
-                    <div className="absolute right-0 mt-2 w-40 bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
+                    <div className="absolute right-0 mt-2 w-40 bg-white/80 dark:bg-black/80 border border-red-500/20 rounded-lg shadow-lg">
                       <NavLink
                           to="/flapeeg"
                           className="block px-4 py-2 text-gray-300 hover:bg-red-500/20"
@@ -121,8 +121,11 @@ function Navbar() {
                     </div>
                 )}
               </div>
-              <Button className="" onClick={() => handleThemeChange(!isDarkMode)}>
-                {isDarkMode ? <Sun /> : <Moon />}
+              <Button
+                className="flex items-center justify-center p-2 rounded-full bg-red-500/20 hover:bg-red-500/40 text-gray-300 transition-colors"
+                onClick={() => handleThemeChange(!isDarkMode)}
+              >
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </Button>
             </div>
           </div>
