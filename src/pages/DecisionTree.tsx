@@ -37,7 +37,7 @@ const TeamSection = () => (
           <div className="text-red-400 mb-4 flex justify-center">
             {member.icon}
           </div>
-          <h3 className="text-xl text-gray-300 font-bold dark:text-white mb-2"> {member.title}</h3>
+          <h3 className="text-xl text-gray-600 dark:text-white font-bold  mb-2"> {member.title}</h3>
           <p className="text-gray-500">{member.description}</p>
         </div>
       ))}

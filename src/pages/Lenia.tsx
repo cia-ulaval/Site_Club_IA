@@ -33,7 +33,7 @@ const TeamSection = () => (
           <div className="text-red-400 mb-4 flex justify-center">
             {member.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
+          <h3 className="text-xl font-bold text-gray-600 dark:text-white mb-2">{member.title}</h3>
         </div>
       ))}
     </div>
@@ -50,7 +50,7 @@ function Lenia() {
   return (
     <div className="container mx-auto p-4 text-center">
       <h1 className="text-5xl font-bold gradient-text mb-6">Lenia</h1>
-      <h2 className="text-4xl mb-6">What is Lenia?</h2>
+      <h2 className="text-4xl text-gray-600 dark:text-white mb-6">What is Lenia?</h2>
       <p className="w-full md:w-3/4 mx-auto text-lg mt-4 text-gray-400 text-justify mb-10">
         Artificial intelligence isn't just about neural networks or traditional
         algorithms. Some systems, based on simple rules, can generate

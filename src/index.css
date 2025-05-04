@@ -28,11 +28,11 @@
     color: rgb(100 105 110) !important;
 }
 
-[data-bs-theme="light"] .text-gray-400 {
+[data-bs-theme="light"] .text-gray-400:not(.card-text) {
   color: rgb(80 90 100) !important;
 }
 
-[data-bs-theme="light"] .text-gray-200 {
+[data-bs-theme="light"] .text-gray-200:not(.card-text) {
   color: rgb(185 190 195) !important;
 }
 

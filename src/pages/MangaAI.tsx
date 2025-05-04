@@ -39,7 +39,7 @@ const TeamSection = () => (
     <h2 className="text-3xl font-bold gradient-text text-center mb-12">
       The Team
     </h2>
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mx-6">
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-2 mx-2">
       {teamMembers.map((member, index) => (
         <div
           key={index}
@@ -48,7 +48,7 @@ const TeamSection = () => (
           <div className="text-red-400 mb-4 flex justify-center">
             {member.icon}
           </div>
-          <h3 className="text-xl font-bold text-white mb-2">{member.title}</h3>
+          <h3 className="text-xl font-bold text-gray-600 dark:text-white mb-2">{member.title}</h3>
           <p className="text-gray-400">{member.description}</p>
         </div>
       ))}
@@ -90,7 +90,8 @@ function MangaAI() {
             The initial goal was to develop a functional prototype by leveraging
             existing tools to quickly obtain a working solution. This first
             version included the following components:
-            <ul className="list-disc">
+          </p>
+            <ul className="mb-10 mx-10 list-disc">
               <li className="mt-2 mb-3">
                 Bubble detection: Segmentation using a U-Net model, trained as
                 part of an academic deep learning project.
@@ -112,9 +113,8 @@ function MangaAI() {
                 length, as the font size was not automatically adjusted.
               </li>
             </ul>
-          </p>
           <ImageWithGlow src="/img/mangaai.png" alt="Manga AI" />
-          <p className="mb-8 mx-10 mt-10">
+          <p className="mt-10 mx-10">
             The next phase of the project focuses on replacing existing tools
             with custom models and improving translation quality by leveraging
             additional visual information. We will work on Dynamic text resizing
