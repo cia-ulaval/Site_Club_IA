@@ -22,6 +22,8 @@
   --custom-border-red: #d02020;
   --custom-hover-border-red: #ff4040;
   --glow-red-shadow-color: rgba(255, 50, 50, 0.5);
+
+  --color-grey-300: rgb(111, 115, 114, 1);
 }
 
 
@@ -29,6 +31,9 @@
   body {
     @apply bg-black text-gray-100;
   }
+}
+
+.bg-white {
 }
 
 .gradient-text {
@@ -102,8 +107,8 @@
 
 .scroll-banner img {
   height: 175px;
-  width: 200px; 
-  margin-right: 6rem; 
+  width: 200px;
+  margin-right: 6rem;
   display: inline-block;
   opacity: 0.8;
 }
