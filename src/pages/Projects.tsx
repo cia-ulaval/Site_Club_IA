@@ -12,20 +12,6 @@ const projects = [
     github: "https://github.com/cia-ulaval/FlapEEG_interface_v1",
   },
   {
-    title: "MangaAI",
-    image: "/project/mangaai2.png",
-    description: "Automatic manga translation and analysis",
-    link: "/mangaai",
-    github: "https://github.com/cia-ulaval/MangaAutoTranslator",
-  },
-  {
-    title: "Lenia",
-    image: "/project/leniacover.png",
-    description: "Autonomous cellular automata",
-    link: "/lenia",
-    github: "https://github.com/cia-ulaval/LENIA-frontend",
-  },
-  {
     title: "F1Tenth",
     image: "/project/f1tenthcar.png",
     description: "EMG racing with 1/10th scale F1 cars",
@@ -36,6 +22,20 @@ const projects = [
     image: "/project/decisiontree.jpg",
     description: "Research and development of decision trees",
     link: "/decisiontree",
+  },
+  {
+    title: "Lenia",
+    image: "/project/leniacover.png",
+    description: "Autonomous cellular automata",
+    link: "/lenia",
+    github: "https://github.com/cia-ulaval/LENIA-frontend",
+  },
+  {
+    title: "MangaAI",
+    image: "/project/mangaai2.png",
+    description: "Automatic manga translation and analysis",
+    link: "/mangaai",
+    github: "https://github.com/cia-ulaval/MangaAutoTranslator",
   },
 ];
 

@@ -14,13 +14,12 @@ const team1 = [
   {
     icon: <Users className="w-8 h-8" />,
     title: "Deoth Guei",
-    description: "Team Lead, feasibility study, and much more",
+    description: "Team Lead, feasibility study, and more",
   },
   {
     icon: <Lightbulb className="w-8 h-8" />,
     title: "Théophile Bertelot",
-    description:
-      "Jack of all trades: Helped with conception, research, development, deployment communication, and more",
+    description: "Helped with conception, research, development and more",
   },
   {
     icon: <UserRoundCog className="w-8 h-8" />,
@@ -208,6 +207,31 @@ function F1Tenth() {
                     </p>
                   </motion.div>
                 ))}
+              </div>
+            </motion.section>
+
+            <motion.section
+              id="sponsor"
+              className="mt-20 mb-12 sm:mb-20 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6">
+                Special Thanks to Our Sponsor
+              </h2>
+              <div className="flex flex-col items-center">
+                <img
+                  src="/sponsors/vaul_logo.png"
+                  alt="VAUL Logo"
+                  className="w-40 h-auto mb-4"
+                />
+                <p className="text-gray-400 max-w-2xl">
+                  We would like to extend our thanks to VAUL, the Laval
+                  University autonomous vehicle laboratory, for allowing us to
+                  use their equipment and for their support throughout this
+                  project.
+                </p>
               </div>
             </motion.section>
           </div>

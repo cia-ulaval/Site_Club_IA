@@ -200,7 +200,7 @@ function Gallery() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <motion.h1
+        <motion.h2
           className="text-4xl sm:text-5xl lg:text-7xl font-bold text-center"
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -209,7 +209,7 @@ function Gallery() {
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
             EEG Gallery
           </span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           className="text-lg md:text-xl text-gray-300 text-center max-w-3xl mx-auto mt-6"
