@@ -3,8 +3,10 @@ import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import InfiniteScrollBanner from "../components/Carousel";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
@@ -13,21 +15,21 @@ function Home() {
 
   const projects = [
     {
-      title: "Brain Controlled Video Game",
+      title: t("home.projects.flapeeg.title"),
       image: "/project/FlappyBrain.png",
-      description: "EEG controlled retro video game",
+      description: t("home.projects.flapeeg.description"),
       link: "/flapeeg",
     },
     {
-      title: "Muscle controlled race car",
+      title: t("home.projects.f1tenth.title"),
       image: "/project/f1tenthcar.png",
-      description: "EMG racing with 1/10th scale F1 cars",
+      description: t("home.projects.f1tenth.description"),
       link: "/f1tenth",
     },
     {
-      title: "Manga automatic translator",
+      title: t("home.projects.mangaai.title"),
       image: "/project/mangaai2.png",
-      description: "AI tool that translates manga in real time",
+      description: t("home.projects.mangaai.description"),
       link: "/mangaai",
     },
   ];
@@ -42,7 +44,7 @@ function Home() {
           transition={{ duration: 1 }}
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            C.I.A
+            {t("home.header.title")}
           </span>
         </motion.h1>
         <motion.p
@@ -51,8 +53,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          Welcome to the Club d'Intelligence Artificielle (CIA) of Laval
-          University!
+          {t("home.header.subtitle")}
         </motion.p>
       </header>
 
@@ -100,13 +101,10 @@ function Home() {
           transition={{ duration: 1, delay: 1 }}
         >
           <h2 className="text-2xl font-bold mb-4 gradient-text pl-4">
-            About Us
+            {t("home.about.title")}
           </h2>
           <p className="text-gray-400 text-lg text-justify p-3">
-            The CIA is the artificial intelligence club of Laval University. We
-            are a group of students exploring AI and machine learning through
-            various hands-on projects. Join us to learn and collaborate on
-            exciting AI endeavors!
+            {t("home.about.description")}
           </p>
         </motion.div>
       </div>
@@ -118,7 +116,7 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.5 }}
         >
-          Some of our work
+          {t("home.projects.title")}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -143,7 +141,8 @@ function Home() {
                   to={project.link}
                   className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
                 >
-                  Learn more <ArrowRight className="w-4 h-4 ml-2" />
+                  {t("home.projects.learnMore")}{" "}
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </motion.div>
@@ -158,17 +157,16 @@ function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          Interested in collaborating?
+          {t("home.collaboration.title")}
         </motion.h2>
         <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          Sponsors help us achieve our goals and bring our projects to life.
-          Interested in collaborating with us? Check out our plans.
+          {t("home.collaboration.description")}
         </p>
         <Link
           to="/collaboration"
           className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
         >
-          View our plans
+          {t("home.collaboration.button")}
         </Link>
       </section>
       <InfiniteScrollBanner />

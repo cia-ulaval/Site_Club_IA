@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import LanguageToggle from "./LanguageToggle"; // Import the LanguageToggle component
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ function Navbar() {
             />
             <span className="text-xl font-bold gradient-text">CIA</span>
           </NavLink>
-          <div className="flex space-x-8 relative hidden md:flex">
+          <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -43,23 +44,20 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <NavLink
-              to="/join-us"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                }`
-              }
-            >
-              Join Us
-            </NavLink>
           </div>
-          <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center space-x-4">
+            <LanguageToggle /> {/* Add the LanguageToggle button here */}
+            <button
+              onClick={toggleMenu}
+              className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
         {isOpen && (
           <div className="md:hidden">
@@ -77,17 +75,6 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
-            <NavLink
-              to="/join-us"
-              className={({ isActive }) =>
-                `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                  isActive ? "text-red-400" : ""
-                } py-2`
-              }
-              onClick={toggleMenu}
-            >
-              Join Us
-            </NavLink>
           </div>
         )}
       </div>

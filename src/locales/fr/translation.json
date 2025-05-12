@@ -1,0 +1,34 @@
+{
+  "home": {
+    "header": {
+      "title": "C.I.A",
+      "subtitle": "Bienvenue au Club d'Intelligence Artificielle (CIA) de l'Université Laval !"
+    },
+    "about": {
+      "title": "À propos de nous",
+      "description": "Le CIA est le club d'intelligence artificielle de l'Université Laval. Nous sommes un groupe d'étudiants explorant l'IA et l'apprentissage automatique à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA !"
+    },
+    "projects": {
+      "title": "Quelques-uns de nos travaux",
+      "flapeeg": {
+        "title": "Jeu vidéo contrôlé par le cerveau",
+        "description": "Jeu rétro contrôlé par EEG"
+      },
+      "f1tenth": {
+        "title": "Voiture de course contrôlée par les muscles",
+        "description": "Course EMG avec des voitures F1 à l'échelle 1/10"
+      },
+      "mangaai": {
+        "title": "Traducteur automatique de manga",
+        "description": "Outil d'IA qui traduit les mangas en temps réel"
+      },
+      "learnMore": "En savoir plus"
+    },
+    "collaboration": {
+      "title": "Intéressé à collaborer ?",
+      "description": "Les sponsors nous aident à atteindre nos objectifs et à donner vie à nos projets. Intéressé à collaborer avec nous ? Consultez nos plans.",
+      "button": "Voir nos plans"
+    }
+  }
+  
+}
