@@ -17,6 +17,7 @@ function Navbar() {
     { to: "/projects", label: t("navbar.projects") },
     { to: "/management", label: t("navbar.management") },
     { to: "/gallery", label: t("navbar.gallery") },
+    { to: "/join-us", label: t("navbar.joinus") },
   ];
 
   return (

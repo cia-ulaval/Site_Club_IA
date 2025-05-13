@@ -195,7 +195,7 @@ function Gallery() {
 
       {/* Hero section with animated gradient background */}
       <motion.div
-        className="w-full py-20 bg-gradient-to-r from-red-900/20 via-gray-900 to-red-900/20 bg-size-200 animate-gradient-x"
+        className="w-full py-20 bg-size-200"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

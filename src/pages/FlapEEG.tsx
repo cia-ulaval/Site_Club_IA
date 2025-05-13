@@ -213,18 +213,18 @@ function FlapEEG() {
 
           {/* Remaining Sections */}
           <section id="Week1" className="mb-12 sm:mb-20 text-justify">
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
-              Our Beginnings (Week 1)
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              The Beginning
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
               <div className="hero-card">
                 <div
-                  className="video-container relative"
+                  className="video-container relative rounded-xl overflow-hidden shadow-lg"
                   style={{ height: "auto" }}
                 >
                   <video
                     ref={videoRef}
-                    className="w-full h-full object-cover rounded-xl"
+                    className="w-full h-full object-cover"
                     src="/project/flappyproto.mp4"
                     autoPlay
                     loop
@@ -236,7 +236,7 @@ function FlapEEG() {
                     <div className="flex items-center justify-between">
                       <button
                         onClick={togglePlay}
-                        className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
+                        className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors shadow-md"
                       >
                         {isPlaying ? (
                           <Pause className="w-5 h-5" />
@@ -248,38 +248,23 @@ function FlapEEG() {
                   </div>
                 </div>
               </div>
-              <div>
-                <p className="text-gray-400 mb-4 sm:mb-6">
-                  Just like any other project, FlapEEG had a beginning. It all
-                  started during the spring semester of 2024. It was a rough
-                  start: we had many participants and loads of ideas, but the
-                  organization was very hard to manage. Members came and went,
-                  and people of course had exams and other things to attend
-                  which left us with a very different load of work to do.
+              <div className="flex flex-col justify-center">
+                <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed">
+                  FlapEEG is a project that started in January 2025.
                 </p>
-                <p className="text-gray-400">
-                  All that to say, that semester, we didn't get as much as we
-                  would've liked done, but in winter of 2025, we learnt from our
-                  experience and came back strong! We approached the project
-                  with a new concept: instead of open to everyone, we would
-                  screen the participants and make a choice based on their
-                  skills, their availability but most importantly, their
-                  interest in the project. This way, we were able to work much
-                  more efficiently and address any issues immediately. It was
-                  indeed a great success! We were able to finish the first step
-                  of FlapEEG before our deadline: Make it work with a simple
-                  algorithm that would detect blinks. Our member Dereck worked
-                  on this and Louis-Étienne helped him fix the bugs. You can see
-                  on this preview the first prototype. In the meantime, our
-                  other members were working on finishing the game, researching
-                  and collecting data.
+                <p className="text-gray-400 leading-relaxed">
+                  The team consists of 8 members, some of whom are experienced
+                  in AI and EEG technology, while others are passionate about
+                  video games and coding. They all have different backgrounds
+                  and skills, but share the same goal.
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 mt-4 sm:mt-6">
-              It was only a rough prototype, as you can see, some latency was
-              still present and the game was not fully functional. But it was a
-              step in the right direction which led us to week 2...
+            <p className="text-gray-400 mt-6 sm:mt-8 leading-relaxed">
+              In the video above, you can see the first prototype of the game.
+              Dereck and Louis-Étienne managed to get a simple version of the
+              game up and running where the player could control the character
+              by blinking with an activation threshold.
             </p>
           </section>
 
@@ -290,20 +275,14 @@ function FlapEEG() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <p className="text-gray-400">
-                  After successfully the baseline, it was time to start
-                  collecting data. We needed to collect data from our
-                  participants to train our AI model to interpret brain signals.
-                  We had to find a way to collect this data and to make sure it
-                  was clean and usable. To do that, we asked many participants
-                  to perform a series of tests with the headset. We then had
-                  Jordan and Dereck work on a way to clean the data and make it
-                  usable.
+                  After successfully establishing the baseline, Jordan recruited
+                  volunteers to collect brain data. The goal was to gather a
+                  dataset of brain signals while the volunteers played the game
+                  to train the AI model.
                 </p>
                 <p className="text-gray-400 mt-4 sm:mt-6">
-                  In the meantime, Louis-Étienne installed a server to
-                  centralize our datasets, William finished the game. Everything
-                  was slowly coming together, but the hardest part was yet to
-                  come!
+                  In the meantime, William finished the game and helped
+                  deploying the server with the help of Louis-Étienne.
                 </p>
               </div>
               <div className="flex justify-center">
@@ -319,37 +298,30 @@ function FlapEEG() {
 
           <section id="Week4-6" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
-              Data Collection (Week 4 - Week 6)
+              Data Collection
             </h2>
             <p className="text-gray-400 pb-3 sm:pb-4">
-              At this point in the project, we hit a challenge. Louis found out
-              our data wasn't properly filtered and we had a lot of noise around
-              the 60Hz frequency which made it unusable. Jordan took care of
-              this and found a way to filter out the noise.
+              At this point in the project Louis found out our data wasn't
+              properly filtered and there had a lot of noise which made it
+              unusable. Jordan took care of this and found a way to filter out
+              the noise.
             </p>
             <p className="text-gray-400">
-              This leads us to the middle of the semester; everyone is preparing
-              for the exams so we decided to take the next week or two reading
-              scientific papers and sharing our discoveries with each other to
-              face the future challenges.
+              In the meantime, Amen and Estelle were working hard training the
+              AI model behind the scenes and paiving the way for the others to
+              understand the challenges of training a model.
             </p>
           </section>
 
           <section id="Week6-9" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20">
-              Training (Week 6 - Week 9)
+              First challenge
             </h2>
             <p className="text-gray-400">
-              Once the midterms out of the way, we regrouped and discussed of
-              the next steps. The key step was to take out any noise from
-              muscular or eye movements from our data and to focus on the
-              intention signals only. it was hard because our our first
-              protocols all included eye movements which were difficult to
-              isolate from the intention signals, but after a meeting where the
-              whole team shared their ideas, we were able to come up with a new
-              optimized protocol that would allow us to train our AI model to
-              understand the brain signals and to translate them into actions in
-              the game.
+              At this point in the project, the team faced a significant
+              challenge: the AI model was not performing as well as needed. They
+              opted to start reseaarching and reading papers to understand the
+              challenges of training a model.
             </p>
           </section>
         </div>
