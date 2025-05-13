@@ -29,6 +29,17 @@
       "description": "Les sponsors nous aident à atteindre nos objectifs et à donner vie à nos projets. Intéressé à collaborer avec nous ? Consultez nos plans.",
       "button": "Voir nos plans"
     }
+  },
+  "navbar": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "management": "Gestion",
+    "gallery": "Galerie"
+  },
+    "footer": {
+    "clubName": "Club IA de l'Université Laval",
+    "slogan": "Façonner l'inconnu, coder l'impossible.",
+    "connect": "Nous suivre",
+    "copyright": "© 2025 Dereck Bélanger - Tous droits réservés."
   }
-  
 }

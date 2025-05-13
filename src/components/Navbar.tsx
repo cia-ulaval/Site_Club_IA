@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import LanguageToggle from "./LanguageToggle"; // Import the LanguageToggle component
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import LanguageToggle from "./LanguageToggle";
 
 function Navbar() {
+  const { t } = useTranslation(); // Initialize the translation hook
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,10 +13,10 @@ function Navbar() {
   };
 
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/projects", label: "Projects" },
-    { to: "/management", label: "Management" },
-    { to: "/gallery", label: "Gallery" },
+    { to: "/", label: t("navbar.home") },
+    { to: "/projects", label: t("navbar.projects") },
+    { to: "/management", label: t("navbar.management") },
+    { to: "/gallery", label: t("navbar.gallery") },
   ];
 
   return (
@@ -46,7 +48,7 @@ function Navbar() {
             ))}
           </div>
           <div className="flex items-center space-x-4">
-            <LanguageToggle /> {/* Add the LanguageToggle button here */}
+            <LanguageToggle />
             <button
               onClick={toggleMenu}
               className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"

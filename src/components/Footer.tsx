@@ -1,20 +1,23 @@
 import { Instagram, Facebook, Linkedin } from "lucide-react";
+import { useTranslation } from "react-i18next"; // Import useTranslation hook
 
 function Footer() {
+  const { t } = useTranslation(); // Initialize the translation hook
+
   return (
     <footer className="bg-black/60 border-t border-red-500/20 py-12 mt-20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div>
             <h3 className="text-xl font-bold gradient-text mb-4">
-              Laval University AI Club
+              {t("footer.clubName")}
             </h3>
-            <p className="text-gray-400">
-              Shape the unknown, code the impossible.
-            </p>
+            <p className="text-gray-400">{t("footer.slogan")}</p>
           </div>
           <div>
-            <h4 className="text-lg font-semibold text-red-400 mb-4">Connect</h4>
+            <h4 className="text-lg font-semibold text-red-400 mb-4">
+              {t("footer.connect")}
+            </h4>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/ciaulaval/"
@@ -38,9 +41,7 @@ function Footer() {
           </div>
         </div>
         <div className="text-center pt-8 border-t border-red-500/20">
-          <p className="text-gray-400">
-            © 2025 Dereck Bélanger - All rights reserved.
-          </p>
+          <p className="text-gray-400">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>
