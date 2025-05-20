@@ -2,58 +2,64 @@ import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { useTranslation } from "react-i18next";
 
 const projects = [
   {
-    title: "FlapEEG",
+    key: "flapeeg",
     image: "/project/FlappyBrain.png",
-    description: "A mind controlled video game",
+    defaultTitle: "FlapEEG",
+    defaultDescription: "A mind-controlled video game",
     link: "/flapeeg",
     github: "https://github.com/cia-ulaval/FlapEEG_interface_v1",
   },
   {
-    title: "F1Tenth",
+    key: "f1tenth",
     image: "/project/f1tenthcar.png",
-    description: "EMG racing with 1/10th scale F1 cars",
+    defaultTitle: "F1Tenth",
+    defaultDescription: "EMG racing with 1/10th-scale F1 cars",
     link: "/f1tenth",
   },
   {
-    title: "Decision Tree",
+    key: "decisiontree",
     image: "/project/decisiontree.jpg",
-    description: "Research and development of decision trees",
+    defaultTitle: "Decision Tree",
+    defaultDescription: "Research and development of decision trees",
     link: "/decisiontree",
   },
   {
-    title: "Lenia",
+    key: "lenia",
     image: "/project/leniacover.png",
-    description: "Autonomous cellular automata",
+    defaultTitle: "Lenia",
+    defaultDescription: "Autonomous cellular automata",
     link: "/lenia",
     github: "https://github.com/cia-ulaval/LENIA-frontend",
   },
   {
-    title: "MangaAI",
+    key: "mangaai",
     image: "/project/mangaai2.png",
-    description: "Automatic manga translation and analysis",
+    defaultTitle: "MangaAI",
+    defaultDescription: "Automatic manga translation and analysis",
     link: "/mangaai",
     github: "https://github.com/cia-ulaval/MangaAutoTranslator",
   },
 ];
 
 function Projects() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>Our Projects - EEG Site</title>
-        <meta
-          name="description"
-          content="Explore the innovative projects developed by our team, including mind-controlled games, manga translation, cellular automata, and more."
-        />
+        <title>CIA Site</title>
+        <meta name="description" content={t("home.about.description")} />
         <meta
           name="keywords"
           content="EEG projects, FlapEEG, MangaAI, Lenia, F1Tenth, Decision Tree, innovative technology, research"
         />
         <meta name="author" content="Dereck Bélanger" />
       </Head>
+
       <motion.section
         className="overflow-hidden mt-24"
         initial={{ opacity: 0 }}
@@ -61,6 +67,7 @@ function Projects() {
         transition={{ duration: 1 }}
       >
         <div className="max-w-7xl mx-auto px-6 pb-16">
+          {/* ---- en-tête ---- */}
           <header className="text-center mb-16">
             <motion.h1
               className="text-5xl font-extrabold text-white tracking-wide"
@@ -68,10 +75,7 @@ function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Our{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Projects
-              </span>
+              {t("home.projects.title", "Projects")}
             </motion.h1>
             <motion.p
               className="text-lg text-gray-300 mt-4 max-w-2xl mx-auto"
@@ -79,14 +83,15 @@ function Projects() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Explore the innovative projects our team is working on.
+              {t("home.projects.subtitle", "Discover our innovative projects!")}
             </motion.p>
           </header>
 
+          {/* ---- cartes projets ---- */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
-                key={index}
+                key={project.key}
                 whileHover={{ scale: 1.03 }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -100,23 +105,30 @@ function Projects() {
                       backgroundImage: `url(${
                         project.image || "/project/placeholder.jpg"
                       })`,
-                      backgroundSize: "cover",
                     }}
                   />
                   <div className="p-6 flex flex-col h-48">
                     <h3 className="text-xl font-semibold text-gray-200 mb-2">
-                      {project.title}
+                      {t(
+                        `home.projects.${project.key}.title`,
+                        project.defaultTitle
+                      )}
                     </h3>
                     <p className="text-gray-400 mb-4 flex-grow overflow-hidden line-clamp-3">
-                      {project.description}
+                      {t(
+                        `home.projects.${project.key}.description`,
+                        project.defaultDescription
+                      )}
                     </p>
+
                     <div className="flex flex-wrap gap-3 mt-auto sm:flex-row flex-col">
                       <Link
                         to={project.link}
                         className="px-4 py-2 text-sm text-white font-medium rounded-md bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center justify-center sm:flex-grow"
                       >
-                        Learn More →
+                        {t("home.projects.learnMore", "Learn more")} →
                       </Link>
+
                       {project.github && (
                         <a
                           href={project.github}
@@ -125,7 +137,7 @@ function Projects() {
                           className="px-4 py-2 text-sm text-white font-medium rounded-md bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center justify-center sm:flex-grow"
                         >
                           <Github className="w-4 h-4 mr-2" />
-                          <span>GitHub</span>
+                          <span>{t("home.projects.github", "GitHub")}</span>
                         </a>
                       )}
                     </div>

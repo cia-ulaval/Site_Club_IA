@@ -10,19 +10,29 @@
     },
     "projects": {
       "title": "Some of our work",
+      "subtitle": "Discover our innovative projects!",
       "flapeeg": {
-        "title": "Brain Controlled Video Game",
-        "description": "EEG controlled retro video game"
+        "title": "FlapEEG",
+        "description": "A mind-controlled video game"
       },
       "f1tenth": {
-        "title": "Muscle controlled race car",
-        "description": "EMG racing with 1/10th scale F1 cars"
+        "title": "F1Tenth",
+        "description": "EMG racing with 1/10th-scale F1 cars"
+      },
+      "decisiontree": {
+        "title": "Decision Tree",
+        "description": "Research and development of decision trees"
+      },
+      "lenia": {
+        "title": "Lenia",
+        "description": "Autonomous cellular automata"
       },
       "mangaai": {
-        "title": "Manga automatic translator",
-        "description": "AI tool that translates manga in real time"
+        "title": "MangaAI",
+        "description": "Automatic manga translation and analysis"
       },
-      "learnMore": "Learn more"
+      "learnMore": "Learn more",
+      "github": "GitHub"
     },
     "collaboration": {
       "title": "Interested in collaborating?",
