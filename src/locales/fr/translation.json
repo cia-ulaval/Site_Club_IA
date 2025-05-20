@@ -37,10 +37,68 @@
     "gallery": "Galerie",
     "joinus": "Nous rejoindre"
   },
-    "footer": {
+  "footer": {
     "clubName": "Club IA de l'Université Laval",
     "slogan": "Façonner l'inconnu, coder l'impossible.",
     "connect": "Nous suivre",
     "copyright": "© 2025 Dereck Bélanger - Tous droits réservés."
+  },
+  "collaborationPage": {
+    "mainTitle": "Devenez Partenaire",
+    "subtitle": "Investissez dans l'Avenir de la Recherche en IA",
+    "intro": "Rejoignez notre mission pour repousser les limites de la technologie d'IA. Votre parrainage alimente la recherche de pointe, soutient les étudiants innovateurs et crée des solutions qui transforment les industries.",
+    "impactTitle": "Notre Impact",
+    "tiersTitle": "Niveaux de Parrainage",
+    "projectsTitle": "Projets que Vous Financerez",
+    "currentSponsorsTitle": "Nos Partenaires Actuels",
+    "readyTitle": "Prêt à Collaborer ?",
+    "readyText1": "Rejoignez les organisations visionnaires qui façonnent l'avenir de l'intelligence artificielle. Nos partenariats offrent plus qu'une simple visibilité – ils donnent un accès direct à la recherche de pointe, aux étudiants talentueux et aux solutions innovantes.",
+    "readyText2": "Des formules de parrainage personnalisées sont disponibles pour les organisations ayant des intérêts de recherche ou des objectifs de collaboration spécifiques. Discutons ensemble de la façon dont nous pouvons créer de la valeur ensemble.",
+    "flexiblePayment": "Options de paiement flexibles disponibles",
+    "contactTitle": "Contactez-nous",
+    "contactName": "Votre Nom",
+    "contactEmail": "Adresse Email",
+    "contactCompany": "Entreprise",
+    "contactMessage": "Comment souhaitez-vous soutenir nos projets ?",
+    "contactButton": "Envoyer le Message",
+    "becomeSponsorButton": "Devenir Partenaire {{tier}}",
+    "progress": "Progression",
+    "impactMetrics": {
+      "projectsCompleted": "Projets Complétés",
+      "studentResearchers": "Étudiants Chercheurs",
+      "industryPartners": "Partenaires Industriels",
+      "publishedPapers": "Articles Publiés"
+    },
+    "sponsorshipTiersNames": {
+      "Bronze": "Bronze",
+      "Silver": "Argent",
+      "Gold": "Or",
+      "Platinum": "Platine"
+    },
+    "fundedProjects": {
+      "MangaTranslator IA": "MangaTranslator IA",
+      "FlapEEG": "FlapEEG",
+      "F1Tenth": "F1Tenth"
+    },
+    "fundedProjectsDescriptions": {
+      "MangaTranslator AI": "Système de traduction de manga en temps réel propulsé par l’IA.",
+      "FlapEEG": "Jeu vidéo contrôlé par les signaux cérébraux grâce à la technologie EEG.",
+      "F1Tenth": "Course F1 avec des voitures à l’échelle 1/10 contrôlées par signaux musculaires."
+    },
+    "tierBenefits": {
+      "Your logo and link on our website": "Votre logo et lien sur notre site web",
+      "Your logo presented at our events": "Votre logo présenté lors de nos événements",
+      "Special mention on our social media": "Mention spéciale sur nos réseaux sociaux",
+      "Distribution of your promotional materials": "Distribution de vos supports promotionnels",
+      "All Bronze benefits": "Tous les avantages Bronze",
+      "Your logo on our members merchandise": "Votre logo sur les articles des membres",
+      "All Silver benefits": "Tous les avantages Argent",
+      "Trimester progress report for our projects": "Rapport d’avancement trimestriel de nos projets",
+      "Invitations to our events": "Invitations à nos événements",
+      "Your logo on our projects": "Votre logo sur nos projets",
+      "All Gold benefits": "Tous les avantages Or",
+      "Access to our prototypes": "Accès à nos prototypes",
+      "Access to our members CV books": "Accès aux CV de nos membres"
+    }
   }
 }

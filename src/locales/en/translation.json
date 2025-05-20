@@ -42,5 +42,48 @@
     "slogan": "Shape the unknown, code the impossible.",
     "connect": "Connect",
     "copyright": "© 2025 Dereck Bélanger - All rights reserved."
+  },
+  "collaborationPage": {
+    "mainTitle": "Become a Sponsor",
+    "subtitle": "Invest in the Future of AI Research",
+    "intro": "Join our mission to push the boundaries of AI technology. Your sponsorship fuels cutting-edge research, empowers student innovators, and creates solutions that transform industries.",
+    "impactTitle": "Our Impact",
+    "tiersTitle": "Sponsorship Tiers",
+    "projectsTitle": "Projects You'll Fund",
+    "currentSponsorsTitle": "Our Current Sponsors",
+    "readyTitle": "Ready to Partner?",
+    "readyText1": "Join forward-thinking organizations that are shaping the future of artificial intelligence. Our partnerships provide more than just exposure – they offer direct access to cutting-edge research, talented students, and innovative solutions.",
+    "readyText2": "Custom sponsorship packages are available for organizations with specific research interests or collaboration goals. Let's discuss how we can create value together.",
+    "flexiblePayment": "Flexible payment options available",
+    "contactTitle": "Get in Touch",
+    "contactName": "Your Name",
+    "contactEmail": "Email Address",
+    "contactCompany": "Company",
+    "contactMessage": "How would you like to support our projects?",
+    "contactButton": "Send Message",
+    "becomeSponsorButton": "Become a {{tier}} Sponsor",
+    "progress": "Progress",
+    "impactMetrics": {
+      "projectsCompleted": "Projects Completed",
+      "studentResearchers": "Student Researchers",
+      "industryPartners": "Industry Partners",
+      "publishedPapers": "Published Papers"
+    },
+    "sponsorshipTiersNames": {
+      "Bronze": "Bronze",
+      "Silver": "Silver",
+      "Gold": "Gold",
+      "Platinum": "Platinum"
+    },
+    "fundedProjects": {
+      "MangaTranslator AI": "MangaTranslator AI",
+      "FlapEEG": "FlapEEG",
+      "F1Tenth": "F1Tenth"
+    },
+    "fundedProjectsDescriptions": {
+      "MangaTranslator AI": "AI-powered manga translation system for real-time panel conversion.",
+      "FlapEEG": "EEG-based control system for interactive gaming.",
+      "F1Tenth": "1/10th scale Formula 1 car controlled by muscle signals."
+    }
   }
 }
