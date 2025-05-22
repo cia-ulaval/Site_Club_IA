@@ -4,92 +4,100 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
 import Head from "next/head";
-
-const cardData = [
-  {
-    title: "Nathaniel D'Amours",
-    text: "President",
-    imgSrc: "/portrait/Nathaniel.jpg",
-    linkedIn: "https://www.linkedin.com/in/nathaniel-damours",
-  },
-  {
-    title: "Mathieu Bazinet",
-    text: "Formation VP",
-    imgSrc: "/portrait/Mathieu.jpg",
-    linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
-  },
-  {
-    title: "Jordan Mathieu",
-    text: "Partnership VP",
-    imgSrc: "/portrait/Jordan.jpg",
-    linkedIn: "https://www.linkedin.com/in/jordan-math/",
-  },
-  {
-    title: "Louis-Étienne Messier",
-    text: "Recruiting VP",
-    imgSrc: "/portrait/Louis.jpg",
-    linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
-  },
-  {
-    title: "Anthony Lavertu",
-    text: "External Affairs VP",
-    imgSrc: "/portrait/Anthony.jpg",
-    linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
-  },
-  {
-    title: "Alexandrine Lehoux",
-    text: "Partnership VP",
-    imgSrc: "/portrait/Alexandrine.jpg",
-    linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
-  },
-  {
-    title: "Almaoudata Walet Babahmed",
-    text: "Competition VP",
-    imgSrc: "/portrait/almaoudata.jpeg",
-    linkedIn: "https://www.linkedin.com/in/alma-walet-93418b325/",
-  },
-  {
-    title: "Yves Mamadou Faye",
-    text: "Communication VP",
-    imgSrc: "/portrait/Yves.png",
-    linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
-  },
-  {
-    title: "Deoth Guei",
-    text: "Team Lead (F1 Tenth Team 1)",
-    imgSrc: "/portrait/deoth.jpeg",
-    linkedIn: "https://www.linkedin.com/in/deoth-guei-382269191/",
-  },
-  {
-    title: "Alban Sarrazin",
-    text: "Team Lead (F1 Tenth Team 2)",
-    imgSrc: "/portrait/alban.jpeg",
-    linkedIn: "https://www.linkedin.com/in/alban-sarrazin-561803252/",
-  },
-  {
-    title: "Benjamin Leblanc",
-    text: "Team Lead (TreeCore)",
-    imgSrc: "/portrait/benjamin.jpeg",
-    linkedIn: "https://www.linkedin.com/in/benjamin-leblanc-a9217128b/",
-  },
-  {
-    title: "Louis-Étienne Messier",
-    text: "Team Lead (FlappyEEG)",
-    imgSrc: "/portrait/Louis.jpg",
-    linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
-  },
-  {
-    title: "Dereck Bélanger",
-    text: "CIA Website Manager",
-    imgSrc: "/portrait/Dereck.HEIC",
-    linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const Management = () => {
+  const { t } = useTranslation();
+
+  const cardData = [
+    {
+      title: "Nathaniel D'Amours",
+      textKey: "management.roles.president",
+      imgSrc: "/portrait/Nathaniel.jpg",
+      linkedIn: "https://www.linkedin.com/in/nathaniel-damours",
+    },
+    {
+      title: "Mathieu Bazinet",
+      textKey: "management.roles.formationVP",
+      imgSrc: "/portrait/Mathieu.jpg",
+      linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
+    },
+    {
+      title: "Jordan Mathieu",
+      textKey: "management.roles.partnershipVP",
+      imgSrc: "/portrait/Jordan.jpg",
+      linkedIn: "https://www.linkedin.com/in/jordan-math/",
+    },
+    {
+      title: "Louis-Étienne Messier",
+      textKey: "management.roles.recruitingVP",
+      imgSrc: "/portrait/Louis.jpg",
+      linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
+    },
+    {
+      title: "Anthony Lavertu",
+      textKey: "management.roles.externalAffairsVP",
+      imgSrc: "/portrait/Anthony.jpg",
+      linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
+    },
+    {
+      title: "Alexandrine Lehoux",
+      textKey: "management.roles.partnershipVP",
+      imgSrc: "/portrait/Alexandrine.jpg",
+      linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
+    },
+    {
+      title: "Almaoudata Walet Babahmed",
+      textKey: "management.roles.competitionVP",
+      imgSrc: "/portrait/almaoudata.jpeg",
+      linkedIn: "https://www.linkedin.com/in/alma-walet-93418b325/",
+    },
+    {
+      title: "Yves Mamadou Faye",
+      textKey: "management.roles.communicationVP",
+      imgSrc: "/portrait/Yves.png",
+      linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
+    },
+    {
+      title: "Deoth Guei",
+      textKey: "management.roles.teamLeadF1Team1",
+      imgSrc: "/portrait/deoth.jpeg",
+      linkedIn: "https://www.linkedin.com/in/deoth-guei-382269191/",
+    },
+    {
+      title: "Alban Sarrazin",
+      textKey: "management.roles.teamLeadF1Team2",
+      imgSrc: "/portrait/alban.jpeg",
+      linkedIn: "https://www.linkedin.com/in/alban-sarrazin-561803252/",
+    },
+    {
+      title: "Benjamin Leblanc",
+      textKey: "management.roles.teamLeadTreeCore",
+      imgSrc: "/portrait/benjamin.jpeg",
+      linkedIn: "https://www.linkedin.com/in/benjamin-leblanc-a9217128b/",
+    },
+    {
+      title: "Louis-Étienne Messier",
+      textKey: "management.roles.teamLeadFlappyEEG",
+      imgSrc: "/portrait/Louis.jpg",
+      linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
+    },
+    {
+      title: "Dereck Bélanger",
+      textKey: "management.roles.websiteManager",
+      imgSrc: "/portrait/Dereck.HEIC",
+      linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
+    },
+  ];
+
   const renderCards = (
-    cards: { title: string; text: string; imgSrc: string; linkedIn: string }[],
-    title: string
+    cards: {
+      title: string;
+      textKey: string;
+      imgSrc: string;
+      linkedIn: string;
+    }[],
+    titleKey: string
   ) => (
     <motion.section
       className="max-w-7xl mx-auto px-4 pb-8"
@@ -99,7 +107,7 @@ const Management = () => {
     >
       <h1 className="text-6xl font-bold mb-4 text-center mt-20 pb-16">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-          {title}
+          {t(titleKey)}
         </span>
       </h1>
       <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
@@ -135,7 +143,9 @@ const Management = () => {
                   <Card.Title className="text-gray-200">
                     {card.title}
                   </Card.Title>
-                  <Card.Text className="text-gray-400">{card.text}</Card.Text>
+                  <Card.Text className="text-gray-400">
+                    {t(card.textKey)}
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </motion.a>
@@ -148,21 +158,15 @@ const Management = () => {
   return (
     <>
       <Head>
-        <title>Management Team | EEG Website</title>
-        <meta
-          name="description"
-          content="Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn."
-        />
-        <meta
-          name="keywords"
-          content="EEG, Management, Team, Leadership, Executive, Associates, LinkedIn"
-        />
+        <title>{t("management.pageTitle")}</title>
+        <meta name="description" content={t("management.pageDescription")} />
+        <meta name="keywords" content={t("management.pageKeywords")} />
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content="Management Team | EEG Website" />
+        <meta property="og:title" content={t("management.pageTitle")} />
         <meta
           property="og:description"
-          content="Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn."
+          content={t("management.pageDescription")}
         />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta
@@ -176,9 +180,9 @@ const Management = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        {renderCards(cardData.slice(0, 8), "Executive Team")}
-        {renderCards(cardData.slice(8, 12), "Leadership Team")}
-        {renderCards(cardData.slice(12), "Associates")}
+        {renderCards(cardData.slice(0, 8), "management.executiveTeam")}
+        {renderCards(cardData.slice(8, 12), "management.leadershipTeam")}
+        {renderCards(cardData.slice(12), "management.associates")}
       </motion.div>
     </>
   );

@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Gallery() {
+  const { t } = useTranslation();
+
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     desc: string;
@@ -14,111 +17,111 @@ function Gallery() {
     formation: [
       {
         src: "/formation/tuto2.jpg",
-        desc: "First CIA tutorial",
+        descKey: "gallery.images.formation.tuto2",
       },
     ],
     competition: [
       {
         src: "/competition/competition-1.jpg",
-        desc: "Competition winners 2024",
+        descKey: "gallery.images.competition.competition1",
       },
       {
         src: "/competition/competition-2.jpg",
-        desc: "During competition",
+        descKey: "gallery.images.competition.competition2",
       },
       {
         src: "/competition/competition-3.jpg",
-        desc: "During competition 2",
+        descKey: "gallery.images.competition.competition3",
       },
       {
         src: "/competition/competition-a2024-1.jpg",
-        desc: "During competition 3",
+        descKey: "gallery.images.competition.competitionA2024",
       },
     ],
     project: [
       {
         src: "/project/club2024.png",
-        desc: "First meeting for flapeeg project 2024",
+        descKey: "gallery.images.project.club2024",
       },
       {
         src: "/project/clubrencontre.png",
-        desc: "Second meeting for flapeeg project 2024",
+        descKey: "gallery.images.project.clubrencontre",
       },
       {
         src: "/project/f1tenth.jpg",
-        desc: "F1Tenth meeting",
+        descKey: "gallery.images.project.f1tenth",
       },
       {
         src: "/project/f1tenthcar.png",
-        desc: "F1Tenth car",
+        descKey: "gallery.images.project.f1tenthcar",
       },
       {
         src: "/project/flappycard.jpg",
-        desc: "Flapeeg meeting winter 2025",
+        descKey: "gallery.images.project.flappycard",
       },
     ],
     community: [
       {
         src: "/implication/filleclub.png",
-        desc: "Women and AI club",
+        descKey: "gallery.images.community.filleclub",
       },
       {
         src: "/implication/eeg-presentation.jpg",
-        desc: "EEG presentation to students",
+        descKey: "gallery.images.community.eegPresentation",
       },
       {
         src: "/implication/flappyeegmain.jpeg",
-        desc: "Executive team with flapeeg project",
+        descKey: "gallery.images.community.flappyeegmain",
       },
       {
         src: "/implication/front-image.png",
-        desc: "CIA presentation to students",
+        descKey: "gallery.images.community.frontImage",
       },
       {
         src: "/implication/kalven-presenter.jpg",
-        desc: "Outside presentation",
+        descKey: "gallery.images.community.kalvenPresenter",
       },
       {
         src: "/implication/kiosque.jpg",
-        desc: "CIA stand presentation",
+        descKey: "gallery.images.community.kiosque",
       },
       {
         src: "/implication/kiosque.jpeg",
-        desc: "CIA stand presentation 2",
+        descKey: "gallery.images.community.kiosque2",
       },
       {
         src: "/implication/presentation.png",
-        desc: "CIA presentation to students 2",
+        descKey: "gallery.images.community.presentation",
       },
       {
         src: "/implication/rencontrecia.jpeg",
-        desc: "CIA presentation to students 3",
+        descKey: "gallery.images.community.rencontrecia",
       },
       {
         src: "/implication/table.jpeg",
-        desc: "Executive team at presentation stand",
+        descKey: "gallery.images.community.table",
       },
       {
         src: "/implication/table2.jpeg",
-        desc: "Executive team at presentation stand 2",
+        descKey: "gallery.images.community.table2",
       },
       {
         src: "/implication/table3.jpeg",
-        desc: "Executive team at presentation stand 3",
+        descKey: "gallery.images.community.table3",
       },
       {
         src: "/implication/testclub.png",
-        desc: "EEG signal demonstration",
+        descKey: "gallery.images.community.testclub",
       },
     ],
   };
 
   const categories = [
-    { id: "all", label: "All" },
-    { id: "formation", label: "Formations/Discussions" },
-    { id: "competition", label: "Competitions" },
-    { id: "project", label: "Projects" },
-    { id: "community", label: "Community Implications" },
+    { id: "all", labelKey: "gallery.categories.all" },
+    { id: "formation", labelKey: "gallery.categories.formation" },
+    { id: "competition", labelKey: "gallery.categories.competition" },
+    { id: "project", labelKey: "gallery.categories.project" },
+    { id: "community", labelKey: "gallery.categories.community" },
   ];
 
   // Get all images for "All" category or filter by selected category
@@ -157,38 +160,21 @@ function Gallery() {
   return (
     <>
       <Head>
-        <title>
-          Gallery - Explore EEG Projects, Competitions, and Community Events
-        </title>
-        <meta
-          name="description"
-          content="Explore our gallery showcasing EEG projects, competitions, and community events. Learn more about our journey in AI, EEG technology, and community impact."
-        />
-        <meta
-          name="keywords"
-          content="EEG, gallery, projects, competitions, community, AI, events, formations"
-        />
+        <title>{t("gallery.pageTitle")}</title>
+        <meta name="description" content={t("gallery.pageDescription")} />
+        <meta name="keywords" content={t("gallery.pageKeywords")} />
         <meta name="author" content="Dereck Bélanger" />
         <link rel="canonical" href="https://cialaval.vercel.app/gallery" />
-        <meta
-          property="og:title"
-          content="Gallery - EEG Projects and Competitions"
-        />
-        <meta
-          property="og:description"
-          content="Explore EEG projects, competitions, and community involvement in our dynamic gallery."
-        />
+        <meta property="og:title" content={t("gallery.ogTitle")} />
+        <meta property="og:description" content={t("gallery.ogDescription")} />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/gallery" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Gallery - EEG Projects and Competitions"
-        />
+        <meta name="twitter:title" content={t("gallery.twitterTitle")} />
         <meta
           name="twitter:description"
-          content="Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions."
+          content={t("gallery.twitterDescription")}
         />
         <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
@@ -207,7 +193,7 @@ function Gallery() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            EEG Gallery
+            {t("gallery.heroTitle")}
           </span>
         </motion.h2>
 
@@ -217,7 +203,7 @@ function Gallery() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          Explore our projects, competitions, and community involvement
+          {t("gallery.heroSubtitle")}
         </motion.p>
       </motion.div>
 
@@ -243,7 +229,7 @@ function Gallery() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {category.label}
+              {t(category.labelKey)}
             </motion.button>
           ))}
         </div>
@@ -264,11 +250,16 @@ function Gallery() {
                 scale: 1.03,
                 transition: { duration: 0.3 },
               }}
-              onClick={() => setSelectedImage(image)}
+              onClick={() =>
+                setSelectedImage({
+                  src: image.src,
+                  desc: t(image.descKey),
+                })
+              }
             >
               <img
                 src={image.src}
-                alt={image.desc}
+                alt={t(image.descKey)}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
@@ -276,20 +267,14 @@ function Gallery() {
               {/* Category badge */}
               <div className="absolute top-3 left-3">
                 <span className="bg-red-600/80 text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg transform translate-y-1 opacity-90 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                  {image.category === "formation"
-                    ? "Formation"
-                    : image.category === "competition"
-                    ? "Competition"
-                    : image.category === "project"
-                    ? "Project"
-                    : "Community"}
+                  {t(`gallery.categoryLabels.${image.category}`)}
                 </span>
               </div>
 
               {/* Image description */}
               <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-white text-sm md:text-base font-medium drop-shadow-lg">
-                  {image.desc}
+                  {t(image.descKey)}
                 </p>
               </div>
             </motion.div>
@@ -329,7 +314,7 @@ function Gallery() {
             <button
               className="absolute top-5 right-5 bg-black/50 hover:bg-red-700 text-white rounded-full p-3 transition-colors"
               onClick={() => setSelectedImage(null)}
-              aria-label="Close lightbox"
+              aria-label={t("gallery.closeLabel")}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

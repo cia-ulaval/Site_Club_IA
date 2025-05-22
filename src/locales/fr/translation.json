@@ -110,5 +110,85 @@
       "Access to our prototypes": "Accès à nos prototypes",
       "Access to our members CV books": "Accès aux CV de nos membres"
     }
+  },
+    "management": {
+    "pageTitle": "Équipe de Gestion | Site Web EEG",
+    "pageDescription": "Rencontrez les équipes exécutive, de leadership et associés de l'organisation EEG. Apprenez-en plus sur leurs rôles et connectez-vous avec eux sur LinkedIn.",
+    "pageKeywords": "EEG, Gestion, Équipe, Leadership, Exécutif, Associés, LinkedIn",
+    "executiveTeam": "Équipe Exécutive",
+    "leadershipTeam": "Équipe de Leadership",
+    "associates": "Associés",
+    "roles": {
+      "president": "Président",
+      "formationVP": "VP Formation",
+      "partnershipVP": "VP Partenariats",
+      "recruitingVP": "VP Recrutement",
+      "externalAffairsVP": "VP Affaires Externes",
+      "competitionVP": "VP Compétition",
+      "communicationVP": "VP Communication",
+      "teamLeadF1Team1": "Chef d'Équipe (Équipe F1 Tenth 1)",
+      "teamLeadF1Team2": "Chef d'Équipe (Équipe F1 Tenth 2)",
+      "teamLeadTreeCore": "Chef d'Équipe (TreeCore)",
+      "teamLeadFlappyEEG": "Chef d'Équipe (FlappyEEG)",
+      "websiteManager": "Gestionnaire du Site Web CIA"
+    }
+  },
+  "gallery": {
+    "pageTitle": "Galerie - Explorez les Projets EEG, Compétitions et Événements Communautaires",
+    "pageDescription": "Explorez notre galerie présentant les projets EEG, compétitions et événements communautaires. Découvrez notre parcours en IA, technologie EEG et impact communautaire.",
+    "pageKeywords": "EEG, galerie, projets, compétitions, communauté, IA, événements, formations",
+    "ogTitle": "Galerie - Projets et Compétitions EEG",
+    "ogDescription": "Explorez les projets EEG, compétitions et implication communautaire dans notre galerie dynamique.",
+    "twitterTitle": "Galerie - Projets et Compétitions EEG",
+    "twitterDescription": "Découvrez la galerie EEG présentant des projets, compétitions, implication communautaire et discussions de formation.",
+    "heroTitle": "Galerie EEG",
+    "heroSubtitle": "Explorez nos projets, compétitions et implication communautaire",
+    "categories": {
+      "all": "Tout",
+      "formation": "Formations/Discussions",
+      "competition": "Compétitions",
+      "project": "Projets",
+      "community": "Implications Communautaires"
+    },
+    "categoryLabels": {
+      "formation": "Formation",
+      "competition": "Compétition",
+      "project": "Projet",
+      "community": "Communauté"
+    },
+    "images": {
+      "formation": {
+        "tuto2": "Premier tutoriel CIA"
+      },
+      "competition": {
+        "competition1": "Gagnants du concours 2024",
+        "competition2": "Pendant la compétition",
+        "competition3": "Pendant la compétition 2",
+        "competitionA2024": "Pendant la compétition 3"
+      },
+      "project": {
+        "club2024": "Première réunion pour le projet flapeeg 2024",
+        "clubrencontre": "Deuxième réunion pour le projet flapeeg 2024",
+        "f1tenth": "Réunion F1Tenth",
+        "f1tenthcar": "Voiture F1Tenth",
+        "flappycard": "Réunion Flapeeg hiver 2025"
+      },
+      "community": {
+        "filleclub": "Club Femmes et IA",
+        "eegPresentation": "Présentation EEG aux étudiants",
+        "flappyeegmain": "Équipe exécutive avec le projet flapeeg",
+        "frontImage": "Présentation CIA aux étudiants",
+        "kalvenPresenter": "Présentation externe",
+        "kiosque": "Présentation stand CIA",
+        "kiosque2": "Présentation stand CIA 2",
+        "presentation": "Présentation CIA aux étudiants 2",
+        "rencontrecia": "Présentation CIA aux étudiants 3",
+        "table": "Équipe exécutive au stand de présentation",
+        "table2": "Équipe exécutive au stand de présentation 2",
+        "table3": "Équipe exécutive au stand de présentation 3",
+        "testclub": "Démonstration signal EEG"
+      }
+    },
+    "closeLabel": "Fermer la lightbox"
   }
 }

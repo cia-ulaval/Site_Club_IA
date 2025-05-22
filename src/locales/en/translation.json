@@ -95,5 +95,85 @@
       "FlapEEG": "EEG-based control system for interactive gaming.",
       "F1Tenth": "1/10th scale Formula 1 car controlled by muscle signals."
     }
+  },
+    "management": {
+    "pageTitle": "Management Team | EEG Website",
+    "pageDescription": "Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn.",
+    "pageKeywords": "EEG, Management, Team, Leadership, Executive, Associates, LinkedIn",
+    "executiveTeam": "Executive Team",
+    "leadershipTeam": "Leadership Team",
+    "associates": "Associates",
+    "roles": {
+      "president": "President",
+      "formationVP": "Formation VP",
+      "partnershipVP": "Partnership VP",
+      "recruitingVP": "Recruiting VP",
+      "externalAffairsVP": "External Affairs VP",
+      "competitionVP": "Competition VP",
+      "communicationVP": "Communication VP",
+      "teamLeadF1Team1": "Team Lead (F1 Tenth Team 1)",
+      "teamLeadF1Team2": "Team Lead (F1 Tenth Team 2)",
+      "teamLeadTreeCore": "Team Lead (TreeCore)",
+      "teamLeadFlappyEEG": "Team Lead (FlappyEEG)",
+      "websiteManager": "CIA Website Manager"
+    }
+  },
+    "gallery": {
+    "pageTitle": "Gallery - Explore EEG Projects, Competitions, and Community Events",
+    "pageDescription": "Explore our gallery showcasing EEG projects, competitions, and community events. Learn more about our journey in AI, EEG technology, and community impact.",
+    "pageKeywords": "EEG, gallery, projects, competitions, community, AI, events, formations",
+    "ogTitle": "Gallery - EEG Projects and Competitions",
+    "ogDescription": "Explore EEG projects, competitions, and community involvement in our dynamic gallery.",
+    "twitterTitle": "Gallery - EEG Projects and Competitions",
+    "twitterDescription": "Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions.",
+    "heroTitle": "EEG Gallery",
+    "heroSubtitle": "Explore our projects, competitions, and community involvement",
+    "categories": {
+      "all": "All",
+      "formation": "Formations/Discussions",
+      "competition": "Competitions",
+      "project": "Projects",
+      "community": "Community Implications"
+    },
+    "categoryLabels": {
+      "formation": "Formation",
+      "competition": "Competition",
+      "project": "Project",
+      "community": "Community"
+    },
+    "images": {
+      "formation": {
+        "tuto2": "First CIA tutorial"
+      },
+      "competition": {
+        "competition1": "Competition winners 2024",
+        "competition2": "During competition",
+        "competition3": "During competition 2",
+        "competitionA2024": "During competition 3"
+      },
+      "project": {
+        "club2024": "First meeting for flapeeg project 2024",
+        "clubrencontre": "Second meeting for flapeeg project 2024",
+        "f1tenth": "F1Tenth meeting",
+        "f1tenthcar": "F1Tenth car",
+        "flappycard": "Flapeeg meeting winter 2025"
+      },
+      "community": {
+        "filleclub": "Women and AI club",
+        "eegPresentation": "EEG presentation to students",
+        "flappyeegmain": "Executive team with flapeeg project",
+        "frontImage": "CIA presentation to students",
+        "kalvenPresenter": "Outside presentation",
+        "kiosque": "CIA stand presentation",
+        "kiosque2": "CIA stand presentation 2",
+        "presentation": "CIA presentation to students 2",
+        "rencontrecia": "CIA presentation to students 3",
+        "table": "Executive team at presentation stand",
+        "table2": "Executive team at presentation stand 2",
+        "table3": "Executive team at presentation stand 3",
+        "testclub": "EEG signal demonstration"
+      }
+    },
+    "closeLabel": "Close lightbox"
   }
 }
