@@ -1,18 +1,22 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
+import { useTranslation } from "react-i18next"; // Ajouté
 
 function JoinUs() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>Join Us - Collaborate, Lead, and Grow with Our Team</title>
+        <title>{t("joinus.pageTitle")}</title>
         <meta
           name="description"
-          content="Join our team to collaborate on exciting projects, connect with us on Discord, and apply for roles as a Team Lead or Associate."
+          content={t("joinus.pageDescription")}
         />
         <meta
           name="keywords"
-          content="Join Us, Team, Discord, Apply, Team Lead, Associate, Projects, Collaboration"
+          content={t("joinus.pageKeywords")}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://cialaval.vercel.app/join-us" />
@@ -34,11 +38,11 @@ function JoinUs() {
           >
             <h1 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Join Us - Be Part of Our Team
+                {t("joinus.heroTitle")}
               </span>
             </h1>
             <h2 className="text-4xl font-bold text-white mb-6">
-              Collaborate, Lead, and Grow with Us
+              {t("joinus.heroSubtitle")}
             </h2>
           </motion.div>
 
@@ -51,16 +55,15 @@ function JoinUs() {
             viewport={{ once: true }}
           >
             <p className="text-lg text-gray-400 mb-4">
-              Connect with us on Discord to stay updated and collaborate with
-              the team.
+              {t("joinus.discordText")}
             </p>
             <a
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
             >
-              Join Our Discord
+              {t("joinus.discordButton")}
             </a>
           </motion.div>
 
@@ -73,20 +76,78 @@ function JoinUs() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-white mb-4">
-              Apply for Roles
+              {t("joinus.applyTitle")}
             </h3>
             <p className="text-lg text-gray-400 mb-6">
-              Interested in becoming a Team Lead or Associate? Apply now to join
-              our club and contribute to exciting projects.
+              {t("joinus.applyText")}
             </p>
             <a
               href="" // ADD THE GOOGLE FORM LINK HERE
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
             >
-              Apply Here
+              {t("joinus.applyButton")}
             </a>
+          </motion.div>
+
+          {/* Collaboration Section */}
+          <motion.div
+            className="text-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-white mb-4">
+              {t("joinus.collabTitle")}
+            </h3>
+            <p className="text-lg text-gray-400 mb-6">
+              {t("joinus.collabText")}
+            </p>
+            <a
+              href="/collaboration"
+              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+            >
+              {t("joinus.collabButton")}
+            </a>
+            {/* Contact Buttons Section */}
+            <div className="flex justify-center gap-10 pt-16">
+              <a
+                href="https://www.linkedin.com/company/cia-ulaval/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-gray-400 hover:text-red-400 transition"
+              >
+                <Linkedin size={40} />
+              </a>
+              <a
+                href="mailto:your@email.com"
+                aria-label="Email"
+                className="text-gray-400 hover:text-red-400 transition"
+              >
+                <Mail size={40} />
+              </a>
+              <a
+                href="https://www.instagram.com/ciaulaval/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="text-gray-400 hover:text-red-400 transition"
+              >
+                <Instagram size={40} />
+              </a>
+              <a
+                href="https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-gray-400 hover:text-red-400 transition"
+              >
+                <Facebook size={40} />
+              </a>
+            </div>
           </motion.div>
         </motion.div>
       </section>

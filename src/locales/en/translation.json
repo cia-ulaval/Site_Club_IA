@@ -1,4 +1,4 @@
-{ 
+{
   "home": {
     "header": {
       "title": "C.I.A",
@@ -96,7 +96,7 @@
       "F1Tenth": "1/10th scale Formula 1 car controlled by muscle signals."
     }
   },
-    "management": {
+  "management": {
     "pageTitle": "Management Team | EEG Website",
     "pageDescription": "Meet the Executive, Leadership, and Associate teams of the EEG organization. Learn more about their roles and connect with them on LinkedIn.",
     "pageKeywords": "EEG, Management, Team, Leadership, Executive, Associates, LinkedIn",
@@ -118,7 +118,7 @@
       "websiteManager": "CIA Website Manager"
     }
   },
-    "gallery": {
+  "gallery": {
     "pageTitle": "Gallery - Explore EEG Projects, Competitions, and Community Events",
     "pageDescription": "Explore our gallery showcasing EEG projects, competitions, and community events. Learn more about our journey in AI, EEG technology, and community impact.",
     "pageKeywords": "EEG, gallery, projects, competitions, community, AI, events, formations",
@@ -175,5 +175,20 @@
       }
     },
     "closeLabel": "Close lightbox"
+  },
+  "joinus": {
+    "pageTitle": "Join Us - Collaborate, Lead, and Grow with Our Team",
+    "pageDescription": "Join our team to collaborate on exciting projects, connect with us on Discord, and apply for roles as a Team Lead or Associate.",
+    "pageKeywords": "Join Us, Team, Discord, Apply, Team Lead, Associate, Projects, Collaboration",
+    "heroTitle": "Join Us - Be Part of Our Team",
+    "heroSubtitle": "Collaborate, Lead, and Grow with Us",
+    "discordText": "Connect with us on Discord to stay updated and collaborate with the team.",
+    "discordButton": "Join Our Discord",
+    "applyTitle": "Apply for Roles",
+    "applyText": "Interested in becoming a Team Lead or Associate? Apply now to join our club and contribute to exciting projects.",
+    "applyButton": "Apply Here",
+    "collabTitle": "Want to Collaborate?",
+    "collabText": "We’re always open to new partnerships and ideas. Discover how you can collaborate with us!",
+    "collabButton": "Learn About Collaboration"
   }
 }

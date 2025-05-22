@@ -190,5 +190,20 @@
       }
     },
     "closeLabel": "Fermer la lightbox"
+  },
+  "joinus": {
+    "pageTitle": "Nous rejoindre - Collaborez, dirigez et grandissez avec notre équipe",
+    "pageDescription": "Rejoignez notre équipe pour collaborer sur des projets passionnants, connectez-vous avec nous sur Discord et postulez pour des rôles de chef d'équipe ou d'associé.",
+    "pageKeywords": "Nous rejoindre, équipe, Discord, postuler, chef d'équipe, associé, projets, collaboration",
+    "heroTitle": "Nous rejoindre - Faites partie de notre équipe",
+    "heroSubtitle": "Collaborez, dirigez et grandissez avec nous",
+    "discordText": "Rejoignez-nous sur Discord pour rester informé et collaborer avec l'équipe.",
+    "discordButton": "Rejoindre notre Discord",
+    "applyTitle": "Postuler à un rôle",
+    "applyText": "Intéressé à devenir chef d'équipe ou associé ? Postulez dès maintenant pour rejoindre notre club et contribuer à des projets passionnants.",
+    "applyButton": "Postuler ici",
+    "collabTitle": "Envie de collaborer ?",
+    "collabText": "Nous sommes toujours ouverts à de nouveaux partenariats et idées. Découvrez comment collaborer avec nous !",
+    "collabButton": "En savoir plus sur la collaboration"
   }
 }

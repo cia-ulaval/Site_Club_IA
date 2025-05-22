@@ -19,6 +19,7 @@ const projects = [
     defaultTitle: "F1Tenth",
     defaultDescription: "EMG racing with 1/10th-scale F1 cars",
     link: "/f1tenth",
+    github: "https://github.com/cia-ulaval/F1-team-1",
   },
   {
     key: "decisiontree",
