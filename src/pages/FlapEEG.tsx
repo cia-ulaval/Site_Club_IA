@@ -154,12 +154,7 @@ function FlapEEG() {
                   trained an AI model to interpret brain signals and translate
                   them into actions in the game. For this to work, we equipped
                   ourselves with the latest EEG (electroencephalogram)
-                  technology and a lot of patience. It was hard at first, we
-                  needed to test with simple algorithms, but once we got the
-                  hang of it, we introduced our AI model and with trial and
-                  error, got it to understand the brain signals. The game is now
-                  fully functional and every thought you have counts: that's how
-                  you control your character!
+                  technology,
                 </p>
                 <p className="text-gray-400 text-justify">
                   The format of the game is simple; ever heard of flappy bird?
@@ -169,10 +164,9 @@ function FlapEEG() {
                   is enough to make it move. We are very proud of the work we
                   have accomplished; it may only be the beginning of a video
                   game revolution! Think about it, what if we combined this
-                  mechanic to a VR headset? 100% immersion, 100% fun! Or, what
-                  if this is the skipping stone to helping people with
-                  disabilities by giving them power from their own thoughts? The
-                  possibilities are endless.
+                  mechanic to a VR headset? Or, what if this is the skipping
+                  stone to helping people with disabilities by giving them power
+                  from their own thoughts? The possibilities are endless.
                 </p>
               </div>
             </div>
@@ -188,22 +182,28 @@ function FlapEEG() {
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
               Meet the Team Behind FlapEEG
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
+                  className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-4 py-5 md:px-6 md:py-7"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.6 }}
+                  transition={{ delay: 0.07 * index, duration: 0.5 }}
+                  style={{
+                    border: "2px solid #ef4444",
+                    boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
+                    minWidth: 180,
+                    maxWidth: 220,
+                  }}
                 >
                   <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                     {member.icon}
                   </div>
-                  <h3 className="text-base md:text-xl font-bold text-white mb-1">
+                  <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
                     {member.title}
                   </h3>
-                  <p className="text-gray-400 text-xs md:text-sm">
+                  <p className="text-gray-400 text-xs md:text-sm text-center">
                     {member.description}
                   </p>
                 </motion.div>
@@ -211,17 +211,23 @@ function FlapEEG() {
             </div>
           </motion.section>
 
-          {/* Remaining Sections */}
-          <section id="Week1" className="mb-12 sm:mb-20 text-justify">
+          {/* Timeline Section */}
+          <section id="Week1" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
               The Beginning
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
-              <div className="hero-card">
-                <div
-                  className="video-container relative rounded-xl overflow-hidden shadow-lg"
-                  style={{ height: "auto" }}
-                >
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
+              <div
+                className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                style={{ border: "2px solid #ef4444" }}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Lightbulb className="w-7 h-7 text-red-400" />
+                  <span className="text-lg font-semibold text-white">
+                    Prototype Video
+                  </span>
+                </div>
+                <div className="video-container relative rounded-xl overflow-hidden shadow-lg mb-4">
                   <video
                     ref={videoRef}
                     className="w-full h-full object-cover"
@@ -232,48 +238,58 @@ function FlapEEG() {
                     poster="/project/flappyproto-poster.jpg"
                     aria-label="FlapEEG prototype video"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                    <div className="flex items-center justify-between">
-                      <button
-                        onClick={togglePlay}
-                        className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors shadow-md"
-                      >
-                        {isPlaying ? (
-                          <Pause className="w-5 h-5" />
-                        ) : (
-                          <Play className="w-5 h-5" />
-                        )}
-                      </button>
-                    </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-between">
+                    <button
+                      onClick={togglePlay}
+                      className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors shadow-md"
+                    >
+                      {isPlaying ? (
+                        <Pause className="w-5 h-5" />
+                      ) : (
+                        <Play className="w-5 h-5" />
+                      )}
+                    </button>
                   </div>
                 </div>
-              </div>
-              <div className="flex flex-col justify-center">
-                <p className="text-gray-400 mb-4 sm:mb-6 leading-relaxed">
-                  FlapEEG is a project that started in January 2025.
-                </p>
                 <p className="text-gray-400 leading-relaxed">
-                  The team consists of 8 members, some of whom are experienced
-                  in AI and EEG technology, while others are passionate about
-                  video games and coding. They all have different backgrounds
-                  and skills, but share the same goal.
+                  FlapEEG is a project that started in January 2025. The team
+                  consists of 8 members, some of whom are experienced in AI and
+                  EEG technology, while others are passionate about video games
+                  and coding. They all have different backgrounds and skills,
+                  but share the same goal.
+                </p>
+              </div>
+              {/* Remove container, just text, stretch to match video height */}
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div className="flex items-center gap-3 mb-2">
+                  <Rocket className="w-6 h-6 text-red-400" />
+                  <span className="text-lg font-semibold text-white">
+                    First Prototype
+                  </span>
+                </div>
+                <p className="text-gray-400">
+                  In the video above, you can see the first prototype of the
+                  game. Dereck and Louis-Étienne managed to get a simple version
+                  of the game up and running where the player could control the
+                  character by blinking with an activation threshold.
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 mt-6 sm:mt-8 leading-relaxed">
-              In the video above, you can see the first prototype of the game.
-              Dereck and Louis-Étienne managed to get a simple version of the
-              game up and running where the player could control the character
-              by blinking with an activation threshold.
-            </p>
           </section>
 
-          <section id="Week2-4" className="mb-12 sm:mb-20 text-justify">
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
+          <section id="Week2-4" className="mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
               Collecting Data (Week 2 - Week 4)
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-              <div>
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
+              {/* Remove container, just text, stretch to match image height */}
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div className="flex items-center gap-3 mb-2">
+                  <Users className="w-6 h-6 text-red-400" />
+                  <span className="text-lg font-semibold text-white">
+                    Data Collection
+                  </span>
+                </div>
                 <p className="text-gray-400">
                   After successfully establishing the baseline, Jordan recruited
                   volunteers to collect brain data. The goal was to gather a
@@ -285,44 +301,121 @@ function FlapEEG() {
                   deploying the server with the help of Louis-Étienne.
                 </p>
               </div>
-              <div className="flex justify-center">
+              <div className="flex-1 flex justify-center items-center">
                 <img
                   src="/project/FlappyBrain.png"
                   alt="Screenshot of the FlapEEG game interface"
-                  className="rounded-2xl shadow-2xl w-full max-w-lg border-4 border-red-500/50"
-                  style={{ boxShadow: "0 4px 20px rgba(255, 0, 0, 0.5)" }}
+                  className="rounded-2xl shadow-2xl w-full max-w-lg"
+                  style={{
+                    border: "2px solid #ef4444",
+                    boxShadow: "0 4px 20px rgba(255, 0, 0, 0.5)",
+                  }}
                 />
               </div>
             </div>
           </section>
 
           <section id="Week4-6" className="mb-12 sm:mb-20">
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6">
-              Data Collection
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
+              Filtering & Training
             </h2>
-            <p className="text-gray-400 pb-3 sm:pb-4">
-              At this point in the project Louis found out our data wasn't
-              properly filtered and there had a lot of noise which made it
-              unusable. Jordan took care of this and found a way to filter out
-              the noise.
-            </p>
-            <p className="text-gray-400">
-              In the meantime, Amen and Estelle were working hard training the
-              AI model behind the scenes and paiving the way for the others to
-              understand the challenges of training a model.
-            </p>
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
+              <div
+                className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                style={{ border: "2px solid #ef4444" }}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <Braces className="w-6 h-6 text-red-400" />
+                  <span className="text-lg font-semibold text-white">
+                    Filtering & Training
+                  </span>
+                </div>
+                <p className="text-gray-400 pb-3 sm:pb-4">
+                  At this point in the project Louis found out our data wasn't
+                  properly filtered and there had a lot of noise which made it
+                  unusable. Jordan took care of this and found a way to filter
+                  out the noise.
+                </p>
+                <p className="text-gray-400">
+                  In the meantime, Amen and Estelle were working hard training
+                  the AI model behind the scenes and paving the way for the
+                  others to understand the challenges of training a model.
+                </p>
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <Radical className="w-24 h-24 text-red-500 opacity-30" />
+              </div>
+            </div>
           </section>
 
           <section id="Week6-9" className="mb-12 sm:mb-20">
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20">
-              First challenge
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
+              First Challenge
             </h2>
-            <p className="text-gray-400">
-              At this point in the project, the team faced a significant
-              challenge: the AI model was not performing as well as needed. They
-              opted to start reseaarching and reading papers to understand the
-              challenges of training a model.
-            </p>
+            <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
+              {/* Remove container, just text, stretch to match previous style */}
+              <div className="flex-1 flex items-center">
+                <Target className="w-10 h-10 text-red-400 mr-4" />
+                <p className="text-gray-400 m-0">
+                  At this point in the project, the team faced a significant
+                  challenge: the AI model was not performing as well as needed.
+                  They opted to start researching and reading papers to
+                  understand the challenges of training a model.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="project-status" className="mb-12 sm:mb-20">
+            <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
+              Project Status
+            </h2>
+            <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+              <div
+                className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                style={{ border: "2px solid #ef4444" }}
+              >
+                <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  Current Progress
+                </h3>
+                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <li>AI model is being continuously improved</li>
+                  <li>
+                    Game mechanics are being refined for better experience
+                  </li>
+                  <li>Data collection and analysis ongoing</li>
+                  <li>Team collaboration and testing in progress</li>
+                </ul>
+              </div>
+              <div
+                className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                style={{ border: "2px solid #ef4444" }}
+              >
+                <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  What's Next?
+                </h3>
+                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <li>Finalizing the AI model for real-time gameplay</li>
+                  <li>Expanding accessibility and user testing</li>
+                  <li>Preparing for public demo and release</li>
+                  <li>Exploring new applications for the technology</li>
+                </ul>
+              </div>
+            </div>
+            {/* Remove container, just text and icon, centered */}
+            <div className="mt-10 flex flex-col items-center pt-20">
+              <Rocket className="w-12 h-12 text-red-400 mb-4" />
+              <p className="text-lg text-gray-200 font-medium text-center">
+                The FlapEEG project is still a work in progress.
+                <br />
+                Our team is getting closer every day to delivering a final
+                product.
+                <br />
+                <span className="text-red-400 font-bold">
+                  Stay tuned for more updates!
+                </span>
+              </p>
+            </div>
           </section>
         </div>
       </motion.div>
