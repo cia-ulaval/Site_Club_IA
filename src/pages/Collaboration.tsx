@@ -13,6 +13,7 @@ import {
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
 // Sponsorship tiers with benefits
 const sponsorshipTiers = [
@@ -151,10 +152,11 @@ interface SponsorshipTierProps {
     icon: JSX.Element;
     benefits: string[];
   };
+  onBecomePartner?: () => void;
 }
 
-const SponsorshipTier = ({ tier }: SponsorshipTierProps) => {
-  const { t } = useTranslation(); // Utilisez useTranslation hook
+const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -192,6 +194,7 @@ const SponsorshipTier = ({ tier }: SponsorshipTierProps) => {
         className="w-full py-3 px-6 bg-gradient-to-r from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 rounded-lg text-white font-semibold transition-all duration-300 mt-auto"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.98 }}
+        onClick={onBecomePartner}
       >
         {t("collaborationPage.becomeSponsorButton", {
           tier: t(
@@ -218,7 +221,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
 
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-800/30 hover:border-red-500/50 transition-all duration-300"
+      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border !border-red-500 hover:border-red-500/50 transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -257,7 +260,7 @@ const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border border-red-800/30 text-center"
+      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border !border-red-500 text-center transition-all duration-300"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
@@ -293,7 +296,7 @@ const ContactForm = () => {
 
   return (
     <motion.div
-      className="p-8 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-800/30"
+      className="p-8 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-800/70 !border-red-500 transition-all duration-300"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -307,21 +310,21 @@ const ContactForm = () => {
         <input
           type="text"
           placeholder={t("collaborationPage.contactName")}
-          className="w-full p-3 bg-red-900/20 border border-red-800/30 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <input
           type="email"
           placeholder={t("collaborationPage.contactEmail")}
-          className="w-full p-3 bg-red-900/20 border border-red-800/30 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <input
           type="text"
           placeholder={t("collaborationPage.contactCompany")}
-          className="w-full p-3 bg-red-900/20 border border-red-800/30 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <textarea
           placeholder={t("collaborationPage.contactMessage")}
-          className="w-full p-3 bg-red-900/20 border border-red-800/30 rounded-lg focus:border-red-500 focus:outline-none text-white h-32"
+          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white h-32"
         ></textarea>
       </div>
 
@@ -338,6 +341,10 @@ const ContactForm = () => {
 
 function SponsorshipPage() {
   const { t } = useTranslation();
+  const contactRef = useRef<HTMLDivElement>(null);
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -451,7 +458,11 @@ function SponsorshipPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {sponsorshipTiers.map((tier, index) => (
-                <SponsorshipTier key={index} tier={tier} />
+                <SponsorshipTier
+                  key={index}
+                  tier={tier}
+                  onBecomePartner={scrollToContact}
+                />
               ))}
             </div>
           </motion.div>
@@ -517,7 +528,9 @@ function SponsorshipPage() {
               </div>
             </div>
 
-            <ContactForm />
+            <div ref={contactRef}>
+              <ContactForm />
+            </div>
           </motion.div>
         </motion.div>
       </section>
