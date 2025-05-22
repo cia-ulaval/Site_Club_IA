@@ -1,3 +1,6 @@
+import Head from "next/head";
+import { motion } from "framer-motion";
+import TeamMemberCard from "../components/TeamMemberCard";
 import {
   TextCursorInput,
   SwatchBook,
@@ -6,10 +9,8 @@ import {
   Languages,
   Layers,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import Head from "next/head";
 
-const teamMembers = [
+const mangaAITeam = [
   {
     icon: <TextCursorInput className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Théophile Berteloot",
@@ -147,33 +148,6 @@ const TeamSection = () => (
       A diverse group of experts passionate about bringing manga to global
       audiences through cutting-edge AI technology.
     </motion.p>
-
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
-      {teamMembers.map((member, index) => (
-        <motion.div
-          key={index}
-          className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ y: -5, transition: { duration: 0.2 } }}
-        >
-          <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-            {member.icon}
-          </div>
-          <h3 className="text-base md:text-xl font-bold text-white mb-1">
-            {member.title}
-          </h3>
-          <p className="text-red-400/80 text-xs md:text-sm mb-1 md:mb-2">
-            {member.role}
-          </p>
-          <p className="text-gray-400 text-xs md:text-sm">
-            {member.description}
-          </p>
-        </motion.div>
-      ))}
-    </div>
   </section>
 );
 
@@ -390,7 +364,43 @@ function MangaAI() {
 
           {/* Team section */}
           <div id="team">
-            <TeamSection />
+            <section className="py-8 md:py-16 relative">
+              {/* Background design element */}
+              <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+              <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
+
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold gradient-text text-center mb-4 md:mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Meet Our Team
+              </motion.h2>
+
+              <motion.p
+                className="text-sm md:text-base text-gray-400 text-center max-w-2xl mx-auto mb-8 md:mb-12 px-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                A diverse group of experts passionate about bringing manga to
+                global audiences through cutting-edge AI technology.
+              </motion.p>
+
+              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
+                {mangaAITeam.map((member, idx) => (
+                  <TeamMemberCard
+                    key={idx}
+                    icon={member.icon}
+                    title={member.title}
+                    description={member.description}
+                  />
+                ))}
+              </div>
+            </section>
           </div>
 
           {/* Footer/Contact section */}

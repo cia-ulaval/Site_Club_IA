@@ -259,7 +259,6 @@ function FlapEEG() {
                   but share the same goal.
                 </p>
               </div>
-              {/* Remove container, just text, stretch to match video height */}
               <div className="flex-1 flex flex-col justify-between h-full">
                 <div className="flex items-center gap-3 mb-2">
                   <Rocket className="w-6 h-6 text-red-400" />
@@ -282,7 +281,6 @@ function FlapEEG() {
               Collecting Data (Week 2 - Week 4)
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
-              {/* Remove container, just text, stretch to match image height */}
               <div className="flex-1 flex flex-col justify-between h-full">
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="w-6 h-6 text-red-400" />
@@ -353,7 +351,6 @@ function FlapEEG() {
               First Challenge
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
-              {/* Remove container, just text, stretch to match previous style */}
               <div className="flex-1 flex items-center">
                 <Target className="w-10 h-10 text-red-400 mr-4" />
                 <p className="text-gray-400 m-0">
@@ -402,7 +399,6 @@ function FlapEEG() {
                 </ul>
               </div>
             </div>
-            {/* Remove container, just text and icon, centered */}
             <div className="mt-10 flex flex-col items-center pt-20">
               <Rocket className="w-12 h-12 text-red-400 mb-4" />
               <p className="text-lg text-gray-200 font-medium text-center">

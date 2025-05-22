@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { ReactNode } from "react";
 
 // Project features with icons
 const features = [
@@ -80,6 +81,43 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   </motion.div>
 );
 
+function TeamMemberCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: ReactNode;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div
+      className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-3 py-4 md:px-4 md:py-5"
+      style={{
+        border: "2px solid #ef4444",
+        boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
+        width: 200,
+        minWidth: 200,
+        maxWidth: 200,
+        minHeight: 200,
+        maxHeight: 200,
+      }}
+    >
+      <div className="text-red-400 mb-2 md:mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+        {icon}
+      </div>
+      <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
+        {title}
+      </h3>
+      {description && (
+        <p className="text-gray-400 text-xs md:text-sm text-center">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
 const TeamSection = () => (
   <section className="py-16 relative mb-10 mt-10">
     {/* Background design element */}
@@ -96,25 +134,14 @@ const TeamSection = () => (
       The Team
     </motion.h2>
 
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+    <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
       {teamMembers.map((member, index) => (
-        <motion.div
+        <TeamMemberCard
           key={index}
-          className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          whileHover={{ y: -5, transition: { duration: 0.2 } }}
-        >
-          <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-            {member.icon}
-          </div>
-          <h3 className="text-base md:text-xl font-bold text-white mb-1">
-            {member.title}
-          </h3>
-          <p className="text-gray-400 text-xs md:text-sm">{member.role}</p>
-        </motion.div>
+          icon={member.icon}
+          title={member.title}
+          description={member.role}
+        />
       ))}
     </div>
   </section>

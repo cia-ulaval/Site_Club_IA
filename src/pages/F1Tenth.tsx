@@ -73,6 +73,44 @@ const team2 = [
   },
 ];
 
+// Team card component (uniform, smaller size)
+function TeamMemberCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description?: string;
+}) {
+  return (
+    <div
+      className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-3 py-4 md:px-4 md:py-5"
+      style={{
+        border: "2px solid #ef4444",
+        boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
+        width: 200,
+        minWidth: 200,
+        maxWidth: 200,
+        minHeight: 200,
+        maxHeight: 200,
+      }}
+    >
+      <div className="text-red-400 mb-2 md:mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
+        {icon}
+      </div>
+      <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
+        {title}
+      </h3>
+      {description && (
+        <p className="text-gray-400 text-xs md:text-sm text-center">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function F1Tenth() {
   return (
     <>
@@ -154,25 +192,14 @@ function F1Tenth() {
               <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
                 Meet Team 1
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
                 {team1.map((value, index) => (
-                  <motion.div
+                  <TeamMemberCard
                     key={index}
-                    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-base md:text-xl font-bold text-white mb-1">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-400 text-xs md:text-sm">
-                      {value.description}
-                    </p>
-                  </motion.div>
+                    icon={value.icon}
+                    title={value.title}
+                    description={value.description}
+                  />
                 ))}
               </div>
             </motion.section>
@@ -187,25 +214,14 @@ function F1Tenth() {
               <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
                 Meet Team 2
               </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
                 {team2.map((value, index) => (
-                  <motion.div
+                  <TeamMemberCard
                     key={index}
-                    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                      {value.icon}
-                    </div>
-                    <h3 className="text-base md:text-xl font-bold text-white mb-1">
-                      {value.title}
-                    </h3>
-                    <p className="text-gray-400 text-xs md:text-sm">
-                      {value.description}
-                    </p>
-                  </motion.div>
+                    icon={value.icon}
+                    title={value.title}
+                    description={value.description}
+                  />
                 ))}
               </div>
             </motion.section>
