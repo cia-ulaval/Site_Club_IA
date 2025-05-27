@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import { ReactNode } from "react";
+import TeamMemberCard from "../components/TeamMemberCard";
 
 // Project features with icons
 const features = [
@@ -34,22 +34,22 @@ const teamMembers = [
   {
     icon: <Apple className="w-8 h-8" />,
     title: "Théophile Berteloot",
-    role: "",
+    description: "",
   },
   {
     icon: <Baby className="w-8 h-8" />,
     title: "Jordan Mathieu",
-    role: "",
+    description: "",
   },
   {
     icon: <Bean className="w-8 h-8" />,
     title: "Louis-Étienne Messier",
-    role: "",
+    description: "",
   },
   {
     icon: <Asterisk className="w-8 h-8" />,
     title: "And others",
-    role: "",
+    description: "",
   },
 ];
 
@@ -81,43 +81,6 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   </motion.div>
 );
 
-function TeamMemberCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: ReactNode;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div
-      className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-3 py-4 md:px-4 md:py-5"
-      style={{
-        border: "2px solid #ef4444",
-        boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
-        width: 200,
-        minWidth: 200,
-        maxWidth: 200,
-        minHeight: 200,
-        maxHeight: 200,
-      }}
-    >
-      <div className="text-red-400 mb-2 md:mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
-        {icon}
-      </div>
-      <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
-        {title}
-      </h3>
-      {description && (
-        <p className="text-gray-400 text-xs md:text-sm text-center">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
-
 const TeamSection = () => (
   <section className="py-16 relative mb-10 mt-10">
     {/* Background design element */}
@@ -140,7 +103,7 @@ const TeamSection = () => (
           key={index}
           icon={member.icon}
           title={member.title}
-          description={member.role}
+          description={member.description}
         />
       ))}
     </div>

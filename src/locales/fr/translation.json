@@ -1,38 +1,38 @@
 {
   "home": {
     "header": {
-"title": "C.I.A",
-"subtitle": "Bienvenue au Club d'Intelligence Artificielle (CIA) de l'Université Laval !",
-"about": {
-  "title": "À propos de nous",
-  "description": "Le CIA est le club d'intelligence artificielle de l'Université Laval. Nous sommes un groupe d'étudiants explorant l'IA et l'apprentissage automatique à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA !"
-}
-},
-"projects": {
-  "title": "Quelques-uns de nos travaux",
-  "subtitle": "Découvrez nos projets innovants !",
-  "flapeeg": {
-    "title": "FlapEEG",
-    "description": "Jeu vidéo contrôlé par le cerveau"
-  },
-  "f1tenth": {
-    "title": "F1Tenth",
-    "description": "Course EMG avec des voitures F1 à l'échelle 1/10"
-  },
-  "decisiontree": {
-    "title": "Arbre de décision",
-    "description": "Recherche et développement sur les arbres de décision"
-  },
-  "lenia": {
-    "title": "Lenia",
-    "description": "Automates cellulaires autonomes"
-  },
-  "mangaai": {
-    "title": "MangaAI",
-    "description": "Traduction et analyse automatique de mangas"
-  },
-  "learnMore": "En savoir plus",
-  "github": "GitHub"
+      "title": "C.I.A",
+      "subtitle": "Bienvenue au Club d'Intelligence Artificielle (CIA) de l'Université Laval !"
+    },
+    "about": {
+      "title": "À propos de nous",
+      "description": "Le CIA est le club d'intelligence artificielle de l'Université Laval. Nous sommes un groupe d'étudiants explorant l'IA et l'apprentissage automatique à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA !"
+    },
+    "projects": {
+      "title": "Quelques-uns de nos travaux",
+      "subtitle": "Découvrez nos projets innovants !",
+      "flapeeg": {
+        "title": "FlapEEG",
+        "description": "Jeu vidéo contrôlé par le cerveau"
+      },
+      "f1tenth": {
+        "title": "F1Tenth",
+        "description": "Course EMG avec des voitures F1 à l'échelle 1/10"
+      },
+      "decisiontree": {
+        "title": "Arbre de décision",
+        "description": "Recherche et développement sur les arbres de décision"
+      },
+      "lenia": {
+        "title": "Lenia",
+        "description": "Automates cellulaires autonomes"
+      },
+      "mangaai": {
+        "title": "MangaAI",
+        "description": "Traduction et analyse automatique de mangas"
+      },
+      "learnMore": "En savoir plus",
+      "github": "GitHub"
     },
     "collaboration": {
       "title": "Intéressé à collaborer ?",
@@ -111,7 +111,7 @@
       "Access to our members CV books": "Accès aux CV de nos membres"
     }
   },
-    "management": {
+  "management": {
     "pageTitle": "Équipe de Gestion | Site Web EEG",
     "pageDescription": "Rencontrez les équipes exécutive, de leadership et associés de l'organisation EEG. Apprenez-en plus sur leurs rôles et connectez-vous avec eux sur LinkedIn.",
     "pageKeywords": "EEG, Gestion, Équipe, Leadership, Exécutif, Associés, LinkedIn",
@@ -129,7 +129,7 @@
       "teamLeadF1Team1": "Chef d'Équipe (Équipe F1 Tenth 1)",
       "teamLeadF1Team2": "Chef d'Équipe (Équipe F1 Tenth 2)",
       "teamLeadTreeCore": "Chef d'Équipe (TreeCore)",
-      "teamLeadFlappyEEG": "Chef d'Équipe (FlappyEEG)",
+      "teamLeadFlappyEEG": "Chef d'Équipe (FlapEEG)",
       "websiteManager": "Gestionnaire du Site Web CIA"
     }
   },

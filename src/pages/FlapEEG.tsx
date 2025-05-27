@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import TeamMemberCard from "../components/TeamMemberCard";
 
 function FlapEEG() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -186,26 +187,15 @@ function FlapEEG() {
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-4 py-5 md:px-6 md:py-7"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.07 * index, duration: 0.5 }}
-                  style={{
-                    border: "2px solid #ef4444",
-                    boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
-                    minWidth: 180,
-                    maxWidth: 220,
-                  }}
                 >
-                  <div className="text-red-400 mb-2 md:mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                    {member.icon}
-                  </div>
-                  <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
-                    {member.title}
-                  </h3>
-                  <p className="text-gray-400 text-xs md:text-sm text-center">
-                    {member.description}
-                  </p>
+                  <TeamMemberCard
+                    icon={member.icon}
+                    title={member.title}
+                    description={member.description}
+                  />
                 </motion.div>
               ))}
             </div>

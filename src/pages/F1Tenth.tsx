@@ -8,6 +8,7 @@ import {
   UserRoundCog,
 } from "lucide-react";
 import Head from "next/head";
+import TeamMemberCard from "../components/TeamMemberCard";
 
 // Team data for the two groups
 const team1 = [
@@ -72,44 +73,6 @@ const team2 = [
     description: "",
   },
 ];
-
-// Team card component (uniform, smaller size)
-function TeamMemberCard({
-  icon,
-  title,
-  description,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description?: string;
-}) {
-  return (
-    <div
-      className="flex flex-col items-center bg-gradient-to-br from-red-900/30 to-black/30 rounded-2xl shadow-lg px-3 py-4 md:px-4 md:py-5"
-      style={{
-        border: "2px solid #ef4444",
-        boxShadow: "0 2px 12px 0 rgba(239,68,68,0.15)",
-        width: 200,
-        minWidth: 200,
-        maxWidth: 200,
-        minHeight: 200,
-        maxHeight: 200,
-      }}
-    >
-      <div className="text-red-400 mb-2 md:mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">
-        {icon}
-      </div>
-      <h3 className="text-base md:text-lg font-bold text-white mb-1 text-center">
-        {title}
-      </h3>
-      {description && (
-        <p className="text-gray-400 text-xs md:text-sm text-center">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
 
 function F1Tenth() {
   return (
