@@ -211,12 +211,6 @@ function FlapEEG() {
                 className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
                 style={{ border: "2px solid #ef4444" }}
               >
-                <div className="flex items-center gap-3 mb-4">
-                  <Lightbulb className="w-7 h-7 text-red-400" />
-                  <span className="text-lg font-semibold text-white">
-                    Prototype Video
-                  </span>
-                </div>
                 <div className="video-container relative rounded-xl overflow-hidden shadow-lg mb-4">
                   <video
                     ref={videoRef}
@@ -241,26 +235,28 @@ function FlapEEG() {
                     </button>
                   </div>
                 </div>
-                <p className="text-gray-400 leading-relaxed">
+                <div>
+                  <span className="text-lg font-semibold text-white flex items-center gap-2 mb-2">
+                    <Rocket className="w-6 h-6 text-red-400" />
+                    First Prototype
+                  </span>
+                  <p className="text-gray-400 leading-relaxed">
+                    In the video above, you can see the first prototype of the
+                    game. Dereck and Louis-Étienne managed to get a simple
+                    version of the game up and running where the player could
+                    control the character by blinking with an activation
+                    threshold.
+                  </p>
+                </div>
+              </div>
+              <div className="flex-1 flex flex-col justify-between h-full">
+                <div className="flex items-center gap-3 mb-2"></div>
+                <p className="text-gray-400">
                   FlapEEG is a project that started in January 2025. The team
                   consists of 8 members, some of whom are experienced in AI and
                   EEG technology, while others are passionate about video games
                   and coding. They all have different backgrounds and skills,
                   but share the same goal.
-                </p>
-              </div>
-              <div className="flex-1 flex flex-col justify-between h-full">
-                <div className="flex items-center gap-3 mb-2">
-                  <Rocket className="w-6 h-6 text-red-400" />
-                  <span className="text-lg font-semibold text-white">
-                    First Prototype
-                  </span>
-                </div>
-                <p className="text-gray-400">
-                  In the video above, you can see the first prototype of the
-                  game. Dereck and Louis-Étienne managed to get a simple version
-                  of the game up and running where the player could control the
-                  character by blinking with an activation threshold.
                 </p>
               </div>
             </div>
