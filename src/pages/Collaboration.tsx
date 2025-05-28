@@ -520,8 +520,8 @@ function SponsorshipPage() {
               <p className="text-gray-300 mb-6">
                 {t("collaborationPage.readyText2")}
               </p>
-              <div className="flex items-center gap-4 text-red-400">
-                <CreditCard className="w-6 h-6" />
+              <div className="flex items-center gap-4">
+                <CreditCard className="w-6 h-6 text-red-400" />
                 <span className="text-white">
                   {t("collaborationPage.flexiblePayment")}
                 </span>

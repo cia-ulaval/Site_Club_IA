@@ -37,36 +37,6 @@ const teamMembers = [
   },
 ];
 
-// Motion variants for animation
-const fadeInVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const TeamSection = () => (
-  <motion.section
-    className="mb-20"
-    initial="hidden"
-    animate="visible"
-    variants={fadeInVariants}
-  >
-    <h2 className="text-3xl font-bold gradient-text text-center mb-12">
-      The Team
-    </h2>
-    {/* Move the grid outside of any max-w or text-center */}
-    <motion.div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4 md:px-6 w-full">
-      {teamMembers.map((member, index) => (
-        <TeamMemberCard
-          key={index}
-          icon={member.icon}
-          title={member.title}
-          description={member.description}
-        />
-      ))}
-    </motion.div>
-  </motion.section>
-);
-
 function DecisionTree() {
   return (
     <>

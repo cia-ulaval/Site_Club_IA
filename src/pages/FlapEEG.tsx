@@ -7,8 +7,6 @@ import {
   Braces,
   Rotate3d,
   Radical,
-  Play,
-  Pause,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -23,17 +21,6 @@ function FlapEEG() {
       setIsPlaying(!videoRef.current.paused);
     }
   }, []);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
 
   const teamMembers = [
     {
@@ -222,18 +209,7 @@ function FlapEEG() {
                     poster="/project/flappyproto-poster.jpg"
                     aria-label="FlapEEG prototype video"
                   />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center justify-between">
-                    <button
-                      onClick={togglePlay}
-                      className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors shadow-md"
-                    >
-                      {isPlaying ? (
-                        <Pause className="w-5 h-5" />
-                      ) : (
-                        <Play className="w-5 h-5" />
-                      )}
-                    </button>
-                  </div>
+                  {/* Play and mute button removed */}
                 </div>
                 <div>
                   <span className="text-lg font-semibold text-white flex items-center gap-2 mb-2">

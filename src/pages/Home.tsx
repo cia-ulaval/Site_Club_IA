@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import InfiniteScrollBanner from "../components/Carousel";
 import { useTranslation } from "react-i18next";
+import InstaPostEmbed from "../components/InstaPostEmbed";
 
 function Home() {
   const { t } = useTranslation();
@@ -35,86 +36,79 @@ function Home() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <header className="text-center mb-16">
-        <motion.h1
-          className="text-6xl font-bold mb-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            {t("home.header.title")}
-          </span>
-        </motion.h1>
-        <motion.p
-          className="text-2xl text-gray-300"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          {t("home.header.subtitle")}
-        </motion.p>
-      </header>
+    <div className="max-w-7xl mx-auto px-4">
+      <section className="relative overflow-hidden py-12 md:py-20">
+        {/* Background decorative elements (hidden on mobile) */}
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-red-500/10 rounded-full blur-xl" />
+          <div className="absolute bottom-20 right-10 w-48 h-48 bg-red-600/5 rounded-full blur-2xl" />
+        </div>
 
-      <div className="hero-card mb-16">
-        <div className="video-container mb-4 relative">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-          />
-          <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-            <div className="flex items-center justify-between">
-              <button
-                onClick={togglePlay}
-                className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
+        <div className="relative z-10 mx-auto px-6 md:px-8 lg:px-10 w-full max-w-4xl">
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+            {/* Left Side - Title & Subtitle & About */}
+            <div className="space-y-6">
+              {/* Title */}
+              <motion.h1
+                className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
               >
-                {isPlaying ? (
-                  <Pause className="w-5 h-5" />
-                ) : (
-                  <Play className="w-5 h-5" />
-                )}
-              </button>
-              <button
-                onClick={toggleMute}
-                className="p-2 rounded-full bg-rose-500/70 hover:bg-rose-500/60 transition-colors"
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
+                  {t("home.header.title")}
+                </span>
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.p
+                className="text-lg md:text-xl text-gray-300 font-light leading-relaxed"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 0.5 }}
               >
-                {isMuted ? (
-                  <VolumeX className="w-5 h-5" />
-                ) : (
-                  <Volume2 className="w-5 h-5" />
-                )}
-              </button>
+                {t("home.header.subtitle")}
+              </motion.p>
+
+              {/* About Section */}
+              <motion.div
+                className="space-y-4"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                  {t("home.about.title")}
+                </h2>
+                <p className="text-gray-400 text-base leading-relaxed">
+                  {t("home.about.description")}
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Right Side - Instagram (hidden on mobile) */}
+            <div className="hidden lg:flex justify-center">
+              <motion.div
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                <InstaPostEmbed url="https://www.instagram.com/p/DIUeVjTOhfZ" />
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="mb-16 pt-20">
-        <motion.div
-          className="p-6 rounded-xl bg-red-800/10 border custom-border-red custom-hover-border-red transition-colors"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-        >
-          <h2 className="text-2xl font-bold mb-4 gradient-text pl-4">
-            {t("home.about.title")}
-          </h2>
-          <p className="text-gray-400 text-lg text-justify p-3">
-            {t("home.about.description")}
-          </p>
-        </motion.div>
-      </div>
-
-      <section className="mb-20 pt-20">
+      {/* Section Projets */}
+      <section className="mb-20 pt-10">
         <motion.h2
           className="text-4xl font-bold gradient-text text-center mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.5 }}
+          transition={{ duration: 1, delay: 1.2 }}
         >
           {t("home.projects.title")}
         </motion.h2>
@@ -122,7 +116,7 @@ function Home() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-xl"
+              className="group relative overflow-hidden rounded-xl bg-red-800/10 shadow-lg"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.5 * index }}
@@ -149,8 +143,7 @@ function Home() {
           ))}
         </div>
       </section>
-
-      <section className="text-center mb-20 pt-20">
+      <section className="text-center mb-20 pt-10">
         <motion.h2
           className="text-4xl font-bold gradient-text mb-8"
           initial={{ opacity: 0 }}
