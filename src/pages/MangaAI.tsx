@@ -9,61 +9,7 @@ import {
   Languages,
   Layers,
 } from "lucide-react";
-
-const mangaAITeam = [
-  {
-    icon: <TextCursorInput className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Théophile Berteloot",
-    role: "",
-    description: "",
-  },
-  {
-    icon: <SwatchBook className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Loïc Baret",
-    role: "",
-    description: "",
-  },
-  {
-    icon: <Rss className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Xavier Legault",
-    role: "",
-    description: "",
-  },
-  {
-    icon: <Layers className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Louis-Jacob Lebel",
-    role: "",
-    description: "",
-  },
-  {
-    icon: <Languages className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "John-William Lebel",
-    role: "",
-    description: "",
-  },
-];
-
-// Project features with icons
-const features = [
-  {
-    icon: <Zap className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
-    title: "Real-time Translation",
-    description:
-      "Instantly translate manga panels without waiting for official releases",
-  },
-  {
-    icon: <Languages className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
-    title: "Multiple Languages",
-    description:
-      "Support for translations between Japanese, English, French, and more",
-  },
-  {
-    icon: <Layers className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
-    title: "Context-Aware",
-    description:
-      "Our AI understands character relationships and narrative context",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 interface ImageWithGlowProps {
   src: string;
@@ -122,50 +68,78 @@ const ProcessStep = ({ number, title, description }: ProcessStepProps) => (
   </motion.div>
 );
 
-const TeamSection = () => (
-  <section className="py-8 md:py-16 relative">
-    {/* Background design element */}
-    <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
-    <div className="absolute bottom-0 left-0 w-48 md:w-96 h-48 md:h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
-
-    <motion.h2
-      className="text-3xl md:text-4xl font-bold gradient-text text-center mb-4 md:mb-6"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      Meet Our Team
-    </motion.h2>
-
-    <motion.p
-      className="text-sm md:text-base text-gray-400 text-center max-w-2xl mx-auto mb-8 md:mb-12 px-4"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: true }}
-    >
-      A diverse group of experts passionate about bringing manga to global
-      audiences through cutting-edge AI technology.
-    </motion.p>
-  </section>
-);
-
 function MangaAI() {
+  const { t } = useTranslation();
+
+  const mangaAITeam = [
+    {
+      icon: <TextCursorInput className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Théophile Berteloot",
+      role: "",
+      description: t("mangaai.team.theophile.description"),
+    },
+    {
+      icon: <SwatchBook className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Loïc Baret",
+      role: "",
+      description: t("mangaai.team.loic.description"),
+    },
+    {
+      icon: <Rss className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Xavier Legault",
+      role: "",
+      description: t("mangaai.team.xavier.description"),
+    },
+    {
+      icon: <Layers className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "Louis-Jacob Lebel",
+      role: "",
+      description: t("mangaai.team.louisjacob.description"),
+    },
+    {
+      icon: <Languages className="w-6 h-6 md:w-8 md:h-8" />,
+      title: "John-William Lebel",
+      role: "",
+      description: t("mangaai.team.johnwilliam.description"),
+    },
+  ];
+
+  // Project features with icons
+  const features = [
+    {
+      icon: <Zap className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
+      title: t("mangaai.features.realtime.title"),
+      description: t("mangaai.features.realtime.description"),
+    },
+    {
+      icon: <Languages className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
+      title: t("mangaai.features.multilang.title"),
+      description: t("mangaai.features.multilang.description"),
+    },
+    {
+      icon: <Layers className="w-5 h-5 md:w-6 md:h-6 text-red-400" />,
+      title: t("mangaai.features.contextaware.title"),
+      description: t("mangaai.features.contextaware.description"),
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Manga Translator - AI-Powered Manga Translation</title>
-        <meta
-          name="description"
-          content="Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time and enjoy your favorite stories in multiple languages."
-        />
-        <meta
-          name="keywords"
-          content="Manga Translator, AI Manga Translation, Real-time Manga Translation, Manga109, Manga AI, Translate Manga, Japanese to English Manga Translation"
-        />
+        <title>{t("mangaai.meta.title")}</title>
+        <meta name="description" content={t("mangaai.meta.description")} />
+        <meta name="keywords" content={t("mangaai.meta.keywords")} />
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content={t("mangaai.meta.og.title")} />
+        <meta property="og:description" content={t("mangaai.meta.og.description")} />
+        <meta property="og:image" content="/banner/cia_ico.ico" />
+        <meta property="og:url" content="https://cialaval.vercel.app/mangaai" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t("mangaai.meta.twitter.title")} />
+        <meta name="twitter:description" content={t("mangaai.meta.twitter.description")} />
+        <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
       <section className="relative overflow-hidden">
         <motion.div
@@ -186,14 +160,14 @@ function MangaAI() {
               className="text-4xl md:text-6xl font-bold mb-2 md:mb-4"
             >
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Manga
+                {t("mangaai.hero.title.manga")}
               </span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-red-800">
-                Translator
+                {t("mangaai.hero.title.translator")}
               </span>
             </h1>
             <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-              AI-Powered Manga Translation
+              {t("mangaai.hero.subtitle")}
             </h2>
           </motion.div>
 
@@ -221,9 +195,7 @@ function MangaAI() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            Ever wanted to read a manga that wasn't translated yet? Our
-            AI-powered translator breaks the language barrier, bringing
-            untranslated manga to readers worldwide in real-time.
+            {t("mangaai.hero.description")}
           </motion.p>
 
           {/* Main content section */}
@@ -237,68 +209,61 @@ function MangaAI() {
           >
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
-                Our Approach
+                {t("mangaai.approach.title")}
               </h3>
 
               <div className="grid grid-cols-1 gap-8 md:gap-16 items-center mb-12 md:mb-16">
                 <div className="px-4 md:px-0">
                   <p className="mb-4 md:mb-6 text-sm md:text-base">
-                    Our project utilizes{" "}
-                    <span className="text-red-400 font-semibold">Manga109</span>
-                    , a renowned dataset in the field, frequently employed for
-                    speech bubble detection, optical character recognition
-                    (OCR), and emotion recognition in illustrations.
+                    {t("mangaai.approach.paragraph1")}
                   </p>
                   <p className="text-sm md:text-base">
-                    This comprehensive collection serves as the foundation for
-                    training our AI models to understand the unique visual
-                    language of manga and accurately translate text while
-                    preserving context.
+                    {t("mangaai.approach.paragraph2")}
                   </p>
                 </div>
                 <ImageWithGlow
                   src="/project/manga109.png"
-                  alt="Manga 109 Dataset"
-                  caption="Source: http://www.manga109.org/ja/index.html"
+                  alt={t("mangaai.images.manga109.alt")}
+                  caption={t("mangaai.images.manga109.caption")}
                 />
               </div>
 
               <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-red-300">
-                Development Process
+                {t("mangaai.process.title")}
               </h4>
 
               <div className="mb-8 md:mb-12 px-4 md:px-0">
                 <ProcessStep
                   number={1}
-                  title="Prototype Development"
-                  description="We started by leveraging existing tools to quickly build a functional prototype that could demonstrate the concept."
+                  title={t("mangaai.process.step1.title")}
+                  description={t("mangaai.process.step1.description")}
                 />
                 <ProcessStep
                   number={2}
-                  title="Core Components"
-                  description="Our system consists of bubble detection with U-Net segmentation, OCR-based text extraction, and automatic translation integration."
+                  title={t("mangaai.process.step2.title")}
+                  description={t("mangaai.process.step2.description")}
                 />
                 <ProcessStep
                   number={3}
-                  title="Translation & Reinsertion"
-                  description="After translation, we use advanced image processing to place the translated text back into speech bubbles while respecting visual context."
+                  title={t("mangaai.process.step3.title")}
+                  description={t("mangaai.process.step3.description")}
                 />
                 <ProcessStep
                   number={4}
-                  title="Continuous Refinement"
-                  description="We're constantly improving our models to handle challenges like text length differences and maintaining artistic integrity."
+                  title={t("mangaai.process.step4.title")}
+                  description={t("mangaai.process.step4.description")}
                 />
               </div>
 
               <ImageWithGlow
                 src="/project/mangaai.png"
-                alt="Manga AI Translation Example"
-                caption="Sample output from our automatic translation system"
+                alt={t("mangaai.images.example.alt")}
+                caption={t("mangaai.images.example.caption")}
               />
 
               <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-red-800/20">
                 <h4 className="text-xl md:text-2xl font-semibold mb-4 md:mb-6 text-center text-red-300">
-                  Future Enhancements
+                  {t("mangaai.future.title")}
                 </h4>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 md:px-0">
@@ -307,12 +272,10 @@ function MangaAI() {
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
-                      Dynamic Text Resizing
+                      {t("mangaai.future.textResizing.title")}
                     </h5>
                     <p className="text-xs md:text-sm text-gray-400">
-                      Intelligent adjustment of font size and text layout to
-                      ensure proper fitting within speech bubbles of varying
-                      sizes and shapes.
+                      {t("mangaai.future.textResizing.description")}
                     </p>
                   </motion.div>
 
@@ -321,12 +284,10 @@ function MangaAI() {
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
-                      Character Gender Detection
+                      {t("mangaai.future.genderDetection.title")}
                     </h5>
                     <p className="text-xs md:text-sm text-gray-400">
-                      Analyzing visual cues to detect character gender,
-                      improving translation accuracy for languages with
-                      grammatical gender like French.
+                      {t("mangaai.future.genderDetection.description")}
                     </p>
                   </motion.div>
 
@@ -335,12 +296,10 @@ function MangaAI() {
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
-                      Character Identification
+                      {t("mangaai.future.characterId.title")}
                     </h5>
                     <p className="text-xs md:text-sm text-gray-400">
-                      Recognizing recurring characters to maintain consistent
-                      speech patterns and personality traits throughout
-                      translations.
+                      {t("mangaai.future.characterId.description")}
                     </p>
                   </motion.div>
 
@@ -349,12 +308,10 @@ function MangaAI() {
                     whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                   >
                     <h5 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-red-500">
-                      Context-Aware Translation
+                      {t("mangaai.future.contextAware.title")}
                     </h5>
                     <p className="text-xs md:text-sm text-gray-400">
-                      Incorporating narrative context and visual information to
-                      produce more natural and accurate translations that
-                      respect the story's tone.
+                      {t("mangaai.future.contextAware.description")}
                     </p>
                   </motion.div>
                 </div>
@@ -376,7 +333,7 @@ function MangaAI() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                Meet Our Team
+                {t("mangaai.team.title")}
               </motion.h2>
 
               <motion.p
@@ -386,8 +343,7 @@ function MangaAI() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                A diverse group of experts passionate about bringing manga to
-                global audiences through cutting-edge AI technology.
+                {t("mangaai.team.description")}
               </motion.p>
 
               <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">

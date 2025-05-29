@@ -420,5 +420,114 @@
         "description": ""
       }
     }
+  },
+  "mangaai": {
+    "meta": {
+      "title": "Manga Translator - AI-Powered Manga Translation",
+      "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time and enjoy your favorite stories in multiple languages.",
+      "keywords": "Manga Translator, AI Manga Translation, Real-time Manga Translation, Manga109, Manga AI, Translate Manga, Japanese to English Manga Translation",
+      "og": {
+        "title": "Manga Translator - AI-Powered Manga Translation",
+        "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time."
+      },
+      "twitter": {
+        "title": "Manga Translator - AI-Powered Manga Translation",
+        "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time and enjoy your favorite stories in multiple languages."
+      }
+    },
+    "hero": {
+      "title": {
+        "manga": "Manga",
+        "translator": "Translator"
+      },
+      "subtitle": "AI-Powered Manga Translation",
+      "description": "Ever wanted to read a manga that wasn't translated yet? Our AI-powered translator breaks the language barrier, bringing untranslated manga to readers worldwide in real-time."
+    },
+    "features": {
+      "realtime": {
+        "title": "Real-time Translation",
+        "description": "Instantly translate manga panels without waiting for official releases"
+      },
+      "multilang": {
+        "title": "Multiple Languages",
+        "description": "Support for translations between Japanese, English, French, and more"
+      },
+      "contextaware": {
+        "title": "Context-Aware",
+        "description": "Our AI understands character relationships and narrative context"
+      }
+    },
+    "approach": {
+      "title": "Our Approach",
+      "paragraph1": "Our project utilizes Manga109, a renowned dataset in the field, frequently employed for speech bubble detection, optical character recognition (OCR), and emotion recognition in illustrations.",
+      "paragraph2": "This comprehensive collection serves as the foundation for training our AI models to understand the unique visual language of manga and accurately translate text while preserving context."
+    },
+    "images": {
+      "manga109": {
+        "alt": "Manga 109 Dataset",
+        "caption": "Source: http://www.manga109.org/ja/index.html"
+      },
+      "example": {
+        "alt": "Manga AI Translation Example",
+        "caption": "Sample output from our automatic translation system"
+      }
+    },
+    "process": {
+      "title": "Development Process",
+      "step1": {
+        "title": "Prototype Development",
+        "description": "We started by leveraging existing tools to quickly build a functional prototype that could demonstrate the concept."
+      },
+      "step2": {
+        "title": "Core Components",
+        "description": "Our system consists of bubble detection with U-Net segmentation, OCR-based text extraction, and automatic translation integration."
+      },
+      "step3": {
+        "title": "Translation & Reinsertion",
+        "description": "After translation, we use advanced image processing to place the translated text back into speech bubbles while respecting visual context."
+      },
+      "step4": {
+        "title": "Continuous Refinement",
+        "description": "We're constantly improving our models to handle challenges like text length differences and maintaining artistic integrity."
+      }
+    },
+    "future": {
+      "title": "Future Enhancements",
+      "textResizing": {
+        "title": "Dynamic Text Resizing",
+        "description": "Intelligent adjustment of font size and text layout to ensure proper fitting within speech bubbles of varying sizes and shapes."
+      },
+      "genderDetection": {
+        "title": "Character Gender Detection",
+        "description": "Analyzing visual cues to detect character gender, improving translation accuracy for languages with grammatical gender like French."
+      },
+      "characterId": {
+        "title": "Character Identification",
+        "description": "Recognizing recurring characters to maintain consistent speech patterns and personality traits throughout translations."
+      },
+      "contextAware": {
+        "title": "Context-Aware Translation",
+        "description": "Incorporating narrative context and visual information to produce more natural and accurate translations that respect the story's tone."
+      }
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "description": "A diverse group of experts passionate about bringing manga to global audiences through cutting-edge AI technology.",
+      "theophile": {
+        "description": ""
+      },
+      "loic": {
+        "description": ""
+      },
+      "xavier": {
+        "description": ""
+      },
+      "louisjacob": {
+        "description": ""
+      },
+      "johnwilliam": {
+        "description": ""
+      }
+    }
   }
 }

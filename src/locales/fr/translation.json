@@ -254,7 +254,7 @@
         },
         "prototype": {
           "title": "Premier prototype",
-          "description": "Dans la vidéo ci-dessus, vous pouvez voir le premier prototype du jeu. Dereck et Louis-Étienne ont réussi à faire fonctionner une version simple du jeu où le joueur pouvait contrôler le personnage en clignant avec un seuil d'activation."
+          "description": "Dans la vidéo ci-dessus, vous pouvez voir le premier prototype du jeu. Dereck et Louis-Étienne ont réussi à faire fonctionner une version simple du jeu où le joueur pouvait contrôler le personnage en cliquant avec un seuil d'activation."
         },
         "description": "FlapEEG est un projet qui a commencé en janvier 2025. L'équipe se compose de 8 membres, dont certains sont expérimentés en IA et technologie EEG, tandis que d'autres sont passionnés par les jeux vidéo et la programmation. Ils ont tous des backgrounds et compétences différents, mais partagent le même objectif."
       },
@@ -420,6 +420,115 @@
       },
       "others": {
         "title": "Et d'autres",
+        "description": ""
+      }
+    }
+  },
+  "mangaai": {
+    "meta": {
+      "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
+      "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel et profitez de vos histoires préférées en plusieurs langues.",
+      "keywords": "Traducteur Manga, Traduction Manga IA, Traduction Manga Temps Réel, Manga109, Manga IA, Traduire Manga, Traduction Manga Japonais Français",
+      "og": {
+        "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
+        "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel."
+      },
+      "twitter": {
+        "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
+        "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel et profitez de vos histoires préférées en plusieurs langues."
+      }
+    },
+    "hero": {
+      "title": {
+        "manga": "Manga",
+        "translator": "Traducteur"
+      },
+      "subtitle": "Traduction de Manga Alimentée par l'IA",
+      "description": "Vous avez déjà voulu lire un manga qui n'était pas encore traduit ? Notre traducteur alimenté par l'IA brise la barrière linguistique, apportant les mangas non traduits aux lecteurs du monde entier en temps réel."
+    },
+    "features": {
+      "realtime": {
+        "title": "Traduction Temps Réel",
+        "description": "Traduisez instantanément les planches de manga sans attendre les sorties officielles"
+      },
+      "multilang": {
+        "title": "Plusieurs Langues",
+        "description": "Support pour les traductions entre japonais, anglais, français et plus"
+      },
+      "contextaware": {
+        "title": "Conscient du Contexte",
+        "description": "Notre IA comprend les relations entre personnages et le contexte narratif"
+      }
+    },
+    "approach": {
+      "title": "Notre Approche",
+      "paragraph1": "Notre projet utilise Manga109, un jeu de données renommé dans le domaine, fréquemment employé pour la détection de bulles de dialogue, la reconnaissance optique de caractères (OCR), et la reconnaissance d'émotions dans les illustrations.",
+      "paragraph2": "Cette collection complète sert de base pour entraîner nos modèles d'IA à comprendre le langage visuel unique du manga et traduire le texte avec précision tout en préservant le contexte."
+    },
+    "images": {
+      "manga109": {
+        "alt": "Jeu de données Manga 109",
+        "caption": "Source: http://www.manga109.org/ja/index.html"
+      },
+      "example": {
+        "alt": "Exemple de traduction Manga IA",
+        "caption": "Exemple de sortie de notre système de traduction automatique"
+      }
+    },
+    "process": {
+      "title": "Processus de Développement",
+      "step1": {
+        "title": "Développement du Prototype",
+        "description": "Nous avons commencé par exploiter les outils existants pour construire rapidement un prototype fonctionnel qui pourrait démontrer le concept."
+      },
+      "step2": {
+        "title": "Composants Principaux",
+        "description": "Notre système consiste en la détection de bulles avec segmentation U-Net, extraction de texte basée sur OCR, et intégration de traduction automatique."
+      },
+      "step3": {
+        "title": "Traduction et Réinsertion",
+        "description": "Après traduction, nous utilisons le traitement d'image avancé pour replacer le texte traduit dans les bulles de dialogue tout en respectant le contexte visuel."
+      },
+      "step4": {
+        "title": "Raffinement Continu",
+        "description": "Nous améliorons constamment nos modèles pour gérer les défis comme les différences de longueur de texte et maintenir l'intégrité artistique."
+      }
+    },
+    "future": {
+      "title": "Améliorations Futures",
+      "textResizing": {
+        "title": "Redimensionnement Dynamique du Texte",
+        "description": "Ajustement intelligent de la taille de police et de la mise en page du texte pour assurer un ajustement approprié dans les bulles de dialogue de tailles et formes variées."
+      },
+      "genderDetection": {
+        "title": "Détection du Genre des Personnages",
+        "description": "Analyser les indices visuels pour détecter le genre des personnages, améliorant la précision de traduction pour les langues avec genre grammatical comme le français."
+      },
+      "characterId": {
+        "title": "Identification des Personnages",
+        "description": "Reconnaître les personnages récurrents pour maintenir des modèles de parole cohérents et des traits de personnalité tout au long des traductions."
+      },
+      "contextAware": {
+        "title": "Traduction Consciente du Contexte",
+        "description": "Incorporer le contexte narratif et l'information visuelle pour produire des traductions plus naturelles et précises qui respectent le ton de l'histoire."
+      }
+    },
+    "team": {
+      "title": "Rencontrez Notre Équipe",
+      "description": "Un groupe diversifié d'experts passionnés par l'apport du manga aux audiences mondiales grâce à la technologie d'IA de pointe.",
+      "theophile": {
+        "description": ""
+      },
+      "loic": {
+        "description": ""
+      },
+      "xavier": {
+        "description": ""
+      },
+      "louisjacob": {
+        "description": ""
+      },
+      "johnwilliam": {
         "description": ""
       }
     }
