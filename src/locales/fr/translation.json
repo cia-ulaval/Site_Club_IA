@@ -360,5 +360,68 @@
       "title": "Remerciements spéciaux à notre sponsor",
       "description": "Nous aimerions remercier VAUL, le laboratoire de véhicules autonomes de l'Université Laval, de nous avoir permis d'utiliser leur équipement et pour leur soutien tout au long de ce projet."
     }
+  },
+  "lenia": {
+    "meta": {
+      "title": "Lenia - Automate Cellulaire Continu",
+      "description": "Explorez Lenia, un automate cellulaire avancé inspiré du Jeu de la Vie de Conway. Découvrez les comportements émergents, l'auto-organisation, et le potentiel de l'intelligence artificielle.",
+      "keywords": "Lenia, Automate Cellulaire, Jeu de la Vie, Intelligence Artificielle, Comportements Émergents, Auto-Organisation, Recherche IA",
+      "og": {
+        "title": "Lenia - Automate Cellulaire Continu",
+        "description": "Découvrez Lenia, un automate cellulaire continu qui repousse les limites de l'auto-organisation et des comportements émergents en intelligence artificielle."
+      },
+      "twitter": {
+        "title": "Lenia - Automate Cellulaire Continu",
+        "description": "Explorez Lenia, un automate cellulaire avancé inspiré du Jeu de la Vie de Conway. Découvrez les comportements émergents, l'auto-organisation, et le potentiel de l'intelligence artificielle."
+      }
+    },
+    "hero": {
+      "subtitle": "Qu'est-ce que Lenia ?"
+    },
+    "features": {
+      "continuous": {
+        "title": "Automate Continu",
+        "description": "Au-delà des états binaires du Jeu de la Vie"
+      },
+      "emergent": {
+        "title": "Comportements Émergents",
+        "description": "Des motifs complexes et vivants émergent"
+      },
+      "research": {
+        "title": "Recherche Exploratoire",
+        "description": "Repousser les limites de l'auto-organisation"
+      }
+    },
+    "content": {
+      "paragraph1": "L'intelligence artificielle ne se résume pas aux réseaux de neurones ou aux algorithmes traditionnels. Certains systèmes, basés sur des règles simples, peuvent générer des comportements d'une complexité étonnante. C'est le cas de Lenia, un automate cellulaire avancé inspiré du célèbre Jeu de la Vie de John Conway.",
+      "paragraph2": "Contrairement au Jeu de la Vie, où les cellules sont soit vivantes soit mortes et évoluent par étapes discrètes, Lenia fonctionne avec des valeurs continues et un temps fluide. Cela permet l'émergence de structures dynamiques et auto-organisées qui se comportent de manière rappelant les organismes vivants. Chaque pixel (ou \"cellule\") dans Lenia a une valeur numérique, qui peut être considérée comme la concentration d'une espèce chimique. Ces cellules interagissent avec leur environnement en utilisant des filtres de convolution, qui déterminent comment une cellule \"perçoit\" ses voisines. Un filtre de convolution est essentiellement une somme pondérée des valeurs des cellules voisines, ce qui signifie qu'au lieu de simplement vérifier les voisins immédiats, Lenia applique un motif structuré—souvent en forme d'anneau—pour déterminer comment différentes distances contribuent à l'évolution d'une cellule. Le résultat est ensuite passé à travers une fonction de croissance, qui décide si la valeur d'une cellule augmente ou diminue en fonction de l'environnement environnant. Lorsqu'elle est appliquée à travers toute la grille, ce processus génère des comportements complexes et vivants à partir de règles mathématiques simples.",
+      "paragraph3": "Notre équipe a réussi à implémenter une version à canal unique de Lenia, où une seule \"espèce chimique\" existe. Cependant, nous avons rencontré des défis pour l'étendre à trois canaux, où plusieurs espèces interagissantes (représentées comme des valeurs RGB en visualisation) élargiraient considérablement les possibilités de comportements émergents. Contrairement au Jeu de la Vie, qui a un \"bestiaire\" bien documenté de configurations de départ intéressantes, Lenia manque d'une bibliothèque standardisée de motifs connus, rendant plus difficile la recherche de structures stables et fascinantes.",
+      "paragraph4": "Ce projet offre une opportunité passionnante d'explorer l'émergence en intelligence artificielle, où des comportements complexes naissent d'interactions simples. Nous invitons les étudiants, chercheurs et passionnés d'IA à nous rejoindre pour repousser les limites des systèmes auto-organisés et découvrir le potentiel caché de Lenia."
+    },
+    "images": {
+      "pattern": {
+        "alt": "Exemple de motif Lenia"
+      },
+      "animation": {
+        "alt": "Exemple d'animation Lenia",
+        "caption": "https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680"
+      }
+    },
+    "team": {
+      "title": "L'Équipe",
+      "theophile": {
+        "description": ""
+      },
+      "jordan": {
+        "description": ""
+      },
+      "louis": {
+        "description": ""
+      },
+      "others": {
+        "title": "Et d'autres",
+        "description": ""
+      }
+    }
   }
 }

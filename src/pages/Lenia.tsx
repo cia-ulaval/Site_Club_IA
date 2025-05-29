@@ -10,48 +10,7 @@ import {
 import { motion } from "framer-motion";
 import Head from "next/head";
 import TeamMemberCard from "../components/TeamMemberCard";
-
-// Project features with icons
-const features = [
-  {
-    icon: <Grid className="w-6 h-6 text-red-400" />,
-    title: "Continuous Automaton",
-    description: "Beyond binary states of Game of Life",
-  },
-  {
-    icon: <Sparkles className="w-6 h-6 text-red-400" />,
-    title: "Emergent Behaviors",
-    description: "Complex lifelike patterns emerge",
-  },
-  {
-    icon: <ZoomIn className="w-6 h-6 text-red-400" />,
-    title: "Explorative Research",
-    description: "Pushing boundaries of self-organization",
-  },
-];
-
-const teamMembers = [
-  {
-    icon: <Apple className="w-8 h-8" />,
-    title: "Théophile Berteloot",
-    description: "",
-  },
-  {
-    icon: <Baby className="w-8 h-8" />,
-    title: "Jordan Mathieu",
-    description: "",
-  },
-  {
-    icon: <Bean className="w-8 h-8" />,
-    title: "Louis-Étienne Messier",
-    description: "",
-  },
-  {
-    icon: <Asterisk className="w-8 h-8" />,
-    title: "And others",
-    description: "",
-  },
-];
+import { useTranslation } from "next-i18next";
 
 interface ImageWithGlowProps {
   src: string;
@@ -81,70 +40,67 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   </motion.div>
 );
 
-const TeamSection = () => (
-  <section className="py-16 relative mb-10 mt-10">
-    {/* Background design element */}
-    <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
-
-    <motion.h2
-      className="text-4xl font-bold gradient-text text-center mb-12"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-    >
-      The Team
-    </motion.h2>
-
-    <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
-      {teamMembers.map((member, index) => (
-        <TeamMemberCard
-          key={index}
-          icon={member.icon}
-          title={member.title}
-          description={member.description}
-        />
-      ))}
-    </div>
-  </section>
-);
-
 function Lenia() {
+  const { t } = useTranslation();
+
+  // Project features with icons
+  const features = [
+    {
+      icon: <Grid className="w-6 h-6 text-red-400" />,
+      title: t("lenia.features.continuous.title"),
+      description: t("lenia.features.continuous.description"),
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-red-400" />,
+      title: t("lenia.features.emergent.title"),
+      description: t("lenia.features.emergent.description"),
+    },
+    {
+      icon: <ZoomIn className="w-6 h-6 text-red-400" />,
+      title: t("lenia.features.research.title"),
+      description: t("lenia.features.research.description"),
+    },
+  ];
+
+  const teamMembers = [
+    {
+      icon: <Apple className="w-8 h-8" />,
+      title: "Théophile Berteloot",
+      description: t("lenia.team.theophile.description"),
+    },
+    {
+      icon: <Baby className="w-8 h-8" />,
+      title: "Jordan Mathieu",
+      description: t("lenia.team.jordan.description"),
+    },
+    {
+      icon: <Bean className="w-8 h-8" />,
+      title: "Louis-Étienne Messier",
+      description: t("lenia.team.louis.description"),
+    },
+    {
+      icon: <Asterisk className="w-8 h-8" />,
+      title: t("lenia.team.others.title"),
+      description: t("lenia.team.others.description"),
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Lenia - Continuous Cellular Automaton</title>
-        <meta
-          name="description"
-          content="Explore Lenia, an advanced cellular automaton inspired by Conway's Game of Life. Discover emergent behaviors, self-organization, and the potential of artificial intelligence."
-        />
-        <meta
-          name="keywords"
-          content="Lenia, Cellular Automaton, Game of Life, Artificial Intelligence, Emergent Behaviors, Self-Organization, AI Research"
-        />
+        <title>{t("lenia.meta.title")}</title>
+        <meta name="description" content={t("lenia.meta.description")} />
+        <meta name="keywords" content={t("lenia.meta.keywords")} />
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-          property="og:title"
-          content="Lenia - Continuous Cellular Automaton"
-        />
-        <meta
-          property="og:description"
-          content="Discover Lenia, a continuous cellular automaton that pushes the boundaries of self-organization and emergent behaviors in artificial intelligence."
-        />
+        <meta property="og:title" content={t("lenia.meta.og.title")} />
+        <meta property="og:description" content={t("lenia.meta.og.description")} />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/lenia" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Lenia - Continuous Cellular Automaton"
-        />
-        <meta
-          name="twitter:description"
-          content="Explore Lenia, an advanced cellular automaton inspired by Conway's Game of Life. Discover emergent behaviors, self-organization, and the potential of artificial intelligence."
-        />
+        <meta name="twitter:title" content={t("lenia.meta.twitter.title")} />
+        <meta name="twitter:description" content={t("lenia.meta.twitter.description")} />
         <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
       <section className="relative overflow-hidden">
@@ -167,7 +123,7 @@ function Lenia() {
               </span>
             </h1>
             <h2 className="text-4xl font-bold text-white mb-6">
-              What is Lenia?
+              {t("lenia.hero.subtitle")}
             </h2>
           </motion.div>
 
@@ -205,34 +161,14 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                Artificial intelligence isn't just about neural networks or
-                traditional algorithms. Some systems, based on simple rules, can
-                generate astonishingly complex behaviors. This is the case with
-                Lenia, an advanced cellular automaton inspired by the famous
-                Game of Life by John Conway. <br></br>
-                <br></br>Unlike the Game of Life, where cells are either alive
-                or dead and evolve in discrete steps, Lenia operates with
-                continuous values and fluid time. This allows for the emergence
-                of dynamic, self-organizing structures that behave in ways
-                reminiscent of living organisms. Each pixel (or "cell") in Lenia
-                has a numerical value, which can be thought of as the
-                concentration of a chemical species. These cells interact with
-                their surroundings using convolution filters, which determine
-                how a cell "perceives" its neighbors. A convolution filter is
-                essentially a weighted sum of nearby cell values, meaning that
-                instead of just checking immediate neighbors, Lenia applies a
-                structured pattern—often in the shape of a ring—to determine how
-                different distances contribute to a cell's evolution. The result
-                is then passed through a growth function, which decides whether
-                a cell's value increases or decreases based on the surrounding
-                environment. When applied across the entire grid, this process
-                generates complex, lifelike behaviors from simple mathematical
-                rules.
+                {t("lenia.content.paragraph1")}
+                <br /><br />
+                {t("lenia.content.paragraph2")}
               </motion.p>
 
               <ImageWithGlow
                 src="/project/lenia.png"
-                alt="Lenia pattern example"
+                alt={t("lenia.images.pattern.alt")}
               />
 
               <motion.p
@@ -242,22 +178,13 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                Our team successfully implemented a single-channel version of
-                Lenia, where only one "chemical species" exists. However, we
-                faced challenges in extending it to three channels, where
-                multiple interacting species (represented as RGB values in
-                visualization) would dramatically expand the possibilities for
-                emergent behaviors. Unlike the Game of Life, which has a
-                well-documented "bestiary" of interesting starting
-                configurations, Lenia lacks a standardized library of known
-                patterns, making it harder to find stable and fascinating
-                structures.
+                {t("lenia.content.paragraph3")}
               </motion.p>
 
               <ImageWithGlow
                 src="/project/leniaexample.gif"
-                alt="Lenia animation example"
-                caption="https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680"
+                alt={t("lenia.images.animation.alt")}
+                caption={t("lenia.images.animation.caption")}
               />
 
               <motion.p
@@ -267,18 +194,38 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                This project offers an exciting opportunity to explore emergence
-                in artificial intelligence, where complex behaviors arise from
-                simple interactions. We invite students, researchers, and AI
-                enthusiasts to join us in pushing the boundaries of
-                self-organizing systems and discovering the hidden potential of
-                Lenia.
+                {t("lenia.content.paragraph4")}
               </motion.p>
             </div>
           </motion.section>
 
           {/* Team section */}
-          <TeamSection />
+          <section className="py-16 relative mb-10 mt-10">
+            {/* Background design element */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
+            <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
+
+            <motion.h2
+              className="text-4xl font-bold gradient-text text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              {t("lenia.team.title")}
+            </motion.h2>
+
+            <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
+              {teamMembers.map((member, index) => (
+                <TeamMemberCard
+                  key={index}
+                  icon={member.icon}
+                  title={member.title}
+                  description={member.description}
+                />
+              ))}
+            </div>
+          </section>
         </motion.div>
       </section>
     </>
