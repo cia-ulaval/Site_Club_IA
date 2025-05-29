@@ -5,11 +5,11 @@ function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="relative bg-gradient-to-t from-black via-zinc-900 to-black border-t border-red-500/20 py-12 mt-20 overflow-hidden">
+    <footer className="relative bg-gradient-to-t from-red-950 via-red-900/10 to-black border-t border-red-500/30 py-12 mt-20 overflow-hidden">
       {/* Subtle animated background elements */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-r from-red-500/15 to-rose-500/15 rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-8 right-16 w-12 h-12 bg-gradient-to-r from-red-600/10 to-pink-600/10 rounded-full blur-lg animate-pulse delay-1000"></div>
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-8 left-8 w-16 h-16 bg-gradient-to-r from-red-500/25 to-rose-500/25 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute bottom-8 right-16 w-12 h-12 bg-gradient-to-r from-red-600/20 to-pink-600/20 rounded-full blur-lg animate-pulse delay-1000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">

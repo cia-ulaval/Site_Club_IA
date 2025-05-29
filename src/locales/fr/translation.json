@@ -206,113 +206,159 @@
     "collabText": "Nous sommes toujours ouverts à de nouveaux partenariats et idées. Découvrez comment collaborer avec nous !",
     "collabButton": "En savoir plus sur la collaboration"
   },
+  "flapeeg": {
     "meta": {
-    "title": "FlapEEG - Révolutionner le jeu vidéo avec l'IA contrôlée par la pensée",
-    "description": "FlapEEG est un jeu vidéo révolutionnaire contrôlé par la pensée, alimenté par l'IA et la technologie EEG. Découvrez comment nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et contrôler le jeu.",
-    "keywords": "FlapEEG, EEG, jeu contrôlé par la pensée, signaux cérébraux, IA, jeu vidéo, innovation",
-    "og": {
-      "title": "FlapEEG - Jeu vidéo contrôlé par la pensée",
-      "description": "Découvrez FlapEEG, un jeu vidéo contrôlé par la pensée. Apprenez-en plus sur notre parcours dans l'entraînement d'un modèle d'IA pour interpréter les signaux cérébraux."
+      "title": "FlapEEG - Révolutionner le jeu vidéo avec l'IA contrôlée par la pensée",
+      "description": "FlapEEG est un jeu vidéo révolutionnaire contrôlé par la pensée, alimenté par l'IA et la technologie EEG. Découvrez comment nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et contrôler le jeu.",
+      "keywords": "FlapEEG, EEG, jeu contrôlé par la pensée, signaux cérébraux, IA, jeu vidéo, innovation"
     },
-    "twitter": {
+    "hero": {
       "title": "FlapEEG - Jeu vidéo contrôlé par la pensée",
-      "description": "FlapEEG est un jeu vidéo révolutionnaire contrôlé par la pensée. Découvrez comment nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et contrôler le jeu."
-    }
-  },
-  "hero": {
-    "title": "FlapEEG - Jeu vidéo contrôlé par la pensée",
-    "subtitle": "Introduction à FlapEEG",
-    "image": {
-      "alt": "Trois gestionnaires du club, l'un portant un casque EEG, souriant pendant une réunion"
+      "subtitle": "Introduction à FlapEEG",
+      "description": {
+        "paragraph1": "FlapEEG est un jeu vidéo qui est contrôlé par la pensée. Nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et les traduire en actions dans le jeu. Pour que cela fonctionne, nous nous sommes équipés de la dernière technologie EEG (électroencéphalogramme),",
+        "paragraph2": "Le format du jeu est simple ; avez-vous déjà entendu parler de flappy bird ? Eh bien, c'est le même concept simple mais amusant. La seule différence est que vous contrôlez l'oiseau avec vos pensées. La simple volonté de faire éviter les obstacles au petit personnage suffit à le faire bouger. Nous sommes très fiers du travail que nous avons accompli ; ce n'est peut-être que le début d'une révolution du jeu vidéo ! Pensez-y, et si nous combinions cette mécanique à un casque VR ? Ou, si c'était le pas vers l'aide aux personnes handicapées en leur donnant le pouvoir de leurs propres pensées ? Les possibilités sont infinies."
+      }
     },
-    "description": {
-      "sr": "FlapEEG est un jeu vidéo contrôlé par la pensée alimenté par l'IA et la technologie EEG.",
-      "paragraph1": "FlapEEG est un jeu vidéo qui est contrôlé par la pensée. Nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et les traduire en actions dans le jeu. Pour que cela fonctionne, nous nous sommes équipés de la dernière technologie EEG (électroencéphalogramme),",
-      "paragraph2": "Le format du jeu est simple ; avez-vous déjà entendu parler de flappy bird ? Eh bien, c'est le même concept simple mais amusant. La seule différence est que vous contrôlez l'oiseau avec vos pensées. La simple volonté de faire éviter les obstacles au petit personnage suffit à le faire bouger. Nous sommes très fiers du travail que nous avons accompli ; ce n'est peut-être que le début d'une révolution du jeu vidéo ! Pensez-y, et si nous combinions cette mécanique à un casque VR ? Ou, si c'était le pas vers l'aide aux personnes handicapées en leur donnant le pouvoir de leurs propres pensées ? Les possibilités sont infinies."
-    }
-  },
-  "team": {
-    "title": "Rencontrez l'équipe derrière FlapEEG",
-    "members": {
-      "louis": {
-        "description": "Principal contributeur au projet. A mis en place le serveur, l'interface personnalisée et a aidé avec le codage"
+    "team": {
+      "title": "Rencontrez l'équipe derrière FlapEEG",
+      "members": {
+        "louis": {
+          "description": "Principal contributeur au projet. A mis en place le serveur, l'interface personnalisée et a aidé avec le codage"
+        },
+        "jordan": {
+          "description": "S'est occupé de la collecte, annotation et nettoyage des données"
+        },
+        "dereck": {
+          "description": "Auteur de ce site web, a codé le seuil de base et les algorithmes d'extraction de caractéristiques"
+        },
+        "amen": {
+          "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+        },
+        "estelle": {
+          "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+        },
+        "hedi": {
+          "description": "S'est occupé de la collecte de données et des protocoles"
+        },
+        "william": {
+          "description": "Principal contributeur au développement du jeu."
+        }
+      }
+    },
+    "timeline": {
+      "beginning": {
+        "title": "Les débuts",
+        "video": {
+          "ariaLabel": "Vidéo du prototype FlapEEG"
+        },
+        "prototype": {
+          "title": "Premier prototype",
+          "description": "Dans la vidéo ci-dessus, vous pouvez voir le premier prototype du jeu. Dereck et Louis-Étienne ont réussi à faire fonctionner une version simple du jeu où le joueur pouvait contrôler le personnage en clignant avec un seuil d'activation."
+        },
+        "description": "FlapEEG est un projet qui a commencé en janvier 2025. L'équipe se compose de 8 membres, dont certains sont expérimentés en IA et technologie EEG, tandis que d'autres sont passionnés par les jeux vidéo et la programmation. Ils ont tous des backgrounds et compétences différents, mais partagent le même objectif."
       },
-      "jordan": {
-        "description": "S'est occupé de la collecte, annotation et nettoyage des données"
+      "dataCollection": {
+        "title": "Collecte de données (Semaine 2 - Semaine 4)",
+        "subtitle": "Collecte de données",
+        "paragraph1": "Après avoir établi avec succès la base de référence, Jordan a recruté des volontaires pour collecter des données cérébrales. L'objectif était de rassembler un ensemble de données de signaux cérébraux pendant que les volontaires jouaient au jeu pour entraîner le modèle d'IA.",
+        "paragraph2": "Entre-temps, William a terminé le jeu et a aidé à déployer le serveur avec l'aide de Louis-Étienne.",
+        "image": {
+          "alt": "Capture d'écran de l'interface du jeu FlapEEG"
+        }
       },
-      "dereck": {
-        "description": "Auteur de ce site web, a codé le seuil de base et les algorithmes d'extraction de caractéristiques"
+      "filtering": {
+        "title": "Filtrage et entraînement",
+        "subtitle": "Filtrage et entraînement",
+        "paragraph1": "À ce stade du projet, Louis a découvert que nos données n'étaient pas correctement filtrées et avaient beaucoup de bruit qui les rendait inutilisables. Jordan s'en est occupé et a trouvé un moyen de filtrer le bruit.",
+        "paragraph2": "Entre-temps, Amen et Estelle travaillaient dur pour entraîner le modèle d'IA en arrière-plan et ouvrir la voie aux autres pour comprendre les défis de l'entraînement d'un modèle."
       },
-      "amen": {
-        "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+      "challenge": {
+        "title": "Premier défi",
+        "description": "À ce stade du projet, l'équipe a fait face à un défi significatif : le modèle d'IA ne performait pas aussi bien que nécessaire. Ils ont opté pour commencer à rechercher et lire des articles pour comprendre les défis de l'entraînement d'un modèle."
+      }
+    },
+    "status": {
+      "title": "État du projet",
+      "current": {
+        "title": "Progrès actuel",
+        "items": [
+          "Le modèle d'IA est continuellement amélioré",
+          "Les mécaniques du jeu sont affinées pour une meilleure expérience",
+          "Collecte et analyse de données en cours",
+          "Collaboration d'équipe et tests en cours"
+        ]
       },
-      "estelle": {
-        "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+      "next": {
+        "title": "Et ensuite ?",
+        "items": [
+          "Finaliser le modèle d'IA pour un jeu en temps réel",
+          "Élargir l'accessibilité et les tests utilisateur",
+          "Préparer pour la démo publique et la sortie",
+          "Explorer de nouvelles applications pour la technologie"
+        ]
       },
-      "hedi": {
-        "description": "S'est occupé de la collecte de données et des protocoles"
-      },
-      "william": {
-        "description": "Principal contributeur au développement du jeu."
+      "conclusion": {
+        "line1": "Le projet FlapEEG est encore un travail en cours.",
+        "line2": "Notre équipe se rapproche chaque jour de la livraison d'un produit final.",
+        "line3": "Restez à l'écoute pour plus de mises à jour !"
       }
     }
   },
-  "timeline": {
-    "beginning": {
-      "title": "Les débuts",
-      "video": {
-        "ariaLabel": "Vidéo du prototype FlapEEG"
-      },
-      "prototype": {
-        "title": "Premier prototype",
-        "description": "Dans la vidéo ci-dessus, vous pouvez voir le premier prototype du jeu. Dereck et Louis-Étienne ont réussi à faire fonctionner une version simple du jeu où le joueur pouvait contrôler le personnage en clignant avec un seuil d'activation."
-      },
-      "description": "FlapEEG est un projet qui a commencé en janvier 2025. L'équipe se compose de 8 membres, dont certains sont expérimentés en IA et technologie EEG, tandis que d'autres sont passionnés par les jeux vidéo et la programmation. Ils ont tous des backgrounds et compétences différents, mais partagent le même objectif."
+  "f1tenth": {
+    "meta": {
+      "title": "F1Tenth - Voiture de course miniature contrôlée par IA utilisant des signaux musculaires",
+      "description": "Explorez F1Tenth, un projet étudiant révolutionnaire qui combine l'IA et les signaux musculaires électromyographiques pour contrôler une voiture de course miniature.",
+      "keywords": "F1Tenth, IA, signaux musculaires, bracelet électromyographique, voiture de course miniature, projets IA, innovation étudiante"
     },
-    "dataCollection": {
-      "title": "Collecte de données (Semaine 2 - Semaine 4)",
-      "subtitle": "Collecte de données",
-      "paragraph1": "Après avoir établi avec succès la base de référence, Jordan a recruté des volontaires pour collecter des données cérébrales. L'objectif était de rassembler un ensemble de données de signaux cérébraux pendant que les volontaires jouaient au jeu pour entraîner le modèle d'IA.",
-      "paragraph2": "Entre-temps, William a terminé le jeu et a aidé à déployer le serveur avec l'aide de Louis-Étienne.",
-      "image": {
-        "alt": "Capture d'écran de l'interface du jeu FlapEEG"
+    "hero": {
+      "title": "F1Tenth - L'IA rencontre les signaux musculaires",
+      "imageAlt": "Voiture de course miniature F1Tenth contrôlée par IA et signaux musculaires",
+      "description1": "Amateur de sensations fortes ? Ce projet va captiver votre intérêt ! F1 Tenth est une équipe d'étudiants passionnés d'IA qui ont réussi à combiner l'humain et la machine.",
+      "description2": "L'équipe a dû entraîner un modèle d'IA pour lire les signaux électriques musculaires et les traduire en actions."
+    },
+    "team1": {
+      "title": "Rencontrez l'équipe 1",
+      "deoth": {
+        "description": "Chef d'équipe, étude de faisabilité, et plus"
+      },
+      "theophile": {
+        "description": "A aidé avec la conception, la recherche, le développement et plus"
+      },
+      "felix": {
+        "description": "A aidé avec le développement logiciel, l'optimisation et la validation"
+      },
+      "melek": {
+        "description": "A aidé avec le développement logiciel, l'optimisation et la validation"
+      },
+      "amy": {
+        "description": "Intégration avec F1 Tenth et partenariat"
+      },
+      "kahina": {
+        "description": "Optimisation de partenariat et intégration"
       }
     },
-    "filtering": {
-      "title": "Filtrage et entraînement",
-      "subtitle": "Filtrage et entraînement",
-      "paragraph1": "À ce stade du projet, Louis a découvert que nos données n'étaient pas correctement filtrées et avaient beaucoup de bruit qui les rendait inutilisables. Jordan s'en est occupé et a trouvé un moyen de filtrer le bruit.",
-      "paragraph2": "Entre-temps, Amen et Estelle travaillaient dur pour entraîner le modèle d'IA en arrière-plan et ouvrir la voie aux autres pour comprendre les défis de l'entraînement d'un modèle."
+    "team2": {
+      "title": "Rencontrez l'équipe 2",
+      "alban": {
+        "description": "Chef d'équipe"
+      },
+      "alexandre": {
+        "description": ""
+      },
+      "jade": {
+        "description": ""
+      },
+      "karima": {
+        "description": ""
+      },
+      "simon": {
+        "description": ""
+      }
     },
-    "challenge": {
-      "title": "Premier défi",
-      "description": "À ce stade du projet, l'équipe a fait face à un défi significatif : le modèle d'IA ne performait pas aussi bien que nécessaire. Ils ont opté pour commencer à rechercher et lire des articles pour comprendre les défis de l'entraînement d'un modèle."
-    }
-  },
-  "status": {
-    "title": "État du projet",
-    "current": {
-      "title": "Progrès actuel",
-      "items": [
-        "Le modèle d'IA est continuellement amélioré",
-        "Les mécaniques du jeu sont affinées pour une meilleure expérience",
-        "Collecte et analyse de données en cours",
-        "Collaboration d'équipe et tests en cours"
-      ]
-    },
-    "next": {
-      "title": "Et ensuite ?",
-      "items": [
-        "Finaliser le modèle d'IA pour un jeu en temps réel",
-        "Élargir l'accessibilité et les tests utilisateur",
-        "Préparer pour la démo publique et la sortie",
-        "Explorer de nouvelles applications pour la technologie"
-      ]
-    },
-    "conclusion": {
-      "line1": "Le projet FlapEEG est encore un travail en cours.",
-      "line2": "Notre équipe se rapproche chaque jour de la livraison d'un produit final.",
-      "line3": "Restez à l'écoute pour plus de mises à jour !"
+    "sponsor": {
+      "title": "Remerciements spéciaux à notre sponsor",
+      "description": "Nous aimerions remercier VAUL, le laboratoire de véhicules autonomes de l'Université Laval, de nous avoir permis d'utiliser leur équipement et pour leur soutien tout au long de ce projet."
     }
   }
 }

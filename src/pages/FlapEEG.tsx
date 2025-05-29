@@ -14,6 +14,7 @@ import TeamMemberCard from "../components/TeamMemberCard";
 import { useTranslation } from "next-i18next";
 
 function FlapEEG() {
+  // Changez cette ligne pour utiliser le namespace par défaut
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -28,59 +29,60 @@ function FlapEEG() {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Louis-Étienne Messier",
-      description: t("team.members.louis.description"),
+      // Ajoutez le préfixe "flapeeg." à toutes les clés de traduction
+      description: t("flapeeg.team.members.louis.description"),
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Jordan Mathieu",
-      description: t("team.members.jordan.description"),
+      description: t("flapeeg.team.members.jordan.description"),
     },
     {
       icon: <Rotate3d className="w-8 h-8" />,
       title: "Dereck Bélanger",
-      description: t("team.members.dereck.description"),
+      description: t("flapeeg.team.members.dereck.description"),
     },
     {
       icon: <Braces className="w-8 h-8" />,
       title: "Amen Ouannes",
-      description: t("team.members.amen.description"),
+      description: t("flapeeg.team.members.amen.description"),
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Estelle Tournassat",
-      description: t("team.members.estelle.description"),
+      description: t("flapeeg.team.members.estelle.description"),
     },
     {
       icon: <Radical className="w-8 h-8" />,
       title: "Hedi Braham",
-      description: t("team.members.hedi.description"),
+      description: t("flapeeg.team.members.hedi.description"),
     },
     {
       icon: <Rocket className="w-8 h-8" />,
       title: "William Blanchet Lafrenière",
-      description: t("team.members.william.description"),
+      description: t("flapeeg.team.members.william.description"),
     },
   ];
 
   return (
     <section className="relative overflow-hidden">
       <Head>
-        <title>{t("meta.title")}</title>
-        <meta name="description" content={t("meta.description")} />
+        <title>{t("flapeeg.meta.title")}</title>
+        <meta name="description" content={t("flapeeg.meta.description")} />
         <link rel="canonical" href="https://cialaval.vercel.app/flapeeg" />
-        <meta name="keywords" content={t("meta.keywords")} />
+        <meta name="keywords" content={t("flapeeg.meta.keywords")} />
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={t("meta.og.title")} />
-        <meta property="og:description" content={t("meta.og.description")} />
+        <meta property="og:title" content={t("flapeeg.meta.og.title")} />
+        <meta property="og:description" content={t("flapeeg.meta.og.description")} />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/flapeeg" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t("meta.twitter.title")} />
+        <meta name="twitter:title" content={t("flapeeg.meta.twitter.title")} />
         <meta
           name="twitter:description"
-          content={t("meta.twitter.description")}
+          content={t("flapeeg.meta.twitter.description")}
         />
         <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
@@ -92,7 +94,7 @@ function FlapEEG() {
         transition={{ duration: 0.8 }}
       >
         <div>
-          <h1 className="sr-only">{t("hero.title")}</h1>
+          <h1 className="sr-only">{t("flapeeg.hero.title")}</h1>
 
           {/* Hero Section */}
           <motion.section
@@ -101,12 +103,12 @@ function FlapEEG() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="sr-only">{t("hero.subtitle")}</h2>
+            <h2 className="sr-only">{t("flapeeg.hero.subtitle")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div>
                 <img
                   src="/implication/flappyeegmain.jpeg"
-                  alt={t("hero.image.alt")}
+                  alt={t("flapeeg.hero.image.alt")}
                   className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full"
                 />
               </div>
@@ -116,12 +118,12 @@ function FlapEEG() {
                     FlapEEG
                   </span>
                 </h1>
-                <p className="sr-only">{t("hero.description.sr")}</p>
+                <p className="sr-only">{t("flapeeg.hero.description.sr")}</p>
                 <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
-                  {t("hero.description.paragraph1")}
+                  {t("flapeeg.hero.description.paragraph1")}
                 </p>
                 <p className="text-gray-400 text-justify">
-                  {t("hero.description.paragraph2")}
+                  {t("flapeeg.hero.description.paragraph2")}
                 </p>
               </div>
             </div>
@@ -135,7 +137,7 @@ function FlapEEG() {
             transition={{ duration: 1 }}
           >
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
-              {t("team.title")}
+              {t("flapeeg.team.title")}
             </h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
               {teamMembers.map((member, index) => (
@@ -158,7 +160,7 @@ function FlapEEG() {
           {/* Timeline Section */}
           <section id="Week1" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
-              {t("timeline.beginning.title")}
+              {t("flapeeg.timeline.beginning.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
               <div
@@ -174,23 +176,23 @@ function FlapEEG() {
                     loop
                     playsInline
                     poster="/project/flappyproto-poster.jpg"
-                    aria-label={t("timeline.beginning.video.ariaLabel")}
+                    aria-label={t("flapeeg.timeline.beginning.video.ariaLabel")}
                   />
                 </div>
                 <div>
                   <span className="text-lg font-semibold text-white flex items-center gap-2 mb-2">
                     <Rocket className="w-6 h-6 text-red-400" />
-                    {t("timeline.beginning.prototype.title")}
+                    {t("flapeeg.timeline.beginning.prototype.title")}
                   </span>
                   <p className="text-gray-400 leading-relaxed">
-                    {t("timeline.beginning.prototype.description")}
+                    {t("flapeeg.timeline.beginning.prototype.description")}
                   </p>
                 </div>
               </div>
               <div className="flex-1 flex flex-col justify-between h-full">
                 <div className="flex items-center gap-3 mb-2"></div>
                 <p className="text-gray-400">
-                  {t("timeline.beginning.description")}
+                  {t("flapeeg.timeline.beginning.description")}
                 </p>
               </div>
             </div>
@@ -198,27 +200,27 @@ function FlapEEG() {
 
           <section id="Week2-4" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
-              {t("timeline.dataCollection.title")}
+              {t("flapeeg.timeline.dataCollection.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
               <div className="flex-1 flex flex-col justify-between h-full">
                 <div className="flex items-center gap-3 mb-2">
                   <Users className="w-6 h-6 text-red-400" />
                   <span className="text-lg font-semibold text-white">
-                    {t("timeline.dataCollection.subtitle")}
+                    {t("flapeeg.timeline.dataCollection.subtitle")}
                   </span>
                 </div>
                 <p className="text-gray-400">
-                  {t("timeline.dataCollection.paragraph1")}
+                  {t("flapeeg.timeline.dataCollection.paragraph1")}
                 </p>
                 <p className="text-gray-400 mt-4 sm:mt-6">
-                  {t("timeline.dataCollection.paragraph2")}
+                  {t("flapeeg.timeline.dataCollection.paragraph2")}
                 </p>
               </div>
               <div className="flex-1 flex justify-center items-center">
                 <img
                   src="/project/FlappyBrain.png"
-                  alt={t("timeline.dataCollection.image.alt")}
+                  alt={t("flapeeg.timeline.dataCollection.image.alt")}
                   className="rounded-2xl shadow-2xl w-full max-w-lg"
                   style={{
                     border: "2px solid #ef4444",
@@ -231,7 +233,7 @@ function FlapEEG() {
 
           <section id="Week4-6" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
-              {t("timeline.filtering.title")}
+              {t("flapeeg.timeline.filtering.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
               <div
@@ -241,14 +243,14 @@ function FlapEEG() {
                 <div className="flex items-center gap-3 mb-2">
                   <Braces className="w-6 h-6 text-red-400" />
                   <span className="text-lg font-semibold text-white">
-                    {t("timeline.filtering.subtitle")}
+                    {t("flapeeg.timeline.filtering.subtitle")}
                   </span>
                 </div>
                 <p className="text-gray-400 pb-3 sm:pb-4">
-                  {t("timeline.filtering.paragraph1")}
+                  {t("flapeeg.timeline.filtering.paragraph1")}
                 </p>
                 <p className="text-gray-400">
-                  {t("timeline.filtering.paragraph2")}
+                  {t("flapeeg.timeline.filtering.paragraph2")}
                 </p>
               </div>
               <div className="flex-1 flex items-center justify-center">
@@ -259,13 +261,13 @@ function FlapEEG() {
 
           <section id="Week6-9" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
-              {t("timeline.challenge.title")}
+              {t("flapeeg.timeline.challenge.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
               <div className="flex-1 flex items-center">
                 <Target className="w-10 h-10 text-red-400 mr-4" />
                 <p className="text-gray-400 m-0">
-                  {t("timeline.challenge.description")}
+                  {t("flapeeg.timeline.challenge.description")}
                 </p>
               </div>
             </div>
@@ -273,7 +275,7 @@ function FlapEEG() {
 
           <section id="project-status" className="mb-12 sm:mb-20">
             <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
-              {t("status.title")}
+              {t("flapeeg.status.title")}
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
               <div
@@ -281,13 +283,13 @@ function FlapEEG() {
                 style={{ border: "2px solid #ef4444" }}
               >
                 <h3 className="text-xl font-semibold text-red-400 mb-2">
-                  {t("status.current.title")}
+                  {t("flapeeg.status.current.title")}
                 </h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>{t("status.current.items.0")}</li>
-                  <li>{t("status.current.items.1")}</li>
-                  <li>{t("status.current.items.2")}</li>
-                  <li>{t("status.current.items.3")}</li>
+                  <li>{t("flapeeg.status.current.items.0")}</li>
+                  <li>{t("flapeeg.status.current.items.1")}</li>
+                  <li>{t("flapeeg.status.current.items.2")}</li>
+                  <li>{t("flapeeg.status.current.items.3")}</li>
                 </ul>
               </div>
               <div
@@ -295,25 +297,25 @@ function FlapEEG() {
                 style={{ border: "2px solid #ef4444" }}
               >
                 <h3 className="text-xl font-semibold text-red-400 mb-2">
-                  {t("status.next.title")}
+                  {t("flapeeg.status.next.title")}
                 </h3>
                 <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>{t("status.next.items.0")}</li>
-                  <li>{t("status.next.items.1")}</li>
-                  <li>{t("status.next.items.2")}</li>
-                  <li>{t("status.next.items.3")}</li>
+                  <li>{t("flapeeg.status.next.items.0")}</li>
+                  <li>{t("flapeeg.status.next.items.1")}</li>
+                  <li>{t("flapeeg.status.next.items.2")}</li>
+                  <li>{t("flapeeg.status.next.items.3")}</li>
                 </ul>
               </div>
             </div>
             <div className="mt-10 flex flex-col items-center pt-20">
               <Rocket className="w-12 h-12 text-red-400 mb-4" />
               <p className="text-lg text-gray-200 font-medium text-center">
-                {t("status.conclusion.line1")}
+                {t("flapeeg.status.conclusion.line1")}
                 <br />
-                {t("status.conclusion.line2")}
+                {t("flapeeg.status.conclusion.line2")}
                 <br />
                 <span className="text-red-400 font-bold">
-                  {t("status.conclusion.line3")}
+                  {t("flapeeg.status.conclusion.line3")}
                 </span>
               </p>
             </div>

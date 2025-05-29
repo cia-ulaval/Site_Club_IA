@@ -188,116 +188,174 @@
     "applyText": "Interested in becoming a Team Lead or Associate? Apply now to join our club and contribute to exciting projects.",
     "applyButton": "Apply Here",
     "collabTitle": "Want to Collaborate?",
-    "collabText": "We’re always open to new partnerships and ideas. Discover how you can collaborate with us!",
+    "collabText": "We're always open to new partnerships and ideas. Discover how you can collaborate with us!",
     "collabButton": "Learn About Collaboration"
   },
+  "flapeeg": {
     "meta": {
-    "title": "FlapEEG - Revolutionizing Gaming with Thought-Controlled AI",
-    "description": "FlapEEG is a groundbreaking thought-controlled video game powered by AI and EEG technology. Discover how we trained an AI model to interpret brain signals and control the game.",
-    "keywords": "FlapEEG, EEG, thought-controlled game, brain signals, AI, video game, innovation",
-    "og": {
-      "title": "FlapEEG - Thought-Controlled Video Game",
-      "description": "Discover FlapEEG, a video game controlled by thought. Learn about our journey in training an AI model to interpret brain signals."
-    },
-    "twitter": {
-      "title": "FlapEEG - Thought-Controlled Video Game",
-      "description": "FlapEEG is a revolutionary video game controlled by thought. Learn how we trained an AI model to interpret brain signals and control the game."
-    }
-  },
-  "hero": {
-    "title": "FlapEEG - Thought-Controlled Video Game",
-    "subtitle": "Introduction to FlapEEG",
-    "image": {
-      "alt": "Three managers of the club, one wearing an EEG headset, smiling during a meeting"
-    },
-    "description": {
-      "sr": "FlapEEG is a thought-controlled video game powered by AI and EEG technology.",
-      "paragraph1": "FlapEEG is a video game that is controlled by thought. We have trained an AI model to interpret brain signals and translate them into actions in the game. For this to work, we equipped ourselves with the latest EEG (electroencephalogram) technology,",
-      "paragraph2": "The format of the game is simple; ever heard of flappy bird? Well, it's the same simple yet fun concept. The only difference is that you control the bird with your thoughts. The simple will to make the little character avoid obstacles is enough to make it move. We are very proud of the work we have accomplished; it may only be the beginning of a video game revolution! Think about it, what if we combined this mechanic to a VR headset? Or, what if this is the skipping stone to helping people with disabilities by giving them power from their own thoughts? The possibilities are endless."
-    }
-  },
-  "team": {
-    "title": "Meet the Team Behind FlapEEG",
-    "members": {
-      "louis": {
-        "description": "Main contributor to the project. Set up the server, custom interface and helped with coding"
+      "title": "FlapEEG - Revolutionizing Gaming with Thought-Controlled AI",
+      "description": "FlapEEG is a groundbreaking thought-controlled video game powered by AI and EEG technology. Discover how we trained an AI model to interpret brain signals and control the game.",
+      "keywords": "FlapEEG, EEG, thought-controlled game, brain signals, AI, video game, innovation",
+      "og": {
+        "title": "FlapEEG - Thought-Controlled Video Game",
+        "description": "Discover FlapEEG, a video game controlled by thought. Learn about our journey in training an AI model to interpret brain signals."
       },
-      "jordan": {
-        "description": "Handled data collection, annotation and cleaning"
-      },
-      "dereck": {
-        "description": "Author of this website, coded the baseline threshold and feature extraction algorithms"
-      },
-      "amen": {
-        "description": "Trained the AI model and helped the team understand the challenges"
-      },
-      "estelle": {
-        "description": "Trained the AI model and helped the team understand the challenges"
-      },
-      "hedi": {
-        "description": "Dealt with the data collection and protocols"
-      },
-      "william": {
-        "description": "Main contributor to the game development."
+      "twitter": {
+        "title": "FlapEEG - Thought-Controlled Video Game",
+        "description": "FlapEEG is a revolutionary video game controlled by thought. Learn how we trained an AI model to interpret brain signals and control the game."
       }
-    }
-  },
-  "timeline": {
-    "beginning": {
-      "title": "The Beginning",
-      "video": {
-        "ariaLabel": "FlapEEG prototype video"
-      },
-      "prototype": {
-        "title": "First Prototype",
-        "description": "In the video above, you can see the first prototype of the game. Dereck and Louis-Étienne managed to get a simple version of the game up and running where the player could control the character by blinking with an activation threshold."
-      },
-      "description": "FlapEEG is a project that started in January 2025. The team consists of 8 members, some of whom are experienced in AI and EEG technology, while others are passionate about video games and coding. They all have different backgrounds and skills, but share the same goal."
     },
-    "dataCollection": {
-      "title": "Collecting Data (Week 2 - Week 4)",
-      "subtitle": "Data Collection",
-      "paragraph1": "After successfully establishing the baseline, Jordan recruited volunteers to collect brain data. The goal was to gather a dataset of brain signals while the volunteers played the game to train the AI model.",
-      "paragraph2": "In the meantime, William finished the game and helped deploying the server with the help of Louis-Étienne.",
+    "hero": {
+      "title": "FlapEEG - Thought-Controlled Video Game",
+      "subtitle": "Introduction to FlapEEG",
       "image": {
-        "alt": "Screenshot of the FlapEEG game interface"
+        "alt": "Three managers of the club, one wearing an EEG headset, smiling during a meeting"
+      },
+      "description": {
+        "sr": "FlapEEG is a thought-controlled video game powered by AI and EEG technology.",
+        "paragraph1": "FlapEEG is a video game that is controlled by thought. We have trained an AI model to interpret brain signals and translate them into actions in the game. For this to work, we equipped ourselves with the latest EEG (electroencephalogram) technology,",
+        "paragraph2": "The format of the game is simple; ever heard of flappy bird? Well, it's the same simple yet fun concept. The only difference is that you control the bird with your thoughts. The simple will to make the little character avoid obstacles is enough to make it move. We are very proud of the work we have accomplished; it may only be the beginning of a video game revolution! Think about it, what if we combined this mechanic to a VR headset? Or, what if this is the skipping stone to helping people with disabilities by giving them power from their own thoughts? The possibilities are endless."
       }
     },
-    "filtering": {
-      "title": "Filtering & Training",
-      "subtitle": "Filtering & Training",
-      "paragraph1": "At this point in the project Louis found out our data wasn't properly filtered and there had a lot of noise which made it unusable. Jordan took care of this and found a way to filter out the noise.",
-      "paragraph2": "In the meantime, Amen and Estelle were working hard training the AI model behind the scenes and paving the way for the others to understand the challenges of training a model."
+    "team": {
+      "title": "Meet the Team Behind FlapEEG",
+      "members": {
+        "louis": {
+          "description": "Main contributor to the project. Set up the server, custom interface and helped with coding"
+        },
+        "jordan": {
+          "description": "Handled data collection, annotation and cleaning"
+        },
+        "dereck": {
+          "description": "Author of this website, coded the baseline threshold and feature extraction algorithms"
+        },
+        "amen": {
+          "description": "Trained the AI model and helped the team understand the challenges"
+        },
+        "estelle": {
+          "description": "Trained the AI model and helped the team understand the challenges"
+        },
+        "hedi": {
+          "description": "Dealt with the data collection and protocols"
+        },
+        "william": {
+          "description": "Main contributor to the game development."
+        }
+      }
     },
-    "challenge": {
-      "title": "First Challenge",
-      "description": "At this point in the project, the team faced a significant challenge: the AI model was not performing as well as needed. They opted to start researching and reading papers to understand the challenges of training a model."
+    "timeline": {
+      "beginning": {
+        "title": "The Beginning",
+        "video": {
+          "ariaLabel": "FlapEEG prototype video"
+        },
+        "prototype": {
+          "title": "First Prototype",
+          "description": "In the video above, you can see the first prototype of the game. Dereck and Louis-Étienne managed to get a simple version of the game up and running where the player could control the character by blinking with an activation threshold."
+        },
+        "description": "FlapEEG is a project that started in January 2025. The team consists of 8 members, some of whom are experienced in AI and EEG technology, while others are passionate about video games and coding. They all have different backgrounds and skills, but share the same goal."
+      },
+      "dataCollection": {
+        "title": "Collecting Data (Week 2 - Week 4)",
+        "subtitle": "Data Collection",
+        "paragraph1": "After successfully establishing the baseline, Jordan recruited volunteers to collect brain data. The goal was to gather a dataset of brain signals while the volunteers played the game to train the AI model.",
+        "paragraph2": "In the meantime, William finished the game and helped deploying the server with the help of Louis-Étienne.",
+        "image": {
+          "alt": "Screenshot of the FlapEEG game interface"
+        }
+      },
+      "filtering": {
+        "title": "Filtering & Training",
+        "subtitle": "Filtering & Training",
+        "paragraph1": "At this point in the project Louis found out our data wasn't properly filtered and there had a lot of noise which made it unusable. Jordan took care of this and found a way to filter out the noise.",
+        "paragraph2": "In the meantime, Amen and Estelle were working hard training the AI model behind the scenes and paving the way for the others to understand the challenges of training a model."
+      },
+      "challenge": {
+        "title": "First Challenge",
+        "description": "At this point in the project, the team faced a significant challenge: the AI model was not performing as well as needed. They opted to start researching and reading papers to understand the challenges of training a model."
+      }
+    },
+    "status": {
+      "title": "Project Status",
+      "current": {
+        "title": "Current Progress",
+        "items": [
+          "AI model is being continuously improved",
+          "Game mechanics are being refined for better experience",
+          "Data collection and analysis ongoing",
+          "Team collaboration and testing in progress"
+        ]
+      },
+      "next": {
+        "title": "What's Next?",
+        "items": [
+          "Finalizing the AI model for real-time gameplay",
+          "Expanding accessibility and user testing",
+          "Preparing for public demo and release",
+          "Exploring new applications for the technology"
+        ]
+      },
+      "conclusion": {
+        "line1": "The FlapEEG project is still a work in progress.",
+        "line2": "Our team is getting closer every day to delivering a final product.",
+        "line3": "Stay tuned for more updates!"
+      }
     }
   },
-  "status": {
-    "title": "Project Status",
-    "current": {
-      "title": "Current Progress",
-      "items": [
-        "AI model is being continuously improved",
-        "Game mechanics are being refined for better experience",
-        "Data collection and analysis ongoing",
-        "Team collaboration and testing in progress"
-      ]
+  "f1tenth": {
+    "meta": {
+      "title": "F1Tenth - AI-Controlled Miniature Race Car Using Muscle Signals",
+      "description": "Explore F1Tenth, a groundbreaking student project that combines AI and electromyographic muscle signals to control a miniature race car. Learn about the innovative team's challenges and achievements.",
+      "keywords": "F1Tenth, AI, muscle signals, electromyographic bracelet, miniature race car, AI projects, student innovation"
     },
-    "next": {
-      "title": "What's Next?",
-      "items": [
-        "Finalizing the AI model for real-time gameplay",
-        "Expanding accessibility and user testing",
-        "Preparing for public demo and release",
-        "Exploring new applications for the technology"
-      ]
+    "hero": {
+      "title": "F1Tenth - AI Meets Muscle Signals",
+      "imageAlt": "F1Tenth miniature race car controlled by AI and muscle signals",
+      "description1": "Thrill-seeker? This project will capture your interest! F1 Tenth is a team of students passionate about AI who have successfully combined human and machine. Using an electromyographic bracelet, they managed to control a miniature race car with their muscles.",
+      "description2": "The team had to train an AI model to read muscle electrical signals and translate them into actions. This involved extensive trial and error to adjust the model's sensitivity and accuracy. The bracelet has multiple sensors, each responsible for a different response like accelerating, braking, or turning. The project was very complex because it required controlling multiple dimensions simultaneously."
     },
-    "conclusion": {
-      "line1": "The FlapEEG project is still a work in progress.",
-      "line2": "Our team is getting closer every day to delivering a final product.",
-      "line3": "Stay tuned for more updates!"
+    "team1": {
+      "title": "Meet Team 1",
+      "deoth": {
+        "description": "Team Lead, feasibility study, and more"
+      },
+      "theophile": {
+        "description": "Helped with conception, research, development and more"
+      },
+      "felix": {
+        "description": "Helped with software development, optimization, and validation"
+      },
+      "melek": {
+        "description": "Helped with software development, optimization, and validation"
+      },
+      "amy": {
+        "description": "Integration with F1 Tenth and partnership"
+      },
+      "kahina": {
+        "description": "Partnership optimization and integration"
+      }
+    },
+    "team2": {
+      "title": "Meet Team 2",
+      "alban": {
+        "description": "Team Lead"
+      },
+      "alexandre": {
+        "description": ""
+      },
+      "jade": {
+        "description": ""
+      },
+      "karima": {
+        "description": ""
+      },
+      "simon": {
+        "description": ""
+      }
+    },
+    "sponsor": {
+      "title": "Special Thanks to Our Sponsor",
+      "description": "We would like to extend our thanks to VAUL, the Laval University autonomous vehicle laboratory, for allowing us to use their equipment and for their support throughout this project."
     }
   }
 }
