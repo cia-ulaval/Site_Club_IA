@@ -529,5 +529,21 @@
         "description": ""
       }
     }
+  },
+  "decisionTree": {
+    "meta": {
+      "title": "Decision Tree - Simplifying Complex Data for Better Insights",
+      "description": "Discover how decision trees simplify complex datasets while maintaining interpretability. Learn about our research project and the team behind it.",
+      "keywords": "Decision Tree, Data Science, Interpretability, Research, Simplified Models"
+    },
+    "hero": {
+      "title": "Decision Tree",
+      "description1": "Decision trees are inherently interpretable as they provide a simple explanation (based on decision rules) of their decision-making process, making them essential tools for data scientists.",
+      "description2": "However, when dealing with massive datasets, training algorithms can generate unnecessarily complex trees where the decision-making process becomes obscured by an overabundance of rules. Is it possible to find a representative subset of the data that would produce simpler yet equally effective decision trees? This is the question we aim to answer in this research project.",
+      "imageAlt": "Decision Tree illustration"
+    },
+    "team": {
+      "title": "Meet the Team Behind the Project"
+    }
   }
 }

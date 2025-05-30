@@ -14,7 +14,6 @@ import TeamMemberCard from "../components/TeamMemberCard";
 import { useTranslation } from "next-i18next";
 
 function FlapEEG() {
-  // Changez cette ligne pour utiliser le namespace par défaut
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -29,7 +28,6 @@ function FlapEEG() {
     {
       icon: <Users className="w-8 h-8" />,
       title: "Louis-Étienne Messier",
-      // Ajoutez le préfixe "flapeeg." à toutes les clés de traduction
       description: t("flapeeg.team.members.louis.description"),
     },
     {
@@ -74,7 +72,10 @@ function FlapEEG() {
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={t("flapeeg.meta.og.title")} />
-        <meta property="og:description" content={t("flapeeg.meta.og.description")} />
+        <meta
+          property="og:description"
+          content={t("flapeeg.meta.og.description")}
+        />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/flapeeg" />
         <meta property="og:type" content="website" />
@@ -307,9 +308,17 @@ function FlapEEG() {
                 </ul>
               </div>
             </div>
-            <div className="mt-10 flex flex-col items-center pt-20">
+            
+            {/* Section "Restez à l'écoute" avec bouton Discord */}
+            <motion.div 
+              className="mt-10 flex flex-col items-center pt-20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
               <Rocket className="w-12 h-12 text-red-400 mb-4" />
-              <p className="text-lg text-gray-200 font-medium text-center">
+              <p className="text-lg text-gray-200 font-medium text-center mb-6">
                 {t("flapeeg.status.conclusion.line1")}
                 <br />
                 {t("flapeeg.status.conclusion.line2")}
@@ -318,7 +327,28 @@ function FlapEEG() {
                   {t("flapeeg.status.conclusion.line3")}
                 </span>
               </p>
-            </div>
+              
+              {/* Bouton Discord */}
+              <motion.a
+                href="https://discord.gg/ZPVwCjMpAq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="w-5 h-5"
+                >
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.211.375-.445.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.196.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+                </svg>
+                {t("joinus.discordButton")}
+              </motion.a>
+            </motion.div>
           </section>
         </div>
       </motion.div>

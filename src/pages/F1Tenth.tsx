@@ -182,7 +182,7 @@ function F1Tenth() {
               </h2>
               <div className="flex flex-col items-center">
                 <img
-                  src="/sponsors/vaul_logo.png"
+                  src="/project/vaul.png"
                   alt="VAUL Logo"
                   className="w-40 h-auto mb-4"
                 />

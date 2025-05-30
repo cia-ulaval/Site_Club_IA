@@ -20,23 +20,25 @@ interface ImageWithGlowProps {
 
 const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   <motion.div
-    className="text-center mb-4 relative overflow-hidden rounded-xl"
+    className="text-center mb-8 relative overflow-hidden rounded-xl"
     whileHover={{
-      scale: 1.03,
+      scale: 1.02,
       transition: { duration: 0.3 },
     }}
   >
     <motion.img
       src={src}
       alt={alt}
-      className="w-full md:w-2/3 mx-auto rounded-xl shadow-xl border border-red-800/30"
-      initial={{ y: 10, opacity: 0.8 }}
+      className="w-full mx-auto rounded-xl shadow-xl border border-red-600/30"
+      initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
     />
-    {caption && <div className="text-xs text-gray-500 mt-2">{caption}</div>}
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/20 to-red-900/20 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+    {caption && (
+      <div className="text-sm text-gray-400 mt-3 italic">{caption}</div>
+    )}
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/10 to-red-900/10 rounded-xl blur opacity-50"></div>
   </motion.div>
 );
 
@@ -94,15 +96,22 @@ function Lenia() {
         <meta name="author" content="Dereck Bélanger" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:title" content={t("lenia.meta.og.title")} />
-        <meta property="og:description" content={t("lenia.meta.og.description")} />
+        <meta
+          property="og:description"
+          content={t("lenia.meta.og.description")}
+        />
         <meta property="og:image" content="/banner/cia_ico.ico" />
         <meta property="og:url" content="https://cialaval.vercel.app/lenia" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={t("lenia.meta.twitter.title")} />
-        <meta name="twitter:description" content={t("lenia.meta.twitter.description")} />
+        <meta
+          name="twitter:description"
+          content={t("lenia.meta.twitter.description")}
+        />
         <meta name="twitter:image" content="/banner/cia_ico.ico" />
       </Head>
+
       <section className="relative overflow-hidden">
         <motion.div
           className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
@@ -110,122 +119,204 @@ function Lenia() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Hero section with animated title */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center"
-          >
-            <h1 className="text-6xl font-bold mb-4">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                Lenia
-              </span>
-            </h1>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              {t("lenia.hero.subtitle")}
-            </h2>
-          </motion.div>
-
-          {/* Feature badges */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center gap-2 px-4 py-2 bg-red-900/20 rounded-full border border-red-800/30"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-              >
-                {feature.icon}
-                <span className="text-sm font-medium text-white">
-                  {feature.title}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-
-          {/* Main content section */}
+          {/* Hero Section - Grid Layout */}
           <motion.section
             className="mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
           >
-            <div>
-              <motion.p
-                className="w-full md:w-4/5 mx-auto text-lg text-gray-400 text-justify mb-10"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                {t("lenia.content.paragraph1")}
-                <br /><br />
-                {t("lenia.content.paragraph2")}
-              </motion.p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left Side - Text Content */}
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-5xl md:text-6xl font-bold mb-4">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                      Lenia
+                    </span>
+                  </h1>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+                    {t("lenia.hero.subtitle")}
+                  </h2>
+                </div>
 
-              <ImageWithGlow
-                src="/project/lenia.png"
-                alt={t("lenia.images.pattern.alt")}
-              />
+                {/* Feature badges */}
+                <div className="flex flex-wrap gap-3">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      className="flex items-center gap-2 px-4 py-2 bg-red-900/20 rounded-full !border !border-red-900 hover:!border-red-500/70 transition-colors duration-300"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                    >
+                      {feature.icon}
+                      <span className="text-sm font-medium text-white">
+                        {feature.title}
+                      </span>
+                    </motion.div>
+                  ))}
+                </div>
 
-              <motion.p
-                className="w-full md:w-4/5 mx-auto text-lg mt-8 text-gray-400 text-justify mb-10"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                {t("lenia.content.paragraph3")}
-              </motion.p>
+                {/* Introduction Text */}
+                <motion.p
+                  className="text-lg text-gray-400 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  {t("lenia.content.paragraph1")}
+                </motion.p>
+              </div>
 
-              <ImageWithGlow
-                src="/project/leniaexample.gif"
-                alt={t("lenia.images.animation.alt")}
-                caption={t("lenia.images.animation.caption")}
-              />
-
-              <motion.p
-                className="w-full md:w-4/5 mx-auto text-lg mt-12 text-gray-400 text-justify"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                {t("lenia.content.paragraph4")}
-              </motion.p>
+              {/* Right Side - Hero Image */}
+              <div className="flex justify-center lg:justify-end">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="w-full"
+                >
+                  <ImageWithGlow
+                    src="/project/lenia.png"
+                    alt={t("lenia.images.pattern.alt")}
+                  />
+                </motion.div>
+              </div>
             </div>
           </motion.section>
 
-          {/* Team section */}
-          <section className="py-16 relative mb-10 mt-10">
-            {/* Background design element */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -z-10"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-800/5 rounded-full blur-3xl -z-10"></div>
+          {/* Content Section - Alternating Layout */}
+          <motion.section
+            className="mb-16 space-y-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* First Content Block */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-red-400">
+                  {t("lenia.features.continuous.title")}
+                </h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {t("lenia.content.paragraph2")}
+                </p>
+              </motion.div>
 
-            <motion.h2
-              className="text-4xl font-bold gradient-text text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              {t("lenia.team.title")}
-            </motion.h2>
-
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
-              {teamMembers.map((member, index) => (
-                <TeamMemberCard
-                  key={index}
-                  icon={member.icon}
-                  title={member.title}
-                  description={member.description}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <ImageWithGlow
+                  src="/project/leniaexample.gif"
+                  alt={t("lenia.images.animation.alt")}
+                  caption={t("lenia.images.animation.caption")}
                 />
+              </motion.div>
+            </div>
+
+            {/* Second Content Block - Reversed */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                className="lg:order-2 space-y-6"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-red-400">
+                  {t("lenia.features.research.title")}
+                </h3>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {t("lenia.content.paragraph3")}
+                </p>
+                <p className="text-lg text-gray-400 leading-relaxed">
+                  {t("lenia.content.paragraph4")}
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="lg:order-1"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                {/* Placeholder for additional visual content */}
+                <div className="bg-gradient-to-br from-red-900/10 to-black/20 rounded-xl p-8 border !border-red-900">
+                  <div className="text-center space-y-4">
+                    <Sparkles className="w-16 h-16 text-red-400 mx-auto" />
+                    <h4 className="text-xl font-semibold text-white">
+                      {t("lenia.features.emergent.title")}
+                    </h4>
+                    <p className="text-gray-400">
+                      {t("lenia.features.emergent.description")}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+
+          {/* Team Section */}
+          <motion.section
+            className="py-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-12">
+              <motion.h2
+                className="text-4xl font-bold gradient-text mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                {t("lenia.team.title")}
+              </motion.h2>
+              <motion.p
+                className="text-gray-400 text-lg max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Meet the dedicated researchers exploring the fascinating world
+                of artificial life
+              </motion.p>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-4 max-w-full px-2 mx-auto">
+              {teamMembers.map((member, index) => (
+                <motion.div
+                  key={index}
+                  className="w-56 flex-shrink-0"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 * index, duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  <TeamMemberCard
+                    icon={member.icon}
+                    title={member.title}
+                    description={member.description}
+                  />
+                </motion.div>
               ))}
             </div>
-          </section>
+          </motion.section>
         </motion.div>
       </section>
     </>
