@@ -405,14 +405,17 @@ function SponsorshipPage() {
         <motion.div
           className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br shadow-xl"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
+          {/* Hero Section - Changé animate en whileInView */}
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <h2 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
@@ -427,6 +430,7 @@ function SponsorshipPage() {
             </p>
           </motion.div>
 
+          {/* Impact Metrics Section */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -445,6 +449,7 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
+          {/* Sponsorship Tiers Section */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -467,6 +472,7 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
+          {/* Funded Projects Section */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -485,6 +491,7 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
+          {/* Current Sponsors Section */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -503,6 +510,7 @@ function SponsorshipPage() {
             </div>
           </motion.div>
 
+          {/* Contact Section */}
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             initial={{ opacity: 0 }}

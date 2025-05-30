@@ -36,15 +36,16 @@ function Home() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <section className="relative overflow-hidden py-12 md:py-20">
-        {/* Background decorative elements (hidden on mobile) */}
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-12 md:py-20 w-full max-w-7xl mx-auto px-4 md:px-6">
+        {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none hidden md:block">
           <div className="absolute top-20 left-10 w-32 h-32 bg-red-500/10 rounded-full blur-xl" />
           <div className="absolute bottom-20 right-10 w-48 h-48 bg-red-600/5 rounded-full blur-2xl" />
         </div>
 
-        <div className="relative z-10 mx-auto px-6 md:px-8 lg:px-10 w-full max-w-4xl">
+        <div className="relative z-10">
           {/* Main Content Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Left Side - Title & Subtitle & About */}
@@ -53,8 +54,9 @@ function Home() {
               <motion.h1
                 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
+                viewport={{ once: true }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
                   {t("home.header.title")}
@@ -65,8 +67,9 @@ function Home() {
               <motion.p
                 className="text-lg md:text-xl text-gray-300 font-light leading-relaxed"
                 initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
+                viewport={{ once: true }}
               >
                 {t("home.header.subtitle")}
               </motion.p>
@@ -75,8 +78,9 @@ function Home() {
               <motion.div
                 className="space-y-4"
                 initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1 }}
+                viewport={{ once: true }}
               >
                 <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                   {t("home.about.title")}
@@ -88,14 +92,17 @@ function Home() {
             </div>
 
             {/* Right Side - Instagram (hidden on mobile) */}
-            <div className="hidden lg:flex justify-center">
+            <div className="hidden lg:flex justify-center items-center h-full">
               <motion.div
-                className="w-full max-w-xs sm:max-w-sm md:max-w-md"
+                className="w-full h-full flex justify-center items-center"
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
+                viewport={{ once: true }}
               >
-                <InstaPostEmbed url="https://www.instagram.com/p/DIUeVjTOhfZ" />
+                <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
+                  <InstaPostEmbed url="https://www.instagram.com/p/DIUeVjTOhfZ" />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -103,12 +110,13 @@ function Home() {
       </section>
 
       {/* Section Projets */}
-      <section className="mb-20 pt-10">
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 mb-20 pt-10">
         <motion.h2
           className="text-4xl font-bold gradient-text text-center mb-12"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1.2 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
           {t("home.projects.title")}
         </motion.h2>
@@ -116,10 +124,11 @@ function Home() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-xl bg-red-800/10 shadow-lg"
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-lg hover:shadow-xl hover:shadow-red-900/20 transition-all duration-300"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 * index }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 * index }}
+              viewport={{ once: true }}
             >
               <img
                 src={project.image}
@@ -133,7 +142,7 @@ function Home() {
                 <p className="text-gray-300 mb-4">{project.description}</p>
                 <Link
                   to={project.link}
-                  className="inline-flex items-center text-red-400 hover:text-orange-800 transition-colors"
+                  className="inline-flex items-center text-red-400 hover:text-red-300 transition-colors"
                 >
                   {t("home.projects.learnMore")}{" "}
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -143,25 +152,42 @@ function Home() {
           ))}
         </div>
       </section>
-      <section className="text-center mb-20 pt-10">
+
+      {/* Section Collaboration */}
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 text-center mb-20 pt-10">
         <motion.h2
           className="text-4xl font-bold gradient-text mb-8"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
         >
           {t("home.collaboration.title")}
         </motion.h2>
-        <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-          {t("home.collaboration.description")}
-        </p>
-        <Link
-          to="/collaboration"
-          className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors"
+        <motion.p
+          className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
         >
-          {t("home.collaboration.button")}
-        </Link>
+          {t("home.collaboration.description")}
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <Link
+            to="/collaboration"
+            className="inline-block px-8 py-3 bg-red-600 hover:bg-red-700 rounded-full text-white font-semibold transition-colors shadow-lg hover:shadow-xl hover:shadow-red-600/30"
+          >
+            {t("home.collaboration.button")}
+          </Link>
+        </motion.div>
       </section>
+
       <InfiniteScrollBanner />
     </div>
   );

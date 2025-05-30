@@ -31,10 +31,6 @@
   }
 }
 
-#test {
-  margin-top: 5rem;
-}
-
 .scroll-banner {
   position: relative;
   overflow: hidden;
@@ -85,18 +81,6 @@
   opacity: 0.8;
 }
 
-.custom-border-red {
-  border-color: #861010 !important;
-}
-
-.custom-hover-border-red:hover {
-  border-color: #bb2020 !important; 
-}
-
-.glow-red {
-  box-shadow: 0 0 100px 1px rgba(255, 0, 0, 0.5); /* Red glow */
-}
-
 .container {
   @apply border border-red-800 transition-colors duration-300;
 }
@@ -104,36 +88,12 @@
 .container:hover {
   @apply border-red-600;
 }
-@keyframes carousel {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-100% / 3));
-  }
+
+/* Classes pour les cartes de management */
+.custom-border-red {
+  border-color: #dc2626 !important; /* red-600 */
 }
 
-.animate-carousel {
-  animation: carousel linear infinite;
-  will-change: transform;
-}
-
-
-
-
-.bg-size-200 {
-  background-size: 200% 200%;
-}
-
-.animate-gradient-x {
-  animation: gradient-x 15s ease infinite;
-}
-
-@keyframes gradient-x {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+.custom-hover-border-red:hover {
+  border-color: #ef4444 !important; /* red-500 */
 }

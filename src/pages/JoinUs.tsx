@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
-import { useTranslation } from "react-i18next"; // Ajouté
+import { useTranslation } from "react-i18next";
 
 function JoinUs() {
   const { t } = useTranslation();
@@ -10,14 +10,8 @@ function JoinUs() {
     <>
       <Head>
         <title>{t("joinus.pageTitle")}</title>
-        <meta
-          name="description"
-          content={t("joinus.pageDescription")}
-        />
-        <meta
-          name="keywords"
-          content={t("joinus.pageKeywords")}
-        />
+        <meta name="description" content={t("joinus.pageDescription")} />
+        <meta name="keywords" content={t("joinus.pageKeywords")} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://cialaval.vercel.app/join-us" />
       </Head>
@@ -61,7 +55,7 @@ function JoinUs() {
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
             >
               {t("joinus.discordButton")}
             </a>
@@ -85,7 +79,7 @@ function JoinUs() {
               href="" // ADD THE GOOGLE FORM LINK HERE
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
             >
               {t("joinus.applyButton")}
             </a>
@@ -107,7 +101,7 @@ function JoinUs() {
             </p>
             <a
               href="/collaboration"
-              className="inline-block w-56 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300"
+              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
             >
               {t("joinus.collabButton")}
             </a>

@@ -208,7 +208,7 @@ function Gallery() {
       </motion.div>
 
       <motion.section
-        className="container mx-auto px-6 py-12"
+        className="container mx-auto px-6 py-12 rounded-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -220,10 +220,10 @@ function Gallery() {
           {categories.map((category) => (
             <motion.button
               key={category.id}
-              className={`px-5 py-2 rounded-full text-sm md:text-base transition-all ${
+              className={`px-5 py-2 rounded-full text-sm md:text-base transition-all custom-border-red custom-hover-border-red ${
                 activeCategory === category.id
-                  ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30 border border-red-500/20"
-                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700 border border-gray-700 hover:border-gray-600"
+                  ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30"
+                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700"
               }`}
               onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}

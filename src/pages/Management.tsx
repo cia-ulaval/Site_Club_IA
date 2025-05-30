@@ -5,6 +5,7 @@ import Row from "react-bootstrap/Row";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { Linkedin, ExternalLink } from "lucide-react";
 
 const Management = () => {
   const { t } = useTranslation();
@@ -102,15 +103,16 @@ const Management = () => {
     <motion.section
       className="max-w-7xl mx-auto px-4 pb-8"
       initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
     >
       <h1 className="text-6xl font-bold mb-4 text-center mt-20 pb-16">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
           {t(titleKey)}
         </span>
       </h1>
-      <Row xs={1} sm={2} md={3} className="g-3 justify-content-center">
+      <Row xs={1} sm={2} md={3} lg={4} className="g-3 justify-content-center">
         {cards.map((card, idx) => (
           <Col key={idx} className="d-flex justify-content-center">
             <motion.a
@@ -119,33 +121,89 @@ const Management = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              className="text-decoration-none"
             >
               <Card
-                className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-24"
+                className="bg-red-900/80 border custom-border-red custom-hover-border-red text-white mb-16 position-relative overflow-hidden"
                 style={{
-                  width: "90%",
-                  maxWidth: "14rem",
-                  minHeight: "300px",
+                  width: "12rem", // Réduit de 14rem à 12rem
+                  height: "320px", // Réduit de 380px à 320px
+                  cursor: "pointer",
                 }}
               >
+                {/* LinkedIn Badge - visible au hover */}
+                <div className="position-absolute top-0 end-0 m-1 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10">
+                  <div className="bg-red-600 hover:bg-red-500 rounded-circle p-1.5 shadow-lg transition-colors">
+                    <Linkedin className="w-3 h-3 text-white" />
+                  </div>
+                </div>
+
+                {/* Overlay hover avec icône */}
+                <div className="position-absolute inset-0 bg-black/0 hover:bg-black/20 transition-all duration-300 d-flex align-items-center justify-content-center opacity-0 hover:opacity-100">
+                  <div className="text-center">
+                    <ExternalLink className="w-6 h-6 text-white mb-1" />
+                    <p className="text-white text-xs font-semibold">
+                      Voir LinkedIn
+                    </p>
+                  </div>
+                </div>
+
                 <Card.Img
                   variant="top"
                   src={card.imgSrc}
                   style={{
-                    height: "180px",
+                    height: "150px", // Réduit de 180px à 150px
                     objectFit: "cover",
                   }}
                 />
                 <Card.Body
-                  className="text-center d-flex flex-column justify-content-between"
-                  style={{ flexGrow: 1 }}
+                  className="text-center d-flex flex-column justify-content-between p-2"
+                  style={{
+                    height: "170px", // Réduit de 200px à 170px
+                    flexGrow: 0,
+                  }}
                 >
-                  <Card.Title className="text-gray-200">
-                    {card.title}
-                  </Card.Title>
-                  <Card.Text className="text-gray-400">
-                    {t(card.textKey)}
-                  </Card.Text>
+                  <div className="flex-grow-1 d-flex flex-column justify-content-center">
+                    <Card.Title
+                      className="text-gray-200 mb-1"
+                      style={{
+                        fontSize: "0.9rem", // Réduit de 1rem à 0.9rem
+                        lineHeight: "1.1",
+                        minHeight: "2rem", // Réduit de 2.4rem à 2rem
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {card.title}
+                    </Card.Title>
+                    <Card.Text
+                      className="text-gray-400"
+                      style={{
+                        fontSize: "0.75rem", // Réduit la taille du texte
+                        minHeight: "2.5rem", // Réduit de 3rem à 2.5rem
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        lineHeight: "1.2",
+                      }}
+                    >
+                      {t(card.textKey)}
+                    </Card.Text>
+                  </div>
+
+                  {/* Indicateur LinkedIn dans le footer de la carte */}
+                  <div className="d-flex align-items-center justify-content-center mt-1 text-red-400 hover:text-red-300 transition-colors">
+                    <Linkedin className="w-3 h-3 me-1" />
+                    <small
+                      style={{ fontSize: "0.7rem" }}
+                      className="font-medium"
+                    >
+                      LinkedIn
+                    </small>
+                  </div>
                 </Card.Body>
               </Card>
             </motion.a>
@@ -177,8 +235,9 @@ const Management = () => {
       </Head>
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
+        viewport={{ once: true }}
       >
         {renderCards(cardData.slice(0, 8), "management.executiveTeam")}
         {renderCards(cardData.slice(8, 12), "management.leadershipTeam")}
