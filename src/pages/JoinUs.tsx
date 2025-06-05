@@ -30,14 +30,11 @@ function JoinUs() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center"
           >
-            <h1 className="text-6xl font-bold mb-4">
+            <h1 className="text-6xl font-bold mb-4 pb-20 pt-8">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                {t("joinus.heroTitle")}
+                {t("joinus.heroSubtitle")}
               </span>
             </h1>
-            <h2 className="text-4xl font-bold text-white mb-6">
-              {t("joinus.heroSubtitle")}
-            </h2>
           </motion.div>
 
           {/* Discord Section */}

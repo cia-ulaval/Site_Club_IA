@@ -93,6 +93,20 @@
       "MangaTranslator AI": "AI-powered manga translation system for real-time panel conversion.",
       "FlapEEG": "EEG-based control system for interactive gaming.",
       "F1Tenth": "1/10th scale Formula 1 car controlled by muscle signals."
+    },
+    "tierBenefits": {
+      "Your logo and link on our website": "Your logo and link on our website",
+      "Your logo presented at our events": "Your logo presented at our events",
+      "Your logo on our t-shirts": "Your logo on our t-shirts",
+      "Special thanks on our social media": "Special thanks on our social media",
+      "Distribution of your promotional materials": "Distribution of your promotional materials",
+      "All Bronze benefits": "All Bronze benefits",
+      "Invitation to our opening events": "Invitation to our opening events",
+      "Repost of two ads": "Repost of two ads",
+      "All Silver benefits": "All Silver benefits",
+      "Sponsorship for one of our projects": "Sponsorship for one of our projects",
+      "Access to our members CV book": "Access to our members CV book",
+      "Your logo on our projects": "Your logo on our projects"
     }
   },
   "management": {

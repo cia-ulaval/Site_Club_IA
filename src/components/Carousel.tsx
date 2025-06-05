@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 const images = [
   "/banner/aesgul.png",
   "/banner/asetin.png",
-  "/banner/avenirti.png",
+  "/banner/ti.jpeg",
   "/banner/ulaval.png",
+  "/banner/sifi.jpeg",
 ];
 
 const IMAGE_WIDTH = 120; // px
@@ -15,9 +16,7 @@ const TOTAL_WIDTH = (IMAGE_WIDTH + IMAGE_MARGIN) * images.length * REPEAT_COUNT;
 
 export default function InfiniteScrollBanner() {
   // Repeat the images array REPEAT_COUNT times
-  const repeatedImages = Array(REPEAT_COUNT)
-    .fill(images)
-    .flat();
+  const repeatedImages = Array(REPEAT_COUNT).fill(images).flat();
 
   return (
     <div className="scroll-banner relative w-full bg-black py-4 overflow-hidden">

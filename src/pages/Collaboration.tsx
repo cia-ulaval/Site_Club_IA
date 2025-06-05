@@ -26,7 +26,8 @@ const sponsorshipTiers = [
     benefits: [
       "Your logo and link on our website",
       "Your logo presented at our events",
-      "Special mention on our social media",
+      "Your logo on our t-shirts",
+      "Special thanks on our social media",
       "Distribution of your promotional materials",
     ],
   },
@@ -36,7 +37,11 @@ const sponsorshipTiers = [
     color: "from-gray-400 to-gray-600",
     hoverColor: "from-gray-300 to-gray-500",
     icon: <Award className="w-8 h-8 text-gray-300" />,
-    benefits: ["All Bronze benefits", "Your logo on our members merchandise"],
+    benefits: [
+      "All Bronze benefits",
+      "Invitation to our opening events",
+      "Repost of two ads",
+    ],
   },
   {
     name: "Gold",
@@ -46,21 +51,9 @@ const sponsorshipTiers = [
     icon: <Award className="w-8 h-8 text-yellow-300" />,
     benefits: [
       "All Silver benefits",
-      "Trimester progress report for our projects",
-      "Invitations to our events",
+      "Sponsorship for one of our projects",
+      "Access to our members CV book",
       "Your logo on our projects",
-    ],
-  },
-  {
-    name: "Platinum",
-    price: "$5,000+",
-    color: "from-red-500 to-red-800",
-    hoverColor: "from-red-400 to-red-700",
-    icon: <Award className="w-8 h-8 text-red-300" />,
-    benefits: [
-      "All Gold benefits",
-      "Access to our prototypes",
-      "Access to our members CV books",
     ],
   },
 ];
@@ -461,7 +454,7 @@ function SponsorshipPage() {
               {t("collaborationPage.tiersTitle")}
             </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {sponsorshipTiers.map((tier, index) => (
                 <SponsorshipTier
                   key={index}
