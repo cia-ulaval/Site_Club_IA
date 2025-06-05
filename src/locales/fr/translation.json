@@ -6,10 +6,10 @@
     },
     "about": {
       "title": "À propos de nous",
-      "description": "Le CIA est le club d'intelligence artificielle de l'Université Laval. Nous sommes un groupe d'étudiants explorant l'IA et l'apprentissage automatique à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA !"
+      "description": "Nous sommes un groupe d'étudiants explorant l'IA à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA!"
     },
     "projects": {
-      "title": "Quelques-uns de nos travaux",
+      "title": "Découvrez nos projets innovants !",
       "subtitle": "Découvrez nos projets innovants !",
       "flapeeg": {
         "title": "FlapEEG",
@@ -43,13 +43,13 @@
   "navbar": {
     "home": "Accueil",
     "projects": "Projets",
-    "management": "Gestion",
+    "management": "Administration",
     "gallery": "Galerie",
     "joinus": "Nous rejoindre"
   },
   "footer": {
-    "clubName": "Club IA de l'Université Laval",
-    "slogan": "Façonner l'inconnu, coder l'impossible.",
+    "clubName": "Club d'IA de l'Université Laval",
+    "slogan": "Concrétisons vos projets.",
     "connect": "Nous suivre",
     "copyright": "© 2025 Dereck Bélanger - Tous droits réservés."
   },

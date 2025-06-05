@@ -61,30 +61,6 @@ function JoinUs() {
             </a>
           </motion.div>
 
-          {/* Application Section */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl font-bold text-white mb-4">
-              {t("joinus.applyTitle")}
-            </h3>
-            <p className="text-lg text-gray-400 mb-6">
-              {t("joinus.applyText")}
-            </p>
-            <a
-              href="" // ADD THE GOOGLE FORM LINK HERE
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
-            >
-              {t("joinus.applyButton")}
-            </a>
-          </motion.div>
-
           {/* Collaboration Section */}
           <motion.div
             className="text-center mt-16"
@@ -117,7 +93,7 @@ function JoinUs() {
                 <Linkedin size={40} />
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:cia@ulaval.ca"
                 aria-label="Email"
                 className="text-gray-400 hover:text-red-400 transition"
               >

@@ -6,11 +6,10 @@
     },
     "about": {
       "title": "About Us",
-      "description": "The CIA is the artificial intelligence club of Laval University. We are a group of students exploring AI and machine learning through various hands-on projects. Join us to learn and collaborate on exciting AI endeavors!"
+      "description": "We are a group of students exploring AI through various hands-on projects. Join us to learn and collaborate on exciting AI initiatives!"
     },
     "projects": {
-      "title": "Some of our work",
-      "subtitle": "Discover our innovative projects!",
+      "title": "Discover our innovative projects!",
       "flapeeg": {
         "title": "FlapEEG",
         "description": "A mind-controlled video game"
@@ -43,13 +42,13 @@
   "navbar": {
     "home": "Home",
     "projects": "Projects",
-    "management": "Management",
+    "management": "Administration",
     "gallery": "Gallery",
     "joinus": "Join Us"
   },
   "footer": {
     "clubName": "Laval University AI Club",
-    "slogan": "Shape the unknown, code the impossible.",
+    "slogan": "Let's bring your projects to life.",
     "connect": "Connect",
     "copyright": "© 2025 Dereck Bélanger - All rights reserved."
   },
