@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import InfiniteScrollBanner from "../components/Carousel";
 import { useTranslation } from "react-i18next";
 import InstaPostEmbed from "../components/InstaPostEmbed";
@@ -37,6 +38,96 @@ function Home() {
 
   return (
     <div className="w-full">
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Club Intelligence Artificielle - Université Laval | CIA ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants, événements, ateliers et rejoignez notre communauté passionnée d'IA."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="intelligence artificielle, IA, club étudiant, Université Laval, machine learning, deep learning, projets IA, événements tech, programmation, data science"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+        <meta
+          property="og:description"
+          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants et rejoignez notre communauté."
+        />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+        <meta
+          name="twitter:description"
+          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants."
+        />
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Club Intelligence Artificielle - Université Laval",
+              "url": "https://cia.ift.ulaval.ca",
+              "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+              "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+              "foundingLocation": {
+                "@type": "Place",
+                "name": "Québec, Canada"
+              },
+              "parentOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "Université Laval"
+              },
+              "sameAs": [
+                "https://www.instagram.com/ciaulaval/",
+                "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                "https://github.com/cia-ulaval",
+                "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
+
       {/* Hero Section */}
       <section className="relative overflow-hidden py-12 md:py-20 w-full max-w-7xl mx-auto px-4 md:px-6">
         {/* Background decorative elements */}

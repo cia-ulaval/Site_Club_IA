@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, ExternalLink, User } from "lucide-react";
+import { Helmet } from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 interface TeamMember {
@@ -341,6 +342,162 @@ const Management: React.FC = () => {
 
   return (
     <>
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Équipe et Leadership - Club Intelligence Artificielle Université Laval
+          | CIA ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Rencontrez l'équipe dirigeante du Club IA ULaval : président, leaders, responsables projets, marketing, finances et activités. Étudiants passionnés d'intelligence artificielle à l'Université Laval."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="équipe Club IA, leadership CIA ULaval, membres Club IA, président club IA, responsables projets IA, équipe étudiante, Université Laval, Nathaniel D'Amours, intelligence artificielle"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Équipe et Leadership - Club Intelligence Artificielle Université Laval"
+        />
+        <meta
+          property="og:description"
+          content="Découvrez l'équipe dirigeante du Club IA ULaval : président, leaders et responsables passionnés d'intelligence artificielle."
+        />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+        <meta
+          property="og:url"
+          content="https://cia.ift.ulaval.ca/management"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Équipe et Leadership - Club Intelligence Artificielle Université Laval"
+        />
+        <meta
+          name="twitter:description"
+          content="Rencontrez notre équipe dirigeante d'étudiants passionnés d'intelligence artificielle."
+        />
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/management" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "Équipe et Leadership - Club Intelligence Artificielle Université Laval",
+              "url": "https://cia.ift.ulaval.ca/management",
+              "description": "Équipe dirigeante du Club IA ULaval avec président, leaders et responsables",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ],
+                "member": [
+                  {
+                    "@type": "Person",
+                    "name": "Nathaniel D'Amours",
+                    "jobTitle": "Président",
+                    "sameAs": "https://www.linkedin.com/in/nathaniel-damours"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Jordan Mathieu",
+                    "jobTitle": "Leader des projets",
+                    "sameAs": "https://www.linkedin.com/in/jordan-math/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Louis-Étienne Messier",
+                    "jobTitle": "Leader en logistique",
+                    "sameAs": "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Alexandrine Lehoux",
+                    "jobTitle": "Leader des finances",
+                    "sameAs": "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Yves Faye",
+                    "jobTitle": "Leader du marketing",
+                    "sameAs": "https://www.linkedin.com/in/yves-faye-3b45062a5/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Anthony Lavertu",
+                    "jobTitle": "Responsable des relations externes",
+                    "sameAs": "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Dereck Bélanger",
+                    "jobTitle": "Responsable du site web",
+                    "sameAs": "https://www.linkedin.com/in/dereck-bélanger-437259338/"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Mathieu Bazinet",
+                    "jobTitle": "Responsable des formations",
+                    "sameAs": "https://www.linkedin.com/in/mathieu-bazinet-196523a6"
+                  },
+                  {
+                    "@type": "Person",
+                    "name": "Almaoudata Walet",
+                    "jobTitle": "Responsable des compétitions",
+                    "sameAs": "https://www.linkedin.com/in/alma-walet-93418b325/"
+                  }
+                ]
+              }
+            }
+          `}
+        </script>
+      </Helmet>
+
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}

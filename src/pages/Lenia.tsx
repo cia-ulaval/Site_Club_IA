@@ -8,9 +8,9 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import TeamMemberCard from "../components/TeamMemberCard";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 interface ImageWithGlowProps {
   src: string;
@@ -89,28 +89,136 @@ function Lenia() {
 
   return (
     <>
-      <Head>
-        <title>{t("lenia.meta.title")}</title>
-        <meta name="description" content={t("lenia.meta.description")} />
-        <meta name="keywords" content={t("lenia.meta.keywords")} />
-        <meta name="author" content="Dereck Bélanger" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={t("lenia.meta.og.title")} />
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Lenia - Automates Cellulaires Continus | Projet IA Club ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Lenia : projet d'automates cellulaires continus et vie artificielle. Exploration des systèmes complexes émergents avec intelligence artificielle. Projet de recherche du Club IA ULaval."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="Lenia, automates cellulaires, vie artificielle, systèmes complexes, émergence, patterns, recherche IA, Club IA ULaval, Théophile Berteloot, Jordan Mathieu, Louis-Étienne Messier"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Lenia - Automates Cellulaires Continus | Projet IA Club ULaval"
+        />
         <meta
           property="og:description"
-          content={t("lenia.meta.og.description")}
+          content="Découvrez Lenia, notre projet d'automates cellulaires continus et de vie artificielle explorant les systèmes complexes émergents."
         />
-        <meta property="og:image" content="/banner/cia_ico.ico" />
-        <meta property="og:url" content="https://cialaval.vercel.app/lenia" />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/project/leniacover.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/lenia" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t("lenia.meta.twitter.title")} />
+        <meta
+          name="twitter:title"
+          content="Lenia - Automates Cellulaires Continus | Projet IA Club ULaval"
+        />
         <meta
           name="twitter:description"
-          content={t("lenia.meta.twitter.description")}
+          content="Projet d'automates cellulaires continus et de vie artificielle avec systèmes complexes émergents."
         />
-        <meta name="twitter:image" content="/banner/cia_ico.ico" />
-      </Head>
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/project/leniacover.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/lenia" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Lenia - Automates Cellulaires Continus",
+              "url": "https://cia.ift.ulaval.ca/lenia",
+              "description": "Projet d'automates cellulaires continus et de vie artificielle explorant les systèmes complexes émergents",
+              "applicationCategory": "SimulationApplication",
+              "operatingSystem": "Web",
+              "author": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ]
+              },
+              "creator": [
+                {
+                  "@type": "Person",
+                  "name": "Théophile Berteloot"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Jordan Mathieu"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Louis-Étienne Messier"
+                }
+              ],
+              "featureList": [
+                "Automates cellulaires continus",
+                "Simulation de vie artificielle",
+                "Patterns émergents complexes",
+                "Interface de recherche interactive",
+                "Visualisation temps réel"
+              ],
+              "keywords": [
+                "automates cellulaires",
+                "vie artificielle", 
+                "systèmes complexes",
+                "émergence",
+                "patterns",
+                "simulation"
+              ],
+              "screenshot": "https://cia.ift.ulaval.ca/project/lenia.png",
+              "image": "https://cia.ift.ulaval.ca/project/leniacover.png",
+              "codeRepository": "https://github.com/cia-ulaval/LENIA-frontend",
+              "programmingLanguage": "JavaScript"
+            }
+          `}
+        </script>
+      </Helmet>
 
       <section className="relative overflow-hidden">
         <motion.div

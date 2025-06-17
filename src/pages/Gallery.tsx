@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -159,25 +159,136 @@ function Gallery() {
 
   return (
     <>
-      <Head>
-        <title>{t("gallery.pageTitle")}</title>
-        <meta name="description" content={t("gallery.pageDescription")} />
-        <meta name="keywords" content={t("gallery.pageKeywords")} />
-        <meta name="author" content="Dereck Bélanger" />
-        <link rel="canonical" href="https://cialaval.vercel.app/gallery" />
-        <meta property="og:title" content={t("gallery.ogTitle")} />
-        <meta property="og:description" content={t("gallery.ogDescription")} />
-        <meta property="og:image" content="/banner/cia_ico.ico" />
-        <meta property="og:url" content="https://cialaval.vercel.app/gallery" />
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Galerie Photos - Club Intelligence Artificielle Université Laval | CIA
+          ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Découvrez la galerie photos du Club IA ULaval : projets EEG, compétitions, formations, événements communautaires et moments marquants de notre club d'intelligence artificielle."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="galerie Club IA, photos CIA ULaval, projets EEG, compétitions IA, formations machine learning, événements club IA, FlappyBrain photos, F1Tenth images, communauté IA Université Laval"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Galerie Photos - Club Intelligence Artificielle Université Laval"
+        />
+        <meta
+          property="og:description"
+          content="Découvrez notre galerie photos : projets EEG, compétitions, formations et moments marquants du Club IA ULaval."
+        />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/implication/front-image.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/gallery" />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t("gallery.twitterTitle")} />
+        <meta
+          name="twitter:title"
+          content="Galerie Photos - Club Intelligence Artificielle Université Laval"
+        />
         <meta
           name="twitter:description"
-          content={t("gallery.twitterDescription")}
+          content="Découvrez notre galerie : projets EEG, compétitions et événements du Club IA ULaval."
         />
-        <meta name="twitter:image" content="/banner/cia_ico.ico" />
-      </Head>
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/implication/front-image.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/gallery" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ImageGallery",
+              "name": "Galerie Photos - Club Intelligence Artificielle Université Laval",
+              "url": "https://cia.ift.ulaval.ca/gallery",
+              "description": "Galerie photos du Club IA ULaval présentant nos projets, compétitions, formations et événements communautaires",
+              "creator": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ]
+              },
+              "mainEntity": [
+                {
+                  "@type": "ImageObject",
+                  "name": "Projets EEG et FlappyBrain",
+                  "url": "https://cia.ift.ulaval.ca/implication/flappyeegmain.jpeg",
+                  "description": "Démonstration du projet FlappyBrain contrôlé par EEG"
+                },
+                {
+                  "@type": "ImageObject",
+                  "name": "Compétitions d'intelligence artificielle",
+                  "url": "https://cia.ift.ulaval.ca/competition/competition-a2024-1.jpg",
+                  "description": "Participation aux compétitions IA automne 2024"
+                },
+                {
+                  "@type": "ImageObject",
+                  "name": "Formations et ateliers IA",
+                  "url": "https://cia.ift.ulaval.ca/formation/tuto2.jpg",
+                  "description": "Séances de formation en intelligence artificielle"
+                },
+                {
+                  "@type": "ImageObject",
+                  "name": "Événements communautaires",
+                  "url": "https://cia.ift.ulaval.ca/implication/kiosque.jpg",
+                  "description": "Kiosque et événements de promotion du club"
+                },
+                {
+                  "@type": "ImageObject",
+                  "name": "Projet F1Tenth",
+                  "url": "https://cia.ift.ulaval.ca/project/f1tenthcar.png",
+                  "description": "Voiture autonome du projet F1Tenth"
+                }
+              ],
+              "numberOfItems": 18,
+              "image": "https://cia.ift.ulaval.ca/implication/front-image.png"
+            }
+          `}
+        </script>
+      </Helmet>
 
       {/* Hero section with animated gradient background */}
       <motion.div

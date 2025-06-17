@@ -1,0 +1,48 @@
+# Robots.txt pour Club Intelligence Artificielle - Université Laval
+User-agent: *
+
+# Autoriser toutes les pages principales
+Allow: /
+Allow: /projects
+Allow: /mangaai
+Allow: /lenia
+Allow: /flapeeg
+Allow: /f1tenth
+Allow: /decisiontree
+Allow: /management
+Allow: /gallery
+Allow: /join-us
+Allow: /collaboration
+
+# Bloquer les répertoires sensibles ou inutiles
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+Disallow: /components/
+Disallow: /utils/
+
+# Autoriser les ressources importantes pour le SEO
+Allow: /banner/
+Allow: /project/
+Allow: /portrait/
+Allow: /implication/
+Allow: /competition/
+Allow: /formation/
+
+# Bloquer les fichiers temporaires et de développement
+Disallow: /*.json$
+Disallow: /*.log$
+Disallow: /*.tmp$
+Disallow: /sitemap_index.xml
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
+
+# Sitemap
+Sitemap: https://cia.ift.ulaval.ca/sitemap.xml
+
+# Délai entre les requêtes
+Crawl-delay: 1

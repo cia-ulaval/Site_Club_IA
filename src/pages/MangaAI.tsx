@@ -1,5 +1,5 @@
-import Head from "next/head";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import TeamMemberCard from "../components/TeamMemberCard";
 import {
   TextCursorInput,
@@ -9,7 +9,7 @@ import {
   Languages,
   Layers,
 } from "lucide-react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 
 interface ImageWithGlowProps {
   src: string;
@@ -125,28 +125,135 @@ function MangaAI() {
 
   return (
     <>
-      <Head>
-        <title>{t("mangaai.meta.title")}</title>
-        <meta name="description" content={t("mangaai.meta.description")} />
-        <meta name="keywords" content={t("mangaai.meta.keywords")} />
-        <meta name="author" content="Dereck Bélanger" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={t("mangaai.meta.og.title")} />
+      <Helmet>
+        {/* Titre */}
+        <title>
+          MangaAI - Traducteur Automatique de Manga par IA | Club IA ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="MangaAI : traducteur automatique de manga par intelligence artificielle. Détection de texte, traduction contextuelle et génération de bulles. Projet innovant du Club IA ULaval."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="MangaAI, traduction manga, IA créative, traduction automatique, détection texte, OCR manga, génération bulles, anime AI, Club IA ULaval, machine learning, deep learning"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="MangaAI - Traducteur Automatique de Manga par IA"
+        />
         <meta
           property="og:description"
-          content={t("mangaai.meta.og.description")}
+          content="Découvrez MangaAI, notre traducteur automatique de manga par intelligence artificielle avec détection de texte et traduction contextuelle."
         />
-        <meta property="og:image" content="/banner/cia_ico.ico" />
-        <meta property="og:url" content="https://cialaval.vercel.app/mangaai" />
-        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/project/mangaai2.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/mangaai" />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={t("mangaai.meta.twitter.title")} />
+        <meta
+          name="twitter:title"
+          content="MangaAI - Traducteur Automatique de Manga par IA"
+        />
         <meta
           name="twitter:description"
-          content={t("mangaai.meta.twitter.description")}
+          content="Traducteur automatique de manga par intelligence artificielle avec détection de texte et traduction contextuelle."
         />
-        <meta name="twitter:image" content="/banner/cia_ico.ico" />
-      </Head>
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/project/mangaai2.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/mangaai" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "MangaAI - Traducteur Automatique de Manga",
+              "url": "https://cia.ift.ulaval.ca/mangaai",
+              "description": "Traducteur automatique de manga par intelligence artificielle avec détection de texte et traduction contextuelle",
+              "applicationCategory": "MultimediaApplication",
+              "operatingSystem": "Web",
+              "author": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ]
+              },
+              "creator": [
+                {
+                  "@type": "Person",
+                  "name": "Théophile Berteloot"
+                },
+                {
+                  "@type": "Person", 
+                  "name": "Loïc Baret"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Xavier Legault"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Louis-Jacob Lebel"
+                },
+                {
+                  "@type": "Person",
+                  "name": "John-William Lebel"
+                }
+              ],
+              "featureList": [
+                "Détection automatique de texte dans les mangas",
+                "Traduction contextuelle multilingue",
+                "Génération automatique de bulles de dialogue",
+                "Interface temps réel",
+                "Support multiple langues"
+              ],
+              "screenshot": "https://cia.ift.ulaval.ca/project/mangaai.png",
+              "image": "https://cia.ift.ulaval.ca/project/mangaai2.png"
+            }
+          `}
+        </script>
+      </Helmet>
+
       <section className="relative overflow-hidden">
         <motion.div
           className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"

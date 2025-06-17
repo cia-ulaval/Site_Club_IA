@@ -11,7 +11,7 @@ import {
   Globe,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import { useRef } from "react";
 
@@ -341,47 +341,187 @@ function SponsorshipPage() {
 
   return (
     <>
-      <Head>
-        <title>Become a Sponsor | Support AI Research and Innovation</title>
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Partenariats et Sponsoring - Club Intelligence Artificielle Université
+          Laval | CIA ULaval
+        </title>
+        {/* Description */}
         <meta
           name="description"
-          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
+          content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants d'intelligence artificielle. Offres Bronze, Silver, Gold. Visibilité, networking et accès aux talents IA."
         />
+
+        {/* Mots-clés */}
         <meta
           name="keywords"
-          content="AI research, sponsorship, collaboration, innovation, student projects, industry partners"
+          content="sponsoring IA, partenariat Club IA, collaboration entreprise, financement projets IA, sponsoring étudiant, Bronze Silver Gold, networking IA, talents IA, Université Laval, recherche IA"
         />
-        <meta name="author" content="Dereck Bélanger" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
-          content="Become a Sponsor | Support AI Research and Innovation"
+          content="Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval"
         />
         <meta
           property="og:description"
-          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
+          content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants et accédez aux meilleurs talents en intelligence artificielle."
         />
-        <meta property="og:image" content="/banner/cia_ico.ico" />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
         <meta
           property="og:url"
-          content="https://cialaval.vercel.app/collaboration"
+          content="https://cia.ift.ulaval.ca/collaboration"
         />
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Become a Sponsor | Support AI Research and Innovation"
+          content="Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval"
         />
         <meta
           name="twitter:description"
-          content="Support groundbreaking AI research and empower the next generation of innovators. Explore sponsorship opportunities to fuel innovation and transform industries."
+          content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants et accédez aux talents IA."
         />
-        <meta name="twitter:image" content="/banner/cia_ico.ico" />
-        <link
-          rel="canonical"
-          href="https://cialaval.vercel.app/collaboration"
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
         />
-      </Head>
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/collaboration" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval",
+              "url": "https://cia.ift.ulaval.ca/collaboration",
+              "description": "Page de partenariats et sponsoring du Club IA ULaval avec offres Bronze, Silver, Gold",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ],
+                "seeks": {
+                  "@type": "Partnership",
+                  "name": "Sponsoring et Partenariats IA",
+                  "description": "Recherche de partenaires pour financer et soutenir nos projets d'intelligence artificielle"
+                },
+                "sponsor": [
+                  {
+                    "@type": "Organization",
+                    "name": "Université Laval",
+                    "category": "Platinum"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "AESGUL",
+                    "category": "Gold"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "ASETIN", 
+                    "category": "Gold"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "MonAvenirTI",
+                    "category": "Gold"
+                  },
+                  {
+                    "@type": "Organization",
+                    "name": "Kernelor",
+                    "category": "Bronze"
+                  }
+                ]
+              },
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "name": "Sponsoring Bronze",
+                  "price": "1500",
+                  "priceCurrency": "CAD",
+                  "description": "Logo sur site web, événements, t-shirts, réseaux sociaux",
+                  "category": "Sponsorship"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Sponsoring Silver",
+                  "price": "2500",
+                  "priceCurrency": "CAD",
+                  "description": "Avantages Bronze + invitations événements + promotion ads",
+                  "category": "Sponsorship"
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Sponsoring Gold",
+                  "price": "3500",
+                  "priceCurrency": "CAD",
+                  "description": "Avantages Silver + sponsoring projet + CV book + logo projets",
+                  "category": "Sponsorship"
+                }
+              ],
+              "potentialAction": {
+                "@type": "ContactAction",
+                "target": "https://cia.ift.ulaval.ca/collaboration#contact",
+                "name": "Devenir Partenaire"
+              },
+              "about": [
+                {
+                  "@type": "Thing",
+                  "name": "Intelligence Artificielle"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Projets Étudiants"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Recherche et Développement"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "Partenariats Industriels"
+                }
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
+
       <section className="relative overflow-hidden">
         <h1 className="sr-only">
           {t("collaborationPage.mainTitle")} | Support AI Research

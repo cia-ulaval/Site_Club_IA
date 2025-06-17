@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Head from "next/head";
+import { Helmet } from "react-helmet";
 import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -8,13 +8,119 @@ function JoinUs() {
 
   return (
     <>
-      <Head>
-        <title>{t("joinus.pageTitle")}</title>
-        <meta name="description" content={t("joinus.pageDescription")} />
-        <meta name="keywords" content={t("joinus.pageKeywords")} />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://cialaval.vercel.app/join-us" />
-      </Head>
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Rejoindre le Club IA - Intelligence Artificielle Université Laval |
+          CIA ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Rejoignez le Club Intelligence Artificielle de l'Université Laval ! Participez à nos projets IA, formations, événements et communauté Discord. Ouvert à tous les étudiants passionnés d'IA."
+        />
+
+        {/* Mots-clés */}
+        <meta
+          name="keywords"
+          content="rejoindre Club IA, adhésion CIA ULaval, Discord Club IA, communauté IA, étudiants intelligence artificielle, formations IA, projets étudiants, Université Laval, machine learning, collaboration IA"
+        />
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Rejoindre le Club IA - Intelligence Artificielle Université Laval"
+        />
+        <meta
+          property="og:description"
+          content="Rejoignez notre communauté d'étudiants passionnés d'IA ! Projets innovants, formations et événements vous attendent."
+        />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/join-us" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Rejoindre le Club IA - Intelligence Artificielle Université Laval"
+        />
+        <meta
+          name="twitter:description"
+          content="Rejoignez notre communauté d'étudiants passionnés d'intelligence artificielle !"
+        />
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/join-us" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Rejoindre le Club IA - Intelligence Artificielle Université Laval",
+              "url": "https://cia.ift.ulaval.ca/join-us",
+              "description": "Page d'adhésion au Club Intelligence Artificielle de l'Université Laval",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ],
+                "contactPoint": [
+                  {
+                    "@type": "ContactPoint",
+                    "contactType": "general",
+                    "email": "cia@ulaval.ca"
+                  },
+                  {
+                    "@type": "ContactPoint",
+                    "contactType": "community",
+                    "url": "https://discord.gg/ZPVwCjMpAq"
+                  }
+                ],
+              },
+              "potentialAction": {
+                "@type": "JoinAction",
+                "target": "https://discord.gg/ZPVwCjMpAq",
+                "name": "Rejoindre le Discord"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
 
       <section className="relative overflow-hidden pt-20">
         <motion.div

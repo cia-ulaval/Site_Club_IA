@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 import { motion } from "framer-motion";
-import Head from "next/head";
 import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {
@@ -51,15 +51,129 @@ function Projects() {
 
   return (
     <>
-      <Head>
-        <title>CIA Site</title>
-        <meta name="description" content={t("home.about.description")} />
+      <Helmet>
+        {/* Titre */}
+        <title>
+          Projets IA - Club Intelligence Artificielle Université Laval | CIA
+          ULaval
+        </title>
+        {/* Description */}
+        <meta
+          name="description"
+          content="Découvrez les projets innovants du Club IA ULaval : FlappyBrain EEG, F1Tenth autonome, MangaAI, Lenia, Decision Tree et plus. Projets d'intelligence artificielle et machine learning."
+        />
+
+        {/* Mots-clés */}
         <meta
           name="keywords"
-          content="EEG projects, FlapEEG, MangaAI, Lenia, F1Tenth, Decision Tree, innovative technology, research"
+          content="projets IA, FlappyBrain, F1Tenth, MangaAI, Lenia, Decision Tree, EEG, voiture autonome, génération manga, projets étudiants, machine learning, deep learning, Club IA ULaval"
         />
-        <meta name="author" content="Dereck Bélanger" />
-      </Head>
+
+        {/* Auteur */}
+        <meta
+          name="author"
+          content="Club Intelligence Artificielle - Université Laval"
+        />
+
+        {/* Open Graph pour Facebook/LinkedIn */}
+        <meta
+          property="og:title"
+          content="Projets IA - Club Intelligence Artificielle Université Laval"
+        />
+        <meta
+          property="og:description"
+          content="Découvrez nos projets innovants d'intelligence artificielle : FlappyBrain EEG, F1Tenth autonome, MangaAI et plus."
+        />
+        <meta
+          property="og:image"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+        />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/projects" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Club IA - Université Laval" />
+
+        {/* Twitter Cards */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Projets IA - Club Intelligence Artificielle Université Laval"
+        />
+        <meta
+          name="twitter:description"
+          content="Découvrez nos projets innovants d'intelligence artificielle et machine learning."
+        />
+        <meta
+          name="twitter:image"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+        />
+
+        {/* URL canonique */}
+        <link rel="canonical" href="https://cia.ift.ulaval.ca/projects" />
+
+        {/* Langue */}
+        <html lang="fr" />
+
+        {/* Données structurées JSON-LD pour Google */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "CollectionPage",
+              "name": "Projets IA - Club Intelligence Artificielle Université Laval",
+              "url": "https://cia.ift.ulaval.ca/projects",
+              "description": "Collection des projets d'intelligence artificielle du Club IA ULaval",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Club Intelligence Artificielle - Université Laval",
+                "url": "https://cia.ift.ulaval.ca",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "foundingLocation": {
+                  "@type": "Place",
+                  "name": "Québec, Canada"
+                },
+                "parentOrganization": {
+                  "@type": "EducationalOrganization",
+                  "name": "Université Laval"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/ciaulaval/",
+                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
+                  "https://github.com/cia-ulaval",
+                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
+                ]
+              },
+              "hasPart": [
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "FlappyBrain EEG",
+                  "description": "Jeu contrôlé par ondes cérébrales"
+                },
+                {
+                  "@type": "SoftwareApplication", 
+                  "name": "F1Tenth",
+                  "description": "Voiture de course autonome"
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "MangaAI",
+                  "description": "Génération et traduction automatique de manga"
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "Lenia",
+                  "description": "Automates cellulaires autonomes"
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "Decision Tree",
+                  "description": "Recherche et développement d'arbres de décision"
+                }
+              ]
+            }
+          `}
+        </script>
+      </Helmet>
 
       <motion.section
         className="overflow-hidden mt-24"
