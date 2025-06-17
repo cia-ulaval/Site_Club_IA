@@ -1,35 +1,125 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr-CA">
   <head>
-    <title>CIA Website</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Primary Social Tags -->
-    <meta property="og:title" content="Site Officiel du club IA de l'Université Laval">
-    <meta property="og:description" content="Ce site est le site officiel du club IA de l'Université Laval. Il 
-    présente les activités du club, les projets en cours et les événements à venir. Il montre aussi les membres du club et
-    les partenaires du club."> 
-    <meta property="og:image" content="https://https://cialaval.vercel.app/CIA_LOGO.png"> <!-- CHANGE PATH LATER -->
-    <meta property="og:url" content="https://cialaval.vercel.app"> <!-- CHANGE TO ACTUAL DOMAIN LATER -->
-    <meta property="og:type" content="website">
-
-    <!-- Website Tags -->  
-    <meta name="keywords" content="AI, IA, university, club, Laval, Université, club IA, club IA Laval, club IA Université Laval, EEG">
-    <meta name="author" content="Dereck Bélanger">
-    <meta name="robots" content="index, follow"> <!-- CHANGE LATER -->
-    <meta name="description" content="Ce site est le site officiel du club IA de l'Université Laval. Il 
-    présente les activités du club, les projets en cours et les événements à venir. Il montre aussi les membres du club et
-    les partenaires du club.">
-    <link rel="icon" href="/cia_ico.ico" type="image/x-icon"> 
-    <link rel="canonical" href="https://cialaval.vercel.app"> <!-- CHANGE TO ACTUAL DOMAIN LATER -->
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-
-
-
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#DC2626" />
+    
+    <!-- Titre optimisé SEO -->
+    <title>Club Intelligence Artificielle - Université Laval | Projets IA et Communauté Étudiante</title>
+    
+    <!-- Description principale -->
+    <meta
+      name="description"
+      content="Club étudiant d'intelligence artificielle de l'Université Laval. Projets innovants : FlappyBrain EEG, F1Tenth, Lenia, MangaAI. Rejoignez notre communauté Discord de passionnés d'IA !"
+    />
+    
+    <!-- Mots-clés principaux -->
+    <meta
+      name="keywords"
+      content="Club IA ULaval, intelligence artificielle Québec, projets étudiants IA, FlappyBrain EEG, F1Tenth voiture autonome, Lenia automates cellulaires, machine learning ULaval, communauté IA Discord"
+    />
+    
+    <!-- Informations de base -->
+    <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="language" content="fr-CA" />
+    <meta name="geo.region" content="CA-QC" />
+    <meta name="geo.placename" content="Québec, Canada" />
+    
+    <!-- Open Graph pour réseaux sociaux -->
+    <meta property="og:title" content="Club Intelligence Artificielle - Université Laval" />
+    <meta property="og:description" content="Club étudiant d'IA avec projets innovants et communauté Discord active. FlappyBrain EEG, F1Tenth, Lenia et plus !" />
+    <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png" />
+    <meta property="og:url" content="https://cia.ift.ulaval.ca" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Club IA ULaval" />
+    <meta property="og:locale" content="fr_CA" />
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Club Intelligence Artificielle - Université Laval" />
+    <meta name="twitter:description" content="Projets IA innovants et communauté étudiante active" />
+    <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png" />
+    
+    <!-- Liens techniques -->
+    <link rel="canonical" href="https://cia.ift.ulaval.ca" />
+    
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Données structurées JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Club Intelligence Artificielle - Université Laval",
+      "alternateName": "CIA ULaval",
+      "url": "https://cia.ift.ulaval.ca",
+      "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+      "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Québec",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "parentOrganization": {
+        "@type": "EducationalOrganization",
+        "name": "Université Laval",
+        "url": "https://www.ulaval.ca"
+      },
+      "sameAs": [
+        "https://www.instagram.com/ciaulaval/",
+        "https://www.linkedin.com/company/cia-ulaval/",
+        "https://github.com/cia-ulaval",
+        "https://discord.gg/ZPVwCjMpAq"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "general",
+        "url": "https://discord.gg/ZPVwCjMpAq"
+      },
+      "knowsAbout": [
+        "Intelligence Artificielle",
+        "Machine Learning",
+        "Deep Learning",
+        "Computer Vision",
+        "Robotique"
+      ],
+      "subOrganization": [
+        {
+          "@type": "ResearchProject",
+          "name": "FlappyBrain EEG",
+          "description": "Jeu contrôlé par ondes cérébrales"
+        },
+        {
+          "@type": "ResearchProject", 
+          "name": "F1Tenth",
+          "description": "Voitures autonomes de course"
+        },
+        {
+          "@type": "ResearchProject",
+          "name": "Lenia",
+          "description": "Automates cellulaires et vie artificielle"
+        },
+        {
+          "@type": "ResearchProject",
+          "name": "MangaAI",
+          "description": "Intelligence artificielle pour manga"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <noscript>
+      Vous devez activer JavaScript pour accéder au site du Club Intelligence Artificielle de l'Université Laval.
+    </noscript>
+        <script type="module" src="/src/main.tsx"></script>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

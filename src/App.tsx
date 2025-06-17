@@ -1,7 +1,11 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react"; // ← Import ici
+
+// imports de pages
 import Home from "./pages/Home";
+import Projects from "./pages/Projects";
 import Management from "./pages/Management";
 import Gallery from "./pages/Gallery";
 import FlapEEG from "./pages/FlapEEG";
@@ -9,11 +13,14 @@ import MangaAI from "./pages/MangaAI";
 import F1Tenth from "./pages/F1Tenth";
 import Lenia from "./pages/Lenia";
 import DecisionTree from "./pages/DecisionTree";
-import Projects from "./pages/Projects";
 import Collaboration from "./pages/Collaboration";
+import JoinUs from "./pages/JoinUs";
+
+// Components
+import Navbar from "./components/Navbar";
+import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import JoinUs from "./pages/JoinUs";
 
 function App() {
   return (
@@ -36,6 +43,9 @@ function App() {
         </Routes>
         <Footer />
         <ScrollToTopButton />
+        {/* Vercel Analytics */}
+        <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   );
