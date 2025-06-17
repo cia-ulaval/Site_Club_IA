@@ -18,19 +18,19 @@ function Home() {
   const projects = [
     {
       title: t("home.projects.flapeeg.title"),
-      image: "/project/FlappyBrain.png",
+      image: "/project/FlappyBrain.webp",
       description: t("home.projects.flapeeg.description"),
       link: "/flapeeg",
     },
     {
       title: t("home.projects.f1tenth.title"),
-      image: "/project/f1tenthcar.png",
+      image: "/project/f1tenthcar.webp",
       description: t("home.projects.f1tenth.description"),
       link: "/f1tenth",
     },
     {
       title: t("home.projects.mangaai.title"),
-      image: "/project/mangaai2.png",
+      image: "/project/mangaai2.webp",
       description: t("home.projects.mangaai.description"),
       link: "/mangaai",
     },
@@ -72,7 +72,7 @@ function Home() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/" />
         <meta property="og:type" content="website" />
@@ -90,7 +90,7 @@ function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
 
         {/* URL canonique */}
@@ -107,7 +107,7 @@ function Home() {
               "@type": "Organization",
               "name": "Club Intelligence Artificielle - Université Laval",
               "url": "https://cia.ift.ulaval.ca",
-              "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+              "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
               "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
               "foundingLocation": {
                 "@type": "Place",

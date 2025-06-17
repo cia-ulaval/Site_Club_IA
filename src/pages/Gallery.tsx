@@ -16,43 +16,43 @@ function Gallery() {
   const images = {
     formation: [
       {
-        src: "/formation/tuto2.jpg",
+        src: "/formation/tuto2.webp",
         descKey: "gallery.images.formation.tuto2",
       },
     ],
     competition: [
       {
-        src: "/competition/competition-1.jpg",
+        src: "/competition/competition-1.webp",
         descKey: "gallery.images.competition.competition1",
       },
       {
-        src: "/competition/competition-2.jpg",
+        src: "/competition/competition-2.webp",
         descKey: "gallery.images.competition.competition2",
       },
       {
-        src: "/competition/competition-3.jpg",
+        src: "/competition/competition-3.webp",
         descKey: "gallery.images.competition.competition3",
       },
       {
-        src: "/competition/competition-a2024-1.jpg",
+        src: "/competition/competition-a2024-1.webp",
         descKey: "gallery.images.competition.competitionA2024",
       },
     ],
     project: [
       {
-        src: "/project/club2024.png",
+        src: "/project/club2024.webp",
         descKey: "gallery.images.project.club2024",
       },
       {
-        src: "/project/clubrencontre.png",
+        src: "/project/clubrencontre.webp",
         descKey: "gallery.images.project.clubrencontre",
       },
       {
-        src: "/project/f1tenth.jpg",
+        src: "/project/f1tenth.webp",
         descKey: "gallery.images.project.f1tenth",
       },
       {
-        src: "/project/f1tenthcar.png",
+        src: "/project/f1tenthcar.webp",
         descKey: "gallery.images.project.f1tenthcar",
       },
       {
@@ -62,35 +62,35 @@ function Gallery() {
     ],
     community: [
       {
-        src: "/implication/filleclub.png",
+        src: "/implication/filleclub.webp",
         descKey: "gallery.images.community.filleclub",
       },
       {
-        src: "/implication/eeg-presentation.jpg",
+        src: "/implication/eeg-presentation.webp",
         descKey: "gallery.images.community.eegPresentation",
       },
       {
-        src: "/implication/flappyeegmain.jpeg",
+        src: "/implication/flappyeegmain.webp",
         descKey: "gallery.images.community.flappyeegmain",
       },
       {
-        src: "/implication/front-image.png",
+        src: "/implication/front-image.webp",
         descKey: "gallery.images.community.frontImage",
       },
       {
-        src: "/implication/kalven-presenter.jpg",
+        src: "/implication/kalven-presenter.webp",
         descKey: "gallery.images.community.kalvenPresenter",
       },
       {
-        src: "/implication/kiosque.jpg",
+        src: "/implication/kiosque.webp",
         descKey: "gallery.images.community.kiosque",
       },
       {
-        src: "/implication/kiosque.jpeg",
+        src: "/implication/kiosque.webp",
         descKey: "gallery.images.community.kiosque2",
       },
       {
-        src: "/implication/presentation.png",
+        src: "/implication/presentation.webp",
         descKey: "gallery.images.community.presentation",
       },
       {
@@ -98,19 +98,19 @@ function Gallery() {
         descKey: "gallery.images.community.rencontrecia",
       },
       {
-        src: "/implication/table.jpeg",
+        src: "/implication/table.webp",
         descKey: "gallery.images.community.table",
       },
       {
-        src: "/implication/table2.jpeg",
+        src: "/implication/table2.webp",
         descKey: "gallery.images.community.table2",
       },
       {
-        src: "/implication/table3.jpeg",
+        src: "/implication/table3.webp",
         descKey: "gallery.images.community.table3",
       },
       {
-        src: "/implication/testclub.png",
+        src: "/implication/testclub.webp",
         descKey: "gallery.images.community.testclub",
       },
     ],
@@ -194,7 +194,7 @@ function Gallery() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/implication/front-image.png"
+          content="https://cia.ift.ulaval.ca/implication/front-image.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/gallery" />
         <meta property="og:type" content="website" />
@@ -212,7 +212,7 @@ function Gallery() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/implication/front-image.png"
+          content="https://cia.ift.ulaval.ca/implication/front-image.webp"
         />
 
         {/* URL canonique */}
@@ -234,7 +234,7 @@ function Gallery() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -255,36 +255,36 @@ function Gallery() {
                 {
                   "@type": "ImageObject",
                   "name": "Projets EEG et FlappyBrain",
-                  "url": "https://cia.ift.ulaval.ca/implication/flappyeegmain.jpeg",
+                  "url": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp",
                   "description": "Démonstration du projet FlappyBrain contrôlé par EEG"
                 },
                 {
                   "@type": "ImageObject",
                   "name": "Compétitions d'intelligence artificielle",
-                  "url": "https://cia.ift.ulaval.ca/competition/competition-a2024-1.jpg",
+                  "url": "https://cia.ift.ulaval.ca/competition/competition-a2024webp",
                   "description": "Participation aux compétitions IA automne 2024"
                 },
                 {
                   "@type": "ImageObject",
                   "name": "Formations et ateliers IA",
-                  "url": "https://cia.ift.ulaval.ca/formation/tuto2.jpg",
+                  "url": "https://cia.ift.ulaval.ca/formation/tuto2.webp",
                   "description": "Séances de formation en intelligence artificielle"
                 },
                 {
                   "@type": "ImageObject",
                   "name": "Événements communautaires",
-                  "url": "https://cia.ift.ulaval.ca/implication/kiosque.jpg",
+                  "url": "https://cia.ift.ulaval.ca/implication/kiosque.webp",
                   "description": "Kiosque et événements de promotion du club"
                 },
                 {
                   "@type": "ImageObject",
                   "name": "Projet F1Tenth",
-                  "url": "https://cia.ift.ulaval.ca/project/f1tenthcar.png",
+                  "url": "https://cia.ift.ulaval.ca/project/f1tenthcar.webp",
                   "description": "Voiture autonome du projet F1Tenth"
                 }
               ],
               "numberOfItems": 18,
-              "image": "https://cia.ift.ulaval.ca/implication/front-image.png"
+              "image": "https://cia.ift.ulaval.ca/implication/front-image.webp"
             }
           `}
         </script>

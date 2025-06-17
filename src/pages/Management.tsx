@@ -18,7 +18,7 @@ const Management: React.FC = () => {
     {
       name: "Nathaniel D'Amours",
       role: "Président",
-      imgSrc: "/portrait/Nathaniel.jpg",
+      imgSrc: "/portrait/Nathaniel.webp",
       linkedIn: "https://www.linkedin.com/in/nathaniel-damours",
     },
   ];
@@ -28,25 +28,25 @@ const Management: React.FC = () => {
     {
       name: "Jordan Mathieu",
       role: "Leader des projets",
-      imgSrc: "/portrait/Jordan.jpg",
+      imgSrc: "/portrait/Jordan.webp",
       linkedIn: "https://www.linkedin.com/in/jordan-math/",
     },
     {
       name: "Louis-Étienne Messier",
       role: "Leader en logistique",
-      imgSrc: "/portrait/Louis.jpg",
+      imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
     {
       name: "Alexandrine",
       role: "Leader des finances",
-      imgSrc: "/portrait/Alexandrine.jpg",
+      imgSrc: "/portrait/Alexandrine.webp",
       linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
     },
     {
       name: "Yves",
       role: "Leader du marketing",
-      imgSrc: "/portrait/Yves.png",
+      imgSrc: "/portrait/Yves.webp",
       linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
     },
     {
@@ -89,7 +89,7 @@ const Management: React.FC = () => {
     {
       name: "Anthony",
       role: "Responsable des relations externes",
-      imgSrc: "/portrait/Anthony.jpg",
+      imgSrc: "/portrait/Anthony.webp",
       linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
     },
     {
@@ -109,7 +109,7 @@ const Management: React.FC = () => {
     {
       name: "Dereck",
       role: "Responsable du site web",
-      imgSrc: "/portrait/Dereck.HEIC",
+      imgSrc: "/portrait/Dereck.webp",
       linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
     },
     {
@@ -129,13 +129,13 @@ const Management: React.FC = () => {
     {
       name: "Mathieu Bazinet",
       role: "Responsable des formations",
-      imgSrc: "/portrait/Mathieu.jpg",
+      imgSrc: "/portrait/Mathieu.webp",
       linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
     {
       name: "Almaoudata",
       role: "Responsable des compétitions",
-      imgSrc: "/portrait/almaoudata.jpeg",
+      imgSrc: "/portrait/almaoudata.webp",
       linkedIn: "https://www.linkedin.com/in/alma-walet-93418b325/",
     },
     {
@@ -377,7 +377,7 @@ const Management: React.FC = () => {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
         <meta
           property="og:url"
@@ -398,7 +398,7 @@ const Management: React.FC = () => {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
 
         {/* URL canonique */}
@@ -420,7 +420,7 @@ const Management: React.FC = () => {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",

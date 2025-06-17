@@ -123,7 +123,7 @@ function Lenia() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/leniacover.png"
+          content="https://cia.ift.ulaval.ca/project/leniacover.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/lenia" />
         <meta property="og:type" content="article" />
@@ -141,7 +141,7 @@ function Lenia() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/leniacover.png"
+          content="https://cia.ift.ulaval.ca/project/leniacover.webp"
         />
 
         {/* URL canonique */}
@@ -165,7 +165,7 @@ function Lenia() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -211,8 +211,8 @@ function Lenia() {
                 "patterns",
                 "simulation"
               ],
-              "screenshot": "https://cia.ift.ulaval.ca/project/lenia.png",
-              "image": "https://cia.ift.ulaval.ca/project/leniacover.png",
+              "screenshot": "https://cia.ift.ulaval.ca/project/lenia.webp",
+              "image": "https://cia.ift.ulaval.ca/project/leniacover.webp",
               "codeRepository": "https://github.com/cia-ulaval/LENIA-frontend",
               "programmingLanguage": "JavaScript"
             }
@@ -286,7 +286,7 @@ function Lenia() {
                   className="w-full"
                 >
                   <ImageWithGlow
-                    src="/project/lenia.png"
+                    src="/project/lenia.webp"
                     alt={t("lenia.images.pattern.alt")}
                   />
                 </motion.div>

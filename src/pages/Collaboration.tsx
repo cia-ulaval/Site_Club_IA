@@ -88,27 +88,27 @@ const currentSponsors = [
   {
     name: "Université Laval",
     tier: "Platinum",
-    logo: "/sponsors/.png",
+    logo: "/sponsors/.webp",
   },
   {
     name: "AESGUL",
     tier: "Gold",
-    logo: "/sponsors/.png",
+    logo: "/sponsors/.webp",
   },
   {
     name: "ASETIN",
     tier: "Gold",
-    logo: "/sponsors/.png",
+    logo: "/sponsors/.webp",
   },
   {
     name: "MonAvenirTI",
     tier: "Gold",
-    logo: "/sponsors/.png",
+    logo: "/sponsors/.webp",
   },
   {
     name: "Kernelor",
     tier: "Bronze",
-    logo: "/sponsors/.png",
+    logo: "/sponsors/.webp",
   },
 ];
 
@@ -376,7 +376,7 @@ function Collaboration() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
         <meta
           property="og:url"
@@ -397,7 +397,7 @@ function Collaboration() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.png"
+          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
 
         {/* URL canonique */}
@@ -419,7 +419,7 @@ function Collaboration() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",

@@ -159,7 +159,7 @@ function MangaAI() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/mangaai2.png"
+          content="https://cia.ift.ulaval.ca/project/mangaai2.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/mangaai" />
         <meta property="og:type" content="article" />
@@ -177,7 +177,7 @@ function MangaAI() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/mangaai2.png"
+          content="https://cia.ift.ulaval.ca/project/mangaai2.webp"
         />
 
         {/* URL canonique */}
@@ -201,7 +201,7 @@ function MangaAI() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -247,8 +247,8 @@ function MangaAI() {
                 "Interface temps réel",
                 "Support multiple langues"
               ],
-              "screenshot": "https://cia.ift.ulaval.ca/project/mangaai.png",
-              "image": "https://cia.ift.ulaval.ca/project/mangaai2.png"
+              "screenshot": "https://cia.ift.ulaval.ca/project/mangaai.webp",
+              "image": "https://cia.ift.ulaval.ca/project/mangaai2.webp"
             }
           `}
         </script>
@@ -336,7 +336,7 @@ function MangaAI() {
               </div>
               <div className="order-first lg:order-last">
                 <ImageWithGlow
-                  src="/project/manga109.png"
+                  src="/project/manga109.webp"
                   alt={t("mangaai.images.manga109.alt")}
                   caption={t("mangaai.images.manga109.caption")}
                 />
@@ -383,7 +383,7 @@ function MangaAI() {
                   }}
                 >
                   <motion.img
-                    src="/project/mangaai.png"
+                    src="/project/mangaai.webp"
                     alt={t("mangaai.images.example.alt")}
                     className="w-full object-cover mx-auto rounded-xl shadow-xl border border-red-800/30"
                     style={{ aspectRatio: "4/3", maxHeight: "350px" }}

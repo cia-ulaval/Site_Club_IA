@@ -98,7 +98,7 @@ function FlapEEG() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/flapeeg" />
         <meta property="og:type" content="article" />
@@ -116,7 +116,7 @@ function FlapEEG() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.webp"
         />
 
         {/* URL canonique */}
@@ -140,7 +140,7 @@ function FlapEEG() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -213,8 +213,8 @@ function FlapEEG() {
                 "jeu mental",
                 "brain-computer interface"
               ],
-              "screenshot": "https://cia.ift.ulaval.ca/implication/flappyeegmain.jpeg",
-              "image": "https://cia.ift.ulaval.ca/project/FlappyBrain.png",
+              "screenshot": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp",
+              "image": "https://cia.ift.ulaval.ca/project/FlappyBrain.webp",
               "codeRepository": "https://github.com/cia-ulaval/FlapEEG_interface_v1",
               "programmingLanguage": ["Python", "JavaScript", "React"],
               "requirements": "Casque EEG Muse, ordinateur compatible"
@@ -244,7 +244,7 @@ function FlapEEG() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div>
                   <img
-                    src="/implication/flappyeegmain.jpeg"
+                    src="/implication/flappyeegmain.webp"
                     alt={t("flapeeg.hero.image.alt")}
                     className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full"
                   />
@@ -312,7 +312,7 @@ function FlapEEG() {
                       autoPlay
                       loop
                       playsInline
-                      poster="/project/flappyproto-poster.jpg"
+                      poster="/project/flappyproto-poster.webp"
                       aria-label={t(
                         "flapeeg.timeline.beginning.video.ariaLabel"
                       )}
@@ -358,7 +358,7 @@ function FlapEEG() {
                 </div>
                 <div className="flex-1 flex justify-center items-center">
                   <img
-                    src="/project/FlappyBrain.png"
+                    src="/project/FlappyBrain.webp"
                     alt={t("flapeeg.timeline.dataCollection.image.alt")}
                     className="rounded-2xl shadow-2xl w-full max-w-lg"
                     style={{

@@ -112,7 +112,7 @@ function F1Tenth() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/f1tenthcar.png"
+          content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/f1tenth" />
         <meta property="og:type" content="article" />
@@ -130,7 +130,7 @@ function F1Tenth() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/f1tenthcar.png"
+          content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp"
         />
 
         {/* URL canonique */}
@@ -154,7 +154,7 @@ function F1Tenth() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -264,8 +264,8 @@ function F1Tenth() {
                 "robotique",
                 "navigation autonome"
               ],
-              "screenshot": "https://cia.ift.ulaval.ca/project/f1tenth.png",
-              "image": "https://cia.ift.ulaval.ca/project/f1tenthcar.png",
+              "screenshot": "https://cia.ift.ulaval.ca/project/f1tenth.webp",
+              "image": "https://cia.ift.ulaval.ca/project/f1tenthcar.webp",
               "codeRepository": "https://github.com/cia-ulaval/F1-team-1",
               "programmingLanguage": ["Python", "C++", "ROS"],
               "requirements": "Plateforme F1Tenth, LIDAR, caméra, ordinateur embarqué"
@@ -291,7 +291,7 @@ function F1Tenth() {
               <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
                 <div className="w-full lg:w-1/2 lg:order-2">
                   <img
-                    src="/project/f1tenthcar.png"
+                    src="/project/f1tenthcar.webp"
                     alt={t("f1tenth.hero.imageAlt")}
                     className="w-full rounded-xl shadow-2xl"
                   />
@@ -370,7 +370,7 @@ function F1Tenth() {
               </h2>
               <div className="flex flex-col items-center">
                 <img
-                  src="/project/vaul.png"
+                  src="/project/vaul.webp"
                   alt="VAUL Logo"
                   className="w-40 h-auto mb-4"
                 />

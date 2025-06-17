@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet";
 const projects = [
   {
     key: "flapeeg",
-    image: "/project/FlappyBrain.png",
+    image: "/project/FlappyBrain.webp",
     defaultTitle: "FlapEEG",
     defaultDescription: "A mind-controlled video game",
     link: "/flapeeg",
@@ -15,7 +15,7 @@ const projects = [
   },
   {
     key: "f1tenth",
-    image: "/project/f1tenthcar.png",
+    image: "/project/f1tenthcar.webp",
     defaultTitle: "F1Tenth",
     defaultDescription: "EMG racing with 1/10th-scale F1 cars",
     link: "/f1tenth",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     key: "decisiontree",
-    image: "/project/decisiontree.jpg",
+    image: "/project/decisiontree.webp",
     defaultTitle: "Decision Tree",
     defaultDescription: "Research and development of decision trees",
     link: "/decisiontree",
@@ -38,7 +38,7 @@ const projects = [
   },
   {
     key: "mangaai",
-    image: "/project/mangaai2.png",
+    image: "/project/mangaai2.webp",
     defaultTitle: "MangaAI",
     defaultDescription: "Automatic manga translation and analysis",
     link: "/mangaai",
@@ -86,7 +86,7 @@ function Projects() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.webp"
         />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/projects" />
         <meta property="og:type" content="website" />
@@ -104,7 +104,7 @@ function Projects() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/FlappyBrain.png"
+          content="https://cia.ift.ulaval.ca/project/FlappyBrain.webp"
         />
 
         {/* URL canonique */}
@@ -126,7 +126,7 @@ function Projects() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -210,7 +210,7 @@ function Projects() {
                     className="w-full h-64 bg-cover bg-center"
                     style={{
                       backgroundImage: `url(${
-                        project.image || "/project/placeholder.jpg"
+                        project.image || "/project/placeholder.webp"
                       })`,
                     }}
                   />

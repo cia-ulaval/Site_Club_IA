@@ -26,7 +26,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
             <img
-              src="/banner/CIA_LOGO.png"
+              src="/banner/CIA_LOGO.webp"
               alt="CIA Logo"
               width={35}
               height={35}

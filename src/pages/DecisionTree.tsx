@@ -77,7 +77,7 @@ function DecisionTree() {
         />
         <meta
           property="og:image"
-          content="https://cia.ift.ulaval.ca/project/decisiontree.jpg"
+          content="https://cia.ift.ulaval.ca/project/decisiontree.webp"
         />
         <meta
           property="og:url"
@@ -98,7 +98,7 @@ function DecisionTree() {
         />
         <meta
           name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/decisiontree.jpg"
+          content="https://cia.ift.ulaval.ca/project/decisiontree.webp"
         />
 
         {/* URL canonique */}
@@ -138,7 +138,7 @@ function DecisionTree() {
                 "@type": "Organization",
                 "name": "Club Intelligence Artificielle - Université Laval",
                 "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.png",
+                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
                 "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
                 "foundingLocation": {
                   "@type": "Place",
@@ -202,7 +202,7 @@ function DecisionTree() {
                 "Algorithmes d'apprentissage",
                 "Classification automatique"
               ],
-              "image": "https://cia.ift.ulaval.ca/project/decisiontree.jpg",
+              "image": "https://cia.ift.ulaval.ca/project/decisiontree.webp",
               "funding": {
                 "@type": "Organization",
                 "name": "Université Laval"
@@ -243,7 +243,7 @@ function DecisionTree() {
                 </div>
                 <div className="flex justify-center">
                   <img
-                    src="/project/decisiontree.jpg"
+                    src="/project/decisiontree.webp"
                     alt={t("decisionTree.hero.imageAlt")}
                     className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-4/5 max-w-md aspect-square object-cover"
                   />

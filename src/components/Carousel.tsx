@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const images = [
-  "/banner/aesgul.png",
-  "/banner/asetin.png",
-  "/banner/ti.jpeg",
-  "/banner/ulaval.png",
-  "/banner/sifi.jpeg",
+  "/banner/aesgul.webp",
+  "/banner/asetin.webp",
+  "/banner/ti.webp",
+  "/banner/ulaval.webp",
+  "/banner/sifi.webp",
 ];
 
 const IMAGE_WIDTH = 120; // px
