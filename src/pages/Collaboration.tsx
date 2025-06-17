@@ -332,7 +332,7 @@ const ContactForm = () => {
   );
 };
 
-function SponsorshipPage() {
+function Collaboration() {
   const { t } = useTranslation();
   const contactRef = useRef<HTMLDivElement>(null);
   const scrollToContact = () => {
@@ -679,4 +679,4 @@ function SponsorshipPage() {
   );
 }
 
-export default SponsorshipPage;
+export default Collaboration;
