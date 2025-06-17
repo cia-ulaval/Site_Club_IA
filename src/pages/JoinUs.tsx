@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 function JoinUs() {
   const { t } = useTranslation();
@@ -178,12 +179,12 @@ function JoinUs() {
             <p className="text-lg text-gray-400 mb-6">
               {t("joinus.collabText")}
             </p>
-            <a
-              href="/collaboration"
+            <Link
+              to="/collaboration"
               className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
             >
               {t("joinus.collabButton")}
-            </a>
+            </Link>
             {/* Contact Buttons Section */}
             <div className="flex justify-center gap-10 pt-16">
               <a
