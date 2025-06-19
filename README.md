@@ -54,6 +54,13 @@ We welcome all contributions:
 - Improve the documentation  
 - Help us scale the platform further
 
+## Assets & Branding
+
+The source code of this website is licensed under the MIT License.  
+However, all visual assets (including logos, images, and branding elements) are the property of the Artificial Intelligence Club at Université Laval and **are not** covered by the MIT license.
+
+Please contact us before reusing these assets in other projects or media.
+
 ### Getting Started
 
 1. Fork the repository  
@@ -85,3 +92,4 @@ Created and maintained by [@Dereckbelanger152](https://github.com/Dereckbelanger
 <p align="center">
   Built by students, for the future. Powered by collaboration.
 </p>
+
