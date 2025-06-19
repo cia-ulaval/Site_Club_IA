@@ -406,11 +406,11 @@ function Lenia() {
               </motion.p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4 max-w-full px-2 mx-auto">
+            <div className="flex flex-wrap justify-center max-w-full">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={index}
-                  className="w-56 flex-shrink-0"
+                  className=" flex-shrink-0"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index, duration: 0.6 }}

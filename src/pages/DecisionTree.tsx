@@ -227,25 +227,30 @@ function DecisionTree() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                <div className="flex flex-col justify-center mt-6 md:mt-0">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+                <div className="flex flex-col justify-center space-y-6 sm:space-y-8 px-4 sm:px-6 lg:px-0">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                       {t("decisionTree.hero.title")}
                     </span>
                   </h1>
-                  <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
-                    {t("decisionTree.hero.description1")}
-                  </p>
-                  <p className="text-gray-400 text-justify">
-                    {t("decisionTree.hero.description2")}
-                  </p>
+                  <div className="space-y-4 sm:space-y-6">
+                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed text-justify">
+                      {t("decisionTree.hero.description1")}
+                    </p>
+                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed text-justify">
+                      {t("decisionTree.hero.description2")}
+                    </p>
+                    <p className="text-gray-400 text-base sm:text-lg leading-relaxed text-justify">
+                      {t("decisionTree.hero.description3")}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center px-4 sm:px-8 lg:px-0 mt-8 lg:mt-0">
                   <img
                     src="/project/decisiontree.webp"
                     alt={t("decisionTree.hero.imageAlt")}
-                    className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-4/5 max-w-md aspect-square object-cover"
+                    className="rounded-xl shadow-2xl w-full max-w-sm sm:max-w-md lg:max-w-lg aspect-square object-cover"
                   />
                 </div>
               </div>

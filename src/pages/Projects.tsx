@@ -205,7 +205,7 @@ function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm h-120 transition-all duration-300">
+                <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300 h-auto min-h-[400px] sm:min-h-[450px]">
                   <div
                     className="w-full h-64 bg-cover bg-center"
                     style={{
@@ -214,14 +214,14 @@ function Projects() {
                       })`,
                     }}
                   />
-                  <div className="p-6 flex flex-col h-48">
+                  <div className="p-6 flex flex-col min-h-[200px]">
                     <h3 className="text-xl font-semibold text-gray-200 mb-2">
                       {t(
                         `home.projects.${project.key}.title`,
                         project.defaultTitle
                       )}
                     </h3>
-                    <p className="text-gray-400 mb-4 flex-grow overflow-hidden line-clamp-3">
+                    <p className="text-gray-400 mb-4 flex-grow overflow-visible break-words leading-relaxed text-sm sm:text-base">
                       {t(
                         `home.projects.${project.key}.description`,
                         project.defaultDescription
