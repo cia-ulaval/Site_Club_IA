@@ -33,18 +33,18 @@ const Management: React.FC = () => {
     },
     {
       name: "Louis-Étienne Messier",
-      role: "Leader en logistique",
+      role: "Leader de la logistique",
       imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
     {
-      name: "Alexandrine",
+      name: "Alexandrine Lehoux",
       role: "Leader des finances",
       imgSrc: "/portrait/Alexandrine.webp",
       linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
     },
     {
-      name: "Yves",
+      name: "Yves Mamadou Faye",
       role: "Leader du marketing",
       imgSrc: "/portrait/Yves.webp",
       linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
@@ -56,71 +56,72 @@ const Management: React.FC = () => {
       linkedIn: "",
       isVacant: true,
     },
-    {
-      name: "Julien",
-      role: "Leader de la logistique",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true, //Enlever quand Julien donne ses infos
-    },
   ];
 
   // Responsables Talents
   const talentResponsables: TeamMember[] = [
     {
-      name: "",
+      name: "Hiba Arfaoui",
       role: "Responsable du recrutement",
-      isVacant: true,
+      imgSrc: "/portrait/HibaArfoui.png",
+      linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
     },
     {
       name: "",
       role: "Responsable de l'embarquement",
+      imgSrc: "",
+      linkedIn: "",
       isVacant: true,
     },
     {
-      name: "",
+      name: "Rana Azemdroub",
       role: "Responsable de l'engagement",
-      isVacant: true,
+      imgSrc: "/portrait/RanaAzemdroub.png",
+      linkedIn: "https://www.linkedin.com/in/rana-azemdroub/",
     },
   ];
 
   // Responsables Finances
   const financeResponsables: TeamMember[] = [
     {
-      name: "Anthony",
+      name: "Anthony Lavertu",
       role: "Responsable des relations externes",
       imgSrc: "/portrait/Anthony.webp",
       linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
     },
     {
-      name: "",
+      name: "Kaoutar Mimouni",
       role: "Responsable des partenariats",
-      isVacant: true,
+      imgSrc: "/portrait/KaoutarMimouni.png",
+      linkedIn: "https://www.linkedin.com/in/kaoutar-mimouni/",
     },
     {
-      name: "",
+      name: "Adriana Maria Paternina Paez",
       role: "Responsable du trésor",
-      isVacant: true,
+      imgSrc: "/portrait/AdrianaMaria.png",
+      linkedIn: "https://www.linkedin.com/in/adriana-paternina/",
     },
   ];
 
   // Responsables Marketing
   const marketingResponsables: TeamMember[] = [
     {
-      name: "Dereck",
+      name: "Dereck Bélanger",
       role: "Responsable du site web",
       imgSrc: "/portrait/Dereck.webp",
       linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
     },
     {
-      name: "",
+      name: "Quentin Callay",
       role: "Responsable des designs",
-      isVacant: true,
+      imgSrc: "/portrait/QuentinCallay.png",
+      linkedIn: "https://www.linkedin.com/in/quentin-callay-7bb4612b0/",
     },
     {
-      name: "",
+      name: "Karima Habbout",
       role: "Responsable des communications",
-      isVacant: true,
+      imgSrc: "/portrait/KarimaHabbout.png",
+      linkedIn: "https://www.linkedin.com/in/karimahabbout/",
     },
   ];
 
@@ -133,19 +134,23 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
     {
-      name: "Almaoudata",
+      name: "Almaoudata Walet Babahmed",
       role: "Responsable des compétitions",
       imgSrc: "/portrait/almaoudata.webp",
       linkedIn: "https://www.linkedin.com/in/alma-walet-93418b325/",
     },
     {
-      name: "",
+      name: "William Blanchet Lafrenière",
       role: "Responsable du social",
+      imgSrc: "",
+      linkedIn:
+        "https://www.linkedin.com/in/william-blanchet-lafrenière-8337282b1/",
       isVacant: true,
     },
     {
       name: "",
       role: "Responsable de la reconnaissance",
+      imgSrc: "",
       isVacant: true,
     },
   ];
