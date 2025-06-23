@@ -1,61 +1,95 @@
-# 🧠 Artificial Intelligence Club - Université Laval
+# Artificial Intelligence Club – Université Laval
 
 <p align="center">
   <img src="./public/banner/CIA_LOGO.webp" alt="CIA Logo" width="150">
 </p>
 
-## Project Description
+<p align="center">
+  <strong>Open source. Student-led. Built to inspire.</strong><br>
+  The official website of the Artificial Intelligence Club at Université Laval.
+</p>
 
-Welcome to the official repository of the **Artificial Intelligence Club (CIA)** from **Université Laval**.  
-This website's mission is to **showcase our projects**, **share our achievements**, and **document our progress** in the field of artificial intelligence.
+---
 
-It will also serve as a **central hub** for our **contact information**, **social media**, and any other **external communication**. 🚀
+## About the Project
 
-The website is **under continuous development**, and we are excited to regularly add **new content**, **features**, and updates to highlight our **collective progress**.
+This repository hosts the official website of the **Club d’Intelligence Artificielle (CIA)** at **Université Laval**.
+
+Our goal is to:
+
+- Present our student-led **AI projects**
+- Share club **updates, research, and tools**
+- Serve as a **hub** for events, communication, and outreach
+
+The website is now live:  
+[https://cia.ift.ulaval.ca](https://cia.ift.ulaval.ca)
+
+It’s a platform for both visibility and collaboration — designed, developed, and maintained by students.
 
 ---
 
 ## Technologies Used
 
-This project relies on several modern technologies:
+The project leverages a mix of modern front-end technologies:
 
-- **HTML / CSS / JavaScript**
-- **React.js**
-- **Vue.js**
-- **Bootstrap**
+- React.js  
+- Vue.js  
+- HTML / CSS / JavaScript  
+- Bootstrap
 
----
-
-## Contribution
-
-We are always open to **contributions**!  
-Whether you are a club member or simply passionate about AI, feel free to:
-
-- **Suggest improvements**
-- **Report bugs**
-
-To contribute, simply clone the repository, create a new branch, and submit a Pull Request (PR).  
-We will carefully review each contribution.
+The site is responsive, fast, and continuously evolving — with a focus on clarity, accessibility, and performance.
 
 ---
 
-## Contact
+## Open Source & Contributions
 
-To follow us or get in touch, you can find us on:
+This project is proudly open source.
 
-- [Our Website]() _(under development)_
-- [Instagram](https://www.instagram.com/ciaulaval/)
-- [LinkedIn](https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all)
+If you believe in student-driven innovation or want to support grassroots AI initiatives, consider giving the repository a **⭐️ star** — it helps us grow and reach others.
 
-Don't hesitate to contact us for any questions, collaborations, or just to exchange ideas.
+We welcome all contributions:
+
+- Suggest improvements or new features  
+- Report issues or bugs  
+- Improve the documentation  
+- Help us scale the platform further
+
+## Assets & Branding
+
+The source code of this website is licensed under the MIT License.  
+However, all visual assets (including logos, images, and branding elements) are the property of the Artificial Intelligence Club at Université Laval and **are not** covered by the MIT license.
+
+Please contact us before reusing these assets in other projects or media.
+
+### Getting Started
+
+1. Fork the repository  
+2. Create a new branch (`git checkout -b feature/your-feature`)  
+3. Commit your changes (`git commit -m "Add feature"`)  
+4. Push to your fork (`git push origin feature/your-feature`)  
+5. Open a **Pull Request**
+
+We review all contributions thoughtfully. Whether you're a club member or an external developer, your input matters.
 
 ---
 
-## Continuous Updates
+## Connect With Us
 
-This website is **actively being developed**,  
-Stay tuned for upcoming updates! 🚀
+- Website: [cia.ift.ulaval.ca](https://cia.ift.ulaval.ca)  
+- Instagram: [@ciaulaval](https://www.instagram.com/ciaulaval/)  
+- LinkedIn: [CIA Université Laval](https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all)
+
+For questions or ideas, feel free to reach out. We’re always open to connecting with like-minded people.
 
 ---
 
-## Author: @Dereckbelanger152
+## Maintainer
+
+Created and maintained by [@Dereckbelanger152](https://github.com/Dereckbelanger152)
+
+---
+
+<p align="center">
+  Built by students, for the future. Powered by collaboration.
+</p>
+
