@@ -367,11 +367,6 @@ function MangaAI() {
                   title={t("mangaai.process.step3.title")}
                   description={t("mangaai.process.step3.description")}
                 />
-                <ProcessStep
-                  number={4}
-                  title={t("mangaai.process.step4.title")}
-                  description={t("mangaai.process.step4.description")}
-                />
               </div>
 
               <div className="flex justify-center lg:justify-end items-center">

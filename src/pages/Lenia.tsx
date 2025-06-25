@@ -53,11 +53,6 @@ function Lenia() {
       description: t("lenia.features.continuous.description"),
     },
     {
-      icon: <Sparkles className="w-6 h-6 text-red-400" />,
-      title: t("lenia.features.emergent.title"),
-      description: t("lenia.features.emergent.description"),
-    },
-    {
       icon: <ZoomIn className="w-6 h-6 text-red-400" />,
       title: t("lenia.features.research.title"),
       description: t("lenia.features.research.description"),

@@ -87,7 +87,7 @@ const fundedProjects = [
 const currentSponsors = [
   {
     name: "Université Laval",
-    tier: "Platinum",
+    tier: "Gold",
     //logo: "/sponsors/.webp",
     //logo can be added if we want
   },
@@ -109,7 +109,7 @@ const currentSponsors = [
   },
   {
     name: "Sifi Labs",
-    tier: "Bronze",
+    tier: "Silver",
   },
 ];
 
