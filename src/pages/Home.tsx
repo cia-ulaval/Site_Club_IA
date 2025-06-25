@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Play, Pause, Volume2, VolumeX, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
@@ -9,11 +8,6 @@ import InstaPostEmbed from "../components/InstaPostEmbed";
 
 function Home() {
   const { t } = useTranslation();
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-
-  const togglePlay = () => setIsPlaying(!isPlaying);
-  const toggleMute = () => setIsMuted(!isMuted);
 
   const projects = [
     {
@@ -129,25 +123,24 @@ function Home() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 md:py-20 w-full max-w-7xl mx-auto px-4 md:px-6">
+      <section className="relative overflow-hidden py-8 md:py-12 w-full max-w-7xl mx-auto px-4 md:px-8 min-h-screen flex items-start md:items-center justify-center">
         {/* Background decorative elements */}
         <div className="absolute inset-0 pointer-events-none hidden md:block">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-red-500/10 rounded-full blur-xl" />
-          <div className="absolute bottom-20 right-10 w-48 h-48 bg-red-600/5 rounded-full blur-2xl" />
+          <div className="absolute top-20 left-10 w-40 h-40 bg-red-500/10 rounded-full blur-xl" />
+          <div className="absolute bottom-20 right-10 w-56 h-56 bg-red-600/5 rounded-full blur-2xl" />
         </div>
 
-        <div className="relative z-10">
+        <div className="relative z-10 w-full">
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 items-center">
             {/* Left Side - Title & Subtitle & About */}
-            <div className="space-y-6">
+            <div className="space-y-10">
               {/* Title */}
               <motion.h1
-                className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 via-red-500 to-red-600">
                   {t("home.header.title")}
@@ -156,40 +149,37 @@ function Home() {
 
               {/* Subtitle */}
               <motion.p
-                className="text-lg md:text-xl text-gray-300 font-light leading-relaxed"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                viewport={{ once: true }}
+                className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
               >
                 {t("home.header.subtitle")}
               </motion.p>
 
               {/* About Section */}
               <motion.div
-                className="space-y-4"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1 }}
-                viewport={{ once: true }}
+                className="space-y-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
               >
-                <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
                   {t("home.about.title")}
                 </h2>
-                <p className="text-gray-400 text-base leading-relaxed">
+                <p className="text-gray-400 text-lg leading-relaxed">
                   {t("home.about.description")}
                 </p>
               </motion.div>
             </div>
 
-            {/* Right Side - Instagram (hidden on mobile) */}
-            <div className="hidden lg:flex justify-center items-center h-full">
+            {/* Right Side - Instagram (visible on all screens) */}
+            <div className="flex justify-center items-center h-full mt-10 md:mt-0">
               <motion.div
                 className="w-full h-full flex justify-center items-center"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
               >
                 <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
                   <InstaPostEmbed url="https://www.instagram.com/p/DIUeVjTOhfZ" />
@@ -216,10 +206,14 @@ function Home() {
             <motion.div
               key={index}
               className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-lg hover:shadow-xl hover:shadow-red-900/20 transition-all duration-300"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 * index }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.1 * index,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true, margin: "-100px" }}
             >
               <img
                 src={project.image}
@@ -250,25 +244,25 @@ function Home() {
           className="text-4xl font-bold gradient-text mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           {t("home.collaboration.title")}
         </motion.h2>
         <motion.p
           className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           {t("home.collaboration.description")}
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-50px" }}
         >
           <Link
             to="/collaboration"
