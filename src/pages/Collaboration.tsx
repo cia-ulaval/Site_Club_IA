@@ -88,44 +88,45 @@ const currentSponsors = [
   {
     name: "Université Laval",
     tier: "Platinum",
-    logo: "/sponsors/.webp",
+    //logo: "/sponsors/.webp",
+    //logo can be added if we want
   },
   {
     name: "AESGUL",
     tier: "Gold",
-    logo: "/sponsors/.webp",
   },
   {
     name: "ASETIN",
     tier: "Gold",
-    logo: "/sponsors/.webp",
   },
   {
     name: "MonAvenirTI",
     tier: "Gold",
-    logo: "/sponsors/.webp",
   },
   {
     name: "Kernelor",
     tier: "Bronze",
-    logo: "/sponsors/.webp",
+  },
+  {
+    name: "Sifi Labs",
+    tier: "Bronze",
   },
 ];
 
 // Success metrics
 const impactMetrics = [
   {
-    metric: "6",
+    metric: "3",
     labelKey: "projectsCompleted",
     icon: <Rocket className="w-8 h-8 text-red-400" />,
   },
   {
-    metric: "35+",
+    metric: "30+",
     labelKey: "studentResearchers",
     icon: <Users className="w-8 h-8 text-red-400" />,
   },
   {
-    metric: "3",
+    metric: "6",
     labelKey: "industryPartners",
     icon: <Briefcase className="w-8 h-8 text-red-400" />,
   },

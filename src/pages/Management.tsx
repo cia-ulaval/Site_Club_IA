@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin, ExternalLink, User } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 interface TeamMember {
@@ -13,11 +14,12 @@ interface TeamMember {
 }
 
 const Management: React.FC = () => {
+  const { t } = useTranslation();
   // Président
   const president: TeamMember[] = [
     {
       name: "Nathaniel D'Amours",
-      role: "Président",
+      role: t("management.roles.president"),
       imgSrc: "/portrait/Nathaniel.webp",
       linkedIn: "https://www.linkedin.com/in/nathaniel-damours",
     },
@@ -27,31 +29,37 @@ const Management: React.FC = () => {
   const leaders: TeamMember[] = [
     {
       name: "Jordan Mathieu",
-      role: "Leader des projets",
+      role: t("management.roles.projectsLeader"),
       imgSrc: "/portrait/Jordan.webp",
       linkedIn: "https://www.linkedin.com/in/jordan-math/",
     },
     {
       name: "Louis-Étienne Messier",
-      role: "Leader de la logistique",
+      role: t("management.roles.logisticsLeader"),
       imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
     {
       name: "Alexandrine Lehoux",
-      role: "Leader des finances",
+      role: t("management.roles.financeLeader"),
       imgSrc: "/portrait/Alexandrine.webp",
       linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
     },
     {
       name: "Yves Mamadou Faye",
-      role: "Leader du marketing",
+      role: t("management.roles.marketingLeader"),
       imgSrc: "/portrait/Yves.webp",
       linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
     },
     {
+      name: "Jade Piller Cammal",
+      role: t("management.roles.talentsLeader"),
+      imgSrc: "/portrait/JadePillerCammal.png",
+      linkedIn: "https://linkedin.com/in/jade-piller-cammal-242b88261/",
+    },
+    {
       name: "",
-      role: "Leader des talents",
+      role: t("management.roles.activitiesLeader"),
       imgSrc: "",
       linkedIn: "",
       isVacant: true,
@@ -62,20 +70,13 @@ const Management: React.FC = () => {
   const talentResponsables: TeamMember[] = [
     {
       name: "Hiba Arfaoui",
-      role: "Responsable du recrutement",
+      role: t("management.roles.recruitmentManager"),
       imgSrc: "/portrait/HibaArfoui.png",
       linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
     },
     {
-      name: "",
-      role: "Responsable de l'embarquement",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
-    },
-    {
       name: "Rana Azemdroub",
-      role: "Responsable de l'engagement",
+      role: t("management.roles.engagementManager"),
       imgSrc: "/portrait/RanaAzemdroub.png",
       linkedIn: "https://www.linkedin.com/in/rana-azemdroub/",
     },
@@ -85,19 +86,25 @@ const Management: React.FC = () => {
   const financeResponsables: TeamMember[] = [
     {
       name: "Anthony Lavertu",
-      role: "Responsable des relations externes",
+      role: t("management.roles.externalRelationsManager"),
       imgSrc: "/portrait/Anthony.webp",
       linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
     },
     {
       name: "Kaoutar Mimouni",
-      role: "Responsable des partenariats",
+      role: t("management.roles.partnershipsManager"),
       imgSrc: "/portrait/KaoutarMimouni.png",
       linkedIn: "https://www.linkedin.com/in/kaoutar-mimouni/",
     },
     {
+      name: "Cyrille",
+      role: t("management.roles.partnershipsManager"),
+      imgSrc: "",
+      linkedIn: "",
+    },
+    {
       name: "Adriana Maria Paternina Paez",
-      role: "Responsable du trésor",
+      role: t("management.roles.treasuryManager"),
       imgSrc: "/portrait/AdrianaMaria.png",
       linkedIn: "https://www.linkedin.com/in/adriana-paternina/",
     },
@@ -107,19 +114,19 @@ const Management: React.FC = () => {
   const marketingResponsables: TeamMember[] = [
     {
       name: "Dereck Bélanger",
-      role: "Responsable du site web",
+      role: t("management.roles.websiteManager"),
       imgSrc: "/portrait/Dereck.webp",
       linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
     },
     {
       name: "Quentin Callay",
-      role: "Responsable des designs",
+      role: t("management.roles.designsManager"),
       imgSrc: "/portrait/QuentinCallay.png",
       linkedIn: "https://www.linkedin.com/in/quentin-callay-7bb4612b0/",
     },
     {
       name: "Karima Habbout",
-      role: "Responsable des communications",
+      role: t("management.roles.communicationsManager"),
       imgSrc: "/portrait/KarimaHabbout.png",
       linkedIn: "https://www.linkedin.com/in/karimahabbout/",
     },
@@ -129,27 +136,32 @@ const Management: React.FC = () => {
   const activitiesResponsables: TeamMember[] = [
     {
       name: "Mathieu Bazinet",
-      role: "Responsable des formations",
+      role: t("management.roles.trainingsManager"),
       imgSrc: "/portrait/Mathieu.webp",
       linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
     {
-      name: "Almaoudata Walet Babahmed",
-      role: "Responsable des compétitions",
-      imgSrc: "/portrait/almaoudata.webp",
-      linkedIn: "https://www.linkedin.com/in/alma-walet-93418b325/",
+      name: "Guilhem Ané",
+      role: t("management.roles.competitionsManager"),
+      imgSrc: "/portrait/GuilhemAne.png",
+      linkedIn: "https://www.linkedin.com/in/guilhemane/",
     },
     {
       name: "William Blanchet Lafrenière",
-      role: "Responsable du social",
-      imgSrc: "",
+      role: t("management.roles.socialManager"),
+      imgSrc: "/portrait/WilliamBlanchet.png",
       linkedIn:
         "https://www.linkedin.com/in/william-blanchet-lafrenière-8337282b1/",
-      isVacant: true,
+    },
+    {
+      name: "Melek Sebri",
+      role: t("management.roles.socialManager"),
+      imgSrc: "/portrait/MelekSebri.png",
+      linkedIn: "https://www.linkedin.com/in/melek-sebri/",
     },
     {
       name: "",
-      role: "Responsable de la reconnaissance",
+      role: t("management.roles.recognitionManager"),
       imgSrc: "",
       isVacant: true,
     },
@@ -158,19 +170,40 @@ const Management: React.FC = () => {
   // Responsables Projets
   const projectsResponsables: TeamMember[] = [
     {
+      name: "Amen Ouannes",
+      role: t("management.roles.projectsManager"),
+      imgSrc: "/portrait/AmenOuannes.png",
+      linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
+    },
+    {
       name: "",
-      role: "Team lead 1",
+      role: t("management.roles.teamLead1"),
+      imgSrc: "",
+      linkedIn: "",
       isVacant: true,
     },
     {
       name: "",
-      role: "Team lead 2",
+      role: t("management.roles.teamLead2"),
+      imgSrc: "",
+      linkedIn: "",
       isVacant: true,
     },
     {
       name: "",
-      role: "Team lead 3",
+      role: t("management.roles.teamLead3"),
+      imgSrc: "",
+      linkedIn: "",
       isVacant: true,
+    },
+  ];
+
+  const auxiliaryMembers: TeamMember[] = [
+    {
+      name: "Youssouf Boubechiche",
+      role: t("management.roles.designsAuxiliary"),
+      imgSrc: "/portrait/YoussoufBoubechiche.png",
+      linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
   ];
 
@@ -257,7 +290,7 @@ const Management: React.FC = () => {
                       <h3
                         className={`text-red-300/70 mb-1 ${size.titleSize} font-semibold`}
                       >
-                        Poste Vacant
+                        {t("management.vacantPosition")}
                       </h3>
                       <p
                         className={`text-red-400/60 ${size.roleSize} leading-tight`}
@@ -267,7 +300,7 @@ const Management: React.FC = () => {
                     </div>
                     <div className="flex items-center justify-center mt-1 text-red-500/50">
                       <small className="text-xs font-medium">
-                        Poste en entrevue
+                        {t("management.positionInInterview")}
                       </small>
                     </div>
                   </div>
@@ -301,7 +334,7 @@ const Management: React.FC = () => {
                       <div className="text-center">
                         <ExternalLink className="w-6 h-6 text-white mb-1" />
                         <p className="text-white text-xs font-semibold">
-                          Voir LinkedIn
+                          {t("management.viewLinkedIn")}
                         </p>
                       </div>
                     </div>
@@ -332,7 +365,7 @@ const Management: React.FC = () => {
                       {/* Indicateur LinkedIn dans le footer de la carte */}
                       <div className="flex items-center justify-center mt-1 text-red-400 hover:text-red-300 transition-colors">
                         <Linkedin className="w-3 h-3 mr-1" />
-                        <small className="text-xs font-medium">LinkedIn</small>
+                        <small className="text-xs font-medium">{t("management.linkedIn")}</small>
                       </div>
                     </div>
                   </div>
@@ -350,35 +383,34 @@ const Management: React.FC = () => {
       <Helmet>
         {/* Titre */}
         <title>
-          Équipe et Leadership - Club Intelligence Artificielle Université Laval
-          | CIA ULaval
+          {t("management.pageTitle")}
         </title>
         {/* Description */}
         <meta
           name="description"
-          content="Rencontrez l'équipe dirigeante du Club IA ULaval : président, leaders, responsables projets, marketing, finances et activités. Étudiants passionnés d'intelligence artificielle à l'Université Laval."
+          content={t("management.pageDescription")}
         />
 
         {/* Mots-clés */}
         <meta
           name="keywords"
-          content="équipe Club IA, leadership CIA ULaval, membres Club IA, président club IA, responsables projets IA, équipe étudiante, Université Laval, Nathaniel D'Amours, intelligence artificielle"
+          content={t("management.pageKeywords")}
         />
 
         {/* Auteur */}
         <meta
           name="author"
-          content="Club Intelligence Artificielle - Université Laval"
+          content={t("management.pageAuthor")}
         />
 
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
-          content="Équipe et Leadership - Club Intelligence Artificielle Université Laval"
+          content={t("management.ogTitle")}
         />
         <meta
           property="og:description"
-          content="Découvrez l'équipe dirigeante du Club IA ULaval : président, leaders et responsables passionnés d'intelligence artificielle."
+          content={t("management.ogDescription")}
         />
         <meta
           property="og:image"
@@ -389,17 +421,17 @@ const Management: React.FC = () => {
           content="https://cia.ift.ulaval.ca/management"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Club IA - Université Laval" />
+        <meta property="og:site_name" content={t("management.ogSiteName")} />
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Équipe et Leadership - Club Intelligence Artificielle Université Laval"
+          content={t("management.twitterTitle")}
         />
         <meta
           name="twitter:description"
-          content="Rencontrez notre équipe dirigeante d'étudiants passionnés d'intelligence artificielle."
+          content={t("management.twitterDescription")}
         />
         <meta
           name="twitter:image"
@@ -418,15 +450,15 @@ const Management: React.FC = () => {
             {
               "@context": "https://schema.org",
               "@type": "AboutPage",
-              "name": "Équipe et Leadership - Club Intelligence Artificielle Université Laval",
+              "name": "${t("management.structuredData.name")}",
               "url": "https://cia.ift.ulaval.ca/management",
-              "description": "Équipe dirigeante du Club IA ULaval avec président, leaders et responsables",
+              "description": "${t("management.structuredData.description")}",
               "mainEntity": {
                 "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
+                "name": "${t("management.structuredData.organizationName")}",
                 "url": "https://cia.ift.ulaval.ca",
                 "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
+                "description": "${t("management.structuredData.organizationDescription")}",
                 "foundingLocation": {
                   "@type": "Place",
                   "name": "Québec, Canada"
@@ -445,55 +477,55 @@ const Management: React.FC = () => {
                   {
                     "@type": "Person",
                     "name": "Nathaniel D'Amours",
-                    "jobTitle": "Président",
+                    "jobTitle": "${t("management.roles.president")}",
                     "sameAs": "https://www.linkedin.com/in/nathaniel-damours"
                   },
                   {
                     "@type": "Person",
                     "name": "Jordan Mathieu",
-                    "jobTitle": "Leader des projets",
+                    "jobTitle": "${t("management.roles.projectsLeader")}",
                     "sameAs": "https://www.linkedin.com/in/jordan-math/"
                   },
                   {
                     "@type": "Person",
                     "name": "Louis-Étienne Messier",
-                    "jobTitle": "Leader en logistique",
+                    "jobTitle": "${t("management.roles.logisticsLeader")}",
                     "sameAs": "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/"
                   },
                   {
                     "@type": "Person",
                     "name": "Alexandrine Lehoux",
-                    "jobTitle": "Leader des finances",
+                    "jobTitle": "${t("management.roles.financeLeader")}",
                     "sameAs": "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/"
                   },
                   {
                     "@type": "Person",
                     "name": "Yves Faye",
-                    "jobTitle": "Leader du marketing",
+                    "jobTitle": "${t("management.roles.marketingLeader")}",
                     "sameAs": "https://www.linkedin.com/in/yves-faye-3b45062a5/"
                   },
                   {
                     "@type": "Person",
                     "name": "Anthony Lavertu",
-                    "jobTitle": "Responsable des relations externes",
+                    "jobTitle": "${t("management.roles.externalRelationsManager")}",
                     "sameAs": "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/"
                   },
                   {
                     "@type": "Person",
                     "name": "Dereck Bélanger",
-                    "jobTitle": "Responsable du site web",
+                    "jobTitle": "${t("management.roles.websiteManager")}",
                     "sameAs": "https://www.linkedin.com/in/dereck-bélanger-437259338/"
                   },
                   {
                     "@type": "Person",
                     "name": "Mathieu Bazinet",
-                    "jobTitle": "Responsable des formations",
+                    "jobTitle": "${t("management.roles.trainingsManager")}",
                     "sameAs": "https://www.linkedin.com/in/mathieu-bazinet-196523a6"
                   },
                   {
                     "@type": "Person",
                     "name": "Almaoudata Walet",
-                    "jobTitle": "Responsable des compétitions",
+                    "jobTitle": "${t("management.roles.competitionsManager")}",
                     "sameAs": "https://www.linkedin.com/in/alma-walet-93418b325/"
                   }
                 ]
@@ -510,17 +542,18 @@ const Management: React.FC = () => {
         viewport={{ once: true }}
       >
         {/* Président */}
-        {renderCards(president, "Président", "large")}
+        {renderCards(president, t("management.sections.president"), "large")}
 
         {/* Leaders */}
-        {renderCards(leaders, "Leadership", "medium")}
+        {renderCards(leaders, t("management.sections.leadership"), "medium")}
 
         {/* Responsables par département */}
-        {renderCards(talentResponsables, "Équipe Talents", "small")}
-        {renderCards(financeResponsables, "Équipe Finances", "small")}
-        {renderCards(marketingResponsables, "Équipe Marketing", "small")}
-        {renderCards(activitiesResponsables, "Équipe Activités", "small")}
-        {renderCards(projectsResponsables, "Équipe Projets", "small")}
+        {renderCards(talentResponsables, t("management.sections.talentTeam"), "small")}
+        {renderCards(financeResponsables, t("management.sections.financeTeam"), "small")}
+        {renderCards(marketingResponsables, t("management.sections.marketingTeam"), "small")}
+        {renderCards(activitiesResponsables, t("management.sections.activitiesTeam"), "small")}
+        {renderCards(projectsResponsables, t("management.sections.projectsTeam"), "small")}
+        {renderCards(auxiliaryMembers, t("management.sections.auxiliaryTeam"), "small")}
       </motion.div>
     </>
   );
