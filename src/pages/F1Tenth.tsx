@@ -369,11 +369,18 @@ function F1Tenth() {
                 {t("f1tenth.sponsor.title")}
               </h2>
               <div className="flex flex-col items-center">
-                <img
-                  src="/project/vaul.webp"
-                  alt="VAUL Logo"
-                  className="w-40 h-auto mb-4"
-                />
+                <div className="flex justify-center items-center gap-4 mb-4">
+                  <img
+                    src="/project/vaul.webp"
+                    alt="VAUL Logo"
+                    className="w-40 h-auto"
+                  />
+                  <img
+                    src="/banner/sifi.webp"
+                    alt="Sifi Labs Logo"
+                    className="w-40 h-auto"
+                  />
+                </div>
                 <p className="text-gray-400 max-w-2xl">
                   {t("f1tenth.sponsor.description")}
                 </p>

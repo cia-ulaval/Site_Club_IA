@@ -26,48 +26,23 @@ const Management: React.FC = () => {
   ];
 
   // Leaders principaux
-  const leaders: TeamMember[] = [
-    {
-      name: "Jordan Mathieu",
-      role: t("management.roles.projectsLeader"),
-      imgSrc: "/portrait/Jordan.webp",
-      linkedIn: "https://www.linkedin.com/in/jordan-math/",
-    },
+  const logistics: TeamMember[] = [
     {
       name: "Louis-Étienne Messier",
       role: t("management.roles.logisticsLeader"),
       imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
-    {
-      name: "Alexandrine Lehoux",
-      role: t("management.roles.financeLeader"),
-      imgSrc: "/portrait/Alexandrine.webp",
-      linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
-    },
-    {
-      name: "Yves Mamadou Faye",
-      role: t("management.roles.marketingLeader"),
-      imgSrc: "/portrait/Yves.webp",
-      linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
-    },
+  ];
+
+  // Responsables Talents
+  const talentResponsables: TeamMember[] = [
     {
       name: "Jade Piller Cammal",
       role: t("management.roles.talentsLeader"),
       imgSrc: "/portrait/JadePillerCammal.png",
       linkedIn: "https://linkedin.com/in/jade-piller-cammal-242b88261/",
     },
-    {
-      name: "",
-      role: t("management.roles.activitiesLeader"),
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
-    },
-  ];
-
-  // Responsables Talents
-  const talentResponsables: TeamMember[] = [
     {
       name: "Hiba Arfaoui",
       role: t("management.roles.recruitmentManager"),
@@ -85,6 +60,12 @@ const Management: React.FC = () => {
   // Responsables Finances
   const financeResponsables: TeamMember[] = [
     {
+      name: "Alexandrine Lehoux",
+      role: t("management.roles.financeLeader"),
+      imgSrc: "/portrait/Alexandrine.webp",
+      linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
+    },
+    {
       name: "Anthony Lavertu",
       role: t("management.roles.externalRelationsManager"),
       imgSrc: "/portrait/Anthony.webp",
@@ -97,10 +78,10 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/kaoutar-mimouni/",
     },
     {
-      name: "Cyrille",
+      name: "Cyrille Bernier",
       role: t("management.roles.partnershipsManager"),
-      imgSrc: "",
-      linkedIn: "",
+      imgSrc: "/portrait/CyrilleBernier.jpg",
+      linkedIn: "https://www.linkedin.com/in/cyrille-bernier-31208a252/",
     },
     {
       name: "Adriana Maria Paternina Paez",
@@ -112,6 +93,12 @@ const Management: React.FC = () => {
 
   // Responsables Marketing
   const marketingResponsables: TeamMember[] = [
+    {
+      name: "Yves Mamadou Faye",
+      role: t("management.roles.marketingLeader"),
+      imgSrc: "/portrait/Yves.webp",
+      linkedIn: "https://www.linkedin.com/in/yves-faye-3b45062a5/",
+    },
     {
       name: "Dereck Bélanger",
       role: t("management.roles.websiteManager"),
@@ -130,10 +117,23 @@ const Management: React.FC = () => {
       imgSrc: "/portrait/KarimaHabbout.png",
       linkedIn: "https://www.linkedin.com/in/karimahabbout/",
     },
+    {
+      name: "Youssouf Boubechiche",
+      role: t("management.roles.designsAuxiliary"),
+      imgSrc: "/portrait/YoussoufBoubechiche.png",
+      linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
+    },
   ];
 
   // Responsables Activités
   const activitiesResponsables: TeamMember[] = [
+    {
+      name: "",
+      role: t("management.roles.activitiesLeader"),
+      imgSrc: "",
+      linkedIn: "",
+      isVacant: true,
+    },
     {
       name: "Mathieu Bazinet",
       role: t("management.roles.trainingsManager"),
@@ -170,6 +170,12 @@ const Management: React.FC = () => {
   // Responsables Projets
   const projectsResponsables: TeamMember[] = [
     {
+      name: "Jordan Mathieu",
+      role: t("management.roles.projectsLeader"),
+      imgSrc: "/portrait/Jordan.webp",
+      linkedIn: "https://www.linkedin.com/in/jordan-math/",
+    },
+    {
       name: "Amen Ouannes",
       role: t("management.roles.projectsManager"),
       imgSrc: "/portrait/AmenOuannes.png",
@@ -188,22 +194,6 @@ const Management: React.FC = () => {
       imgSrc: "",
       linkedIn: "",
       isVacant: true,
-    },
-    {
-      name: "",
-      role: t("management.roles.teamLead3"),
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
-    },
-  ];
-
-  const auxiliaryMembers: TeamMember[] = [
-    {
-      name: "Youssouf Boubechiche",
-      role: t("management.roles.designsAuxiliary"),
-      imgSrc: "/portrait/YoussoufBoubechiche.png",
-      linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
   ];
 
@@ -365,7 +355,9 @@ const Management: React.FC = () => {
                       {/* Indicateur LinkedIn dans le footer de la carte */}
                       <div className="flex items-center justify-center mt-1 text-red-400 hover:text-red-300 transition-colors">
                         <Linkedin className="w-3 h-3 mr-1" />
-                        <small className="text-xs font-medium">{t("management.linkedIn")}</small>
+                        <small className="text-xs font-medium">
+                          {t("management.linkedIn")}
+                        </small>
                       </div>
                     </div>
                   </div>
@@ -382,32 +374,18 @@ const Management: React.FC = () => {
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          {t("management.pageTitle")}
-        </title>
+        <title>{t("management.pageTitle")}</title>
         {/* Description */}
-        <meta
-          name="description"
-          content={t("management.pageDescription")}
-        />
+        <meta name="description" content={t("management.pageDescription")} />
 
         {/* Mots-clés */}
-        <meta
-          name="keywords"
-          content={t("management.pageKeywords")}
-        />
+        <meta name="keywords" content={t("management.pageKeywords")} />
 
         {/* Auteur */}
-        <meta
-          name="author"
-          content={t("management.pageAuthor")}
-        />
+        <meta name="author" content={t("management.pageAuthor")} />
 
         {/* Open Graph pour Facebook/LinkedIn */}
-        <meta
-          property="og:title"
-          content={t("management.ogTitle")}
-        />
+        <meta property="og:title" content={t("management.ogTitle")} />
         <meta
           property="og:description"
           content={t("management.ogDescription")}
@@ -425,10 +403,7 @@ const Management: React.FC = () => {
 
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={t("management.twitterTitle")}
-        />
+        <meta name="twitter:title" content={t("management.twitterTitle")} />
         <meta
           name="twitter:description"
           content={t("management.twitterDescription")}
@@ -458,7 +433,9 @@ const Management: React.FC = () => {
                 "name": "${t("management.structuredData.organizationName")}",
                 "url": "https://cia.ift.ulaval.ca",
                 "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "${t("management.structuredData.organizationDescription")}",
+                "description": "${t(
+                  "management.structuredData.organizationDescription"
+                )}",
                 "foundingLocation": {
                   "@type": "Place",
                   "name": "Québec, Canada"
@@ -507,7 +484,9 @@ const Management: React.FC = () => {
                   {
                     "@type": "Person",
                     "name": "Anthony Lavertu",
-                    "jobTitle": "${t("management.roles.externalRelationsManager")}",
+                    "jobTitle": "${t(
+                      "management.roles.externalRelationsManager"
+                    )}",
                     "sameAs": "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/"
                   },
                   {
@@ -545,15 +524,34 @@ const Management: React.FC = () => {
         {renderCards(president, t("management.sections.president"), "large")}
 
         {/* Leaders */}
-        {renderCards(leaders, t("management.sections.leadership"), "medium")}
+        {renderCards(logistics, t("management.sections.leadership"), "medium")}
 
         {/* Responsables par département */}
-        {renderCards(talentResponsables, t("management.sections.talentTeam"), "small")}
-        {renderCards(financeResponsables, t("management.sections.financeTeam"), "small")}
-        {renderCards(marketingResponsables, t("management.sections.marketingTeam"), "small")}
-        {renderCards(activitiesResponsables, t("management.sections.activitiesTeam"), "small")}
-        {renderCards(projectsResponsables, t("management.sections.projectsTeam"), "small")}
-        {renderCards(auxiliaryMembers, t("management.sections.auxiliaryTeam"), "small")}
+        {renderCards(
+          talentResponsables,
+          t("management.sections.talentTeam"),
+          "medium"
+        )}
+        {renderCards(
+          projectsResponsables,
+          t("management.sections.projectsTeam"),
+          "medium"
+        )}
+        {renderCards(
+          marketingResponsables,
+          t("management.sections.marketingTeam"),
+          "medium"
+        )}
+        {renderCards(
+          financeResponsables,
+          t("management.sections.financeTeam"),
+          "medium"
+        )}
+        {renderCards(
+          activitiesResponsables,
+          t("management.sections.activitiesTeam"),
+          "medium"
+        )}
       </motion.div>
     </>
   );

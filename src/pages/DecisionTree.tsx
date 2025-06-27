@@ -10,13 +10,18 @@ function DecisionTree() {
   // Team members data
   const teamMembers = [
     {
-      icon: <TextCursorInput className="w-8 h-8" />,
-      title: "Émylie-Rose Desmarais",
-      description: "",
-    },
-    {
       icon: <SwatchBook className="w-8 h-8" />,
       title: "Benjamin Leblanc",
+      description: "Team Lead",
+    },
+    {
+      icon: <Braces className="w-8 h-8" />,
+      title: "Mathieu Bazinet",
+      description: "Client",
+    },
+    {
+      icon: <TextCursorInput className="w-8 h-8" />,
+      title: "Émylie-Rose Desmarais",
       description: "",
     },
     {
@@ -32,11 +37,6 @@ function DecisionTree() {
     {
       icon: <Braces className="w-8 h-8" />,
       title: "Alamaoudata Walet",
-      description: "",
-    },
-    {
-      icon: <Braces className="w-8 h-8" />,
-      title: "Mathieu Bazinet",
       description: "",
     },
   ];

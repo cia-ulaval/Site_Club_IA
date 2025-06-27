@@ -1,7 +1,7 @@
 {
   "home": {
     "header": {
-      "title": "C.I.A",
+      "title": "C.I.A.",
       "subtitle": "Welcome to the Club d'Intelligence Artificielle (CIA) of Laval University!"
     },
     "about": {
@@ -16,10 +16,10 @@
       },
       "f1tenth": {
         "title": "F1Tenth",
-        "description": "EMG racing with 1/10th-scale F1 cars"
+        "description": "EMG racing with 1:10th-scale F1 cars"
       },
       "decisiontree": {
-        "title": "Decision Tree",
+        "title": "TreeCore",
         "description": "Research and development of decision trees"
       },
       "lenia": {
@@ -121,7 +121,7 @@
     "twitterDescription": "Meet our leadership team of students passionate about artificial intelligence.",
     "sections": {
       "president": "President",
-      "leadership": "Leadership",
+      "leadership": "Logistics Team",
       "talentTeam": "Talent Team",
       "financeTeam": "Finance Team",
       "marketingTeam": "Marketing Team",
@@ -402,8 +402,8 @@
       }
     },
     "sponsor": {
-      "title": "Special Thanks to Our Sponsor",
-      "description": "We would like to extend our thanks to VAUL, the Laval University autonomous vehicle laboratory, for allowing us to use their equipment and for their support throughout this project."
+      "title": "Special Thanks to those who made this project possible",
+      "description": "We would like to thank Sifi Labs for financing and helping this projet come to life. We would also like to extend our thanks to VAUL, the Laval University autonomous vehicle laboratory."
     }
   },
   "lenia": {
@@ -580,19 +580,19 @@
   },
   "decisionTree": {
     "meta": {
-      "title": "Decision Tree - Simplifying Complex Data for Better Insights",
+      "title": "TreeCore - Simplifying Complex Data for Better Insights",
       "description": "Discover how decision trees simplify complex datasets while maintaining interpretability. Learn about our research project and the team behind it.",
       "keywords": "Decision Tree, Data Science, Interpretability, Research, Simplified Models"
     },
     "hero": {
-      "title": "Decision Tree",
+      "title": "TreeCore",
       "description1": "TreeCore is a research project led by the AI Club that explores innovative ways to optimize the use of decision tree ensembles — a widely used model family in machine learning. The project focuses on two main goals: first, intelligently reducing datasets by keeping only the most relevant examples; and second, studying how many examples are truly necessary to reconstruct a trained decision tree.",
       "description2": "Students involved in the project are encouraged to design, implement, and test algorithms in Python, experiment with real datasets, compare different training strategies, and interpret the outcomes critically. The project emphasizes scientific rigor and creative problem-solving, offering a great opportunity to experience what it’s like to run a real AI research project — from literature review and ideation to coding and experimental validation.",
       "description3": "If you're curious, enjoy digging into how machine learning models actually work, and want to contribute to a meaningful and engaging team project, TreeCore is for you. No matter your current level, if you're motivated and eager to learn, there's a place for you — whether in coding, analysis, or even communication and outreach. The project will continue in the fall, and we’re actively looking for new members to join us!",
       "imageAlt": "Decision Tree illustration"
     },
     "team": {
-      "title": "Meet the Team Behind the Project"
+      "title": "Meet the team behind the project"
     }
   }
 }

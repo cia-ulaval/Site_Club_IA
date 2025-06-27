@@ -1,7 +1,7 @@
 {
   "home": {
     "header": {
-      "title": "C.I.A",
+      "title": "C.I.A.",
       "subtitle": "Bienvenue au Club d'Intelligence Artificielle (CIA) de l'Université Laval !"
     },
     "about": {
@@ -17,10 +17,10 @@
       },
       "f1tenth": {
         "title": "F1Tenth",
-        "description": "Course EMG avec des voitures F1 à l'échelle 1/10"
+        "description": "Course EMG avec des voitures F1 à l'échelle 1:10"
       },
       "decisiontree": {
-        "title": "Arbre de décision",
+        "title": "TreeCore",
         "description": "Recherche et développement sur les arbres de décision"
       },
       "lenia": {
@@ -122,7 +122,7 @@
     "twitterDescription": "Rencontrez notre équipe dirigeante d'étudiants passionnés d'intelligence artificielle.",
     "sections": {
       "president": "Président",
-      "leadership": "Leadership",
+      "leadership": "Équipe logistique",
       "talentTeam": "Équipe Talents",
       "financeTeam": "Équipe Finances",
       "marketingTeam": "Équipe Marketing",
@@ -391,8 +391,8 @@
       }
     },
     "sponsor": {
-      "title": "Remerciements spéciaux à notre sponsor",
-      "description": "Nous aimerions remercier VAUL, le laboratoire de véhicules autonomes de l'Université Laval, de nous avoir permis d'utiliser leur équipement et pour leur soutien tout au long de ce projet."
+      "title": "Remerciements spéciaux à ceux qui ont rendu ce projet possible",
+      "description": "Nous aimerions remercier Sifi Labs, qui ont financé le projet et aidé à la réalisation de ce projet. Nous aimerions également remercier VAUL, le laboratoire de véhicules autonomes de l'Université Laval."
     }
   },
   "lenia": {
@@ -569,19 +569,19 @@
   },
   "decisionTree": {
     "meta": {
-      "title": "Arbre de Décision - Simplifier les Données Complexes pour de Meilleurs Insights",
+      "title": "TreeCore - Simplifier les Données Complexes pour de Meilleurs Insights",
       "description": "Découvrez comment les arbres de décision simplifient les ensembles de données complexes tout en maintenant l'interprétabilité. Apprenez-en plus sur notre projet de recherche et l'équipe qui en est à l'origine.",
       "keywords": "Arbre de Décision, Science des Données, Interprétabilité, Recherche, Modèles Simplifiés"
     },
     "hero": {
-      "title": "Arbre de Décision",
+      "title": "TreeCore",
       "description1": "TreeCore est un projet de recherche du Club IA qui explore des approches innovantes pour optimiser l’utilisation des forêts d’arbres décisionnels, un type de modèle très utilisé en apprentissage automatique. L’objectif principal est double : d’abord, réduire intelligemment les jeux de données en ne conservant que les exemples les plus pertinents, puis étudier combien d’exemples sont réellement nécessaires pour reconstruire un arbre de décision déjà entraîné.",
       "description2": "Les étudiants impliqués dans ce projet sont amenés à concevoir, coder et tester des algorithmes en Python, à manipuler des jeux de données variés, à comparer différentes stratégies d’entraînement et à interpréter les résultats. Le projet met l’accent autant sur la rigueur scientifique que sur la créativité dans la résolution de problèmes. C’est une occasion idéale d’apprendre concrètement à mener un projet de recherche en IA, de la revue de littérature jusqu’à la validation expérimentale, en passant par la programmation et l’analyse critique.",
       "description3": "Si tu es curieux, que tu aimes comprendre comment fonctionnent les modèles d’IA en profondeur et que tu veux participer à un projet stimulant au sein d’une équipe, TreeCore est fait pour toi. Peu importe ton niveau exact, si tu es motivé à apprendre et à t’investir, tu pourras y trouver ta place que ce soit dans le code, l’analyse ou même la vulgarisation. Le projet se poursuit à l’automne et accueille volontiers de nouveaux membres.",
       "imageAlt": "Illustration d'un arbre de décision"
     },
     "team": {
-      "title": "Rencontrez l'Équipe Derrière le Projet"
+      "title": "Rencontrez l'équipe derrière le projet"
     }
   }
 }
