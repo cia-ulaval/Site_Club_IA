@@ -33,7 +33,7 @@ const sponsorshipTiers = [
   },
   {
     name: "Silver",
-    price: "$2,500",
+    price: "$3,500",
     color: "from-gray-400 to-gray-600",
     hoverColor: "from-gray-300 to-gray-500",
     icon: <Award className="w-8 h-8 text-gray-300" />,
@@ -45,7 +45,7 @@ const sponsorshipTiers = [
   },
   {
     name: "Gold",
-    price: "$3,500",
+    price: "$5,000",
     color: "from-yellow-500 to-yellow-700",
     hoverColor: "from-yellow-400 to-yellow-600",
     icon: <Award className="w-8 h-8 text-yellow-300" />,
