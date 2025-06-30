@@ -88,28 +88,33 @@ const currentSponsors = [
   {
     name: "Université Laval",
     tier: "Gold",
-    //logo: "/sponsors/.webp",
+    link: "https://www.ulaval.ca/",
     //logo can be added if we want
   },
   {
     name: "AESGUL",
     tier: "Gold",
+    link: "https://www.aesgul.com/",
   },
   {
     name: "ASETIN",
     tier: "Gold",
+    link: "https://www.asetin.ca/",
   },
   {
     name: "MonAvenirTI",
     tier: "Gold",
+    link: "https://www.monavenirti.org/",
   },
   {
     name: "Kernelor",
     tier: "Bronze",
+    link: "https://www.kernelor.com/fr",
   },
   {
     name: "Sifi Labs",
     tier: "Silver",
+    link: "https://sifilabs.com/",
   },
 ];
 
@@ -273,16 +278,20 @@ const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
 interface Sponsor {
   name: string;
   tier: string;
+  link: string;
 }
 
 const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
-  <motion.div
+  <motion.a
+    href={sponsor.link}
+    target="_blank"
+    rel="noopener noreferrer"
     className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
   >
     <div className="text-white text-lg font-semibold">{sponsor.name}</div>
     <div className="text-xs text-red-400 mt-2">{sponsor.tier}</div>
-  </motion.div>
+  </motion.a>
 );
 
 const ContactForm = () => {

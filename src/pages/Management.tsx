@@ -120,7 +120,7 @@ const Management: React.FC = () => {
     {
       name: "Youssouf Boubechiche",
       role: t("management.roles.designsAuxiliary"),
-      imgSrc: "/portrait/YoussoufBoubechiche.png",
+      imgSrc: "/portrait/YoussoufBoubechiche.jpg",
       linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
   ];
@@ -205,8 +205,8 @@ const Management: React.FC = () => {
     const cardSizes = {
       large: {
         width: "16rem",
-        height: "400px",
-        imageHeight: "190px",
+        height: "420px",
+        imageHeight: "210px",
         bodyHeight: "210px",
         titleSize: "text-xl",
         roleSize: "text-base",
@@ -214,8 +214,8 @@ const Management: React.FC = () => {
       },
       medium: {
         width: "14rem",
-        height: "360px",
-        imageHeight: "170px",
+        height: "380px",
+        imageHeight: "190px",
         bodyHeight: "190px",
         titleSize: "text-lg",
         roleSize: "text-sm",
@@ -223,8 +223,8 @@ const Management: React.FC = () => {
       },
       small: {
         width: "12rem",
-        height: "300px",
-        imageHeight: "140px",
+        height: "320px",
+        imageHeight: "160px",
         bodyHeight: "160px",
         titleSize: "text-base",
         roleSize: "text-sm",
