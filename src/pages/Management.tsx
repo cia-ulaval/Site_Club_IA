@@ -40,19 +40,19 @@ const Management: React.FC = () => {
     {
       name: "Jade Piller Cammal",
       role: t("management.roles.talentsLeader"),
-      imgSrc: "/portrait/JadePillerCammal.png",
+      imgSrc: "/portrait/JadePillerCammal.webp",
       linkedIn: "https://linkedin.com/in/jade-piller-cammal-242b88261/",
     },
     {
       name: "Hiba Arfaoui",
       role: t("management.roles.recruitmentManager"),
-      imgSrc: "/portrait/HibaArfoui.png",
+      imgSrc: "/portrait/HibaArfoui.webp",
       linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
     },
     {
       name: "Rana Azemdroub",
       role: t("management.roles.engagementManager"),
-      imgSrc: "/portrait/RanaAzemdroub.png",
+      imgSrc: "/portrait/RanaAzemdroub.webp",
       linkedIn: "https://www.linkedin.com/in/rana-azemdroub/",
     },
   ];
@@ -74,19 +74,19 @@ const Management: React.FC = () => {
     {
       name: "Kaoutar Mimouni",
       role: t("management.roles.partnershipsManager"),
-      imgSrc: "/portrait/KaoutarMimouni.png",
+      imgSrc: "/portrait/KaoutarMimouni.webp",
       linkedIn: "https://www.linkedin.com/in/kaoutar-mimouni/",
     },
     {
       name: "Cyrille Bernier",
       role: t("management.roles.partnershipsManager"),
-      imgSrc: "/portrait/CyrilleBernier.jpg",
+      imgSrc: "/portrait/CyrilleBernier.webp",
       linkedIn: "https://www.linkedin.com/in/cyrille-bernier-31208a252/",
     },
     {
       name: "Adriana Maria Paternina Paez",
       role: t("management.roles.treasuryManager"),
-      imgSrc: "/portrait/AdrianaMaria.png",
+      imgSrc: "/portrait/AdrianaMaria.webp",
       linkedIn: "https://www.linkedin.com/in/adriana-paternina/",
     },
   ];
@@ -108,19 +108,19 @@ const Management: React.FC = () => {
     {
       name: "Quentin Callay",
       role: t("management.roles.designsManager"),
-      imgSrc: "/portrait/QuentinCallay.png",
+      imgSrc: "/portrait/QuentinCallay.webp",
       linkedIn: "https://www.linkedin.com/in/quentin-callay-7bb4612b0/",
     },
     {
       name: "Karima Habbout",
       role: t("management.roles.communicationsManager"),
-      imgSrc: "/portrait/KarimaHabbout.png",
+      imgSrc: "/portrait/KarimaHabbout.webp",
       linkedIn: "https://www.linkedin.com/in/karimahabbout/",
     },
     {
       name: "Youssouf Boubechiche",
       role: t("management.roles.designsAuxiliary"),
-      imgSrc: "/portrait/YoussoufBoubechiche.jpg",
+      imgSrc: "/portrait/YoussoufBoubechiche.webp",
       linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
   ];
@@ -143,20 +143,20 @@ const Management: React.FC = () => {
     {
       name: "Guilhem Ané",
       role: t("management.roles.competitionsManager"),
-      imgSrc: "/portrait/GuilhemAne.png",
+      imgSrc: "/portrait/GuilhemAne.webp",
       linkedIn: "https://www.linkedin.com/in/guilhemane/",
     },
     {
       name: "William Blanchet Lafrenière",
       role: t("management.roles.socialManager"),
-      imgSrc: "/portrait/WilliamBlanchet.png",
+      imgSrc: "/portrait/WilliamBlanchet.webp",
       linkedIn:
         "https://www.linkedin.com/in/william-blanchet-lafrenière-8337282b1/",
     },
     {
       name: "Melek Sebri",
       role: t("management.roles.socialManager"),
-      imgSrc: "/portrait/MelekSebri.png",
+      imgSrc: "/portrait/MelekSebri.webp",
       linkedIn: "https://www.linkedin.com/in/melek-sebri/",
     },
     {
@@ -178,7 +178,7 @@ const Management: React.FC = () => {
     {
       name: "Amen Ouannes",
       role: t("management.roles.projectsManager"),
-      imgSrc: "/portrait/AmenOuannes.png",
+      imgSrc: "/portrait/AmenOuannes.webp",
       linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
     },
     {
