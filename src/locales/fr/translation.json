@@ -51,7 +51,8 @@
     "clubName": "Club d'IA de l'Université Laval",
     "slogan": "Concrétisons vos projets.",
     "connect": "Nous suivre",
-    "copyright": "© 2025 Dereck Bélanger - Tous droits réservés."
+    "copyright": "© 2025 Dereck Bélanger - Tous droits réservés.",
+    "openSource": "Projet open source sur GitHub"
   },
   "collaborationPage": {
     "mainTitle": "Devenez Partenaire",
@@ -348,7 +349,7 @@
     "hero": {
       "title": "F1Tenth - L'IA rencontre les signaux musculaires",
       "imageAlt": "Voiture de course miniature F1Tenth contrôlée par IA et signaux musculaires",
-      "description1": "Amateur de sensations fortes ? Ce projet va captiver votre intérêt ! F1 Tenth est une équipe d'étudiants passionnés d'IA qui ont réussi à combiner l'humain et la machine.",
+      "description1": "Amateur de sensations fortes? Ce projet va captiver votre intérêt! F1 Tenth est une équipe d'étudiants passionnés d'IA qui ont réussi à combiner l'humain et la machine.",
       "description2": "L'équipe a dû entraîner un modèle d'IA pour lire les signaux électriques musculaires et les traduire en actions."
     },
     "team1": {

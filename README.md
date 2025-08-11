@@ -21,8 +21,7 @@ Our goal is to:
 - Share club **updates, research, and tools**
 - Serve as a **hub** for events, communication, and outreach
 
-The website is now live:  
-[https://cia.ift.ulaval.ca](https://cia.ift.ulaval.ca)
+The website is now live here: [CIA Official Website](https://cia.ift.ulaval.ca)
 
 It’s a platform for both visibility and collaboration — designed, developed, and maintained by students.
 
@@ -32,9 +31,9 @@ It’s a platform for both visibility and collaboration — designed, developed,
 
 The project leverages a mix of modern front-end technologies:
 
-- React.js  
-- Vue.js  
-- HTML / CSS / JavaScript  
+- React.js
+- Vue.js
+- HTML / CSS / JavaScript
 - Bootstrap
 
 The site is responsive, fast, and continuously evolving — with a focus on clarity, accessibility, and performance.
@@ -49,9 +48,9 @@ If you believe in student-driven innovation or want to support grassroots AI ini
 
 We welcome all contributions:
 
-- Suggest improvements or new features  
-- Report issues or bugs  
-- Improve the documentation  
+- Suggest improvements or new features
+- Report issues or bugs
+- Improve the documentation
 - Help us scale the platform further
 
 ## Assets & Branding
@@ -63,10 +62,10 @@ Please contact us before reusing these assets in other projects or media.
 
 ### Getting Started
 
-1. Fork the repository  
-2. Create a new branch (`git checkout -b feature/your-feature`)  
-3. Commit your changes (`git commit -m "Add feature"`)  
-4. Push to your fork (`git push origin feature/your-feature`)  
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add feature"`)
+4. Push to your fork (`git push origin feature/your-feature`)
 5. Open a **Pull Request**
 
 We review all contributions thoughtfully. Whether you're a club member or an external developer, your input matters.
@@ -75,21 +74,32 @@ We review all contributions thoughtfully. Whether you're a club member or an ext
 
 ## Connect With Us
 
-- Website: [cia.ift.ulaval.ca](https://cia.ift.ulaval.ca)  
-- Instagram: [@ciaulaval](https://www.instagram.com/ciaulaval/)  
+- Website: [cia.ift.ulaval.ca](https://cia.ift.ulaval.ca)
+- Instagram: [@ciaulaval](https://www.instagram.com/ciaulaval/)
 - LinkedIn: [CIA Université Laval](https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all)
 
 For questions or ideas, feel free to reach out. We’re always open to connecting with like-minded people.
 
 ---
 
-## Maintainer
+## Maintainers & Contributors
 
-Created and maintained by [@Dereckbelanger152](https://github.com/Dereckbelanger152)
+### Lead Developer
+
+- **Dereck Bélanger** - [@Dereckbelanger152](https://github.com/Dereckbelanger152)
+
+  Creator and responsible for the codebase, architecture, design implementation, and ongoing maintenance.
+
+### Contributors
+
+- **William Blanchet Lafrenière** - [@VillyGH](https://github.com/VillyGH)
+
+  Currently developping a solution for the ability to play a demo of flapeeg directly on the website.
+
+We welcome contributions from the community! See the section above on how to get involved.
 
 ---
 
 <p align="center">
   Built by students, for the future. Powered by collaboration.
 </p>
-

@@ -50,6 +50,12 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
     },
     {
+      name: "Sylvain Dessureault",
+      role: t("management.roles.recruitmentManager"),
+      imgSrc: "/portrait/SylvainDessureault.webp",
+      linkedIn: "https://www.linkedin.com/in/sylvaindess/",
+    },
+    {
       name: "Rana Azemdroub",
       role: t("management.roles.engagementManager"),
       imgSrc: "/portrait/RanaAzemdroub.webp",
@@ -106,12 +112,6 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
     },
     {
-      name: "Quentin Callay",
-      role: t("management.roles.designsManager"),
-      imgSrc: "/portrait/QuentinCallay.webp",
-      linkedIn: "https://www.linkedin.com/in/quentin-callay-7bb4612b0/",
-    },
-    {
       name: "Karima Habbout",
       role: t("management.roles.communicationsManager"),
       imgSrc: "/portrait/KarimaHabbout.webp",
@@ -119,7 +119,7 @@ const Management: React.FC = () => {
     },
     {
       name: "Youssouf Boubechiche",
-      role: t("management.roles.designsAuxiliary"),
+      role: t("management.roles.designsManager"),
       imgSrc: "/portrait/YoussoufBoubechiche.webp",
       linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
@@ -128,11 +128,10 @@ const Management: React.FC = () => {
   // Responsables Activités
   const activitiesResponsables: TeamMember[] = [
     {
-      name: "",
+      name: "Nathaniel D'Amours",
       role: t("management.roles.activitiesLeader"),
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
+      imgSrc: "/portrait/Nathaniel.webp",
+      linkedIn: "https://www.linkedin.com/in/nathaniel-damours/",
     },
     {
       name: "Mathieu Bazinet",

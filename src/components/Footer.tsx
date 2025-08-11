@@ -67,9 +67,19 @@ function Footer() {
         {/* Bottom section */}
         <div className="mt-12 pt-6 border-t border-red-500/20">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
-            <p className="text-gray-500 text-xs text-center md:text-left">
-              {t("footer.copyright")}
-            </p>
+            <div className="flex flex-col space-y-1">
+              <p className="text-gray-500 text-xs text-center md:text-left">
+                {t("footer.copyright")}
+              </p>
+              <a
+                href="https://github.com/cia-ulaval/Site_Club_IA"
+                className="text-gray-500 hover:text-red-400 text-xs text-center md:text-left transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("footer.openSource")}
+              </a>
+            </div>
             <div className="flex items-center justify-center md:justify-end space-x-1.5">
               <div className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse"></div>
               <div className="w-1.5 h-1.5 bg-rose-500 rounded-full animate-pulse delay-200"></div>
