@@ -15,6 +15,7 @@ function Navbar() {
   const navLinks = [
     { to: "/", label: t("navbar.home") },
     { to: "/projects", label: t("navbar.projects") },
+    { to: "/portal", label: t("navbar.portal") },
     { to: "/management", label: t("navbar.management") },
     { to: "/gallery", label: t("navbar.gallery") },
     { to: "/forum", label: t("navbar.forum") },
