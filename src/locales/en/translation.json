@@ -40,11 +40,12 @@
     }
   },
   "navbar": {
-    "home": "Home",
-    "projects": "Projects",
-    "management": "Administration",
-    "gallery": "Gallery",
-    "joinus": "Join Us"
+  "home": "Home",
+  "projects": "Projects",
+  "portal": "Portal",
+  "management": "Administration",
+  "gallery": "Gallery",
+  "joinus": "Join Us"
   },
   "footer": {
     "clubName": "Laval University AI Club",

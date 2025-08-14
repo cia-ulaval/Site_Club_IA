@@ -41,11 +41,12 @@
     }
   },
   "navbar": {
-    "home": "Accueil",
-    "projects": "Projets",
-    "management": "Administration",
-    "gallery": "Galerie",
-    "joinus": "Nous rejoindre"
+  "home": "Accueil",
+  "projects": "Projets",
+  "portal": "Portail",
+  "management": "Administration",
+  "gallery": "Galerie",
+  "joinus": "Nous rejoindre"
   },
   "footer": {
     "clubName": "Club d'IA de l'Université Laval",
