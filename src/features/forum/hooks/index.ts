@@ -1,4 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { supabase } from '../../../lib/supabase';
 import { 
   categoriesApi, 
   threadsApi, 
@@ -7,6 +8,11 @@ import {
   activityApi 
 } from '../api';
 import { CreateThreadForm, CreatePostForm } from '../types';
+
+// Export theme hook
+export { useTheme } from './useTheme';
+// Export auth hook
+export { useAuth } from './useAuth';
 
 // Query keys
 export const forumKeys = {
@@ -168,6 +174,59 @@ export function useSearch(
     queryKey: forumKeys.search(query, params),
     queryFn: () => searchApi.search(query, params),
     enabled: enabled && query.length > 2,
+    staleTime: 1 * 60 * 1000, // 1 minute
+  });
+}
+
+export function useSearchThreads(params: {
+  query: string;
+  categoryId?: string;
+  sortBy?: 'relevance' | 'date' | 'replies' | 'views';
+}) {
+  return useQuery({
+    queryKey: forumKeys.search(params.query, params),
+    queryFn: async () => {
+      if (!params.query || params.query.length < 2) return [];
+      
+      // Build the search query
+      let query = supabase
+        .from('threads')
+        .select(`
+          *,
+          author:profiles(*),
+          category:categories(*),
+          last_post:posts(
+            *,
+            author:profiles(*)
+          )
+        `)
+        .or(`title.ilike.%${params.query}%,content.ilike.%${params.query}%`);
+
+      // Filter by category if specified
+      if (params.categoryId) {
+        query = query.eq('category_id', params.categoryId);
+      }
+
+      // Apply sorting
+      switch (params.sortBy) {
+        case 'date':
+          query = query.order('created_at', { ascending: false });
+          break;
+        case 'replies':
+          query = query.order('replies_count', { ascending: false });
+          break;
+        case 'views':
+          query = query.order('views_count', { ascending: false });
+          break;
+        default: // relevance
+          query = query.order('created_at', { ascending: false });
+      }
+
+      const { data, error } = await query;
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: params.query.length > 2,
     staleTime: 1 * 60 * 1000, // 1 minute
   });
 }

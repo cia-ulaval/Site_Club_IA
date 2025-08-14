@@ -1,51 +1,53 @@
-import { useState } from 'react';
-import { useParams, Link, useSearchParams } from 'react-router-dom';
-import { ArrowLeft, Plus, Search, Filter } from 'lucide-react';
-import { useThreadsByCategory } from '../hooks';
-import { ThreadsList } from '../components/ThreadsList';
+import { useState } from "react";
+import { useParams, Link, useSearchParams } from "react-router-dom";
+import { ArrowLeft, Plus, Search, Filter } from "lucide-react";
+import { useThreadsByCategory } from "../hooks";
+import { ThreadsList } from "../components/ThreadsList";
 
 export function CategoryThreads() {
   const { slug } = useParams<{ slug: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
-  const [filter, setFilter] = useState(searchParams.get('filter') || 'all');
+  const [searchQuery, setSearchQuery] = useState(
+    searchParams.get("search") || ""
+  );
+  const [filter, setFilter] = useState(searchParams.get("filter") || "all");
 
-  const page = parseInt(searchParams.get('page') || '1');
-  const search = searchParams.get('search') || '';
+  const page = parseInt(searchParams.get("page") || "1");
+  const search = searchParams.get("search") || "";
 
   const { data, isLoading } = useThreadsByCategory(slug!, {
     page,
     pageSize: 20,
-    search
+    search,
   });
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const newParams = new URLSearchParams(searchParams);
     if (searchQuery) {
-      newParams.set('search', searchQuery);
+      newParams.set("search", searchQuery);
     } else {
-      newParams.delete('search');
+      newParams.delete("search");
     }
-    newParams.set('page', '1');
+    newParams.set("page", "1");
     setSearchParams(newParams);
   };
 
   const handleFilterChange = (newFilter: string) => {
     setFilter(newFilter);
     const newParams = new URLSearchParams(searchParams);
-    if (newFilter !== 'all') {
-      newParams.set('filter', newFilter);
+    if (newFilter !== "all") {
+      newParams.set("filter", newFilter);
     } else {
-      newParams.delete('filter');
+      newParams.delete("filter");
     }
-    newParams.set('page', '1');
+    newParams.set("page", "1");
     setSearchParams(newParams);
   };
 
   const handlePageChange = (newPage: number) => {
     const newParams = new URLSearchParams(searchParams);
-    newParams.set('page', newPage.toString());
+    newParams.set("page", newPage.toString());
     setSearchParams(newParams);
   };
 
@@ -64,7 +66,7 @@ export function CategoryThreads() {
           </Link>
           <div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              {category?.icon} {category?.name || 'Catégorie'}
+              {category?.icon} {category?.name || "Catégorie"}
             </h1>
             {category?.description && (
               <p className="text-gray-600 dark:text-gray-400 mt-1">
@@ -120,7 +122,9 @@ export function CategoryThreads() {
       {/* Stats */}
       {data && (
         <div className="text-sm text-gray-600 dark:text-gray-400">
-          {data.pagination.totalCount} sujet{data.pagination.totalCount !== 1 ? 's' : ''} trouvé{data.pagination.totalCount !== 1 ? 's' : ''}
+          {data.pagination.totalCount} sujet
+          {data.pagination.totalCount !== 1 ? "s" : ""} trouvé
+          {data.pagination.totalCount !== 1 ? "s" : ""}
           {search && ` pour "${search}"`}
         </div>
       )}
@@ -138,34 +142,37 @@ export function CategoryThreads() {
           >
             Précédent
           </button>
-          
-          <div className="flex items-center space-x-1">
-            {Array.from({ length: Math.min(5, data.pagination.totalPages) }, (_, i) => {
-              let pageNum;
-              if (data.pagination.totalPages <= 5) {
-                pageNum = i + 1;
-              } else if (page <= 3) {
-                pageNum = i + 1;
-              } else if (page >= data.pagination.totalPages - 2) {
-                pageNum = data.pagination.totalPages - 4 + i;
-              } else {
-                pageNum = page - 2 + i;
-              }
 
-              return (
-                <button
-                  key={pageNum}
-                  onClick={() => handlePageChange(pageNum)}
-                  className={`px-3 py-2 text-sm border rounded-md ${
-                    pageNum === page
-                      ? 'bg-red-600 text-white border-red-600'
-                      : 'border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white'
-                  }`}
-                >
-                  {pageNum}
-                </button>
-              );
-            })}
+          <div className="flex items-center space-x-1">
+            {Array.from(
+              { length: Math.min(5, data.pagination.totalPages) },
+              (_, i) => {
+                let pageNum;
+                if (data.pagination.totalPages <= 5) {
+                  pageNum = i + 1;
+                } else if (page <= 3) {
+                  pageNum = i + 1;
+                } else if (page >= data.pagination.totalPages - 2) {
+                  pageNum = data.pagination.totalPages - 4 + i;
+                } else {
+                  pageNum = page - 2 + i;
+                }
+
+                return (
+                  <button
+                    key={pageNum}
+                    onClick={() => handlePageChange(pageNum)}
+                    className={`px-3 py-2 text-sm border rounded-md ${
+                      pageNum === page
+                        ? "bg-red-600 text-white border-red-600"
+                        : "border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              }
+            )}
           </div>
 
           <button

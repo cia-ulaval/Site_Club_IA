@@ -1,17 +1,20 @@
-import { useMemo } from 'react';
-import { remark } from 'remark';
-import remarkBreaks from 'remark-breaks';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
-import rehypeSanitize from 'rehype-sanitize';
-import rehypeStringify from 'rehype-stringify';
+import { useMemo } from "react";
+import { remark } from "remark";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 
 interface MarkdownRendererProps {
   content: string;
   className?: string;
 }
 
-export function MarkdownRenderer({ content, className = '' }: MarkdownRendererProps) {
+export function MarkdownRenderer({
+  content,
+  className = "",
+}: MarkdownRendererProps) {
   const processedContent = useMemo(() => {
     try {
       const result = remark()
@@ -21,16 +24,16 @@ export function MarkdownRenderer({ content, className = '' }: MarkdownRendererPr
         .use(rehypeSanitize)
         .use(rehypeStringify)
         .processSync(content);
-      
+
       return result.toString();
     } catch (error) {
-      console.error('Error processing markdown:', error);
+      console.error("Error processing markdown:", error);
       return content;
     }
   }, [content]);
 
   return (
-    <div 
+    <div
       className={`prose prose-sm max-w-none dark:prose-invert prose-gray dark:prose-gray ${className}`}
       dangerouslySetInnerHTML={{ __html: processedContent }}
     />

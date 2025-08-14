@@ -30,7 +30,7 @@ export type Database = {
           username: string;
           display_name: string | null;
           avatar_url: string | null;
-          role: 'member' | 'mentor' | 'admin';
+          role: 'développeur' | 'président' | 'leader' | 'responsable';
           bio: string | null;
           created_at: string;
           updated_at: string;
@@ -40,14 +40,14 @@ export type Database = {
           username: string;
           display_name?: string | null;
           avatar_url?: string | null;
-          role?: 'member' | 'mentor' | 'admin';
+          role?: 'développeur' | 'président' | 'leader' | 'responsable';
           bio?: string | null;
         };
         Update: {
           username?: string;
           display_name?: string | null;
           avatar_url?: string | null;
-          role?: 'member' | 'mentor' | 'admin';
+          role?: 'développeur' | 'président' | 'leader' | 'responsable';
           bio?: string | null;
         };
       };
