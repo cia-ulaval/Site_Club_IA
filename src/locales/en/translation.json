@@ -44,7 +44,8 @@
     "projects": "Projects",
     "management": "Administration",
     "gallery": "Gallery",
-    "joinus": "Join Us"
+    "joinus": "Join Us",
+    "forum": "Forum"
   },
   "footer": {
     "clubName": "Laval University AI Club",
@@ -594,6 +595,18 @@
     },
     "team": {
       "title": "Meet the team behind the project"
+    }
+  },
+  "forum": {
+    "nav": {
+      "forums": "Forums",
+      "activity": "Activity", 
+      "search": "Search"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
     }
   }
 }

@@ -45,7 +45,8 @@
     "projects": "Projets",
     "management": "Administration",
     "gallery": "Galerie",
-    "joinus": "Nous rejoindre"
+    "joinus": "Nous rejoindre",
+    "forum": "Forum"
   },
   "footer": {
     "clubName": "Club d'IA de l'Université Laval",
@@ -583,6 +584,18 @@
     },
     "team": {
       "title": "Rencontrez l'équipe derrière le projet"
+    }
+  },
+  "forum": {
+    "nav": {
+      "forums": "Forums",
+      "activity": "Activité",
+      "search": "Recherche"
+    },
+    "theme": {
+      "light": "Clair",
+      "dark": "Sombre", 
+      "system": "Système"
     }
   }
 }
