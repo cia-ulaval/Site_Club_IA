@@ -1,5 +1,5 @@
 export { ForumLayout } from './ForumLayout';
-export { CategoryCard } from './CategoryCard';
+export { CategoryCard, CategoriesGrid } from './CategoryCard';
 export { ThreadsList } from './ThreadsList';
 export { PostItem } from './PostItem';
 export { PostComposer } from './PostComposer';
