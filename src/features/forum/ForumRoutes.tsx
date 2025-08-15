@@ -19,11 +19,11 @@ export default function ForumRoutes() {
         <Route path="auth/login" element={<Login />} />
         <Route path="auth/signup" element={<Signup />} />
 
-        {/* Toutes les autres routes nécessitent une connexion ET un rôle du bureau */}
+        {/* Forum accessible à tous les utilisateurs authentifiés */}
         <Route
           path="*"
           element={
-            <ProtectedRoute requireAdmin={true}>
+            <ProtectedRoute requireAdmin={false}>
               <Routes>
                 <Route index element={<ForumIndex />} />
                 <Route path="c/:categorySlug" element={<CategoryThreads />} />

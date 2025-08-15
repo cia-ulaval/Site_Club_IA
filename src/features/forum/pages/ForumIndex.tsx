@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Plus, TrendingUp, Clock } from "lucide-react";
-import { useCategories, useRecentActivity } from "../hooks";
+import { Plus, TrendingUp, Clock, MessageSquare, Eye } from "lucide-react";
+import { useCategories, useRecentActivity, useRecentThreads } from "../hooks";
 import { CategoriesGrid } from "../components/CategoryCard";
 import { formatDistanceToNow } from "date-fns";
 import { fr } from "date-fns/locale";
@@ -8,6 +8,15 @@ import { fr } from "date-fns/locale";
 export function ForumIndex() {
   const { data: categories, isLoading: categoriesLoading } = useCategories();
   const { data: activity, isLoading: activityLoading } = useRecentActivity();
+  const { data: recentThreadsData, isLoading: threadsLoading } =
+    useRecentThreads({ pageSize: 10 });
+
+  console.log("🎯 ForumIndex - Threads data:", recentThreadsData);
+  console.log("🎯 ForumIndex - Threads loading:", threadsLoading);
+  console.log(
+    "🎯 ForumIndex - Threads count:",
+    recentThreadsData?.data?.length
+  );
 
   return (
     <div className="space-y-8">
@@ -36,6 +45,86 @@ export function ForumIndex() {
           categories={categories || []}
           loading={categoriesLoading}
         />
+      </div>
+
+      {/* Recent Threads Section */}
+      <div>
+        <h2 className="text-xl font-semibold text-white mb-6">
+          Sujets récents
+        </h2>
+        <div className="hero-card">
+          {threadsLoading ? (
+            <div className="space-y-4 p-6">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="h-4 bg-gray-600 rounded w-3/4 mb-2"></div>
+                  <div className="h-3 bg-gray-600 rounded w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="divide-y divide-gray-700">
+              {recentThreadsData?.data?.slice(0, 8).map((thread) => (
+                <div
+                  key={thread.id}
+                  className="p-4 hover:bg-gray-800 transition-colors"
+                >
+                  <Link to={`/forum/t/${thread.id}`} className="block">
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <h3 className="font-medium text-white hover:text-red-400 transition-colors line-clamp-1">
+                          {thread.title}
+                        </h3>
+                        <div className="flex items-center space-x-4 mt-2 text-sm text-gray-400">
+                          <span className="flex items-center space-x-1">
+                            {thread.category?.icon && (
+                              <span>{thread.category.icon}</span>
+                            )}
+                            <span>{thread.category?.name}</span>
+                          </span>
+                          <span>
+                            par{" "}
+                            {thread.author?.display_name ||
+                              thread.author?.username}
+                          </span>
+                          <div className="flex items-center space-x-3">
+                            <span className="flex items-center space-x-1">
+                              <MessageSquare className="w-3 h-3" />
+                              <span>{thread.replies_count}</span>
+                            </span>
+                            <span className="flex items-center space-x-1">
+                              <Eye className="w-3 h-3" />
+                              <span>{thread.views_count}</span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-xs text-gray-400 ml-4">
+                        {formatDistanceToNow(new Date(thread.created_at), {
+                          addSuffix: true,
+                          locale: fr,
+                        })}
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+
+              {(!recentThreadsData?.data ||
+                recentThreadsData.data.length === 0) && (
+                <div className="p-8 text-center">
+                  <p className="text-gray-400">Aucun sujet récent</p>
+                  <Link
+                    to="/forum/new"
+                    className="text-red-400 hover:text-red-300 text-sm mt-2 inline-block"
+                  >
+                    Créer le premier sujet →
+                  </Link>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Activity Sidebar */}

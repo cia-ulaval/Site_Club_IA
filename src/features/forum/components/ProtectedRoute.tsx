@@ -13,6 +13,11 @@ export function ProtectedRoute({
 }: ProtectedRouteProps) {
   const { user, profile, loading } = useAuth();
 
+  // Mode développement - désactiver l'authentification temporairement
+  if (import.meta.env.VITE_DEV_MODE === "true") {
+    return <>{children}</>;
+  }
+
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black">

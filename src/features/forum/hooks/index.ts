@@ -22,6 +22,8 @@ export const forumKeys = {
   threadsByCategory: (slug: string, params: any) => 
     [...forumKeys.threads(), 'category', slug, params] as const,
   thread: (id: string) => [...forumKeys.threads(), id] as const,
+  recentThreads: (params: any) => 
+    [...forumKeys.threads(), 'recent', params] as const,
   posts: () => [...forumKeys.all, 'posts'] as const,
   postsByThread: (threadId: string, params: any) => 
     [...forumKeys.posts(), 'thread', threadId, params] as const,
@@ -51,6 +53,14 @@ export function useThreadsByCategory(
   });
 }
 
+export function useRecentThreads(params: { page?: number; pageSize?: number } = {}) {
+  return useQuery({
+    queryKey: forumKeys.recentThreads(params),
+    queryFn: () => threadsApi.getRecent(params),
+    staleTime: 1 * 60 * 1000, // 1 minute pour que ça se rafraîchisse rapidement
+  });
+}
+
 export function useThread(id: string) {
   return useQuery({
     queryKey: forumKeys.thread(id),
@@ -66,12 +76,30 @@ export function useCreateThread() {
     mutationFn: ({ thread, authorId }: { thread: CreateThreadForm; authorId: string }) =>
       threadsApi.create(thread, authorId),
     onSuccess: (newThread) => {
+      console.log('✅ Thread créé, invalidation des caches...', newThread);
+      
       // Invalidate categories to update thread counts
       queryClient.invalidateQueries({ queryKey: forumKeys.categories() });
+      
+      // Force refetch categories pour recalculer les compteurs immédiatement
+      queryClient.refetchQueries({ queryKey: forumKeys.categories() });
+      
       // Invalidate thread list for the category
       queryClient.invalidateQueries({ 
         queryKey: forumKeys.threadsByCategory(newThread.category_id, {}) 
       });
+      
+      // Invalidate all threads queries
+      queryClient.invalidateQueries({ queryKey: forumKeys.threads() });
+      
+      // Invalidate activity to show the new thread
+      queryClient.invalidateQueries({ queryKey: forumKeys.activity() });
+      
+      // Invalidate recent threads
+      queryClient.invalidateQueries({ queryKey: forumKeys.recentThreads({}) });
+      queryClient.refetchQueries({ queryKey: forumKeys.recentThreads({}) });
+      
+      console.log('🔄 Caches invalidés et rechargés');
     },
   });
 }
