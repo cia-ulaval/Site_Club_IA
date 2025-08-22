@@ -215,13 +215,13 @@ function Projects() {
                     }}
                   />
                   <div className="p-6 flex flex-col min-h-[200px]">
-                    <h3 className="text-xl font-semibold text-gray-200 mb-2">
+                    <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 dark:text-gray-200 mb-2">
                       {t(
                         `home.projects.${project.key}.title`,
                         project.defaultTitle
                       )}
                     </h3>
-                    <p className="text-gray-400 mb-4 flex-grow overflow-visible break-words leading-relaxed text-sm sm:text-base">
+                    <p className="text-gray-300 dark:text-gray-400 mb-4 flex-grow overflow-visible break-words leading-relaxed text-sm sm:text-base">
                       {t(
                         `home.projects.${project.key}.description`,
                         project.defaultDescription

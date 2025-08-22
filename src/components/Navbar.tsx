@@ -3,17 +3,37 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import LanguageToggle from "./LanguageToggle";
+import { Moon, Sun } from "lucide-react";
+import {Button} from "react-bootstrap";
 
 function Navbar() {
   const { t } = useTranslation(); // Initialize the translation hook
   const [isOpen, setIsOpen] = useState(false);
+  const [isDarkMode, changeTheme] = useState(false);
+  const [rendered, setRendered] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleThemeChange = (newDarkMode: boolean) => {
+    changeTheme(newDarkMode);
+
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    document.documentElement.setAttribute("data-bs-theme", newDarkMode ? "dark" : "light");
+    localStorage.theme = newDarkMode ? "dark" : "light";
+  };
+
+  if (!rendered) {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const savedTheme = localStorage.getItem("theme");
+    const isDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+    handleThemeChange(isDark);
+    setRendered(true);
+  }
+
   const navLinks = [
-    { to: "/", label: t("navbar.home") },
     { to: "/projects", label: t("navbar.projects") },
     { to: "/management", label: t("navbar.management") },
     { to: "/gallery", label: t("navbar.gallery") },
@@ -21,7 +41,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-red-500/20">
+    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/10 dark:bg-black/60 border-b border-red-500/20">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
@@ -39,7 +59,7 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-gray-300 hover:text-rose-500/60 transition-colors ${
+                  `text-gray-600 hover:text-rose-500/60 transition-colors ${
                     isActive ? "text-red-400" : ""
                   }`
                 }
@@ -50,18 +70,23 @@ function Navbar() {
           </div>
           <div className="flex items-center space-x-4">
             <LanguageToggle />
-            <button
+            <Button
               onClick={toggleMenu}
-              className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"
+              className="md:hidden text-gray-800 dark:text-gray-300 hover:text-rose-500/60 transition-colors"
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
               ) : (
                 <Menu className="w-6 h-6" />
               )}
-            </button>
+            </Button>
+            <Button
+                className="flex items-center justify-center p-2 rounded-full bg-red-500/20 hover:bg-red-500/40 text-gray-300 transition-colors"
+                onClick={() => handleThemeChange(!isDarkMode)}
+            >{isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</Button>
           </div>
         </div>
+
         {isOpen && (
           <div className="md:hidden">
             {navLinks.map((link) => (
@@ -80,6 +105,7 @@ function Navbar() {
             ))}
           </div>
         )}
+
       </div>
     </nav>
   );
