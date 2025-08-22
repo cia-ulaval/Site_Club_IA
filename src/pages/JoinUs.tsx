@@ -173,7 +173,7 @@ function JoinUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-500 mb-4">
               {t("joinus.collabTitle")}
             </h3>
             <p className="text-lg text-gray-400 mb-6">

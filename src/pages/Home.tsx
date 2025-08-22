@@ -224,7 +224,7 @@ function Home() {
                 <h3 className="text-xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <p className="card-text text-gray-300 mb-4">{project.description}</p>
                 <Link
                   to={project.link}
                   className="inline-flex items-center text-red-400 hover:text-red-300 transition-colors"
