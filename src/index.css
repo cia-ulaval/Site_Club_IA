@@ -24,7 +24,7 @@
   --glow-red-shadow-color: rgba(255, 50, 50, 0.5);
 }
 
-[data-bs-theme="light"] .text-gray-300 {
+[data-bs-theme="light"] .text-gray-300:not([aria-current="page"]):not(.card-text)  {
     color: rgb(100 105 110) !important;
 }
 
@@ -32,7 +32,7 @@
   color: rgb(80 90 100) !important;
 }
 
-[data-bs-theme="light"] .text-gray-200:not(.card-text) {
+[data-bs-theme="light"] .text-gray-200:not() {
   color: rgb(185 190 195) !important;
 }
 
@@ -40,9 +40,6 @@
   body {
     @apply bg-black text-gray-100;
   }
-}
-
-.bg-white {
 }
 
 .gradient-text {

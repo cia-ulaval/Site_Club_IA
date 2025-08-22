@@ -207,7 +207,7 @@ const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
         {tier.benefits.map((benefit, index) => (
           <li key={index} className="flex items-start gap-2">
             <BadgeCheck className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-            <span className="text-gray-300">
+            <span className="text-gray-200 dark:text-gray-300">
               {t(`collaborationPage.tierBenefits.${benefit}`, benefit)}
             </span>
           </li>
@@ -245,7 +245,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
 
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border !border-red-500 hover:border-red-500/50 transition-all duration-300"
+      className="p-6 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border !border-red-500 hover:border-red-500/50 transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -284,7 +284,7 @@ const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border !border-red-500 text-center transition-all duration-300"
+      className="p-6 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border !border-red-500 text-center transition-all duration-300"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
@@ -311,7 +311,7 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
     href={sponsor.link}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group flex flex-col items-center justify-center"
+    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group flex flex-col items-center justify-center"
     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
   >
     {/* Try to show logo image when available in /banner; filenames vary so map common names to files */}
@@ -371,13 +371,13 @@ const ContactForm = () => {
 
   return (
     <motion.div
-      className="p-8 rounded-xl bg-gradient-to-br from-red-900/30 to-red-800/20 border border-red-800/70 !border-red-500 transition-all duration-300"
+      className="p-8 rounded-xl bg-gradient-to-br from-red-900/10 to-red-800/20 border border-red-800/70 !border-red-500 transition-all duration-300"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-2xl font-bold text-white mb-6 text-center">
+      <h3 className="card-text text-2xl font-bold text-red-400 dark:text-white mb-6 text-center">
         {t("collaborationPage.contactTitle")}
       </h3>
 
@@ -385,21 +385,21 @@ const ContactForm = () => {
         <input
           type="text"
           placeholder={t("collaborationPage.contactName")}
-          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-600/5 dark:bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <input
           type="email"
           placeholder={t("collaborationPage.contactEmail")}
-          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-600/5 dark:bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <input
           type="text"
           placeholder={t("collaborationPage.contactCompany")}
-          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
+          className="w-full p-3 bg-red-600/5 dark:bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white"
         />
         <textarea
           placeholder={t("collaborationPage.contactMessage")}
-          className="w-full p-3 bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white h-32"
+          className="w-full p-3 bg-red-600/5 dark:bg-red-900/20 border !border-red-500 rounded-lg focus:border-red-500 focus:outline-none text-white h-32"
         ></textarea>
       </div>
 
@@ -706,7 +706,7 @@ function Collaboration() {
               {t("collaborationPage.currentSponsorsTitle")}
             </h3>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-6 px-4 md:px-6">
               {currentSponsors.map((sponsor, index) => (
                 <CurrentSponsorLogo key={index} sponsor={sponsor} />
               ))}

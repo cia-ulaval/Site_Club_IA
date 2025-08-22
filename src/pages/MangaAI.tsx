@@ -321,7 +321,7 @@ function MangaAI() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-300 to-red-500">
+            <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600 dark:from-red-300 dark:to-red-500">
               {t("mangaai.approach.title")}
             </h3>
 
@@ -346,7 +346,7 @@ function MangaAI() {
 
           {/* Process section */}
           <section className="mb-12 md:mb-16">
-            <h4 className="text-xl md:text-2xl font-semibold mb-8 md:mb-10 text-center text-red-300">
+            <h4 className="text-xl md:text-2xl font-semibold mb-8 md:mb-10 text-center text-red-500 dark:text-red-300">
               {t("mangaai.process.title")}
             </h4>
 
@@ -399,7 +399,7 @@ function MangaAI() {
           {/* Future improvements section */}
           <section className="mb-12 md:mb-16">
             <div className="pt-6 md:pt-8 border-t border-red-800/20">
-              <h4 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-center text-red-300">
+              <h4 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-center text-red-500 dark:text-red-300">
                 {t("mangaai.future.title")}
               </h4>
 

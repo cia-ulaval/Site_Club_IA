@@ -45,7 +45,7 @@
     "projects": "Projets",
     "management": "Administration",
     "gallery": "Galerie",
-    "joinus": "Nous rejoindre"
+    "joinus": "Nous joindre"
   },
   "footer": {
     "clubName": "Club d'IA de l'Université Laval",
@@ -263,25 +263,25 @@
       "title": "Rencontrez l'équipe derrière FlapEEG",
       "members": {
         "louis": {
-          "description": "Principal contributeur au projet. A mis en place le serveur, l'interface personnalisée et a aidé avec le codage"
+          "description": "Principal contributeur au projet. Il a mis en place le serveur, l'interface et a apporté sont support dans tous les aspects du projets"
         },
         "jordan": {
-          "description": "S'est occupé de la collecte, annotation et nettoyage des données"
+          "description": "Il s'est occupé de la collecte, de l'annotation et du nettoyage des données"
         },
         "dereck": {
-          "description": "Auteur de ce site web, a codé le seuil de base et les algorithmes d'extraction de caractéristiques"
+          "description": "Auteur de ce site web, il a programmé le seuil de base et les algorithmes d'extraction de caractéristiques"
         },
         "amen": {
-          "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+          "description": "Il a effectué l'entrainement du modèle d'IA et a aidé l'équipe à comprendre les défis du projet"
         },
         "estelle": {
-          "description": "A entraîné le modèle d'IA et a aidé l'équipe à comprendre les défis"
+          "description": "Elle a effectué l'entrainement du modèle d'IA et a aidé l'équipe à comprendre les défis du projet"
         },
         "hedi": {
-          "description": "S'est occupé de la collecte de données et des protocoles"
+          "description": "Responsable de la collecte de données et des protocoles"
         },
         "william": {
-          "description": "Principal contributeur au développement du jeu."
+          "description": "Principal contributeur au développement du jeu et de ses différentes intégrations."
         }
       }
     },
