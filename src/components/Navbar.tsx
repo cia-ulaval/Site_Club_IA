@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useTranslation } from "react-i18next"; // Import useTranslation hook
 import LanguageToggle from "./LanguageToggle";
+import { Moon, Sun } from "lucide-react";
+import {Button} from "react-bootstrap";
 
 function Navbar() {
   const { t } = useTranslation(); // Initialize the translation hook
@@ -69,7 +71,7 @@ function Navbar() {
           </div>
           <div className="flex items-center space-x-4">
             <LanguageToggle />
-            <button
+            <Button
               onClick={toggleMenu}
               className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"
             >
@@ -78,9 +80,14 @@ function Navbar() {
               ) : (
                 <Menu className="w-6 h-6" />
               )}
-            </button>
+            </Button>
+            <Button
+                className="flex items-center justify-center p-2 rounded-full bg-red-500/20 hover:bg-red-500/40 text-gray-300 transition-colors"
+                onClick={() => handleThemeChange(!isDarkMode)}
+            >{isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}</Button>
           </div>
         </div>
+
         {isOpen && (
           <div className="md:hidden">
             {navLinks.map((link) => (
@@ -99,6 +106,7 @@ function Navbar() {
             ))}
           </div>
         )}
+
       </div>
     </nav>
   );
