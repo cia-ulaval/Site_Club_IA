@@ -33,6 +33,12 @@ const Management: React.FC = () => {
       imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
+    {
+      name: "Alaa Eddine",
+      role: t("management.roles.logisticsLeader"),
+      imgSrc: "",
+      linkedIn: "",
+    },
   ];
 
   // Responsables Talents
@@ -48,12 +54,6 @@ const Management: React.FC = () => {
       role: t("management.roles.recruitmentManager"),
       imgSrc: "/portrait/HibaArfoui.webp",
       linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
-    },
-    {
-      name: "Sylvain Dessureault",
-      role: t("management.roles.recruitmentManager"),
-      imgSrc: "/portrait/SylvainDessureault.webp",
-      linkedIn: "https://www.linkedin.com/in/sylvaindess/",
     },
     {
       name: "Rana Azemdroub",
@@ -78,12 +78,6 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
     },
     {
-      name: "Kaoutar Mimouni",
-      role: t("management.roles.partnershipsManager"),
-      imgSrc: "/portrait/KaoutarMimouni.webp",
-      linkedIn: "https://www.linkedin.com/in/kaoutar-mimouni/",
-    },
-    {
       name: "Cyrille Bernier",
       role: t("management.roles.partnershipsManager"),
       imgSrc: "/portrait/CyrilleBernier.webp",
@@ -94,6 +88,12 @@ const Management: React.FC = () => {
       role: t("management.roles.treasuryManager"),
       imgSrc: "/portrait/AdrianaMaria.webp",
       linkedIn: "https://www.linkedin.com/in/adriana-paternina/",
+    },
+    {
+      name: "Hiba Mameri",
+      role: t(""),
+      imgSrc: "",
+      linkedIn: "",
     },
   ];
 
@@ -159,10 +159,10 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/melek-sebri/",
     },
     {
-      name: "",
+      name: "Nora Belattar",
       role: t("management.roles.recognitionManager"),
       imgSrc: "",
-      isVacant: true,
+      linkedIn: "",
     },
   ];
 
@@ -176,23 +176,57 @@ const Management: React.FC = () => {
     },
     {
       name: "Amen Ouannes",
-      role: t("management.roles.projectsManager"),
+      role: "ASL-Decoder Team Lead",
       imgSrc: "/portrait/AmenOuannes.webp",
       linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
     },
     {
-      name: "",
-      role: t("management.roles.teamLead1"),
+      name: "Loïc Baret",
+      role: "CANlock Team Lead",
       imgSrc: "",
       linkedIn: "",
-      isVacant: true,
     },
     {
-      name: "",
-      role: t("management.roles.teamLead2"),
+      name: "Anthony Lavertu",
+      role: "Drone Team Lead",
+      imgSrc: "/portrait/Anthony.webp",
+      linkedIn: "https://www.linkedin.com/in/anthony-lavertu-2a29a7179/",
+    },
+    {
+      name: "Benjamin Leblanc",
+      role: "SGD-Beyond Team Lead",
       imgSrc: "",
       linkedIn: "",
-      isVacant: true,
+    },
+    {
+      name: "Eloïse Prevot",
+      role: "NutriNov Team Lead",
+      imgSrc: "",
+      linkedIn: "",
+    },
+    {
+      name: "Cyrille Bernier",
+      role: "Poppy Humanoid (Conception) Team Lead",
+      imgSrc: "/portrait/CyrilleBernier.webp",
+      linkedIn: "https://www.linkedin.com/in/cyrille-bernier-31208a252/",
+    },
+    {
+      name: "Baptiste Gabriel Bonin",
+      role: "Poppy Humanoid (Simulation) Team Lead",
+      imgSrc: "",
+      linkedIn: "",
+    },
+    {
+      name: "Deoth Guei",
+      role: "F1 Jedi Team Lead",
+      imgSrc: "",
+      linkedIn: "",
+    },
+    {
+      name: "Akram Omari",
+      role: "FlapEEG Team Lead",
+      imgSrc: "",
+      linkedIn: "",
     },
   ];
 
@@ -532,11 +566,6 @@ const Management: React.FC = () => {
           "medium"
         )}
         {renderCards(
-          projectsResponsables,
-          t("management.sections.projectsTeam"),
-          "medium"
-        )}
-        {renderCards(
           marketingResponsables,
           t("management.sections.marketingTeam"),
           "medium"
@@ -549,6 +578,11 @@ const Management: React.FC = () => {
         {renderCards(
           activitiesResponsables,
           t("management.sections.activitiesTeam"),
+          "medium"
+        )}
+        {renderCards(
+          projectsResponsables,
+          t("management.sections.projectsTeam"),
           "medium"
         )}
       </motion.div>
