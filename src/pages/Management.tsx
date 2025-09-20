@@ -35,9 +35,9 @@ const Management: React.FC = () => {
     },
     {
       name: "Alaa Eddine",
-      role: t("management.roles.logisticsLeader"),
-      imgSrc: "",
-      linkedIn: "",
+      role: t("management.roles.logisticsManager"),
+      imgSrc: "/portrait/AlaaEddine.webp",
+      linkedIn: "https://www.linkedin.com/in/alaa-eddine-ayadi-7bb416227/",
     },
   ];
 
@@ -53,7 +53,7 @@ const Management: React.FC = () => {
       name: "Hiba Arfaoui",
       role: t("management.roles.recruitmentManager"),
       imgSrc: "/portrait/HibaArfoui.webp",
-      linkedIn: "https://www.linkedin.com/in/hiba-arfaoui-3228b01aa/",
+      linkedIn: "http://linkedin.com/in/hiba-mameri-8a566a261/",
     },
     {
       name: "Rana Azemdroub",
@@ -91,9 +91,9 @@ const Management: React.FC = () => {
     },
     {
       name: "Hiba Mameri",
-      role: t(""),
-      imgSrc: "",
-      linkedIn: "",
+      role: t("management.roles.externalRelationsManager"),
+      imgSrc: "/portrait/HibaMameri.webp",
+      linkedIn: "https://www.linkedin.com/in/hiba-mameri-8a566a261/",
     },
   ];
 
@@ -161,8 +161,8 @@ const Management: React.FC = () => {
     {
       name: "Nora Belattar",
       role: t("management.roles.recognitionManager"),
-      imgSrc: "",
-      linkedIn: "",
+      imgSrc: "/portrait/NoraBelattar.webp",
+      linkedIn: "https://www.linkedin.com/in/nora-belattar-77243b302/",
     },
   ];
 
@@ -185,6 +185,7 @@ const Management: React.FC = () => {
       role: "CANlock Team Lead",
       imgSrc: "",
       linkedIn: "",
+      isVacant: true,
     },
     {
       name: "Anthony Lavertu",
@@ -197,12 +198,14 @@ const Management: React.FC = () => {
       role: "SGD-Beyond Team Lead",
       imgSrc: "",
       linkedIn: "",
+      isVacant: true,
     },
     {
       name: "Eloïse Prevot",
       role: "NutriNov Team Lead",
       imgSrc: "",
       linkedIn: "",
+      isVacant: true,
     },
     {
       name: "Cyrille Bernier",
@@ -215,18 +218,21 @@ const Management: React.FC = () => {
       role: "Poppy Humanoid (Simulation) Team Lead",
       imgSrc: "",
       linkedIn: "",
+      isVacant: true,
     },
     {
       name: "Deoth Guei",
       role: "F1 Jedi Team Lead",
       imgSrc: "",
       linkedIn: "",
+      isVacant: true,
     },
     {
       name: "Akram Omari",
       role: "FlapEEG Team Lead",
-      imgSrc: "",
       linkedIn: "",
+      imgSrc: "",
+      isVacant: true,
     },
   ];
 
