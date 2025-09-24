@@ -132,6 +132,7 @@
       "auxiliaryTeam": "Équipe Auxiliaire"
     },
     "roles": {
+      "roleAmen": "Team Lead ASL-Decoder & Responsable de projet",
       "president": "Président",
       "projectsLeader": "Leader des projets",
       "logisticsLeader": "Leader de la logistique",

@@ -176,7 +176,7 @@ const Management: React.FC = () => {
     },
     {
       name: "Amen Ouannes",
-      role: "ASL-Decoder Team Lead",
+      role: t("management.roles.roleAmen"),
       imgSrc: "/portrait/AmenOuannes.webp",
       linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
     },
@@ -196,9 +196,8 @@ const Management: React.FC = () => {
     {
       name: "Benjamin Leblanc",
       role: "SGD-Beyond Team Lead",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
+      imgSrc: "/portrait/Benjamin_Leblanc.webp",
+      linkedIn: "https://www.linkedin.com/in/benjamin-leblanc-a9217128b/",
     },
     {
       name: "Eloïse Prevot",
