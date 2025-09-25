@@ -215,23 +215,26 @@ const Management: React.FC = () => {
     {
       name: "Baptiste Gabriel Bonin",
       role: "Poppy Humanoid (Simulation) Team Lead",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
+      imgSrc: "/portrait/Baptiste.webp",
+      linkedIn: "https://www.linkedin.com/in/baptiste-bonin/",
     },
     {
       name: "Deoth Guei",
       role: "F1 Jedi Team Lead",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
+      imgSrc: "/portrait/Deoth.webp",
+      linkedIn: "https://www.linkedin.com/in/deoth-guei-382269191/",
+    },
+    {
+      name: "Jérôme Collet",
+      role: "F1 Jedi Team Lead (Team 2)",
+      imgSrc: "/portrait/Jerome.webp",
+      linkedIn: "https://ca.linkedin.com/in/jérôme-collet-577953199",
     },
     {
       name: "Akram Omari",
       role: "FlapEEG Team Lead",
-      linkedIn: "",
-      imgSrc: "",
-      isVacant: true,
+      linkedIn: "", // EN ATTENTE DE LINKEDIN
+      imgSrc: "/portrait/Akram.webp",
     },
   ];
 
