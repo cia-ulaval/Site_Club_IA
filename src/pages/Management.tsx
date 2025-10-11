@@ -98,7 +98,7 @@ const Management: React.FC = () => {
   ];
 
   // Team Leads (responsables d'équipe)
-  const teamLeads: TeamMember[] = [
+  const projectLeads: TeamMember[] = [
     {
       name: "Jordan Mathieu",
       role: t("management.roles.projectsLeader"),
@@ -116,6 +116,12 @@ const Management: React.FC = () => {
       role: t("management.roles.roleAmen"),
       imgSrc: "/portrait/AmenOuannes.webp",
       linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
+    },
+    {
+      name: "Mathieu Bazinet",
+      role: t("management.roles.trainingsManager"),
+      imgSrc: "/portrait/Mathieu.webp",
+      linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
   ];
 
@@ -177,7 +183,7 @@ const Management: React.FC = () => {
   ];
 
   // Project Leads (responsables de projets)
-  const projectLeads: TeamMember[] = [
+  const teamLeads: TeamMember[] = [
     {
       name: "Loïc Baret",
       role: "CANlock Team Lead",
@@ -232,12 +238,6 @@ const Management: React.FC = () => {
       role: "FlapEEG Team Lead",
       linkedIn: "",
       imgSrc: "/portrait/Akram.webp",
-    },
-    {
-      name: "Mathieu Bazinet",
-      role: t("management.roles.trainingsManager"),
-      imgSrc: "/portrait/Mathieu.webp",
-      linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
   ];
 
@@ -576,10 +576,14 @@ const Management: React.FC = () => {
           t("management.sections.talentTeam"),
           "medium"
         )}
-        {renderCards(teamLeads, t("management.sections.teamLeads"), "medium")}
         {renderCards(
           marketingResponsables,
           t("management.sections.marketingTeam"),
+          "medium"
+        )}
+        {renderCards(
+          projectLeads,
+          t("management.sections.projectsTeam"),
           "medium"
         )}
         {renderCards(
@@ -592,12 +596,7 @@ const Management: React.FC = () => {
           t("management.sections.activitiesTeam"),
           "medium"
         )}
-
-        {renderCards(
-          projectLeads,
-          t("management.sections.projectsTeam"),
-          "medium"
-        )}
+        {renderCards(teamLeads, t("management.sections.teamLeads"), "medium")}
       </motion.div>
     </>
   );
