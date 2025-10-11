@@ -84,7 +84,7 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/cyrille-bernier-31208a252/",
     },
     {
-      name: "Adriana Maria Paternina Paez",
+      name: "Adriana Paternina",
       role: t("management.roles.treasuryManager"),
       imgSrc: "/portrait/AdrianaMaria.webp",
       linkedIn: "https://www.linkedin.com/in/adriana-paternina/",
@@ -94,6 +94,28 @@ const Management: React.FC = () => {
       role: t("management.roles.externalRelationsManager"),
       imgSrc: "/portrait/HibaMameri.webp",
       linkedIn: "https://www.linkedin.com/in/hiba-mameri-8a566a261/",
+    },
+  ];
+
+  // Team Leads (responsables d'équipe)
+  const teamLeads: TeamMember[] = [
+    {
+      name: "Jordan Mathieu",
+      role: t("management.roles.projectsLeader"),
+      imgSrc: "/portrait/Jordan.webp",
+      linkedIn: "https://www.linkedin.com/in/jordan-math/",
+    },
+    {
+      name: "Vincent Bellemare",
+      role: t("management.roles.roleVincent"),
+      imgSrc: "/portrait/VincentBellemare.webp",
+      linkedIn: "https://www.linkedin.com/in/vincent-bellemare-i89/",
+    },
+    {
+      name: "Amen Ouannes",
+      role: t("management.roles.roleAmen"),
+      imgSrc: "/portrait/AmenOuannes.webp",
+      linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
     },
   ];
 
@@ -112,12 +134,6 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/dereck-bélanger-437259338/",
     },
     {
-      name: "Karima Habbout",
-      role: t("management.roles.communicationsManager"),
-      imgSrc: "/portrait/KarimaHabbout.webp",
-      linkedIn: "https://www.linkedin.com/in/karimahabbout/",
-    },
-    {
       name: "Youssouf Boubechiche",
       role: t("management.roles.designsManager"),
       imgSrc: "/portrait/YoussoufBoubechiche.webp",
@@ -132,12 +148,6 @@ const Management: React.FC = () => {
       role: t("management.roles.activitiesLeader"),
       imgSrc: "/portrait/Nathaniel.webp",
       linkedIn: "https://www.linkedin.com/in/nathaniel-damours/",
-    },
-    {
-      name: "Mathieu Bazinet",
-      role: t("management.roles.trainingsManager"),
-      imgSrc: "/portrait/Mathieu.webp",
-      linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
     {
       name: "Guilhem Ané",
@@ -166,20 +176,8 @@ const Management: React.FC = () => {
     },
   ];
 
-  // Responsables Projets
-  const projectsResponsables: TeamMember[] = [
-    {
-      name: "Jordan Mathieu",
-      role: t("management.roles.projectsLeader"),
-      imgSrc: "/portrait/Jordan.webp",
-      linkedIn: "https://www.linkedin.com/in/jordan-math/",
-    },
-    {
-      name: "Amen Ouannes",
-      role: t("management.roles.roleAmen"),
-      imgSrc: "/portrait/AmenOuannes.webp",
-      linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
-    },
+  // Project Leads (responsables de projets)
+  const projectLeads: TeamMember[] = [
     {
       name: "Loïc Baret",
       role: "CANlock Team Lead",
@@ -202,9 +200,8 @@ const Management: React.FC = () => {
     {
       name: "Eloïse Prevot",
       role: "NutriNov Team Lead",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
+      imgSrc: "/portrait/Eloise.webp",
+      linkedIn: "https://www.linkedin.com/in/eloise-prevot/",
     },
     {
       name: "Cyrille Bernier",
@@ -233,8 +230,14 @@ const Management: React.FC = () => {
     {
       name: "Akram Omari",
       role: "FlapEEG Team Lead",
-      linkedIn: "", // EN ATTENTE DE LINKEDIN
+      linkedIn: "",
       imgSrc: "/portrait/Akram.webp",
+    },
+    {
+      name: "Mathieu Bazinet",
+      role: t("management.roles.trainingsManager"),
+      imgSrc: "/portrait/Mathieu.webp",
+      linkedIn: "https://www.linkedin.com/in/mathieu-bazinet-196523a6",
     },
   ];
 
@@ -573,6 +576,7 @@ const Management: React.FC = () => {
           t("management.sections.talentTeam"),
           "medium"
         )}
+        {renderCards(teamLeads, t("management.sections.teamLeads"), "medium")}
         {renderCards(
           marketingResponsables,
           t("management.sections.marketingTeam"),
@@ -588,8 +592,9 @@ const Management: React.FC = () => {
           t("management.sections.activitiesTeam"),
           "medium"
         )}
+
         {renderCards(
-          projectsResponsables,
+          projectLeads,
           t("management.sections.projectsTeam"),
           "medium"
         )}

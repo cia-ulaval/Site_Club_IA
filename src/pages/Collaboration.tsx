@@ -89,12 +89,11 @@ const currentSponsors = [
     name: "Université Laval",
     tier: "Gold",
     link: "https://www.ulaval.ca/",
-    //logo can be added if we want
   },
   {
     name: "AESGUL",
     tier: "Gold",
-    link: "https://www.aesgul.com/",
+    link: "https://www.aesgul.com/accueil",
   },
   {
     name: "ASETIN",
@@ -104,17 +103,37 @@ const currentSponsors = [
   {
     name: "MonAvenirTI",
     tier: "Gold",
-    link: "https://www.monavenirti.org/",
+    link: "https://monavenirti.org/",
   },
   {
-    name: "Kernelor",
-    tier: "Bronze",
-    link: "https://www.kernelor.com/fr",
+    name: "Tracel AI",
+    tier: "Silver",
+    link: "https://tracel.ai/",
   },
   {
-    name: "Sifi Labs",
+    name: "SiFi Labs",
     tier: "Silver",
     link: "https://sifilabs.com/",
+  },
+  {
+    name: "Ingeno",
+    tier: "Gold",
+    link: "https://ingeno.ca/fr/",
+  },
+  {
+    name: "Vooban",
+    tier: "Bronze",
+    link: "https://vooban.com/",
+  },
+  {
+    name: "Service du développement professionnel - Université Laval",
+    tier: "Gold",
+    link: "https://sdp.ulaval.ca/",
+  },
+  {
+    name: "CRTI",
+    tier: "Gold",
+    link: "https://crti.ulaval.ca/",
   },
 ];
 
@@ -286,10 +305,52 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
     href={sponsor.link}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group"
+    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-red-900/20 to-red-800/10 border custom-border-red hover:border-red-500/50 transition-all duration-300 text-center group flex flex-col items-center justify-center"
     whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
   >
-    <div className="text-white text-lg font-semibold">{sponsor.name}</div>
+    {/* Try to show logo image when available in /banner; filenames vary so map common names to files */}
+    {(() => {
+      const normalize = (s: string) =>
+        s
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/\p{Diacritic}/gu, "")
+          .replace(/[^a-z0-9]/g, "");
+
+      const mapping: Record<string, string> = {
+        [normalize("Université Laval")]: "/banner/LogoDepartementInfo.png",
+        [normalize("AESGUL")]: "/banner/aesgul.webp",
+        [normalize("ASETIN")]: "/banner/asetin.webp",
+        [normalize("MonAvenirTI")]: "/banner/avenirti.webp",
+        [normalize("Tracel AI")]: "/banner/LogoTracel.png",
+        [normalize("SiFi Labs")]: "/banner/SiFiLabs.png",
+        [normalize("Ingeno")]: "/banner/ingeno.png",
+        [normalize("Vooban")]: "/banner/LogoVooban.png",
+        [normalize("CRTI")]: "/banner/LogoCRTI.png",
+        [normalize(
+          "Service du développement professionnel - Université Laval"
+        )]: "/banner/SDP.png",
+      };
+
+      const key = normalize(sponsor.name);
+      const logo = mapping[key];
+
+      if (logo) {
+        return (
+          <img
+            src={encodeURI(logo)}
+            alt={sponsor.name}
+            className="object-contain mb-2"
+            style={{ width: 140, height: 80 }}
+          />
+        );
+      }
+
+      return (
+        <div className="text-white text-lg font-semibold">{sponsor.name}</div>
+      );
+    })()}
+
     <div className="text-xs text-red-400 mt-2">{sponsor.tier}</div>
   </motion.a>
 );
@@ -451,31 +512,16 @@ function Collaboration() {
                   "description": "Recherche de partenaires pour financer et soutenir nos projets d'intelligence artificielle"
                 },
                 "sponsor": [
-                  {
-                    "@type": "Organization",
-                    "name": "Université Laval",
-                    "category": "Platinum"
-                  },
-                  {
-                    "@type": "Organization",
-                    "name": "AESGUL",
-                    "category": "Gold"
-                  },
-                  {
-                    "@type": "Organization",
-                    "name": "ASETIN", 
-                    "category": "Gold"
-                  },
-                  {
-                    "@type": "Organization",
-                    "name": "MonAvenirTI",
-                    "category": "Gold"
-                  },
-                  {
-                    "@type": "Organization",
-                    "name": "Kernelor",
-                    "category": "Bronze"
-                  }
+                  { "@type": "Organization", "name": "Université Laval", "category": "Platinum" },
+                  { "@type": "Organization", "name": "AESGUL", "category": "Gold" },
+                  { "@type": "Organization", "name": "ASETIN", "category": "Gold" },
+                  { "@type": "Organization", "name": "MonAvenir TI", "category": "Gold" },
+                  { "@type": "Organization", "name": "Tracel AI", "category": "Silver" },
+                  { "@type": "Organization", "name": "SiFi Labs", "category": "Silver" },
+                  { "@type": "Organization", "name": "Ingeno", "category": "Gold" },
+                  { "@type": "Organization", "name": "Vooban", "category": "Bronze" },
+                  { "@type": "Organization", "name": "CRTI", "category": "Gold" },
+                  { "@type": "Organization", "name": "Service du développement professionnel - Université Laval", "category": "Gold" }
                 ]
               },
               "offers": [

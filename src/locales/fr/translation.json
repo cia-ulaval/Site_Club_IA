@@ -129,10 +129,12 @@
       "marketingTeam": "Équipe Marketing",
       "activitiesTeam": "Équipe Activités",
       "projectsTeam": "Équipe Projets",
+      "teamLeads": "Leads d'équipe",
       "auxiliaryTeam": "Équipe Auxiliaire"
     },
     "roles": {
       "roleAmen": "Team Lead ASL-Decoder & Responsable de projet",
+      "roleVincent": "Reponsable de projet",
       "president": "Président",
       "projectsLeader": "Leader des projets",
       "logisticsLeader": "Leader de la logistique",
