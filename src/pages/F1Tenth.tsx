@@ -358,7 +358,7 @@ function F1Tenth() {
               </div>
             </motion.section>
 
-            <motion.section
+            {/* <motion.section
               id="sponsor"
               className="mt-20 mb-12 sm:mb-20 text-center"
               initial={{ opacity: 0 }}
@@ -385,7 +385,7 @@ function F1Tenth() {
                   {t("f1tenth.sponsor.description")}
                 </p>
               </div>
-            </motion.section>
+            </motion.section> */}
           </div>
         </motion.div>
       </section>
