@@ -19,7 +19,7 @@ import { useRef } from "react";
 const sponsorshipTiers = [
   {
     name: "Bronze",
-    price: "$1,500",
+    price: "$1,000",
     color: "from-amber-700 to-amber-900",
     hoverColor: "from-amber-600 to-amber-800",
     icon: <Award className="w-8 h-8 text-amber-400" />,
@@ -27,33 +27,39 @@ const sponsorshipTiers = [
       "Your logo and link on our website",
       "Your logo presented at our events",
       "Your logo on our t-shirts",
-      "Special thanks on our social media",
-      "Distribution of your promotional materials",
     ],
   },
   {
     name: "Silver",
-    price: "$3,500",
+    price: "$5,000",
     color: "from-gray-400 to-gray-600",
     hoverColor: "from-gray-300 to-gray-500",
     icon: <Award className="w-8 h-8 text-gray-300" />,
     benefits: [
-      "All Bronze benefits",
-      "Invitation to our opening events",
-      "Repost of two ads",
+      "Your logo and link on our website",
+      "Your logo presented in bold at our events",
+      "Your logo in bold on our t-shirts",
+      "Special thanks on our social media",
+      "Invitation of one member to one of our opening events",
+      "Repost of an ad",
     ],
   },
   {
     name: "Gold",
-    price: "$5,000",
+    price: "$10,000",
     color: "from-yellow-500 to-yellow-700",
     hoverColor: "from-yellow-400 to-yellow-600",
     icon: <Award className="w-8 h-8 text-yellow-300" />,
     benefits: [
-      "All Silver benefits",
-      "Sponsorship for one of our projects",
-      "Access to our members CV book",
-      "Your logo on our projects",
+      "Your logo and link on our website",
+      "Your logo presented in very bold at our events",
+      "Your logo in very bold on our t-shirts",
+      "Special thanks on our social media",
+      "Invitation of three members to one of our opening events",
+      "Repost of three ads",
+      "Sponsorship of one of our projects",
+      "Access to our CV book of student researchers",
+      "Your logo on one of our projects",
     ],
   },
 ];
@@ -357,6 +363,11 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
 
 const ContactForm = () => {
   const { t } = useTranslation();
+  // Keep the email in two pieces so crawlers do not see the raw string
+  const contactEmail = `finance.cia${"@"}ulaval.ca`;
+  const handleContactClick = () => {
+    window.location.href = `mailto:${contactEmail}`;
+  };
 
   return (
     <motion.div
@@ -396,6 +407,9 @@ const ContactForm = () => {
         className="w-full py-3 bg-gradient-to-r from-red-500 to-red-700 hover:from-red-400 hover:to-red-600 rounded-lg text-white font-semibold"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
+        type="button"
+        onClick={handleContactClick}
+        aria-label={`Contact ${contactEmail}`}
       >
         {t("collaborationPage.contactButton")}
       </motion.button>
