@@ -353,6 +353,11 @@
         "line2": "Our team is getting closer every day to delivering a final product.",
         "line3": "Stay tuned for more updates!"
       }
+    },
+    "game": {
+      "title": "Play the FlapEEG Demo",
+      "description": "Try out the FlapEEG demo and experience thought-controlled gaming !",
+      "button": "Play"
     }
   },
   "f1tenth": {
