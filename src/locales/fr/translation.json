@@ -342,6 +342,11 @@
         "line2": "Notre équipe se rapproche chaque jour de la livraison d'un produit final.",
         "line3": "Restez à l'écoute pour plus de mises à jour !"
       }
+    },
+    "game": {
+      "title": "Jouez à la démo FlapEEG",
+      "description": "Essayez la version démo de FlapEEG et contrôlez le jeu avec vos pensées !",
+      "button": "Jouer"
     }
   },
   "f1tenth": {

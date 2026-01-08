@@ -1,12 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import {
-  Users,
-  Lightbulb,
-  Target,
-  Rocket,
-  Braces,
-  Rotate3d,
-  Radical,
+    Users,
+    Lightbulb,
+    Target,
+    Rocket,
+    Braces,
+    Rotate3d,
+    Radical, Play,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
@@ -446,6 +446,33 @@ function FlapEEG() {
                   </ul>
                 </div>
               </div>
+
+                <motion.div
+                    className="mt-10 flex flex-col items-center pt-20"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+
+                    <p className="text-lg text-gray-200 font-medium text-center mb-6">
+                        <h3 className="text-2xl sm:text-3xl font-bold text-red-400 gradient-text mt-3 mb-4">
+                            {t("flapeeg.game.title")}
+                        </h3>
+                        <p>{t("flapeeg.game.description")}</p>
+                    </p>
+                    <motion.a
+                        href="/flapeeg/index.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        {t("flapeeg.game.button")}
+                        <Play></Play>
+                    </motion.a>
+                </motion.div>
 
               {/* Section "Restez à l'écoute" avec bouton Discord */}
               <motion.div
