@@ -334,7 +334,7 @@ function Gallery() {
               className={`px-5 py-2 rounded-full text-sm md:text-base transition-all custom-border-red custom-hover-border-red ${
                 activeCategory === category.id
                   ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30"
-                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700"
+                  : " bg-gray-200/80 dark:bg-gray-800/70 text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700"
               }`}
               onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}

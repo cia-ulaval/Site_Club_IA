@@ -9,7 +9,7 @@ export default function LanguageToggle() {
   };
 
   return (
-    <button onClick={toggleLanguage}>
+    <button onClick={toggleLanguage} className="text-gray-600 dark:text-gray-300 hover:text-rose-500/60">
       {i18n.language === "en" ? "Français" : "English"}
     </button>
   );

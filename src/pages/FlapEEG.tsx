@@ -276,7 +276,7 @@ function FlapEEG() {
               <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
                 {t("flapeeg.team.title")}
               </h2>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
+              <div className="flex flex-wrap justify-center gap-1 md:gap-8 px-2 md:px-6">
                 {teamMembers.map((member, index) => (
                   <motion.div
                     key={index}
@@ -301,7 +301,7 @@ function FlapEEG() {
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                  className="flex-1 bg-gradient-to-br from-black/5 dark:from-black/40 to-red-600/10 dark:to-red-900/10 rounded-2xl shadow-lg p-6"
                   style={{ border: "2px solid #ef4444" }}
                 >
                   <div className="video-container relative rounded-xl overflow-hidden shadow-lg mb-4">
@@ -376,7 +376,7 @@ function FlapEEG() {
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                  className="flex-1 bg-gradient-to-br from-black/5 dark:from-black/40 to-red-600/10 dark:to-red-900/10 rounded-2xl shadow-lg p-6"
                   style={{ border: "2px solid #ef4444" }}
                 >
                   <div className="flex items-center gap-3 mb-2">
@@ -418,10 +418,10 @@ function FlapEEG() {
               </h2>
               <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                  className="flex-1 bg-gradient-to-br from-black/5 dark:from-black/40 to-red-600/10 dark:to-red-900/10 rounded-2xl shadow-lg p-6"
                   style={{ border: "2px solid #ef4444" }}
                 >
-                  <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  <h3 className="text-xl font-semibold text-red-500 mb-2">
                     {t("flapeeg.status.current.title")}
                   </h3>
                   <ul className="list-disc list-inside text-gray-300 space-y-2">
@@ -432,10 +432,10 @@ function FlapEEG() {
                   </ul>
                 </div>
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
+                  className="flex-1 bg-gradient-to-br from-black/5 dark:from-black/40 to-red-600/10 dark:to-red-900/10 rounded-2xl shadow-lg p-6"
                   style={{ border: "2px solid #ef4444" }}
                 >
-                  <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  <h3 className="text-xl font-semibold text-red-500 dark:text-red-400 mb-2">
                     {t("flapeeg.status.next.title")}
                   </h3>
                   <ul className="list-disc list-inside text-gray-300 space-y-2">

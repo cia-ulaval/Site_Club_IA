@@ -280,7 +280,7 @@ const Management: React.FC = () => {
 
     return (
       <motion.section
-        className="max-w-7xl mx-auto px-4 pb-6"
+        className="max-w-8xl mx-auto pb-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -304,17 +304,17 @@ const Management: React.FC = () => {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-red-900/40 border-2 border-red-800/50 border-dashed text-white mb-12 relative overflow-hidden rounded-lg"
+                  className="bg-red-900/30 dark:bg-red-900/40 border-2 border-red-800/50 border-dashed text-white mb-12 relative overflow-hidden rounded-lg"
                   style={{
                     width: size.width,
                     height: size.height,
                   }}
                 >
                   <div
-                    className="bg-red-800/20 flex items-center justify-center"
+                    className="bg-red-600/20 dark:bg-red-800/20 flex items-center justify-center"
                     style={{ height: size.imageHeight }}
                   >
-                    <User className="w-16 h-16 text-red-400/50" />
+                    <User className="w-16 h-16 text-red-500/80 dark:text-red-400/50" />
                   </div>
                   <div
                     className="text-center flex flex-col justify-center p-2"
@@ -322,17 +322,17 @@ const Management: React.FC = () => {
                   >
                     <div className="flex-grow flex flex-col justify-center">
                       <h3
-                        className={`text-red-300/70 mb-1 ${size.titleSize} font-semibold`}
+                        className={`text-red-500/80 dark:text-red-300/70 mb-1 ${size.titleSize} font-semibold`}
                       >
                         {t("management.vacantPosition")}
                       </h3>
                       <p
-                        className={`text-red-400/60 ${size.roleSize} leading-tight`}
+                        className={`text-red-500/60 dark:text-red-400/60 ${size.roleSize} leading-tight`}
                       >
                         {member.role}
                       </p>
                     </div>
-                    <div className="flex items-center justify-center mt-1 text-red-500/50">
+                    <div className="flex items-center justify-center mt-1 text-red-500/60 dark:text-red-500/50">
                       <small className="text-xs font-medium">
                         {t("management.positionInInterview")}
                       </small>
@@ -385,12 +385,12 @@ const Management: React.FC = () => {
                     >
                       <div className="flex-grow flex flex-col justify-center">
                         <h3
-                          className={`text-gray-200 mb-1 ${size.titleSize} leading-tight`}
+                          className={`text-gray-100 dark:text-gray-200 mb-1 ${size.titleSize} leading-tight`}
                         >
                           {member.name}
                         </h3>
                         <p
-                          className={`text-gray-400 ${size.roleSize} leading-tight`}
+                          className={`card-text text-gray-300 dark:text-gray-400 ${size.roleSize} leading-tight`}
                         >
                           {member.role}
                         </p>
