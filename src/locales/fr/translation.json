@@ -1495,6 +1495,144 @@
       "button": "Rejoindre l'Équipe Drone"
     }
   },
+  "avionCargo": {
+    "meta": {
+      "title": "Avion-Cargo – Atterrissage autonome de précision | Club IA ULaval",
+      "description": "Projet Avion-Cargo : système d'atterrissage autonome par vision par ordinateur avec détection de marqueurs ArUco, estimation 3D et précision inférieure à 10 cm."
+    },
+    "simple": {
+      "badge": "Projet autonome",
+      "precisionBadge": "Précision cible : < 10 cm",
+      "title": "Avion-Cargo",
+      "subtitle": "Atterrissage autonome de précision par vision par ordinateur",
+      "description1": "Le projet Avion-Cargo consiste à développer un système d'atterrissage de précision entièrement autonome utilisant la vision par ordinateur et l'intelligence artificielle.",
+      "description2": "L'objectif est de détecter des marqueurs ArUco à l'aide d'une caméra embarquée, d'estimer la position 3D en temps réel, puis de guider l'aéronef afin d'effectuer un atterrissage avec une précision inférieure à 10 cm, tout en permettant la récupération de charges utiles.",
+      "imageAlt": "Avion-Cargo – atterrissage autonome de précision",
+      "imageBadge": "Atterrissage autonome",
+      "technologiesTitle": "Technologies principales",
+      "technologies": ["OpenCV", "ArduPilot", "Navigation intelligente"],
+      "pipelineTitle": "Pipeline de fonctionnement",
+      "pipelineSubtitle": "De la détection visuelle au guidage autonome de l'aéronef.",
+      "pipelineSteps": [
+        {
+          "title": "Capture vidéo",
+          "description": "Une caméra embarquée observe la zone d'atterrissage en temps réel."
+        },
+        {
+          "title": "Détection ArUco",
+          "description": "Le système détecte les marqueurs ArUco pour localiser précisément la cible."
+        },
+        {
+          "title": "Estimation 3D",
+          "description": "La position 3D est estimée en continu pour suivre l'approche de l'aéronef."
+        },
+        {
+          "title": "Guidage autonome",
+          "description": "Des algorithmes avancés de navigation ajustent la trajectoire automatiquement."
+        },
+        {
+          "title": "Atterrissage et récupération",
+          "description": "L'atterrissage vise une précision inférieure à 10 cm et permet la récupération de charges utiles."
+        }
+      ],
+      "summaryTitle": "Description du projet",
+      "summaryItems": [
+        "Développer un système d'atterrissage de précision entièrement autonome.",
+        "Détecter des marqueurs ArUco avec une caméra embarquée.",
+        "Estimer la position 3D en temps réel puis guider l'aéronef.",
+        "Effectuer un atterrissage avec une précision inférieure à 10 cm et récupérer des charges utiles."
+      ]
+    },
+    "hero": {
+      "badge": "Projet Autonome",
+      "precisionBadge": "< 10 cm de précision",
+      "title": "Avion-Cargo",
+      "subtitle": "Atterrissage autonome de précision par vision par ordinateur",
+      "description1": "Le projet Avion-Cargo consiste à développer un système d'atterrissage de précision entièrement autonome utilisant la vision par ordinateur et l'intelligence artificielle.",
+      "description2": "L'objectif est de détecter des marqueurs ArUco à l'aide d'une caméra embarquée, d'estimer la position 3D en temps réel, puis de guider l'aéronef afin d'effectuer un atterrissage avec une précision inférieure à 10 cm, tout en permettant la récupération de charges utiles.",
+      "members": "Membres recherchés",
+      "precision": "Précision cible : < 10 cm",
+      "imageBadge": "Atterrissage autonome"
+    },
+    "stats": [
+      { "value": "< 10 cm", "label": "Précision d'atterrissage", "sub": "Objectif de précision cible" },
+      { "value": "ArUco", "label": "Marqueurs de navigation", "sub": "Détection en temps réel" },
+      { "value": "3D", "label": "Estimation de position", "sub": "Vision par ordinateur embarquée" }
+    ],
+    "pipeline": {
+      "title": "Pipeline de fonctionnement",
+      "subtitle": "Du décollage à l'atterrissage : comment le système guide l'aéronef de manière autonome",
+      "steps": [
+        { "step": "1", "title": "Capture vidéo", "description": "La caméra embarquée capture le flux vidéo en temps réel pendant le vol." },
+        { "step": "2", "title": "Détection ArUco", "description": "OpenCV détecte les marqueurs ArUco dans l'image et extrait leurs coordonnées 2D." },
+        { "step": "3", "title": "Estimation 3D", "description": "L'algorithme calcule la position et l'orientation 3D de l'aéronef par rapport à la cible." },
+        { "step": "4", "title": "Guidage intelligent", "description": "Les algorithmes de navigation calculent les corrections de trajectoire et transmettent les commandes à ArduPilot." },
+        { "step": "5", "title": "Atterrissage & récupération", "description": "L'aéronef se pose avec une précision < 10 cm et permet la récupération de charges utiles." }
+      ]
+    },
+    "objectives": {
+      "title": "Objectifs du projet",
+      "items": [
+        {
+          "title": "🎯 Vision & Détection",
+          "items": [
+            "Détecter des marqueurs ArUco en temps réel depuis une caméra embarquée",
+            "Estimer la pose 3D (position + orientation) avec précision",
+            "Assurer la robustesse dans des conditions d'éclairage variées",
+            "Optimiser les performances pour un traitement embarqué"
+          ]
+        },
+        {
+          "title": "🚀 Navigation & Livraison",
+          "items": [
+            "Atteindre une précision d'atterrissage inférieure à 10 cm",
+            "Intégrer avec ArduPilot pour les commandes de vol",
+            "Développer des algorithmes de guidage intelligent",
+            "Permettre la récupération autonome de charges utiles"
+          ]
+        }
+      ]
+    },
+    "tech": {
+      "title": "Technologies & Outils",
+      "items": [
+        { "name": "OpenCV", "type": "vision" },
+        { "name": "ArduPilot", "type": "autopilote" },
+        { "name": "Python", "type": "langage" },
+        { "name": "Marqueurs ArUco", "type": "navigation" },
+        { "name": "MAVLink", "type": "protocole" },
+        { "name": "NumPy", "type": "calcul" },
+        { "name": "Raspberry Pi / Jetson", "type": "matériel" },
+        { "name": "PID / Guidage", "type": "contrôle" }
+      ]
+    },
+    "roles": {
+      "title": "Profils recherchés",
+      "items": [
+        {
+          "title": "Vision par ordinateur & IA",
+          "count": "2–3 membres",
+          "description": "Implémenter et optimiser la détection de marqueurs ArUco, l'estimation de pose 3D et les algorithmes de traitement d'image embarqués.",
+          "skills": ["OpenCV", "Python", "Computer Vision", "Estimation de pose", "Traitement d'image"]
+        },
+        {
+          "title": "Navigation & Systèmes embarqués",
+          "count": "2–3 membres",
+          "description": "Développer les algorithmes de guidage, intégrer ArduPilot via MAVLink et mettre au point les contrôleurs de vol autonome.",
+          "skills": ["ArduPilot", "MAVLink", "Python", "Contrôle PID", "Systèmes embarqués"]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Prêt à faire atterrir l'IA ?",
+      "subtitle": "Rejoins l'équipe Avion-Cargo et travaille sur un système de navigation autonome réel !",
+      "discord": "Rejoindre sur Discord"
+    }
+  },
+      "avion-cargo": {
+        "title": "Avion-Cargo",
+        "description": "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm."
+      },
   "asldecoder": {
     "meta": {
       "title": "Reconnaissance du Langage des Signes par IA",

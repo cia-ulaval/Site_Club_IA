@@ -59,6 +59,10 @@
         "title": "ASL Decoder",
         "description": "Raspberry Pi system with camera for real-time American Sign Language (ASL) recognition using AI. Completed project combining computer vision and machine learning."
       },
+      "avion-cargo": {
+        "title": "Avion-Cargo",
+        "description": "Autonomous precision landing system using computer vision. ArUco marker detection, real-time 3D estimation and intelligent guidance for sub-10 cm landings."
+      },
       "imageComing": "Project image coming soon",
       "learnMore": "Learn more",
       "github": "GitHub"
@@ -1505,6 +1509,140 @@
       "subtitle": "Join the team and participate in a unique competition!",
       "description": "If you're ready to commit time, love extreme technical challenges and want to win, this project is for you.",
       "button": "Join the Drone Team"
+    }
+  },
+  "avionCargo": {
+    "meta": {
+      "title": "Cargo Plane – Autonomous Precision Landing | Club IA ULaval",
+      "description": "Avion-Cargo project: fully autonomous precision landing system using computer vision, ArUco marker detection, 3D position estimation and sub-10 cm accuracy."
+    },
+    "simple": {
+      "badge": "Autonomous project",
+      "precisionBadge": "Target precision: < 10 cm",
+      "title": "Avion-Cargo",
+      "subtitle": "Autonomous precision landing through computer vision",
+      "description1": "The Avion-Cargo project focuses on developing a fully autonomous precision landing system using computer vision and artificial intelligence.",
+      "description2": "The objective is to detect ArUco markers with an onboard camera, estimate the 3D position in real time, then guide the aircraft to achieve a landing precision under 10 cm while enabling payload recovery.",
+      "imageAlt": "Avion-Cargo – autonomous precision landing",
+      "imageBadge": "Autonomous landing",
+      "technologiesTitle": "Core technologies",
+      "technologies": ["OpenCV", "ArduPilot", "Intelligent navigation"],
+      "pipelineTitle": "System pipeline",
+      "pipelineSubtitle": "From visual detection to autonomous aircraft guidance.",
+      "pipelineSteps": [
+        {
+          "title": "Video capture",
+          "description": "An onboard camera monitors the landing zone in real time."
+        },
+        {
+          "title": "ArUco detection",
+          "description": "The system detects ArUco markers to locate the target precisely."
+        },
+        {
+          "title": "3D estimation",
+          "description": "The 3D position is continuously estimated to track the aircraft approach."
+        },
+        {
+          "title": "Autonomous guidance",
+          "description": "Advanced navigation algorithms automatically adjust the trajectory."
+        },
+        {
+          "title": "Landing and recovery",
+          "description": "Landing targets sub-10 cm precision and enables payload recovery."
+        }
+      ],
+      "summaryTitle": "Project description",
+      "summaryItems": [
+        "Develop a fully autonomous precision landing system.",
+        "Detect ArUco markers with an onboard camera.",
+        "Estimate 3D position in real time, then guide the aircraft.",
+        "Perform landing with precision under 10 cm and recover payloads."
+      ]
+    },
+    "hero": {
+      "badge": "Autonomous Project",
+      "precisionBadge": "< 10 cm precision",
+      "title": "Avion-Cargo",
+      "subtitle": "Autonomous Precision Landing via Computer Vision",
+      "description1": "The Avion-Cargo project focuses on developing a fully autonomous precision landing system using computer vision and artificial intelligence.",
+      "description2": "The goal is to detect ArUco markers with an onboard camera, estimate the 3D position in real time, then guide the aircraft to achieve a landing precision of less than 10 cm while enabling payload recovery.",
+      "members": "Members wanted",
+      "precision": "Target precision: < 10 cm",
+      "imageBadge": "Autonomous landing"
+    },
+    "stats": [
+      { "value": "< 10 cm", "label": "Landing Precision", "sub": "Target precision goal" },
+      { "value": "ArUco", "label": "Navigation Markers", "sub": "Real-time detection" },
+      { "value": "3D", "label": "Position Estimation", "sub": "Onboard computer vision" }
+    ],
+    "pipeline": {
+      "title": "System Pipeline",
+      "subtitle": "From takeoff to touchdown: how the system guides the aircraft autonomously",
+      "steps": [
+        { "step": "1", "title": "Video Capture", "description": "The onboard camera captures a live video feed during flight." },
+        { "step": "2", "title": "ArUco Detection", "description": "OpenCV detects ArUco markers in the frame and extracts their 2D coordinates." },
+        { "step": "3", "title": "3D Estimation", "description": "The algorithm calculates the 3D position and orientation of the aircraft relative to the target." },
+        { "step": "4", "title": "Intelligent Guidance", "description": "Navigation algorithms compute trajectory corrections and transmit commands to ArduPilot." },
+        { "step": "5", "title": "Landing & Recovery", "description": "The aircraft lands with < 10 cm precision and enables autonomous payload recovery." }
+      ]
+    },
+    "objectives": {
+      "title": "Project Objectives",
+      "items": [
+        {
+          "title": "🎯 Vision & Detection",
+          "items": [
+            "Detect ArUco markers in real time from an onboard camera",
+            "Accurately estimate 3D pose (position + orientation)",
+            "Ensure robustness under varying lighting conditions",
+            "Optimize performance for embedded processing"
+          ]
+        },
+        {
+          "title": "🚀 Navigation & Delivery",
+          "items": [
+            "Achieve landing precision below 10 cm",
+            "Integrate with ArduPilot for flight commands",
+            "Develop intelligent guidance algorithms",
+            "Enable autonomous payload recovery"
+          ]
+        }
+      ]
+    },
+    "tech": {
+      "title": "Technologies & Tools",
+      "items": [
+        { "name": "OpenCV", "type": "vision" },
+        { "name": "ArduPilot", "type": "autopilot" },
+        { "name": "Python", "type": "language" },
+        { "name": "ArUco Markers", "type": "navigation" },
+        { "name": "MAVLink", "type": "protocol" },
+        { "name": "NumPy", "type": "computing" },
+        { "name": "Raspberry Pi / Jetson", "type": "hardware" },
+        { "name": "PID / Guidance", "type": "control" }
+      ]
+    },
+    "roles": {
+      "title": "Profiles Wanted",
+      "items": [
+        {
+          "title": "Computer Vision & AI",
+          "count": "2–3 members",
+          "description": "Implement and optimize ArUco marker detection, 3D pose estimation and embedded image processing algorithms.",
+          "skills": ["OpenCV", "Python", "Computer Vision", "Pose Estimation", "Image Processing"]
+        },
+        {
+          "title": "Navigation & Embedded Systems",
+          "count": "2–3 members",
+          "description": "Develop guidance algorithms, integrate ArduPilot via MAVLink and tune autonomous flight controllers.",
+          "skills": ["ArduPilot", "MAVLink", "Python", "PID Control", "Embedded Systems"]
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to land AI?",
+      "subtitle": "Join the Avion-Cargo team and work on a real autonomous navigation system!",
+      "discord": "Join on Discord"
     }
   },
   "asldecoder": {

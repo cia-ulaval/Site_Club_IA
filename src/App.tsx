@@ -21,6 +21,7 @@ import NutriNov from "./pages/NutriNov";
 import PoppyConception from "./pages/PoppyConception";
 import PoppySimulation from "./pages/PoppySimulation";
 import ASLDecoder from "./pages/ASLDecoder";
+import AvionCargo from "./pages/AvionCargo";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -50,6 +51,7 @@ function App() {
           <Route path="/poppy-conception" element={<PoppyConception />} />
           <Route path="/poppy-simulation" element={<PoppySimulation />} />
           <Route path="/asl-decoder" element={<ASLDecoder />} />
+          <Route path="/avion-cargo" element={<AvionCargo />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/collaboration" element={<Collaboration />} />
           <Route path="/join-us" element={<JoinUs />} />

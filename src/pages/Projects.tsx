@@ -51,6 +51,14 @@ const projects = [
     github: "https://github.com/cia-ulaval/poppy-simulation-team-1",
   },
   {
+    key: "nutrinov",
+    image: "/project/nutrinov.png",
+    defaultTitle: "NutriNov",
+    defaultDescription:
+      "Identifiez un problème alimentaire et développez un prototype tech viable — en partenariat avec Open Food Facts. Type : Projet Entrepreneurial. Team Lead : Eloïse Prevot.",
+    link: "/nutrinov",
+  },
+  {
     key: "sgd-beyond",
     image: "/project/sgd.png",
     defaultTitle: "SGD - Beyond",
@@ -58,6 +66,15 @@ const projects = [
       "Analyse et amélioration d'un algorithme fondamental d'IA (SGD) en y intégrant une méthode d'optimisation par bruit. Plus d'infos et code sur GitHub.",
     link: "/sgd-beyond",
     github: "https://github.com/cia-ulaval/sgd",
+  },
+  {
+    key: "avion-cargo",
+    image: "/project/AvionCargo.jpg",
+    defaultTitle: "Avion-Cargo",
+    defaultDescription:
+      "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm.",
+    link: "/avion-cargo",
+    github: "https://github.com/cia-ulaval/avion-cargo",
   },
   {
     key: "asldecoder",
@@ -92,14 +109,6 @@ const projects = [
       "Traduction et analyse automatique de mangas grâce à l'IA : OCR, NLP, génération de dialogues et analyse de style. Participez à la création d'outils pour la culture japonaise, la linguistique computationnelle et la vision par ordinateur. Idéal pour les passionnés d'IA, de manga et de traitement du langage.",
     link: "/mangaai",
     github: "https://github.com/cia-ulaval/MangaAutoTranslator",
-  },
-  {
-    key: "nutrinov",
-    image: "",
-    defaultTitle: "NutriNov",
-    defaultDescription:
-      "Identifiez un problème alimentaire et développez un prototype tech viable — en partenariat avec Open Food Facts. Type : Projet Entrepreneurial. Team Lead : Eloïse Prevot.",
-    link: "/nutrinov",
   },
   {
     key: "canlock",
@@ -272,7 +281,7 @@ function Projects() {
                 className="flex justify-center"
               >
                 <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300 h-auto min-h-[400px] sm:min-h-[450px]">
-                  {["canlock", "nutrinov"].includes(project.key) ? (
+                  {["canlock"].includes(project.key) ? (
                     <div className="w-full h-64 bg-gray-800 rounded-xl flex items-center justify-center text-gray-500 text-lg">
                       {t(
                         "home.projects.imageComing",
