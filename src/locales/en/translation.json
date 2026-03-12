@@ -184,6 +184,7 @@
       "communicationsManager": "Communications Manager",
       "trainingsManager": "Trainings Manager",
       "competitionsManager": "Competitions Manager",
+      "readingGroupManager": "Reading Group Manager",
       "socialManager": "Social Manager",
       "recognitionManager": "Recognition Manager",
       "projectsManager": "Projects Manager",
@@ -206,23 +207,24 @@
       "noDetails": "No additional information available."
     },
     "aboutMe": {
-      "dereck": "Hi, my name is Dereck! I am very passionate about computer science in general but mostly AI, cybersecurity and web development. Outside work/school, I do mixed martial arts and run a bunch. I love neuroscience and chess. Feel free to contact me if you have questions about the club, requests for the website or want to chat!"
+      "dereck": "Hi, my name is Dereck, I am the creator of this website! I am very passionate about computer science in general but mostly AI. Outside work/school, I do mixed martial arts and love neuroscience and chess. Feel free to contact me if you have questions about the club, requests for the website or want to chat!"
     },
     "missions": {
       "nathaniel": "Guide leaders to respect the Club's mission, culture and vision",
-      "louis": "Ensure all Club Admins have everything they need",
-      "jade": "Guide the team to recruit 300 members per session",
+      "louis": "Manage the computing towers, the GitHub organization, and the Club's Discord servers",
+      "jade": "Guide the team to recruit 350 members per year",
       "douae": "Recruit students and follow their integration into the Club",
       "rana": "Ensure presence at visibility activities (open houses, festivals, etc.)",
       "alexandrine": "Guide the team to obtain $50,000",
       "mihal": "Form partnerships and complete funding applications",
       "adriana": "Manage the budget and invoices",
       "anthony": "Manage relations with organizations at Laval University and internationally",
-      "yves": "Guide the team to reach 900 LinkedIn followers",
+      "yves": "Guide the team to reach 800 LinkedIn followers",
       "hibaComm": "Create the announcements calendar and ensure follow-up",
       "youssouf": "Design merch, visuals, the new Club logo and website",
       "dereck": "Create, maintain and update the website",
       "eleonore": "Build connections between 500 members through 30 events",
+      "ulysse": "Build connections between 500 members through 30 events",
       "william": "Organize outings (board game nights, 5@7, sports, etc.)",
       "nora": "Organize activities to recognize achievements",
       "jordan": "Supervise 50 students in projects per session",

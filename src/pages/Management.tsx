@@ -36,6 +36,12 @@ const Management: React.FC = () => {
       imgSrc: "/portrait/Louis.webp",
       linkedIn: "https://www.linkedin.com/in/louis-etienne-messier-2361311ba/",
     },
+    {
+      name: "Nezar Mahane",
+      role: t("management.roles.logisticsManager"),
+      imgSrc: "/portrait/NezarMahane.png",
+      linkedIn: "",
+    },
   ];
 
   // Pôle Talents
@@ -48,12 +54,17 @@ const Management: React.FC = () => {
       linkedIn: "https://linkedin.com/in/jade-piller-cammal-242b88261/",
     },
     {
-      name: "Douae",
+      name: "Douae Sakkat",
       role: t("management.roles.recruitmentManager"),
       mission: t("management.missions.douae"),
-      imgSrc: "",
+      imgSrc: "/portrait/DouaeSakkat.jpeg",
       linkedIn: "",
-      isVacant: true,
+    },
+    {
+      name: "Seynabou Diakité",
+      role: t("management.roles.recruitmentManager"),
+      imgSrc: "/portrait/SeynabouDiakité.png",
+      linkedIn: "",
     },
     {
       name: "Hiba Arfaoui",
@@ -81,23 +92,21 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/",
     },
     {
-      name: "Mihal",
+      name: "Michal Naumiak",
       role: t("management.roles.partnershipsManager"),
       mission: t("management.missions.mihal"),
-      imgSrc: "",
+      imgSrc: "/portrait/MichalNaumiak.jpg",
       linkedIn: "",
-      isVacant: true,
     },
     {
-      name: "Chaima",
+      name: "Chaima Mohsni",
       role: t("management.roles.partnershipsManager"),
       mission: "",
-      imgSrc: "",
+      imgSrc: "/portrait/ChaimaMohsni.jpg",
       linkedIn: "",
-      isVacant: true,
     },
     {
-      name: "Adriana Paternina",
+      name: "Adriana Maria Paternina Paez",
       role: t("management.roles.treasuryManager"),
       mission: t("management.missions.adriana"),
       imgSrc: "/portrait/AdrianaMaria.webp",
@@ -143,6 +152,12 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/youssouf-boubechiche-62668128a/",
     },
     {
+      name: "Mimi Baret",
+      role: t("management.roles.designsManager"),
+      imgSrc: "/portrait/MimiBaret.jpg",
+      linkedIn: "",
+    },
+    {
       name: "Dereck Bélanger",
       role: t("management.roles.websiteManager"),
       mission: t("management.missions.dereck"),
@@ -152,17 +167,29 @@ const Management: React.FC = () => {
       portfolio: "https://dereckbelanger.me",
       additionalDetails: t("management.aboutMe.dereck"),
     },
+    {
+      name: "Aboubacar Sylla",
+      role: t("management.roles.websiteManager"),
+      imgSrc: "/portrait/AboubacarSylla.jpg",
+      linkedIn: "",
+    },
   ];
 
   // Pôle Activités
   const activitiesResponsables: TeamMember[] = [
     {
-      name: "Éléonore",
+      name: "Éléonore Imbeault",
       role: t("management.roles.activitiesLeader"),
       mission: t("management.missions.eleonore"),
-      imgSrc: "",
+      imgSrc: "/portrait/ÉléonoreImbeault.png",
       linkedIn: "",
-      isVacant: true,
+    },
+    {
+      name: "Ulysse Gagné",
+      role: t("management.roles.activitiesLeader"),
+      mission: t("management.missions.ulysse"),
+      imgSrc: "/portrait/UlysseGagné.jpg",
+      linkedIn: "",
     },
     {
       name: "William Blanchet Lafrenière",
@@ -185,6 +212,20 @@ const Management: React.FC = () => {
       mission: t("management.missions.nora"),
       imgSrc: "/portrait/NoraBelattar.webp",
       linkedIn: "https://www.linkedin.com/in/nora-belattar-77243b302/",
+    },
+    {
+      name: "Peut-être toi ?",
+      role: t("management.roles.readingGroupManager"),
+      imgSrc: "",
+      linkedIn: "",
+      isVacant: true,
+    },
+    {
+      name: "Peut-être toi ?",
+      role: t("management.roles.competitionsManager"),
+      imgSrc: "",
+      linkedIn: "",
+      isVacant: true,
     },
   ];
 
@@ -219,31 +260,44 @@ const Management: React.FC = () => {
       linkedIn: "https://www.linkedin.com/in/vincent-bellemare-i89/",
     },
     {
-      name: "Benjamin Leblanc",
+      name: "Benjamin Sekpona",
       role: t("management.roles.projectsManager"),
       mission: "",
-      imgSrc: "/portrait/Benjamin_Leblanc.webp",
-      linkedIn: "https://www.linkedin.com/in/benjamin-leblanc-a9217128b/",
+      imgSrc: "/portrait/BenjaminSekpona.png",
+      linkedIn: "",
     },
     {
-      name: "Babacar",
+      name: "Babacar Thiam",
       role: t("management.roles.projectsManager"),
       mission: "",
-      imgSrc: "",
+      imgSrc: "/portrait/BabacarThiam.jpeg",
       linkedIn: "",
-      isVacant: true,
+    },
+    {
+      name: "Zachary Bois",
+      role: t("management.roles.projectsManager"),
+      mission: "",
+      imgSrc: "/portrait/ZacharyBois.jpg",
+      linkedIn: "",
+    },
+    {
+      name: "Prince Emiliano Akissoe",
+      role: t("management.roles.projectsManager"),
+      mission: "",
+      imgSrc: "/portrait/PrinceEmiliano.jpg",
+      linkedIn: "",
+    },
+    {
+      name: "Teddy Kana",
+      role: t("management.roles.projectsManager"),
+      mission: "",
+      imgSrc: "/portrait/TeddyKana.jpg",
+      linkedIn: "",
     },
   ];
 
   // Team Leads (responsables de projets)
   const teamLeads: TeamMember[] = [
-    {
-      name: "Loïc Baret",
-      role: "CANlock Team Lead",
-      imgSrc: "",
-      linkedIn: "",
-      isVacant: true,
-    },
     {
       name: "Anthony Lavertu",
       role: "Drone Team Lead",
@@ -541,6 +595,12 @@ const Management: React.FC = () => {
                   },
                   {
                     "@type": "Person",
+                    "name": "Jade Piller Cammal",
+                    "jobTitle": "${t("management.roles.talentsLeader")}",
+                    "sameAs": "https://linkedin.com/in/jade-piller-cammal-242b88261/"
+                  },
+                  {
+                    "@type": "Person",
                     "name": "Alexandrine Lehoux",
                     "jobTitle": "${t("management.roles.financeLeader")}",
                     "sameAs": "https://www.linkedin.com/in/alexandrine-lehoux-b511771b7/"
@@ -567,15 +627,14 @@ const Management: React.FC = () => {
                   },
                   {
                     "@type": "Person",
-                    "name": "Mathieu Bazinet",
+                    "name": "Guilhem Ané",
                     "jobTitle": "${t("management.roles.trainingsManager")}",
-                    "sameAs": "https://www.linkedin.com/in/mathieu-bazinet-196523a6"
+                    "sameAs": "https://www.linkedin.com/in/guilhemane/"
                   },
                   {
                     "@type": "Person",
-                    "name": "Almaoudata Walet",
-                    "jobTitle": "${t("management.roles.competitionsManager")}",
-                    "sameAs": "https://www.linkedin.com/in/alma-walet-93418b325/"
+                    "name": "Ulysse Gagné",
+                    "jobTitle": "${t("management.roles.activitiesLeader")}"
                   }
                 ]
               }

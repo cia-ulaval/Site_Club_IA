@@ -184,6 +184,7 @@
       "communicationsManager": "Responsable des communications",
       "trainingsManager": "Responsable des formations",
       "competitionsManager": "Responsable des compétitions",
+      "readingGroupManager": "Responsable du groupe de lecture",
       "socialManager": "Responsable du social",
       "recognitionManager": "Responsable de la reconnaissance",
       "projectsManager": "Responsable des projets",
@@ -206,23 +207,24 @@
       "noDetails": "Aucune information supplémentaire disponible."
     },
     "aboutMe": {
-      "dereck": "Salut, je m'appelle Dereck! Je suis très passionné par l'informatique en général, mais surtout par l'IA, la cybersécurité et le développement web. En dehors du travail/école, je pratique les arts martiaux mixtes et je cours beaucoup. J'adore les neurosciences et les échecs. N'hésitez pas à me contacter si vous avez des questions sur le club, des demandes pour le site web ou si vous voulez discuter!"
+      "dereck": "Salut, je m'appelle Dereck, je suis le créateur de ce site web! Je suis très passionné par l'informatique en général, mais surtout par l'IA. En dehors du travail/école, je pratique les arts martiaux mixtes, la neuroscience et les échecs. N'hésitez pas à me contacter si vous avez des questions sur le club, des demandes pour le site web ou si vous voulez discuter!"
     },
     "missions": {
       "nathaniel": "Guider les leaders afin de respecter la mission, la culture et la vision du Club",
-      "louis": "Assurer que tous les Admins du Club ne manquent de rien",
-      "jade": "Guider l'équipe afin de recruter 300 membres par session",
+      "louis": "Administrer les tours de calcul, l'organisation GitHub et les serveurs Discord du Club",
+      "jade": "Guider l'équipe afin de recruter 350 membres par année",
       "douae": "Recruter des étudiants et suivre leur intégration dans le Club",
       "rana": "Assurer une présence aux activités de visibilité (portes ouvertes, festivals, etc.)",
       "alexandrine": "Guider l'équipe afin d'obtenir 50 000 $",
       "mihal": "Former des partenariats et remplir des demandes de financement",
       "adriana": "Gérer le budget et les factures",
       "anthony": "Gérer les relations avec les organismes à l'Université Laval et à l'international",
-      "yves": "Guider l'équipe pour atteindre 900 followers LinkedIn",
+      "yves": "Guider l'équipe pour atteindre 800 abonnés LinkedIn",
       "hibaComm": "Créer le calendrier des annonces et assurer le retour de celles-ci",
       "youssouf": "Designer la merch, les visuels, le nouveau logo du Club et le site web",
       "dereck": "Créer, maintenir et mettre à jour le site web",
       "eleonore": "Créer des liens entre 500 membres à travers 30 événements",
+      "ulysse": "Créer des liens entre 500 membres à travers 30 événements",
       "william": "Organiser des sorties (soirées jeux de société, 5@7, sport, etc.)",
       "nora": "Organiser des activités pour reconnaître les succès",
       "jordan": "Encadrer 50 étudiants dans les projets par session",
