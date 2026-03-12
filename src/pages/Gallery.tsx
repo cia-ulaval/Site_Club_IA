@@ -86,24 +86,12 @@ function Gallery() {
         descKey: "gallery.images.community.kiosque",
       },
       {
-        src: "/implication/kiosque.webp",
-        descKey: "gallery.images.community.kiosque2",
-      },
-      {
         src: "/implication/presentation.webp",
         descKey: "gallery.images.community.presentation",
       },
       {
-        src: "/implication/rencontrecia.jpeg",
-        descKey: "gallery.images.community.rencontrecia",
-      },
-      {
         src: "/implication/table.webp",
         descKey: "gallery.images.community.table",
-      },
-      {
-        src: "/implication/table2.webp",
-        descKey: "gallery.images.community.table2",
       },
       {
         src: "/implication/table3.webp",
@@ -128,7 +116,7 @@ function Gallery() {
   const getDisplayImages = () => {
     if (activeCategory === "all") {
       return Object.entries(images).flatMap(([category, imgs]) =>
-        imgs.map((img) => ({ ...img, category }))
+        imgs.map((img) => ({ ...img, category })),
       );
     }
 
