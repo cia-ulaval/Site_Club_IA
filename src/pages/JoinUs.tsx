@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
 function JoinUs() {
   const { t } = useTranslation();
-
   return (
     <>
       <Helmet>
@@ -20,19 +18,16 @@ function JoinUs() {
           name="description"
           content="Rejoignez le Club Intelligence Artificielle de l'Université Laval ! Participez à nos projets IA, formations, événements et communauté Discord. Ouvert à tous les étudiants passionnés d'IA."
         />
-
         {/* Mots-clés */}
         <meta
           name="keywords"
           content="rejoindre Club IA, adhésion CIA ULaval, Discord Club IA, communauté IA, étudiants intelligence artificielle, formations IA, projets étudiants, Université Laval, machine learning, collaboration IA"
         />
-
         {/* Auteur */}
         <meta
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -49,7 +44,6 @@ function JoinUs() {
         <meta property="og:url" content="https://cia.ift.ulaval.ca/join-us" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -64,68 +58,17 @@ function JoinUs() {
           name="twitter:image"
           content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
         />
-
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/join-us" />
-
-        {/* Langue */}
-        <html lang="fr" />
-
+        {/* Langue */} <html lang="fr" />
         {/* Données structurées JSON-LD pour Google */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              "name": "Rejoindre le Club IA - Intelligence Artificielle Université Laval",
-              "url": "https://cia.ift.ulaval.ca/join-us",
-              "description": "Page d'adhésion au Club Intelligence Artificielle de l'Université Laval",
-              "mainEntity": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
-                "foundingLocation": {
-                  "@type": "Place",
-                  "name": "Québec, Canada"
-                },
-                "parentOrganization": {
-                  "@type": "EducationalOrganization",
-                  "name": "Université Laval"
-                },
-                "sameAs": [
-                  "https://www.instagram.com/ciaulaval/",
-                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
-                  "https://github.com/cia-ulaval",
-                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                ],
-                "contactPoint": [
-                  {
-                    "@type": "ContactPoint",
-                    "contactType": "general",
-                    "email": "cia@ulaval.ca"
-                  },
-                  {
-                    "@type": "ContactPoint",
-                    "contactType": "community",
-                    "url": "https://discord.gg/ZPVwCjMpAq"
-                  }
-                ],
-              },
-              "potentialAction": {
-                "@type": "JoinAction",
-                "target": "https://discord.gg/ZPVwCjMpAq",
-                "name": "Rejoindre le Discord"
-              }
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "WebPage", "name": "Rejoindre le Club IA - Intelligence Artificielle Université Laval", "url": "https://cia.ift.ulaval.ca/join-us", "description": "Page d'adhésion au Club Intelligence Artificielle de l'Université Laval", "mainEntity": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ], "contactPoint": [ { "@type": "ContactPoint", "contactType": "general", "email": "cia@ulaval.ca" }, { "@type": "ContactPoint", "contactType": "community", "url": "https://discord.gg/ZPVwCjMpAq" } ], }, "potentialAction": { "@type": "JoinAction", "target": "https://discord.gg/ZPVwCjMpAq", "name": "Rejoindre le Discord" } } `}
         </script>
       </Helmet>
-
       <section className="relative overflow-hidden pt-20">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -138,12 +81,11 @@ function JoinUs() {
             className="text-center"
           >
             <h1 className="text-6xl font-bold mb-4 pb-20 pt-8">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+              <span className="theme-text-gradient">
                 {t("joinus.heroSubtitle")}
               </span>
             </h1>
           </motion.div>
-
           {/* Discord Section */}
           <motion.div
             className="text-center mb-12"
@@ -152,19 +94,18 @@ function JoinUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-gray-400 mb-4">
+            <p className="text-lg theme-text-muted mb-4">
               {t("joinus.discordText")}
             </p>
             <a
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
+              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
             >
               {t("joinus.discordButton")}
             </a>
           </motion.div>
-
           {/* Collaboration Section */}
           <motion.div
             className="text-center mt-16"
@@ -173,15 +114,15 @@ function JoinUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-primary-500 mb-4">
               {t("joinus.collabTitle")}
             </h3>
-            <p className="text-lg text-gray-400 mb-6">
+            <p className="text-lg theme-text-muted mb-6">
               {t("joinus.collabText")}
             </p>
             <Link
               to="/collaboration"
-              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-red-600 text-white font-bold rounded-lg shadow-lg hover:bg-red-700 transition duration-300 text-center"
+              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
             >
               {t("joinus.collabButton")}
             </Link>
@@ -192,14 +133,14 @@ function JoinUs() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-gray-400 hover:text-red-400 transition"
+                className="theme-text-muted theme-hover-text-accent transition"
               >
                 <Linkedin size={40} />
               </a>
               <a
                 href="mailto:cia@ulaval.ca"
                 aria-label="Email"
-                className="text-gray-400 hover:text-red-400 transition"
+                className="theme-text-muted theme-hover-text-accent transition"
               >
                 <Mail size={40} />
               </a>
@@ -208,7 +149,7 @@ function JoinUs() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-gray-400 hover:text-red-400 transition"
+                className="theme-text-muted theme-hover-text-accent transition"
               >
                 <Instagram size={40} />
               </a>
@@ -217,7 +158,7 @@ function JoinUs() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="text-gray-400 hover:text-red-400 transition"
+                className="theme-text-muted theme-hover-text-accent transition"
               >
                 <Facebook size={40} />
               </a>
@@ -228,5 +169,4 @@ function JoinUs() {
     </>
   );
 }
-
 export default JoinUs;

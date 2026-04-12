@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const projects = [
   {
@@ -260,13 +260,14 @@ function Projects() {
           {/* ---- en-tête ---- */}
           <header className="text-center mb-16">
             <motion.h1
-              className="text-5xl font-extrabold text-white tracking-wide"
+              className="text-5xl font-extrabold theme-text-gradient tracking-wide"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               {t("home.projects.title", "Projects")}
             </motion.h1>
+            <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />
           </header>
 
           {/* ---- cartes projets ---- */}
@@ -280,9 +281,15 @@ function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex justify-center"
               >
-                <div className="container bg-red-900/20 rounded-xl overflow-hidden shadow-lg w-full max-w-sm transition-all duration-300 h-auto min-h-[400px] sm:min-h-[450px]">
+                <div
+                  className={`rounded-xl overflow-hidden border-2 !border-primary-500/75 hover:!border-primary-400 bg-gradient-to-br from-primary-950/85 via-primary-900/65 to-primary-950/75 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 w-full max-w-sm transition-all duration-300 h-auto min-h-[400px] sm:min-h-[450px] ${
+                    project.key === "flapeeg"
+                      ? "ring-2 ring-accent-400/70 shadow-accent-500/25"
+                      : ""
+                  }`}
+                >
                   {["canlock"].includes(project.key) ? (
-                    <div className="w-full h-64 bg-gray-800 rounded-xl flex items-center justify-center text-gray-500 text-lg">
+                    <div className="w-full h-64 bg-primary-900/35 border-b !border-primary-500/75 rounded-xl flex items-center justify-center text-accent-300 text-lg">
                       {t(
                         "home.projects.imageComing",
                         "Image du projet à venir",
@@ -290,22 +297,31 @@ function Projects() {
                     </div>
                   ) : (
                     <div
-                      className="w-full h-64 bg-cover bg-center"
+                      className="relative w-full h-64 bg-cover bg-center"
                       style={{
                         backgroundImage: `url(${
                           project.image || "/project/placeholder.webp"
                         })`,
                       }}
-                    />
+                    >
+                      {project.key === "flapeeg" && (
+                        <span className="absolute top-3 left-3 z-10 rounded-full border !border-accent-300/80 bg-accent-500/20 px-3 py-1 text-xs font-semibold text-accent-200 shadow-lg backdrop-blur-sm">
+                          {t(
+                            "home.projects.flapeeg.nominationBadge",
+                            "Nominated at Gala de la vie étudiante",
+                          )}
+                        </span>
+                      )}
+                    </div>
                   )}
                   <div className="p-6 flex flex-col min-h-[200px]">
-                    <h3 className="text-xl font-semibold text-gray-200 mb-2">
+                    <h3 className="text-xl font-bold text-accent-300 mb-2">
                       {t(
                         `home.projects.${project.key}.title`,
                         project.defaultTitle,
                       )}
                     </h3>
-                    <p className="text-gray-400 mb-4 flex-grow overflow-visible break-words leading-relaxed text-sm sm:text-base">
+                    <p className="!text-accent-300 mb-4 flex-grow overflow-visible break-words leading-relaxed text-sm sm:text-base">
                       {t(
                         `home.projects.${project.key}.description`,
                         project.defaultDescription,
@@ -315,7 +331,7 @@ function Projects() {
                     <div className="flex flex-wrap gap-3 mt-auto sm:flex-row flex-col">
                       <Link
                         to={project.link}
-                        className="px-4 py-2 text-sm text-white font-medium rounded-md bg-red-600 transition-all duration-300 hover:bg-red-500 flex items-center justify-center sm:flex-grow"
+                        className="px-4 py-2 text-sm text-base-inverse font-medium rounded-md theme-btn-gradient transition-all duration-300 flex items-center justify-center sm:flex-grow"
                       >
                         {t("home.projects.learnMore", "Learn more")} →
                       </Link>
@@ -325,7 +341,7 @@ function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="px-4 py-2 text-sm text-white font-medium rounded-md bg-gray-800 transition-all duration-300 hover:bg-gray-700 flex items-center justify-center sm:flex-grow"
+                          className="px-4 py-2 text-sm text-base-inverse font-medium rounded-md theme-btn-secondary transition-all duration-300 flex items-center justify-center sm:flex-grow"
                         >
                           <Github className="w-4 h-4 mr-2" />
                           <span>{t("home.projects.github", "GitHub")}</span>

@@ -37,14 +37,14 @@ const MemberModal: React.FC<MemberModalProps> = ({
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-base/80 backdrop-blur-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
     >
       <motion.div
-        className="bg-gradient-to-br from-gray-900 to-red-950 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl border border-red-500/30 flex"
+        className="theme-modal-surface rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl flex"
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -52,7 +52,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left Side - Full Height Image */}
-        <div className="w-1/3 relative bg-gradient-to-b from-gray-900 to-black flex-shrink-0">
+        <div className="w-1/3 relative bg-gradient-to-b from-primary-950 to-base flex-shrink-0">
           {member.imgSrc ? (
             <img
               src={member.imgSrc}
@@ -60,12 +60,12 @@ const MemberModal: React.FC<MemberModalProps> = ({
               className="w-full h-full object-cover"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-red-900/20">
-              <User className="w-24 h-24 text-red-400/50" />
+            <div className="w-full h-full flex items-center justify-center bg-primary-900/20">
+              <User className="w-24 h-24 theme-text-accent" />
             </div>
           )}
           {/* Gradient overlay at bottom */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-base/60 to-transparent" />
         </div>
 
         {/* Right Side - Content */}
@@ -73,38 +73,38 @@ const MemberModal: React.FC<MemberModalProps> = ({
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-black/30 hover:bg-red-600 rounded-full transition-colors"
+            className="absolute top-4 right-4 p-2 bg-primary-900/50 hover:bg-accent-300 rounded-full transition-colors"
           >
-            <X className="w-5 h-5 text-white" />
+            <X className="w-5 h-5 text-base-inverse" />
           </button>
 
           {/* Content with bullet-point style layout */}
           <div className="space-y-6 pr-8">
             {/* Name */}
             <div>
-              <span className="text-red-400 text-sm font-medium uppercase tracking-wider">
+              <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                 {translations.name}
               </span>
-              <h2 className="text-3xl font-bold text-white mt-1">
+              <h2 className="text-3xl font-bold text-base-inverse mt-1">
                 {member.name}
               </h2>
             </div>
 
             {/* Role */}
             <div>
-              <span className="text-red-400 text-sm font-medium uppercase tracking-wider">
+              <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                 {translations.role}
               </span>
-              <p className="text-xl text-gray-200 mt-1">{member.role}</p>
+              <p className="text-xl text-primary-300 mt-1">{member.role}</p>
             </div>
 
             {/* Mission */}
             {member.mission && (
               <div>
-                <span className="text-red-400 text-sm font-medium uppercase tracking-wider">
+                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                   {translations.mission}
                 </span>
-                <p className="text-gray-300 mt-1 leading-relaxed">
+                <p className="theme-text-secondary mt-1 leading-relaxed">
                   {member.mission}
                 </p>
               </div>
@@ -113,10 +113,10 @@ const MemberModal: React.FC<MemberModalProps> = ({
             {/* About Me / Additional Details */}
             {member.additionalDetails && (
               <div>
-                <span className="text-red-400 text-sm font-medium uppercase tracking-wider">
+                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                   {translations.aboutMe}
                 </span>
-                <p className="text-gray-300 mt-1 leading-relaxed">
+                <p className="theme-text-secondary mt-1 leading-relaxed">
                   {member.additionalDetails}
                 </p>
               </div>
@@ -125,7 +125,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
             {/* Connect */}
             {hasLinks && (
               <div>
-                <span className="text-red-400 text-sm font-medium uppercase tracking-wider">
+                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                   {translations.connect}
                 </span>
                 <div className="flex flex-wrap gap-3 mt-3">
@@ -134,7 +134,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
                       href={member.linkedIn}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-300 text-base-inverse rounded-lg transition-colors"
                     >
                       <Linkedin className="w-4 h-4" />
                       <span className="text-sm font-medium">LinkedIn</span>
@@ -145,7 +145,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
                       href={member.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 theme-btn-secondary rounded-lg transition-colors"
                     >
                       <Github className="w-4 h-4" />
                       <span className="text-sm font-medium">GitHub</span>
@@ -156,7 +156,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
                       href={member.portfolio}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg transition-colors"
+                      className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-300 text-base-inverse rounded-lg transition-colors"
                     >
                       <Globe className="w-4 h-4" />
                       <span className="text-sm font-medium">Portfolio</span>
@@ -168,7 +168,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
 
             {/* No details message */}
             {!hasContent && (
-              <p className="text-gray-500 italic mt-8">
+              <p className="theme-text-muted italic mt-8">
                 {translations.noDetails}
               </p>
             )}

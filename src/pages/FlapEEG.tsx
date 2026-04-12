@@ -9,21 +9,18 @@ import {
   Radical,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import TeamMemberCard from "../components/TeamMemberCard";
 import { useTranslation } from "react-i18next";
-
 function FlapEEG() {
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     if (videoRef.current) {
       setIsPlaying(!videoRef.current.paused);
     }
   }, []);
-
   const teamMembers = [
     {
       icon: <Users className="w-8 h-8" />,
@@ -61,7 +58,6 @@ function FlapEEG() {
       description: t("flapeeg.team.members.william.description"),
     },
   ];
-
   return (
     <>
       <Helmet>
@@ -74,19 +70,16 @@ function FlapEEG() {
           name="description"
           content="FlappyBrain : jeu révolutionnaire contrôlé par EEG et ondes cérébrales. Interface cerveau-ordinateur développée par le Club IA ULaval avec Muse headband et intelligence artificielle."
         />
-
         {/* Mots-clés */}
         <meta
           name="keywords"
           content="FlappyBrain, EEG, ondes cérébrales, interface cerveau-ordinateur, BCI, neurotechnologie, jeu EEG, Muse headband, brain-computer interface, Club IA ULaval, Louis-Étienne Messier, Jordan Mathieu"
         />
-
         {/* Auteur */}
         <meta
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -103,7 +96,6 @@ function FlapEEG() {
         <meta property="og:url" content="https://cia.ift.ulaval.ca/flapeeg" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -118,121 +110,23 @@ function FlapEEG() {
           name="twitter:image"
           content="https://cia.ift.ulaval.ca/project/FlappyBrain.webp"
         />
-
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/flapeeg" />
-
-        {/* Langue */}
-        <html lang="fr" />
-
+        {/* Langue */} <html lang="fr" />
         {/* Données structurées JSON-LD pour Google */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "FlappyBrain EEG - Jeu Contrôlé par Ondes Cérébrales",
-              "url": "https://cia.ift.ulaval.ca/flapeeg",
-              "description": "Jeu révolutionnaire contrôlé par EEG et ondes cérébrales utilisant une interface cerveau-ordinateur",
-              "applicationCategory": "GameApplication",
-              "operatingSystem": "Cross-platform",
-              "author": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
-                "foundingLocation": {
-                  "@type": "Place",
-                  "name": "Québec, Canada"
-                },
-                "parentOrganization": {
-                  "@type": "EducationalOrganization",
-                  "name": "Université Laval"
-                },
-                "sameAs": [
-                  "https://www.instagram.com/ciaulaval/",
-                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
-                  "https://github.com/cia-ulaval",
-                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                ]
-              },
-              "creator": [
-                {
-                  "@type": "Person",
-                  "name": "Louis-Étienne Messier",
-                  "jobTitle": "Chef d'équipe et développeur principal"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Jordan Mathieu",
-                  "jobTitle": "Développeur IA et machine learning"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Dereck Bélanger",
-                  "jobTitle": "Développeur interface utilisateur"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Amen Ouannes",
-                  "jobTitle": "Développeur backend"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Estelle Tournassat",
-                  "jobTitle": "Analyste données EEG"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Hedi Braham",
-                  "jobTitle": "Spécialiste traitement signal"
-                },
-                {
-                  "@type": "Person",
-                  "name": "William Blanchet Lafrenière",
-                  "jobTitle": "Développeur et testeur"
-                }
-              ],
-              "featureList": [
-                "Contrôle par ondes cérébrales EEG",
-                "Interface cerveau-ordinateur (BCI)",
-                "Utilisation du casque Muse",
-                "Traitement signal en temps réel",
-                "Apprentissage automatique personnalisé",
-                "Filtrage numérique des signaux",
-                "Interface utilisateur intuitive"
-              ],
-              "keywords": [
-                "EEG",
-                "ondes cérébrales",
-                "interface cerveau-ordinateur",
-                "BCI",
-                "neurotechnologie",
-                "Muse headband",
-                "jeu mental",
-                "brain-computer interface"
-              ],
-              "screenshot": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp",
-              "image": "https://cia.ift.ulaval.ca/project/FlappyBrain.webp",
-              "codeRepository": "https://github.com/cia-ulaval/FlapEEG_interface_v1",
-              "programmingLanguage": ["Python", "JavaScript", "React"],
-              "requirements": "Casque EEG Muse, ordinateur compatible"
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "FlappyBrain EEG - Jeu Contrôlé par Ondes Cérébrales", "url": "https://cia.ift.ulaval.ca/flapeeg", "description": "Jeu révolutionnaire contrôlé par EEG et ondes cérébrales utilisant une interface cerveau-ordinateur", "applicationCategory": "GameApplication", "operatingSystem": "Cross-platform", "author": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ] }, "creator": [ { "@type": "Person", "name": "Louis-Étienne Messier", "jobTitle": "Chef d'équipe et développeur principal" }, { "@type": "Person", "name": "Jordan Mathieu", "jobTitle": "Développeur IA et machine learning" }, { "@type": "Person", "name": "Dereck Bélanger", "jobTitle": "Développeur interface utilisateur" }, { "@type": "Person", "name": "Amen Ouannes", "jobTitle": "Développeur backend" }, { "@type": "Person", "name": "Estelle Tournassat", "jobTitle": "Analyste données EEG" }, { "@type": "Person", "name": "Hedi Braham", "jobTitle": "Spécialiste traitement signal" }, { "@type": "Person", "name": "William Blanchet Lafrenière", "jobTitle": "Développeur et testeur" } ], "featureList": [ "Contrôle par ondes cérébrales EEG", "Interface cerveau-ordinateur (BCI)", "Utilisation du casque Muse", "Traitement signal en temps réel", "Apprentissage automatique personnalisé", "Filtrage numérique des signaux", "Interface utilisateur intuitive" ], "keywords": [ "EEG", "ondes cérébrales", "interface cerveau-ordinateur", "BCI", "neurotechnologie", "Muse headband", "jeu mental", "brain-computer interface" ], "screenshot": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp", "image": "https://cia.ift.ulaval.ca/project/FlappyBrain.webp", "codeRepository": "https://github.com/cia-ulaval/FlapEEG_interface_v1", "programmingLanguage": ["Python", "JavaScript", "React"], "requirements": "Casque EEG Muse, ordinateur compatible" } `}
         </script>
       </Helmet>
-
       <section className="relative overflow-hidden">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
           <div>
             <h1 className="sr-only">{t("flapeeg.hero.title")}</h1>
-
             {/* Hero Section */}
             <motion.section
               className="mb-12 sm:mb-20"
@@ -251,21 +145,18 @@ function FlapEEG() {
                 </div>
                 <div className="flex flex-col justify-center mt-6 md:mt-0">
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                      FlapEEG
-                    </span>
+                    <span className="theme-text-gradient"> FlapEEG </span>
                   </h1>
                   <p className="sr-only">{t("flapeeg.hero.description.sr")}</p>
-                  <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
+                  <p className="theme-text-muted mb-4 sm:mb-6 text-justify">
                     {t("flapeeg.hero.description.paragraph1")}
                   </p>
-                  <p className="text-gray-400 text-justify">
+                  <p className="theme-text-muted text-justify">
                     {t("flapeeg.hero.description.paragraph2")}
                   </p>
                 </div>
               </div>
             </motion.section>
-
             {/* Team Section */}
             <motion.section
               className="mb-12 sm:mb-20 mt-12 sm:mt-20"
@@ -273,7 +164,7 @@ function FlapEEG() {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
                 {t("flapeeg.team.title")}
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
@@ -293,18 +184,17 @@ function FlapEEG() {
                 ))}
               </div>
             </motion.section>
-
             {/* Timeline Section */}
             <section id="Week1" className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("flapeeg.timeline.beginning.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="flex-1 theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
-                  <div className="video-container relative rounded-xl overflow-hidden shadow-lg mb-4">
+                  <div className="theme-media-frame mb-4">
                     <video
                       ref={videoRef}
                       className="w-full h-full object-cover"
@@ -314,45 +204,44 @@ function FlapEEG() {
                       playsInline
                       poster="/project/flappyproto-poster.webp"
                       aria-label={t(
-                        "flapeeg.timeline.beginning.video.ariaLabel"
+                        "flapeeg.timeline.beginning.video.ariaLabel",
                       )}
                     />
                   </div>
                   <div>
-                    <span className="text-lg font-semibold text-white flex items-center gap-2 mb-2">
-                      <Rocket className="w-6 h-6 text-red-400" />
+                    <span className="text-lg font-semibold text-accent-300 flex items-center gap-2 mb-2">
+                      <Rocket className="w-6 h-6 theme-text-accent" />
                       {t("flapeeg.timeline.beginning.prototype.title")}
                     </span>
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="theme-text-muted leading-relaxed">
                       {t("flapeeg.timeline.beginning.prototype.description")}
                     </p>
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col justify-between h-full">
                   <div className="flex items-center gap-3 mb-2"></div>
-                  <p className="text-gray-400">
+                  <p className="theme-text-muted">
                     {t("flapeeg.timeline.beginning.description")}
                   </p>
                 </div>
               </div>
             </section>
-
             <section id="Week2-4" className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-4 sm:mb-6 text-center">
                 {t("flapeeg.timeline.dataCollection.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div className="flex-1 flex flex-col justify-between h-full">
                   <div className="flex items-center gap-3 mb-2">
-                    <Users className="w-6 h-6 text-red-400" />
-                    <span className="text-lg font-semibold text-white">
+                    <Users className="w-6 h-6 theme-text-accent" />
+                    <span className="text-lg font-semibold text-accent-300">
                       {t("flapeeg.timeline.dataCollection.subtitle")}
                     </span>
                   </div>
-                  <p className="text-gray-400">
+                  <p className="theme-text-muted">
                     {t("flapeeg.timeline.dataCollection.paragraph1")}
                   </p>
-                  <p className="text-gray-400 mt-4 sm:mt-6">
+                  <p className="theme-text-muted mt-4 sm:mt-6">
                     {t("flapeeg.timeline.dataCollection.paragraph2")}
                   </p>
                 </div>
@@ -362,69 +251,67 @@ function FlapEEG() {
                     alt={t("flapeeg.timeline.dataCollection.image.alt")}
                     className="rounded-2xl shadow-2xl w-full max-w-lg"
                     style={{
-                      border: "2px solid #ef4444",
-                      boxShadow: "0 4px 20px rgba(255, 0, 0, 0.5)",
+                      border: "2px solid rgb(var(--color-primary-500))",
+                      boxShadow:
+                        "0 4px 20px rgb(var(--color-primary-500) / 0.5)",
                     }}
                   />
                 </div>
               </div>
             </section>
-
             <section id="Week4-6" className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-4 sm:mb-6 text-center">
                 {t("flapeeg.timeline.filtering.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="flex-1 theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <Braces className="w-6 h-6 text-red-400" />
-                    <span className="text-lg font-semibold text-white">
+                    <Braces className="w-6 h-6 theme-text-accent" />
+                    <span className="text-lg font-semibold text-accent-300">
                       {t("flapeeg.timeline.filtering.subtitle")}
                     </span>
                   </div>
-                  <p className="text-gray-400 pb-3 sm:pb-4">
+                  <p className="theme-text-muted pb-3 sm:pb-4">
                     {t("flapeeg.timeline.filtering.paragraph1")}
                   </p>
-                  <p className="text-gray-400">
+                  <p className="theme-text-muted">
                     {t("flapeeg.timeline.filtering.paragraph2")}
                   </p>
                 </div>
                 <div className="flex-1 flex items-center justify-center">
-                  <Radical className="w-24 h-24 text-red-500 opacity-30" />
+                  <Radical className="w-24 h-24 text-primary-500 opacity-30" />
                 </div>
               </div>
             </section>
-
             <section id="Week6-9" className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
                 {t("flapeeg.timeline.challenge.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-center">
                 <div className="flex-1 flex items-center">
-                  <Target className="w-10 h-10 text-red-400 mr-4" />
-                  <p className="text-gray-400 m-0">
+                  <Target className="w-10 h-10 theme-text-accent mr-4" />
+                  <p className="theme-text-muted m-0">
                     {t("flapeeg.timeline.challenge.description")}
                   </p>
                 </div>
               </div>
             </section>
-
             <section id="project-status" className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-4 sm:mb-6 mt-12 sm:mt-20 text-center">
                 {t("flapeeg.status.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="flex-1 theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
-                  <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  <h3 className="text-xl font-semibold theme-text-accent mb-2">
                     {t("flapeeg.status.current.title")}
                   </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc list-inside theme-text-secondary space-y-2">
                     <li>{t("flapeeg.status.current.items.0")}</li>
                     <li>{t("flapeeg.status.current.items.1")}</li>
                     <li>{t("flapeeg.status.current.items.2")}</li>
@@ -432,13 +319,13 @@ function FlapEEG() {
                   </ul>
                 </div>
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="flex-1 theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
-                  <h3 className="text-xl font-semibold text-red-400 mb-2">
+                  <h3 className="text-xl font-semibold theme-text-accent mb-2">
                     {t("flapeeg.status.next.title")}
                   </h3>
-                  <ul className="list-disc list-inside text-gray-300 space-y-2">
+                  <ul className="list-disc list-inside theme-text-secondary space-y-2">
                     <li>{t("flapeeg.status.next.items.0")}</li>
                     <li>{t("flapeeg.status.next.items.1")}</li>
                     <li>{t("flapeeg.status.next.items.2")}</li>
@@ -446,7 +333,6 @@ function FlapEEG() {
                   </ul>
                 </div>
               </div>
-
               {/* Section "Restez à l'écoute" avec bouton Discord */}
               <motion.div
                 className="mt-10 flex flex-col items-center pt-20"
@@ -455,23 +341,20 @@ function FlapEEG() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <Rocket className="w-12 h-12 text-red-400 mb-4" />
-                <p className="text-lg text-gray-200 font-medium text-center mb-6">
-                  {t("flapeeg.status.conclusion.line1")}
-                  <br />
-                  {t("flapeeg.status.conclusion.line2")}
-                  <br />
-                  <span className="text-red-400 font-bold">
+                <Rocket className="w-12 h-12 theme-text-accent mb-4" />
+                <p className="text-lg text-neutral-200 font-medium text-center mb-6">
+                  {t("flapeeg.status.conclusion.line1")} <br />
+                  {t("flapeeg.status.conclusion.line2")} <br />
+                  <span className="theme-text-accent font-bold">
                     {t("flapeeg.status.conclusion.line3")}
                   </span>
                 </p>
-
                 {/* Bouton Discord */}
                 <motion.a
                   href="https://discord.gg/ZPVwCjMpAq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-primary-500 theme-btn-solid-hover text-base-inverse font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -494,5 +377,4 @@ function FlapEEG() {
     </>
   );
 }
-
 export default FlapEEG;

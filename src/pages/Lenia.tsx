@@ -8,57 +8,48 @@ import {
   Sparkles,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import TeamMemberCard from "../components/TeamMemberCard";
 import { useTranslation } from "react-i18next";
-
 interface ImageWithGlowProps {
   src: string;
   alt: string;
   caption?: string;
 }
-
 const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
   <motion.div
     className="text-center mb-8 relative overflow-hidden rounded-xl"
-    whileHover={{
-      scale: 1.02,
-      transition: { duration: 0.3 },
-    }}
+    whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
   >
     <motion.img
       src={src}
       alt={alt}
-      className="w-full mx-auto rounded-xl shadow-xl border border-red-600/30"
+      className="w-full mx-auto rounded-xl shadow-xl border border-primary-500/30"
       initial={{ y: 20, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     />
     {caption && (
-      <div className="text-sm text-gray-400 mt-3 italic">{caption}</div>
+      <div className="text-sm theme-text-muted mt-3 italic">{caption}</div>
     )}
-    <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/10 to-red-900/10 rounded-xl blur opacity-50"></div>
+    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/10 to-primary-500/5 rounded-xl blur opacity-50"></div>
   </motion.div>
 );
-
 function Lenia() {
   const { t } = useTranslation();
-
-  // Project features with icons
   const features = [
     {
-      icon: <Grid className="w-6 h-6 text-red-400" />,
+      icon: <Grid className="w-6 h-6 theme-text-accent" />,
       title: t("lenia.features.continuous.title"),
       description: t("lenia.features.continuous.description"),
     },
     {
-      icon: <ZoomIn className="w-6 h-6 text-red-400" />,
+      icon: <ZoomIn className="w-6 h-6 theme-text-accent" />,
       title: t("lenia.features.research.title"),
       description: t("lenia.features.research.description"),
     },
   ];
-
   const teamMembers = [
     {
       icon: <Apple className="w-8 h-8" />,
@@ -81,7 +72,6 @@ function Lenia() {
       description: t("lenia.team.others.description"),
     },
   ];
-
   return (
     <>
       <Helmet>
@@ -94,19 +84,16 @@ function Lenia() {
           name="description"
           content="Lenia : projet d'automates cellulaires continus et vie artificielle. Exploration des systèmes complexes émergents avec intelligence artificielle. Projet de recherche du Club IA ULaval."
         />
-
         {/* Mots-clés */}
         <meta
           name="keywords"
           content="Lenia, automates cellulaires, vie artificielle, systèmes complexes, émergence, patterns, recherche IA, Club IA ULaval, Théophile Berteloot, Jordan Mathieu, Louis-Étienne Messier"
         />
-
         {/* Auteur */}
         <meta
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -123,7 +110,6 @@ function Lenia() {
         <meta property="og:url" content="https://cia.ift.ulaval.ca/lenia" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -138,86 +124,17 @@ function Lenia() {
           name="twitter:image"
           content="https://cia.ift.ulaval.ca/project/leniacover.webp"
         />
-
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/lenia" />
-
-        {/* Langue */}
-        <html lang="fr" />
-
+        {/* Langue */} <html lang="fr" />
         {/* Données structurées JSON-LD pour Google */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "Lenia - Automates Cellulaires Continus",
-              "url": "https://cia.ift.ulaval.ca/lenia",
-              "description": "Projet d'automates cellulaires continus et de vie artificielle explorant les systèmes complexes émergents",
-              "applicationCategory": "SimulationApplication",
-              "operatingSystem": "Web",
-              "author": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
-                "foundingLocation": {
-                  "@type": "Place",
-                  "name": "Québec, Canada"
-                },
-                "parentOrganization": {
-                  "@type": "EducationalOrganization",
-                  "name": "Université Laval"
-                },
-                "sameAs": [
-                  "https://www.instagram.com/ciaulaval/",
-                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
-                  "https://github.com/cia-ulaval",
-                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                ]
-              },
-              "creator": [
-                {
-                  "@type": "Person",
-                  "name": "Théophile Berteloot"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Jordan Mathieu"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Louis-Étienne Messier"
-                }
-              ],
-              "featureList": [
-                "Automates cellulaires continus",
-                "Simulation de vie artificielle",
-                "Patterns émergents complexes",
-                "Interface de recherche interactive",
-                "Visualisation temps réel"
-              ],
-              "keywords": [
-                "automates cellulaires",
-                "vie artificielle", 
-                "systèmes complexes",
-                "émergence",
-                "patterns",
-                "simulation"
-              ],
-              "screenshot": "https://cia.ift.ulaval.ca/project/lenia.webp",
-              "image": "https://cia.ift.ulaval.ca/project/leniacover.webp",
-              "codeRepository": "https://github.com/cia-ulaval/LENIA-frontend",
-              "programmingLanguage": "JavaScript"
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Lenia - Automates Cellulaires Continus", "url": "https://cia.ift.ulaval.ca/lenia", "description": "Projet d'automates cellulaires continus et de vie artificielle explorant les systèmes complexes émergents", "applicationCategory": "SimulationApplication", "operatingSystem": "Web", "author": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ] }, "creator": [ { "@type": "Person", "name": "Théophile Berteloot" }, { "@type": "Person", "name": "Jordan Mathieu" }, { "@type": "Person", "name": "Louis-Étienne Messier" } ], "featureList": [ "Automates cellulaires continus", "Simulation de vie artificielle", "Patterns émergents complexes", "Interface de recherche interactive", "Visualisation temps réel" ], "keywords": [ "automates cellulaires", "vie artificielle", "systèmes complexes", "émergence", "patterns", "simulation" ], "screenshot": "https://cia.ift.ulaval.ca/project/lenia.webp", "image": "https://cia.ift.ulaval.ca/project/leniacover.webp", "codeRepository": "https://github.com/cia-ulaval/LENIA-frontend", "programmingLanguage": "JavaScript" } `}
         </script>
       </Helmet>
-
       <section className="relative overflow-hidden">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -234,36 +151,32 @@ function Lenia() {
               <div className="space-y-6">
                 <div>
                   <h1 className="text-5xl md:text-6xl font-bold mb-4">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                      Lenia
-                    </span>
+                    <span className="theme-text-gradient"> Lenia </span>
                   </h1>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
+                  <h2 className="text-2xl md:text-3xl font-semibold theme-text-secondary mb-6">
                     {t("lenia.hero.subtitle")}
                   </h2>
                 </div>
-
                 {/* Feature badges */}
                 <div className="flex flex-wrap gap-3">
                   {features.map((feature, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-center gap-2 px-4 py-2 bg-red-900/20 rounded-full !border !border-red-900 hover:!border-red-500/70 transition-colors duration-300"
+                      className="flex items-center gap-2 px-4 py-2 theme-chip-inactive rounded-full theme-accent-border transition-colors duration-300"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     >
                       {feature.icon}
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-sm font-medium text-accent-300">
                         {feature.title}
                       </span>
                     </motion.div>
                   ))}
                 </div>
-
                 {/* Introduction Text */}
                 <motion.p
-                  className="text-lg text-gray-400 leading-relaxed"
+                  className="text-lg theme-text-muted leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
@@ -271,7 +184,6 @@ function Lenia() {
                   {t("lenia.content.paragraph1")}
                 </motion.p>
               </div>
-
               {/* Right Side - Hero Image */}
               <div className="flex justify-center lg:justify-end">
                 <motion.div
@@ -288,7 +200,6 @@ function Lenia() {
               </div>
             </div>
           </motion.section>
-
           {/* Content Section - Alternating Layout */}
           <motion.section
             className="mb-16 space-y-16"
@@ -306,14 +217,13 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold text-red-400">
+                <h3 className="text-2xl font-bold theme-text-accent">
                   {t("lenia.features.continuous.title")}
                 </h3>
-                <p className="text-lg text-gray-400 leading-relaxed">
+                <p className="text-lg theme-text-muted leading-relaxed">
                   {t("lenia.content.paragraph2")}
                 </p>
               </motion.div>
-
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -327,7 +237,6 @@ function Lenia() {
                 />
               </motion.div>
             </div>
-
             {/* Second Content Block - Reversed */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -337,17 +246,16 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold text-red-400">
+                <h3 className="text-2xl font-bold theme-text-accent">
                   {t("lenia.features.research.title")}
                 </h3>
-                <p className="text-lg text-gray-400 leading-relaxed">
+                <p className="text-lg theme-text-muted leading-relaxed">
                   {t("lenia.content.paragraph3")}
                 </p>
-                <p className="text-lg text-gray-400 leading-relaxed">
+                <p className="text-lg theme-text-muted leading-relaxed">
                   {t("lenia.content.paragraph4")}
                 </p>
               </motion.div>
-
               <motion.div
                 className="lg:order-1"
                 initial={{ opacity: 0, x: -30 }}
@@ -356,13 +264,13 @@ function Lenia() {
                 viewport={{ once: true }}
               >
                 {/* Placeholder for additional visual content */}
-                <div className="bg-gradient-to-br from-red-900/10 to-black/20 rounded-xl p-8 border !border-red-900">
+                <div className="theme-surface-secondary rounded-xl p-8 border theme-border-accent-important">
                   <div className="text-center space-y-4">
-                    <Sparkles className="w-16 h-16 text-red-400 mx-auto" />
-                    <h4 className="text-xl font-semibold text-white">
+                    <Sparkles className="w-16 h-16 theme-text-accent mx-auto" />
+                    <h4 className="text-xl font-semibold text-accent-300">
                       {t("lenia.features.emergent.title")}
                     </h4>
-                    <p className="text-gray-400">
+                    <p className="theme-text-muted">
                       {t("lenia.features.emergent.description")}
                     </p>
                   </div>
@@ -370,7 +278,6 @@ function Lenia() {
               </motion.div>
             </div>
           </motion.section>
-
           {/* Team Section */}
           <motion.section
             className="py-12"
@@ -381,7 +288,7 @@ function Lenia() {
           >
             <div className="text-center mb-12">
               <motion.h2
-                className="text-4xl font-bold gradient-text mb-4"
+                className="text-4xl font-bold theme-text-gradient mb-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -390,7 +297,7 @@ function Lenia() {
                 {t("lenia.team.title")}
               </motion.h2>
               <motion.p
-                className="text-gray-400 text-lg max-w-2xl mx-auto"
+                className="theme-text-muted text-lg max-w-2xl mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -400,7 +307,6 @@ function Lenia() {
                 of artificial life
               </motion.p>
             </div>
-
             <div className="flex flex-wrap justify-center max-w-full">
               {teamMembers.map((member, index) => (
                 <motion.div
@@ -425,5 +331,4 @@ function Lenia() {
     </>
   );
 }
-
 export default Lenia;

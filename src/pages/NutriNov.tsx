@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import {
   ShoppingCart,
@@ -18,10 +18,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import TeamMemberCard from "../components/TeamMemberCard";
-
 function NutriNov() {
   const { t } = useTranslation();
-
   const roles = [
     {
       icon: <MessageSquare className="w-8 h-8" />,
@@ -64,22 +62,12 @@ function NutriNov() {
       bonus: t("nutrinov.roles.analyst.bonus"),
     },
   ];
-
   const objectives = t("nutrinov.objectives.items", {
     returnObjects: true,
-  }) as Array<{
-    phase: string;
-    title: string;
-    description: string;
-  }>;
-
+  }) as Array<{ phase: string; title: string; description: string }>;
   const benefits = t("nutrinov.benefits.items", {
     returnObjects: true,
-  }) as Array<{
-    title: string;
-    description: string;
-  }>;
-
+  }) as Array<{ title: string; description: string }>;
   return (
     <>
       <Helmet>
@@ -98,7 +86,6 @@ function NutriNov() {
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         <meta
           property="og:title"
           content="NutriNov - Projet Entrepreneurial IA Alimentaire"
@@ -109,7 +96,6 @@ function NutriNov() {
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -119,43 +105,20 @@ function NutriNov() {
           name="twitter:description"
           content="Innovation alimentaire par l'IA. Projet entrepreneurial du Club IA ULaval."
         />
-
         <html lang="fr" />
-
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Course",
-              "name": "NutriNov - Projet Entrepreneurial IA Alimentaire",
-              "description": "Projet entrepreneurial innovant visant à révolutionner le secteur alimentaire grâce à l'intelligence artificielle",
-              "provider": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca"
-              },
-              "instructor": {
-                "@type": "Person",
-                "name": "Éloïse Prevot",
-                "jobTitle": "Team Lead"
-              },
-              "teaches": ["Entrepreneurship", "Data Analysis", "Web Development", "Pitch Presentation", "Design Thinking"],
-              "keywords": ["NutriNov", "Open Food Facts", "entrepreneuriat", "IA", "alimentation"]
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "Course", "name": "NutriNov - Projet Entrepreneurial IA Alimentaire", "description": "Projet entrepreneurial innovant visant à révolutionner le secteur alimentaire grâce à l'intelligence artificielle", "provider": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca" }, "instructor": { "@type": "Person", "name": "Éloïse Prevot", "jobTitle": "Team Lead" }, "teaches": ["Entrepreneurship", "Data Analysis", "Web Development", "Pitch Presentation", "Design Thinking"], "keywords": ["NutriNov", "Open Food Facts", "entrepreneuriat", "IA", "alimentation"] } `}
         </script>
       </Helmet>
-
       <section className="relative overflow-hidden">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
           <div>
             <h1 className="sr-only">{t("nutrinov.hero.title")}</h1>
-
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0, y: 30 }}
@@ -166,59 +129,57 @@ function NutriNov() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
-                    <ShoppingCart className="w-10 h-10 text-red-400" />
+                    <ShoppingCart className="w-10 h-10 theme-text-accent" />
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-                        NutriNov
-                      </span>
+                      <span className="theme-text-gradient">NutriNov</span>
                     </h1>
                   </div>
                   <p className="sr-only">{t("nutrinov.hero.subtitle")}</p>
-                  <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
+                  <p className="theme-text-muted mb-4 sm:mb-6 text-justify">
                     {t("nutrinov.hero.paragraph1")}
                   </p>
-                  <p className="text-gray-400 text-justify">
+                  <p className="theme-text-muted text-justify">
                     {t("nutrinov.hero.paragraph2")}
                   </p>
                 </div>
                 <div>
                   <div
-                    className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full h-64 sm:h-80 bg-gradient-to-br from-red-500/20 to-red-900/40 flex items-center justify-center"
-                    style={{ border: "2px solid #ef4444" }}
+                    className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full h-64 sm:h-80 bg-gradient-to-br from-primary-500/20 to-primary-900/40 flex items-center justify-center"
+                    style={{
+                      border: "2px solid rgb(var(--color-primary-500))",
+                    }}
                   >
-                    <ShoppingCart className="w-32 h-32 text-red-400 opacity-30" />
+                    <ShoppingCart className="w-32 h-32 theme-text-accent opacity-30" />
                   </div>
                 </div>
               </div>
             </motion.section>
-
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-4">
                 {t("nutrinov.team.title")}
               </h2>
               <div className="text-center mb-8 space-y-2">
-                <p className="text-gray-300 text-lg">
+                <p className="theme-text-secondary text-lg">
                   {t("nutrinov.team.lead")}
                 </p>
-                <p className="text-gray-400">{t("nutrinov.team.partner")}</p>
-                <p className="text-red-400 font-semibold">
+                <p className="theme-text-muted">{t("nutrinov.team.partner")}</p>
+                <p className="theme-text-accent font-semibold">
                   {t("nutrinov.team.size")}
                 </p>
               </div>
             </motion.section>
-
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8 sm:mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
                 {t("nutrinov.roles.title")}
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-6 px-2 md:px-6">
@@ -239,53 +200,53 @@ function NutriNov() {
                 ))}
               </div>
             </motion.section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("nutrinov.description.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-8 sm:gap-10 items-start">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Target className="w-6 h-6 text-red-400" />
-                    <span className="text-lg font-semibold text-white">
+                    <Target className="w-6 h-6 theme-text-accent" />
+                    <span className="text-lg font-semibold text-accent-300">
                       Mission
                     </span>
                   </div>
-                  <p className="text-gray-400 mb-6">
+                  <p className="theme-text-muted mb-6">
                     {t("nutrinov.description.mission")}
                   </p>
-                  <p className="text-gray-400">
+                  <p className="theme-text-muted">
                     {t("nutrinov.description.approach")}
                   </p>
                 </div>
                 <div
-                  className="flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="flex-1 theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Database className="w-6 h-6 text-red-400" />
-                    <span className="text-lg font-semibold text-white">
+                    <Database className="w-6 h-6 theme-text-accent" />
+                    <span className="text-lg font-semibold text-accent-300">
                       {t("nutrinov.description.partnership.title")}
                     </span>
                   </div>
-                  <p className="text-gray-400">
+                  <p className="theme-text-muted">
                     {t("nutrinov.description.partnership.description")}
                   </p>
                 </div>
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("nutrinov.objectives.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {objectives.map((objective, index) => (
                   <motion.div
                     key={index}
-                    className="flex gap-4 items-start bg-gradient-to-br from-black/40 to-red-900/10 rounded-xl p-5"
-                    style={{ border: "2px solid #ef4444" }}
+                    className="flex gap-4 items-start theme-surface-secondary rounded-xl p-5"
+                    style={{
+                      border: "2px solid rgb(var(--color-primary-500))",
+                    }}
                     initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -293,21 +254,21 @@ function NutriNov() {
                     whileHover={{ scale: 1.02 }}
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 font-bold border-2 border-red-500">
+                      <div className="w-10 h-10 rounded-full bg-primary-500/20 flex items-center justify-center theme-text-accent font-bold border-2 theme-border-accent">
                         {index + 1}
                       </div>
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
-                        <CheckCircle className="w-5 h-5 text-red-400" />
-                        <span className="text-sm text-red-300 font-semibold">
+                        <CheckCircle className="w-5 h-5 theme-text-accent" />
+                        <span className="text-sm text-primary-300 font-semibold">
                           {objective.phase}
                         </span>
                       </div>
-                      <h3 className="text-lg font-bold text-white mb-1">
+                      <h3 className="text-lg font-bold text-accent-300 mb-1">
                         {objective.title}
                       </h3>
-                      <p className="text-gray-400 text-sm">
+                      <p className="theme-text-muted text-sm">
                         {objective.description}
                       </p>
                     </div>
@@ -315,9 +276,8 @@ function NutriNov() {
                 ))}
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-8 text-center">
                 {t("nutrinov.benefits.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -327,26 +287,27 @@ function NutriNov() {
                   return (
                     <motion.div
                       key={index}
-                      className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6 text-center"
-                      style={{ border: "2px solid #ef4444" }}
+                      className="theme-surface-secondary rounded-2xl shadow-lg p-6 text-center"
+                      style={{
+                        border: "2px solid rgb(var(--color-primary-500))",
+                      }}
                       whileHover={{ scale: 1.05, y: -5 }}
                       transition={{ duration: 0.3 }}
                     >
                       <div className="flex justify-center mb-4">
-                        <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center">
-                          <Icon className="w-8 h-8 text-red-400" />
+                        <div className="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center">
+                          <Icon className="w-8 h-8 theme-text-accent" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">
+                      <h3 className="text-xl font-bold text-accent-300 mb-3">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-400">{benefit.description}</p>
+                      <p className="theme-text-muted">{benefit.description}</p>
                     </motion.div>
                   );
                 })}
               </div>
             </section>
-
             <motion.div
               className="mt-10 flex flex-col items-center pt-10"
               initial={{ opacity: 0, y: 20 }}
@@ -354,22 +315,19 @@ function NutriNov() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Users className="w-12 h-12 text-red-400 mb-4" />
-              <p className="text-lg text-gray-200 font-medium text-center mb-6">
-                {t("nutrinov.cta.title")}
+              <Users className="w-12 h-12 theme-text-accent mb-4" />
+              <p className="text-lg text-neutral-200 font-medium text-center mb-6">
+                {t("nutrinov.cta.title")} <br /> {t("nutrinov.cta.subtitle")}
                 <br />
-                {t("nutrinov.cta.subtitle")}
-                <br />
-                <span className="text-red-400 font-bold">
+                <span className="theme-text-accent font-bold">
                   {t("nutrinov.cta.description")}
                 </span>
               </p>
-
               <motion.a
                 href="https://discord.gg/ZPVwCjMpAq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-primary-500 theme-btn-solid-hover text-base-inverse font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -391,5 +349,4 @@ function NutriNov() {
     </>
   );
 }
-
 export default NutriNov;

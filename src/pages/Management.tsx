@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MemberModal, { TeamMember } from "../components/MemberModal";
@@ -169,7 +169,7 @@ const Management: React.FC = () => {
     },
     {
       name: "Aboubacar Sylla",
-      role: t("management.roles.websiteManager"),
+      role: t("management.roles.websiteAuxiliary"),
       imgSrc: "/portrait/AboubacarSylla.jpg",
       linkedIn: "",
     },
@@ -198,6 +198,13 @@ const Management: React.FC = () => {
       imgSrc: "/portrait/WilliamBlanchet.webp",
       linkedIn:
         "https://www.linkedin.com/in/william-blanchet-lafrenière-8337282b1/",
+    },
+    {
+      name: "Félix Larrivée",
+      role: t("management.roles.socialManager"),
+      mission: "",
+      imgSrc: "/portrait/FelixLarrivee.png",
+      linkedIn: "",
     },
     {
       name: "Melek Sebri",
@@ -251,13 +258,6 @@ const Management: React.FC = () => {
       mission: t("management.missions.amen"),
       imgSrc: "/portrait/AmenOuannes.webp",
       linkedIn: "https://www.linkedin.com/in/amenallah-massarra-ouannes/",
-    },
-    {
-      name: "Vincent Bellemare",
-      role: t("management.roles.projectsManager"),
-      mission: "",
-      imgSrc: "/portrait/VincentBellemare.webp",
-      linkedIn: "https://www.linkedin.com/in/vincent-bellemare-i89/",
     },
     {
       name: "Benjamin Sekpona",
@@ -396,9 +396,7 @@ const Management: React.FC = () => {
         <h1
           className={`font-bold mb-4 text-center mt-16 pb-12 ${size.headerSize}`}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            {titleKey}
-          </span>
+          <span className="theme-text-gradient">{titleKey}</span>
         </h1>
         <div className="flex flex-wrap gap-4 justify-center">
           {members.map((member, idx) => (
@@ -409,9 +407,9 @@ const Management: React.FC = () => {
               onClick={() => !member.isVacant && setSelectedMember(member)}
               className={`${
                 member.isVacant
-                  ? "bg-red-900/40 border-2 border-red-800/50 border-dashed cursor-default"
-                  : "bg-red-900/80 border-2 border-red-700 hover:border-red-500 cursor-pointer"
-              } text-white mb-12 relative overflow-hidden rounded-lg transition-all duration-300`}
+                  ? "bg-primary-900/40 border-2 border-primary-800/50 border-dashed cursor-default"
+                  : "bg-primary-900/80 border-2 !border-primary-500/70 hover:!border-accent-500/80 cursor-pointer"
+              } text-base-inverse mb-12 relative overflow-hidden rounded-lg transition-all duration-300`}
               style={{
                 width: size.width,
                 height: size.height,
@@ -420,7 +418,7 @@ const Management: React.FC = () => {
               {/* Image Section */}
               <div
                 className={`${
-                  member.isVacant ? "bg-red-800/20" : ""
+                  member.isVacant ? "bg-primary-800/20" : ""
                 } flex items-center justify-center`}
                 style={{ height: size.imageHeight }}
               >
@@ -431,14 +429,14 @@ const Management: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <User className="w-16 h-16 text-red-400/50" />
+                  <User className="w-16 h-16 theme-text-accent" />
                 )}
               </div>
 
               {/* Hover overlay for non-vacant cards */}
               {!member.isVacant && (
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
-                  <p className="text-white text-sm font-semibold bg-red-600/80 px-3 py-1 rounded-full">
+                <div className="absolute inset-0 bg-base/0 hover:bg-base/30 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100">
+                  <p className="text-base-inverse text-sm font-semibold bg-accent-500/85 px-3 py-1 rounded-full">
                     {t("management.viewProfile")}
                   </p>
                 </div>
@@ -451,20 +449,22 @@ const Management: React.FC = () => {
               >
                 <h3
                   className={`${
-                    member.isVacant ? "text-red-300/70" : "text-gray-200"
+                    member.isVacant
+                      ? "text-primary-300/70"
+                      : "text-base-inverse"
                   } mb-1 ${size.titleSize} leading-tight font-semibold`}
                 >
                   {member.name}
                 </h3>
                 <p
                   className={`${
-                    member.isVacant ? "text-red-400/60" : "text-gray-400"
+                    member.isVacant ? "theme-text-accent" : "!text-accent-300"
                   } ${size.roleSize} leading-tight`}
                 >
                   {member.role}
                 </p>
                 {member.isVacant && (
-                  <p className="text-red-500/50 text-xs mt-2">
+                  <p className="text-primary-500/50 text-xs mt-2">
                     {t("management.positionInInterview")}
                   </p>
                 )}

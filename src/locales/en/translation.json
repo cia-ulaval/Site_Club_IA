@@ -13,11 +13,14 @@
       "subtitle": "Discover our innovative projects!",
       "flapeeg": {
         "title": "FlapEEG",
-        "description": "An innovative video game controlled by brain waves (EEG). Discover how AI and neurotechnology let you pilot a virtual bird with your thoughts. A pioneer brain–computer interface project open to every profile (neuro, AI, dev, design)."
+        "description": "An innovative video game controlled by brain waves (EEG). Discover how AI and neurotechnology let you pilot a virtual bird with your thoughts. A pioneer brain–computer interface project open to every profile (neuro, AI, dev, design).",
+        "homeDescription": "Play FlapEEG with your brainwaves: AI reads EEG signals to control the bird.",
+        "nominationBadge": "Nominated at Gala de la vie étudiante 2025"
       },
       "f1tenth": {
         "title": "F1Tenth",
-        "description": "In partnership with the VAUL student club (owner of the F1TENTH car), develop a control mode via EMG bracelet. Objective: detect arm movements from muscle signals, interpret them with AI, then convert them into driving commands (steering/speed) to control the vehicle. Project focused on EMG and AI."
+        "description": "In partnership with the VAUL student club (owner of the F1TENTH car), develop a control mode via EMG bracelet. Objective: detect arm movements from muscle signals, interpret them with AI, then convert them into driving commands (steering/speed) to control the vehicle. Project focused on EMG and AI.",
+        "homeDescription": "Control a 1/10 F1TENTH car with an EMG bracelet: AI turns arm movement into steering and speed."
       },
       "decisiontree": {
         "title": "TreeCore",
@@ -29,7 +32,8 @@
       },
       "mangaai": {
         "title": "MangaAI",
-        "description": "Automatic manga translation and analysis powered by AI: OCR, NLP, dialogue generation, and style analysis. Help build tools for Japanese culture, computational linguistics, and computer vision. Perfect for fans of AI, manga, and language processing."
+        "description": "Automatic manga translation and analysis powered by AI: OCR, NLP, dialogue generation, and style analysis. Help build tools for Japanese culture, computational linguistics, and computer vision. Perfect for fans of AI, manga, and language processing.",
+        "homeDescription": "Translate manga panels with AI using OCR, language processing, and context-aware text replacement."
       },
       "canlock": {
         "title": "CANlock",
@@ -184,6 +188,7 @@
       "partnershipsManager": "Partnerships Manager",
       "treasuryManager": "Treasury Manager",
       "websiteManager": "Website Manager",
+      "websiteAuxiliary": "Website Assistant",
       "designsManager": "Designs Manager",
       "communicationsManager": "Communications Manager",
       "trainingsManager": "Trainings Manager",
@@ -929,11 +934,20 @@
       "title": "Technologies & Skills",
       "software": {
         "title": "Software Stack",
-        "items": ["Python", "PyTorch", "OpenAI Gym", "RL Libraries", "Simulation environments"]
+        "items": [
+          "Python",
+          "PyTorch",
+          "OpenAI Gym",
+          "RL Libraries",
+          "Simulation environments"
+        ]
       },
       "hardware": {
         "title": "Hardware",
-        "items": ["GPU (optional access at end of session)", "Physical Poppy robot (final tests)"]
+        "items": [
+          "GPU (optional access at end of session)",
+          "Physical Poppy robot (final tests)"
+        ]
       },
       "skills": {
         "title": "Target Skills",
@@ -1211,11 +1225,20 @@
       "title": "Technologies & Skills",
       "software": {
         "title": "Software Stack",
-        "items": ["Python", "PyTorch / TensorFlow", "Jupyter Notebooks", "LaTeX", "GPU Computing"]
+        "items": [
+          "Python",
+          "PyTorch / TensorFlow",
+          "Jupyter Notebooks",
+          "LaTeX",
+          "GPU Computing"
+        ]
       },
       "hardware": {
         "title": "Hardware",
-        "items": ["GPU (access provided for experiments)", "High-performance computing cluster"]
+        "items": [
+          "GPU (access provided for experiments)",
+          "High-performance computing cluster"
+        ]
       },
       "skills": {
         "title": "Target Skills",
@@ -1233,12 +1256,22 @@
       "programmer": {
         "title": "Programmer",
         "description": "Strong foundations in Python and deep learning frameworks",
-        "skills": ["Advanced Python", "PyTorch/TensorFlow", "ML experimentation", "Code optimization"]
+        "skills": [
+          "Advanced Python",
+          "PyTorch/TensorFlow",
+          "ML experimentation",
+          "Code optimization"
+        ]
       },
       "theorist": {
         "title": "Theorist",
         "description": "Knowledge in probability and integral calculus",
-        "skills": ["Applied mathematics", "Probabilities", "Differential calculus", "Theoretical analysis"]
+        "skills": [
+          "Applied mathematics",
+          "Probabilities",
+          "Differential calculus",
+          "Theoretical analysis"
+        ]
       },
       "note": "No need to be an expert — curiosity and motivation count as much as technical skills!"
     },
@@ -1287,9 +1320,18 @@
     "profiles": {
       "title": "Profiles Wanted",
       "items": [
-        { "title": "AI / Data Science", "desc": "Proficiency in ML algorithms and data processing" },
-        { "title": "Cybersecurity", "desc": "Interest in system and network security" },
-        { "title": "Embedded Systems", "desc": "Knowledge of vehicular communication protocols" }
+        {
+          "title": "AI / Data Science",
+          "desc": "Proficiency in ML algorithms and data processing"
+        },
+        {
+          "title": "Cybersecurity",
+          "desc": "Interest in system and network security"
+        },
+        {
+          "title": "Embedded Systems",
+          "desc": "Knowledge of vehicular communication protocols"
+        }
       ]
     },
     "challenge": {
@@ -1337,12 +1379,36 @@
       "title": "Session Timeline",
       "week": "Week",
       "items": [
-        { "weeks": "1-2", "phase": "Onboarding", "description": "Familiarization with the existing algorithm, tools and domain (CAN bus)." },
-        { "weeks": "3-4", "phase": "Solution Research", "description": "Proposal and study of improvement avenues." },
-        { "weeks": "5-7", "phase": "Development - Phase 1", "description": "Iterations on data processing and first model pipeline." },
-        { "weeks": "8", "phase": "Presentation #1", "description": "Mid-session report and progress presentation." },
-        { "weeks": "9-12", "phase": "Development - Phase 2", "description": "Improvement iterations and model testing." },
-        { "weeks": "13-15", "phase": "Finalization", "description": "Final tests, final technical report writing and documentation." }
+        {
+          "weeks": "1-2",
+          "phase": "Onboarding",
+          "description": "Familiarization with the existing algorithm, tools and domain (CAN bus)."
+        },
+        {
+          "weeks": "3-4",
+          "phase": "Solution Research",
+          "description": "Proposal and study of improvement avenues."
+        },
+        {
+          "weeks": "5-7",
+          "phase": "Development - Phase 1",
+          "description": "Iterations on data processing and first model pipeline."
+        },
+        {
+          "weeks": "8",
+          "phase": "Presentation #1",
+          "description": "Mid-session report and progress presentation."
+        },
+        {
+          "weeks": "9-12",
+          "phase": "Development - Phase 2",
+          "description": "Improvement iterations and model testing."
+        },
+        {
+          "weeks": "13-15",
+          "phase": "Finalization",
+          "description": "Final tests, final technical report writing and documentation."
+        }
       ]
     },
     "tech": {
@@ -1366,9 +1432,18 @@
       "title": "Why Join CANlock?",
       "intro": "You'll love this project if...",
       "items": [
-        { "title": "Industrial Challenge", "desc": "You want to work on a concrete and critical cybersecurity challenge with a world leader (Thales)." },
-        { "title": "AI for Security", "desc": "You're interested in AI applied to anomaly detection and protection of critical systems." },
-        { "title": "CV Experience", "desc": "You want to gain valuable and concrete experience that will impress on your CV." }
+        {
+          "title": "Industrial Challenge",
+          "desc": "You want to work on a concrete and critical cybersecurity challenge with a world leader (Thales)."
+        },
+        {
+          "title": "AI for Security",
+          "desc": "You're interested in AI applied to anomaly detection and protection of critical systems."
+        },
+        {
+          "title": "CV Experience",
+          "desc": "You want to gain valuable and concrete experience that will impress on your CV."
+        }
       ]
     },
     "cta": {
@@ -1399,13 +1474,23 @@
         "title": "GEL / GIF",
         "count": "2 members",
         "description": "Handle communication between the drone, central computer and all pipeline components. Optimize and minimize transmission latency. Emulate the controller to communicate with the Flight Controller.",
-        "skills": ["Drone-computer communication", "Latency optimization", "C and Python", "Hardware and embedded"]
+        "skills": [
+          "Drone-computer communication",
+          "Latency optimization",
+          "C and Python",
+          "Hardware and embedded"
+        ]
       },
       "simulation": {
         "title": "Simulation",
         "count": "2 members",
         "description": "Design a complete simulation of the system and drones with Isaac Sim.",
-        "skills": ["Isaac Sim", "CAD and modeling", "Python", "Physics and simulation"]
+        "skills": [
+          "Isaac Sim",
+          "CAD and modeling",
+          "Python",
+          "Physics and simulation"
+        ]
       },
       "ai": {
         "title": "AI / Code",
@@ -1417,7 +1502,12 @@
         "title": "Pilots",
         "count": "3 members",
         "description": "Excellent FPV drone pilots playing laser tag with their drones. Their role: generate data to train the AI.",
-        "skills": ["Expert FPV piloting", "Drone laser tag", "Data generation", "Testing and validation"]
+        "skills": [
+          "Expert FPV piloting",
+          "Drone laser tag",
+          "Data generation",
+          "Testing and validation"
+        ]
       }
     },
     "objectives": {
@@ -1571,19 +1661,51 @@
       "imageBadge": "Autonomous landing"
     },
     "stats": [
-      { "value": "< 10 cm", "label": "Landing Precision", "sub": "Target precision goal" },
-      { "value": "ArUco", "label": "Navigation Markers", "sub": "Real-time detection" },
-      { "value": "3D", "label": "Position Estimation", "sub": "Onboard computer vision" }
+      {
+        "value": "< 10 cm",
+        "label": "Landing Precision",
+        "sub": "Target precision goal"
+      },
+      {
+        "value": "ArUco",
+        "label": "Navigation Markers",
+        "sub": "Real-time detection"
+      },
+      {
+        "value": "3D",
+        "label": "Position Estimation",
+        "sub": "Onboard computer vision"
+      }
     ],
     "pipeline": {
       "title": "System Pipeline",
       "subtitle": "From takeoff to touchdown: how the system guides the aircraft autonomously",
       "steps": [
-        { "step": "1", "title": "Video Capture", "description": "The onboard camera captures a live video feed during flight." },
-        { "step": "2", "title": "ArUco Detection", "description": "OpenCV detects ArUco markers in the frame and extracts their 2D coordinates." },
-        { "step": "3", "title": "3D Estimation", "description": "The algorithm calculates the 3D position and orientation of the aircraft relative to the target." },
-        { "step": "4", "title": "Intelligent Guidance", "description": "Navigation algorithms compute trajectory corrections and transmit commands to ArduPilot." },
-        { "step": "5", "title": "Landing & Recovery", "description": "The aircraft lands with < 10 cm precision and enables autonomous payload recovery." }
+        {
+          "step": "1",
+          "title": "Video Capture",
+          "description": "The onboard camera captures a live video feed during flight."
+        },
+        {
+          "step": "2",
+          "title": "ArUco Detection",
+          "description": "OpenCV detects ArUco markers in the frame and extracts their 2D coordinates."
+        },
+        {
+          "step": "3",
+          "title": "3D Estimation",
+          "description": "The algorithm calculates the 3D position and orientation of the aircraft relative to the target."
+        },
+        {
+          "step": "4",
+          "title": "Intelligent Guidance",
+          "description": "Navigation algorithms compute trajectory corrections and transmit commands to ArduPilot."
+        },
+        {
+          "step": "5",
+          "title": "Landing & Recovery",
+          "description": "The aircraft lands with < 10 cm precision and enables autonomous payload recovery."
+        }
       ]
     },
     "objectives": {
@@ -1629,13 +1751,25 @@
           "title": "Computer Vision & AI",
           "count": "2–3 members",
           "description": "Implement and optimize ArUco marker detection, 3D pose estimation and embedded image processing algorithms.",
-          "skills": ["OpenCV", "Python", "Computer Vision", "Pose Estimation", "Image Processing"]
+          "skills": [
+            "OpenCV",
+            "Python",
+            "Computer Vision",
+            "Pose Estimation",
+            "Image Processing"
+          ]
         },
         {
           "title": "Navigation & Embedded Systems",
           "count": "2–3 members",
           "description": "Develop guidance algorithms, integrate ArduPilot via MAVLink and tune autonomous flight controllers.",
-          "skills": ["ArduPilot", "MAVLink", "Python", "PID Control", "Embedded Systems"]
+          "skills": [
+            "ArduPilot",
+            "MAVLink",
+            "Python",
+            "PID Control",
+            "Embedded Systems"
+          ]
         }
       ]
     },
@@ -1675,7 +1809,14 @@
     },
     "tech": {
       "title": "Technologies Used",
-      "items": ["Raspberry Pi", "Python", "OpenCV", "TensorFlow Lite", "MediaPipe", "Computer Vision"]
+      "items": [
+        "Raspberry Pi",
+        "Python",
+        "OpenCV",
+        "TensorFlow Lite",
+        "MediaPipe",
+        "Computer Vision"
+      ]
     },
     "team": {
       "title": "The Team",

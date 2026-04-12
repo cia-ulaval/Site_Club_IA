@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import {
   Bot,
@@ -19,30 +19,21 @@ import {
   Award,
   ExternalLink,
 } from "lucide-react";
-
 function PoppySimulation() {
   const { t } = useTranslation();
-
   const deliverables = t("poppy.objectives.deliverables.items", {
     returnObjects: true,
-  }) as Array<{
-    title: string;
-    description: string;
-  }>;
-
+  }) as Array<{ title: string; description: string }>;
   const timeline = t("poppy.timeline.weeks", { returnObjects: true }) as Array<{
     period: string;
     title: string;
     description: string;
   }>;
-
   const benefits = t("poppy.benefits.items", { returnObjects: true }) as Array<{
     title: string;
     description: string;
   }>;
-
   const weekIcons = [Book, FlaskConical, Cpu, Cable, RefreshCw, CheckCircle];
-
   return (
     <>
       <Helmet>
@@ -61,7 +52,6 @@ function PoppySimulation() {
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         <meta
           property="og:title"
           content="Poppy Simulation - Robot Humanoïde IA Apprentissage"
@@ -72,7 +62,6 @@ function PoppySimulation() {
         />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -82,54 +71,20 @@ function PoppySimulation() {
           name="twitter:description"
           content="Reinforcement Learning appliqué à la robotique humanoïde. Club IA ULaval."
         />
-
         <html lang="fr" />
-
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "ResearchProject",
-              "name": "Poppy Simulation - Reinforcement Learning pour Robot Humanoïde",
-              "description": "Développement d'une IA basée sur le Reinforcement Learning pour apprendre à un robot humanoïde Poppy à marcher",
-              "provider": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca"
-              },
-              "author": [
-                {
-                  "@type": "Person",
-                  "name": "Baptiste Bonin",
-                  "jobTitle": "Team Lead"
-                },
-                {
-                  "@type": "Person",
-                  "name": "Jonathan Caron-Roberge",
-                  "jobTitle": "Team Lead"
-                }
-              ],
-              "sponsor": {
-                "@type": "Organization",
-                "name": "Vooban"
-              },
-              "about": ["Reinforcement Learning", "Robotics", "Simulation", "Artificial Intelligence", "Sim2Real"],
-              "keywords": ["Poppy", "robot humanoïde", "reinforcement learning", "RL", "simulation robotique"]
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "ResearchProject", "name": "Poppy Simulation - Reinforcement Learning pour Robot Humanoïde", "description": "Développement d'une IA basée sur le Reinforcement Learning pour apprendre à un robot humanoïde Poppy à marcher", "provider": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca" }, "author": [ { "@type": "Person", "name": "Baptiste Bonin", "jobTitle": "Team Lead" }, { "@type": "Person", "name": "Jonathan Caron-Roberge", "jobTitle": "Team Lead" } ], "sponsor": { "@type": "Organization", "name": "Vooban" }, "about": ["Reinforcement Learning", "Robotics", "Simulation", "Artificial Intelligence", "Sim2Real"], "keywords": ["Poppy", "robot humanoïde", "reinforcement learning", "RL", "simulation robotique"] } `}
         </script>
       </Helmet>
-
       <section className="relative overflow-hidden">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
           <div>
             <h1 className="sr-only">{t("poppy.hero.title")}</h1>
-
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0, y: 30 }}
@@ -140,18 +95,18 @@ function PoppySimulation() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                 <div className="flex flex-col justify-center order-2 md:order-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <Bot className="w-10 h-10 text-red-400" />
+                    <Bot className="w-10 h-10 theme-text-accent" />
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                      <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                      <span className="theme-text-gradient">
                         Poppy Simulation
                       </span>
                     </h1>
                   </div>
                   <p className="sr-only">{t("poppy.hero.subtitle")}</p>
-                  <p className="text-gray-400 mb-4 sm:mb-6 text-justify">
+                  <p className="theme-text-muted mb-4 sm:mb-6 text-justify">
                     {t("poppy.hero.paragraph1")}
                   </p>
-                  <p className="text-gray-400 text-justify">
+                  <p className="theme-text-muted text-justify">
                     {t("poppy.hero.paragraph2")}
                   </p>
                 </div>
@@ -160,55 +115,56 @@ function PoppySimulation() {
                     src="/project/poppy.jpeg"
                     alt={t("poppy.hero.image.alt")}
                     className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full h-80 sm:h-96 object-cover"
-                    style={{ border: "2px solid #ef4444" }}
+                    style={{
+                      border: "2px solid rgb(var(--color-primary-500))",
+                    }}
                   />
                 </div>
               </div>
             </motion.section>
-
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-4">
                 {t("poppy.team.title")}
               </h2>
               <div className="text-center mb-8 space-y-2">
-                <p className="text-gray-300 text-lg">{t("poppy.team.leads")}</p>
-                <p className="text-gray-400">{t("poppy.team.partner")}</p>
-                <p className="text-red-400 font-semibold">
+                <p className="theme-text-secondary text-lg">
+                  {t("poppy.team.leads")}
+                </p>
+                <p className="theme-text-muted">{t("poppy.team.partner")}</p>
+                <p className="theme-text-accent font-semibold">
                   {t("poppy.team.size")}
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className="theme-text-muted text-sm">
                   {t("poppy.team.profiles")}
                 </p>
               </div>
             </motion.section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("poppy.objectives.title")}
               </h2>
               <div
-                className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6 mb-8"
-                style={{ border: "2px solid #ef4444" }}
+                className="theme-surface-secondary rounded-2xl shadow-lg p-6 mb-8"
+                style={{ border: "2px solid rgb(var(--color-primary-500))" }}
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-8 h-8 text-red-400" />
-                  <h3 className="text-xl font-bold text-white">
+                  <Target className="w-8 h-8 theme-text-accent" />
+                  <h3 className="text-xl font-bold text-accent-300">
                     {t("poppy.objectives.main.title")}
                   </h3>
                 </div>
-                <p className="text-gray-300 text-lg">
+                <p className="theme-text-secondary text-lg">
                   {t("poppy.objectives.main.description")}
                 </p>
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("poppy.timeline.title")}
               </h2>
               <div className="space-y-6">
@@ -224,18 +180,18 @@ function PoppySimulation() {
                       viewport={{ once: true }}
                     >
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-12 rounded-lg bg-red-500/20 flex items-center justify-center border-2 border-red-500">
-                          <Icon className="w-6 h-6 text-red-400" />
+                        <div className="w-12 h-12 rounded-lg bg-primary-500/20 flex items-center justify-center border-2 theme-border-accent">
+                          <Icon className="w-6 h-6 theme-text-accent" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <span className="text-sm text-red-300 font-semibold block mb-1">
+                        <span className="text-sm text-primary-300 font-semibold block mb-1">
                           {week.period}
                         </span>
-                        <h3 className="text-lg font-bold text-white mb-1">
+                        <h3 className="text-lg font-bold text-accent-300 mb-1">
                           {week.title}
                         </h3>
-                        <p className="text-gray-400 text-sm">
+                        <p className="theme-text-muted text-sm">
                           {week.description}
                         </p>
                       </div>
@@ -244,140 +200,130 @@ function PoppySimulation() {
                 })}
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("poppy.technical.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Brain className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <Brain className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technical.rl.title")}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm">
+                  <p className="theme-text-muted text-sm">
                     {t("poppy.technical.rl.description")}
                   </p>
                 </div>
-
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Box className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <Box className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technical.simulation.title")}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm">
+                  <p className="theme-text-muted text-sm">
                     {t("poppy.technical.simulation.description")}
                   </p>
                 </div>
-
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <RefreshCw className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <RefreshCw className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technical.sim2real.title")}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-sm">
+                  <p className="theme-text-muted text-sm">
                     {t("poppy.technical.sim2real.description")}
                   </p>
                 </div>
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 sm:mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 sm:mb-8 text-center">
                 {t("poppy.technologies.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Terminal className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <Terminal className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technologies.software.title")}
                     </h3>
                   </div>
-                  <ul className="space-y-2 text-gray-300 text-sm">
+                  <ul className="space-y-2 theme-text-secondary text-sm">
                     {(
                       t("poppy.technologies.software.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <span className="text-red-400">•</span>
-                        {item}
+                        <span className="theme-text-accent">•</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Cpu className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <Cpu className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technologies.hardware.title")}
                     </h3>
                   </div>
-                  <ul className="space-y-2 text-gray-300 text-sm">
+                  <ul className="space-y-2 theme-text-secondary text-sm">
                     {(
                       t("poppy.technologies.hardware.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <span className="text-red-400">•</span>
-                        {item}
+                        <span className="theme-text-accent">•</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
-
                 <div
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6"
-                  style={{ border: "2px solid #ef4444" }}
+                  className="theme-surface-secondary rounded-2xl shadow-lg p-6"
+                  style={{ border: "2px solid rgb(var(--color-primary-500))" }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <Award className="w-6 h-6 text-red-400" />
-                    <h3 className="text-lg font-bold text-white">
+                    <Award className="w-6 h-6 theme-text-accent" />
+                    <h3 className="text-lg font-bold text-accent-300">
                       {t("poppy.technologies.skills.title")}
                     </h3>
                   </div>
-                  <ul className="space-y-2 text-gray-300 text-sm">
+                  <ul className="space-y-2 theme-text-secondary text-sm">
                     {(
                       t("poppy.technologies.skills.items", {
                         returnObjects: true,
                       }) as string[]
                     ).map((item, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <span className="text-red-400">•</span>
-                        {item}
+                        <span className="theme-text-accent">•</span> {item}
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-8 text-center">
                 {t("poppy.benefits.title")}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -387,28 +333,29 @@ function PoppySimulation() {
                   return (
                     <motion.div
                       key={index}
-                      className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6 text-center"
-                      style={{ border: "2px solid #ef4444" }}
+                      className="theme-surface-secondary rounded-2xl shadow-lg p-6 text-center"
+                      style={{
+                        border: "2px solid rgb(var(--color-primary-500))",
+                      }}
                       whileHover={{ scale: 1.05, y: -5 }}
                       transition={{ duration: 0.3 }}
                     >
                       <div className="flex justify-center mb-4">
-                        <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center">
-                          <Icon className="w-8 h-8 text-red-400" />
+                        <div className="w-16 h-16 bg-primary-500/20 rounded-full flex items-center justify-center">
+                          <Icon className="w-8 h-8 theme-text-accent" />
                         </div>
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-3">
+                      <h3 className="text-xl font-bold text-accent-300 mb-3">
                         {benefit.title}
                       </h3>
-                      <p className="text-gray-400">{benefit.description}</p>
+                      <p className="theme-text-muted">{benefit.description}</p>
                     </motion.div>
                   );
                 })}
               </div>
             </section>
-
             <section className="mb-12 sm:mb-20">
-              <h2 className="text-2xl sm:text-3xl font-bold gradient-text mb-6 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6 text-center">
                 {t("poppy.resources.title")}
               </h2>
               <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
@@ -416,14 +363,13 @@ function PoppySimulation() {
                   href="https://www.poppy-project.org/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-red-600/20 hover:bg-red-600/30 text-red-300 border-2 border-red-500 rounded-lg transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-primary-500/20 hover:bg-primary-500/30 text-primary-300 border-2 theme-border-accent rounded-lg transition-all duration-300"
                 >
                   <ExternalLink className="w-5 h-5" />
                   {t("poppy.resources.poppy")}
                 </a>
               </div>
             </section>
-
             <motion.div
               className="mt-10 flex flex-col items-center pt-10"
               initial={{ opacity: 0, y: 20 }}
@@ -431,22 +377,18 @@ function PoppySimulation() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <Bot className="w-12 h-12 text-red-400 mb-4" />
-              <p className="text-lg text-gray-200 font-medium text-center mb-6">
-                {t("poppy.cta.title")}
-                <br />
-                {t("poppy.cta.subtitle")}
-                <br />
-                <span className="text-red-400 font-bold">
+              <Bot className="w-12 h-12 theme-text-accent mb-4" />
+              <p className="text-lg text-neutral-200 font-medium text-center mb-6">
+                {t("poppy.cta.title")} <br /> {t("poppy.cta.subtitle")} <br />
+                <span className="theme-text-accent font-bold">
                   {t("poppy.cta.description")}
                 </span>
               </p>
-
               <motion.a
                 href="https://discord.gg/ZPVwCjMpAq"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+                className="inline-flex items-center gap-3 px-6 py-3 bg-primary-500 theme-btn-solid-hover text-base-inverse font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -468,5 +410,4 @@ function PoppySimulation() {
     </>
   );
 }
-
 export default PoppySimulation;

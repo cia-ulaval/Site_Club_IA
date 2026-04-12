@@ -29,10 +29,10 @@ export default function InstaPostEmbed({ url }: InstaPostEmbedProps) {
 
   return (
     <div
-      className="rounded-xl bg-gradient-to-br from-red-900/60 via-black/60 to-red-700/40 shadow-lg p-4 max-w-xl mx-auto"
+      className="rounded-xl bg-gradient-to-br from-primary-900/60 via-base/60 to-primary-500/40 shadow-lg p-4 max-w-xl mx-auto"
       style={{
-        border: "2px solid #dc2626", // Tailwind red-600
-        boxShadow: "0 4px 24px 0 rgba(220,38,38,0.15)",
+        border: "2px solid rgb(var(--color-primary-500))",
+        boxShadow: "0 4px 24px 0 rgb(var(--color-primary-500) / 0.15)",
       }}
     >
       <blockquote

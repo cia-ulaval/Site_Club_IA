@@ -14,12 +14,10 @@ import {
   BookOpen,
   FileText,
 } from "lucide-react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-
 function CANlock() {
   const { t } = useTranslation();
-
   const timelineIcons = [
     <BookOpen className="w-5 h-5" />,
     <Target className="w-5 h-5" />,
@@ -28,7 +26,6 @@ function CANlock() {
     <Cpu className="w-5 h-5" />,
     <CheckCircle className="w-5 h-5" />,
   ];
-
   const technologies = [
     { name: "Python", type: "language" },
     { name: "PyTorch / TensorFlow", type: "framework" },
@@ -37,19 +34,16 @@ function CANlock() {
     { name: "Jupyter", type: "tool" },
     { name: "Git", type: "tool" },
   ];
-
   const profileIcons = [
     <Cpu className="w-8 h-8" />,
     <Shield className="w-8 h-8" />,
     <Car className="w-8 h-8" />,
   ];
-
   const whyJoinIcons = [
     <Building2 className="w-10 h-10" />,
     <Shield className="w-10 h-10" />,
     <Rocket className="w-10 h-10" />,
   ];
-
   return (
     <>
       <Helmet>
@@ -57,10 +51,9 @@ function CANlock() {
         <meta name="description" content={t("canlock.meta.description")} />
         <link rel="canonical" href="https://cia.ift.ulaval.ca/canlock" />
       </Helmet>
-
       <section className="relative overflow-hidden">
         <motion.div
-          className="container w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl bg-gradient-to-br from-red-900/20 to-black/40 shadow-xl"
+          className="theme-content-shell theme-surface-primary shadow-xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -75,40 +68,38 @@ function CANlock() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 bg-red-600/30 text-red-400 text-sm font-medium rounded-full">
+                  <span className="px-3 py-1 bg-primary-500/30 theme-text-accent text-sm font-medium rounded-full">
                     {t("canlock.hero.badge")}
                   </span>
-                  <span className="px-3 py-1 bg-blue-600/30 text-blue-400 text-sm font-medium rounded-full flex items-center gap-1">
-                    <Building2 className="w-3 h-3" />
-                    Thales
+                  <span className="px-3 py-1 bg-info-600/30 text-info-400 text-sm font-medium rounded-full flex items-center gap-1">
+                    <Building2 className="w-3 h-3" /> Thales
                   </span>
                 </div>
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
+                  <span className="theme-text-gradient">
                     {t("canlock.hero.title")}
                   </span>
                   <span className="ml-3">🔒</span>
                 </h1>
-                <p className="text-xl text-gray-300 mb-6 font-medium">
+                <p className="text-xl theme-text-secondary mb-6 font-medium">
                   {t("canlock.hero.subtitle")}
                 </p>
-                <p className="text-gray-400 mb-4 text-justify">
+                <p className="theme-text-muted mb-4 text-justify">
                   {t("canlock.hero.description")}
                 </p>
                 <div className="flex flex-wrap gap-3 mt-4">
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <Users className="w-4 h-4 text-red-400" />
+                  <div className="flex items-center gap-2 theme-text-muted">
+                    <Users className="w-4 h-4 theme-text-accent" />
                     <span className="text-sm">{t("canlock.hero.members")}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-400">
-                    <Shield className="w-4 h-4 text-red-400" />
+                  <div className="flex items-center gap-2 theme-text-muted">
+                    <Shield className="w-4 h-4 theme-text-accent" />
                     <span className="text-sm">
                       {t("canlock.hero.teamLead")}
                     </span>
                   </div>
                 </div>
               </div>
-
               {/* Vehicle Section - Circuit Board Style */}
               <div className="flex items-center justify-center">
                 <motion.div
@@ -117,7 +108,7 @@ function CANlock() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <div className="aspect-square bg-black rounded-2xl flex items-center justify-center relative overflow-hidden border !border-red-500/30">
+                  <div className="aspect-square bg-base rounded-2xl flex items-center justify-center relative overflow-hidden border theme-border-accent-important">
                     {/* Circuit board pattern */}
                     <svg
                       className="absolute inset-0 w-full h-full opacity-20"
@@ -129,7 +120,7 @@ function CANlock() {
                         y1="20"
                         x2="100"
                         y2="20"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <line
@@ -137,7 +128,7 @@ function CANlock() {
                         y1="50"
                         x2="100"
                         y2="50"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <line
@@ -145,7 +136,7 @@ function CANlock() {
                         y1="80"
                         x2="100"
                         y2="80"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       {/* Vertical lines */}
@@ -154,7 +145,7 @@ function CANlock() {
                         y1="0"
                         x2="20"
                         y2="100"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <line
@@ -162,7 +153,7 @@ function CANlock() {
                         y1="0"
                         x2="50"
                         y2="100"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <line
@@ -170,60 +161,99 @@ function CANlock() {
                         y1="0"
                         x2="80"
                         y2="100"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       {/* Nodes */}
-                      <circle cx="20" cy="20" r="2" fill="#ef4444" />
-                      <circle cx="50" cy="20" r="2" fill="#ef4444" />
-                      <circle cx="80" cy="20" r="2" fill="#ef4444" />
-                      <circle cx="20" cy="50" r="2" fill="#ef4444" />
-                      <circle cx="80" cy="50" r="2" fill="#ef4444" />
-                      <circle cx="20" cy="80" r="2" fill="#ef4444" />
-                      <circle cx="50" cy="80" r="2" fill="#ef4444" />
-                      <circle cx="80" cy="80" r="2" fill="#ef4444" />
+                      <circle
+                        cx="20"
+                        cy="20"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="50"
+                        cy="20"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="80"
+                        cy="20"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="20"
+                        cy="50"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="80"
+                        cy="50"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="20"
+                        cy="80"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="50"
+                        cy="80"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
+                      <circle
+                        cx="80"
+                        cy="80"
+                        r="2"
+                        fill="rgb(var(--color-primary-500))"
+                      />
                       {/* Corner connectors */}
                       <path
                         d="M 10 30 L 10 10 L 30 10"
                         fill="none"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <path
                         d="M 90 30 L 90 10 L 70 10"
                         fill="none"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <path
                         d="M 10 70 L 10 90 L 30 90"
                         fill="none"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                       <path
                         d="M 90 70 L 90 90 L 70 90"
                         fill="none"
-                        stroke="#ef4444"
+                        stroke="rgb(var(--color-primary-500))"
                         strokeWidth="0.3"
                       />
                     </svg>
-
                     {/* Central content */}
-                    <div className="text-center z-10 relative bg-black/80 rounded-xl p-8">
+                    <div className="text-center z-10 relative bg-base/80 rounded-xl p-8">
                       <div className="relative inline-block">
-                        <Car className="w-20 h-20 text-red-500 mx-auto" />
-                        <div className="absolute -bottom-1 -right-1 bg-black rounded-full p-1">
-                          <Shield className="w-8 h-8 text-red-400" />
+                        <Car className="w-20 h-20 text-primary-500 mx-auto" />
+                        <div className="absolute -bottom-1 -right-1 bg-base rounded-full p-1">
+                          <Shield className="w-8 h-8 theme-text-accent" />
                         </div>
                       </div>
-                      <p className="text-gray-400 mt-4 text-sm font-medium">
+                      <p className="theme-text-muted mt-4 text-sm font-medium">
                         {t("canlock.hero.cybersecurityLabel")}
                       </p>
                       <div className="flex justify-center gap-2 mt-3">
-                        <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                        <span className="w-2 h-2 bg-red-500/60 rounded-full animate-pulse delay-100" />
-                        <span className="w-2 h-2 bg-red-500/30 rounded-full animate-pulse delay-200" />
+                        <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
+                        <span className="w-2 h-2 bg-primary-500/60 rounded-full animate-pulse delay-100" />
+                        <span className="w-2 h-2 bg-primary-500/30 rounded-full animate-pulse delay-200" />
                       </div>
                     </div>
                   </div>
@@ -231,7 +261,6 @@ function CANlock() {
               </div>
             </div>
           </motion.section>
-
           {/* Profiles recherchés */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -239,7 +268,7 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               {t("canlock.profiles.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -251,22 +280,23 @@ function CANlock() {
               ).map((profile, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-xl p-6 hover:bg-red-900/20 transition-all"
+                  className="theme-surface-secondary rounded-xl p-6 hover:bg-primary-900/20 transition-all"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index, duration: 0.5 }}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <div className="text-red-400 mb-3">{profileIcons[index]}</div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <div className="theme-text-accent mb-3">
+                    {profileIcons[index]}
+                  </div>
+                  <h3 className="text-lg font-semibold text-accent-300 mb-2">
                     {profile.title}
                   </h3>
-                  <p className="text-gray-400 text-sm">{profile.desc}</p>
+                  <p className="theme-text-muted text-sm">{profile.desc}</p>
                 </motion.div>
               ))}
             </div>
           </motion.section>
-
           {/* Le Défi Section */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -274,18 +304,18 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               {t("canlock.challenge.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6">
+              <div className="theme-surface-secondary rounded-2xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <AlertTriangle className="w-6 h-6 text-yellow-500" />
-                  <span className="text-lg font-semibold text-white">
+                  <AlertTriangle className="w-6 h-6 text-warning-500" />
+                  <span className="text-lg font-semibold text-accent-300">
                     {t("canlock.challenge.threat.title")}
                   </span>
                 </div>
-                <p className="text-gray-400 mb-4">
+                <p className="theme-text-muted mb-4">
                   {t("canlock.challenge.threat.description")}
                 </p>
                 <ul className="space-y-2">
@@ -296,48 +326,46 @@ function CANlock() {
                   ).map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-2 text-gray-300"
+                      className="flex items-center gap-2 theme-text-secondary"
                     >
-                      <span className="w-2 h-2 bg-red-500 rounded-full" />
+                      <span className="w-2 h-2 bg-primary-500 rounded-full" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
-
-              <div className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6">
+              <div className="theme-surface-secondary rounded-2xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <Target className="w-6 h-6 text-red-400" />
-                  <span className="text-lg font-semibold text-white">
+                  <Target className="w-6 h-6 theme-text-accent" />
+                  <span className="text-lg font-semibold text-accent-300">
                     {t("canlock.challenge.falsePositives.title")}
                   </span>
                 </div>
-                <p className="text-gray-400 mb-4">
-                  {t("canlock.challenge.falsePositives.description1")}{" "}
-                  <span className="text-red-400 font-medium">
+                <p className="theme-text-muted mb-4">
+                  {t("canlock.challenge.falsePositives.description1")}
+                  <span className="theme-text-accent font-medium">
                     {t("canlock.challenge.falsePositives.errorRate")}
                   </span>
-                  , {t("canlock.challenge.falsePositives.description2")}{" "}
-                  <span className="text-white font-medium">
+                  , {t("canlock.challenge.falsePositives.description2")}
+                  <span className="text-accent-300 font-medium">
                     {t("canlock.challenge.falsePositives.signalsPerMinute")}
                   </span>
                   , {t("canlock.challenge.falsePositives.description3")}
                 </p>
-                <div className="bg-black/30 rounded-lg p-4 text-center">
-                  <p className="text-3xl font-bold text-red-400 mb-1">
+                <div className="bg-base/30 rounded-lg p-4 text-center">
+                  <p className="text-3xl font-bold theme-text-accent mb-1">
                     {t("canlock.challenge.falsePositives.stat")}
                   </p>
-                  <p className="text-gray-400 text-sm">
+                  <p className="theme-text-muted text-sm">
                     {t("canlock.challenge.falsePositives.statLabel")}
                   </p>
-                  <p className="text-gray-500 text-xs mt-2">
+                  <p className="text-neutral-500 text-xs mt-2">
                     {t("canlock.challenge.falsePositives.statNote")}
                   </p>
                 </div>
               </div>
             </div>
           </motion.section>
-
           {/* Objectifs & Livrables */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -345,26 +373,25 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               {t("canlock.objectives.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-red-400 mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold theme-text-accent mb-4 flex items-center gap-2">
                   <Target className="w-5 h-5" />
                   {t("canlock.objectives.main.title")}
                 </h3>
-                <p className="text-gray-300 text-lg">
-                  {t("canlock.objectives.main.description")}{" "}
-                  <span className="text-white font-medium">
+                <p className="theme-text-secondary text-lg">
+                  {t("canlock.objectives.main.description")}
+                  <span className="text-accent-300 font-medium">
                     {t("canlock.objectives.main.highlight")}
-                  </span>{" "}
+                  </span>
                   {t("canlock.objectives.main.description2")}
                 </p>
               </div>
-
               <div>
-                <h3 className="text-xl font-semibold text-red-400 mb-4 flex items-center gap-2">
+                <h3 className="text-xl font-semibold theme-text-accent mb-4 flex items-center gap-2">
                   <CheckCircle className="w-5 h-5" />
                   {t("canlock.objectives.deliverables.title")}
                 </h3>
@@ -376,9 +403,9 @@ function CANlock() {
                   ).map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start gap-3 text-gray-300"
+                      className="flex items-start gap-3 theme-text-secondary"
                     >
-                      <CheckCircle className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-success-500 mt-1 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -386,7 +413,6 @@ function CANlock() {
               </div>
             </div>
           </motion.section>
-
           {/* Timeline */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -394,12 +420,12 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               <Calendar className="inline-block w-8 h-8 mr-2 mb-1" />
               {t("canlock.timeline.title")}
             </h2>
             <div className="relative">
-              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-red-500/30" />
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary-500/30" />
               <div className="space-y-6">
                 {(
                   t("canlock.timeline.items", {
@@ -412,29 +438,25 @@ function CANlock() {
                 ).map((item, index) => (
                   <motion.div
                     key={index}
-                    className={`flex flex-col md:flex-row gap-4 ${
-                      index % 2 === 0 ? "md:flex-row-reverse" : ""
-                    }`}
+                    className={`flex flex-col md:flex-row gap-4 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                     initial={{ opacity: 0, x: index % 2 === 0 ? 30 : -30 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 * index, duration: 0.5 }}
                   >
                     <div className="flex-1" />
-                    <div className="hidden md:flex items-center justify-center w-10 h-10 bg-red-600 rounded-full z-10">
+                    <div className="hidden md:flex items-center justify-center w-10 h-10 bg-primary-500 rounded-full z-10">
                       {timelineIcons[index]}
                     </div>
                     <div
-                      className={`flex-1 bg-gradient-to-br from-black/40 to-red-900/10 rounded-xl p-4 ${
-                        index % 2 === 0 ? "md:text-right" : ""
-                      }`}
+                      className={`flex-1 theme-surface-secondary rounded-xl p-4 ${index % 2 === 0 ? "md:text-right" : ""}`}
                     >
-                      <span className="text-red-400 text-sm font-medium">
+                      <span className="theme-text-accent text-sm font-medium">
                         {t("canlock.timeline.week")} {item.weeks}
                       </span>
-                      <h3 className="text-white font-semibold mt-1">
+                      <h3 className="text-accent-300 font-semibold mt-1">
                         {item.phase}
                       </h3>
-                      <p className="text-gray-400 text-sm mt-1">
+                      <p className="theme-text-muted text-sm mt-1">
                         {item.description}
                       </p>
                     </div>
@@ -443,7 +465,6 @@ function CANlock() {
               </div>
             </div>
           </motion.section>
-
           {/* Technologies & Compétences */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -451,36 +472,35 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               {t("canlock.tech.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                  <Code className="w-5 h-5 text-red-400" />
+              <div className="theme-surface-secondary rounded-2xl shadow-lg p-6">
+                <h3 className="text-xl font-semibold text-accent-300 mb-4 flex items-center gap-2">
+                  <Code className="w-5 h-5 theme-text-accent" />
                   {t("canlock.tech.stack.title")}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-3 py-1 bg-red-600/20 text-red-300 text-sm rounded-full"
+                      className="px-3 py-1 bg-primary-500/20 text-primary-300 text-sm rounded-full"
                     >
                       {tech.name}
                     </span>
                   ))}
                 </div>
-                <div className="mt-4 pt-4 border-t border-red-500/20">
-                  <p className="text-gray-400 text-sm flex items-center gap-2">
+                <div className="mt-4 pt-4 border-t theme-border-soft">
+                  <p className="theme-text-muted text-sm flex items-center gap-2">
                     <Cpu className="w-4 h-4" />
                     {t("canlock.tech.stack.note")}
                   </p>
                 </div>
               </div>
-
-              <div className="bg-gradient-to-br from-black/40 to-red-900/10 rounded-2xl shadow-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
-                  <Rocket className="w-5 h-5 text-red-400" />
+              <div className="theme-surface-secondary rounded-2xl shadow-lg p-6">
+                <h3 className="text-xl font-semibold text-accent-300 mb-4 flex items-center gap-2">
+                  <Rocket className="w-5 h-5 theme-text-accent" />
                   {t("canlock.tech.skills.title")}
                 </h3>
                 <ul className="space-y-2">
@@ -491,9 +511,9 @@ function CANlock() {
                   ).map((skill, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-2 text-gray-300"
+                      className="flex items-center gap-2 theme-text-secondary"
                     >
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <CheckCircle className="w-4 h-4 text-success-500" />
                       {skill}
                     </li>
                   ))}
@@ -501,7 +521,6 @@ function CANlock() {
               </div>
             </div>
           </motion.section>
-
           {/* Pourquoi rejoindre */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -509,11 +528,11 @@ function CANlock() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
           >
-            <h2 className="text-2xl sm:text-3xl font-bold gradient-text text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8">
               {t("canlock.whyJoin.title")}
             </h2>
-            <div className="bg-gradient-to-br from-black/40 to-red-900/20 rounded-2xl shadow-lg p-8">
-              <p className="text-xl text-gray-300 text-center mb-6">
+            <div className="bg-gradient-to-br from-base/40 to-primary-900/20 rounded-2xl shadow-lg p-8">
+              <p className="text-xl theme-text-secondary text-center mb-6">
                 {t("canlock.whyJoin.intro")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -530,19 +549,18 @@ function CANlock() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.15 * index, duration: 0.5 }}
                   >
-                    <div className="text-red-400 flex justify-center mb-3">
+                    <div className="theme-text-accent flex justify-center mb-3">
                       {whyJoinIcons[index]}
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-accent-300 mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-400 text-sm">{item.desc}</p>
+                    <p className="theme-text-muted text-sm">{item.desc}</p>
                   </motion.div>
                 ))}
               </div>
             </div>
           </motion.section>
-
           {/* CTA Section */}
           <motion.div
             className="text-center pt-8"
@@ -551,20 +569,18 @@ function CANlock() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Rocket className="w-12 h-12 text-red-400 mx-auto mb-4" />
-            <p className="text-lg text-gray-200 font-medium text-center mb-6">
-              {t("canlock.cta.title")}
-              <br />
-              <span className="text-red-400 font-bold">
+            <Rocket className="w-12 h-12 theme-text-accent mx-auto mb-4" />
+            <p className="text-lg text-neutral-200 font-medium text-center mb-6">
+              {t("canlock.cta.title")} <br />
+              <span className="theme-text-accent font-bold">
                 {t("canlock.cta.subtitle")}
               </span>
             </p>
-
             <motion.a
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-red-600/30 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-3 px-6 py-3 bg-primary-500 theme-btn-solid-hover text-base-inverse font-semibold rounded-lg shadow-lg hover:shadow-xl hover:shadow-primary-600/30 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -585,5 +601,4 @@ function CANlock() {
     </>
   );
 }
-
 export default CANlock;

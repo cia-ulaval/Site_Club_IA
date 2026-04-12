@@ -32,7 +32,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-b from-black via-red-800/20 to-black">
+      <div className="min-h-screen theme-page-bg">
         <ScrollToTop />
         <Navbar />
         <Routes>

@@ -1,18 +1,14 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
 function Gallery() {
   const { t } = useTranslation();
-
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     desc: string;
   } | null>(null);
-
   const [activeCategory, setActiveCategory] = useState<string>("all");
-
   const images = {
     formation: [
       {
@@ -103,7 +99,6 @@ function Gallery() {
       },
     ],
   };
-
   const categories = [
     { id: "all", labelKey: "gallery.categories.all" },
     { id: "formation", labelKey: "gallery.categories.formation" },
@@ -119,32 +114,19 @@ function Gallery() {
         imgs.map((img) => ({ ...img, category })),
       );
     }
-
     return images[activeCategory as keyof typeof images].map((img) => ({
       ...img,
       category: activeCategory,
     }));
   };
-
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
   };
-
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
-
   return (
     <>
       <Helmet>
@@ -158,19 +140,16 @@ function Gallery() {
           name="description"
           content="Découvrez la galerie photos du Club IA ULaval : projets EEG, compétitions, formations, événements communautaires et moments marquants de notre club d'intelligence artificielle."
         />
-
         {/* Mots-clés */}
         <meta
           name="keywords"
           content="galerie Club IA, photos CIA ULaval, projets EEG, compétitions IA, formations machine learning, événements club IA, FlappyBrain photos, F1Tenth images, communauté IA Université Laval"
         />
-
         {/* Auteur */}
         <meta
           name="author"
           content="Club Intelligence Artificielle - Université Laval"
         />
-
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -187,7 +166,6 @@ function Gallery() {
         <meta property="og:url" content="https://cia.ift.ulaval.ca/gallery" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -202,82 +180,14 @@ function Gallery() {
           name="twitter:image"
           content="https://cia.ift.ulaval.ca/implication/front-image.webp"
         />
-
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/gallery" />
-
-        {/* Langue */}
-        <html lang="fr" />
-
+        {/* Langue */} <html lang="fr" />
         {/* Données structurées JSON-LD pour Google */}
         <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "ImageGallery",
-              "name": "Galerie Photos - Club Intelligence Artificielle Université Laval",
-              "url": "https://cia.ift.ulaval.ca/gallery",
-              "description": "Galerie photos du Club IA ULaval présentant nos projets, compétitions, formations et événements communautaires",
-              "creator": {
-                "@type": "Organization",
-                "name": "Club Intelligence Artificielle - Université Laval",
-                "url": "https://cia.ift.ulaval.ca",
-                "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp",
-                "description": "Club étudiant d'intelligence artificielle de l'Université Laval",
-                "foundingLocation": {
-                  "@type": "Place",
-                  "name": "Québec, Canada"
-                },
-                "parentOrganization": {
-                  "@type": "EducationalOrganization",
-                  "name": "Université Laval"
-                },
-                "sameAs": [
-                  "https://www.instagram.com/ciaulaval/",
-                  "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all",
-                  "https://github.com/cia-ulaval",
-                  "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                ]
-              },
-              "mainEntity": [
-                {
-                  "@type": "ImageObject",
-                  "name": "Projets EEG et FlappyBrain",
-                  "url": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp",
-                  "description": "Démonstration du projet FlappyBrain contrôlé par EEG"
-                },
-                {
-                  "@type": "ImageObject",
-                  "name": "Compétitions d'intelligence artificielle",
-                  "url": "https://cia.ift.ulaval.ca/competition/competition-a2024webp",
-                  "description": "Participation aux compétitions IA automne 2024"
-                },
-                {
-                  "@type": "ImageObject",
-                  "name": "Formations et ateliers IA",
-                  "url": "https://cia.ift.ulaval.ca/formation/tuto2.webp",
-                  "description": "Séances de formation en intelligence artificielle"
-                },
-                {
-                  "@type": "ImageObject",
-                  "name": "Événements communautaires",
-                  "url": "https://cia.ift.ulaval.ca/implication/kiosque.webp",
-                  "description": "Kiosque et événements de promotion du club"
-                },
-                {
-                  "@type": "ImageObject",
-                  "name": "Projet F1Tenth",
-                  "url": "https://cia.ift.ulaval.ca/project/f1tenthcar.webp",
-                  "description": "Voiture autonome du projet F1Tenth"
-                }
-              ],
-              "numberOfItems": 18,
-              "image": "https://cia.ift.ulaval.ca/implication/front-image.webp"
-            }
-          `}
+          {` { "@context": "https://schema.org", "@type": "ImageGallery", "name": "Galerie Photos - Club Intelligence Artificielle Université Laval", "url": "https://cia.ift.ulaval.ca/gallery", "description": "Galerie photos du Club IA ULaval présentant nos projets, compétitions, formations et événements communautaires", "creator": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ] }, "mainEntity": [ { "@type": "ImageObject", "name": "Projets EEG et FlappyBrain", "url": "https://cia.ift.ulaval.ca/implication/flappyeegmain.webp", "description": "Démonstration du projet FlappyBrain contrôlé par EEG" }, { "@type": "ImageObject", "name": "Compétitions d'intelligence artificielle", "url": "https://cia.ift.ulaval.ca/competition/competition-a2024webp", "description": "Participation aux compétitions IA automne 2024" }, { "@type": "ImageObject", "name": "Formations et ateliers IA", "url": "https://cia.ift.ulaval.ca/formation/tuto2.webp", "description": "Séances de formation en intelligence artificielle" }, { "@type": "ImageObject", "name": "Événements communautaires", "url": "https://cia.ift.ulaval.ca/implication/kiosque.webp", "description": "Kiosque et événements de promotion du club" }, { "@type": "ImageObject", "name": "Projet F1Tenth", "url": "https://cia.ift.ulaval.ca/project/f1tenthcar.webp", "description": "Voiture autonome du projet F1Tenth" } ], "numberOfItems": 18, "image": "https://cia.ift.ulaval.ca/implication/front-image.webp" } `}
         </script>
       </Helmet>
-
       {/* Hero section with animated gradient background */}
       <motion.div
         className="w-full py-20 bg-size-200"
@@ -291,13 +201,10 @@ function Gallery() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-400 to-red-600">
-            {t("gallery.heroTitle")}
-          </span>
+          <span className="theme-text-gradient">{t("gallery.heroTitle")}</span>
         </motion.h2>
-
         <motion.p
-          className="text-lg md:text-xl text-gray-300 text-center max-w-3xl mx-auto mt-6"
+          className="text-lg md:text-xl theme-text-secondary text-center max-w-3xl mx-auto mt-6"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -305,9 +212,8 @@ function Gallery() {
           {t("gallery.heroSubtitle")}
         </motion.p>
       </motion.div>
-
       <motion.section
-        className="container mx-auto px-6 py-12 rounded-3xl"
+        className="w-full max-w-7xl mx-auto px-6 py-12 rounded-3xl"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -319,10 +225,10 @@ function Gallery() {
           {categories.map((category) => (
             <motion.button
               key={category.id}
-              className={`px-5 py-2 rounded-full text-sm md:text-base transition-all custom-border-red custom-hover-border-red ${
+              className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/80 ${
                 activeCategory === category.id
-                  ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-600/30"
-                  : "bg-gray-800/70 text-gray-300 hover:bg-gray-700"
+                  ? "bg-primary-500 !text-white !border-primary-400 shadow-lg shadow-primary-900/25"
+                  : "bg-primary-950/70 !text-primary-300 !border-primary-500/70 hover:bg-primary-900/85 hover:!text-primary-200 hover:!border-accent-400/70"
               }`}
               onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}
@@ -332,7 +238,6 @@ function Gallery() {
             </motion.button>
           ))}
         </div>
-
         {/* Image gallery */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
@@ -343,17 +248,11 @@ function Gallery() {
           {getDisplayImages().map((image: any, index: number) => (
             <motion.div
               key={`${image.category}-${index}`}
-              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-black/30 aspect-[3/2] backdrop-blur-sm backdrop-filter hover:shadow-red-900/20 hover:shadow-2xl transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl shadow-xl shadow-base/30 aspect-[3/2] backdrop-blur-sm backdrop-filter hover:shadow-primary-900/20 hover:shadow-2xl transition-all duration-300"
               variants={itemVariants}
-              whileHover={{
-                scale: 1.03,
-                transition: { duration: 0.3 },
-              }}
+              whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
               onClick={() =>
-                setSelectedImage({
-                  src: image.src,
-                  desc: t(image.descKey),
-                })
+                setSelectedImage({ src: image.src, desc: t(image.descKey) })
               }
             >
               <img
@@ -361,18 +260,16 @@ function Gallery() {
                 alt={t(image.descKey)}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-
+              <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-base/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
               {/* Category badge */}
               <div className="absolute top-3 left-3">
-                <span className="bg-red-600/80 text-white text-xs font-medium px-3 py-1 rounded-full shadow-lg transform translate-y-1 opacity-90 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                <span className="bg-gradient-to-r from-primary-500 to-accent-500 text-base-inverse text-xs font-medium px-3 py-1 rounded-full shadow-lg transform translate-y-1 opacity-90 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   {t(`gallery.categoryLabels.${image.category}`)}
                 </span>
               </div>
-
               {/* Image description */}
               <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                <p className="text-white text-sm md:text-base font-medium drop-shadow-lg">
+                <p className="!text-accent-300 text-sm md:text-base font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
                   {t(image.descKey)}
                 </p>
               </div>
@@ -380,18 +277,17 @@ function Gallery() {
           ))}
         </motion.div>
       </motion.section>
-
       {/* Lightbox for enlarged image view */}
       {selectedImage && (
         <motion.div
-          className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          className="fixed inset-0 bg-base/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
-            className="relative max-w-5xl w-full bg-gray-900/80 rounded-3xl overflow-hidden border border-gray-800/50 shadow-2xl"
+            className="relative max-w-5xl w-full theme-modal-surface rounded-3xl overflow-hidden shadow-2xl"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
@@ -403,15 +299,13 @@ function Gallery() {
               alt={selectedImage.desc}
               className="w-full h-auto object-contain max-h-[80vh]"
             />
-
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
-              <p className="text-white text-lg font-medium">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-base to-transparent p-6">
+              <p className="text-base-inverse text-lg font-medium">
                 {selectedImage.desc}
               </p>
             </div>
-
             <button
-              className="absolute top-5 right-5 bg-black/50 hover:bg-red-700 text-white rounded-full p-3 transition-colors"
+              className="absolute top-5 right-5 bg-primary-900/60 hover:bg-accent-500 text-base-inverse rounded-full p-3 transition-colors"
               onClick={() => setSelectedImage(null)}
               aria-label={t("gallery.closeLabel")}
             >
@@ -436,5 +330,4 @@ function Gallery() {
     </>
   );
 }
-
 export default Gallery;

@@ -1,0 +1,242 @@
+@tailwind components;
+
+@layer components {
+  .theme-page-bg {
+    @apply bg-base relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: rgb(var(--color-base));
+    background-image:
+      radial-gradient(
+        900px circle at 12% 8%,
+        rgb(var(--color-primary-500) / 0.26) 0%,
+        transparent 46%
+      ),
+      radial-gradient(
+        980px circle at 84% 14%,
+        rgb(var(--color-accent-500) / 0.24) 0%,
+        transparent 52%
+      ),
+      linear-gradient(
+        180deg,
+        rgb(var(--color-base) / 1) 0%,
+        rgb(var(--color-base) / 1) 100%
+      );
+  }
+
+  .theme-page-bg::before {
+    content: '';
+    position: absolute;
+    inset: -16%;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        120deg,
+        transparent 20%,
+        rgb(var(--color-primary-500) / 0.4) 34%,
+        transparent 46%
+      ),
+      linear-gradient(
+        -128deg,
+        transparent 52%,
+        rgb(var(--color-accent-500) / 0.48) 66%,
+        transparent 82%
+      );
+    background-size: 195% 190%, 185% 180%;
+    opacity: 0.84;
+    transform: translate3d(-3%, -1%, 0);
+    animation: theme-bg-pan 20s ease-in-out infinite alternate;
+  }
+
+  .theme-page-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(
+        140% 100% at 50% 0%,
+        transparent 58%,
+        rgb(var(--color-base) / 0.56) 100%
+      ),
+      linear-gradient(
+        34deg,
+        transparent 70%,
+        rgb(var(--color-accent-500) / 0.2) 80%,
+        transparent 90%
+      );
+    background-size: 100% 100%, 190% 190%;
+    opacity: 0.94;
+  }
+
+  .theme-page-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  @keyframes theme-bg-pan {
+    0% {
+      transform: translate3d(-3%, -1%, 0);
+      background-position: 0% 0%, 100% 100%;
+      opacity: 0.74;
+    }
+    100% {
+      transform: translate3d(3%, 2%, 0);
+      background-position: 18% 14%, 84% 80%;
+      opacity: 0.92;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-page-bg::before {
+      animation: none;
+    }
+  }
+
+  .theme-glass-nav {
+    @apply bg-base border-b !border-accent-500/40;
+  }
+
+  .theme-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500;
+  }
+
+  /* Primary content shell used across project detail pages. */
+  .theme-content-shell {
+    @apply w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl border !border-accent-500/40 transition-colors duration-300;
+  }
+
+  .theme-content-shell:hover {
+    @apply !border-accent-500;
+  }
+
+  /* Shared media frame for video/image blocks with accent glow. */
+  .theme-media-frame {
+    @apply relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl;
+    box-shadow: 0 0 50px rgb(var(--color-primary-500) / 0.2);
+  }
+
+  /* Hero callout card used on top sections. */
+  .theme-hero-highlight {
+    @apply backdrop-blur-lg bg-base/40 rounded-xl p-6 border !border-accent-500/30;
+    animation: pulse-accent 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-accent {
+    0%,
+    100% {
+      box-shadow: 0 0 100px rgb(var(--color-accent-500) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 150px rgb(var(--color-primary-500) / 0.5);
+    }
+  }
+
+  .theme-text-accent {
+    @apply text-accent-500;
+  }
+
+  .theme-hover-text-accent {
+    @apply hover:text-accent-300;
+  }
+
+  .theme-text-secondary {
+    @apply text-accent-300;
+  }
+
+  .theme-text-muted {
+    @apply text-accent-300;
+  }
+
+  .theme-border-soft {
+    @apply !border-accent-500/20;
+  }
+
+  .theme-border-accent {
+    @apply !border-accent-500;
+  }
+
+  .theme-hover-border-accent {
+    @apply hover:!border-accent-500;
+  }
+
+  .theme-focus-border-accent {
+    @apply focus:!border-accent-500;
+  }
+
+  .theme-border-accent-important {
+    @apply !border-accent-500/30;
+  }
+
+  .theme-surface-primary {
+    @apply bg-gradient-to-br from-primary-500/20 via-accent-500/10 to-base/40;
+  }
+
+  .theme-surface-secondary {
+    @apply bg-gradient-to-br from-base/40 to-primary-500/10;
+  }
+
+  .theme-btn-gradient {
+    @apply bg-gradient-to-r from-primary-500 via-primary-500 to-primary-500 hover:from-primary-300 hover:via-primary-300 hover:to-primary-300 text-base-inverse;
+  }
+
+  .theme-btn-solid {
+    @apply bg-primary-500 text-base-inverse;
+  }
+
+  .theme-btn-solid-hover {
+    @apply hover:bg-primary-300;
+  }
+
+  .theme-btn-secondary {
+    @apply bg-accent-500 text-base-inverse hover:bg-accent-300;
+  }
+
+  .theme-link-accent {
+    @apply text-accent-500 hover:text-accent-300;
+  }
+
+  .theme-chip-inactive {
+    @apply bg-primary-500/20 text-base-inverse border !border-accent-500/35 hover:bg-primary-300/30 hover:!border-accent-300/60;
+  }
+
+  .theme-focus-ring-accent {
+    @apply focus:ring-accent-300;
+  }
+
+  .theme-modal-surface {
+    @apply bg-gradient-to-br from-primary-500/25 via-primary-500/15 to-base border !border-accent-500/35;
+  }
+
+  .theme-overlay-dark {
+    @apply bg-gradient-to-t from-base/80 via-base/50 to-transparent;
+  }
+
+  .theme-border-card {
+    border: 2px solid rgb(var(--color-accent-500));
+  }
+
+  .theme-shadow-accent-soft {
+    box-shadow: 0 2px 12px 0 rgb(var(--color-primary-500) / 0.15);
+  }
+
+  /* Accent utilities for logo splash color */
+  .theme-accent-dot {
+    @apply relative;
+  }
+
+  .theme-accent-dot::before {
+    content: '';
+    @apply absolute w-2 h-2 bg-accent-500 rounded-full;
+  }
+
+  .theme-accent-glow {
+    box-shadow: 0 0 30px rgb(var(--color-accent-500) / 0.4);
+  }
+
+  .theme-accent-border {
+    @apply !border-accent-500/40 hover:!border-accent-500/70;
+  }
+}

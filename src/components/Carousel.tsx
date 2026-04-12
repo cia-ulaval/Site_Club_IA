@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
 
-// Partner logos (src points to /public/banner). Use encodeURI when rendering because some
-// filenames contain spaces or special characters.
-const partners = [
+type Partner = {
+  src: string;
+  link: string;
+  alt: string;
+};
+
+// The sequence is duplicated once
+// so a single loop covers one full copy and restarts seamlessly.
+const partners: Partner[] = [
   {
     src: "/banner/LogoTracel.png",
     link: "https://tracel.ai/",
@@ -13,9 +19,21 @@ const partners = [
     link: "https://www.aesgul.com/accueil",
     alt: "AESGUL",
   },
-  { src: "/banner/LogoVooban.png", link: "https://vooban.com/", alt: "Vooban" },
-  { src: "/banner/ingeno.png", link: "https://ingeno.ca/fr/", alt: "Ingeno" },
-  { src: "/banner/asetin.webp", link: "https://www.asetin.ca/", alt: "ASETIN" },
+  {
+    src: "/banner/LogoVooban.png",
+    link: "https://vooban.com/",
+    alt: "Vooban",
+  },
+  {
+    src: "/banner/ingeno.png",
+    link: "https://ingeno.ca/fr/",
+    alt: "Ingeno",
+  },
+  {
+    src: "/banner/asetin.webp",
+    link: "https://www.asetin.ca/",
+    alt: "ASETIN",
+  },
   {
     src: "/banner/SiFiLabs.png",
     link: "https://sifilabs.com/",
@@ -31,7 +49,11 @@ const partners = [
     link: "https://www.ift.ulaval.ca/",
     alt: "Département d'informatique - Université Laval",
   },
-  { src: "/banner/LogoCRTI.png", link: "https://crti.ulaval.ca/", alt: "CRTI" },
+  {
+    src: "/banner/LogoCRTI.png",
+    link: "https://crti.ulaval.ca/",
+    alt: "CRTI",
+  },
   {
     src: "/banner/SDP.png",
     link: "https://sdp.ulaval.ca/",
@@ -44,52 +66,42 @@ const partners = [
   },
 ];
 
-const IMAGE_WIDTH = 120; // px
-const IMAGE_HEIGHT = 80; // px
-const IMAGE_MARGIN = 32; // px (mr-8)
-const REPEAT_COUNT = 6; // Repeat images 6 times for a much longer loop
-const TOTAL_WIDTH =
-  (IMAGE_WIDTH + IMAGE_MARGIN) * partners.length * REPEAT_COUNT;
+const repeatedPartners = [...partners, ...partners];
 
 export default function InfiniteScrollBanner() {
-  // Repeat the partners array REPEAT_COUNT times
-  const repeatedImages = Array(REPEAT_COUNT).fill(partners).flat();
-
   return (
-    <div className="scroll-banner relative w-full bg-black py-4 overflow-hidden">
+    <section
+      className="relative w-full overflow-hidden py-4"
+      style={{
+        WebkitMaskImage:
+          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+        maskImage:
+          "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+      }}
+    >
       <motion.div
-        className="flex items-center"
-        animate={{
-          x: [0, `-${TOTAL_WIDTH}px`],
-        }}
-        transition={{
-          duration: 13 * REPEAT_COUNT,
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop",
-        }}
+        className="relative z-20 flex w-max items-center"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+        style={{ willChange: "transform" }}
       >
-        {repeatedImages.map((item, index) => (
+        {repeatedPartners.map((item, index) => (
           <a
-            key={index}
+            key={`${item.alt}-${index}`}
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="mr-8 inline-block opacity-90"
             aria-label={item.alt}
+            className="mr-8 flex-none"
           >
             <img
               src={encodeURI(item.src)}
               alt={item.alt}
-              className="object-contain"
-              style={{
-                width: `${IMAGE_WIDTH}px`,
-                height: `${IMAGE_HEIGHT}px`,
-              }}
+              className="h-16 w-28 object-contain opacity-85 transition-opacity duration-300 hover:opacity-100 md:h-20 md:w-32"
             />
           </a>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 }

@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useTranslation } from "react-i18next"; // Import useTranslation hook
+import { useTranslation } from "react-i18next";
 import LanguageToggle from "./LanguageToggle";
 
 function Navbar() {
-  const { t } = useTranslation(); // Initialize the translation hook
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   const navLinks = [
@@ -21,7 +21,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-lg bg-black/60 border-b border-red-500/20">
+    <nav className="sticky top-0 z-50 theme-glass-nav">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
@@ -31,28 +31,29 @@ function Navbar() {
               width={35}
               height={35}
             />
-            <span className="text-xl font-bold gradient-text">CIA</span>
+            <span className="text-xl font-bold theme-text-gradient">CIA</span>
           </NavLink>
+
           <div className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-gray-300 hover:text-rose-500/60 transition-colors ${
-                    isActive ? "text-red-400" : ""
-                  }`
+                  `text-accent-500 hover:text-accent-300 transition-colors ${isActive ? "text-accent-300 font-semibold" : ""}`
                 }
               >
                 {link.label}
               </NavLink>
             ))}
           </div>
+
           <div className="flex items-center space-x-4">
             <LanguageToggle />
             <button
               onClick={toggleMenu}
-              className="md:hidden text-gray-300 hover:text-rose-500/60 transition-colors"
+              className="md:hidden theme-text-secondary hover:text-accent-300 transition-colors"
+              aria-label="Toggle navigation menu"
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
@@ -62,16 +63,15 @@ function Navbar() {
             </button>
           </div>
         </div>
+
         {isOpen && (
-          <div className="md:hidden">
+          <div className="md:hidden pb-3">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `block text-gray-300 hover:text-rose-500/60 transition-colors ${
-                    isActive ? "text-red-400" : ""
-                  } py-2`
+                  `block text-accent-500 hover:text-accent-300 transition-colors ${isActive ? "text-accent-300 font-semibold" : ""} py-2`
                 }
                 onClick={toggleMenu}
               >
