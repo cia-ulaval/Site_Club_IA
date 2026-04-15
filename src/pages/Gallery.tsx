@@ -1,117 +1,117 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 function Gallery() {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
     desc: string;
   } | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>('all');
   const images = {
     formation: [
       {
-        src: "/formation/tuto2.webp",
-        descKey: "gallery.images.formation.tuto2",
+        src: '/formation/tuto2.webp',
+        descKey: 'gallery.images.formation.tuto2',
       },
     ],
     competition: [
       {
-        src: "/competition/competition-1.webp",
-        descKey: "gallery.images.competition.competition1",
+        src: '/competition/competition-1.webp',
+        descKey: 'gallery.images.competition.competition1',
       },
       {
-        src: "/competition/competition-2.webp",
-        descKey: "gallery.images.competition.competition2",
+        src: '/competition/competition-2.webp',
+        descKey: 'gallery.images.competition.competition2',
       },
       {
-        src: "/competition/competition-3.webp",
-        descKey: "gallery.images.competition.competition3",
+        src: '/competition/competition-3.webp',
+        descKey: 'gallery.images.competition.competition3',
       },
       {
-        src: "/competition/competition-a2024-1.webp",
-        descKey: "gallery.images.competition.competitionA2024",
+        src: '/competition/competition-a2024-1.webp',
+        descKey: 'gallery.images.competition.competitionA2024',
       },
     ],
     project: [
       {
-        src: "/project/club2024.webp",
-        descKey: "gallery.images.project.club2024",
+        src: '/project/club2024.webp',
+        descKey: 'gallery.images.project.club2024',
       },
       {
-        src: "/project/clubrencontre.webp",
-        descKey: "gallery.images.project.clubrencontre",
+        src: '/project/clubrencontre.webp',
+        descKey: 'gallery.images.project.clubrencontre',
       },
       {
-        src: "/project/f1tenth.webp",
-        descKey: "gallery.images.project.f1tenth",
+        src: '/project/f1tenth.webp',
+        descKey: 'gallery.images.project.f1tenth',
       },
       {
-        src: "/project/f1tenthcar.webp",
-        descKey: "gallery.images.project.f1tenthcar",
+        src: '/project/f1tenthcar.webp',
+        descKey: 'gallery.images.project.f1tenthcar',
       },
       {
-        src: "/project/flappycard.jpg",
-        descKey: "gallery.images.project.flappycard",
+        src: '/project/flappycard.jpg',
+        descKey: 'gallery.images.project.flappycard',
       },
     ],
     community: [
       {
-        src: "/implication/filleclub.webp",
-        descKey: "gallery.images.community.filleclub",
+        src: '/implication/filleclub.webp',
+        descKey: 'gallery.images.community.filleclub',
       },
       {
-        src: "/implication/eeg-presentation.webp",
-        descKey: "gallery.images.community.eegPresentation",
+        src: '/implication/eeg-presentation.webp',
+        descKey: 'gallery.images.community.eegPresentation',
       },
       {
-        src: "/implication/flappyeegmain.webp",
-        descKey: "gallery.images.community.flappyeegmain",
+        src: '/implication/flappyeegmain.webp',
+        descKey: 'gallery.images.community.flappyeegmain',
       },
       {
-        src: "/implication/front-image.webp",
-        descKey: "gallery.images.community.frontImage",
+        src: '/implication/front-image.webp',
+        descKey: 'gallery.images.community.frontImage',
       },
       {
-        src: "/implication/kalven-presenter.webp",
-        descKey: "gallery.images.community.kalvenPresenter",
+        src: '/implication/kalven-presenter.webp',
+        descKey: 'gallery.images.community.kalvenPresenter',
       },
       {
-        src: "/implication/kiosque.webp",
-        descKey: "gallery.images.community.kiosque",
+        src: '/implication/kiosque.webp',
+        descKey: 'gallery.images.community.kiosque',
       },
       {
-        src: "/implication/presentation.webp",
-        descKey: "gallery.images.community.presentation",
+        src: '/implication/presentation.webp',
+        descKey: 'gallery.images.community.presentation',
       },
       {
-        src: "/implication/table.webp",
-        descKey: "gallery.images.community.table",
+        src: '/implication/table.webp',
+        descKey: 'gallery.images.community.table',
       },
       {
-        src: "/implication/table3.webp",
-        descKey: "gallery.images.community.table3",
+        src: '/implication/table3.webp',
+        descKey: 'gallery.images.community.table3',
       },
       {
-        src: "/implication/testclub.webp",
-        descKey: "gallery.images.community.testclub",
+        src: '/implication/testclub.webp',
+        descKey: 'gallery.images.community.testclub',
       },
     ],
   };
   const categories = [
-    { id: "all", labelKey: "gallery.categories.all" },
-    { id: "formation", labelKey: "gallery.categories.formation" },
-    { id: "competition", labelKey: "gallery.categories.competition" },
-    { id: "project", labelKey: "gallery.categories.project" },
-    { id: "community", labelKey: "gallery.categories.community" },
+    { id: 'all', labelKey: 'gallery.categories.all' },
+    { id: 'formation', labelKey: 'gallery.categories.formation' },
+    { id: 'competition', labelKey: 'gallery.categories.competition' },
+    { id: 'project', labelKey: 'gallery.categories.project' },
+    { id: 'community', labelKey: 'gallery.categories.community' },
   ];
 
   // Get all images for "All" category or filter by selected category
   const getDisplayImages = () => {
-    if (activeCategory === "all") {
+    if (activeCategory === 'all') {
       return Object.entries(images).flatMap(([category, imgs]) =>
-        imgs.map((img) => ({ ...img, category })),
+        imgs.map((img) => ({ ...img, category }))
       );
     }
     return images[activeCategory as keyof typeof images].map((img) => ({
@@ -131,10 +131,7 @@ function Gallery() {
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          Galerie Photos - Club Intelligence Artificielle Université Laval | CIA
-          ULaval
-        </title>
+        <title>Galerie Photos - Club Intelligence Artificielle Université Laval | CIA ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -146,10 +143,7 @@ function Gallery() {
           content="galerie Club IA, photos CIA ULaval, projets EEG, compétitions IA, formations machine learning, événements club IA, FlappyBrain photos, F1Tenth images, communauté IA Université Laval"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -201,7 +195,7 @@ function Gallery() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="theme-text-gradient">{t("gallery.heroTitle")}</span>
+          <span className="theme-text-gradient">{t('gallery.heroTitle')}</span>
         </motion.h2>
         <motion.p
           className="text-lg md:text-xl theme-text-secondary text-center max-w-3xl mx-auto mt-6"
@@ -209,7 +203,7 @@ function Gallery() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {t("gallery.heroSubtitle")}
+          {t('gallery.heroSubtitle')}
         </motion.p>
       </motion.div>
       <motion.section
@@ -227,8 +221,8 @@ function Gallery() {
               key={category.id}
               className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/80 ${
                 activeCategory === category.id
-                  ? "bg-primary-500 !text-white !border-primary-400 shadow-lg shadow-primary-900/25"
-                  : "bg-primary-950/70 !text-primary-300 !border-primary-500/70 hover:bg-primary-900/85 hover:!text-primary-200 hover:!border-accent-400/70"
+                  ? 'bg-primary-500 !text-white !border-primary-400 shadow-lg shadow-primary-900/25'
+                  : 'bg-primary-950/70 !text-primary-300 !border-primary-500/70 hover:bg-primary-900/85 hover:!text-primary-200 hover:!border-accent-400/70'
               }`}
               onClick={() => setActiveCategory(category.id)}
               whileHover={{ scale: 1.05 }}
@@ -251,9 +245,7 @@ function Gallery() {
               className="group relative overflow-hidden rounded-2xl shadow-xl shadow-base/30 aspect-[3/2] backdrop-blur-sm backdrop-filter hover:shadow-primary-900/20 hover:shadow-2xl transition-all duration-300"
               variants={itemVariants}
               whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
-              onClick={() =>
-                setSelectedImage({ src: image.src, desc: t(image.descKey) })
-              }
+              onClick={() => setSelectedImage({ src: image.src, desc: t(image.descKey) })}
             >
               <img
                 src={image.src}
@@ -291,7 +283,7 @@ function Gallery() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -300,14 +292,12 @@ function Gallery() {
               className="w-full h-auto object-contain max-h-[80vh]"
             />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-base to-transparent p-6">
-              <p className="text-base-inverse text-lg font-medium">
-                {selectedImage.desc}
-              </p>
+              <p className="text-base-inverse text-lg font-medium">{selectedImage.desc}</p>
             </div>
             <button
               className="absolute top-5 right-5 bg-primary-900/60 hover:bg-accent-500 text-base-inverse rounded-full p-3 transition-colors"
               onClick={() => setSelectedImage(null)}
-              aria-label={t("gallery.closeLabel")}
+              aria-label={t('gallery.closeLabel')}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

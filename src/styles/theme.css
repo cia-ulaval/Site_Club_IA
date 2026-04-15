@@ -17,11 +17,7 @@
         rgb(var(--color-accent-500) / 0.24) 0%,
         transparent 52%
       ),
-      linear-gradient(
-        180deg,
-        rgb(var(--color-base) / 1) 0%,
-        rgb(var(--color-base) / 1) 100%
-      );
+      linear-gradient(180deg, rgb(var(--color-base) / 1) 0%, rgb(var(--color-base) / 1) 100%);
   }
 
   .theme-page-bg::before {
@@ -43,7 +39,9 @@
         rgb(var(--color-accent-500) / 0.48) 66%,
         transparent 82%
       );
-    background-size: 195% 190%, 185% 180%;
+    background-size:
+      195% 190%,
+      185% 180%;
     opacity: 0.84;
     transform: translate3d(-3%, -1%, 0);
     animation: theme-bg-pan 20s ease-in-out infinite alternate;
@@ -56,18 +54,16 @@
     z-index: 0;
     pointer-events: none;
     background-image:
-      radial-gradient(
-        140% 100% at 50% 0%,
-        transparent 58%,
-        rgb(var(--color-base) / 0.56) 100%
-      ),
+      radial-gradient(140% 100% at 50% 0%, transparent 58%, rgb(var(--color-base) / 0.56) 100%),
       linear-gradient(
         34deg,
         transparent 70%,
         rgb(var(--color-accent-500) / 0.2) 80%,
         transparent 90%
       );
-    background-size: 100% 100%, 190% 190%;
+    background-size:
+      100% 100%,
+      190% 190%;
     opacity: 0.94;
   }
 
@@ -79,12 +75,16 @@
   @keyframes theme-bg-pan {
     0% {
       transform: translate3d(-3%, -1%, 0);
-      background-position: 0% 0%, 100% 100%;
+      background-position:
+        0% 0%,
+        100% 100%;
       opacity: 0.74;
     }
     100% {
       transform: translate3d(3%, 2%, 0);
-      background-position: 18% 14%, 84% 80%;
+      background-position:
+        18% 14%,
+        84% 80%;
       opacity: 0.92;
     }
   }

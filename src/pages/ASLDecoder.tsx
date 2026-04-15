@@ -1,60 +1,45 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
-import { Hand, Camera, Cpu, CheckCircle, Users, Brain } from "lucide-react";
-import TeamMemberCard from "../components/TeamMemberCard";
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { Hand, Camera, Cpu, CheckCircle, Users, Brain } from 'lucide-react';
+import TeamMemberCard from '../components/TeamMemberCard';
 function ASLDecoder() {
   const { t } = useTranslation();
   const teamMembers = [
-    { name: "Amen Ouannes", role: "Team Lead" },
-    { name: "Vincent Bellemare" },
-    { name: "Hiba Arfaoui" },
-    { name: "Guillhem Ané" },
-    { name: "Nidel Kouicem" },
+    { name: 'Amen Ouannes', role: 'Team Lead' },
+    { name: 'Vincent Bellemare' },
+    { name: 'Hiba Arfaoui' },
+    { name: 'Guillhem Ané' },
+    { name: 'Nidel Kouicem' },
   ];
   const features = [
     {
       icon: <Camera className="w-8 h-8 theme-text-accent" />,
-      title: t("asldecoder.features.camera.title"),
-      description: t("asldecoder.features.camera.description"),
+      title: t('asldecoder.features.camera.title'),
+      description: t('asldecoder.features.camera.description'),
     },
     {
       icon: <Brain className="w-8 h-8 theme-text-accent" />,
-      title: t("asldecoder.features.ai.title"),
-      description: t("asldecoder.features.ai.description"),
+      title: t('asldecoder.features.ai.title'),
+      description: t('asldecoder.features.ai.description'),
     },
     {
       icon: <Hand className="w-8 h-8 theme-text-accent" />,
-      title: t("asldecoder.features.gestures.title"),
-      description: t("asldecoder.features.gestures.description"),
+      title: t('asldecoder.features.gestures.title'),
+      description: t('asldecoder.features.gestures.description'),
     },
   ];
   return (
     <>
       <Helmet>
-        <title>ASL Decoder - {t("asldecoder.meta.title")}</title>
-        <meta name="description" content={t("asldecoder.meta.description")} />
-        <meta name="keywords" content={t("asldecoder.meta.keywords")} />
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
-        <meta
-          property="og:title"
-          content={`ASL Decoder - ${t("asldecoder.meta.title")}`}
-        />
-        <meta
-          property="og:description"
-          content={t("asldecoder.meta.description")}
-        />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/project/asl.png"
-        />
-        <meta
-          property="og:url"
-          content="https://cia.ift.ulaval.ca/asl-decoder"
-        />
+        <title>ASL Decoder - {t('asldecoder.meta.title')}</title>
+        <meta name="description" content={t('asldecoder.meta.description')} />
+        <meta name="keywords" content={t('asldecoder.meta.keywords')} />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
+        <meta property="og:title" content={`ASL Decoder - ${t('asldecoder.meta.title')}`} />
+        <meta property="og:description" content={t('asldecoder.meta.description')} />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/asl.png" />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/asl-decoder" />
         <meta property="og:type" content="article" />
         <link rel="canonical" href="https://cia.ift.ulaval.ca/asl-decoder" />
       </Helmet>
@@ -75,7 +60,7 @@ function ASLDecoder() {
             <div className="flex items-center gap-2 px-4 py-2 bg-success-500/20 border border-success-500/50 rounded-full">
               <CheckCircle className="w-5 h-5 text-success-400" />
               <span className="text-success-400 font-semibold">
-                {t("asldecoder.status.completed")}
+                {t('asldecoder.status.completed')}
               </span>
             </div>
           </motion.div>
@@ -94,7 +79,7 @@ function ASLDecoder() {
                     <span className="theme-text-gradient">ASL Decoder</span>
                   </h1>
                   <h2 className="text-2xl md:text-3xl font-semibold theme-text-secondary mb-6">
-                    {t("asldecoder.hero.subtitle")}
+                    {t('asldecoder.hero.subtitle')}
                   </h2>
                 </div>
                 <motion.p
@@ -103,7 +88,7 @@ function ASLDecoder() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  {t("asldecoder.hero.description")}
+                  {t('asldecoder.hero.description')}
                 </motion.p>
                 {/* Team Lead */}
                 <motion.div
@@ -145,7 +130,7 @@ function ASLDecoder() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold text-center mb-12 theme-text-gradient">
-              {t("asldecoder.features.title")}
+              {t('asldecoder.features.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {features.map((feature, index) => (
@@ -161,9 +146,7 @@ function ASLDecoder() {
                   <div className="w-14 h-14 bg-primary-500/20 rounded-xl flex items-center justify-center mb-4">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-accent-300 mb-2">
-                    {feature.title}
-                  </h3>
+                  <h3 className="text-xl font-bold text-accent-300 mb-2">{feature.title}</h3>
                   <p className="theme-text-muted">{feature.description}</p>
                 </motion.div>
               ))}
@@ -180,13 +163,11 @@ function ASLDecoder() {
             <div className="bg-gradient-to-br from-primary-500/10 to-transparent rounded-3xl p-8 !border theme-border-accent-important">
               <div className="flex items-center gap-3 mb-6">
                 <Cpu className="w-8 h-8 theme-text-accent" />
-                <h2 className="text-2xl font-bold text-accent-300">
-                  {t("asldecoder.tech.title")}
-                </h2>
+                <h2 className="text-2xl font-bold text-accent-300">{t('asldecoder.tech.title')}</h2>
               </div>
               <div className="flex flex-wrap gap-3">
                 {(
-                  t("asldecoder.tech.items", {
+                  t('asldecoder.tech.items', {
                     returnObjects: true,
                   }) as string[]
                 ).map((item, index) => (
@@ -210,11 +191,9 @@ function ASLDecoder() {
           >
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold theme-text-gradient mb-4">
-                {t("asldecoder.team.title")}
+                {t('asldecoder.team.title')}
               </h2>
-              <p className="theme-text-muted text-lg">
-                {t("asldecoder.team.subtitle")}
-              </p>
+              <p className="theme-text-muted text-lg">{t('asldecoder.team.subtitle')}</p>
             </div>
             <div className="flex flex-wrap justify-center max-w-full gap-4">
               {teamMembers.map((member, index) => (
@@ -229,7 +208,7 @@ function ASLDecoder() {
                   <TeamMemberCard
                     icon={<Hand className="w-8 h-8" />}
                     title={member.name}
-                    description={member.role || ""}
+                    description={member.role || ''}
                   />
                 </motion.div>
               ))}

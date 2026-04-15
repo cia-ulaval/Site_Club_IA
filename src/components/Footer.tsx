@@ -1,5 +1,5 @@
-import { Instagram, Facebook, Linkedin } from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
   const { t } = useTranslation();
@@ -11,19 +11,15 @@ function Footer() {
           {/* Club info */}
           <div className="flex-1 max-w-sm">
             <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 via-primary-400 to-primary-300 bg-clip-text text-transparent mb-3 tracking-tight">
-              {t("footer.clubName")}
+              {t('footer.clubName')}
             </h3>
-            <p className="text-primary-300 text-sm leading-relaxed mb-4">
-              {t("footer.slogan")}
-            </p>
+            <p className="text-primary-300 text-sm leading-relaxed mb-4">{t('footer.slogan')}</p>
             <div className="w-16 h-0.5 bg-gradient-to-r from-primary-500 to-primary-500 rounded-full"></div>
           </div>
 
           {/* Socials */}
           <div className="flex flex-col items-center md:items-end">
-            <h4 className="text-lg font-semibold theme-text-accent mb-4">
-              {t("footer.connect")}
-            </h4>
+            <h4 className="text-lg font-semibold theme-text-accent mb-4">{t('footer.connect')}</h4>
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/ciaulaval/"
@@ -63,7 +59,7 @@ function Footer() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
             <div className="flex flex-col space-y-1">
               <p className="text-neutral-500 text-xs text-center md:text-left">
-                {t("footer.copyright")}
+                {t('footer.copyright')}
               </p>
               <a
                 href="https://github.com/cia-ulaval/Site_Club_IA"
@@ -71,7 +67,7 @@ function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("footer.openSource")}
+                {t('footer.openSource')}
               </a>
             </div>
             <div className="flex items-center justify-center md:justify-end space-x-1.5">

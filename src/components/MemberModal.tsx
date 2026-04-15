@@ -1,6 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { Linkedin, Github, Globe, X, User } from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Linkedin, Github, Globe, X, User } from 'lucide-react';
 
 export interface TeamMember {
   name: string;
@@ -27,11 +27,7 @@ interface MemberModalProps {
   };
 }
 
-const MemberModal: React.FC<MemberModalProps> = ({
-  member,
-  onClose,
-  translations,
-}) => {
+const MemberModal: React.FC<MemberModalProps> = ({ member, onClose, translations }) => {
   const hasLinks = member.linkedIn || member.github || member.portfolio;
   const hasContent = member.mission || member.additionalDetails || hasLinks;
 
@@ -48,17 +44,13 @@ const MemberModal: React.FC<MemberModalProps> = ({
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Left Side - Full Height Image */}
         <div className="w-1/3 relative bg-gradient-to-b from-primary-950 to-base flex-shrink-0">
           {member.imgSrc ? (
-            <img
-              src={member.imgSrc}
-              alt={member.name}
-              className="w-full h-full object-cover"
-            />
+            <img src={member.imgSrc} alt={member.name} className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-primary-900/20">
               <User className="w-24 h-24 theme-text-accent" />
@@ -85,9 +77,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
               <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                 {translations.name}
               </span>
-              <h2 className="text-3xl font-bold text-base-inverse mt-1">
-                {member.name}
-              </h2>
+              <h2 className="text-3xl font-bold text-base-inverse mt-1">{member.name}</h2>
             </div>
 
             {/* Role */}
@@ -104,9 +94,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
                 <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                   {translations.mission}
                 </span>
-                <p className="theme-text-secondary mt-1 leading-relaxed">
-                  {member.mission}
-                </p>
+                <p className="theme-text-secondary mt-1 leading-relaxed">{member.mission}</p>
               </div>
             )}
 
@@ -168,9 +156,7 @@ const MemberModal: React.FC<MemberModalProps> = ({
 
             {/* No details message */}
             {!hasContent && (
-              <p className="theme-text-muted italic mt-8">
-                {translations.noDetails}
-              </p>
+              <p className="theme-text-muted italic mt-8">{translations.noDetails}</p>
             )}
           </div>
         </div>
