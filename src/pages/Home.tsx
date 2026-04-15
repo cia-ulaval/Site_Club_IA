@@ -1,48 +1,46 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import InfiniteScrollBanner from "../components/Carousel";
-import { useTranslation } from "react-i18next";
-import InstaPostEmbed from "../components/InstaPostEmbed";
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import InfiniteScrollBanner from '../components/Carousel';
+import { useTranslation } from 'react-i18next';
+import InstaPostEmbed from '../components/InstaPostEmbed';
 function Home() {
   const { t } = useTranslation();
   const projects = [
     {
-      title: t("home.projects.flapeeg.title"),
-      image: "/project/FlappyBrain.webp",
+      title: t('home.projects.flapeeg.title'),
+      image: '/project/FlappyBrain.webp',
       description: t(
-        "home.projects.flapeeg.homeDescription",
-        "Play FlapEEG with your brainwaves: AI reads EEG signals to control the bird.",
+        'home.projects.flapeeg.homeDescription',
+        'Play FlapEEG with your brainwaves: AI reads EEG signals to control the bird.'
       ),
-      link: "/flapeeg",
+      link: '/flapeeg',
     },
     {
-      title: t("home.projects.f1tenth.title"),
-      image: "/project/f1tenthcar.webp",
+      title: t('home.projects.f1tenth.title'),
+      image: '/project/f1tenthcar.webp',
       description: t(
-        "home.projects.f1tenth.homeDescription",
-        "Control a 1/10 F1TENTH car with an EMG bracelet: AI turns arm movement into steering and speed.",
+        'home.projects.f1tenth.homeDescription',
+        'Control a 1/10 F1TENTH car with an EMG bracelet: AI turns arm movement into steering and speed.'
       ),
-      link: "/f1tenth",
+      link: '/f1tenth',
     },
     {
-      title: t("home.projects.mangaai.title"),
-      image: "/project/mangaai2.webp",
+      title: t('home.projects.mangaai.title'),
+      image: '/project/mangaai2.webp',
       description: t(
-        "home.projects.mangaai.homeDescription",
-        "Translate manga panels with AI using OCR, language processing, and context-aware text replacement.",
+        'home.projects.mangaai.homeDescription',
+        'Translate manga panels with AI using OCR, language processing, and context-aware text replacement.'
       ),
-      link: "/mangaai",
+      link: '/mangaai',
     },
   ];
   return (
     <div className="w-full">
       <Helmet>
         {/* Titre */}
-        <title>
-          Club Intelligence Artificielle - Université Laval | CIA ULaval
-        </title>
+        <title>Club Intelligence Artificielle - Université Laval | CIA ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -54,40 +52,25 @@ function Home() {
           content="intelligence artificielle, IA, club étudiant, Université Laval, machine learning, deep learning, projets IA, événements tech, programmation, data science"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
-        <meta
-          property="og:title"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta property="og:title" content="Club Intelligence Artificielle - Université Laval" />
         <meta
           property="og:description"
           content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants et rejoignez notre communauté."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="twitter:title" content="Club Intelligence Artificielle - Université Laval" />
         <meta
           name="twitter:description"
           content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/" />
         {/* Langue */} <html lang="fr" />
@@ -111,10 +94,10 @@ function Home() {
                 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500">
-                  {t("home.header.title")}
+                  {t('home.header.title')}
                 </span>
               </motion.h1>
               {/* Subtitle */}
@@ -122,22 +105,22 @@ function Home() {
                 className="text-xl md:text-2xl text-primary-300 font-light leading-relaxed"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
               >
-                {t("home.header.subtitle")}
+                {t('home.header.subtitle')}
               </motion.p>
               {/* About Section */}
               <motion.div
                 className="space-y-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
               >
                 <h2 className="text-3xl md:text-4xl font-bold text-accent-300">
-                  {t("home.about.title")}
+                  {t('home.about.title')}
                 </h2>
                 <p className="text-accent-300 text-lg leading-relaxed">
-                  {t("home.about.description")}
+                  {t('home.about.description')}
                 </p>
               </motion.div>
             </div>
@@ -147,7 +130,7 @@ function Home() {
                 className="w-full h-full flex justify-center items-center"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
+                transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
               >
                 <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
                   <InstaPostEmbed url="https://www.instagram.com/p/DU0Z_U4iEzK/?img_index=1" />
@@ -172,7 +155,7 @@ function Home() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          {t("home.projects.title")}
+          {t('home.projects.title')}
         </motion.h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -184,9 +167,9 @@ function Home() {
               transition={{
                 duration: 0.6,
                 delay: 0.1 * index,
-                ease: "easeOut",
+                ease: 'easeOut',
               }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: '-100px' }}
             >
               <img
                 src={project.image}
@@ -204,7 +187,7 @@ function Home() {
                   to={project.link}
                   className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]"
                 >
-                  {t("home.projects.learnMore")}
+                  {t('home.projects.learnMore')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
@@ -218,31 +201,31 @@ function Home() {
           className="text-4xl font-bold text-primary-300 mb-8"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-50px' }}
         >
-          {t("home.collaboration.title")}
+          {t('home.collaboration.title')}
         </motion.h2>
         <motion.p
           className="text-xl text-primary-300 mb-8 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-50px' }}
         >
-          {t("home.collaboration.description")}
+          {t('home.collaboration.description')}
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+          viewport={{ once: true, margin: '-50px' }}
         >
           <Link
             to="/collaboration"
             className="inline-block px-8 py-3 bg-accent-500 hover:bg-accent-300 rounded-full text-base-inverse font-semibold transition-colors shadow-lg hover:shadow-xl hover:shadow-accent-500/30"
           >
-            {t("home.collaboration.button")}
+            {t('home.collaboration.button')}
           </Link>
         </motion.div>
       </section>

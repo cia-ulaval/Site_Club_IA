@@ -1,49 +1,47 @@
-import { Braces, TextCursorInput, SwatchBook, Rss } from "lucide-react";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
-import TeamMemberCard from "../components/TeamMemberCard";
+import { Braces, TextCursorInput, SwatchBook, Rss } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import TeamMemberCard from '../components/TeamMemberCard';
 function DecisionTree() {
   const { t } = useTranslation();
   const teamMembers = [
     {
       icon: <SwatchBook className="w-8 h-8" />,
-      title: "Benjamin Leblanc",
-      description: "Team Lead",
+      title: 'Benjamin Leblanc',
+      description: 'Team Lead',
     },
     {
       icon: <Braces className="w-8 h-8" />,
-      title: "Mathieu Bazinet",
-      description: "Client",
+      title: 'Mathieu Bazinet',
+      description: 'Client',
     },
     {
       icon: <TextCursorInput className="w-8 h-8" />,
-      title: "Émylie-Rose Desmarais",
-      description: "",
+      title: 'Émylie-Rose Desmarais',
+      description: '',
     },
     {
       icon: <Rss className="w-8 h-8" />,
-      title: "Antoine Jean",
-      description: "",
+      title: 'Antoine Jean',
+      description: '',
     },
     {
       icon: <Braces className="w-8 h-8" />,
-      title: "Tadagbé Dhossou",
-      description: "",
+      title: 'Tadagbé Dhossou',
+      description: '',
     },
     {
       icon: <Braces className="w-8 h-8" />,
-      title: "Alamaoudata Walet",
-      description: "",
+      title: 'Alamaoudata Walet',
+      description: '',
     },
   ];
   return (
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          Decision Tree - Recherche Arbres de Décision | Projet IA Club ULaval
-        </title>
+        <title>Decision Tree - Recherche Arbres de Décision | Projet IA Club ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -55,10 +53,7 @@ function DecisionTree() {
           content="Decision Tree, arbres de décision, machine learning, classification, algorithmes d'apprentissage, data science, recherche IA, Club IA ULaval, Émylie-Rose Desmarais, Benjamin Leblanc, Antoine Jean"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -68,14 +63,8 @@ function DecisionTree() {
           property="og:description"
           content="Découvrez notre projet Decision Tree : recherche et développement d'algorithmes d'arbres de décision pour machine learning et classification."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/project/decisiontree.webp"
-        />
-        <meta
-          property="og:url"
-          content="https://cia.ift.ulaval.ca/decisiontree"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/decisiontree.webp" />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/decisiontree" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
         {/* Twitter Cards */}
@@ -88,10 +77,7 @@ function DecisionTree() {
           name="twitter:description"
           content="Projet de recherche sur les algorithmes d'arbres de décision pour machine learning et classification."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/decisiontree.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/project/decisiontree.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/decisiontree" />
         {/* Langue */} <html lang="fr" />
@@ -118,20 +104,18 @@ function DecisionTree() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 <div className="flex flex-col justify-center space-y-6 sm:space-y-8 px-4 sm:px-6 lg:px-0 theme-hero-highlight">
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                    <span className="theme-text-gradient">
-                      {t("decisionTree.hero.title")}
-                    </span>
+                    <span className="theme-text-gradient">{t('decisionTree.hero.title')}</span>
                   </h1>
                   <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />
                   <div className="space-y-4 sm:space-y-6">
                     <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
-                      {t("decisionTree.hero.description1")}
+                      {t('decisionTree.hero.description1')}
                     </p>
                     <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
-                      {t("decisionTree.hero.description2")}
+                      {t('decisionTree.hero.description2')}
                     </p>
                     <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
-                      {t("decisionTree.hero.description3")}
+                      {t('decisionTree.hero.description3')}
                     </p>
                   </div>
                 </div>
@@ -139,7 +123,7 @@ function DecisionTree() {
                   <div className="theme-media-frame max-w-sm sm:max-w-md lg:max-w-lg border theme-border-accent-important">
                     <img
                       src="/project/decisiontree.webp"
-                      alt={t("decisionTree.hero.imageAlt")}
+                      alt={t('decisionTree.hero.imageAlt')}
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -156,7 +140,7 @@ function DecisionTree() {
             >
               <div className="theme-surface-secondary rounded-2xl p-6 md:p-8 border theme-border-accent-important">
                 <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
-                  {t("decisionTree.team.title")}
+                  {t('decisionTree.team.title')}
                 </h2>
                 <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
                   {teamMembers.map((member, index) => (

@@ -1,47 +1,28 @@
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX } from 'lucide-react';
 interface HeroVideoProps {
   isPlaying: boolean;
   isMuted: boolean;
   togglePlay: () => void;
   toggleMute: () => void;
 }
-export default function HeroVideo({
-  isPlaying,
-  isMuted,
-  togglePlay,
-  toggleMute,
-}: HeroVideoProps) {
+export default function HeroVideo({ isPlaying, isMuted, togglePlay, toggleMute }: HeroVideoProps) {
   return (
     <div className="theme-hero-highlight mb-16">
       <div className="theme-media-frame mb-4">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted={isMuted}
-          playsInline
-        />
+        <video className="w-full h-full object-cover" autoPlay loop muted={isMuted} playsInline />
         <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-base/80 to-transparent">
           <div className="flex items-center justify-between">
             <button
               onClick={togglePlay}
               className="p-2 rounded-full bg-primary-500/70 hover:bg-primary-500/60 transition-colors"
             >
-              {isPlaying ? (
-                <Pause className="w-5 h-5" />
-              ) : (
-                <Play className="w-5 h-5" />
-              )}
+              {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
             </button>
             <button
               onClick={toggleMute}
               className="p-2 rounded-full bg-primary-500/70 hover:bg-primary-500/60 transition-colors"
             >
-              {isMuted ? (
-                <VolumeX className="w-5 h-5" />
-              ) : (
-                <Volume2 className="w-5 h-5" />
-              )}
+              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
             </button>
           </div>
         </div>

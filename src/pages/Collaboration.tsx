@@ -9,116 +9,113 @@ import {
   BadgeCheck,
   Zap,
   Globe,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
-import { useRef } from "react"; // Sponsorship tiers with benefits
+} from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { useRef } from 'react'; // Sponsorship tiers with benefits
 const sponsorshipTiers = [
   {
-    name: "Bronze",
-    price: "$1,000",
-    color: "from-warning-700 to-warning-900",
-    hoverColor: "from-warning-600 to-warning-800",
+    name: 'Bronze',
+    price: '$1,000',
+    color: 'from-warning-700 to-warning-900',
+    hoverColor: 'from-warning-600 to-warning-800',
     icon: <Award className="w-8 h-8 text-warning-400" />,
     benefits: [
-      "Your logo and link on our website",
-      "Your logo presented at our events",
-      "Your logo on our t-shirts",
+      'Your logo and link on our website',
+      'Your logo presented at our events',
+      'Your logo on our t-shirts',
     ],
   },
   {
-    name: "Silver",
-    price: "$5,000",
-    color: "from-neutral-400 to-neutral-600",
-    hoverColor: "from-neutral-300 to-neutral-500",
+    name: 'Silver',
+    price: '$5,000',
+    color: 'from-neutral-400 to-neutral-600',
+    hoverColor: 'from-neutral-300 to-neutral-500',
     icon: <Award className="w-8 h-8 theme-text-secondary" />,
     benefits: [
-      "Your logo and link on our website",
-      "Your logo presented in bold at our events",
-      "Your logo in bold on our t-shirts",
-      "Special thanks on our social media",
-      "Invitation of one member to one of our opening events",
-      "Repost of an ad",
+      'Your logo and link on our website',
+      'Your logo presented in bold at our events',
+      'Your logo in bold on our t-shirts',
+      'Special thanks on our social media',
+      'Invitation of one member to one of our opening events',
+      'Repost of an ad',
     ],
   },
   {
-    name: "Gold",
-    price: "$10,000",
-    color: "from-warning-500 to-warning-700",
-    hoverColor: "from-warning-400 to-warning-600",
+    name: 'Gold',
+    price: '$10,000',
+    color: 'from-warning-500 to-warning-700',
+    hoverColor: 'from-warning-400 to-warning-600',
     icon: <Award className="w-8 h-8 text-warning-300" />,
     benefits: [
-      "Your logo and link on our website",
-      "Your logo presented in very bold at our events",
-      "Your logo in very bold on our t-shirts",
-      "Special thanks on our social media",
-      "Invitation of three members to one of our opening events",
-      "Repost of three ads",
-      "Sponsorship of one of our projects",
-      "Access to our CV book of student researchers",
-      "Your logo on one of our projects",
+      'Your logo and link on our website',
+      'Your logo presented in very bold at our events',
+      'Your logo in very bold on our t-shirts',
+      'Special thanks on our social media',
+      'Invitation of three members to one of our opening events',
+      'Repost of three ads',
+      'Sponsorship of one of our projects',
+      'Access to our CV book of student researchers',
+      'Your logo on one of our projects',
     ],
   },
 ]; // Funded projects showcase
 const fundedProjects = [
   {
-    title: "MangaTranslator AI",
-    description:
-      "AI-powered manga translation system for real-time panel conversion.",
+    title: 'MangaTranslator AI',
+    description: 'AI-powered manga translation system for real-time panel conversion.',
     progress: 85,
     icon: <Globe className="w-6 h-6" />,
   },
   {
-    title: "FlapEEG",
-    description:
-      "A video game controlled by brain signals using EEG technology.",
+    title: 'FlapEEG',
+    description: 'A video game controlled by brain signals using EEG technology.',
     progress: 60,
     icon: <MessageCircle className="w-6 h-6" />,
   },
   {
-    title: "F1Tenth",
-    description:
-      "F1 racing with 1/10th scale cars controlled by muscle signals.",
+    title: 'F1Tenth',
+    description: 'F1 racing with 1/10th scale cars controlled by muscle signals.',
     progress: 60,
     icon: <Zap className="w-6 h-6" />,
   },
 ]; // Sponsor logos
 const currentSponsors = [
-  { name: "Université Laval", tier: "Gold", link: "https://www.ulaval.ca/" },
-  { name: "AESGUL", tier: "Gold", link: "https://www.aesgul.com/accueil" },
-  { name: "ASETIN", tier: "Gold", link: "https://www.asetin.ca/" },
-  { name: "MonAvenirTI", tier: "Gold", link: "https://monavenirti.org/" },
-  { name: "Tracel AI", tier: "Silver", link: "https://tracel.ai/" },
-  { name: "SiFi Labs", tier: "Silver", link: "https://sifilabs.com/" },
-  { name: "Ingeno", tier: "Gold", link: "https://ingeno.ca/fr/" },
-  { name: "Vooban", tier: "Bronze", link: "https://vooban.com/" },
+  { name: 'Université Laval', tier: 'Gold', link: 'https://www.ulaval.ca/' },
+  { name: 'AESGUL', tier: 'Gold', link: 'https://www.aesgul.com/accueil' },
+  { name: 'ASETIN', tier: 'Gold', link: 'https://www.asetin.ca/' },
+  { name: 'MonAvenirTI', tier: 'Gold', link: 'https://monavenirti.org/' },
+  { name: 'Tracel AI', tier: 'Silver', link: 'https://tracel.ai/' },
+  { name: 'SiFi Labs', tier: 'Silver', link: 'https://sifilabs.com/' },
+  { name: 'Ingeno', tier: 'Gold', link: 'https://ingeno.ca/fr/' },
+  { name: 'Vooban', tier: 'Bronze', link: 'https://vooban.com/' },
   {
-    name: "Service du développement professionnel - Université Laval",
-    tier: "Gold",
-    link: "https://sdp.ulaval.ca/",
+    name: 'Service du développement professionnel - Université Laval',
+    tier: 'Gold',
+    link: 'https://sdp.ulaval.ca/',
   },
-  { name: "CRTI", tier: "Gold", link: "https://crti.ulaval.ca/" },
+  { name: 'CRTI', tier: 'Gold', link: 'https://crti.ulaval.ca/' },
 ]; // Success metrics
 const impactMetrics = [
   {
-    metric: "3",
-    labelKey: "projectsCompleted",
+    metric: '3',
+    labelKey: 'projectsCompleted',
     icon: <Rocket className="w-8 h-8 theme-text-accent" />,
   },
   {
-    metric: "30+",
-    labelKey: "studentResearchers",
+    metric: '30+',
+    labelKey: 'studentResearchers',
     icon: <Users className="w-8 h-8 theme-text-accent" />,
   },
   {
-    metric: "6",
-    labelKey: "industryPartners",
+    metric: '6',
+    labelKey: 'industryPartners',
     icon: <Briefcase className="w-8 h-8 theme-text-accent" />,
   },
   {
-    metric: "2",
-    labelKey: "publishedPapers",
+    metric: '2',
+    labelKey: 'publishedPapers',
     icon: <GraduationCap className="w-8 h-8 theme-text-accent" />,
   },
 ];
@@ -153,9 +150,7 @@ const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
         <h3 className="text-2xl font-bold text-base-inverse mb-2">
           {t(`collaborationPage.sponsorshipTiersNames.${tier.name}`)}
         </h3>
-        <div className="text-3xl font-bold text-base-inverse mb-4">
-          {tier.price}
-        </div>
+        <div className="text-3xl font-bold text-base-inverse mb-4">{tier.price}</div>
       </div>
       <ul className="space-y-3 mb-8 flex-grow">
         {tier.benefits.map((benefit, index) => (
@@ -173,11 +168,8 @@ const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
         whileTap={{ scale: 0.98 }}
         onClick={onBecomePartner}
       >
-        {t("collaborationPage.becomeSponsorButton", {
-          tier: t(
-            `collaborationPage.sponsorshipTiersNames.${tier.name}`,
-            tier.name,
-          ),
+        {t('collaborationPage.becomeSponsorButton', {
+          tier: t(`collaborationPage.sponsorshipTiersNames.${tier.name}`, tier.name),
         })}
       </motion.button>
     </motion.div>
@@ -202,17 +194,12 @@ const ProjectCard = ({ project }: ProjectProps) => {
       viewport={{ once: true }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
-      <div className="mb-4 theme-text-accent flex justify-center">
-        {project.icon}
-      </div>
+      <div className="mb-4 theme-text-accent flex justify-center">{project.icon}</div>
       <h3 className="text-xl font-bold text-base-inverse mb-3 text-center">
         {t(`collaborationPage.fundedProjects.${project.title}`)}
       </h3>
       <p className="theme-text-muted text-center mb-5">
-        {t(
-          `collaborationPage.fundedProjectsDescriptions.${project.title}`,
-          project.description,
-        )}
+        {t(`collaborationPage.fundedProjectsDescriptions.${project.title}`, project.description)}
       </p>
       <div className="w-full bg-primary-900/30 rounded-full h-2.5 mb-2">
         <div
@@ -221,7 +208,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
         ></div>
       </div>
       <div className="flex justify-between text-xs theme-text-muted">
-        <span>{t("collaborationPage.progress")}</span>
+        <span>{t('collaborationPage.progress')}</span>
         <span>{project.progress}%</span>
       </div>
     </motion.div>
@@ -239,12 +226,8 @@ const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
       <div className="flex justify-center mb-4">{metric.icon}</div>
-      <h3 className="text-3xl font-bold text-base-inverse mb-1">
-        {metric.metric}
-      </h3>
-      <p className="theme-text-muted">
-        {t(`collaborationPage.impactMetrics.${metric.labelKey}`)}
-      </p>
+      <h3 className="text-3xl font-bold text-base-inverse mb-1">{metric.metric}</h3>
+      <p className="theme-text-muted">{t(`collaborationPage.impactMetrics.${metric.labelKey}`)}</p>
     </motion.div>
   );
 };
@@ -266,22 +249,20 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
       const normalize = (s: string) =>
         s
           .toLowerCase()
-          .normalize("NFD")
-          .replace(/\p{Diacritic}/gu, "")
-          .replace(/[^a-z0-9]/g, "");
+          .normalize('NFD')
+          .replace(/\p{Diacritic}/gu, '')
+          .replace(/[^a-z0-9]/g, '');
       const mapping: Record<string, string> = {
-        [normalize("Université Laval")]: "/banner/LogoDepartementInfo.png",
-        [normalize("AESGUL")]: "/banner/aesgul.webp",
-        [normalize("ASETIN")]: "/banner/asetin.webp",
-        [normalize("MonAvenirTI")]: "/banner/avenirti.webp",
-        [normalize("Tracel AI")]: "/banner/LogoTracel.png",
-        [normalize("SiFi Labs")]: "/banner/SiFiLabs.png",
-        [normalize("Ingeno")]: "/banner/ingeno.png",
-        [normalize("Vooban")]: "/banner/LogoVooban.png",
-        [normalize("CRTI")]: "/banner/LogoCRTI.png",
-        [normalize(
-          "Service du développement professionnel - Université Laval",
-        )]: "/banner/SDP.png",
+        [normalize('Université Laval')]: '/banner/LogoDepartementInfo.png',
+        [normalize('AESGUL')]: '/banner/aesgul.webp',
+        [normalize('ASETIN')]: '/banner/asetin.webp',
+        [normalize('MonAvenirTI')]: '/banner/avenirti.webp',
+        [normalize('Tracel AI')]: '/banner/LogoTracel.png',
+        [normalize('SiFi Labs')]: '/banner/SiFiLabs.png',
+        [normalize('Ingeno')]: '/banner/ingeno.png',
+        [normalize('Vooban')]: '/banner/LogoVooban.png',
+        [normalize('CRTI')]: '/banner/LogoCRTI.png',
+        [normalize('Service du développement professionnel - Université Laval')]: '/banner/SDP.png',
       };
       const key = normalize(sponsor.name);
       const logo = mapping[key];
@@ -295,18 +276,14 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
           />
         );
       }
-      return (
-        <div className="text-base-inverse text-lg font-semibold">
-          {sponsor.name}
-        </div>
-      );
+      return <div className="text-base-inverse text-lg font-semibold">{sponsor.name}</div>;
     })()}
     <div className="text-xs theme-text-accent mt-2">{sponsor.tier}</div>
   </motion.a>
 );
 const ContactForm = () => {
   const { t } = useTranslation();
-  const contactEmail = `finance.cia${"@"}ulaval.ca`;
+  const contactEmail = `finance.cia${'@'}ulaval.ca`;
   const handleContactClick = () => {
     window.location.href = `mailto:${contactEmail}`;
   };
@@ -319,26 +296,26 @@ const ContactForm = () => {
       viewport={{ once: true }}
     >
       <h3 className="text-2xl font-bold text-base-inverse mb-6 text-center">
-        {t("collaborationPage.contactTitle")}
+        {t('collaborationPage.contactTitle')}
       </h3>
       <div className="space-y-4 mb-6">
         <input
           type="text"
-          placeholder={t("collaborationPage.contactName")}
+          placeholder={t('collaborationPage.contactName')}
           className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
         />
         <input
           type="email"
-          placeholder={t("collaborationPage.contactEmail")}
+          placeholder={t('collaborationPage.contactEmail')}
           className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
         />
         <input
           type="text"
-          placeholder={t("collaborationPage.contactCompany")}
+          placeholder={t('collaborationPage.contactCompany')}
           className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
         />
         <textarea
-          placeholder={t("collaborationPage.contactMessage")}
+          placeholder={t('collaborationPage.contactMessage')}
           className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse h-32"
         ></textarea>
       </div>
@@ -350,7 +327,7 @@ const ContactForm = () => {
         onClick={handleContactClick}
         aria-label={`Contact ${contactEmail}`}
       >
-        {t("collaborationPage.contactButton")}
+        {t('collaborationPage.contactButton')}
       </motion.button>
     </motion.div>
   );
@@ -359,15 +336,14 @@ function Collaboration() {
   const { t } = useTranslation();
   const contactRef = useRef<HTMLDivElement>(null);
   const scrollToContact = () => {
-    contactRef.current?.scrollIntoView({ behavior: "smooth" });
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <>
       <Helmet>
         {/* Titre */}
         <title>
-          Partenariats et Sponsoring - Club Intelligence Artificielle Université
-          Laval | CIA ULaval
+          Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval | CIA ULaval
         </title>
         {/* Description */}
         <meta
@@ -380,10 +356,7 @@ function Collaboration() {
           content="sponsoring IA, partenariat Club IA, collaboration entreprise, financement projets IA, sponsoring étudiant, Bronze Silver Gold, networking IA, talents IA, Université Laval, recherche IA"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -393,14 +366,8 @@ function Collaboration() {
           property="og:description"
           content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants et accédez aux meilleurs talents en intelligence artificielle."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
-        <meta
-          property="og:url"
-          content="https://cia.ift.ulaval.ca/collaboration"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
+        <meta property="og:url" content="https://cia.ift.ulaval.ca/collaboration" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
         {/* Twitter Cards */}
@@ -413,10 +380,7 @@ function Collaboration() {
           name="twitter:description"
           content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants et accédez aux talents IA."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/collaboration" />
         {/* Langue */} <html lang="fr" />
@@ -426,9 +390,7 @@ function Collaboration() {
         </script>
       </Helmet>
       <section className="relative overflow-hidden">
-        <h1 className="sr-only">
-          {t("collaborationPage.mainTitle")} | Support AI Research
-        </h1>
+        <h1 className="sr-only">{t('collaborationPage.mainTitle')} | Support AI Research</h1>
         <div
           className="absolute top-40 left-20 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl -z-10"
           aria-hidden="true"
@@ -454,14 +416,14 @@ function Collaboration() {
           >
             <h2 className="text-6xl font-bold mb-4">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-                {t("collaborationPage.mainTitle")}
+                {t('collaborationPage.mainTitle')}
               </span>
             </h2>
             <h2 className="text-3xl font-bold text-base-inverse mb-6">
-              {t("collaborationPage.subtitle")}
+              {t('collaborationPage.subtitle')}
             </h2>
             <p className="text-xl theme-text-secondary max-w-3xl mx-auto">
-              {t("collaborationPage.intro")}
+              {t('collaborationPage.intro')}
             </p>
           </motion.div>
           {/* Impact Metrics Section */}
@@ -473,7 +435,7 @@ function Collaboration() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t("collaborationPage.impactTitle")}
+              {t('collaborationPage.impactTitle')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {impactMetrics.map((metric, index) => (
@@ -490,15 +452,11 @@ function Collaboration() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t("collaborationPage.tiersTitle")}
+              {t('collaborationPage.tiersTitle')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {sponsorshipTiers.map((tier, index) => (
-                <SponsorshipTier
-                  key={index}
-                  tier={tier}
-                  onBecomePartner={scrollToContact}
-                />
+                <SponsorshipTier key={index} tier={tier} onBecomePartner={scrollToContact} />
               ))}
             </div>
           </motion.div>
@@ -511,7 +469,7 @@ function Collaboration() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t("collaborationPage.projectsTitle")}
+              {t('collaborationPage.projectsTitle')}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {fundedProjects.map((project, index) => (
@@ -528,7 +486,7 @@ function Collaboration() {
             viewport={{ once: true }}
           >
             <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t("collaborationPage.currentSponsorsTitle")}
+              {t('collaborationPage.currentSponsorsTitle')}
             </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
               {currentSponsors.map((sponsor, index) => (
@@ -546,19 +504,13 @@ function Collaboration() {
           >
             <div>
               <h3 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-                {t("collaborationPage.readyTitle")}
+                {t('collaborationPage.readyTitle')}
               </h3>
-              <p className="theme-text-secondary mb-6">
-                {t("collaborationPage.readyText1")}
-              </p>
-              <p className="theme-text-secondary mb-6">
-                {t("collaborationPage.readyText2")}
-              </p>
+              <p className="theme-text-secondary mb-6">{t('collaborationPage.readyText1')}</p>
+              <p className="theme-text-secondary mb-6">{t('collaborationPage.readyText2')}</p>
               <div className="flex items-center gap-4">
                 <CreditCard className="w-6 h-6 theme-text-accent" />
-                <span className="text-base-inverse">
-                  {t("collaborationPage.flexiblePayment")}
-                </span>
+                <span className="text-base-inverse">{t('collaborationPage.flexiblePayment')}</span>
               </div>
             </div>
             <div ref={contactRef}>

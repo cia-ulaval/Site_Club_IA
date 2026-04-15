@@ -934,20 +934,11 @@
       "title": "Technologies & Skills",
       "software": {
         "title": "Software Stack",
-        "items": [
-          "Python",
-          "PyTorch",
-          "OpenAI Gym",
-          "RL Libraries",
-          "Simulation environments"
-        ]
+        "items": ["Python", "PyTorch", "OpenAI Gym", "RL Libraries", "Simulation environments"]
       },
       "hardware": {
         "title": "Hardware",
-        "items": [
-          "GPU (optional access at end of session)",
-          "Physical Poppy robot (final tests)"
-        ]
+        "items": ["GPU (optional access at end of session)", "Physical Poppy robot (final tests)"]
       },
       "skills": {
         "title": "Target Skills",
@@ -1225,20 +1216,11 @@
       "title": "Technologies & Skills",
       "software": {
         "title": "Software Stack",
-        "items": [
-          "Python",
-          "PyTorch / TensorFlow",
-          "Jupyter Notebooks",
-          "LaTeX",
-          "GPU Computing"
-        ]
+        "items": ["Python", "PyTorch / TensorFlow", "Jupyter Notebooks", "LaTeX", "GPU Computing"]
       },
       "hardware": {
         "title": "Hardware",
-        "items": [
-          "GPU (access provided for experiments)",
-          "High-performance computing cluster"
-        ]
+        "items": ["GPU (access provided for experiments)", "High-performance computing cluster"]
       },
       "skills": {
         "title": "Target Skills",
@@ -1485,12 +1467,7 @@
         "title": "Simulation",
         "count": "2 members",
         "description": "Design a complete simulation of the system and drones with Isaac Sim.",
-        "skills": [
-          "Isaac Sim",
-          "CAD and modeling",
-          "Python",
-          "Physics and simulation"
-        ]
+        "skills": ["Isaac Sim", "CAD and modeling", "Python", "Physics and simulation"]
       },
       "ai": {
         "title": "AI / Code",
@@ -1751,25 +1728,13 @@
           "title": "Computer Vision & AI",
           "count": "2–3 members",
           "description": "Implement and optimize ArUco marker detection, 3D pose estimation and embedded image processing algorithms.",
-          "skills": [
-            "OpenCV",
-            "Python",
-            "Computer Vision",
-            "Pose Estimation",
-            "Image Processing"
-          ]
+          "skills": ["OpenCV", "Python", "Computer Vision", "Pose Estimation", "Image Processing"]
         },
         {
           "title": "Navigation & Embedded Systems",
           "count": "2–3 members",
           "description": "Develop guidance algorithms, integrate ArduPilot via MAVLink and tune autonomous flight controllers.",
-          "skills": [
-            "ArduPilot",
-            "MAVLink",
-            "Python",
-            "PID Control",
-            "Embedded Systems"
-          ]
+          "skills": ["ArduPilot", "MAVLink", "Python", "PID Control", "Embedded Systems"]
         }
       ]
     },

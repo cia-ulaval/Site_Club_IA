@@ -1,33 +1,33 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react"; // ← Import ici
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react'; // ← Import ici
 
 // imports de pages
-import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import Management from "./pages/Management";
-import Gallery from "./pages/Gallery";
-import FlapEEG from "./pages/FlapEEG";
-import MangaAI from "./pages/MangaAI";
-import F1Tenth from "./pages/F1Tenth";
-import Lenia from "./pages/Lenia";
-import DecisionTree from "./pages/DecisionTree";
-import Collaboration from "./pages/Collaboration";
-import JoinUs from "./pages/JoinUs";
-import CANlock from "./pages/CANlock";
-import Drone from "./pages/Drone";
-import SGDBeyond from "./pages/SGDBeyond";
-import NutriNov from "./pages/NutriNov";
-import PoppyConception from "./pages/PoppyConception";
-import PoppySimulation from "./pages/PoppySimulation";
-import ASLDecoder from "./pages/ASLDecoder";
-import AvionCargo from "./pages/AvionCargo";
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Management from './pages/Management';
+import Gallery from './pages/Gallery';
+import FlapEEG from './pages/FlapEEG';
+import MangaAI from './pages/MangaAI';
+import F1Tenth from './pages/F1Tenth';
+import Lenia from './pages/Lenia';
+import DecisionTree from './pages/DecisionTree';
+import Collaboration from './pages/Collaboration';
+import JoinUs from './pages/JoinUs';
+import CANlock from './pages/CANlock';
+import Drone from './pages/Drone';
+import SGDBeyond from './pages/SGDBeyond';
+import NutriNov from './pages/NutriNov';
+import PoppyConception from './pages/PoppyConception';
+import PoppySimulation from './pages/PoppySimulation';
+import ASLDecoder from './pages/ASLDecoder';
+import AvionCargo from './pages/AvionCargo';
 
 // Components
-import Navbar from "./components/Navbar";
-import ScrollToTop from "./components/ScrollToTop";
-import Footer from "./components/Footer";
-import ScrollToTopButton from "./components/ScrollToTopButton";
+import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (

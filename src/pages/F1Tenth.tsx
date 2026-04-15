@@ -1,83 +1,74 @@
-import { motion } from "framer-motion";
-import {
-  Users,
-  Lightbulb,
-  Target,
-  Braces,
-  Rotate3d,
-  UserRoundCog,
-} from "lucide-react";
-import { Helmet } from "react-helmet-async";
-import TeamMemberCard from "../components/TeamMemberCard";
-import { useTranslation } from "react-i18next";
+import { motion } from 'framer-motion';
+import { Users, Lightbulb, Target, Braces, Rotate3d, UserRoundCog } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
+import TeamMemberCard from '../components/TeamMemberCard';
+import { useTranslation } from 'react-i18next';
 function F1Tenth() {
   const { t } = useTranslation();
   const team1 = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Deoth Guei",
-      description: t("f1tenth.team1.deoth.description"),
+      title: 'Deoth Guei',
+      description: t('f1tenth.team1.deoth.description'),
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Théophile Bertelot",
-      description: t("f1tenth.team1.theophile.description"),
+      title: 'Théophile Bertelot',
+      description: t('f1tenth.team1.theophile.description'),
     },
     {
       icon: <UserRoundCog className="w-8 h-8" />,
-      title: "Felix Ly",
-      description: t("f1tenth.team1.felix.description"),
+      title: 'Felix Ly',
+      description: t('f1tenth.team1.felix.description'),
     },
     {
       icon: <Rotate3d className="w-8 h-8" />,
-      title: "Melek Sebri",
-      description: t("f1tenth.team1.melek.description"),
+      title: 'Melek Sebri',
+      description: t('f1tenth.team1.melek.description'),
     },
     {
       icon: <Braces className="w-8 h-8" />,
-      title: "Amy Randianodiasan",
-      description: t("f1tenth.team1.amy.description"),
+      title: 'Amy Randianodiasan',
+      description: t('f1tenth.team1.amy.description'),
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Kahina Moulfi",
-      description: t("f1tenth.team1.kahina.description"),
+      title: 'Kahina Moulfi',
+      description: t('f1tenth.team1.kahina.description'),
     },
   ];
   const team2 = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Alban Sarrazin",
-      description: t("f1tenth.team2.alban.description"),
+      title: 'Alban Sarrazin',
+      description: t('f1tenth.team2.alban.description'),
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Alexandre Laforest",
-      description: t("f1tenth.team2.alexandre.description"),
+      title: 'Alexandre Laforest',
+      description: t('f1tenth.team2.alexandre.description'),
     },
     {
       icon: <UserRoundCog className="w-8 h-8" />,
-      title: "Jade Piller Cammal",
-      description: t("f1tenth.team2.jade.description"),
+      title: 'Jade Piller Cammal',
+      description: t('f1tenth.team2.jade.description'),
     },
     {
       icon: <Rotate3d className="w-8 h-8" />,
-      title: "Karima Habbout",
-      description: t("f1tenth.team2.karima.description"),
+      title: 'Karima Habbout',
+      description: t('f1tenth.team2.karima.description'),
     },
     {
       icon: <Braces className="w-8 h-8" />,
-      title: "Simon Gouin",
-      description: t("f1tenth.team2.simon.description"),
+      title: 'Simon Gouin',
+      description: t('f1tenth.team2.simon.description'),
     },
   ];
   return (
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          F1Tenth - Voiture Autonome de Course | Projet IA Club ULaval
-        </title>
+        <title>F1Tenth - Voiture Autonome de Course | Projet IA Club ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -89,10 +80,7 @@ function F1Tenth() {
           content="F1Tenth, voiture autonome, course autonome, vision par ordinateur, LIDAR, ROS, véhicule autonome, robotique, Club IA ULaval, VAUL, intelligence artificielle, projet étudiant, course robotique"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -102,10 +90,7 @@ function F1Tenth() {
           property="og:description"
           content="Découvrez notre projet F1Tenth : voitures de course autonomes à l'échelle 1/10 avec IA, vision par ordinateur et LIDAR."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/f1tenth" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
@@ -119,10 +104,7 @@ function F1Tenth() {
           name="twitter:description"
           content="Projet de voitures de course autonomes avec IA, vision par ordinateur et LIDAR."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/project/f1tenthcar.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/f1tenth" />
         {/* Langue */} <html lang="fr" />
@@ -149,15 +131,13 @@ function F1Tenth() {
                 <div className="w-full lg:w-1/2 lg:order-2">
                   <img
                     src="/project/f1tenthcar.webp"
-                    alt={t("f1tenth.hero.imageAlt")}
+                    alt={t('f1tenth.hero.imageAlt')}
                     className="w-full rounded-xl shadow-2xl"
                   />
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center text-justify space-y-6">
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                    <span className="theme-text-gradient">
-                      {t("f1tenth.hero.title")}
-                    </span>
+                    <span className="theme-text-gradient">{t('f1tenth.hero.title')}</span>
                   </h1>
                   <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />
                   <div className="space-y-4">
@@ -174,7 +154,7 @@ function F1Tenth() {
               transition={{ duration: 1 }}
             >
               <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
-                {t("f1tenth.team1.title")}
+                {t('f1tenth.team1.title')}
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
                 {team1.map((value, index) => (
@@ -195,7 +175,7 @@ function F1Tenth() {
               transition={{ duration: 1 }}
             >
               <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
-                {t("f1tenth.team2.title")}
+                {t('f1tenth.team2.title')}
               </h2>
               <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
                 {team2.map((value, index) => (

@@ -787,13 +787,7 @@
       "title": "Technologies & Compétences",
       "software": {
         "title": "Logiciels",
-        "items": [
-          "Python",
-          "SQL / NoSQL",
-          "PowerBI",
-          "Figma",
-          "Outils de design"
-        ]
+        "items": ["Python", "SQL / NoSQL", "PowerBI", "Figma", "Outils de design"]
       },
       "hardware": {
         "title": "Matériel",
@@ -934,10 +928,7 @@
       },
       "hardware": {
         "title": "Matériel",
-        "items": [
-          "GPU (accès optionnel en fin de session)",
-          "Robot Poppy physique (tests finaux)"
-        ]
+        "items": ["GPU (accès optionnel en fin de session)", "Robot Poppy physique (tests finaux)"]
       },
       "skills": {
         "title": "Compétences visées",
@@ -1215,13 +1206,7 @@
       "title": "Technologies & Compétences",
       "software": {
         "title": "Stack Logiciel",
-        "items": [
-          "Python",
-          "PyTorch / TensorFlow",
-          "Jupyter Notebooks",
-          "LaTeX",
-          "GPU Computing"
-        ]
+        "items": ["Python", "PyTorch / TensorFlow", "Jupyter Notebooks", "LaTeX", "GPU Computing"]
       },
       "hardware": {
         "title": "Matériel",
@@ -1475,12 +1460,7 @@
         "title": "Simulation",
         "count": "2 membres",
         "description": "Concevoir une simulation complète du système et des drones avec Isaac Sim.",
-        "skills": [
-          "Isaac Sim",
-          "CAD et modélisation",
-          "Python",
-          "Physique et simulation"
-        ]
+        "skills": ["Isaac Sim", "CAD et modélisation", "Python", "Physique et simulation"]
       },
       "ai": {
         "title": "IA / Code",
@@ -1753,13 +1733,7 @@
           "title": "Navigation & Systèmes embarqués",
           "count": "2–3 membres",
           "description": "Développer les algorithmes de guidage, intégrer ArduPilot via MAVLink et mettre au point les contrôleurs de vol autonome.",
-          "skills": [
-            "ArduPilot",
-            "MAVLink",
-            "Python",
-            "Contrôle PID",
-            "Systèmes embarqués"
-          ]
+          "skills": ["ArduPilot", "MAVLink", "Python", "Contrôle PID", "Systèmes embarqués"]
         }
       ]
     },

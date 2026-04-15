@@ -1,16 +1,8 @@
-import {
-  Apple,
-  Baby,
-  Asterisk,
-  Bean,
-  Grid,
-  ZoomIn,
-  Sparkles,
-} from "lucide-react";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import TeamMemberCard from "../components/TeamMemberCard";
-import { useTranslation } from "react-i18next";
+import { Apple, Baby, Asterisk, Bean, Grid, ZoomIn, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import TeamMemberCard from '../components/TeamMemberCard';
+import { useTranslation } from 'react-i18next';
 interface ImageWithGlowProps {
   src: string;
   alt: string;
@@ -30,9 +22,7 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     />
-    {caption && (
-      <div className="text-sm theme-text-muted mt-3 italic">{caption}</div>
-    )}
+    {caption && <div className="text-sm theme-text-muted mt-3 italic">{caption}</div>}
     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/10 to-primary-500/5 rounded-xl blur opacity-50"></div>
   </motion.div>
 );
@@ -41,44 +31,42 @@ function Lenia() {
   const features = [
     {
       icon: <Grid className="w-6 h-6 theme-text-accent" />,
-      title: t("lenia.features.continuous.title"),
-      description: t("lenia.features.continuous.description"),
+      title: t('lenia.features.continuous.title'),
+      description: t('lenia.features.continuous.description'),
     },
     {
       icon: <ZoomIn className="w-6 h-6 theme-text-accent" />,
-      title: t("lenia.features.research.title"),
-      description: t("lenia.features.research.description"),
+      title: t('lenia.features.research.title'),
+      description: t('lenia.features.research.description'),
     },
   ];
   const teamMembers = [
     {
       icon: <Apple className="w-8 h-8" />,
-      title: "Théophile Berteloot",
-      description: t("lenia.team.theophile.description"),
+      title: 'Théophile Berteloot',
+      description: t('lenia.team.theophile.description'),
     },
     {
       icon: <Baby className="w-8 h-8" />,
-      title: "Jordan Mathieu",
-      description: t("lenia.team.jordan.description"),
+      title: 'Jordan Mathieu',
+      description: t('lenia.team.jordan.description'),
     },
     {
       icon: <Bean className="w-8 h-8" />,
-      title: "Louis-Étienne Messier",
-      description: t("lenia.team.louis.description"),
+      title: 'Louis-Étienne Messier',
+      description: t('lenia.team.louis.description'),
     },
     {
       icon: <Asterisk className="w-8 h-8" />,
-      title: t("lenia.team.others.title"),
-      description: t("lenia.team.others.description"),
+      title: t('lenia.team.others.title'),
+      description: t('lenia.team.others.description'),
     },
   ];
   return (
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          Lenia - Automates Cellulaires Continus | Projet IA Club ULaval
-        </title>
+        <title>Lenia - Automates Cellulaires Continus | Projet IA Club ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -90,10 +78,7 @@ function Lenia() {
           content="Lenia, automates cellulaires, vie artificielle, systèmes complexes, émergence, patterns, recherche IA, Club IA ULaval, Théophile Berteloot, Jordan Mathieu, Louis-Étienne Messier"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -103,10 +88,7 @@ function Lenia() {
           property="og:description"
           content="Découvrez Lenia, notre projet d'automates cellulaires continus et de vie artificielle explorant les systèmes complexes émergents."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/project/leniacover.webp"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/leniacover.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/lenia" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
@@ -120,10 +102,7 @@ function Lenia() {
           name="twitter:description"
           content="Projet d'automates cellulaires continus et de vie artificielle avec systèmes complexes émergents."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/leniacover.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/project/leniacover.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/lenia" />
         {/* Langue */} <html lang="fr" />
@@ -154,7 +133,7 @@ function Lenia() {
                     <span className="theme-text-gradient"> Lenia </span>
                   </h1>
                   <h2 className="text-2xl md:text-3xl font-semibold theme-text-secondary mb-6">
-                    {t("lenia.hero.subtitle")}
+                    {t('lenia.hero.subtitle')}
                   </h2>
                 </div>
                 {/* Feature badges */}
@@ -168,9 +147,7 @@ function Lenia() {
                       transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                     >
                       {feature.icon}
-                      <span className="text-sm font-medium text-accent-300">
-                        {feature.title}
-                      </span>
+                      <span className="text-sm font-medium text-accent-300">{feature.title}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -181,7 +158,7 @@ function Lenia() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  {t("lenia.content.paragraph1")}
+                  {t('lenia.content.paragraph1')}
                 </motion.p>
               </div>
               {/* Right Side - Hero Image */}
@@ -192,10 +169,7 @@ function Lenia() {
                   transition={{ duration: 0.8, delay: 0.4 }}
                   className="w-full"
                 >
-                  <ImageWithGlow
-                    src="/project/lenia.webp"
-                    alt={t("lenia.images.pattern.alt")}
-                  />
+                  <ImageWithGlow src="/project/lenia.webp" alt={t('lenia.images.pattern.alt')} />
                 </motion.div>
               </div>
             </div>
@@ -218,10 +192,10 @@ function Lenia() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold theme-text-accent">
-                  {t("lenia.features.continuous.title")}
+                  {t('lenia.features.continuous.title')}
                 </h3>
                 <p className="text-lg theme-text-muted leading-relaxed">
-                  {t("lenia.content.paragraph2")}
+                  {t('lenia.content.paragraph2')}
                 </p>
               </motion.div>
               <motion.div
@@ -232,8 +206,8 @@ function Lenia() {
               >
                 <ImageWithGlow
                   src="/project/leniaexample.gif"
-                  alt={t("lenia.images.animation.alt")}
-                  caption={t("lenia.images.animation.caption")}
+                  alt={t('lenia.images.animation.alt')}
+                  caption={t('lenia.images.animation.caption')}
                 />
               </motion.div>
             </div>
@@ -247,13 +221,13 @@ function Lenia() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold theme-text-accent">
-                  {t("lenia.features.research.title")}
+                  {t('lenia.features.research.title')}
                 </h3>
                 <p className="text-lg theme-text-muted leading-relaxed">
-                  {t("lenia.content.paragraph3")}
+                  {t('lenia.content.paragraph3')}
                 </p>
                 <p className="text-lg theme-text-muted leading-relaxed">
-                  {t("lenia.content.paragraph4")}
+                  {t('lenia.content.paragraph4')}
                 </p>
               </motion.div>
               <motion.div
@@ -268,11 +242,9 @@ function Lenia() {
                   <div className="text-center space-y-4">
                     <Sparkles className="w-16 h-16 theme-text-accent mx-auto" />
                     <h4 className="text-xl font-semibold text-accent-300">
-                      {t("lenia.features.emergent.title")}
+                      {t('lenia.features.emergent.title')}
                     </h4>
-                    <p className="theme-text-muted">
-                      {t("lenia.features.emergent.description")}
-                    </p>
+                    <p className="theme-text-muted">{t('lenia.features.emergent.description')}</p>
                   </div>
                 </div>
               </motion.div>
@@ -294,7 +266,7 @@ function Lenia() {
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                {t("lenia.team.title")}
+                {t('lenia.team.title')}
               </motion.h2>
               <motion.p
                 className="theme-text-muted text-lg max-w-2xl mx-auto"
@@ -303,8 +275,7 @@ function Lenia() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                Meet the dedicated researchers exploring the fascinating world
-                of artificial life
+                Meet the dedicated researchers exploring the fascinating world of artificial life
               </motion.p>
             </div>
             <div className="flex flex-wrap justify-center max-w-full">

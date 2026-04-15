@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import LanguageToggle from "./LanguageToggle";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import LanguageToggle from './LanguageToggle';
 
 function Navbar() {
   const { t } = useTranslation();
@@ -13,11 +13,11 @@ function Navbar() {
   };
 
   const navLinks = [
-    { to: "/", label: t("navbar.home") },
-    { to: "/projects", label: t("navbar.projects") },
-    { to: "/management", label: t("navbar.management") },
-    { to: "/gallery", label: t("navbar.gallery") },
-    { to: "/join-us", label: t("navbar.joinus") },
+    { to: '/', label: t('navbar.home') },
+    { to: '/projects', label: t('navbar.projects') },
+    { to: '/management', label: t('navbar.management') },
+    { to: '/gallery', label: t('navbar.gallery') },
+    { to: '/join-us', label: t('navbar.joinus') },
   ];
 
   return (
@@ -25,12 +25,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <NavLink to="/" className="flex items-center space-x-2">
-            <img
-              src="/banner/CIA_LOGO.webp"
-              alt="CIA Logo"
-              width={35}
-              height={35}
-            />
+            <img src="/banner/CIA_LOGO.webp" alt="CIA Logo" width={35} height={35} />
             <span className="text-xl font-bold theme-text-gradient">CIA</span>
           </NavLink>
 
@@ -40,7 +35,7 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-accent-500 hover:text-accent-300 transition-colors ${isActive ? "text-accent-300 font-semibold" : ""}`
+                  `text-accent-500 hover:text-accent-300 transition-colors ${isActive ? 'text-accent-300 font-semibold' : ''}`
                 }
               >
                 {link.label}
@@ -55,11 +50,7 @@ function Navbar() {
               className="md:hidden theme-text-secondary hover:text-accent-300 transition-colors"
               aria-label="Toggle navigation menu"
             >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -71,7 +62,7 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `block text-accent-500 hover:text-accent-300 transition-colors ${isActive ? "text-accent-300 font-semibold" : ""} py-2`
+                  `block text-accent-500 hover:text-accent-300 transition-colors ${isActive ? 'text-accent-300 font-semibold' : ''} py-2`
                 }
                 onClick={toggleMenu}
               >

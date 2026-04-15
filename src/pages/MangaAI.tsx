@@ -1,15 +1,8 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import TeamMemberCard from "../components/TeamMemberCard";
-import {
-  TextCursorInput,
-  SwatchBook,
-  Rss,
-  Zap,
-  Languages,
-  Layers,
-} from "lucide-react";
-import { useTranslation } from "react-i18next";
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import TeamMemberCard from '../components/TeamMemberCard';
+import { TextCursorInput, SwatchBook, Rss, Zap, Languages, Layers } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 interface ImageWithGlowProps {
   src: string;
   alt: string;
@@ -27,7 +20,7 @@ const ImageWithGlow = ({ src, alt, caption }: ImageWithGlowProps) => (
       initial={{ y: 10, opacity: 0.8 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: '-100px' }}
     />
     {caption && <div className="text-xs theme-text-muted mt-2">{caption}</div>}
     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/20 to-primary-500/5 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
@@ -52,12 +45,8 @@ const ProcessStep = ({ number, title, description }: ProcessStepProps) => (
       </div>
     </div>
     <div>
-      <h4 className="text-lg md:text-xl font-semibold text-accent-300 mb-1">
-        {title}
-      </h4>
-      <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-        {description}
-      </p>
+      <h4 className="text-lg md:text-xl font-semibold text-accent-300 mb-1">{title}</h4>
+      <p className="text-sm md:text-base theme-text-muted !text-accent-300">{description}</p>
     </div>
   </motion.div>
 );
@@ -66,59 +55,57 @@ function MangaAI() {
   const mangaAITeam = [
     {
       icon: <TextCursorInput className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Théophile Berteloot",
-      role: "",
-      description: t("mangaai.team.theophile.description"),
+      title: 'Théophile Berteloot',
+      role: '',
+      description: t('mangaai.team.theophile.description'),
     },
     {
       icon: <SwatchBook className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Loïc Baret",
-      role: "",
-      description: t("mangaai.team.loic.description"),
+      title: 'Loïc Baret',
+      role: '',
+      description: t('mangaai.team.loic.description'),
     },
     {
       icon: <Rss className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Xavier Legault",
-      role: "",
-      description: t("mangaai.team.xavier.description"),
+      title: 'Xavier Legault',
+      role: '',
+      description: t('mangaai.team.xavier.description'),
     },
     {
       icon: <Layers className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Louis-Jacob Lebel",
-      role: "",
-      description: t("mangaai.team.louisjacob.description"),
+      title: 'Louis-Jacob Lebel',
+      role: '',
+      description: t('mangaai.team.louisjacob.description'),
     },
     {
       icon: <Languages className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "John-William Lebel",
-      role: "",
-      description: t("mangaai.team.johnwilliam.description"),
+      title: 'John-William Lebel',
+      role: '',
+      description: t('mangaai.team.johnwilliam.description'),
     },
   ];
   const features = [
     {
       icon: <Zap className="w-5 h-5 md:w-6 md:h-6 theme-text-accent" />,
-      title: t("mangaai.features.realtime.title"),
-      description: t("mangaai.features.realtime.description"),
+      title: t('mangaai.features.realtime.title'),
+      description: t('mangaai.features.realtime.description'),
     },
     {
       icon: <Languages className="w-5 h-5 md:w-6 md:h-6 theme-text-accent" />,
-      title: t("mangaai.features.multilang.title"),
-      description: t("mangaai.features.multilang.description"),
+      title: t('mangaai.features.multilang.title'),
+      description: t('mangaai.features.multilang.description'),
     },
     {
       icon: <Layers className="w-5 h-5 md:w-6 md:h-6 theme-text-accent" />,
-      title: t("mangaai.features.contextaware.title"),
-      description: t("mangaai.features.contextaware.description"),
+      title: t('mangaai.features.contextaware.title'),
+      description: t('mangaai.features.contextaware.description'),
     },
   ];
   return (
     <>
       <Helmet>
         {/* Titre */}
-        <title>
-          MangaAI - Traducteur Automatique de Manga par IA | Club IA ULaval
-        </title>
+        <title>MangaAI - Traducteur Automatique de Manga par IA | Club IA ULaval</title>
         {/* Description */}
         <meta
           name="description"
@@ -130,40 +117,25 @@ function MangaAI() {
           content="MangaAI, traduction manga, IA créative, traduction automatique, détection texte, OCR manga, génération bulles, anime AI, Club IA ULaval, machine learning, deep learning"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
-        <meta
-          property="og:title"
-          content="MangaAI - Traducteur Automatique de Manga par IA"
-        />
+        <meta property="og:title" content="MangaAI - Traducteur Automatique de Manga par IA" />
         <meta
           property="og:description"
           content="Découvrez MangaAI, notre traducteur automatique de manga par intelligence artificielle avec détection de texte et traduction contextuelle."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/project/mangaai2.webp"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/mangaai2.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/mangaai" />
         <meta property="og:type" content="article" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
         {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="MangaAI - Traducteur Automatique de Manga par IA"
-        />
+        <meta name="twitter:title" content="MangaAI - Traducteur Automatique de Manga par IA" />
         <meta
           name="twitter:description"
           content="Traducteur automatique de manga par intelligence artificielle avec détection de texte et traduction contextuelle."
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/project/mangaai2.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/project/mangaai2.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/mangaai" />
         {/* Langue */} <html lang="fr" />
@@ -187,15 +159,13 @@ function MangaAI() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold mb-2 md:mb-4">
-                <span className="theme-text-gradient">
-                  {t("mangaai.hero.title.manga")}
-                </span>
+                <span className="theme-text-gradient">{t('mangaai.hero.title.manga')}</span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-300">
-                  {t("mangaai.hero.title.translator")}
+                  {t('mangaai.hero.title.translator')}
                 </span>
               </h1>
               <h2 className="text-2xl md:text-4xl font-bold text-accent-300 mb-6 md:mb-8">
-                {t("mangaai.hero.subtitle")}
+                {t('mangaai.hero.subtitle')}
               </h2>
             </motion.div>
             {/* Feature badges */}
@@ -221,7 +191,7 @@ function MangaAI() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              {t("mangaai.hero.description")}
+              {t('mangaai.hero.description')}
             </motion.p>
           </div>
           {/* Approach section */}
@@ -231,25 +201,25 @@ function MangaAI() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: '-100px' }}
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t("mangaai.approach.title")}
+              {t('mangaai.approach.title')}
             </h3>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
               <div className="px-4 md:px-0 theme-text-secondary text-base md:text-lg">
                 <p className="mb-4 md:mb-6 text-sm md:text-base theme-text-secondary !text-accent-300">
-                  {t("mangaai.approach.paragraph1")}
+                  {t('mangaai.approach.paragraph1')}
                 </p>
                 <p className="text-sm md:text-base theme-text-secondary !text-accent-300">
-                  {t("mangaai.approach.paragraph2")}
+                  {t('mangaai.approach.paragraph2')}
                 </p>
               </div>
               <div className="order-first lg:order-last">
                 <ImageWithGlow
                   src="/project/manga109.webp"
-                  alt={t("mangaai.images.manga109.alt")}
-                  caption={t("mangaai.images.manga109.caption")}
+                  alt={t('mangaai.images.manga109.alt')}
+                  caption={t('mangaai.images.manga109.caption')}
                 />
               </div>
             </div>
@@ -257,24 +227,24 @@ function MangaAI() {
           {/* Process section */}
           <section className="mb-12 md:mb-16">
             <h4 className="text-xl md:text-2xl font-semibold mb-8 md:mb-10 text-center text-primary-300">
-              {t("mangaai.process.title")}
+              {t('mangaai.process.title')}
             </h4>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch mb-8 md:mb-12">
               <div className="px-4 md:px-0">
                 <ProcessStep
                   number={1}
-                  title={t("mangaai.process.step1.title")}
-                  description={t("mangaai.process.step1.description")}
+                  title={t('mangaai.process.step1.title')}
+                  description={t('mangaai.process.step1.description')}
                 />
                 <ProcessStep
                   number={2}
-                  title={t("mangaai.process.step2.title")}
-                  description={t("mangaai.process.step2.description")}
+                  title={t('mangaai.process.step2.title')}
+                  description={t('mangaai.process.step2.description')}
                 />
                 <ProcessStep
                   number={3}
-                  title={t("mangaai.process.step3.title")}
-                  description={t("mangaai.process.step3.description")}
+                  title={t('mangaai.process.step3.title')}
+                  description={t('mangaai.process.step3.description')}
                 />
               </div>
               <div className="flex justify-center lg:justify-end items-center">
@@ -284,16 +254,16 @@ function MangaAI() {
                 >
                   <motion.img
                     src="/project/mangaai.webp"
-                    alt={t("mangaai.images.example.alt")}
+                    alt={t('mangaai.images.example.alt')}
                     className="w-full object-cover mx-auto rounded-xl shadow-xl border theme-border-accent-important"
-                    style={{ aspectRatio: "4/3", maxHeight: "350px" }}
+                    style={{ aspectRatio: '4/3', maxHeight: '350px' }}
                     initial={{ y: 10, opacity: 0.8 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: true, margin: '-100px' }}
                   />
                   <div className="text-xs theme-text-muted mt-2">
-                    {t("mangaai.images.example.caption")}
+                    {t('mangaai.images.example.caption')}
                   </div>
                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/20 to-primary-500/5 rounded-xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
                 </motion.div>
@@ -304,7 +274,7 @@ function MangaAI() {
           <section className="mb-12 md:mb-16">
             <div className="pt-6 md:pt-8 border-t theme-border-soft">
               <h4 className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-center text-primary-300">
-                {t("mangaai.future.title")}
+                {t('mangaai.future.title')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-0">
                 <motion.div
@@ -312,10 +282,10 @@ function MangaAI() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
                   <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t("mangaai.future.textResizing.title")}
+                    {t('mangaai.future.textResizing.title')}
                   </h5>
                   <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t("mangaai.future.textResizing.description")}
+                    {t('mangaai.future.textResizing.description')}
                   </p>
                 </motion.div>
                 <motion.div
@@ -323,10 +293,10 @@ function MangaAI() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
                   <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t("mangaai.future.genderDetection.title")}
+                    {t('mangaai.future.genderDetection.title')}
                   </h5>
                   <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t("mangaai.future.genderDetection.description")}
+                    {t('mangaai.future.genderDetection.description')}
                   </p>
                 </motion.div>
                 <motion.div
@@ -334,10 +304,10 @@ function MangaAI() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
                   <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t("mangaai.future.characterId.title")}
+                    {t('mangaai.future.characterId.title')}
                   </h5>
                   <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t("mangaai.future.characterId.description")}
+                    {t('mangaai.future.characterId.description')}
                   </p>
                 </motion.div>
                 <motion.div
@@ -345,10 +315,10 @@ function MangaAI() {
                   whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 >
                   <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t("mangaai.future.contextAware.title")}
+                    {t('mangaai.future.contextAware.title')}
                   </h5>
                   <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t("mangaai.future.contextAware.description")}
+                    {t('mangaai.future.contextAware.description')}
                   </p>
                 </motion.div>
               </div>
@@ -366,7 +336,7 @@ function MangaAI() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              {t("mangaai.team.title")}
+              {t('mangaai.team.title')}
             </motion.h2>
             <motion.p
               className="text-sm md:text-base theme-text-muted !text-accent-300 text-center max-w-2xl mx-auto mb-8 md:mb-12 px-4"
@@ -375,7 +345,7 @@ function MangaAI() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              {t("mangaai.team.description")}
+              {t('mangaai.team.description')}
             </motion.p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 px-2 md:px-4">
               {mangaAITeam.map((member, idx) => (

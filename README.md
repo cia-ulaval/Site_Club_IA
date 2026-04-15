@@ -70,6 +70,24 @@ Please contact us before reusing these assets in other projects or media.
 
 We review all contributions thoughtfully. Whether you're a club member or an external developer, your input matters.
 
+### Formatting and CI
+
+This project uses a single formatting workflow with Prettier:
+
+1. Format the codebase locally:
+
+```bash
+make format
+```
+
+2. Run the same local CI checker used by GitHub Actions:
+
+```bash
+make ci-check
+```
+
+The GitHub Actions workflow runs `make ci-check`, so local and remote checks stay identical.
+
 ---
 
 ## Connect With Us

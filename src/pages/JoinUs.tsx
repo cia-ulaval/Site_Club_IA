@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { Instagram, Facebook, Linkedin, Mail } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 function JoinUs() {
   const { t } = useTranslation();
   return (
@@ -10,8 +10,7 @@ function JoinUs() {
       <Helmet>
         {/* Titre */}
         <title>
-          Rejoindre le Club IA - Intelligence Artificielle Université Laval |
-          CIA ULaval
+          Rejoindre le Club IA - Intelligence Artificielle Université Laval | CIA ULaval
         </title>
         {/* Description */}
         <meta
@@ -24,10 +23,7 @@ function JoinUs() {
           content="rejoindre Club IA, adhésion CIA ULaval, Discord Club IA, communauté IA, étudiants intelligence artificielle, formations IA, projets étudiants, Université Laval, machine learning, collaboration IA"
         />
         {/* Auteur */}
-        <meta
-          name="author"
-          content="Club Intelligence Artificielle - Université Laval"
-        />
+        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
@@ -37,10 +33,7 @@ function JoinUs() {
           property="og:description"
           content="Rejoignez notre communauté d'étudiants passionnés d'IA ! Projets innovants, formations et événements vous attendent."
         />
-        <meta
-          property="og:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/join-us" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
@@ -54,10 +47,7 @@ function JoinUs() {
           name="twitter:description"
           content="Rejoignez notre communauté d'étudiants passionnés d'intelligence artificielle !"
         />
-        <meta
-          name="twitter:image"
-          content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp"
-        />
+        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
         {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/join-us" />
         {/* Langue */} <html lang="fr" />
@@ -81,9 +71,7 @@ function JoinUs() {
             className="text-center"
           >
             <h1 className="text-6xl font-bold mb-4 pb-20 pt-8">
-              <span className="theme-text-gradient">
-                {t("joinus.heroSubtitle")}
-              </span>
+              <span className="theme-text-gradient">{t('joinus.heroSubtitle')}</span>
             </h1>
           </motion.div>
           {/* Discord Section */}
@@ -94,16 +82,14 @@ function JoinUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg theme-text-muted mb-4">
-              {t("joinus.discordText")}
-            </p>
+            <p className="text-lg theme-text-muted mb-4">{t('joinus.discordText')}</p>
             <a
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
             >
-              {t("joinus.discordButton")}
+              {t('joinus.discordButton')}
             </a>
           </motion.div>
           {/* Collaboration Section */}
@@ -114,17 +100,13 @@ function JoinUs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-primary-500 mb-4">
-              {t("joinus.collabTitle")}
-            </h3>
-            <p className="text-lg theme-text-muted mb-6">
-              {t("joinus.collabText")}
-            </p>
+            <h3 className="text-3xl font-bold text-primary-500 mb-4">{t('joinus.collabTitle')}</h3>
+            <p className="text-lg theme-text-muted mb-6">{t('joinus.collabText')}</p>
             <Link
               to="/collaboration"
               className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
             >
-              {t("joinus.collabButton")}
+              {t('joinus.collabButton')}
             </Link>
             {/* Contact Buttons Section */}
             <div className="flex justify-center gap-10 pt-16">

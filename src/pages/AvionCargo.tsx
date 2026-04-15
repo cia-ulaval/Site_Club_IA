@@ -1,28 +1,21 @@
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
-import { useTranslation } from "react-i18next";
-import {
-  Camera,
-  Crosshair,
-  Navigation,
-  Package,
-  Eye,
-  CheckCircle,
-} from "lucide-react";
+import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
+import { Camera, Crosshair, Navigation, Package, Eye, CheckCircle } from 'lucide-react';
 function AvionCargo() {
   const { t } = useTranslation();
   const pipelineIcons = [Camera, Eye, Crosshair, Navigation, Package];
-  const pipeline = t("avionCargo.simple.pipelineSteps", {
+  const pipeline = t('avionCargo.simple.pipelineSteps', {
     returnObjects: true,
   }) as Array<{ title: string; description: string }>;
-  const technologies = t("avionCargo.simple.technologies", {
+  const technologies = t('avionCargo.simple.technologies', {
     returnObjects: true,
   }) as string[];
   return (
     <>
       <Helmet>
-        <title>{t("avionCargo.meta.title")}</title>
-        <meta name="description" content={t("avionCargo.meta.description")} />
+        <title>{t('avionCargo.meta.title')}</title>
+        <meta name="description" content={t('avionCargo.meta.description')} />
         <link rel="canonical" href="https://cia.ift.ulaval.ca/avion-cargo" />
       </Helmet>
       <section className="relative overflow-hidden">
@@ -42,26 +35,24 @@ function AvionCargo() {
               <div className="flex flex-col justify-center order-2 lg:order-1">
                 <div className="flex flex-wrap items-center gap-2 mb-5">
                   <span className="px-3 py-1 bg-primary-500/30 theme-text-accent text-sm font-medium rounded-full">
-                    {t("avionCargo.simple.badge")}
+                    {t('avionCargo.simple.badge')}
                   </span>
                   <span className="px-3 py-1 bg-primary-900/40 text-primary-300 text-sm font-medium rounded-full flex items-center gap-1">
                     <Crosshair className="w-3 h-3" />
-                    {t("avionCargo.simple.precisionBadge")}
+                    {t('avionCargo.simple.precisionBadge')}
                   </span>
                 </div>
                 <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-5 leading-tight">
-                  <span className="theme-text-gradient">
-                    {t("avionCargo.simple.title")}
-                  </span>
+                  <span className="theme-text-gradient">{t('avionCargo.simple.title')}</span>
                 </h1>
                 <p className="text-xl theme-text-secondary mb-4 font-medium leading-relaxed">
-                  {t("avionCargo.simple.subtitle")}
+                  {t('avionCargo.simple.subtitle')}
                 </p>
                 <p className="theme-text-muted mb-3 text-justify leading-relaxed">
-                  {t("avionCargo.simple.description1")}
+                  {t('avionCargo.simple.description1')}
                 </p>
                 <p className="text-neutral-500 text-justify leading-relaxed">
-                  {t("avionCargo.simple.description2")}
+                  {t('avionCargo.simple.description2')}
                 </p>
               </div>
               <motion.div
@@ -76,19 +67,19 @@ function AvionCargo() {
                   transition={{
                     duration: 4,
                     repeat: Infinity,
-                    ease: "easeInOut",
+                    ease: 'easeInOut',
                   }}
                 />
                 <div className="relative rounded-2xl overflow-hidden !border theme-border-accent-important shadow-2xl shadow-primary-900/30">
                   <img
                     src="/project/AvionCargo.jpg"
-                    alt={t("avionCargo.simple.imageAlt")}
+                    alt={t('avionCargo.simple.imageAlt')}
                     className="w-full h-full object-cover aspect-[4/3]"
                   />
                   <div className="absolute bottom-4 left-4 bg-base/70 backdrop-blur-sm px-4 py-2 rounded-xl !border theme-border-accent-important flex items-center gap-2">
                     <Crosshair className="w-4 h-4 theme-text-accent" />
                     <span className="text-accent-300 text-sm font-semibold">
-                      {t("avionCargo.simple.imageBadge")}
+                      {t('avionCargo.simple.imageBadge')}
                     </span>
                   </div>
                 </div>
@@ -103,7 +94,7 @@ function AvionCargo() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-center mb-12 theme-text-gradient">
-              {t("avionCargo.simple.technologiesTitle")}
+              {t('avionCargo.simple.technologiesTitle')}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {technologies.map((tech, i) => (
@@ -116,9 +107,7 @@ function AvionCargo() {
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -4 }}
                 >
-                  <p className="text-xl font-extrabold theme-text-accent">
-                    {tech}
-                  </p>
+                  <p className="text-xl font-extrabold theme-text-accent">{tech}</p>
                 </motion.div>
               ))}
             </div>
@@ -130,10 +119,10 @@ function AvionCargo() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-center mb-4 theme-text-gradient">
-              {t("avionCargo.simple.pipelineTitle")}
+              {t('avionCargo.simple.pipelineTitle')}
             </h2>
             <p className="text-neutral-500 text-center mb-12 max-w-xl mx-auto">
-              {t("avionCargo.simple.pipelineSubtitle")}
+              {t('avionCargo.simple.pipelineSubtitle')}
             </p>
             <div className="relative">
               <div className="hidden lg:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-500/40 to-transparent" />
@@ -160,9 +149,7 @@ function AvionCargo() {
                       <h3 className="text-accent-300 font-bold mb-2 text-sm leading-snug">
                         {item.title}
                       </h3>
-                      <p className="text-neutral-500 text-xs leading-relaxed">
-                        {item.description}
-                      </p>
+                      <p className="text-neutral-500 text-xs leading-relaxed">{item.description}</p>
                       {index < pipeline.length - 1 && (
                         <div className="lg:hidden text-primary-500/50 w-6 h-6 mt-3 self-center rotate-90" />
                       )}
@@ -181,18 +168,15 @@ function AvionCargo() {
           >
             <div className="bg-gradient-to-br from-primary-500/5 to-transparent rounded-3xl p-6 !border !border-primary-900/20">
               <h2 className="text-3xl font-bold text-accent-300 mb-4">
-                {t("avionCargo.simple.summaryTitle")}
+                {t('avionCargo.simple.summaryTitle')}
               </h2>
               <ul className="space-y-3">
                 {(
-                  t("avionCargo.simple.summaryItems", {
+                  t('avionCargo.simple.summaryItems', {
                     returnObjects: true,
                   }) as string[]
                 ).map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 theme-text-muted"
-                  >
+                  <li key={index} className="flex items-start gap-2 theme-text-muted">
                     <CheckCircle className="w-5 h-5 theme-text-accent flex-shrink-0 mt-0.5" />
                     <span className="text-sm">{item}</span>
                   </li>
