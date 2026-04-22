@@ -86,7 +86,7 @@ function PoppyConception() {
                 </div>
                 <div className="order-1 md:order-2">
                   <img
-                    src="/project/poppy.jpeg"
+                    src="/project/poppy.webp"
                     alt={t('poppyConception.hero.title')}
                     className="rounded-xl shadow-2xl mt-4 sm:mt-8 w-full h-80 sm:h-96 object-cover"
                     style={{

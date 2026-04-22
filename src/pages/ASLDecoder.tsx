@@ -38,7 +38,7 @@ function ASLDecoder() {
         <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
         <meta property="og:title" content={`ASL Decoder - ${t('asldecoder.meta.title')}`} />
         <meta property="og:description" content={t('asldecoder.meta.description')} />
-        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/asl.png" />
+        <meta property="og:image" content="https://cia.ift.ulaval.ca/project/asl.webp" />
         <meta property="og:url" content="https://cia.ift.ulaval.ca/asl-decoder" />
         <meta property="og:type" content="article" />
         <link rel="canonical" href="https://cia.ift.ulaval.ca/asl-decoder" />
@@ -112,7 +112,7 @@ function ASLDecoder() {
               >
                 <div className="relative">
                   <img
-                    src="/project/asl.png"
+                    src="/project/asl.webp"
                     alt="ASL Decoder"
                     className="w-full max-w-md rounded-2xl shadow-xl border border-primary-500/30"
                   />

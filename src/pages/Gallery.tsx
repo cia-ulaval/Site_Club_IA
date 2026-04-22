@@ -52,7 +52,7 @@ function Gallery() {
         descKey: 'gallery.images.project.f1tenthcar',
       },
       {
-        src: '/project/flappycard.jpg',
+        src: '/project/flappycard.webp',
         descKey: 'gallery.images.project.flappycard',
       },
     ],

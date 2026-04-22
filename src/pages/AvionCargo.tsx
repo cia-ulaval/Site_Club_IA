@@ -72,7 +72,7 @@ function AvionCargo() {
                 />
                 <div className="relative rounded-2xl overflow-hidden !border theme-border-accent-important shadow-2xl shadow-primary-900/30">
                   <img
-                    src="/project/AvionCargo.jpg"
+                    src="/project/AvionCargo.webp"
                     alt={t('avionCargo.simple.imageAlt')}
                     className="w-full h-full object-cover aspect-[4/3]"
                   />
