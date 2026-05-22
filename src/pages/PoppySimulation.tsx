@@ -6,8 +6,6 @@ import {
   Brain,
   Box,
   Zap,
-  FileText,
-  ArrowRight,
   Book,
   FlaskConical,
   Cpu,
@@ -19,11 +17,9 @@ import {
   Award,
   ExternalLink,
 } from 'lucide-react';
+import BackToProjects from '../components/BackToProjects';
 function PoppySimulation() {
   const { t } = useTranslation();
-  const deliverables = t('poppy.objectives.deliverables.items', {
-    returnObjects: true,
-  }) as Array<{ title: string; description: string }>;
   const timeline = t('poppy.timeline.weeks', { returnObjects: true }) as Array<{
     period: string;
     title: string;
@@ -73,6 +69,7 @@ function PoppySimulation() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <h1 className="sr-only">{t('poppy.hero.title')}</h1>
             <motion.section
               className="mb-12 sm:mb-20"
@@ -85,7 +82,7 @@ function PoppySimulation() {
                 <div className="flex flex-col justify-center order-2 md:order-1">
                   <div className="flex items-center gap-3 mb-4">
                     <Bot className="w-10 h-10 theme-text-accent" />
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                    <h1 className="cia-heading-hero">
                       <span className="theme-text-gradient">Poppy Simulation</span>
                     </h1>
                   </div>

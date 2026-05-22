@@ -5,8 +5,10 @@ import { Helmet } from 'react-helmet-async';
 import InfiniteScrollBanner from '../components/Carousel';
 import { useTranslation } from 'react-i18next';
 import InstaPostEmbed from '../components/InstaPostEmbed';
+import { useMotion } from '../hooks/useMotion';
 function Home() {
   const { t } = useTranslation();
+  const m = useMotion();
   const projects = [
     {
       title: t('home.projects.flapeeg.title'),
@@ -92,9 +94,7 @@ function Home() {
               {/* Title */}
               <motion.h1
                 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                {...m.fadeIn}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500">
                   {t('home.header.title')}
@@ -103,19 +103,12 @@ function Home() {
               {/* Subtitle */}
               <motion.p
                 className="text-xl md:text-2xl text-primary-300 font-light leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
+                {...m.slideUp}
               >
                 {t('home.header.subtitle')}
               </motion.p>
               {/* About Section */}
-              <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-              >
+              <motion.div className="space-y-6" {...m.slideUp}>
                 <h2 className="text-3xl md:text-4xl font-bold text-accent-300">
                   {t('home.about.title')}
                 </h2>
@@ -126,12 +119,7 @@ function Home() {
             </div>
             {/* Right Side - Instagram (visible on all screens) */}
             <div className="flex justify-center items-center h-full mt-10 md:mt-0">
-              <motion.div
-                className="w-full h-full flex justify-center items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
-              >
+              <motion.div className="w-full h-full flex justify-center items-center" {...m.fadeIn}>
                 <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
                   <InstaPostEmbed url="https://www.instagram.com/p/DU0Z_U4iEzK/?img_index=1" />
                 </div>
@@ -161,7 +149,7 @@ function Home() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-xl theme-surface-primary border !border-primary-500/70 hover:!border-primary-400 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl theme-surface-primary border !border-primary-500/70 hover:!border-primary-400 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 transition-all duration-300 cursor-pointer"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
@@ -185,7 +173,7 @@ function Home() {
                 </p>
                 <Link
                   to={project.link}
-                  className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]"
+                  className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] cia-focus-ring rounded"
                 >
                   {t('home.projects.learnMore')}
                   <ArrowRight className="w-4 h-4 ml-2" />

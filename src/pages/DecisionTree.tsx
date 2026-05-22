@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import TeamMemberCard from '../components/TeamMemberCard';
+import BackToProjects from '../components/BackToProjects';
 function DecisionTree() {
   const { t } = useTranslation();
   const teamMembers = [
@@ -94,6 +95,7 @@ function DecisionTree() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             {/* Hero Section */}
             <motion.section
               className="mb-12 sm:mb-20"
@@ -103,7 +105,7 @@ function DecisionTree() {
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
                 <div className="flex flex-col justify-center space-y-6 sm:space-y-8 px-4 sm:px-6 lg:px-0 theme-hero-highlight">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <h1 className="cia-heading-hero">
                     <span className="theme-text-gradient">{t('decisionTree.hero.title')}</span>
                   </h1>
                   <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />

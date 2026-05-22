@@ -3,6 +3,7 @@ import { Users, Lightbulb, Target, Braces, Rotate3d, UserRoundCog } from 'lucide
 import { Helmet } from 'react-helmet-async';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { useTranslation } from 'react-i18next';
+import BackToProjects from '../components/BackToProjects';
 function F1Tenth() {
   const { t } = useTranslation();
   const team1 = [
@@ -121,6 +122,8 @@ function F1Tenth() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
+            <h1 className="sr-only">{t('f1tenth.title', 'F1Tenth')}</h1>
             <motion.section
               className="mb-12 sm:mb-20"
               initial={{ opacity: 0 }}
@@ -136,7 +139,7 @@ function F1Tenth() {
                   />
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center text-justify space-y-6">
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                  <h1 className="cia-heading-hero">
                     <span className="theme-text-gradient">{t('f1tenth.hero.title')}</span>
                   </h1>
                   <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />

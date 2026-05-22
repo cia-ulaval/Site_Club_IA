@@ -24,7 +24,10 @@ function Navbar() {
     <nav className="sticky top-0 z-50 theme-glass-nav">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <NavLink to="/" className="flex items-center space-x-2">
+          <NavLink
+            to="/"
+            className="flex items-center space-x-2 min-w-[44px] min-h-[44px] cia-focus-ring rounded-md"
+          >
             <img src="/banner/CIA_LOGO.webp" alt="CIA Logo" width={35} height={35} />
             <span className="text-xl font-bold theme-text-gradient">CIA</span>
           </NavLink>
@@ -35,7 +38,7 @@ function Navbar() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `text-accent-500 hover:text-accent-300 transition-colors ${isActive ? 'text-accent-300 font-semibold' : ''}`
+                  `text-accent-500 hover:text-accent-300 transition-colors rounded-md px-1 cia-focus-ring ${isActive ? 'text-accent-300 font-semibold' : ''}`
                 }
               >
                 {link.label}
@@ -47,8 +50,9 @@ function Navbar() {
             <LanguageToggle />
             <button
               onClick={toggleMenu}
-              className="md:hidden theme-text-secondary hover:text-accent-300 transition-colors"
+              className="md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center theme-text-secondary hover:text-accent-300 transition-colors rounded-md cia-focus-ring"
               aria-label="Toggle navigation menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -56,13 +60,13 @@ function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-3">
+          <div className="md:hidden pb-3" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  `block text-accent-500 hover:text-accent-300 transition-colors ${isActive ? 'text-accent-300 font-semibold' : ''} py-2`
+                  `block text-accent-500 hover:text-accent-300 transition-colors rounded-md px-2 cia-focus-ring ${isActive ? 'text-accent-300 font-semibold' : ''} py-2`
                 }
                 onClick={toggleMenu}
               >

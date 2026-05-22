@@ -1711,14 +1711,38 @@
     "tech": {
       "title": "Technologies & Tools",
       "items": [
-        { "name": "OpenCV", "type": "vision" },
-        { "name": "ArduPilot", "type": "autopilot" },
-        { "name": "Python", "type": "language" },
-        { "name": "ArUco Markers", "type": "navigation" },
-        { "name": "MAVLink", "type": "protocol" },
-        { "name": "NumPy", "type": "computing" },
-        { "name": "Raspberry Pi / Jetson", "type": "hardware" },
-        { "name": "PID / Guidance", "type": "control" }
+        {
+          "name": "OpenCV",
+          "type": "vision"
+        },
+        {
+          "name": "ArduPilot",
+          "type": "autopilot"
+        },
+        {
+          "name": "Python",
+          "type": "language"
+        },
+        {
+          "name": "ArUco Markers",
+          "type": "navigation"
+        },
+        {
+          "name": "MAVLink",
+          "type": "protocol"
+        },
+        {
+          "name": "NumPy",
+          "type": "computing"
+        },
+        {
+          "name": "Raspberry Pi / Jetson",
+          "type": "hardware"
+        },
+        {
+          "name": "PID / Guidance",
+          "type": "control"
+        }
       ]
     },
     "roles": {
@@ -1787,5 +1811,8 @@
       "title": "The Team",
       "subtitle": "The members who made this project happen"
     }
+  },
+  "common": {
+    "backToProjects": "Back to projects"
   }
 }

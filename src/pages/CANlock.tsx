@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import BackToProjects from '../components/BackToProjects';
 function CANlock() {
   const { t } = useTranslation();
   const timelineIcons = [
@@ -58,6 +59,7 @@ function CANlock() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <BackToProjects />
           {/* Hero Section */}
           <motion.section
             className="mb-12 sm:mb-20"
@@ -75,7 +77,7 @@ function CANlock() {
                     <Building2 className="w-3 h-3" /> Thales
                   </span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+                <h1 className="cia-heading-hero mb-4">
                   <span className="theme-text-gradient">{t('canlock.hero.title')}</span>
                   <span className="ml-3">🔒</span>
                 </h1>

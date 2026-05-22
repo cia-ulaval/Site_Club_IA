@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Linkedin, Github, Globe, X, User } from 'lucide-react';
 
@@ -31,9 +31,20 @@ const MemberModal: React.FC<MemberModalProps> = ({ member, onClose, translations
   const hasLinks = member.linkedIn || member.github || member.portfolio;
   const hasContent = member.mission || member.additionalDetails || hasLinks;
 
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   return (
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-base/80 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="member-modal-name"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -65,7 +76,9 @@ const MemberModal: React.FC<MemberModalProps> = ({ member, onClose, translations
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-primary-900/50 hover:bg-accent-300 rounded-full transition-colors"
+            autoFocus
+            className="absolute top-4 right-4 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center bg-primary-900/50 hover:bg-accent-300 rounded-full transition-colors cia-focus-ring"
+            aria-label="Close"
           >
             <X className="w-5 h-5 text-base-inverse" />
           </button>
@@ -77,7 +90,9 @@ const MemberModal: React.FC<MemberModalProps> = ({ member, onClose, translations
               <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
                 {translations.name}
               </span>
-              <h2 className="text-3xl font-bold text-base-inverse mt-1">{member.name}</h2>
+              <h2 id="member-modal-name" className="text-3xl font-bold text-base-inverse mt-1">
+                {member.name}
+              </h2>
             </div>
 
             {/* Role */}

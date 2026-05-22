@@ -3,6 +3,7 @@ import { Github } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
+import { useMotion } from '../hooks/useMotion';
 
 const projects = [
   {
@@ -123,6 +124,7 @@ const projects = [
 
 function Projects() {
   const { t } = useTranslation();
+  const m = useMotion();
 
   return (
     <>
@@ -238,20 +240,13 @@ function Projects() {
         </script>
       </Helmet>
 
-      <motion.section
-        className="overflow-hidden mt-24"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <motion.section className="overflow-hidden mt-24" {...m.fadeIn}>
         <div className="max-w-7xl mx-auto px-6 pb-16">
           {/* ---- en-tête ---- */}
           <header className="text-center mb-16">
             <motion.h1
               className="text-5xl font-extrabold theme-text-gradient tracking-wide"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              {...m.slideUp}
             >
               {t('home.projects.title', 'Projects')}
             </motion.h1>
@@ -264,10 +259,8 @@ function Projects() {
               <motion.div
                 key={project.key}
                 whileHover={{ scale: 1.03 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex justify-center"
+                {...m.stagger(index)}
+                className="flex justify-center cursor-pointer"
               >
                 <div
                   className={`rounded-xl overflow-hidden border-2 !border-primary-500/75 hover:!border-primary-400 bg-gradient-to-br from-primary-950/85 via-primary-900/65 to-primary-950/75 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 w-full max-w-sm transition-all duration-300 h-auto min-h-[400px] sm:min-h-[450px] ${

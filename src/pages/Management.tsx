@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { User } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import MemberModal, { TeamMember } from '../components/MemberModal';
 
 const Management: React.FC = () => {
@@ -354,28 +354,25 @@ const Management: React.FC = () => {
   ) => {
     const cardSizes = {
       large: {
-        width: '16rem',
-        height: '360px',
-        imageHeight: '220px',
-        bodyHeight: '140px',
+        widthClass: 'w-48 sm:w-56 md:w-64',
+        heightClass: 'min-h-[300px] sm:min-h-[340px]',
+        imageHeightClass: 'h-44 sm:h-52',
         titleSize: 'text-xl',
         roleSize: 'text-base',
         headerSize: 'text-6xl',
       },
       medium: {
-        width: '14rem',
-        height: '320px',
-        imageHeight: '190px',
-        bodyHeight: '130px',
+        widthClass: 'w-44 sm:w-52 md:w-56',
+        heightClass: 'min-h-[260px] sm:min-h-[300px]',
+        imageHeightClass: 'h-36 sm:h-44',
         titleSize: 'text-lg',
         roleSize: 'text-sm',
         headerSize: 'text-5xl',
       },
       small: {
-        width: '12rem',
-        height: '280px',
-        imageHeight: '160px',
-        bodyHeight: '120px',
+        widthClass: 'w-40 sm:w-48',
+        heightClass: 'min-h-[220px] sm:min-h-[260px]',
+        imageHeightClass: 'h-32 sm:h-40',
         titleSize: 'text-base',
         roleSize: 'text-sm',
         headerSize: 'text-4xl',
@@ -406,18 +403,13 @@ const Management: React.FC = () => {
                 member.isVacant
                   ? 'bg-primary-900/40 border-2 border-primary-800/50 border-dashed cursor-default'
                   : 'bg-primary-900/80 border-2 !border-primary-500/70 hover:!border-accent-500/80 cursor-pointer'
-              } text-base-inverse mb-12 relative overflow-hidden rounded-lg transition-all duration-300`}
-              style={{
-                width: size.width,
-                height: size.height,
-              }}
+              } text-base-inverse mb-12 relative overflow-hidden rounded-lg transition-all duration-300 ${size.widthClass} ${size.heightClass}`}
             >
               {/* Image Section */}
               <div
                 className={`${
                   member.isVacant ? 'bg-primary-800/20' : ''
-                } flex items-center justify-center`}
-                style={{ height: size.imageHeight }}
+                } flex items-center justify-center ${size.imageHeightClass}`}
               >
                 {member.imgSrc && !member.isVacant ? (
                   <img

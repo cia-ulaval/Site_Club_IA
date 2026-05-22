@@ -147,7 +147,7 @@
   }
 
   .theme-text-muted {
-    @apply text-accent-300;
+    @apply text-neutral-400;
   }
 
   .theme-border-soft {
@@ -238,5 +238,136 @@
 
   .theme-accent-border {
     @apply !border-accent-500/40 hover:!border-accent-500/70;
+  }
+}
+
+/* ============================================================
+   CIA Design System — cia-* utilities
+   Use these for all new code. The theme-* classes above are
+   kept for backward compatibility. Never mix the two in the
+   same element — pick one system and migrate progressively.
+   ============================================================ */
+
+@layer components {
+  /* --- Layout --- */
+
+  .cia-container {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-6;
+  }
+
+  .cia-section {
+    @apply mb-12 sm:mb-20;
+  }
+
+  .cia-section-sm {
+    @apply mb-8 sm:mb-12;
+  }
+
+  .cia-section-lg {
+    @apply mb-20 sm:mb-28;
+  }
+
+  /* --- Typography --- */
+
+  .cia-heading-hero {
+    @apply font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+
+  .cia-heading-page {
+    @apply font-heading text-4xl sm:text-5xl font-bold leading-tight;
+  }
+
+  .cia-heading-section {
+    @apply font-heading text-2xl sm:text-3xl font-bold;
+  }
+
+  .cia-heading-card {
+    @apply font-heading text-xl font-semibold;
+  }
+
+  .cia-body-lead {
+    @apply font-body text-lg leading-relaxed;
+  }
+
+  .cia-body {
+    @apply font-body text-base leading-relaxed;
+  }
+
+  .cia-body-sm {
+    @apply font-body text-sm leading-relaxed;
+  }
+
+  .cia-label {
+    @apply font-body text-xs font-semibold uppercase tracking-wider;
+  }
+
+  /* --- Accessibility --- */
+
+  .cia-focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+
+  /* --- Buttons --- */
+
+  .cia-btn-base {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg transition-all duration-200 cursor-pointer min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+
+  .cia-btn-primary {
+    @apply cia-btn-base bg-primary-500 hover:bg-primary-300 text-base-inverse shadow-lg hover:shadow-xl hover:shadow-primary-600/30;
+  }
+
+  .cia-btn-accent {
+    @apply cia-btn-base bg-accent-500 hover:bg-accent-400 text-base-inverse;
+  }
+
+  .cia-btn-ghost {
+    @apply cia-btn-base border border-accent-500/40 hover:border-accent-500 text-accent-300 hover:text-accent-300 hover:bg-accent-500/10;
+  }
+
+  .cia-btn-sm {
+    @apply px-4 py-2 text-sm min-h-[44px];
+  }
+
+  /* --- Cards --- */
+
+  .cia-card {
+    @apply rounded-2xl border border-primary-500/40 bg-gradient-to-br from-primary-950/85 to-primary-900/65 shadow-lg transition-all duration-200;
+  }
+
+  .cia-card-hover {
+    @apply hover:border-primary-400 hover:shadow-xl hover:shadow-primary-900/20 cursor-pointer;
+  }
+
+  .cia-card-content {
+    @apply p-6;
+  }
+
+  /* --- Badges --- */
+
+  .cia-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full border;
+  }
+
+  .cia-badge-primary {
+    @apply cia-badge bg-primary-500/20 text-primary-300 border-primary-500/40;
+  }
+
+  .cia-badge-accent {
+    @apply cia-badge bg-accent-500/20 text-accent-300 border-accent-500/40;
+  }
+
+  .cia-badge-success {
+    @apply cia-badge bg-success-500/20 text-success-400 border-success-500/30;
+  }
+
+  .cia-badge-neutral {
+    @apply cia-badge bg-neutral-800/60 text-neutral-300 border-neutral-700/40;
+  }
+
+  /* --- Divider --- */
+
+  .cia-divider {
+    @apply border-t border-primary-800/60 my-8 sm:my-12;
   }
 }

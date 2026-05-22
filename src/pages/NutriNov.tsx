@@ -12,12 +12,11 @@ import {
   Rocket,
   Users,
   Database,
-  Code,
-  Cpu,
   Trophy,
   CheckCircle,
 } from 'lucide-react';
 import TeamMemberCard from '../components/TeamMemberCard';
+import BackToProjects from '../components/BackToProjects';
 function NutriNov() {
   const { t } = useTranslation();
   const roles = [
@@ -107,6 +106,7 @@ function NutriNov() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <h1 className="sr-only">{t('nutrinov.hero.title')}</h1>
             <motion.section
               className="mb-12 sm:mb-20"
@@ -119,7 +119,7 @@ function NutriNov() {
                 <div className="flex flex-col justify-center">
                   <div className="flex items-center gap-3 mb-4">
                     <ShoppingCart className="w-10 h-10 theme-text-accent" />
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
+                    <h1 className="cia-heading-hero">
                       <span className="theme-text-gradient">NutriNov</span>
                     </h1>
                   </div>

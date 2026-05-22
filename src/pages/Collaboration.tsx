@@ -302,17 +302,17 @@ const ContactForm = () => {
         <input
           type="text"
           placeholder={t('collaborationPage.contactName')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
+          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
         />
         <input
           type="email"
           placeholder={t('collaborationPage.contactEmail')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
+          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
         />
         <input
           type="text"
           placeholder={t('collaborationPage.contactCompany')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse"
+          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
         />
         <textarea
           placeholder={t('collaborationPage.contactMessage')}

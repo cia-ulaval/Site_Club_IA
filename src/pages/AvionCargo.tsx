@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { Camera, Crosshair, Navigation, Package, Eye, CheckCircle } from 'lucide-react';
+import BackToProjects from '../components/BackToProjects';
 function AvionCargo() {
   const { t } = useTranslation();
   const pipelineIcons = [Camera, Eye, Crosshair, Navigation, Package];
@@ -25,6 +26,7 @@ function AvionCargo() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <BackToProjects />
           <motion.section
             className="mb-16 sm:mb-20"
             initial={{ opacity: 0, y: 30 }}
@@ -42,7 +44,7 @@ function AvionCargo() {
                     {t('avionCargo.simple.precisionBadge')}
                   </span>
                 </div>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-5 leading-tight">
+                <h1 className="cia-heading-hero mb-5">
                   <span className="theme-text-gradient">{t('avionCargo.simple.title')}</span>
                 </h1>
                 <p className="text-xl theme-text-secondary mb-4 font-medium leading-relaxed">
