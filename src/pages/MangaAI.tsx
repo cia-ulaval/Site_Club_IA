@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import TeamMemberCard from '../components/TeamMemberCard';
+import FeatureCard from '../components/FeatureCard';
 import { TextCursorInput, SwatchBook, Rss, Zap, Languages, Layers } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import BackToProjects from '../components/BackToProjects';
 interface ImageWithGlowProps {
   src: string;
   alt: string;
@@ -151,6 +153,7 @@ function MangaAI() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <BackToProjects />
           {/* Hero section */}
           <div className="text-center mb-12 md:mb-16">
             <motion.div
@@ -158,7 +161,7 @@ function MangaAI() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold mb-2 md:mb-4">
+              <h1 className="cia-heading-hero mb-2 md:mb-4">
                 <span className="theme-text-gradient">{t('mangaai.hero.title.manga')}</span>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-300">
                   {t('mangaai.hero.title.translator')}
@@ -277,50 +280,22 @@ function MangaAI() {
                 {t('mangaai.future.title')}
               </h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 px-4 md:px-0">
-                <motion.div
-                  className="p-4 md:p-6 rounded-xl theme-surface-secondary border theme-border-accent-important theme-hover-border-accent transition-colors"
-                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                >
-                  <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t('mangaai.future.textResizing.title')}
-                  </h5>
-                  <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t('mangaai.future.textResizing.description')}
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="p-4 md:p-6 rounded-xl theme-surface-secondary border theme-border-accent-important theme-hover-border-accent transition-colors"
-                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                >
-                  <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t('mangaai.future.genderDetection.title')}
-                  </h5>
-                  <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t('mangaai.future.genderDetection.description')}
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="p-4 md:p-6 rounded-xl theme-surface-secondary border theme-border-accent-important theme-hover-border-accent transition-colors"
-                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                >
-                  <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t('mangaai.future.characterId.title')}
-                  </h5>
-                  <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t('mangaai.future.characterId.description')}
-                  </p>
-                </motion.div>
-                <motion.div
-                  className="p-4 md:p-6 rounded-xl theme-surface-secondary border theme-border-accent-important theme-hover-border-accent transition-colors"
-                  whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-                >
-                  <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">
-                    {t('mangaai.future.contextAware.title')}
-                  </h5>
-                  <p className="text-sm md:text-base theme-text-muted !text-accent-300">
-                    {t('mangaai.future.contextAware.description')}
-                  </p>
-                </motion.div>
+                <FeatureCard
+                  title={t('mangaai.future.textResizing.title')}
+                  description={t('mangaai.future.textResizing.description')}
+                />
+                <FeatureCard
+                  title={t('mangaai.future.genderDetection.title')}
+                  description={t('mangaai.future.genderDetection.description')}
+                />
+                <FeatureCard
+                  title={t('mangaai.future.characterId.title')}
+                  description={t('mangaai.future.characterId.description')}
+                />
+                <FeatureCard
+                  title={t('mangaai.future.contextAware.title')}
+                  description={t('mangaai.future.contextAware.description')}
+                />
               </div>
             </div>
           </section>

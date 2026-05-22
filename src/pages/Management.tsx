@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { User } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import MemberModal, { TeamMember } from '../components/MemberModal';
 
 const Management: React.FC = () => {
@@ -354,31 +354,31 @@ const Management: React.FC = () => {
   ) => {
     const cardSizes = {
       large: {
-        width: '16rem',
-        height: '360px',
-        imageHeight: '220px',
-        bodyHeight: '140px',
-        titleSize: 'text-xl',
-        roleSize: 'text-base',
-        headerSize: 'text-6xl',
-      },
-      medium: {
-        width: '14rem',
-        height: '320px',
-        imageHeight: '190px',
-        bodyHeight: '130px',
-        titleSize: 'text-lg',
-        roleSize: 'text-sm',
-        headerSize: 'text-5xl',
-      },
-      small: {
-        width: '12rem',
-        height: '280px',
-        imageHeight: '160px',
-        bodyHeight: '120px',
+        widthClass: '',
+        heightClass: 'min-h-[280px]',
+        imageHeightClass: 'h-48 sm:h-56',
         titleSize: 'text-base',
         roleSize: 'text-sm',
-        headerSize: 'text-4xl',
+        headerSize: 'text-3xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
+      },
+      medium: {
+        widthClass: '',
+        heightClass: 'min-h-[260px]',
+        imageHeightClass: 'h-44 sm:h-48',
+        titleSize: 'text-sm',
+        roleSize: 'text-xs',
+        headerSize: 'text-2xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
+      },
+      small: {
+        widthClass: '',
+        heightClass: 'min-h-[220px]',
+        imageHeightClass: 'h-36 sm:h-40',
+        titleSize: 'text-sm',
+        roleSize: 'text-xs',
+        headerSize: 'text-2xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6',
       },
     };
 
@@ -392,38 +392,33 @@ const Management: React.FC = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h1 className={`font-bold mb-4 text-center mt-16 pb-12 ${size.headerSize}`}>
+        <h2 className={`font-bold mb-6 text-center mt-10 ${size.headerSize}`}>
           <span className="theme-text-gradient">{titleKey}</span>
-        </h1>
-        <div className="flex flex-wrap gap-4 justify-center">
+        </h2>
+        <div className={`grid ${size.gridClass} gap-4`}>
           {members.map((member, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.03, y: -3 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => !member.isVacant && setSelectedMember(member)}
               className={`${
                 member.isVacant
                   ? 'bg-primary-900/40 border-2 border-primary-800/50 border-dashed cursor-default'
                   : 'bg-primary-900/80 border-2 !border-primary-500/70 hover:!border-accent-500/80 cursor-pointer'
-              } text-base-inverse mb-12 relative overflow-hidden rounded-lg transition-all duration-300`}
-              style={{
-                width: size.width,
-                height: size.height,
-              }}
+              } text-base-inverse relative overflow-hidden rounded-lg transition-all duration-300 ${size.heightClass}`}
             >
               {/* Image Section */}
               <div
                 className={`${
                   member.isVacant ? 'bg-primary-800/20' : ''
-                } flex items-center justify-center`}
-                style={{ height: size.imageHeight }}
+                } flex items-center justify-center ${size.imageHeightClass}`}
               >
                 {member.imgSrc && !member.isVacant ? (
                   <img
                     src={member.imgSrc}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_20%]"
                   />
                 ) : (
                   <User className="w-16 h-16 theme-text-accent" />
@@ -440,10 +435,7 @@ const Management: React.FC = () => {
               )}
 
               {/* Content Section */}
-              <div
-                className="text-center flex flex-col justify-center p-3"
-                style={{ height: size.bodyHeight }}
-              >
+              <div className="text-center flex flex-col justify-center p-3">
                 <h3
                   className={`${
                     member.isVacant ? 'text-primary-300/70' : 'text-base-inverse'
@@ -620,6 +612,7 @@ const Management: React.FC = () => {
       </Helmet>
 
       <motion.div
+        className="pb-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}

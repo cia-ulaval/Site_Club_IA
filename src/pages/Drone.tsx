@@ -20,6 +20,7 @@ import {
   Users,
   ArrowRight,
 } from 'lucide-react';
+import BackToProjects from '../components/BackToProjects';
 function DroneLaserTag() {
   const { t } = useTranslation();
   const roles = [
@@ -111,6 +112,7 @@ function DroneLaserTag() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <div className="relative mb-20">
               <motion.div
                 className="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"
@@ -133,7 +135,7 @@ function DroneLaserTag() {
                       Compétition Universitaire
                     </span>
                   </div>
-                  <h1 className="text-6xl md:text-7xl font-bold mb-6">
+                  <h1 className="cia-heading-hero mb-6">
                     <span className="theme-text-gradient">
                       Drone <br /> Laser Tag
                     </span>

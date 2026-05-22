@@ -1,8 +1,7 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Instagram, Facebook, Linkedin, Mail } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, Mail, Rocket, BookOpen, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 function JoinUs() {
   const { t } = useTranslation();
   return (
@@ -63,87 +62,115 @@ function JoinUs() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Hero Section */}
+          {/* Hero heading */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center"
+            className="text-center pt-8 mb-8"
           >
-            <h1 className="text-6xl font-bold mb-4 pb-20 pt-8">
+            <h1 className="text-5xl md:text-6xl font-bold">
               <span className="theme-text-gradient">{t('joinus.heroSubtitle')}</span>
             </h1>
           </motion.div>
-          {/* Discord Section */}
+
+          {/* Value proposition — 3 pillars */}
           <motion.div
-            className="text-center mb-12"
+            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            {[
+              {
+                icon: <Rocket className="w-7 h-7 theme-text-accent" />,
+                titleKey: 'joinus.valueProp.projects.title',
+                descKey: 'joinus.valueProp.projects.description',
+              },
+              {
+                icon: <BookOpen className="w-7 h-7 theme-text-accent" />,
+                titleKey: 'joinus.valueProp.formations.title',
+                descKey: 'joinus.valueProp.formations.description',
+              },
+              {
+                icon: <Users className="w-7 h-7 theme-text-accent" />,
+                titleKey: 'joinus.valueProp.community.title',
+                descKey: 'joinus.valueProp.community.description',
+              },
+            ].map(({ icon, titleKey, descKey }) => (
+              <div
+                key={titleKey}
+                className="flex flex-col items-center text-center gap-3 p-6 rounded-xl border border-primary-500/20 bg-primary-950/30"
+              >
+                {icon}
+                <h3 className="font-semibold text-base-inverse text-lg">{t(titleKey)}</h3>
+                <p className="text-sm theme-text-muted leading-relaxed">{t(descKey)}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Discord CTA */}
+          <motion.div
+            className="text-center mb-14"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg theme-text-muted mb-4">{t('joinus.discordText')}</p>
+            <p className="text-lg theme-text-muted mb-6">{t('joinus.discordText')}</p>
             <a
               href="https://discord.gg/ZPVwCjMpAq"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
+              className="inline-flex items-center justify-center px-8 py-4 bg-accent-500 hover:bg-accent-400 text-base-inverse font-bold rounded-full shadow-lg hover:shadow-accent-500/30 transition-all duration-200"
             >
               {t('joinus.discordButton')}
             </a>
           </motion.div>
-          {/* Collaboration Section */}
+
+          {/* Social links with labels */}
           <motion.div
-            className="text-center mt-16"
+            className="text-center pb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-primary-500 mb-4">{t('joinus.collabTitle')}</h3>
-            <p className="text-lg theme-text-muted mb-6">{t('joinus.collabText')}</p>
-            <Link
-              to="/collaboration"
-              className="inline-flex items-center justify-center w-64 h-16 px-6 py-3 bg-accent-500 hover:bg-accent-300 text-base-inverse font-bold rounded-lg shadow-lg transition duration-300 text-center"
-            >
-              {t('joinus.collabButton')}
-            </Link>
-            {/* Contact Buttons Section */}
-            <div className="flex justify-center gap-10 pt-16">
-              <a
-                href="https://www.linkedin.com/company/cia-ulaval/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="theme-text-muted theme-hover-text-accent transition"
-              >
-                <Linkedin size={40} />
-              </a>
-              <a
-                href="mailto:cia@ulaval.ca"
-                aria-label="Email"
-                className="theme-text-muted theme-hover-text-accent transition"
-              >
-                <Mail size={40} />
-              </a>
-              <a
-                href="https://www.instagram.com/ciaulaval/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="theme-text-muted theme-hover-text-accent transition"
-              >
-                <Instagram size={40} />
-              </a>
-              <a
-                href="https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="theme-text-muted theme-hover-text-accent transition"
-              >
-                <Facebook size={40} />
-              </a>
+            <p className="text-sm font-medium text-primary-400/70 uppercase tracking-widest mb-6">
+              {t('joinus.socialFollow')}
+            </p>
+            <div className="flex justify-center gap-6 flex-wrap">
+              {[
+                {
+                  href: 'https://www.linkedin.com/company/cia-ulaval/',
+                  icon: <Linkedin size={22} />,
+                  label: 'LinkedIn',
+                },
+                { href: 'mailto:cia@ulaval.ca', icon: <Mail size={22} />, label: 'Email' },
+                {
+                  href: 'https://www.instagram.com/ciaulaval/',
+                  icon: <Instagram size={22} />,
+                  label: 'Instagram',
+                },
+                {
+                  href: 'https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/',
+                  icon: <Facebook size={22} />,
+                  label: 'Facebook',
+                },
+              ].map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  aria-label={label}
+                  className="flex flex-col items-center gap-2 theme-text-muted theme-hover-text-accent transition-colors duration-200 cursor-pointer"
+                >
+                  {icon}
+                  <span className="text-xs font-medium">{label}</span>
+                </a>
+              ))}
             </div>
           </motion.div>
         </motion.div>

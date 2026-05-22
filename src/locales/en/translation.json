@@ -8,6 +8,16 @@
       "title": "About Us",
       "description": "We are a group of students exploring AI through various hands-on projects. Join us to learn and collaborate on exciting AI initiatives!"
     },
+    "heroCta": {
+      "projects": "See our projects",
+      "join": "Join the club"
+    },
+    "projectsPage": {
+      "subtitle": "13 active projects · 40+ students · AI, hardware and applications."
+    },
+    "partners": {
+      "label": "Our partners & sponsors"
+    },
     "projects": {
       "title": "Discover our innovative projects!",
       "subtitle": "Discover our innovative projects!",
@@ -77,11 +87,20 @@
       "button": "View our plans"
     }
   },
+  "projects": {
+    "categories": {
+      "iaml": "AI & ML",
+      "hardware": "Hardware",
+      "application": "Application",
+      "robotics": "Robotics"
+    }
+  },
   "navbar": {
     "home": "Home",
     "projects": "Projects",
     "management": "Administration",
     "gallery": "Gallery",
+    "collaboration": "Partnership",
     "joinus": "Join Us"
   },
   "footer": {
@@ -97,6 +116,7 @@
     "intro": "Join our mission to push the boundaries of AI technology. Your sponsorship fuels cutting-edge research, empowers student innovators, and creates solutions that transform industries.",
     "impactTitle": "Our Impact",
     "tiersTitle": "Sponsorship Tiers",
+    "mostPopular": "Most popular",
     "projectsTitle": "Projects You'll Fund",
     "currentSponsorsTitle": "Our Current Sponsors",
     "readyTitle": "Ready to Partner?",
@@ -318,7 +338,23 @@
     "applyButton": "Apply Here",
     "collabTitle": "Want to Collaborate?",
     "collabText": "We're always open to new partnerships and ideas. Discover how you can collaborate with us!",
-    "collabButton": "Learn About Collaboration"
+    "collabButton": "Learn About Collaboration",
+    "valueProp": {
+      "title": "Why join us?",
+      "projects": {
+        "title": "Real Projects",
+        "description": "Work on hands-on AI projects alongside passionate students."
+      },
+      "formations": {
+        "title": "Workshops & Talks",
+        "description": "Build your skills with our practical workshops and presentations."
+      },
+      "community": {
+        "title": "Active Community",
+        "description": "Connect with a vibrant community on Discord and at our events."
+      }
+    },
+    "socialFollow": "Follow us"
   },
   "flapeeg": {
     "meta": {
@@ -1711,14 +1747,38 @@
     "tech": {
       "title": "Technologies & Tools",
       "items": [
-        { "name": "OpenCV", "type": "vision" },
-        { "name": "ArduPilot", "type": "autopilot" },
-        { "name": "Python", "type": "language" },
-        { "name": "ArUco Markers", "type": "navigation" },
-        { "name": "MAVLink", "type": "protocol" },
-        { "name": "NumPy", "type": "computing" },
-        { "name": "Raspberry Pi / Jetson", "type": "hardware" },
-        { "name": "PID / Guidance", "type": "control" }
+        {
+          "name": "OpenCV",
+          "type": "vision"
+        },
+        {
+          "name": "ArduPilot",
+          "type": "autopilot"
+        },
+        {
+          "name": "Python",
+          "type": "language"
+        },
+        {
+          "name": "ArUco Markers",
+          "type": "navigation"
+        },
+        {
+          "name": "MAVLink",
+          "type": "protocol"
+        },
+        {
+          "name": "NumPy",
+          "type": "computing"
+        },
+        {
+          "name": "Raspberry Pi / Jetson",
+          "type": "hardware"
+        },
+        {
+          "name": "PID / Guidance",
+          "type": "control"
+        }
       ]
     },
     "roles": {
@@ -1787,5 +1847,8 @@
       "title": "The Team",
       "subtitle": "The members who made this project happen"
     }
+  },
+  "common": {
+    "backToProjects": "Back to projects"
   }
 }
