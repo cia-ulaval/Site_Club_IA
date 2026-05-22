@@ -356,7 +356,7 @@ const Management: React.FC = () => {
       large: {
         widthClass: '',
         heightClass: 'min-h-[280px]',
-        imageHeightClass: 'h-44 sm:h-52',
+        imageHeightClass: 'h-48 sm:h-56',
         titleSize: 'text-base',
         roleSize: 'text-sm',
         headerSize: 'text-3xl',
@@ -364,8 +364,8 @@ const Management: React.FC = () => {
       },
       medium: {
         widthClass: '',
-        heightClass: 'min-h-[240px]',
-        imageHeightClass: 'h-36 sm:h-40',
+        heightClass: 'min-h-[260px]',
+        imageHeightClass: 'h-44 sm:h-48',
         titleSize: 'text-sm',
         roleSize: 'text-xs',
         headerSize: 'text-2xl',
@@ -373,8 +373,8 @@ const Management: React.FC = () => {
       },
       small: {
         widthClass: '',
-        heightClass: 'min-h-[200px]',
-        imageHeightClass: 'h-28 sm:h-36',
+        heightClass: 'min-h-[220px]',
+        imageHeightClass: 'h-36 sm:h-40',
         titleSize: 'text-sm',
         roleSize: 'text-xs',
         headerSize: 'text-2xl',
@@ -418,7 +418,7 @@ const Management: React.FC = () => {
                   <img
                     src={member.imgSrc}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_20%]"
                   />
                 ) : (
                   <User className="w-16 h-16 theme-text-accent" />

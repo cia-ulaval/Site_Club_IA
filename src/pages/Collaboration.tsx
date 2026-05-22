@@ -142,21 +142,13 @@ const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
   return (
     <motion.div
       className={`relative flex flex-col h-full p-6 rounded-xl bg-primary-900/80 border-t-4 ${tier.accentBorder} border-x border-b border-primary-500/30 hover:border-primary-400/50 transition-all duration-300
-        ${tier.featured ? 'ring-1 ring-yellow-400/20 shadow-lg shadow-yellow-400/5' : ''}`}
+        ${tier.featured ? 'ring-2 ring-yellow-400/35 shadow-xl shadow-yellow-400/12 bg-primary-900/90' : ''}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
-      {tier.featured && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-          <span className="bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
-            {t('collaborationPage.mostPopular', 'Plus populaire')}
-          </span>
-        </div>
-      )}
-
       <div className="text-center mb-6 pt-2">
         <Award className={`w-8 h-8 mx-auto mb-3 ${tier.accentText}`} />
         <h3 className={`text-2xl font-bold mb-1 ${tier.accentText}`}>

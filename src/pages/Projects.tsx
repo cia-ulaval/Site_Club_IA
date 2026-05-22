@@ -96,35 +96,6 @@ const projects = [
     category: 'iaml',
   },
   {
-    key: 'decisiontree',
-    image: '/project/decisiontree.webp',
-    defaultTitle: 'Decision Tree',
-    defaultDescription:
-      "Projet de recherche et développement sur les arbres de décision : explorez les algorithmes classiques et avancés, optimisez la prise de décision automatique et participez à la création d'outils open-source pour l'IA. Idéal pour les étudiants en data science, mathématiques et informatique.",
-    link: '/decisiontree',
-    category: 'iaml',
-  },
-  {
-    key: 'lenia',
-    image: '/project/leniacover.png',
-    defaultTitle: 'Lenia',
-    defaultDescription:
-      "Automate cellulaire autonome inspiré de la vie artificielle : simulez des créatures virtuelles capables d'émergence, d'évolution et d'interaction. Ce projet allie mathématiques, simulation, IA et visualisation scientifique. Rejoignez-nous pour explorer la vie numérique et l'algorithmique créative.",
-    link: '/lenia',
-    github: 'https://github.com/cia-ulaval/LENIA-frontend',
-    category: 'iaml',
-  },
-  {
-    key: 'mangaai',
-    image: '/project/mangaai2.webp',
-    defaultTitle: 'MangaAI',
-    defaultDescription:
-      "Traduction et analyse automatique de mangas grâce à l'IA : OCR, NLP, génération de dialogues et analyse de style. Participez à la création d'outils pour la culture japonaise, la linguistique computationnelle et la vision par ordinateur. Idéal pour les passionnés d'IA, de manga et de traitement du langage.",
-    link: '/mangaai',
-    github: 'https://github.com/cia-ulaval/MangaAutoTranslator',
-    category: 'iaml',
-  },
-  {
     key: 'canlock',
     image: '',
     defaultTitle: 'CANlock',
