@@ -14,7 +14,7 @@ export default function FeatureCard({ title, description, icon }: FeatureCardPro
       whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
     >
       {icon && <div className="theme-text-accent mb-3">{icon}</div>}
-      <h5 className="text-base md:text-lg font-semibold mb-2 text-primary-500">{title}</h5>
+      <h5 className="text-base md:text-lg font-semibold mb-2 text-accent-300">{title}</h5>
       <p className="text-sm md:text-base theme-text-muted">{description}</p>
     </motion.div>
   );

@@ -17,7 +17,7 @@ function Navbar() {
     { to: '/projects', label: t('navbar.projects') },
     { to: '/management', label: t('navbar.management') },
     { to: '/gallery', label: t('navbar.gallery') },
-    { to: '/join-us', label: t('navbar.joinus') },
+    { to: '/collaboration', label: t('navbar.collaboration') },
   ];
 
   return (
@@ -32,7 +32,7 @@ function Navbar() {
             <span className="text-xl font-bold theme-text-gradient">CIA</span>
           </NavLink>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -44,6 +44,18 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/join-us"
+              className={({ isActive }) =>
+                `px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 cia-focus-ring ${
+                  isActive
+                    ? 'bg-accent-400 text-base-inverse'
+                    : 'bg-accent-500 hover:bg-accent-400 text-base-inverse'
+                }`
+              }
+            >
+              {t('navbar.joinus')}
+            </NavLink>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -60,7 +72,7 @@ function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-3" aria-label="Mobile navigation">
+          <div className="md:hidden pb-4" aria-label="Mobile navigation">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
@@ -73,6 +85,19 @@ function Navbar() {
                 {link.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/join-us"
+              className={({ isActive }) =>
+                `block mt-2 px-4 py-2 rounded-full text-sm font-semibold text-center transition-all duration-200 cia-focus-ring ${
+                  isActive
+                    ? 'bg-accent-400 text-base-inverse'
+                    : 'bg-accent-500 hover:bg-accent-400 text-base-inverse'
+                }`
+              }
+              onClick={toggleMenu}
+            >
+              {t('navbar.joinus')}
+            </NavLink>
           </div>
         )}
       </div>

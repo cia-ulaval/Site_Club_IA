@@ -8,6 +8,16 @@
       "title": "À propos de nous",
       "description": "Nous sommes un groupe d'étudiants explorant l'IA à travers divers projets pratiques. Rejoignez-nous pour apprendre et collaborer sur des projets passionnants d'IA!"
     },
+    "heroCta": {
+      "projects": "Voir nos projets",
+      "join": "Rejoindre le club"
+    },
+    "projectsPage": {
+      "subtitle": "13 projets actifs · 40+ étudiants · IA, hardware et applications."
+    },
+    "partners": {
+      "label": "Nos partenaires & commanditaires"
+    },
     "projects": {
       "title": "Découvrez nos projets innovants !",
       "subtitle": "Découvrez nos projets innovants !",
@@ -73,11 +83,20 @@
       "button": "Voir nos plans"
     }
   },
+  "projects": {
+    "categories": {
+      "iaml": "IA & ML",
+      "hardware": "Hardware",
+      "application": "Application",
+      "robotics": "Robotique"
+    }
+  },
   "navbar": {
     "home": "Accueil",
     "projects": "Projets",
     "management": "Administration",
     "gallery": "Galerie",
+    "collaboration": "Partenariat",
     "joinus": "Nous rejoindre"
   },
   "footer": {
@@ -93,6 +112,7 @@
     "intro": "Rejoignez notre mission pour repousser les limites de la technologie d'IA. Votre parrainage alimente la recherche de pointe, soutient les étudiants innovateurs et crée des solutions qui transforment les industries.",
     "impactTitle": "Notre Impact",
     "tiersTitle": "Niveaux de Parrainage",
+    "mostPopular": "Plus populaire",
     "projectsTitle": "Projets que Vous Financerez",
     "currentSponsorsTitle": "Nos Partenaires Actuels",
     "readyTitle": "Prêt à Collaborer ?",
@@ -314,7 +334,23 @@
     "applyButton": "Postuler ici",
     "collabTitle": "Envie de collaborer ?",
     "collabText": "Nous sommes toujours ouverts à de nouveaux partenariats et idées. Découvrez comment collaborer avec nous !",
-    "collabButton": "En savoir plus sur la collaboration"
+    "collabButton": "En savoir plus sur la collaboration",
+    "valueProp": {
+      "title": "Pourquoi nous rejoindre ?",
+      "projects": {
+        "title": "Projets concrets",
+        "description": "Travaille sur des projets en IA réels aux côtés d'étudiants passionnés."
+      },
+      "formations": {
+        "title": "Formations & ateliers",
+        "description": "Développe tes compétences avec nos ateliers pratiques et présentations."
+      },
+      "community": {
+        "title": "Communauté active",
+        "description": "Échange avec une communauté dynamique sur Discord et lors de nos événements."
+      }
+    },
+    "socialFollow": "Nous suivre"
   },
   "flapeeg": {
     "meta": {

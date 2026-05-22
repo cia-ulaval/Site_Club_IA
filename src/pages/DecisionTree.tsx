@@ -110,13 +110,13 @@ function DecisionTree() {
                   </h1>
                   <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />
                   <div className="space-y-4 sm:space-y-6">
-                    <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
+                    <p className="text-neutral-200 text-base sm:text-lg leading-relaxed text-justify">
                       {t('decisionTree.hero.description1')}
                     </p>
-                    <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
+                    <p className="text-neutral-200 text-base sm:text-lg leading-relaxed text-justify">
                       {t('decisionTree.hero.description2')}
                     </p>
-                    <p className="theme-text-muted text-base sm:text-lg leading-relaxed text-justify">
+                    <p className="text-neutral-200 text-base sm:text-lg leading-relaxed text-justify">
                       {t('decisionTree.hero.description3')}
                     </p>
                   </div>

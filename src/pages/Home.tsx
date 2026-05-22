@@ -88,9 +88,9 @@ function Home() {
         </div>
         <div className="relative z-10 w-full">
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 items-center">
-            {/* Left Side - Title & Subtitle & About */}
-            <div className="space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+            {/* Left Side - Title, Subtitle, CTAs */}
+            <div className="space-y-8">
               {/* Title */}
               <motion.h1
                 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
@@ -107,17 +107,24 @@ function Home() {
               >
                 {t('home.header.subtitle')}
               </motion.p>
-              {/* About Section */}
-              <motion.div className="space-y-6" {...m.slideUp}>
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-300">
-                  {t('home.about.title')}
-                </h2>
-                <p className="text-accent-300 text-lg leading-relaxed">
-                  {t('home.about.description')}
-                </p>
+              {/* CTAs */}
+              <motion.div className="flex flex-wrap gap-4 pt-2" {...m.slideUp}>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-400 text-base-inverse font-semibold rounded-full shadow-lg hover:shadow-accent-500/30 transition-all duration-200"
+                >
+                  {t('home.heroCta.projects')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/join-us"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary-500/60 hover:border-primary-400 text-primary-300 hover:text-primary-200 font-semibold rounded-full transition-all duration-200"
+                >
+                  {t('home.heroCta.join')}
+                </Link>
               </motion.div>
             </div>
-            {/* Right Side - Instagram (visible on all screens) */}
+            {/* Right Side - Instagram */}
             <div className="flex justify-center items-center h-full mt-10 md:mt-0">
               <motion.div className="w-full h-full flex justify-center items-center" {...m.fadeIn}>
                 <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
@@ -128,9 +135,37 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* About Section — moved below hero for breathing room */}
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <motion.div
+          className="border border-primary-500/20 rounded-2xl p-8 md:p-12 bg-primary-950/30"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-accent-300 mb-4">
+            {t('home.about.title')}
+          </h2>
+          <p className="text-accent-300 text-lg leading-relaxed max-w-3xl">
+            {t('home.about.description')}
+          </p>
+        </motion.div>
+      </section>
+
       {/* Partner Logos */}
       <section className="w-full py-6 md:py-10">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+          <motion.p
+            className="text-center text-sm font-medium text-primary-400/70 uppercase tracking-widest mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {t('home.partners.label')}
+          </motion.p>
           <InfiniteScrollBanner />
         </div>
       </section>

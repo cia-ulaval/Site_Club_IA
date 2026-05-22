@@ -354,28 +354,31 @@ const Management: React.FC = () => {
   ) => {
     const cardSizes = {
       large: {
-        widthClass: 'w-48 sm:w-56 md:w-64',
-        heightClass: 'min-h-[300px] sm:min-h-[340px]',
+        widthClass: '',
+        heightClass: 'min-h-[280px]',
         imageHeightClass: 'h-44 sm:h-52',
-        titleSize: 'text-xl',
-        roleSize: 'text-base',
-        headerSize: 'text-6xl',
-      },
-      medium: {
-        widthClass: 'w-44 sm:w-52 md:w-56',
-        heightClass: 'min-h-[260px] sm:min-h-[300px]',
-        imageHeightClass: 'h-36 sm:h-44',
-        titleSize: 'text-lg',
-        roleSize: 'text-sm',
-        headerSize: 'text-5xl',
-      },
-      small: {
-        widthClass: 'w-40 sm:w-48',
-        heightClass: 'min-h-[220px] sm:min-h-[260px]',
-        imageHeightClass: 'h-32 sm:h-40',
         titleSize: 'text-base',
         roleSize: 'text-sm',
-        headerSize: 'text-4xl',
+        headerSize: 'text-3xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
+      },
+      medium: {
+        widthClass: '',
+        heightClass: 'min-h-[240px]',
+        imageHeightClass: 'h-36 sm:h-40',
+        titleSize: 'text-sm',
+        roleSize: 'text-xs',
+        headerSize: 'text-2xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5',
+      },
+      small: {
+        widthClass: '',
+        heightClass: 'min-h-[200px]',
+        imageHeightClass: 'h-28 sm:h-36',
+        titleSize: 'text-sm',
+        roleSize: 'text-xs',
+        headerSize: 'text-2xl',
+        gridClass: 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6',
       },
     };
 
@@ -389,21 +392,21 @@ const Management: React.FC = () => {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h1 className={`font-bold mb-4 text-center mt-16 pb-12 ${size.headerSize}`}>
+        <h2 className={`font-bold mb-6 text-center mt-10 ${size.headerSize}`}>
           <span className="theme-text-gradient">{titleKey}</span>
-        </h1>
-        <div className="flex flex-wrap gap-4 justify-center">
+        </h2>
+        <div className={`grid ${size.gridClass} gap-4`}>
           {members.map((member, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ scale: 1.05, y: -5 }}
+              whileHover={{ scale: 1.03, y: -3 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => !member.isVacant && setSelectedMember(member)}
               className={`${
                 member.isVacant
                   ? 'bg-primary-900/40 border-2 border-primary-800/50 border-dashed cursor-default'
                   : 'bg-primary-900/80 border-2 !border-primary-500/70 hover:!border-accent-500/80 cursor-pointer'
-              } text-base-inverse mb-12 relative overflow-hidden rounded-lg transition-all duration-300 ${size.widthClass} ${size.heightClass}`}
+              } text-base-inverse relative overflow-hidden rounded-lg transition-all duration-300 ${size.heightClass}`}
             >
               {/* Image Section */}
               <div
@@ -432,10 +435,7 @@ const Management: React.FC = () => {
               )}
 
               {/* Content Section */}
-              <div
-                className="text-center flex flex-col justify-center p-3"
-                style={{ height: size.bodyHeight }}
-              >
+              <div className="text-center flex flex-col justify-center p-3">
                 <h3
                   className={`${
                     member.isVacant ? 'text-primary-300/70' : 'text-base-inverse'
@@ -612,6 +612,7 @@ const Management: React.FC = () => {
       </Helmet>
 
       <motion.div
+        className="pb-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}

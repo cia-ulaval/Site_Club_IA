@@ -13,14 +13,16 @@ import {
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { useRef } from 'react'; // Sponsorship tiers with benefits
+import { useRef, useState } from 'react';
+
+// Sponsorship tiers — accent colors only, dark card base
 const sponsorshipTiers = [
   {
     name: 'Bronze',
     price: '$1,000',
-    color: 'from-warning-700 to-warning-900',
-    hoverColor: 'from-warning-600 to-warning-800',
-    icon: <Award className="w-8 h-8 text-warning-400" />,
+    accentBorder: 'border-t-amber-700/80',
+    accentText: 'text-amber-500',
+    featured: false,
     benefits: [
       'Your logo and link on our website',
       'Your logo presented at our events',
@@ -30,9 +32,9 @@ const sponsorshipTiers = [
   {
     name: 'Silver',
     price: '$5,000',
-    color: 'from-neutral-400 to-neutral-600',
-    hoverColor: 'from-neutral-300 to-neutral-500',
-    icon: <Award className="w-8 h-8 theme-text-secondary" />,
+    accentBorder: 'border-t-slate-400/70',
+    accentText: 'text-slate-300',
+    featured: false,
     benefits: [
       'Your logo and link on our website',
       'Your logo presented in bold at our events',
@@ -45,9 +47,9 @@ const sponsorshipTiers = [
   {
     name: 'Gold',
     price: '$10,000',
-    color: 'from-warning-500 to-warning-700',
-    hoverColor: 'from-warning-400 to-warning-600',
-    icon: <Award className="w-8 h-8 text-warning-300" />,
+    accentBorder: 'border-t-yellow-400/90',
+    accentText: 'text-yellow-400',
+    featured: true,
     benefits: [
       'Your logo and link on our website',
       'Your logo presented in very bold at our events',
@@ -60,7 +62,8 @@ const sponsorshipTiers = [
       'Your logo on one of our projects',
     ],
   },
-]; // Funded projects showcase
+];
+
 const fundedProjects = [
   {
     title: 'MangaTranslator AI',
@@ -80,7 +83,8 @@ const fundedProjects = [
     progress: 60,
     icon: <Zap className="w-6 h-6" />,
   },
-]; // Sponsor logos
+];
+
 const currentSponsors = [
   { name: 'Université Laval', tier: 'Gold', link: 'https://www.ulaval.ca/' },
   { name: 'AESGUL', tier: 'Gold', link: 'https://www.aesgul.com/accueil' },
@@ -96,7 +100,8 @@ const currentSponsors = [
     link: 'https://sdp.ulaval.ca/',
   },
   { name: 'CRTI', tier: 'Gold', link: 'https://crti.ulaval.ca/' },
-]; // Success metrics
+];
+
 const impactMetrics = [
   {
     metric: '3',
@@ -119,52 +124,61 @@ const impactMetrics = [
     icon: <GraduationCap className="w-8 h-8 theme-text-accent" />,
   },
 ];
+
 interface SponsorshipTierProps {
   tier: {
     name: string;
     price: string;
-    color: string;
-    hoverColor: string;
-    icon: JSX.Element;
+    accentBorder: string;
+    accentText: string;
+    featured: boolean;
     benefits: string[];
   };
   onBecomePartner?: () => void;
 }
+
 const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className={`p-6 rounded-xl bg-gradient-to-br ${tier.color} border-2 border-primary-800/30 hover:border-primary-400/70 transition-all duration-300 flex flex-col h-full`}
+      className={`relative flex flex-col h-full p-6 rounded-xl bg-primary-900/80 border-t-4 ${tier.accentBorder} border-x border-b border-primary-500/30 hover:border-primary-400/50 transition-all duration-300
+        ${tier.featured ? 'ring-1 ring-yellow-400/20 shadow-lg shadow-yellow-400/5' : ''}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
-      whileHover={{
-        y: -5,
-        backgroundImage: `linear-gradient(to bottom right, ${tier.hoverColor})`,
-        transition: { duration: 0.2 },
-      }}
+      whileHover={{ y: -5, transition: { duration: 0.2 } }}
     >
-      <div className="text-center mb-6">
-        <div className="flex justify-center mb-4">{tier.icon}</div>
-        <h3 className="text-2xl font-bold text-base-inverse mb-2">
+      {tier.featured && (
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+          <span className="bg-yellow-400/15 border border-yellow-400/40 text-yellow-300 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap">
+            {t('collaborationPage.mostPopular', 'Plus populaire')}
+          </span>
+        </div>
+      )}
+
+      <div className="text-center mb-6 pt-2">
+        <Award className={`w-8 h-8 mx-auto mb-3 ${tier.accentText}`} />
+        <h3 className={`text-2xl font-bold mb-1 ${tier.accentText}`}>
           {t(`collaborationPage.sponsorshipTiersNames.${tier.name}`)}
         </h3>
-        <div className="text-3xl font-bold text-base-inverse mb-4">{tier.price}</div>
+        <div className="text-3xl font-bold text-base-inverse">{tier.price}</div>
       </div>
+
       <ul className="space-y-3 mb-8 flex-grow">
         {tier.benefits.map((benefit, index) => (
           <li key={index} className="flex items-start gap-2">
             <BadgeCheck className="w-5 h-5 theme-text-accent flex-shrink-0 mt-0.5" />
-            <span className="theme-text-secondary">
+            <span className="text-primary-200 text-sm leading-relaxed">
               {t(`collaborationPage.tierBenefits.${benefit}`, benefit)}
             </span>
           </li>
         ))}
       </ul>
+
       <motion.button
-        className="w-full py-3 px-6 theme-btn-gradient rounded-lg text-base-inverse font-semibold transition-all duration-300 mt-auto"
-        whileHover={{ scale: 1.03 }}
+        className="w-full py-3 px-6 theme-btn-gradient rounded-lg text-base-inverse font-semibold transition-all duration-300 mt-auto cursor-pointer"
+        whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         onClick={onBecomePartner}
       >
@@ -175,6 +189,7 @@ const SponsorshipTier = ({ tier, onBecomePartner }: SponsorshipTierProps) => {
     </motion.div>
   );
 };
+
 interface ProjectProps {
   project: {
     title: string;
@@ -183,11 +198,12 @@ interface ProjectProps {
     icon: JSX.Element;
   };
 }
+
 const ProjectCard = ({ project }: ProjectProps) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-primary-900/20 to-primary-800/10 border theme-border-accent-important theme-hover-border-accent transition-all duration-300"
+      className="p-6 rounded-xl bg-primary-900/50 border border-primary-500/30 hover:border-primary-400/50 transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -198,27 +214,28 @@ const ProjectCard = ({ project }: ProjectProps) => {
       <h3 className="text-xl font-bold text-base-inverse mb-3 text-center">
         {t(`collaborationPage.fundedProjects.${project.title}`)}
       </h3>
-      <p className="theme-text-muted text-center mb-5">
+      <p className="text-primary-300/80 text-sm text-center mb-5">
         {t(`collaborationPage.fundedProjectsDescriptions.${project.title}`, project.description)}
       </p>
-      <div className="w-full bg-primary-900/30 rounded-full h-2.5 mb-2">
+      <div className="w-full bg-primary-900/30 rounded-full h-2 mb-2">
         <div
-          className="bg-gradient-to-r from-primary-300 to-primary-500 h-2.5 rounded-full"
+          className="bg-gradient-to-r from-primary-300 to-primary-500 h-2 rounded-full"
           style={{ width: `${project.progress}%` }}
-        ></div>
+        />
       </div>
-      <div className="flex justify-between text-xs theme-text-muted">
+      <div className="flex justify-between text-xs text-primary-400/70">
         <span>{t('collaborationPage.progress')}</span>
         <span>{project.progress}%</span>
       </div>
     </motion.div>
   );
 };
+
 const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      className="p-6 rounded-xl bg-gradient-to-br from-primary-900/20 to-primary-800/10 border theme-border-accent-important text-center transition-all duration-300"
+      className="p-6 rounded-xl bg-primary-900/50 border border-primary-500/30 text-center transition-all duration-300"
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}
@@ -227,24 +244,27 @@ const MetricCard = ({ metric }: { metric: (typeof impactMetrics)[0] }) => {
     >
       <div className="flex justify-center mb-4">{metric.icon}</div>
       <h3 className="text-3xl font-bold text-base-inverse mb-1">{metric.metric}</h3>
-      <p className="theme-text-muted">{t(`collaborationPage.impactMetrics.${metric.labelKey}`)}</p>
+      <p className="text-primary-300/80 text-sm">
+        {t(`collaborationPage.impactMetrics.${metric.labelKey}`)}
+      </p>
     </motion.div>
   );
 };
+
 interface Sponsor {
   name: string;
   tier: string;
   link: string;
 }
+
 const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
   <motion.a
     href={sponsor.link}
     target="_blank"
     rel="noopener noreferrer"
-    className="p-3 md:p-6 rounded-xl bg-gradient-to-br from-primary-900/20 to-primary-800/10 border theme-border-accent theme-hover-border-accent transition-all duration-300 text-center group flex flex-col items-center justify-center"
-    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+    className="p-3 md:p-5 rounded-xl bg-primary-900/50 border border-primary-500/30 hover:border-primary-400/50 transition-all duration-300 text-center group flex flex-col items-center justify-center cursor-pointer"
+    whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
   >
-    {/* Try to show logo image when available in /banner; filenames vary so map common names to files */}
     {(() => {
       const normalize = (s: string) =>
         s
@@ -272,24 +292,41 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
             src={encodeURI(logo)}
             alt={sponsor.name}
             className="object-contain mb-2"
-            style={{ width: 140, height: 80 }}
+            style={{ width: 120, height: 64 }}
           />
         );
       }
-      return <div className="text-base-inverse text-lg font-semibold">{sponsor.name}</div>;
+      return <div className="text-base-inverse text-base font-semibold">{sponsor.name}</div>;
     })()}
-    <div className="text-xs theme-text-accent mt-2">{sponsor.tier}</div>
+    <div className="text-xs text-primary-400/70 mt-1">{sponsor.tier}</div>
   </motion.a>
 );
+
 const ContactForm = () => {
   const { t } = useTranslation();
-  const contactEmail = `finance.cia${'@'}ulaval.ca`;
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [company, setCompany] = useState('');
+  const [message, setMessage] = useState('');
+
+  const canSubmit = name.trim().length > 0 && email.trim().length > 0;
+
   const handleContactClick = () => {
-    window.location.href = `mailto:${contactEmail}`;
+    const subject = encodeURIComponent(
+      `Partenariat - ${name.trim()}${company.trim() ? ` (${company.trim()})` : ''}`
+    );
+    const body = encodeURIComponent(
+      `Nom : ${name.trim()}\nEntreprise : ${company.trim() || '—'}\nEmail : ${email.trim()}\n\n${message.trim()}`
+    );
+    window.location.href = `mailto:finance.cia@ulaval.ca?subject=${subject}&body=${body}`;
   };
+
+  const inputClass =
+    'w-full p-3 bg-primary-900/40 border border-primary-500/40 hover:border-primary-400/60 rounded-lg text-base-inverse placeholder:text-primary-500/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus:border-accent-500/50 transition-colors';
+
   return (
     <motion.div
-      className="p-8 rounded-xl bg-gradient-to-br from-primary-900/30 to-primary-800/20 border border-primary-800/70 theme-border-accent-important transition-all duration-300"
+      className="p-8 rounded-xl bg-primary-900/60 border border-primary-500/30"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
@@ -298,66 +335,72 @@ const ContactForm = () => {
       <h3 className="text-2xl font-bold text-base-inverse mb-6 text-center">
         {t('collaborationPage.contactTitle')}
       </h3>
-      <div className="space-y-4 mb-6">
+      <div className="space-y-3 mb-6">
         <input
           type="text"
           placeholder={t('collaborationPage.contactName')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className={inputClass}
         />
         <input
           type="email"
           placeholder={t('collaborationPage.contactEmail')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={inputClass}
         />
         <input
           type="text"
           placeholder={t('collaborationPage.contactCompany')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 text-base-inverse"
+          value={company}
+          onChange={(e) => setCompany(e.target.value)}
+          className={inputClass}
         />
         <textarea
           placeholder={t('collaborationPage.contactMessage')}
-          className="w-full p-3 bg-primary-900/20 border theme-border-accent-important rounded-lg theme-focus-border-accent focus:outline-none text-base-inverse h-32"
-        ></textarea>
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className={`${inputClass} h-32 resize-none`}
+        />
       </div>
       <motion.button
-        className="w-full py-3 bg-accent-500 hover:bg-accent-300 rounded-lg text-base-inverse font-semibold transition-colors"
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.98 }}
+        className="w-full py-3 bg-accent-500 hover:bg-accent-400 rounded-lg text-base-inverse font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+        whileHover={canSubmit ? { scale: 1.02 } : undefined}
+        whileTap={canSubmit ? { scale: 0.98 } : undefined}
         type="button"
+        disabled={!canSubmit}
         onClick={handleContactClick}
-        aria-label={`Contact ${contactEmail}`}
+        aria-label={`Contact finance.cia@ulaval.ca`}
       >
         {t('collaborationPage.contactButton')}
       </motion.button>
     </motion.div>
   );
 };
+
 function Collaboration() {
   const { t } = useTranslation();
   const contactRef = useRef<HTMLDivElement>(null);
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
   return (
     <>
       <Helmet>
-        {/* Titre */}
         <title>
           Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval | CIA ULaval
         </title>
-        {/* Description */}
         <meta
           name="description"
           content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants d'intelligence artificielle. Offres Bronze, Silver, Gold. Visibilité, networking et accès aux talents IA."
         />
-        {/* Mots-clés */}
         <meta
           name="keywords"
           content="sponsoring IA, partenariat Club IA, collaboration entreprise, financement projets IA, sponsoring étudiant, Bronze Silver Gold, networking IA, talents IA, Université Laval, recherche IA"
         />
-        {/* Auteur */}
         <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
-        {/* Open Graph pour Facebook/LinkedIn */}
         <meta
           property="og:title"
           content="Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval"
@@ -370,7 +413,6 @@ function Collaboration() {
         <meta property="og:url" content="https://cia.ift.ulaval.ca/collaboration" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Club IA - Université Laval" />
-        {/* Twitter Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
@@ -381,32 +423,32 @@ function Collaboration() {
           content="Devenez partenaire du Club IA ULaval ! Sponsorisez nos projets innovants et accédez aux talents IA."
         />
         <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
-        {/* URL canonique */}
         <link rel="canonical" href="https://cia.ift.ulaval.ca/collaboration" />
-        {/* Langue */} <html lang="fr" />
-        {/* Données structurées JSON-LD pour Google */}
+        <html lang="fr" />
         <script type="application/ld+json">
-          {` { "@context": "https://schema.org", "@type": "WebPage", "name": "Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval", "url": "https://cia.ift.ulaval.ca/collaboration", "description": "Page de partenariats et sponsoring du Club IA ULaval avec offres Bronze, Silver, Gold", "mainEntity": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ], "seeks": { "@type": "Partnership", "name": "Sponsoring et Partenariats IA", "description": "Recherche de partenaires pour financer et soutenir nos projets d'intelligence artificielle" }, "sponsor": [ { "@type": "Organization", "name": "Université Laval", "category": "Platinum" }, { "@type": "Organization", "name": "AESGUL", "category": "Gold" }, { "@type": "Organization", "name": "ASETIN", "category": "Gold" }, { "@type": "Organization", "name": "MonAvenir TI", "category": "Gold" }, { "@type": "Organization", "name": "Tracel AI", "category": "Silver" }, { "@type": "Organization", "name": "SiFi Labs", "category": "Silver" }, { "@type": "Organization", "name": "Ingeno", "category": "Gold" }, { "@type": "Organization", "name": "Vooban", "category": "Bronze" }, { "@type": "Organization", "name": "CRTI", "category": "Gold" }, { "@type": "Organization", "name": "Service du développement professionnel - Université Laval", "category": "Gold" } ] }, "offers": [ { "@type": "Offer", "name": "Sponsoring Bronze", "price": "1500", "priceCurrency": "CAD", "description": "Logo sur site web, événements, t-shirts, réseaux sociaux", "category": "Sponsorship" }, { "@type": "Offer", "name": "Sponsoring Silver", "price": "2500", "priceCurrency": "CAD", "description": "Avantages Bronze + invitations événements + promotion ads", "category": "Sponsorship" }, { "@type": "Offer", "name": "Sponsoring Gold", "price": "3500", "priceCurrency": "CAD", "description": "Avantages Silver + sponsoring projet + CV book + logo projets", "category": "Sponsorship" } ], "potentialAction": { "@type": "ContactAction", "target": "https://cia.ift.ulaval.ca/collaboration#contact", "name": "Devenir Partenaire" }, "about": [ { "@type": "Thing", "name": "Intelligence Artificielle" }, { "@type": "Thing", "name": "Projets Étudiants" }, { "@type": "Thing", "name": "Recherche et Développement" }, { "@type": "Thing", "name": "Partenariats Industriels" } ] } `}
+          {` { "@context": "https://schema.org", "@type": "WebPage", "name": "Partenariats et Sponsoring - Club Intelligence Artificielle Université Laval", "url": "https://cia.ift.ulaval.ca/collaboration" } `}
         </script>
       </Helmet>
+
       <section className="relative overflow-hidden">
         <h1 className="sr-only">{t('collaborationPage.mainTitle')} | Support AI Research</h1>
         <div
           className="absolute top-40 left-20 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl -z-10"
           aria-hidden="true"
-        ></div>
+        />
         <div
           className="absolute top-96 right-20 w-80 h-80 bg-primary-800/10 rounded-full blur-3xl -z-10"
           aria-hidden="true"
-        ></div>
+        />
+
         <motion.div
-          className="theme-content-shell bg-gradient-to-br shadow-xl"
+          className="theme-content-shell shadow-xl"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          {/* Hero Section - Changé animate en whileInView */}
+          {/* Hero */}
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -422,11 +464,12 @@ function Collaboration() {
             <h2 className="text-3xl font-bold text-base-inverse mb-6">
               {t('collaborationPage.subtitle')}
             </h2>
-            <p className="text-xl theme-text-secondary max-w-3xl mx-auto">
+            <p className="text-xl text-primary-300/80 max-w-3xl mx-auto">
               {t('collaborationPage.intro')}
             </p>
           </motion.div>
-          {/* Impact Metrics Section */}
+
+          {/* Impact Metrics */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -443,7 +486,26 @@ function Collaboration() {
               ))}
             </div>
           </motion.div>
-          {/* Sponsorship Tiers Section */}
+
+          {/* Current Sponsors — social proof BEFORE the pricing ask */}
+          <motion.div
+            className="mb-20"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
+              {t('collaborationPage.currentSponsorsTitle')}
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-5">
+              {currentSponsors.map((sponsor, index) => (
+                <CurrentSponsorLogo key={index} sponsor={sponsor} />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Sponsorship Tiers */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -460,7 +522,8 @@ function Collaboration() {
               ))}
             </div>
           </motion.div>
-          {/* Funded Projects Section */}
+
+          {/* Funded Projects */}
           <motion.div
             className="mb-20"
             initial={{ opacity: 0 }}
@@ -477,23 +540,7 @@ function Collaboration() {
               ))}
             </div>
           </motion.div>
-          {/* Current Sponsors Section */}
-          <motion.div
-            className="mb-20"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
-              {t('collaborationPage.currentSponsorsTitle')}
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-6 px-4 md:px-6">
-              {currentSponsors.map((sponsor, index) => (
-                <CurrentSponsorLogo key={index} sponsor={sponsor} />
-              ))}
-            </div>
-          </motion.div>
+
           {/* Contact Section */}
           <motion.div
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -506,8 +553,8 @@ function Collaboration() {
               <h3 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-500">
                 {t('collaborationPage.readyTitle')}
               </h3>
-              <p className="theme-text-secondary mb-6">{t('collaborationPage.readyText1')}</p>
-              <p className="theme-text-secondary mb-6">{t('collaborationPage.readyText2')}</p>
+              <p className="text-primary-300/80 mb-6">{t('collaborationPage.readyText1')}</p>
+              <p className="text-primary-300/80 mb-6">{t('collaborationPage.readyText2')}</p>
               <div className="flex items-center gap-4">
                 <CreditCard className="w-6 h-6 theme-text-accent" />
                 <span className="text-base-inverse">{t('collaborationPage.flexiblePayment')}</span>
@@ -522,4 +569,5 @@ function Collaboration() {
     </>
   );
 }
+
 export default Collaboration;
