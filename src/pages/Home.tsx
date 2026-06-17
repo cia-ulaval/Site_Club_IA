@@ -29,13 +29,13 @@ function Home() {
       link: '/f1tenth',
     },
     {
-      title: t('home.projects.mangaai.title'),
-      image: '/project/mangaai2.webp',
+      title: t('home.projects.drone.title'),
+      image: '/project/drone.webp',
       description: t(
-        'home.projects.mangaai.homeDescription',
-        'Translate manga panels with AI using OCR, language processing, and context-aware text replacement.'
+        'home.projects.drone.homeDescription',
+        'Design and build an autonomous FPV drone to compete in a laser tag competition.'
       ),
-      link: '/mangaai',
+      link: '/drone',
     },
   ];
   return (

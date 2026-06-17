@@ -220,8 +220,11 @@ const Management: React.FC = () => {
       name: 'Amen Ouannes',
       role: t('management.roles.projectsManager'),
       mission: t('management.missions.amen'),
-      imgSrc: '/portrait/AmenOuannes.webp',
+      imgSrc: '/portrait/Amen.jpeg',
       linkedIn: 'https://www.linkedin.com/in/amenallah-massarra-ouannes/',
+      portfolio: 'https://my-portfolio-dun-three-32.vercel.app/',
+      github: 'https://github.com/AmenOuannes',
+      additionalDetails: t('management.aboutMe.amen'),
     },
     {
       name: 'Benjamin Sekpona-Medjago',

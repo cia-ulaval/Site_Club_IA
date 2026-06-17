@@ -51,6 +51,7 @@
       },
       "drone": {
         "title": "Drone - Laser Tag",
+        "homeDescription": "Design and build an autonomous FPV drone to compete in a laser tag competition.",
         "description": "Build a turnkey laser system for an autonomous FPV competition: 180° sensor, emission module, custom PCB, and centralized management software. Academic partner: Philippe Giguère. Team Lead: Anthony Lavertu."
       },
       "sgd-beyond": {
@@ -237,6 +238,7 @@
     },
     "aboutMe": {
       "dereck": "Hi, my name is Dereck, I am the creator of this website! I am very passionate about computer science in general but mostly AI. Outside work/school, I do mixed martial arts and love neuroscience and chess. Feel free to contact me if you have questions about the club, requests for the website or want to chat!",
+      "amen": "Hi, my name is Amen, I'm a software engineering student at Université Laval and an AI developer passionate about building intelligent systems, from robotics to real-world applications in machine learning. Outside of work and school, I lead tech communities like IEEE, project at the CIA and I enjoy exploring innovation at the intersection of AI, embedded systems, and human-machine interaction.",
       "yves": "Hi, my name is Yves, marketing leader at the club. Passionate about computer science and development, I am particularly interested in everything related to innovation and artificial intelligence.\nOutside of academics and work, I am very invested in sports, especially basketball and running. I also place great importance on music, particularly piano. Above all, Jesus Christ and my faith in Him holds the central place in my life.\nI am always open to discussions, whether to talk about AI, collaborate on projects, or contribute to the club's growth. Feel free to contact me!"
     },
     "missions": {
