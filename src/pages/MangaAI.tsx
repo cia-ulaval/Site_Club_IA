@@ -324,12 +324,7 @@ function MangaAI() {
             </motion.p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 px-2 md:px-4">
               {mangaAITeam.map((member, idx) => (
-                <TeamMemberCard
-                  key={idx}
-                  icon={member.icon}
-                  title={member.title}
-                  description={member.description}
-                />
+                <TeamMemberCard key={idx} title={member.title} description={member.description} />
               ))}
             </div>
           </section>

@@ -1,24 +1,17 @@
-import { ReactNode } from 'react';
-
 interface TeamMemberCardProps {
-  icon: ReactNode;
+  /** Person's name. */
   title: string;
-  description: string;
+  /** Role or short blurb (optional). */
+  description?: string;
 }
 
-export default function TeamMemberCard({ icon, title, description }: TeamMemberCardProps) {
+export default function TeamMemberCard({ title, description }: TeamMemberCardProps) {
   return (
-    <div
-      className="flex flex-col items-center justify-between bg-gradient-to-br from-primary-900/30 to-base/30 rounded-2xl shadow-lg px-4 py-4 mx-2 my-3 border border-primary-500 overflow-hidden w-full min-w-[140px] max-w-[200px] min-h-[180px]"
-      style={{ boxShadow: '0 2px 12px 0 rgb(var(--color-primary-500) / 0.15)' }}
-    >
-      <div className="theme-text-accent mb-2 flex justify-center">{icon}</div>
-      <h3 className="text-sm font-semibold text-accent-300 mb-1 text-center break-words">
-        {title}
-      </h3>
-      <p className="theme-text-muted text-xs text-center break-words min-h-[32px]">
-        {description || '\u00A0'}
-      </p>
+    <div className="cia-card cia-card-content flex flex-col items-center justify-center text-center w-full min-w-[150px] max-w-[210px] min-h-[120px]">
+      <h3 className="cia-heading-card text-neutral-100 break-words">{title}</h3>
+      {description && (
+        <p className="cia-body-sm text-neutral-400 mt-1 break-words">{description}</p>
+      )}
     </div>
   );
 }

@@ -1,69 +1,26 @@
 import { motion } from 'framer-motion';
-import { Users, Lightbulb, Target, Braces, Rotate3d, UserRoundCog } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { useTranslation } from 'react-i18next';
 import BackToProjects from '../components/BackToProjects';
+import { useMotion } from '../hooks/useMotion';
 function F1Tenth() {
   const { t } = useTranslation();
+  const m = useMotion();
   const team1 = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Deoth Guei',
-      description: t('f1tenth.team1.deoth.description'),
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: 'Théophile Bertelot',
-      description: t('f1tenth.team1.theophile.description'),
-    },
-    {
-      icon: <UserRoundCog className="w-8 h-8" />,
-      title: 'Felix Ly',
-      description: t('f1tenth.team1.felix.description'),
-    },
-    {
-      icon: <Rotate3d className="w-8 h-8" />,
-      title: 'Melek Sebri',
-      description: t('f1tenth.team1.melek.description'),
-    },
-    {
-      icon: <Braces className="w-8 h-8" />,
-      title: 'Amy Randianodiasan',
-      description: t('f1tenth.team1.amy.description'),
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Kahina Moulfi',
-      description: t('f1tenth.team1.kahina.description'),
-    },
+    { title: 'Deoth Guei', description: t('f1tenth.team1.deoth.description') },
+    { title: 'Théophile Bertelot', description: t('f1tenth.team1.theophile.description') },
+    { title: 'Felix Ly', description: t('f1tenth.team1.felix.description') },
+    { title: 'Melek Sebri', description: t('f1tenth.team1.melek.description') },
+    { title: 'Amy Randianodiasan', description: t('f1tenth.team1.amy.description') },
+    { title: 'Kahina Moulfi', description: t('f1tenth.team1.kahina.description') },
   ];
   const team2 = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: 'Alban Sarrazin',
-      description: t('f1tenth.team2.alban.description'),
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: 'Alexandre Laforest',
-      description: t('f1tenth.team2.alexandre.description'),
-    },
-    {
-      icon: <UserRoundCog className="w-8 h-8" />,
-      title: 'Jade Piller Cammal',
-      description: t('f1tenth.team2.jade.description'),
-    },
-    {
-      icon: <Rotate3d className="w-8 h-8" />,
-      title: 'Karima Habbout',
-      description: t('f1tenth.team2.karima.description'),
-    },
-    {
-      icon: <Braces className="w-8 h-8" />,
-      title: 'Simon Gouin',
-      description: t('f1tenth.team2.simon.description'),
-    },
+    { title: 'Alban Sarrazin', description: t('f1tenth.team2.alban.description') },
+    { title: 'Alexandre Laforest', description: t('f1tenth.team2.alexandre.description') },
+    { title: 'Jade Piller Cammal', description: t('f1tenth.team2.jade.description') },
+    { title: 'Karima Habbout', description: t('f1tenth.team2.karima.description') },
+    { title: 'Simon Gouin', description: t('f1tenth.team2.simon.description') },
   ];
   return (
     <>
@@ -115,84 +72,53 @@ function F1Tenth() {
         </script>
       </Helmet>
       <section className="relative overflow-hidden">
-        <motion.div
-          className="theme-content-shell theme-surface-primary shadow-xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div>
-            <BackToProjects />
-            <h1 className="sr-only">{t('f1tenth.title', 'F1Tenth')}</h1>
-            <motion.section
-              className="mb-12 sm:mb-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-10">
-                <div className="w-full lg:w-1/2 lg:order-2">
+        <motion.div className="theme-content-shell theme-surface-primary shadow-xl" {...m.fadeIn}>
+          <BackToProjects />
+          {/* Hero Section */}
+          <motion.section className="cia-section" {...m.slideUp}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="flex flex-col justify-center">
+                <h1 className="cia-heading-hero mb-4">
+                  <span className="theme-text-gradient">{t('f1tenth.hero.title')}</span>
+                </h1>
+              </div>
+              <div className="flex justify-center">
+                <div className="theme-media-frame max-w-lg">
                   <img
                     src="/project/f1tenthcar.webp"
                     alt={t('f1tenth.hero.imageAlt')}
-                    className="w-full rounded-xl shadow-2xl"
+                    className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="w-full lg:w-1/2 flex flex-col justify-center text-justify space-y-6">
-                  <h1 className="cia-heading-hero">
-                    <span className="theme-text-gradient">{t('f1tenth.hero.title')}</span>
-                  </h1>
-                  <div className="h-1 w-24 rounded-full bg-gradient-to-r from-accent-500 to-primary-500" />
-                  <div className="space-y-4">
-                    {/* <p className="theme-text-muted text-base lg:text-lg leading-relaxed"> {t("f1tenth.hero.description1")} </p> <p className="theme-text-muted text-base leading-relaxed"> {t("f1tenth.hero.description2")} </p> */}
-                  </div>
-                </div>
               </div>
-            </motion.section>
-            <motion.section
-              id="team1"
-              className="mb-12 sm:mb-20 mt-12 sm:mt-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
-                {t('f1tenth.team1.title')}
-              </h2>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
-                {team1.map((value, index) => (
-                  <TeamMemberCard
-                    key={index}
-                    icon={value.icon}
-                    title={value.title}
-                    description={value.description}
-                  />
-                ))}
-              </div>
-            </motion.section>
-            <motion.section
-              id="team2"
-              className="mb-12 sm:mb-20 mt-12 sm:mt-20"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1 }}
-            >
-              <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient text-center mb-8 sm:mb-12">
-                {t('f1tenth.team2.title')}
-              </h2>
-              <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-2 md:px-6">
-                {team2.map((value, index) => (
-                  <TeamMemberCard
-                    key={index}
-                    icon={value.icon}
-                    title={value.title}
-                    description={value.description}
-                  />
-                ))}
-              </div>
-            </motion.section>
-            {/* <motion.section id="sponsor" className="mt-20 mb-12 sm:mb-20 text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} > <h2 className="text-2xl sm:text-3xl font-bold theme-text-gradient mb-6"> {t("f1tenth.sponsor.title")} </h2> <div className="flex flex-col items-center"> <div className="flex justify-center items-center gap-4 mb-4"> <img src="/project/vaul.webp" alt="VAUL Logo" className="w-40 h-auto" /> <img src="/banner/sifi.webp" alt="Sifi Labs Logo" className="w-40 h-auto" /> </div> <p className="theme-text-muted max-w-2xl"> {t("f1tenth.sponsor.description")} </p> </div> </motion.section> */}
-          </div>
+            </div>
+          </motion.section>
+          {/* Team 1 Section */}
+          <motion.section id="team1" className="cia-section" {...m.slideUp}>
+            <h2 className="cia-heading-section text-neutral-100 text-center mb-8">
+              {t('f1tenth.team1.title')}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {team1.map((value, index) => (
+                <motion.div key={index} {...m.stagger(index)}>
+                  <TeamMemberCard title={value.title} description={value.description} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+          {/* Team 2 Section */}
+          <motion.section id="team2" className="cia-section" {...m.slideUp}>
+            <h2 className="cia-heading-section text-neutral-100 text-center mb-8">
+              {t('f1tenth.team2.title')}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {team2.map((value, index) => (
+                <motion.div key={index} {...m.stagger(index)}>
+                  <TeamMemberCard title={value.title} description={value.description} />
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
         </motion.div>
       </section>
     </>

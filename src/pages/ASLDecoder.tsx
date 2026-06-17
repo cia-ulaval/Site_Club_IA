@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import { Hand, Camera, Cpu, CheckCircle, Users, Brain } from 'lucide-react';
+import { Camera, Cpu, CheckCircle, Users, Brain, Hand } from 'lucide-react';
 import TeamMemberCard from '../components/TeamMemberCard';
 import BackToProjects from '../components/BackToProjects';
+import { useMotion } from '../hooks/useMotion';
 function ASLDecoder() {
   const { t } = useTranslation();
+  const m = useMotion();
   const teamMembers = [
     { name: 'Amen Ouannes', role: 'Team Lead' },
     { name: 'Vincent Bellemare' },
@@ -15,17 +17,17 @@ function ASLDecoder() {
   ];
   const features = [
     {
-      icon: <Camera className="w-8 h-8 theme-text-accent" />,
+      icon: Camera,
       title: t('asldecoder.features.camera.title'),
       description: t('asldecoder.features.camera.description'),
     },
     {
-      icon: <Brain className="w-8 h-8 theme-text-accent" />,
+      icon: Brain,
       title: t('asldecoder.features.ai.title'),
       description: t('asldecoder.features.ai.description'),
     },
     {
-      icon: <Hand className="w-8 h-8 theme-text-accent" />,
+      icon: Hand,
       title: t('asldecoder.features.gestures.title'),
       description: t('asldecoder.features.gestures.description'),
     },
@@ -45,20 +47,10 @@ function ASLDecoder() {
         <link rel="canonical" href="https://cia.ift.ulaval.ca/asl-decoder" />
       </Helmet>
       <section className="relative overflow-hidden">
-        <motion.div
-          className="theme-content-shell theme-surface-primary shadow-xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div className="theme-content-shell theme-surface-primary shadow-xl" {...m.fadeIn}>
           <BackToProjects />
           {/* Completed Badge */}
-          <motion.div
-            className="flex justify-center mb-6"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <motion.div className="flex justify-center mb-6" {...m.slideUp}>
             <div className="flex items-center gap-2 px-4 py-2 bg-success-500/20 border border-success-500/50 rounded-full">
               <CheckCircle className="w-5 h-5 text-success-400" />
               <span className="text-success-400 font-semibold">
@@ -67,151 +59,90 @@ function ASLDecoder() {
             </div>
           </motion.div>
           {/* Hero Section */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <motion.section className="cia-section" {...m.slideUp}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left Side - Text Content */}
               <div className="space-y-6">
-                <div>
-                  <h1 className="cia-heading-hero mb-4">
-                    <span className="theme-text-gradient">ASL Decoder</span>
-                  </h1>
-                  <h2 className="text-2xl md:text-3xl font-semibold theme-text-secondary mb-6">
-                    {t('asldecoder.hero.subtitle')}
-                  </h2>
-                </div>
-                <motion.p
-                  className="text-lg theme-text-muted leading-relaxed"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                >
+                <h1 className="cia-heading-hero mb-4">
+                  <span className="theme-text-gradient">ASL Decoder</span>
+                </h1>
+                <h2 className="cia-heading-section text-neutral-100">
+                  {t('asldecoder.hero.subtitle')}
+                </h2>
+                <p className="cia-body-lead text-neutral-200 leading-relaxed">
                   {t('asldecoder.hero.description')}
-                </motion.p>
-                {/* Team Lead */}
-                <motion.div
-                  className="flex items-center gap-3 theme-text-secondary"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                >
+                </p>
+                <div className="flex items-center gap-3 text-neutral-300">
                   <Users className="w-5 h-5 theme-text-accent" />
                   <span>
                     <strong>Team Lead:</strong> Amen Ouannes
                   </span>
-                </motion.div>
+                </div>
               </div>
-              {/* Right Side - Hero Image */}
-              <motion.div
-                className="flex justify-center lg:justify-end"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <div className="relative">
+              <div className="flex justify-center">
+                <div className="theme-media-frame max-w-md">
                   <img
                     src="/project/asl.webp"
                     alt="ASL Decoder"
-                    className="w-full max-w-md rounded-2xl shadow-xl border border-primary-500/30"
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-500/20 to-primary-900/20 rounded-2xl blur opacity-50 -z-10" />
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.section>
           {/* Features Section */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl font-bold text-center mb-12 theme-text-gradient">
+          <motion.section className="cia-section" {...m.slideUp}>
+            <h2 className="cia-heading-section text-neutral-100 text-center mb-8">
               {t('asldecoder.features.title')}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-primary-500/10 to-transparent rounded-2xl p-6 !border theme-border-accent-important"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-14 h-14 bg-primary-500/20 rounded-xl flex items-center justify-center mb-4">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-accent-300 mb-2">{feature.title}</h3>
-                  <p className="theme-text-muted">{feature.description}</p>
-                </motion.div>
-              ))}
+              {features.map((feature, index) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.div
+                    key={index}
+                    className="cia-card cia-card-content"
+                    {...m.stagger(index)}
+                  >
+                    <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 theme-text-accent" />
+                    </div>
+                    <h3 className="cia-heading-card text-neutral-100 mb-2">{feature.title}</h3>
+                    <p className="text-neutral-300">{feature.description}</p>
+                  </motion.div>
+                );
+              })}
             </div>
           </motion.section>
           {/* Technology Stack */}
-          <motion.section
-            className="mb-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="bg-gradient-to-br from-primary-500/10 to-transparent rounded-3xl p-8 !border theme-border-accent-important">
+          <motion.section className="cia-section" {...m.slideUp}>
+            <div className="cia-card cia-card-content">
               <div className="flex items-center gap-3 mb-6">
-                <Cpu className="w-8 h-8 theme-text-accent" />
-                <h2 className="text-2xl font-bold text-accent-300">{t('asldecoder.tech.title')}</h2>
+                <Cpu className="w-6 h-6 theme-text-accent" />
+                <h2 className="cia-heading-section text-neutral-100">
+                  {t('asldecoder.tech.title')}
+                </h2>
               </div>
               <div className="flex flex-wrap gap-3">
-                {(
-                  t('asldecoder.tech.items', {
-                    returnObjects: true,
-                  }) as string[]
-                ).map((item, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-primary-500/10 text-primary-300 rounded-lg !border theme-border-accent-important"
-                  >
-                    {item}
-                  </span>
-                ))}
+                {(t('asldecoder.tech.items', { returnObjects: true }) as string[]).map(
+                  (item, index) => (
+                    <span key={index} className="cia-badge-primary">
+                      {item}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           </motion.section>
           {/* Team Section */}
-          <motion.section
-            className="py-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold theme-text-gradient mb-4">
-                {t('asldecoder.team.title')}
-              </h2>
-              <p className="theme-text-muted text-lg">{t('asldecoder.team.subtitle')}</p>
-            </div>
-            <div className="flex flex-wrap justify-center max-w-full gap-4">
+          <motion.section className="cia-section" {...m.slideUp}>
+            <h2 className="cia-heading-section text-neutral-100 text-center mb-4">
+              {t('asldecoder.team.title')}
+            </h2>
+            <p className="text-neutral-400 text-center mb-8">{t('asldecoder.team.subtitle')}</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               {teamMembers.map((member, index) => (
-                <motion.div
-                  key={index}
-                  className="flex-shrink-0"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.6 }}
-                  viewport={{ once: true }}
-                >
-                  <TeamMemberCard
-                    icon={<Hand className="w-8 h-8" />}
-                    title={member.name}
-                    description={member.role || ''}
-                  />
+                <motion.div key={index} {...m.stagger(index)}>
+                  <TeamMemberCard title={member.name} description={member.role} />
                 </motion.div>
               ))}
             </div>

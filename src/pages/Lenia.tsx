@@ -290,11 +290,7 @@ function Lenia() {
                   transition={{ delay: 0.1 * index, duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <TeamMemberCard
-                    icon={member.icon}
-                    title={member.title}
-                    description={member.description}
-                  />
+                  <TeamMemberCard title={member.title} description={member.description} />
                 </motion.div>
               ))}
             </div>

@@ -153,11 +153,7 @@ function DecisionTree() {
                       transition={{ delay: 0.07 * index, duration: 0.5 }}
                       viewport={{ once: true }}
                     >
-                      <TeamMemberCard
-                        icon={member.icon}
-                        title={member.title}
-                        description={member.description}
-                      />
+                      <TeamMemberCard title={member.title} description={member.description} />
                     </motion.div>
                   ))}
                 </div>
