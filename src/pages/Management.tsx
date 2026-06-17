@@ -13,15 +13,8 @@ const Management: React.FC = () => {
   // Président et Vice-Président
   const president: TeamMember[] = [
     {
-      name: "Nathaniel D'Amours",
-      role: t('management.roles.president'),
-      mission: t('management.missions.nathaniel'),
-      imgSrc: '/portrait/Nathaniel.webp',
-      linkedIn: 'https://www.linkedin.com/in/nathaniel-damours',
-    },
-    {
       name: 'Cyrille Bernier',
-      role: t('management.roles.vicePresident'),
+      role: t('management.roles.president'),
       imgSrc: '/portrait/CyrilleBernier.webp',
       linkedIn: 'https://www.linkedin.com/in/cyrille-bernier-31208a252/',
     },
@@ -47,13 +40,6 @@ const Management: React.FC = () => {
   // Pôle Talents
   const talentResponsables: TeamMember[] = [
     {
-      name: 'Jade Piller Cammal',
-      role: t('management.roles.talentsLeader'),
-      mission: t('management.missions.jade'),
-      imgSrc: '/portrait/JadePillerCammal.webp',
-      linkedIn: 'https://linkedin.com/in/jade-piller-cammal-242b88261/',
-    },
-    {
       name: 'Douae Sakkat',
       role: t('management.roles.recruitmentManager'),
       mission: t('management.missions.douae'),
@@ -75,9 +61,9 @@ const Management: React.FC = () => {
     },
     {
       name: 'Rana Azemdroub',
-      role: t('management.roles.engagementManager'),
+      role: t('management.roles.talentsLeader'),
       mission: t('management.missions.rana'),
-      imgSrc: '/portrait/RanaAzemdroub.webp',
+      imgSrc: '/portrait/RanaAzemdroub.jpg',
       linkedIn: 'https://www.linkedin.com/in/rana-azemdroub/',
     },
   ];
@@ -106,7 +92,7 @@ const Management: React.FC = () => {
       linkedIn: '',
     },
     {
-      name: 'Adriana Maria Paternina Paez',
+      name: 'Adriana Paternina',
       role: t('management.roles.treasuryManager'),
       mission: t('management.missions.adriana'),
       imgSrc: '/portrait/AdrianaMaria.webp',
@@ -156,7 +142,7 @@ const Management: React.FC = () => {
       name: 'Dereck Bélanger',
       role: t('management.roles.websiteManager'),
       mission: t('management.missions.dereck'),
-      imgSrc: '/portrait/Dereck.webp',
+      imgSrc: '/portrait/Dereck.JPG',
       linkedIn: 'https://www.linkedin.com/in/dereck-bélanger-437259338/',
       github: 'https://github.com/DereckBelanger152',
       portfolio: 'https://dereckbelanger.me',
@@ -172,13 +158,6 @@ const Management: React.FC = () => {
 
   // Pôle Activités
   const activitiesResponsables: TeamMember[] = [
-    {
-      name: 'Éléonore Imbeault',
-      role: t('management.roles.activitiesLeader'),
-      mission: t('management.missions.eleonore'),
-      imgSrc: '/portrait/ÉléonoreImbeault.webp',
-      linkedIn: '',
-    },
     {
       name: 'Ulysse Gagné',
       role: t('management.roles.activitiesLeader'),
@@ -215,30 +194,21 @@ const Management: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/nora-belattar-77243b302/',
     },
     {
-      name: 'Peut-être toi ?',
+      name: 'Tiana Daniele Tekamgueu Epome',
       role: t('management.roles.readingGroupManager'),
-      imgSrc: '',
+      imgSrc: '/portrait/TianaDaniele.jpg',
       linkedIn: '',
-      isVacant: true,
     },
     {
-      name: 'Peut-être toi ?',
+      name: 'Khaled Ait Fella',
       role: t('management.roles.competitionsManager'),
-      imgSrc: '',
+      imgSrc: '/portrait/KhaledAit.jpg',
       linkedIn: '',
-      isVacant: true,
     },
   ];
 
   // Pôle Projets
   const projectLeads: TeamMember[] = [
-    {
-      name: 'Jordan Mathieu',
-      role: t('management.roles.projectsLeader'),
-      mission: t('management.missions.jordan'),
-      imgSrc: '/portrait/Jordan.webp',
-      linkedIn: 'https://www.linkedin.com/in/jordan-math/',
-    },
     {
       name: 'Guilhem Ané',
       role: t('management.roles.trainingsManager'),
@@ -254,7 +224,7 @@ const Management: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/amenallah-massarra-ouannes/',
     },
     {
-      name: 'Benjamin Sekpona',
+      name: 'Benjamin Sekpona-Medjago',
       role: t('management.roles.projectsManager'),
       mission: '',
       imgSrc: '/portrait/BenjaminSekpona.webp',
@@ -286,6 +256,13 @@ const Management: React.FC = () => {
       role: t('management.roles.projectsManager'),
       mission: '',
       imgSrc: '/portrait/TeddyKana.webp',
+      linkedIn: '',
+    },
+    {
+      name: 'Tristan Lépine',
+      role: t('management.roles.trainingsManager'),
+      mission: '',
+      imgSrc: '/portrait/TristanLepine.png',
       linkedIn: '',
     },
   ];
@@ -542,15 +519,9 @@ const Management: React.FC = () => {
                 "member": [
                   {
                     "@type": "Person",
-                    "name": "Nathaniel D'Amours",
+                    "name": "Cyrille Bernier",
                     "jobTitle": "${t('management.roles.president')}",
-                    "sameAs": "https://www.linkedin.com/in/nathaniel-damours"
-                  },
-                  {
-                    "@type": "Person",
-                    "name": "Jordan Mathieu",
-                    "jobTitle": "${t('management.roles.projectsLeader')}",
-                    "sameAs": "https://www.linkedin.com/in/jordan-math/"
+                    "sameAs": "https://www.linkedin.com/in/cyrille-bernier-31208a252/"
                   },
                   {
                     "@type": "Person",
@@ -560,9 +531,9 @@ const Management: React.FC = () => {
                   },
                   {
                     "@type": "Person",
-                    "name": "Jade Piller Cammal",
+                    "name": "Rana Azemdroub",
                     "jobTitle": "${t('management.roles.talentsLeader')}",
-                    "sameAs": "https://linkedin.com/in/jade-piller-cammal-242b88261/"
+                    "sameAs": "https://www.linkedin.com/in/rana-azemdroub/"
                   },
                   {
                     "@type": "Person",
