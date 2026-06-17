@@ -63,7 +63,7 @@ const Management: React.FC = () => {
       name: 'Rana Azemdroub',
       role: t('management.roles.talentsLeader'),
       mission: t('management.missions.rana'),
-      imgSrc: '/portrait/RanaAzemdroub.webp',
+      imgSrc: '/portrait/RanaAzemdroub.jpg',
       linkedIn: 'https://www.linkedin.com/in/rana-azemdroub/',
     },
   ];
@@ -199,18 +199,16 @@ const Management: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/nora-belattar-77243b302/',
     },
     {
-      name: 'Peut-être toi ?',
+      name: 'Tiana Daniele Tekamgueu Epome',
       role: t('management.roles.readingGroupManager'),
-      imgSrc: '',
+      imgSrc: '/portrait/TianaDaniele.jpg',
       linkedIn: '',
-      isVacant: true,
     },
     {
-      name: 'Peut-être toi ?',
+      name: 'Khaled Ait Fella',
       role: t('management.roles.competitionsManager'),
-      imgSrc: '',
+      imgSrc: '/portrait/KhaledAit.jpg',
       linkedIn: '',
-      isVacant: true,
     },
   ];
 
@@ -231,7 +229,7 @@ const Management: React.FC = () => {
       linkedIn: 'https://www.linkedin.com/in/amenallah-massarra-ouannes/',
     },
     {
-      name: 'Benjamin Sekpona',
+      name: 'Benjamin Sekpona-Medjago',
       role: t('management.roles.projectsManager'),
       mission: '',
       imgSrc: '/portrait/BenjaminSekpona.png',
@@ -263,6 +261,13 @@ const Management: React.FC = () => {
       role: t('management.roles.projectsManager'),
       mission: '',
       imgSrc: '/portrait/TeddyKana.jpg',
+      linkedIn: '',
+    },
+    {
+      name: 'Tristan Lépine',
+      role: t('management.roles.trainingsManager'),
+      mission: '',
+      imgSrc: '/portrait/TristanLepine.png',
       linkedIn: '',
     },
   ];
