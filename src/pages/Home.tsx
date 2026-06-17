@@ -5,8 +5,10 @@ import { Helmet } from 'react-helmet-async';
 import InfiniteScrollBanner from '../components/Carousel';
 import { useTranslation } from 'react-i18next';
 import InstaPostEmbed from '../components/InstaPostEmbed';
+import { useMotion } from '../hooks/useMotion';
 function Home() {
   const { t } = useTranslation();
+  const m = useMotion();
   const projects = [
     {
       title: t('home.projects.flapeeg.title'),
@@ -86,15 +88,13 @@ function Home() {
         </div>
         <div className="relative z-10 w-full">
           {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28 items-center">
-            {/* Left Side - Title & Subtitle & About */}
-            <div className="space-y-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+            {/* Left Side - Title, Subtitle, CTAs */}
+            <div className="space-y-8">
               {/* Title */}
               <motion.h1
                 className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, ease: 'easeOut' }}
+                {...m.fadeIn}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500">
                   {t('home.header.title')}
@@ -103,35 +103,30 @@ function Home() {
               {/* Subtitle */}
               <motion.p
                 className="text-xl md:text-2xl text-primary-300 font-light leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
+                {...m.slideUp}
               >
                 {t('home.header.subtitle')}
               </motion.p>
-              {/* About Section */}
-              <motion.div
-                className="space-y-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-300">
-                  {t('home.about.title')}
-                </h2>
-                <p className="text-accent-300 text-lg leading-relaxed">
-                  {t('home.about.description')}
-                </p>
+              {/* CTAs */}
+              <motion.div className="flex flex-wrap gap-4 pt-2" {...m.slideUp}>
+                <Link
+                  to="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-400 text-base-inverse font-semibold rounded-full shadow-lg hover:shadow-accent-500/30 transition-all duration-200"
+                >
+                  {t('home.heroCta.projects')}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/join-us"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary-500/60 hover:border-primary-400 text-primary-300 hover:text-primary-200 font-semibold rounded-full transition-all duration-200"
+                >
+                  {t('home.heroCta.join')}
+                </Link>
               </motion.div>
             </div>
-            {/* Right Side - Instagram (visible on all screens) */}
+            {/* Right Side - Instagram */}
             <div className="flex justify-center items-center h-full mt-10 md:mt-0">
-              <motion.div
-                className="w-full h-full flex justify-center items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.45, ease: 'easeOut' }}
-              >
+              <motion.div className="w-full h-full flex justify-center items-center" {...m.fadeIn}>
                 <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
                   <InstaPostEmbed url="https://www.instagram.com/p/DU0Z_U4iEzK/?img_index=1" />
                 </div>
@@ -140,9 +135,37 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* About Section — moved below hero for breathing room */}
+      <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14">
+        <motion.div
+          className="border border-primary-500/20 rounded-2xl p-8 md:p-12 bg-primary-950/30"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: '-80px' }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-accent-300 mb-4">
+            {t('home.about.title')}
+          </h2>
+          <p className="text-accent-300 text-lg leading-relaxed max-w-3xl">
+            {t('home.about.description')}
+          </p>
+        </motion.div>
+      </section>
+
       {/* Partner Logos */}
       <section className="w-full py-6 md:py-10">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
+          <motion.p
+            className="text-center text-sm font-medium text-primary-400/70 uppercase tracking-widest mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {t('home.partners.label')}
+          </motion.p>
           <InfiniteScrollBanner />
         </div>
       </section>
@@ -161,7 +184,7 @@ function Home() {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group relative overflow-hidden rounded-xl theme-surface-primary border !border-primary-500/70 hover:!border-primary-400 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 transition-all duration-300"
+              className="group relative overflow-hidden rounded-xl theme-surface-primary border !border-primary-500/70 hover:!border-primary-400 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 transition-all duration-300 cursor-pointer"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{
@@ -185,7 +208,7 @@ function Home() {
                 </p>
                 <Link
                   to={project.link}
-                  className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)]"
+                  className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] cia-focus-ring rounded"
                 >
                   {t('home.projects.learnMore')}
                   <ArrowRight className="w-4 h-4 ml-2" />

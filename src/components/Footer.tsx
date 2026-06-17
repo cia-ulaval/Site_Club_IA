@@ -23,7 +23,7 @@ function Footer() {
             <div className="flex space-x-4">
               <a
                 href="https://www.instagram.com/ciaulaval/"
-                className="group relative p-2 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105"
+                className="group relative cursor-pointer p-2.5 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105 cia-focus-ring"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -33,7 +33,7 @@ function Footer() {
 
               <a
                 href="https://www.linkedin.com/company/cia-ulaval/"
-                className="group relative p-2 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105"
+                className="group relative cursor-pointer p-2.5 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105 cia-focus-ring"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -43,7 +43,7 @@ function Footer() {
 
               <a
                 href="https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp"
-                className="group relative p-2 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105"
+                className="group relative cursor-pointer p-2.5 rounded-full !bg-accent-500/10 hover:!bg-accent-300/20 !border !border-accent-500/60 hover:!border-accent-300/80 transition-all duration-300 hover:scale-105 cia-focus-ring"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"

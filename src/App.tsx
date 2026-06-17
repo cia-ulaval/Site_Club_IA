@@ -8,10 +8,7 @@ import Projects from './pages/Projects';
 import Management from './pages/Management';
 import Gallery from './pages/Gallery';
 import FlapEEG from './pages/FlapEEG';
-import MangaAI from './pages/MangaAI';
 import F1Tenth from './pages/F1Tenth';
-import Lenia from './pages/Lenia';
-import DecisionTree from './pages/DecisionTree';
 import Collaboration from './pages/Collaboration';
 import JoinUs from './pages/JoinUs';
 import CANlock from './pages/CANlock';
@@ -40,10 +37,7 @@ function App() {
           <Route path="/management" element={<Management />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/flapeeg" element={<FlapEEG />} />
-          <Route path="/mangaai" element={<MangaAI />} />
           <Route path="/f1tenth" element={<F1Tenth />} />
-          <Route path="/decisiontree" element={<DecisionTree />} />
-          <Route path="/lenia" element={<Lenia />} />
           <Route path="/canlock" element={<CANlock />} />
           <Route path="/drone" element={<Drone />} />
           <Route path="/sgd-beyond" element={<SGDBeyond />} />

@@ -16,6 +16,7 @@ import {
   FlaskConical,
   ArrowRight,
 } from 'lucide-react';
+import BackToProjects from '../components/BackToProjects';
 function SGDResearch() {
   const { t } = useTranslation();
   const deliverables = t('sgdbeyond.objectives.deliverables.items', {
@@ -66,6 +67,7 @@ function SGDResearch() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: -20 }}
@@ -76,7 +78,7 @@ function SGDResearch() {
                 <Award className="w-5 h-5 theme-text-accent" />
                 <span className="text-primary-300 font-medium">Publication Scientifique</span>
               </div>
-              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
+              <h1 className="cia-heading-hero mb-6">
                 <span className="theme-text-gradient">SGD, and Beyond!</span>
               </h1>
               <p className="text-xl theme-text-muted max-w-3xl mx-auto mb-4">

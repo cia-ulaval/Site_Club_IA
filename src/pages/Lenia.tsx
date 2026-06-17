@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { useTranslation } from 'react-i18next';
+import BackToProjects from '../components/BackToProjects';
 interface ImageWithGlowProps {
   src: string;
   alt: string;
@@ -118,6 +119,7 @@ function Lenia() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
+          <BackToProjects />
           {/* Hero Section - Grid Layout */}
           <motion.section
             className="mb-16"
@@ -129,7 +131,7 @@ function Lenia() {
               {/* Left Side - Text Content */}
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-5xl md:text-6xl font-bold mb-4">
+                  <h1 className="cia-heading-hero mb-4">
                     <span className="theme-text-gradient"> Lenia </span>
                   </h1>
                   <h2 className="text-2xl md:text-3xl font-semibold theme-text-secondary mb-6">

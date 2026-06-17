@@ -1,18 +1,13 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Users, Lightbulb, Target, Rocket, Braces, Rotate3d, Radical } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import TeamMemberCard from '../components/TeamMemberCard';
 import { useTranslation } from 'react-i18next';
+import BackToProjects from '../components/BackToProjects';
 function FlapEEG() {
   const { t } = useTranslation();
-  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  useEffect(() => {
-    if (videoRef.current) {
-      setIsPlaying(!videoRef.current.paused);
-    }
-  }, []);
   const teamMembers = [
     {
       icon: <Users className="w-8 h-8" />,
@@ -101,6 +96,7 @@ function FlapEEG() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <h1 className="sr-only">{t('flapeeg.hero.title')}</h1>
             {/* Hero Section */}
             <motion.section
@@ -119,7 +115,7 @@ function FlapEEG() {
                   />
                 </div>
                 <div className="flex flex-col justify-center mt-6 md:mt-0">
-                  <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+                  <h1 className="cia-heading-hero mb-4">
                     <span className="theme-text-gradient"> FlapEEG </span>
                   </h1>
                   <p className="sr-only">{t('flapeeg.hero.description.sr')}</p>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 function Gallery() {
   const { t } = useTranslation();
@@ -9,6 +9,15 @@ function Gallery() {
     desc: string;
   } | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
+
+  useEffect(() => {
+    if (!selectedImage) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedImage(null);
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [selectedImage]);
   const images = {
     formation: [
       {
@@ -219,7 +228,7 @@ function Gallery() {
           {categories.map((category) => (
             <motion.button
               key={category.id}
-              className={`px-5 py-2 rounded-full text-sm md:text-base font-semibold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/80 ${
+              className={`px-5 py-2 min-h-[44px] rounded-full text-sm md:text-base font-semibold border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-400/80 ${
                 activeCategory === category.id
                   ? 'bg-primary-500 !text-white !border-primary-400 shadow-lg shadow-primary-900/25'
                   : 'bg-primary-950/70 !text-primary-300 !border-primary-500/70 hover:bg-primary-900/85 hover:!text-primary-200 hover:!border-accent-400/70'
@@ -273,6 +282,9 @@ function Gallery() {
       {selectedImage && (
         <motion.div
           className="fixed inset-0 bg-base/95 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedImage?.desc}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -295,9 +307,10 @@ function Gallery() {
               <p className="text-base-inverse text-lg font-medium">{selectedImage.desc}</p>
             </div>
             <button
-              className="absolute top-5 right-5 bg-primary-900/60 hover:bg-accent-500 text-base-inverse rounded-full p-3 transition-colors"
+              className="absolute top-5 right-5 bg-primary-900/60 hover:bg-accent-500 text-base-inverse rounded-full p-3 transition-colors cia-focus-ring"
               onClick={() => setSelectedImage(null)}
               aria-label={t('gallery.closeLabel')}
+              autoFocus
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

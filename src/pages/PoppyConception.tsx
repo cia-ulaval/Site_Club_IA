@@ -1,30 +1,11 @@
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
-import {
-  Bot,
-  Wrench,
-  Cpu,
-  Printer,
-  Cog,
-  Zap,
-  Users,
-  Rocket,
-  CheckCircle,
-  Target,
-  Award,
-  ExternalLink,
-  Lightbulb,
-} from 'lucide-react';
+import { Wrench, Cpu, Printer, Cog, Zap, CheckCircle, Target, ExternalLink } from 'lucide-react';
+import BackToProjects from '../components/BackToProjects';
 function PoppyConception() {
   const { t } = useTranslation();
   const objectives = t('poppyConception.objectives.items', {
-    returnObjects: true,
-  }) as Array<{ title: string; description: string }>;
-  const skills = t('poppyConception.skills.items', {
-    returnObjects: true,
-  }) as Array<{ title: string; description: string }>;
-  const benefits = t('poppyConception.benefits.items', {
     returnObjects: true,
   }) as Array<{ title: string; description: string }>;
   const timeline = t('poppyConception.timeline.items', {
@@ -58,6 +39,7 @@ function PoppyConception() {
           transition={{ duration: 0.8 }}
         >
           <div>
+            <BackToProjects />
             <h1 className="sr-only">{t('poppyConception.hero.title')}</h1>
             {/* Hero Section */}
             <motion.section
@@ -70,7 +52,7 @@ function PoppyConception() {
                 <div className="flex flex-col justify-center order-2 md:order-1">
                   <div className="flex items-center gap-3 mb-4">
                     <Wrench className="w-10 h-10 theme-text-accent" />
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+                    <h1 className="cia-heading-hero">
                       <span className="theme-text-gradient">{t('poppyConception.hero.title')}</span>
                     </h1>
                   </div>
