@@ -32,7 +32,7 @@ const Management: React.FC = () => {
     {
       name: 'Nezar Mahane',
       role: t('management.roles.logisticsManager'),
-      imgSrc: '/portrait/NezarMahane.png',
+      imgSrc: '/portrait/NezarMahane.webp',
       linkedIn: '',
     },
   ];
@@ -43,13 +43,13 @@ const Management: React.FC = () => {
       name: 'Douae Sakkat',
       role: t('management.roles.recruitmentManager'),
       mission: t('management.missions.douae'),
-      imgSrc: '/portrait/DouaeSakkat.jpeg',
+      imgSrc: '/portrait/DouaeSakkat.webp',
       linkedIn: '',
     },
     {
       name: 'Seynabou Diakité',
       role: t('management.roles.recruitmentManager'),
-      imgSrc: '/portrait/SeynabouDiakité.png',
+      imgSrc: '/portrait/SeynabouDiakité.webp',
       linkedIn: '',
     },
     {
@@ -81,14 +81,14 @@ const Management: React.FC = () => {
       name: 'Michal Naumiak',
       role: t('management.roles.partnershipsManager'),
       mission: t('management.missions.mihal'),
-      imgSrc: '/portrait/MichalNaumiak.jpg',
+      imgSrc: '/portrait/MichalNaumiak.webp',
       linkedIn: '',
     },
     {
       name: 'Chaima Mohsni',
       role: t('management.roles.partnershipsManager'),
       mission: '',
-      imgSrc: '/portrait/ChaimaMohsni.jpg',
+      imgSrc: '/portrait/ChaimaMohsni.webp',
       linkedIn: '',
     },
     {
@@ -105,13 +105,6 @@ const Management: React.FC = () => {
       imgSrc: '/portrait/Anthony.webp',
       linkedIn: 'https://www.linkedin.com/in/anthony-lavertu-2a29a7179/',
     },
-    {
-      name: 'Hiba Mameri',
-      role: t('management.roles.externalRelationsManager'),
-      mission: '',
-      imgSrc: '/portrait/HibaMameri.webp',
-      linkedIn: 'https://www.linkedin.com/in/hiba-mameri-8a566a261/',
-    },
   ];
 
   // Pôle Marketing
@@ -122,6 +115,8 @@ const Management: React.FC = () => {
       mission: t('management.missions.yves'),
       imgSrc: '/portrait/Yves.webp',
       linkedIn: 'https://www.linkedin.com/in/yves-faye-3b45062a5/',
+      github: 'https://github.com/yvesFaye',
+      additionalDetails: t('management.aboutMe.yves'),
     },
     {
       name: 'Hiba Arfaoui',
@@ -140,7 +135,7 @@ const Management: React.FC = () => {
     {
       name: 'Mimi Baret',
       role: t('management.roles.designsManager'),
-      imgSrc: '/portrait/MimiBaret.jpg',
+      imgSrc: '/portrait/MimiBaret.webp',
       linkedIn: '',
     },
     {
@@ -156,7 +151,7 @@ const Management: React.FC = () => {
     {
       name: 'Aboubacar Sylla',
       role: t('management.roles.websiteAuxiliary'),
-      imgSrc: '/portrait/AboubacarSylla.jpg',
+      imgSrc: '/portrait/AboubacarSylla.webp',
       linkedIn: '',
     },
   ];
@@ -167,7 +162,7 @@ const Management: React.FC = () => {
       name: 'Ulysse Gagné',
       role: t('management.roles.activitiesLeader'),
       mission: t('management.missions.ulysse'),
-      imgSrc: '/portrait/UlysseGagné.jpg',
+      imgSrc: '/portrait/UlysseGagné.webp',
       linkedIn: '',
     },
     {
@@ -181,7 +176,7 @@ const Management: React.FC = () => {
       name: 'Félix Larrivée',
       role: t('management.roles.socialManager'),
       mission: '',
-      imgSrc: '/portrait/FelixLarrivee.png',
+      imgSrc: '/portrait/FelixLarrivee.webp',
       linkedIn: '',
     },
     {
@@ -232,35 +227,35 @@ const Management: React.FC = () => {
       name: 'Benjamin Sekpona-Medjago',
       role: t('management.roles.projectsManager'),
       mission: '',
-      imgSrc: '/portrait/BenjaminSekpona.png',
+      imgSrc: '/portrait/BenjaminSekpona.webp',
       linkedIn: '',
     },
     {
       name: 'Babacar Thiam',
       role: t('management.roles.projectsManager'),
       mission: '',
-      imgSrc: '/portrait/BabacarThiam.jpeg',
+      imgSrc: '/portrait/BabacarThiam.webp',
       linkedIn: '',
     },
     {
       name: 'Zachary Bois',
       role: t('management.roles.projectsManager'),
       mission: '',
-      imgSrc: '/portrait/ZacharyBois.jpg',
+      imgSrc: '/portrait/ZacharyBois.webp',
       linkedIn: '',
     },
     {
       name: 'Prince Emiliano Akissoe',
       role: t('management.roles.projectsManager'),
       mission: '',
-      imgSrc: '/portrait/PrinceEmiliano.jpg',
+      imgSrc: '/portrait/PrinceEmiliano.webp',
       linkedIn: '',
     },
     {
       name: 'Teddy Kana',
       role: t('management.roles.projectsManager'),
       mission: '',
-      imgSrc: '/portrait/TeddyKana.jpg',
+      imgSrc: '/portrait/TeddyKana.webp',
       linkedIn: '',
     },
     {
