@@ -29,7 +29,7 @@ const projects = [
   },
   {
     key: 'drone',
-    image: '/project/drone.jpeg',
+    image: '/project/drone.webp',
     defaultTitle: 'Drone - Laser Tag',
     defaultDescription:
       'Développez un système laser clé en main pour une compétition FPV autonome : capteur 180°, émission, PCB custom et logiciel de gestion centralisé. Partenaire académique : Philippe Giguère. Team Lead : Anthony Lavertu.',
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     key: 'poppy-conception',
-    image: '/project/poppy.jpeg',
+    image: '/project/poppy.webp',
     defaultTitle: 'Poppy Humanoid (Conception)',
     defaultDescription:
       "Impression 3D, assemblage des articulations et intégration électronique d'un humanoïde open-source. Rejoignez le projet pour participer à la conception technique.",
@@ -49,7 +49,7 @@ const projects = [
   },
   {
     key: 'poppy-simulation',
-    image: '/project/poppysimulation.jpeg',
+    image: '/project/poppysimulation.webp',
     defaultTitle: 'Poppy Humanoid (Simulation)',
     defaultDescription:
       "Apprenez à un robot à marcher en développant des algorithmes RL en simulation, puis transférez-les sur le robot réel. Rejoignez le projet pour explorer l'IA robotique.",
@@ -59,7 +59,7 @@ const projects = [
   },
   {
     key: 'nutrinov',
-    image: '/project/nutrinov.png',
+    image: '/project/nutrinov.webp',
     defaultTitle: 'NutriNov',
     defaultDescription:
       'Identifiez un problème alimentaire et développez un prototype tech viable — en partenariat avec Open Food Facts. Type : Projet Entrepreneurial. Team Lead : Eloïse Prevot.',
@@ -68,7 +68,7 @@ const projects = [
   },
   {
     key: 'sgd-beyond',
-    image: '/project/sgd.png',
+    image: '/project/sgd.webp',
     defaultTitle: 'SGD - Beyond',
     defaultDescription:
       "Analyse et amélioration d'un algorithme fondamental d'IA (SGD) en y intégrant une méthode d'optimisation par bruit. Plus d'infos et code sur GitHub.",
@@ -78,7 +78,7 @@ const projects = [
   },
   {
     key: 'avion-cargo',
-    image: '/project/AvionCargo.jpg',
+    image: '/project/AvionCargo.webp',
     defaultTitle: 'Avion-Cargo',
     defaultDescription:
       "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm.",
@@ -88,7 +88,7 @@ const projects = [
   },
   {
     key: 'asldecoder',
-    image: '/project/asl.png',
+    image: '/project/asl.webp',
     defaultTitle: 'ASL Decoder',
     defaultDescription:
       "Système Raspberry Pi avec caméra pour la reconnaissance du langage des signes américain (ASL) en temps réel grâce à l'IA. Projet terminé combinant vision par ordinateur et apprentissage automatique.",

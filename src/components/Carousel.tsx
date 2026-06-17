@@ -10,7 +10,7 @@ type Partner = {
 // so a single loop covers one full copy and restarts seamlessly.
 const partners: Partner[] = [
   {
-    src: '/banner/LogoTracel.png',
+    src: '/banner/LogoTracel.webp',
     link: 'https://tracel.ai/',
     alt: 'Tracel AI',
   },
@@ -20,12 +20,12 @@ const partners: Partner[] = [
     alt: 'AESGUL',
   },
   {
-    src: '/banner/LogoVooban.png',
+    src: '/banner/LogoVooban.webp',
     link: 'https://vooban.com/',
     alt: 'Vooban',
   },
   {
-    src: '/banner/ingeno.png',
+    src: '/banner/ingeno.webp',
     link: 'https://ingeno.ca/fr/',
     alt: 'Ingeno',
   },
@@ -35,7 +35,7 @@ const partners: Partner[] = [
     alt: 'ASETIN',
   },
   {
-    src: '/banner/SiFiLabs.png',
+    src: '/banner/SiFiLabs.webp',
     link: 'https://sifilabs.com/',
     alt: 'SiFi Labs',
   },
@@ -45,17 +45,17 @@ const partners: Partner[] = [
     alt: 'MonAvenir TI',
   },
   {
-    src: '/banner/LogoDepartementInfo.png',
+    src: '/banner/LogoDepartementInfo.webp',
     link: 'https://www.ift.ulaval.ca/',
     alt: "Département d'informatique - Université Laval",
   },
   {
-    src: '/banner/LogoCRTI.png',
+    src: '/banner/LogoCRTI.webp',
     link: 'https://crti.ulaval.ca/',
     alt: 'CRTI',
   },
   {
-    src: '/banner/SDP.png',
+    src: '/banner/SDP.webp',
     link: 'https://sdp.ulaval.ca/',
     alt: 'Service du développement professionnel - Université Laval',
   },

@@ -94,6 +94,7 @@ const currentSponsors = [
   { name: 'SiFi Labs', tier: 'Silver', link: 'https://sifilabs.com/' },
   { name: 'Ingeno', tier: 'Gold', link: 'https://ingeno.ca/fr/' },
   { name: 'Vooban', tier: 'Bronze', link: 'https://vooban.com/' },
+  { name: 'COFOMO', tier: 'Bronze', link: 'https://www.cofomo.com/' },
   {
     name: 'Service du développement professionnel - Université Laval',
     tier: 'Gold',
@@ -265,16 +266,18 @@ const CurrentSponsorLogo = ({ sponsor }: { sponsor: Sponsor }) => (
           .replace(/\p{Diacritic}/gu, '')
           .replace(/[^a-z0-9]/g, '');
       const mapping: Record<string, string> = {
-        [normalize('Université Laval')]: '/banner/LogoDepartementInfo.png',
+        [normalize('Université Laval')]: '/banner/LogoDepartementInfo.webp',
         [normalize('AESGUL')]: '/banner/aesgul.webp',
         [normalize('ASETIN')]: '/banner/asetin.webp',
         [normalize('MonAvenirTI')]: '/banner/avenirti.webp',
-        [normalize('Tracel AI')]: '/banner/LogoTracel.png',
-        [normalize('SiFi Labs')]: '/banner/SiFiLabs.png',
-        [normalize('Ingeno')]: '/banner/ingeno.png',
-        [normalize('Vooban')]: '/banner/LogoVooban.png',
-        [normalize('CRTI')]: '/banner/LogoCRTI.png',
-        [normalize('Service du développement professionnel - Université Laval')]: '/banner/SDP.png',
+        [normalize('Tracel AI')]: '/banner/LogoTracel.webp',
+        [normalize('SiFi Labs')]: '/banner/SiFiLabs.webp',
+        [normalize('Ingeno')]: '/banner/ingeno.webp',
+        [normalize('Vooban')]: '/banner/LogoVooban.webp',
+        [normalize('CRTI')]: '/banner/LogoCRTI.webp',
+        [normalize('COFOMO')]: '/banner/LogoCofomo.webp',
+        [normalize('Service du développement professionnel - Université Laval')]:
+          '/banner/SDP.webp',
       };
       const key = normalize(sponsor.name);
       const logo = mapping[key];
