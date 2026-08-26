@@ -1,258 +1,212 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import InfiniteScrollBanner from '../components/Carousel';
 import { useTranslation } from 'react-i18next';
-import InstaPostEmbed from '../components/InstaPostEmbed';
+import ProjectCard from '../components/ProjectCard';
+import Seo from '../components/Seo';
+import LogoCarousel from '../components/ui/logo-carousel';
+import { partners } from '../data/partners';
+import { domainCount, projects } from '../data/projects';
 import { useMotion } from '../hooks/useMotion';
+import { ORGANIZATION_LD } from '../lib/site';
+
+const FEATURED = 3;
+
+const DOMAIN_ORDER = ['iaml', 'hardware', 'application', 'robotics'] as const;
+
 function Home() {
   const { t } = useTranslation();
   const m = useMotion();
-  const projects = [
-    {
-      title: t('home.projects.flapeeg.title'),
-      image: '/project/FlappyBrain.webp',
-      description: t(
-        'home.projects.flapeeg.homeDescription',
-        'Play FlapEEG with your brainwaves: AI reads EEG signals to control the bird.'
-      ),
-      link: '/flapeeg',
-    },
-    {
-      title: t('home.projects.f1tenth.title'),
-      image: '/project/f1tenthcar.webp',
-      description: t(
-        'home.projects.f1tenth.homeDescription',
-        'Control a 1/10 F1TENTH car with an EMG bracelet: AI turns arm movement into steering and speed.'
-      ),
-      link: '/f1tenth',
-    },
-    {
-      title: t('home.projects.drone.title'),
-      image: '/project/drone.webp',
-      description: t(
-        'home.projects.drone.homeDescription',
-        'Design and build an autonomous FPV drone to compete in a laser tag competition.'
-      ),
-      link: '/drone',
-    },
-  ];
+
+  const featured = projects.slice(0, FEATURED);
+  const [lead, ...secondary] = featured;
+
+  const domains = DOMAIN_ORDER.map((category) => ({
+    category,
+    count: projects.filter((p) => p.category === category).length,
+  })).filter((d) => d.count > 0);
+
   return (
     <div className="w-full">
-      <Helmet>
-        {/* Titre */}
-        <title>Club Intelligence Artificielle - Université Laval | CIA ULaval</title>
-        {/* Description */}
-        <meta
-          name="description"
-          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants, événements, ateliers et rejoignez notre communauté passionnée d'IA."
-        />
-        {/* Mots-clés */}
-        <meta
-          name="keywords"
-          content="intelligence artificielle, IA, club étudiant, Université Laval, machine learning, deep learning, projets IA, événements tech, programmation, data science"
-        />
-        {/* Auteur */}
-        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
-        {/* Open Graph pour Facebook/LinkedIn */}
-        <meta property="og:title" content="Club Intelligence Artificielle - Université Laval" />
-        <meta
-          property="og:description"
-          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants et rejoignez notre communauté."
-        />
-        <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
-        <meta property="og:url" content="https://cia.ift.ulaval.ca/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Club IA - Université Laval" />
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Club Intelligence Artificielle - Université Laval" />
-        <meta
-          name="twitter:description"
-          content="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants."
-        />
-        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
-        {/* URL canonique */}
-        <link rel="canonical" href="https://cia.ift.ulaval.ca/" />
-        {/* Langue */} <html lang="fr" />
-        {/* Données structurées JSON-LD pour Google */}
-        <script type="application/ld+json">{` { "@context": "https://schema.org", "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ] } `}</script>
-      </Helmet>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-8 md:py-12 w-full max-w-7xl mx-auto px-4 md:px-8 min-h-screen flex items-start md:items-center justify-center">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 pointer-events-none hidden md:block">
-          <div className="absolute top-20 left-10 w-40 h-40 bg-primary-500/10 rounded-full blur-xl" />
-          <div className="absolute bottom-20 right-10 w-56 h-56 bg-primary-500/5 rounded-full blur-2xl" />
+      <Seo
+        title="Club Intelligence Artificielle - Université Laval | CIA ULaval"
+        description="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants, événements, ateliers et rejoignez notre communauté passionnée d'IA."
+        keywords="intelligence artificielle, IA, club étudiant, Université Laval, machine learning, deep learning, projets IA, événements tech, programmation, data science"
+        path="/"
+        socialTitle="Club Intelligence Artificielle - Université Laval"
+        socialDescription="Club étudiant d'intelligence artificielle de l'Université Laval. Découvrez nos projets innovants et rejoignez notre communauté."
+        jsonLd={{ '@context': 'https://schema.org', ...ORGANIZATION_LD }}
+      />
+
+      <header className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-28 pb-6 md:pb-10">
+        <motion.h1 className="cia-display text-hero mt-8 md:mt-12" {...m.write}>
+          {t('home.header.title')}
+        </motion.h1>
+
+        <div className="grid md:grid-cols-12 gap-x-12 gap-y-8 mt-10 md:mt-14">
+          <motion.p
+            className="md:col-span-7 font-body text-lg md:text-2xl text-primary-300 leading-snug"
+            {...m.rise(0.08)}
+          >
+            {t('home.header.subtitle')}
+          </motion.p>
+
+          <motion.div
+            className="md:col-span-5 md:col-start-8 flex flex-wrap items-start gap-x-6 gap-y-3"
+            {...m.rise(0.14)}
+          >
+            <Link
+              to="/join-us"
+              className="inline-flex h-11 items-center bg-accent-400 px-6 cia-mono text-xs uppercase tracking-eyebrow text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
+            >
+              {t('home.heroCta.join')}
+            </Link>
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-eyebrow text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
+            >
+              {t('home.heroCta.projects')}
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </motion.div>
         </div>
-        <div className="relative z-10 w-full">
-          {/* Main Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
-            {/* Left Side - Title, Subtitle, CTAs */}
-            <div className="space-y-8">
-              {/* Title */}
-              <motion.h1
-                className="text-5xl md:text-6xl lg:text-8xl font-bold leading-tight"
-                {...m.fadeIn}
-              >
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500">
-                  {t('home.header.title')}
-                </span>
-              </motion.h1>
-              {/* Subtitle */}
-              <motion.p
-                className="text-xl md:text-2xl text-primary-300 font-light leading-relaxed"
-                {...m.slideUp}
-              >
-                {t('home.header.subtitle')}
-              </motion.p>
-              {/* CTAs */}
-              <motion.div className="flex flex-wrap gap-4 pt-2" {...m.slideUp}>
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-accent-500 hover:bg-accent-400 text-base-inverse font-semibold rounded-full shadow-lg hover:shadow-accent-500/30 transition-all duration-200"
-                >
-                  {t('home.heroCta.projects')}
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  to="/join-us"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-primary-500/60 hover:border-primary-400 text-primary-300 hover:text-primary-200 font-semibold rounded-full transition-all duration-200"
-                >
-                  {t('home.heroCta.join')}
-                </Link>
-              </motion.div>
+
+        <dl className="grid grid-cols-3 mt-14 md:mt-20 border-t-2 border-coral">
+          {[
+            { v: `${projects.length}+`, k: 'home.stats.projects', d: 'Projets' },
+            { v: '40+', k: 'home.stats.members', d: 'Membres' },
+            { v: domainCount, k: 'home.stats.domains', d: 'Domaines' },
+          ].map((s, i) => (
+            <div
+              key={s.k}
+              className={`py-5 pr-4 md:py-7 ${i > 0 ? 'cia-rule-l pl-5 md:pl-8' : ''}`}
+            >
+              <dt className="cia-meta">{t(s.k, s.d)}</dt>
+              <dd className="font-heading text-4xl md:text-6xl font-bold text-primary-300 mt-2">
+                {s.v}
+              </dd>
             </div>
-            {/* Right Side - Instagram */}
-            <div className="flex justify-center items-center h-full mt-10 md:mt-0">
-              <motion.div className="w-full h-full flex justify-center items-center" {...m.fadeIn}>
-                <div className="w-full max-w-none lg:max-w-2xl xl:max-w-3xl flex justify-center">
-                  <InstaPostEmbed url="https://www.instagram.com/p/DU0Z_U4iEzK/?img_index=1" />
-                </div>
-              </motion.div>
-            </div>
+          ))}
+        </dl>
+      </header>
+
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pt-8 pb-16 md:pt-10 md:pb-24">
+        <div className="grid md:grid-cols-12 gap-x-12 gap-y-12">
+          <div className="md:col-span-7">
+            <h2 className="cia-meta">{t('home.about.title')}</h2>
+            <p className="font-body text-2xl md:text-4xl text-primary-300 leading-snug mt-5">
+              {t('home.about.description')}
+            </p>
+          </div>
+
+          <div className="md:col-span-4 md:col-start-9">
+            <h2 className="cia-meta">{t('home.domains.label', 'Focus areas')}</h2>
+            <ul className="mt-5">
+              {domains.map(({ category, count }, i) => (
+                <li
+                  key={category}
+                  className={`flex items-baseline justify-between gap-4 py-3 ${i > 0 ? 'cia-rule' : ''}`}
+                >
+                  <span className="font-heading text-lg font-semibold text-primary-300">
+                    {t(`projects.categories.${category}`)}
+                  </span>
+                  <span className="cia-index shrink-0">{String(count).padStart(2, '0')}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* About Section — moved below hero for breathing room */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-14">
-        <motion.div
-          className="border border-primary-500/20 rounded-2xl p-8 md:p-12 bg-primary-950/30"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, margin: '-80px' }}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-accent-300 mb-4">
-            {t('home.about.title')}
-          </h2>
-          <p className="text-accent-300 text-lg leading-relaxed max-w-3xl">
-            {t('home.about.description')}
-          </p>
-        </motion.div>
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 cia-rule">
+        <div className="flex items-baseline justify-between gap-6 mb-8 md:mb-10">
+          <h2 className="cia-meta">{t('home.projects.title')}</h2>
+          <Link
+            to="/projects"
+            className="cia-mono text-xs uppercase tracking-eyebrow text-primary-400 hover:text-accent-300 transition-colors inline-flex items-center gap-2 cia-focus-ring"
+          >
+            {t('home.index.all', 'Tout voir')} ({projects.length})
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {lead && (
+          <div className="mb-6">
+            <Link
+              to={lead.link}
+              className="group flex flex-col md:grid md:grid-cols-12 cia-card cia-card-hover overflow-hidden cia-focus-ring"
+            >
+              <div className="relative aspect-16/10 md:aspect-auto md:col-span-7 bg-primary-950 overflow-hidden">
+                {lead.image ? (
+                  <img
+                    src={lead.image}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    className={`absolute inset-0 h-full w-full object-cover transition-transform duration-base ease-out group-hover:scale-103 ${lead.status === 'shipped' ? 'saturate-35' : 'saturate-90 group-hover:saturate-100'}`}
+                  />
+                ) : (
+                  <div className="absolute inset-0 grid place-items-center">
+                    <span className="cia-index">{t('projects.noPreview')}</span>
+                  </div>
+                )}
+              </div>
+
+              <div className="md:col-span-5 p-6 md:p-10 flex flex-col justify-center">
+                <span className="cia-meta-accent">{t(`projects.categories.${lead.category}`)}</span>
+                <h3 className="cia-display text-3xl md:text-5xl mt-4">
+                  {t(`home.projects.${lead.key}.title`, lead.defaultTitle)}
+                </h3>
+                <p className="font-body text-primary-400 leading-relaxed mt-4 line-clamp-4">
+                  {t(`home.projects.${lead.key}.description`, lead.defaultDescription)}
+                </p>
+                <span className="cia-mono text-xs uppercase tracking-eyebrow text-accent-400 mt-6 inline-flex items-center gap-2">
+                  {t('home.projects.learnMore')}
+                  <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </span>
+              </div>
+            </Link>
+          </div>
+        )}
+
+        {secondary.length > 0 && (
+          <div className="grid gap-6 sm:grid-cols-2">
+            {secondary.map((project) => (
+              <div key={project.key}>
+                <ProjectCard project={project} />
+              </div>
+            ))}
+          </div>
+        )}
       </section>
 
-      {/* Partner Logos */}
-      <section className="w-full py-6 md:py-10">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-6">
-          <motion.p
-            className="text-center text-sm font-medium text-primary-400/70 uppercase tracking-widest mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            {t('home.partners.label')}
-          </motion.p>
-          <InfiniteScrollBanner />
-        </div>
-      </section>
-      {/* Section Projets */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 mb-20 pt-10">
-        <motion.h2
-          className="text-4xl font-bold theme-text-gradient text-center mb-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-        >
-          {t('home.projects.title')}
-        </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="group relative overflow-hidden rounded-xl theme-surface-primary border !border-primary-500/70 hover:!border-primary-400 shadow-lg hover:shadow-xl hover:shadow-primary-900/20 transition-all duration-300 cursor-pointer"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{
-                duration: 0.6,
-                delay: 0.1 * index,
-                ease: 'easeOut',
-              }}
-              viewport={{ once: true, margin: '-100px' }}
+      <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 cia-rule">
+        <p className="cia-meta mb-8">{t('home.partners.label')}</p>
+        <LogoCarousel items={partners} label={t('home.partners.carouselLabel')} />
+
+        <div className="mt-14 md:mt-16 pt-10 md:pt-12 border-t border-steel/25 grid md:grid-cols-12 gap-x-12 gap-y-6 md:items-center">
+          <div className="md:col-span-8">
+            <p className="cia-meta mb-4">{t('home.partnership.label', 'Partenariat')}</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-primary-300 leading-tight">
+              {t('home.collaboration.title')}
+            </h2>
+            <p className="font-body text-primary-400 leading-relaxed mt-3 max-w-md">
+              {t('home.collaboration.description')}
+            </p>
+          </div>
+          <div className="md:col-span-4 md:justify-self-end">
+            <Link
+              to="/collaboration"
+              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-eyebrow text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
             >
-              <img
-                src={project.image}
-                alt={`Image of ${project.title}`}
-                className="w-full h-64 object-cover blur-[1.5px] transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-base/90 via-base/45 to-transparent p-6 flex flex-col justify-end backdrop-blur-[0.5px]">
-                <h3 className="text-xl font-bold text-accent-300 mb-2 drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] transform-gpu transition-transform duration-300 group-hover:-translate-y-0.5">
-                  {project.title}
-                </h3>
-                <p className="text-accent-300 mb-4 text-sm leading-relaxed drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] transform-gpu transition-transform duration-300 group-hover:-translate-y-0.5">
-                  {project.description}
-                </p>
-                <Link
-                  to={project.link}
-                  className="inline-flex items-center theme-text-accent hover:text-primary-300 transition-colors drop-shadow-[0_3px_10px_rgba(0,0,0,0.9)] cia-focus-ring rounded"
-                >
-                  {t('home.projects.learnMore')}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-            </motion.div>
-          ))}
+              {t('home.collaboration.button')}
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
-      </section>
-      {/* Section Collaboration */}
-      <section className="w-full max-w-7xl mx-auto px-4 md:px-6 text-center mb-20 pt-10">
-        <motion.h2
-          className="text-4xl font-bold text-primary-300 mb-8"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          {t('home.collaboration.title')}
-        </motion.h2>
-        <motion.p
-          className="text-xl text-primary-300 mb-8 max-w-2xl mx-auto"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          {t('home.collaboration.description')}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
-          viewport={{ once: true, margin: '-50px' }}
-        >
-          <Link
-            to="/collaboration"
-            className="inline-block px-8 py-3 bg-accent-500 hover:bg-accent-300 rounded-full text-base-inverse font-semibold transition-colors shadow-lg hover:shadow-xl hover:shadow-accent-500/30"
-          >
-            {t('home.collaboration.button')}
-          </Link>
-        </motion.div>
       </section>
     </div>
   );
 }
+
 export default Home;

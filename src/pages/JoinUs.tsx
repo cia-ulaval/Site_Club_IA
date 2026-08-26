@@ -1,179 +1,176 @@
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import { Instagram, Facebook, Linkedin, Mail, Rocket, BookOpen, Users } from 'lucide-react';
+import { SiDiscord } from '@icons-pack/react-simple-icons';
+import { BookOpen, Facebook, Github, Instagram, Linkedin, Mail, Rocket, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Seo from '../components/Seo';
+import { openEmailDraft } from '../lib/email';
+import { DISCORD_URL, ORGANIZATION_LD, SITE, SOCIAL_LINKS } from '../lib/site';
+
+const CONTACT_POINTS = [
+  {
+    kind: 'link',
+    href: DISCORD_URL,
+    icon: SiDiscord,
+    label: 'Discord',
+    handle: DISCORD_URL.replace('https://', ''),
+  },
+  { kind: 'email', icon: Mail, label: 'Email' },
+  {
+    kind: 'link',
+    href: SOCIAL_LINKS.instagram,
+    icon: Instagram,
+    label: 'Instagram',
+    handle: '@ciaulaval',
+  },
+  {
+    kind: 'link',
+    href: SOCIAL_LINKS.linkedin,
+    icon: Linkedin,
+    label: 'LinkedIn',
+    handle: 'cia-ulaval',
+  },
+  { kind: 'link', href: SOCIAL_LINKS.github, icon: Github, label: 'GitHub', handle: 'cia-ulaval' },
+  {
+    kind: 'link',
+    href: SOCIAL_LINKS.facebook,
+    icon: Facebook,
+    label: 'Facebook',
+    handle: 'Club IA ULaval',
+  },
+] as const;
+
+const VALUE_PROPS = [
+  { icon: Rocket, key: 'projects' },
+  { icon: BookOpen, key: 'formations' },
+  { icon: Users, key: 'community' },
+] as const;
+
 function JoinUs() {
   const { t } = useTranslation();
   return (
     <>
-      <Helmet>
-        {/* Titre */}
-        <title>
-          Rejoindre le Club IA - Intelligence Artificielle Université Laval | CIA ULaval
-        </title>
-        {/* Description */}
-        <meta
-          name="description"
-          content="Rejoignez le Club Intelligence Artificielle de l'Université Laval ! Participez à nos projets IA, formations, événements et communauté Discord. Ouvert à tous les étudiants passionnés d'IA."
-        />
-        {/* Mots-clés */}
-        <meta
-          name="keywords"
-          content="rejoindre Club IA, adhésion CIA ULaval, Discord Club IA, communauté IA, étudiants intelligence artificielle, formations IA, projets étudiants, Université Laval, machine learning, collaboration IA"
-        />
-        {/* Auteur */}
-        <meta name="author" content="Club Intelligence Artificielle - Université Laval" />
-        {/* Open Graph pour Facebook/LinkedIn */}
-        <meta
-          property="og:title"
-          content="Rejoindre le Club IA - Intelligence Artificielle Université Laval"
-        />
-        <meta
-          property="og:description"
-          content="Rejoignez notre communauté d'étudiants passionnés d'IA ! Projets innovants, formations et événements vous attendent."
-        />
-        <meta property="og:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
-        <meta property="og:url" content="https://cia.ift.ulaval.ca/join-us" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Club IA - Université Laval" />
-        {/* Twitter Cards */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Rejoindre le Club IA - Intelligence Artificielle Université Laval"
-        />
-        <meta
-          name="twitter:description"
-          content="Rejoignez notre communauté d'étudiants passionnés d'intelligence artificielle !"
-        />
-        <meta name="twitter:image" content="https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp" />
-        {/* URL canonique */}
-        <link rel="canonical" href="https://cia.ift.ulaval.ca/join-us" />
-        {/* Langue */} <html lang="fr" />
-        {/* Données structurées JSON-LD pour Google */}
-        <script type="application/ld+json">
-          {` { "@context": "https://schema.org", "@type": "WebPage", "name": "Rejoindre le Club IA - Intelligence Artificielle Université Laval", "url": "https://cia.ift.ulaval.ca/join-us", "description": "Page d'adhésion au Club Intelligence Artificielle de l'Université Laval", "mainEntity": { "@type": "Organization", "name": "Club Intelligence Artificielle - Université Laval", "url": "https://cia.ift.ulaval.ca", "logo": "https://cia.ift.ulaval.ca/banner/CIA_LOGO.webp", "description": "Club étudiant d'intelligence artificielle de l'Université Laval", "foundingLocation": { "@type": "Place", "name": "Québec, Canada" }, "parentOrganization": { "@type": "EducationalOrganization", "name": "Université Laval" }, "sameAs": [ "https://www.instagram.com/ciaulaval/", "https://www.linkedin.com/company/cia-ulaval/posts/?feedView=all", "https://github.com/cia-ulaval", "https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/?rdid=lgzUe6mitaRXBT9H&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AqQ3bCSQp" ], "contactPoint": [ { "@type": "ContactPoint", "contactType": "general", "email": "cia@ulaval.ca" }, { "@type": "ContactPoint", "contactType": "community", "url": "https://discord.gg/ZPVwCjMpAq" } ], }, "potentialAction": { "@type": "JoinAction", "target": "https://discord.gg/ZPVwCjMpAq", "name": "Rejoindre le Discord" } } `}
-        </script>
-      </Helmet>
-      <section className="relative overflow-hidden pt-20">
-        <motion.div
-          className="theme-content-shell theme-surface-primary shadow-xl"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Hero heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center pt-8 mb-8"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold">
-              <span className="theme-text-gradient">{t('joinus.heroSubtitle')}</span>
-            </h1>
-          </motion.div>
-
-          {/* Value proposition — 3 pillars */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            {[
-              {
-                icon: <Rocket className="w-7 h-7 theme-text-accent" />,
-                titleKey: 'joinus.valueProp.projects.title',
-                descKey: 'joinus.valueProp.projects.description',
-              },
-              {
-                icon: <BookOpen className="w-7 h-7 theme-text-accent" />,
-                titleKey: 'joinus.valueProp.formations.title',
-                descKey: 'joinus.valueProp.formations.description',
-              },
-              {
-                icon: <Users className="w-7 h-7 theme-text-accent" />,
-                titleKey: 'joinus.valueProp.community.title',
-                descKey: 'joinus.valueProp.community.description',
-              },
-            ].map(({ icon, titleKey, descKey }) => (
-              <div
-                key={titleKey}
-                className="flex flex-col items-center text-center gap-3 p-6 rounded-xl border border-primary-500/20 bg-primary-950/30"
+      <Seo
+        title="Rejoindre le Club IA - Intelligence Artificielle Université Laval | CIA ULaval"
+        description="Rejoignez le Club Intelligence Artificielle de l'Université Laval ! Participez à nos projets IA, formations, événements et communauté Discord. Ouvert à tous les étudiants passionnés d'IA."
+        keywords="rejoindre Club IA, adhésion CIA ULaval, Discord Club IA, communauté IA, étudiants intelligence artificielle, formations IA, projets étudiants, Université Laval, machine learning, collaboration IA"
+        path="/join-us"
+        socialTitle="Rejoindre le Club IA - Intelligence Artificielle Université Laval"
+        socialDescription="Rejoignez notre communauté d'étudiants passionnés d'IA ! Projets innovants, formations et événements vous attendent."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'Rejoindre le Club IA - Intelligence Artificielle Université Laval',
+          url: `${SITE}/join-us`,
+          description: "Page d'adhésion au Club Intelligence Artificielle de l'Université Laval",
+          mainEntity: {
+            ...ORGANIZATION_LD,
+            contactPoint: [
+              { '@type': 'ContactPoint', contactType: 'general', url: `${SITE}/join-us` },
+              { '@type': 'ContactPoint', contactType: 'community', url: DISCORD_URL },
+            ],
+          },
+          potentialAction: {
+            '@type': 'JoinAction',
+            target: DISCORD_URL,
+            name: 'Rejoindre le Discord',
+          },
+        }}
+      />
+      <section className="pb-24 pt-16 md:pt-24">
+        <div className="cia-measure">
+          <header className="grid gap-10 border-b border-steel/25 pb-16 md:grid-cols-12 md:items-end md:pb-20">
+            <h1 className="cia-display text-display md:col-span-8">{t('joinus.heroSubtitle')}</h1>
+            <div className="md:col-span-4 md:pb-2">
+              <p className="mb-7 text-lg leading-relaxed text-ink-muted">
+                {t('joinus.discordText')}
+              </p>
+              <a
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cia-btn-accent"
               >
-                {icon}
-                <h3 className="font-semibold text-base-inverse text-lg">{t(titleKey)}</h3>
-                <p className="text-sm theme-text-muted leading-relaxed">{t(descKey)}</p>
-              </div>
-            ))}
-          </motion.div>
+                {t('joinus.discordButton')}
+              </a>
+            </div>
+          </header>
 
-          {/* Discord CTA */}
-          <motion.div
-            className="text-center mb-14"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-lg theme-text-muted mb-6">{t('joinus.discordText')}</p>
-            <a
-              href="https://discord.gg/ZPVwCjMpAq"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent-500 hover:bg-accent-400 text-base-inverse font-bold rounded-full shadow-lg hover:shadow-accent-500/30 transition-all duration-200"
-            >
-              {t('joinus.discordButton')}
-            </a>
-          </motion.div>
-
-          {/* Social links with labels */}
-          <motion.div
-            className="text-center pb-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-sm font-medium text-primary-400/70 uppercase tracking-widest mb-6">
-              {t('joinus.socialFollow')}
-            </p>
-            <div className="flex justify-center gap-6 flex-wrap">
-              {[
-                {
-                  href: 'https://www.linkedin.com/company/cia-ulaval/',
-                  icon: <Linkedin size={22} />,
-                  label: 'LinkedIn',
-                },
-                { href: 'mailto:cia@ulaval.ca', icon: <Mail size={22} />, label: 'Email' },
-                {
-                  href: 'https://www.instagram.com/ciaulaval/',
-                  icon: <Instagram size={22} />,
-                  label: 'Instagram',
-                },
-                {
-                  href: 'https://www.facebook.com/people/Club-dintelligence-artificielle-de-lUniversité-Laval/100089798911416/',
-                  icon: <Facebook size={22} />,
-                  label: 'Facebook',
-                },
-              ].map(({ href, icon, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target={href.startsWith('mailto') ? undefined : '_blank'}
-                  rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-                  aria-label={label}
-                  className="flex flex-col items-center gap-2 theme-text-muted theme-hover-text-accent transition-colors duration-200 cursor-pointer"
+          <section className="py-16 md:py-20" aria-labelledby="join-value-title">
+            <h2 id="join-value-title" className="cia-display mb-10 text-4xl md:text-5xl">
+              {t('joinus.valueProp.title')}
+            </h2>
+            <div className="grid border-t border-steel/30 md:grid-cols-3">
+              {VALUE_PROPS.map(({ icon: Icon, key }, index) => (
+                <article
+                  key={key}
+                  className="relative border-b border-steel/30 py-8 md:border-b-0 md:border-r md:px-7 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
                 >
-                  {icon}
-                  <span className="text-xs font-medium">{label}</span>
-                </a>
+                  <span className="absolute left-0 top-0 h-1.5 w-9 bg-coral" aria-hidden="true" />
+                  <div className="mb-10 flex items-center justify-between text-steel">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                    <span className="cia-index">0{index + 1}</span>
+                  </div>
+                  <h3 className="font-heading text-2xl font-semibold text-ink">
+                    {t(`joinus.valueProp.${key}.title`)}
+                  </h3>
+                  <p className="mt-3 max-w-sm leading-relaxed text-ink-muted">
+                    {t(`joinus.valueProp.${key}.description`)}
+                  </p>
+                </article>
               ))}
             </div>
-          </motion.div>
-        </motion.div>
+          </section>
+
+          <section
+            className="border-t border-steel/25 pt-14 md:pt-16"
+            aria-labelledby="contact-title"
+          >
+            <h2 id="contact-title" className="cia-display mb-10 text-4xl md:text-5xl">
+              {t('joinus.socialFollow')}
+            </h2>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {CONTACT_POINTS.map((point) => {
+                const Icon = point.icon;
+                const content = (
+                  <>
+                    <Icon
+                      className="h-6 w-6 shrink-0 text-primary-500 transition-colors group-hover:text-accent-400"
+                      aria-hidden="true"
+                    />
+                    <span>
+                      <span className="block font-heading text-base font-semibold text-ink">
+                        {point.label}
+                      </span>
+                      <span className="mt-0.5 block cia-mono text-xs text-ink-muted">
+                        {point.kind === 'email' ? t('joinus.emailAction') : point.handle}
+                      </span>
+                    </span>
+                  </>
+                );
+
+                return point.kind === 'email' ? (
+                  <button
+                    key={point.label}
+                    type="button"
+                    onClick={() => openEmailDraft('general')}
+                    className="group flex items-center gap-4 text-left cia-card cia-card-hover p-5 cia-focus-ring"
+                  >
+                    {content}
+                  </button>
+                ) : (
+                  <a
+                    key={point.label}
+                    href={point.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-4 cia-card cia-card-hover p-5 cia-focus-ring"
+                  >
+                    {content}
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        </div>
       </section>
     </>
   );

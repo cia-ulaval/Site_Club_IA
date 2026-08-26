@@ -1,0 +1,15 @@
+# Prettier is configured for LF (its default `endOfLine: "lf"`), but without
+# this file a Windows checkout lands CRLF on disk and `npm run format:check`
+# fails locally on files nobody touched — while CI, which checks out on Linux,
+# passes. Normalise on checkout so both agree.
+* text=auto eol=lf
+
+# Binary assets must never be line-ending normalised.
+*.webp binary
+*.jpg  binary
+*.jpeg binary
+*.png  binary
+*.ico  binary
+*.mp4  binary
+*.woff binary
+*.woff2 binary

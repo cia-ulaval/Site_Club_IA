@@ -13,14 +13,25 @@
       "join": "Rejoindre le club"
     },
     "projectsPage": {
-      "subtitle": "13 projets actifs · 40+ étudiants · IA, hardware et applications."
+      "subtitle": "Projets étudiants en IA, en hardware et en applications."
+    },
+    "stats": {
+      "projects": "Projets",
+      "members": "Membres",
+      "domains": "Domaines"
+    },
+    "index": {
+      "all": "Tout voir"
+    },
+    "partnership": {
+      "label": "Partenariat"
     },
     "partners": {
-      "label": "Nos partenaires & commanditaires"
+      "label": "Nos partenaires & commanditaires",
+      "carouselLabel": "Partenaires et commanditaires du CIA"
     },
     "projects": {
-      "title": "Découvrez nos projets innovants !",
-      "subtitle": "Découvrez nos projets innovants !",
+      "title": "Nos projets",
       "flapeeg": {
         "title": "FlapEEG",
         "description": "Un jeu vidéo innovant contrôlé par les ondes cérébrales (EEG). Découvrez comment l'IA et la neurotechnologie permettent de piloter un oiseau virtuel par la pensée. Projet pionnier en interface cerveau-machine, ouvert à tous les profils (neuro, IA, dev, design).",
@@ -76,12 +87,19 @@
       },
       "imageComing": "Image du projet à venir",
       "learnMore": "En savoir plus",
-      "github": "GitHub"
+      "github": "GitHub",
+      "avion-cargo": {
+        "title": "Avion-Cargo",
+        "description": "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm."
+      }
     },
     "collaboration": {
       "title": "Intéressés à collaborer ?",
       "description": "Les sponsors nous aident à atteindre nos objectifs et à donner vie à nos projets. Intéressé à collaborer avec nous ? Consultez nos plans.",
       "button": "Voir nos plans"
+    },
+    "domains": {
+      "label": "Axes de travail"
     }
   },
   "projects": {
@@ -90,7 +108,27 @@
       "hardware": "Hardware",
       "application": "Application",
       "robotics": "Robotique"
-    }
+    },
+    "field": {
+      "status": "État",
+      "domain": "Domaine",
+      "partner": "Partenaire"
+    },
+    "status": {
+      "active": "En cours",
+      "shipped": "Terminé"
+    },
+    "semesters": {
+      "automne2026": "Automne 2026",
+      "hiver2026": "Hiver 2026",
+      "automne2025": "Automne 2025",
+      "hiver2025": "Hiver 2025",
+      "automne2024": "Automne 2024",
+      "hiver2024": "Hiver 2024",
+      "automne2023": "Automne 2023"
+    },
+    "noPreview": "aucun aperçu",
+    "term": "Session"
   },
   "navbar": {
     "home": "Accueil",
@@ -104,21 +142,102 @@
     "clubName": "Club d'IA de l'Université Laval",
     "slogan": "Concrétisons vos projets.",
     "connect": "Nous suivre",
-    "copyright": "© 2025 Dereck Bélanger",
-    "openSource": "Projet open source sur GitHub"
+    "openSource": "Code source",
+    "clubShort": "CIA ULaval",
+    "madeBy": "Fait par",
+    "privacy": "Politique de confidentialité",
+    "privacyChoices": "Choix de mesure"
+  },
+  "privacyConsent": {
+    "eyebrow": "Mesure facultative",
+    "title": "Nous aider à améliorer le site ?",
+    "description": "Avec votre accord, Vercel Web Analytics et Speed Insights mesureront les pages visitées, la localisation approximative et les performances. Ils n’utilisent aucun témoin, et le site fonctionne de la même façon si vous refusez.",
+    "learnMore": "Lire la politique de confidentialité",
+    "accept": "Autoriser",
+    "decline": "Refuser",
+    "close": "Fermer les choix de mesure"
+  },
+  "privacyPage": {
+    "seoTitle": "Politique de confidentialité | CIA ULaval",
+    "seoDescription": "Découvrez comment le CIA ULaval traite les renseignements envoyés par courriel et utilise des mesures d’audience et de performance facultatives, sans témoins.",
+    "eyebrow": "Confidentialité / CIA-POL-01",
+    "title": "Politique de confidentialité",
+    "intro": "Une explication en langage simple des renseignements traités par ce site, de leur utilisation, de leurs destinataires et de vos choix.",
+    "updated": "Dernière mise à jour : 25 août 2026",
+    "atGlance": {
+      "title": "En bref",
+      "contact": "Le formulaire de partenariat reste dans votre navigateur et ouvre seulement un brouillon dans votre application de courriel.",
+      "analytics": "Les mesures d’audience et de performance Vercel restent désactivées jusqu’à votre autorisation.",
+      "noSale": "Nous ne vendons aucun renseignement personnel et n’utilisons aucun pixel publicitaire."
+    },
+    "responsible": {
+      "title": "Qui est responsable",
+      "body": "Le Club Intelligence Artificielle – Université Laval (CIA ULaval) exploite ce site. La personne responsable de la protection des renseignements personnels du CIA ULaval est le point de contact désigné pour toute question, demande ou plainte concernant des renseignements personnels."
+    },
+    "information": {
+      "title": "Renseignements traités et moyens de collecte",
+      "messages": {
+        "title": "Messages que vous choisissez d’envoyer",
+        "body": "Le formulaire de partenariat ne transmet aucun renseignement à ce site ni à une base de données. Il prépare un brouillon de courriel sur votre appareil. Si vous l’envoyez, le Club reçoit le nom et l’adresse de réponse obligatoires, l’organisation et le message facultatifs que vous avez saisis, ainsi que les métadonnées habituelles du courriel. Rien ne parvient au Club avant l’envoi du courriel."
+      },
+      "technical": {
+        "title": "Diffusion du site et mesures facultatives",
+        "body": "Comme tout site hébergé, Vercel peut traiter les données de requête nécessaires pour diffuser et sécuriser le site, notamment l’adresse IP, l’heure de la requête, la route et les renseignements sur le navigateur. Seulement après votre autorisation, Vercel Web Analytics peut traiter la route, la provenance, les paramètres de requête filtrés, le navigateur, le système d’exploitation, l’appareil, une localisation approximative jusqu’à la ville et une empreinte de requête renouvelée toutes les 24 heures. Speed Insights mesure les signaux Web essentiels par route et des renseignements connexes sur l’appareil, le navigateur, le réseau, le pays et le moment de réception. Vercel décrit ces résultats de mesure comme anonymes ou agrégés. Nous n’envoyons aucun événement analytique personnalisé."
+      },
+      "storage": {
+        "title": "Préférences conservées sur votre appareil",
+        "body": "Le site conserve la langue choisie sous « i18nextLng » et votre choix de mesure sous « cia.analyticsConsent.v1 » dans le stockage local du navigateur. Ces valeurs strictement fonctionnelles servent à mémoriser vos choix; elles ne sont pas utilisées à des fins publicitaires. Effacer les données du site dans votre navigateur les supprime."
+      }
+    },
+    "purposes": {
+      "title": "Pourquoi nous utilisons les renseignements",
+      "body": "Nous utilisons la correspondance pour vous répondre, discuter d’adhésion ou de partenariat, conserver les dossiers administratifs nécessaires et protéger le Club. Les données techniques de requête servent à diffuser et sécuriser le site. Si vous acceptez, les mesures d’audience et de performance servent uniquement à comprendre l’utilisation du site et à améliorer son contenu, son chargement et sa réactivité."
+    },
+    "sharing": {
+      "title": "Qui peut recevoir les renseignements",
+      "body": "Les messages sont traités par votre fournisseur de courriel, notre service de courriel institutionnel et les responsables du Club qui doivent y répondre ou gérer la relation. Les administrateurs du site et Vercel peuvent accéder aux données techniques seulement dans la mesure nécessaire pour fournir, sécuriser et maintenir le service. Google Fonts reçoit une requête technique de votre navigateur pour fournir les polices du site; Google indique que son API Fonts ne crée aucun témoin. Les liens vers Discord, les réseaux sociaux, GitHub et d’autres sites sont régis par les pratiques de confidentialité de ces services. Nous ne vendons ni ne louons aucun renseignement personnel."
+    },
+    "transfers": {
+      "title": "Traitement hors Québec",
+      "body": "Vercel, Google et les fournisseurs de services de courriel peuvent traiter des données techniques ou des messages hors du Québec et du Canada, là où eux-mêmes ou leurs sous-traitants exercent leurs activités. Leurs mesures de protection, leurs ententes de service et les lois de ces territoires peuvent s’appliquer."
+    },
+    "retention": {
+      "title": "Conservation et mesures de protection",
+      "body": "Nous conservons la correspondance uniquement pendant la durée raisonnablement nécessaire pour répondre, gérer la relation, respecter des exigences administratives ou légales et régler des différends, puis nous la supprimons ou l’anonymisons lorsque cela convient. La conservation des mesures par Vercel dépend du forfait de service et est décrite dans sa documentation à jour. L’accès est limité aux personnes qui en ont besoin et des mesures de protection raisonnables sont appliquées. Aucune transmission Internet ou par courriel ne peut être garantie entièrement sécurisée."
+    },
+    "consent": {
+      "title": "Témoins et choix de mesure",
+      "body": "Ce site ne crée aucun témoin publicitaire ou analytique. Puisque la mesure d’audience peut distinguer les visites et inclure une localisation approximative, les deux outils de mesure Vercel sont désactivés par défaut. Vous pouvez les autoriser ou les refuser sans perdre de fonctionnalité et modifier votre choix en tout temps par « Choix de mesure » dans le pied de page. Si nous ajoutons des témoins non essentiels ou une technologie semblable, nous mettrons cette politique à jour et demanderons le consentement lorsque requis."
+    },
+    "rights": {
+      "title": "Vos choix et vos droits",
+      "body": "Vous pouvez demander par écrit l’accès aux renseignements personnels que nous détenons à votre sujet ou leur rectification, retirer votre consentement lorsque cela s’applique, demander les renseignements informatisés applicables dans un format technologique structuré et couramment utilisé, ou savoir comment un message a été traité. Nous pouvons vérifier votre identité avant de répondre. Vous pouvez aussi déposer une plainte auprès de la personne responsable du Club puis, au besoin, auprès de la Commission d’accès à l’information du Québec."
+    },
+    "resources": {
+      "title": "Renseignements sur la confidentialité des services",
+      "analytics": "Pratiques de Vercel Web Analytics",
+      "speedInsights": "Pratiques de Vercel Speed Insights",
+      "vercelPrivacy": "Avis de confidentialité de Vercel",
+      "googleFonts": "Confidentialité de Google Fonts",
+      "cai": "Commission d’accès à l’information"
+    },
+    "contact": {
+      "title": "Contacter la personne responsable",
+      "body": "Pour une demande, une question ou une plainte liée à la confidentialité, communiquez avec la personne responsable de la protection des renseignements personnels du CIA ULaval. Décrivez clairement votre demande; n’envoyez aucun renseignement sensible sauf si cela est nécessaire.",
+      "subject": "Demande de confidentialité – CIA ULaval",
+      "button": "Écrire à la personne responsable"
+    }
   },
   "collaborationPage": {
     "mainTitle": "Devenez Partenaire",
     "subtitle": "Investissez dans l'Avenir de la Recherche en IA",
-    "intro": "Rejoignez notre mission pour repousser les limites de la technologie d'IA. Votre parrainage alimente la recherche de pointe, soutient les étudiants innovateurs et crée des solutions qui transforment les industries.",
+    "intro": "Votre parrainage finance directement nos projets étudiants — comme FlapEEG et F1Tenth — et vous met en contact avec une relève en intelligence artificielle avant qu'elle n'arrive sur le marché du travail.",
     "impactTitle": "Notre Impact",
     "tiersTitle": "Niveaux de Parrainage",
-    "mostPopular": "Plus populaire",
-    "projectsTitle": "Projets que Vous Financerez",
     "currentSponsorsTitle": "Nos Partenaires Actuels",
     "readyTitle": "Prêt à Collaborer ?",
-    "readyText1": "Rejoignez les organisations visionnaires qui façonnent l'avenir de l'intelligence artificielle. Nos partenariats offrent plus qu'une simple visibilité – ils donnent un accès direct à la recherche de pointe, aux étudiants talentueux et aux solutions innovantes.",
-    "readyText2": "Des formules de parrainage personnalisées sont disponibles pour les organisations ayant des intérêts de recherche ou des objectifs de collaboration spécifiques. Discutons ensemble de la façon dont nous pouvons créer de la valeur ensemble.",
+    "readyText1": "Un partenariat avec le CIA va au-delà de la visibilité : vous avez un accès direct à nos projets de recherche et aux étudiants qui les mènent, avant même qu'ils soient diplômés.",
+    "readyText2": "Des formules de parrainage personnalisées sont disponibles pour les organisations ayant des besoins de recherche ou de recrutement spécifiques — écrivez-nous pour en discuter.",
     "flexiblePayment": "Options de paiement flexibles disponibles",
     "contactTitle": "Contactez-nous",
     "contactName": "Votre Nom",
@@ -126,8 +245,9 @@
     "contactCompany": "Entreprise",
     "contactMessage": "Comment souhaitez-vous soutenir nos projets ?",
     "contactButton": "Envoyer le Message",
+    "contactPrivacyNotice": "Rien n’est envoyé depuis cette page. Le bouton ouvre un brouillon dans votre application de courriel.",
+    "contactPrivacyLink": "Comment nous traitons vos renseignements",
     "becomeSponsorButton": "Devenir Partenaire {{tier}}",
-    "progress": "Progression",
     "impactMetrics": {
       "projectsCompleted": "Projets Complétés",
       "studentResearchers": "Étudiants Chercheurs",
@@ -140,41 +260,39 @@
       "Gold": "Or",
       "Platinum": "Platine"
     },
-    "fundedProjects": {
-      "MangaTranslator IA": "MangaTranslator IA",
-      "FlapEEG": "FlapEEG",
-      "F1Tenth": "F1Tenth"
-    },
-    "fundedProjectsDescriptions": {
-      "MangaTranslator AI": "Système de traduction de manga en temps réel propulsé par l’IA.",
-      "FlapEEG": "Jeu vidéo contrôlé par les signaux cérébraux grâce à la technologie EEG.",
-      "F1Tenth": "Course F1 avec des voitures à l’échelle 1/10 contrôlées par signaux musculaires."
-    },
     "tierBenefits": {
       "Your logo and link on our website": "Votre logo et lien sur notre site web",
       "Your logo presented at our events": "Votre logo présenté lors de nos événements",
+      "Your logo presented in bold at our events": "Votre logo mis en évidence lors de nos événements",
+      "Your logo presented in very bold at our events": "Votre logo affiché en priorité lors de nos événements",
       "Your logo on our t-shirts": "Votre logo sur nos t-shirts",
+      "Your logo in bold on our t-shirts": "Votre logo mis en évidence sur nos t-shirts",
+      "Your logo in very bold on our t-shirts": "Votre logo affiché en priorité sur nos t-shirts",
       "Special thanks on our social media": "Remerciements spéciaux sur nos réseaux sociaux",
       "Distribution of your promotional materials": "Distribution de vos supports promotionnels",
       "All Bronze benefits": "Tous les avantages Bronze",
       "Invitation to our opening events": "Invitation à nos événements d'ouverture",
+      "Invitation of one member to one of our opening events": "Invitation d'une personne à l'un de nos événements d'ouverture",
+      "Invitation of three members to one of our opening events": "Invitation de trois personnes à l'un de nos événements d'ouverture",
+      "Repost of an ad": "Republication d'une annonce",
       "Repost of two ads": "Republication de deux annonces",
+      "Repost of three ads": "Republication de trois annonces",
       "All Silver benefits": "Tous les avantages Argent",
       "Sponsorship for one of our projects": "Parrainage d'un de nos projets",
+      "Sponsorship of one of our projects": "Parrainage de l'un de nos projets",
       "Access to our members CV book": "Accès au carnet de CV de nos membres",
-      "Your logo on our projects": "Votre logo sur nos projets"
+      "Access to our CV book of student researchers": "Accès à notre recueil de CV de la relève étudiante en recherche",
+      "Your logo on our projects": "Votre logo sur nos projets",
+      "Your logo on one of our projects": "Votre logo sur l'un de nos projets"
     }
   },
   "management": {
+    "heroTitle": "Notre équipe",
     "pageTitle": "Équipe et Leadership - Club Intelligence Artificielle Université Laval | CIA ULaval",
     "pageDescription": "Rencontrez l'équipe dirigeante du Club IA ULaval : président, leaders, responsables projets, marketing, finances et activités. Étudiants passionnés d'intelligence artificielle à l'Université Laval.",
     "pageKeywords": "équipe Club IA, leadership CIA ULaval, membres Club IA, président club IA, responsables projets IA, équipe étudiante, Université Laval, Nathaniel D'Amours, intelligence artificielle",
-    "pageAuthor": "Club Intelligence Artificielle - Université Laval",
     "ogTitle": "Équipe et Leadership - Club Intelligence Artificielle Université Laval",
     "ogDescription": "Découvrez l'équipe dirigeante du Club IA ULaval : président, leaders et responsables passionnés d'intelligence artificielle.",
-    "ogSiteName": "Club IA - Université Laval",
-    "twitterTitle": "Équipe et Leadership - Club Intelligence Artificielle Université Laval",
-    "twitterDescription": "Rencontrez notre équipe dirigeante d'étudiants passionnés d'intelligence artificielle.",
     "sections": {
       "president": "Président",
       "leadership": "Équipe logistique",
@@ -184,14 +302,10 @@
       "activitiesTeam": "Équipe Activités",
       "projectsTeam": "Équipe Projets",
       "teamLeads": "Leads d'équipe",
-      "auxiliaryTeam": "Équipe Auxiliaire"
+      "alumni": "Anciens contributeurs marquants"
     },
     "roles": {
-      "roleAmen": "Team Lead ASL-Decoder & Responsable de projet",
-      "roleVincent": "Reponsable de projet",
       "president": "Président",
-      "vicePresident": "Vice-Président",
-      "projectsLeader": "Leader des projets",
       "logisticsLeader": "Leader de la logistique",
       "logisticsManager": "Responsable de la logistique",
       "financeLeader": "Leader des finances",
@@ -200,7 +314,6 @@
       "activitiesLeader": "Leader des activités",
       "recruitmentManager": "Responsable du recrutement",
       "recruitmentAssistant": "Assistante du recrutement",
-      "engagementManager": "Responsable de l'engagement",
       "externalRelationsManager": "Responsable des relations externes",
       "partnershipsManager": "Responsable des partenariats",
       "treasuryManager": "Responsable du trésor",
@@ -213,17 +326,9 @@
       "readingGroupManager": "Responsable du groupe de lecture",
       "socialManager": "Responsable du social",
       "recognitionManager": "Responsable de la reconnaissance",
-      "projectsManager": "Responsable des projets",
-      "teamLead1": "Team Lead 1",
-      "teamLead2": "Team Lead 2",
-      "teamLead3": "Team Lead 3",
-      "designsAuxiliary": "Auxiliaire du responsable des designs"
+      "projectsManager": "Responsable des projets"
     },
-    "vacantPosition": "Poste Vacant",
-    "positionInInterview": "Poste en entrevue",
-    "viewLinkedIn": "Voir LinkedIn",
     "viewProfile": "Voir le profil",
-    "linkedIn": "LinkedIn",
     "modal": {
       "name": "Nom",
       "role": "Rôle",
@@ -234,13 +339,9 @@
     },
     "aboutMe": {
       "dereck": "Salut, je m'appelle Dereck, je suis le créateur de ce site web! Je suis très passionné par l'informatique en général, mais surtout par l'IA. En dehors du travail/école, je pratique les arts martiaux mixtes, la neuroscience et les échecs. N'hésitez pas à me contacter si vous avez des questions sur le club, des demandes pour le site web ou si vous voulez discuter!",
-      "amen": "Salut, je m'appelle Amen, je suis étudiant en génie logiciel à l'Université Laval et un développeur IA passionné par la construction de systèmes intelligents, de la robotique aux applications réelles en apprentissage automatique. En dehors du travail et des études, je dirige des communautés technologiques comme IEEE, des projets à la CIA et j'aime explorer l'innovation à l'intersection de l'IA, des systèmes embarqués et de l'interaction homme-machine.",
       "yves": "Salut, je m'appelle Yves, leader en marketing au sein du club. Passionné par l'informatique et le développement, je m'intéresse particulièrement à tout ce qui touche à l'innovation et à l'intelligence artificielle.\nEn dehors du cadre académique et professionnel, je suis très investi dans le sport, notamment le basketball et la course à pied. J'accorde également une place importante à la musique, en particulier au piano. Plus que tout, Jésus Christ et ma foi en Lui occupe la place centrale de ma vie.\nJe suis toujours ouvert aux échanges, que ce soit pour discuter d'IA, collaborer sur des projets ou contribuer au développement du club. N'hésitez pas à me contacter!"
     },
     "missions": {
-      "nathaniel": "Guider les leaders afin de respecter la mission, la culture et la vision du Club",
-      "louis": "Administrer les tours de calcul, l'organisation GitHub et les serveurs Discord du Club",
-      "jade": "Guider l'équipe afin de recruter 350 membres par année",
       "douae": "Recruter des étudiants et suivre leur intégration dans le Club",
       "rana": "Assurer une présence aux activités de visibilité (portes ouvertes, festivals, etc.)",
       "alexandrine": "Guider l'équipe afin d'obtenir 50 000 $",
@@ -249,31 +350,18 @@
       "anthony": "Gérer les relations avec les organismes à l'Université Laval et à l'international",
       "yves": "Guider l'équipe pour atteindre 800 abonnés LinkedIn",
       "hibaComm": "Créer le calendrier des annonces et assurer le retour de celles-ci",
-      "youssouf": "Designer la merch, les visuels, le nouveau logo du Club et le site web",
       "dereck": "Créer, maintenir et mettre à jour le site web",
-      "eleonore": "Créer des liens entre 500 membres à travers 30 événements",
       "ulysse": "Créer des liens entre 500 membres à travers 30 événements",
       "william": "Organiser des sorties (soirées jeux de société, 5@7, sport, etc.)",
       "nora": "Organiser des activités pour reconnaître les succès",
-      "jordan": "Encadrer 50 étudiants dans les projets par session",
-      "guilhem": "Former les membres selon les besoins des projets",
-      "amen": "Lancer de nouveaux projets en recrutant des Team Leads et Team Members"
+      "guilhem": "Former les membres selon les besoins des projets"
     },
     "structuredData": {
       "name": "Équipe et Leadership - Club Intelligence Artificielle Université Laval",
-      "description": "Équipe dirigeante du Club IA ULaval avec président, leaders et responsables",
-      "organizationName": "Club Intelligence Artificielle - Université Laval",
-      "organizationDescription": "Club étudiant d'intelligence artificielle de l'Université Laval"
+      "description": "Équipe dirigeante du Club IA ULaval avec président, leaders et responsables"
     }
   },
   "gallery": {
-    "pageTitle": "Galerie - Explorez les Projets EEG, Compétitions et Événements Communautaires",
-    "pageDescription": "Explorez notre galerie présentant les projets EEG, compétitions et événements communautaires. Découvrez notre parcours en IA, technologie EEG et impact communautaire.",
-    "pageKeywords": "EEG, galerie, projets, compétitions, communauté, IA, événements, formations",
-    "ogTitle": "Galerie - Projets et Compétitions EEG",
-    "ogDescription": "Explorez les projets EEG, compétitions et implication communautaire dans notre galerie dynamique.",
-    "twitterTitle": "Galerie - Projets et Compétitions EEG",
-    "twitterDescription": "Découvrez la galerie EEG présentant des projets, compétitions, implication communautaire et discussions de formation.",
     "heroTitle": "Galerie du club",
     "heroSubtitle": "Explorez nos projets, compétitions et implication communautaire",
     "categories": {
@@ -313,31 +401,19 @@
         "frontImage": "Présentation CIA aux étudiants",
         "kalvenPresenter": "Présentation externe",
         "kiosque": "Présentation stand CIA",
-        "kiosque2": "Présentation stand CIA 2",
         "presentation": "Présentation CIA aux étudiants 2",
-        "rencontrecia": "Présentation CIA aux étudiants 3",
         "table": "Équipe exécutive au stand de présentation",
-        "table2": "Équipe exécutive au stand de présentation 2",
         "table3": "Équipe exécutive au stand de présentation 3",
         "testclub": "Démonstration signal EEG"
       }
     },
-    "closeLabel": "Fermer la lightbox"
+    "closeLabel": "Fermer la lightbox",
+    "viewImage": "Agrandir"
   },
   "joinus": {
-    "pageTitle": "Nous rejoindre - Collaborez, dirigez et grandissez avec notre équipe",
-    "pageDescription": "Rejoignez notre équipe pour collaborer sur des projets passionnants, connectez-vous avec nous sur Discord et postulez pour des rôles de chef d'équipe ou d'associé.",
-    "pageKeywords": "Nous rejoindre, équipe, Discord, postuler, chef d'équipe, associé, projets, collaboration",
-    "heroTitle": "Nous rejoindre - Faites partie de notre équipe",
     "heroSubtitle": "Collaborez, dirigez et grandissez avec nous",
     "discordText": "Rejoignez-nous sur Discord pour rester informé et collaborer avec l'équipe.",
     "discordButton": "Rejoindre notre Discord",
-    "applyTitle": "Postuler à un rôle",
-    "applyText": "Intéressé à devenir chef d'équipe ou associé ? Postulez dès maintenant pour rejoindre notre club et contribuer à des projets passionnants.",
-    "applyButton": "Postuler ici",
-    "collabTitle": "Envie de collaborer ?",
-    "collabText": "Nous sommes toujours ouverts à de nouveaux partenariats et idées. Découvrez comment collaborer avec nous !",
-    "collabButton": "En savoir plus sur la collaboration",
     "valueProp": {
       "title": "Pourquoi nous rejoindre ?",
       "projects": {
@@ -353,20 +429,17 @@
         "description": "Échange avec une communauté dynamique sur Discord et lors de nos événements."
       }
     },
-    "socialFollow": "Nous suivre"
+    "socialFollow": "Nous suivre",
+    "emailAction": "Ouvrir votre application de courriel"
   },
   "flapeeg": {
-    "meta": {
-      "title": "FlapEEG - Révolutionner le jeu vidéo avec l'IA contrôlée par la pensée",
-      "description": "FlapEEG est un jeu vidéo révolutionnaire contrôlé par la pensée, alimenté par l'IA et la technologie EEG. Découvrez comment nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et contrôler le jeu.",
-      "keywords": "FlapEEG, EEG, jeu contrôlé par la pensée, signaux cérébraux, IA, jeu vidéo, innovation"
-    },
     "hero": {
-      "title": "FlapEEG - Jeu vidéo contrôlé par la pensée",
-      "subtitle": "Introduction à FlapEEG",
       "description": {
         "paragraph1": "FlapEEG est un jeu vidéo qui est contrôlé par la pensée. Nous avons entraîné un modèle d'IA pour interpréter les signaux cérébraux et les traduire en actions dans le jeu. Pour que cela fonctionne, nous nous sommes équipés de la dernière technologie EEG (électroencéphalogramme),",
         "paragraph2": "Le format du jeu est simple ; avez-vous déjà entendu parler de flappy bird ? Eh bien, c'est le même concept simple mais amusant. La seule différence est que vous contrôlez l'oiseau avec vos pensées. La simple volonté de faire éviter les obstacles au petit personnage suffit à le faire bouger. Nous sommes très fiers du travail que nous avons accompli ; ce n'est peut-être que le début d'une révolution du jeu vidéo ! Pensez-y, et si nous combinions cette mécanique à un casque VR ? Ou, si c'était le pas vers l'aide aux personnes handicapées en leur donnant le pouvoir de leurs propres pensées ? Les possibilités sont infinies."
+      },
+      "image": {
+        "alt": "Interface du jeu FlappyBrain pilotée par un casque EEG"
       }
     },
     "team": {
@@ -455,13 +528,7 @@
     }
   },
   "f1tenth": {
-    "meta": {
-      "title": "F1Tenth - Voiture de course miniature contrôlée par IA utilisant des signaux musculaires",
-      "description": "Explorez F1Tenth, un projet étudiant révolutionnaire qui combine l'IA et les signaux musculaires électromyographiques pour contrôler une voiture de course miniature.",
-      "keywords": "F1Tenth, IA, signaux musculaires, bracelet électromyographique, voiture de course miniature, projets IA, innovation étudiante"
-    },
     "hero": {
-      "title": "F1Tenth - L'IA rencontre les signaux musculaires",
       "imageAlt": "Voiture de course miniature F1Tenth contrôlée par IA et signaux musculaires",
       "description1": "Amateur de sensations fortes? Ce projet va captiver votre intérêt! F1 Tenth est une équipe d'étudiants passionnés d'IA qui ont réussi à combiner l'humain et la machine.",
       "description2": "L'équipe a dû entraîner un modèle d'IA pour lire les signaux électriques musculaires et les traduire en actions."
@@ -504,214 +571,16 @@
       "simon": {
         "description": ""
       }
-    },
-    "sponsor": {
-      "title": "Remerciements spéciaux à ceux qui ont rendu ce projet possible",
-      "description": "Nous aimerions remercier Sifi Labs, qui ont financé le projet et aidé à la réalisation de ce projet. Nous aimerions également remercier VAUL, le laboratoire de véhicules autonomes de l'Université Laval."
-    }
-  },
-  "lenia": {
-    "meta": {
-      "title": "Lenia - Automate Cellulaire Continu",
-      "description": "Explorez Lenia, un automate cellulaire avancé inspiré du Jeu de la Vie de Conway. Découvrez les comportements émergents, l'auto-organisation, et le potentiel de l'intelligence artificielle.",
-      "keywords": "Lenia, Automate Cellulaire, Jeu de la Vie, Intelligence Artificielle, Comportements Émergents, Auto-Organisation, Recherche IA",
-      "og": {
-        "title": "Lenia - Automate Cellulaire Continu",
-        "description": "Découvrez Lenia, un automate cellulaire continu qui repousse les limites de l'auto-organisation et des comportements émergents en intelligence artificielle."
-      },
-      "twitter": {
-        "title": "Lenia - Automate Cellulaire Continu",
-        "description": "Explorez Lenia, un automate cellulaire avancé inspiré du Jeu de la Vie de Conway. Découvrez les comportements émergents, l'auto-organisation, et le potentiel de l'intelligence artificielle."
-      }
-    },
-    "hero": {
-      "subtitle": "Qu'est-ce que Lenia ?"
-    },
-    "features": {
-      "continuous": {
-        "title": "Automate Continu",
-        "description": "Au-delà des états binaires du Jeu de la Vie"
-      },
-      "emergent": {
-        "title": "Comportements Émergents",
-        "description": "Des motifs complexes et vivants émergent"
-      },
-      "research": {
-        "title": "Recherche Exploratoire",
-        "description": "Repousser les limites de l'auto-organisation"
-      }
-    },
-    "content": {
-      "paragraph1": "L'intelligence artificielle ne se résume pas aux réseaux de neurones ou aux algorithmes traditionnels. Certains systèmes, basés sur des règles simples, peuvent générer des comportements d'une complexité étonnante. C'est le cas de Lenia, un automate cellulaire avancé inspiré du célèbre Jeu de la Vie de John Conway.",
-      "paragraph2": "Contrairement au Jeu de la Vie, où les cellules sont soit vivantes soit mortes et évoluent par étapes discrètes, Lenia fonctionne avec des valeurs continues et un temps fluide. Cela permet l'émergence de structures dynamiques et auto-organisées qui se comportent de manière rappelant les organismes vivants. Chaque pixel (ou \"cellule\") dans Lenia a une valeur numérique, qui peut être considérée comme la concentration d'une espèce chimique. Ces cellules interagissent avec leur environnement en utilisant des filtres de convolution, qui déterminent comment une cellule \"perçoit\" ses voisines. Un filtre de convolution est essentiellement une somme pondérée des valeurs des cellules voisines, ce qui signifie qu'au lieu de simplement vérifier les voisins immédiats, Lenia applique un motif structuré—souvent en forme d'anneau—pour déterminer comment différentes distances contribuent à l'évolution d'une cellule. Le résultat est ensuite passé à travers une fonction de croissance, qui décide si la valeur d'une cellule augmente ou diminue en fonction de l'environnement environnant. Lorsqu'elle est appliquée à travers toute la grille, ce processus génère des comportements complexes et vivants à partir de règles mathématiques simples.",
-      "paragraph3": "Notre équipe a réussi à implémenter une version à canal unique de Lenia, où une seule \"espèce chimique\" existe. Cependant, nous avons rencontré des défis pour l'étendre à trois canaux, où plusieurs espèces interagissantes (représentées comme des valeurs RGB en visualisation) élargiraient considérablement les possibilités de comportements émergents. Contrairement au Jeu de la Vie, qui a un \"bestiaire\" bien documenté de configurations de départ intéressantes, Lenia manque d'une bibliothèque standardisée de motifs connus, rendant plus difficile la recherche de structures stables et fascinantes.",
-      "paragraph4": "Ce projet offre une opportunité passionnante d'explorer l'émergence en intelligence artificielle, où des comportements complexes naissent d'interactions simples. Nous invitons les étudiants, chercheurs et passionnés d'IA à nous rejoindre pour repousser les limites des systèmes auto-organisés et découvrir le potentiel caché de Lenia."
-    },
-    "images": {
-      "pattern": {
-        "alt": "Exemple de motif Lenia"
-      },
-      "animation": {
-        "alt": "Exemple d'animation Lenia",
-        "caption": "https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680"
-      }
-    },
-    "team": {
-      "title": "L'Équipe",
-      "theophile": {
-        "description": ""
-      },
-      "jordan": {
-        "description": ""
-      },
-      "louis": {
-        "description": ""
-      },
-      "others": {
-        "title": "Et d'autres",
-        "description": ""
-      }
-    }
-  },
-  "mangaai": {
-    "meta": {
-      "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
-      "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel et profitez de vos histoires préférées en plusieurs langues.",
-      "keywords": "Traducteur Manga, Traduction Manga IA, Traduction Manga Temps Réel, Manga109, Manga IA, Traduire Manga, Traduction Manga Japonais Français",
-      "og": {
-        "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
-        "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel."
-      },
-      "twitter": {
-        "title": "Traducteur de Manga - Traduction de Manga Alimentée par l'IA",
-        "description": "Brisez la barrière linguistique avec notre Traducteur de Manga alimenté par l'IA. Traduisez les planches de manga en temps réel et profitez de vos histoires préférées en plusieurs langues."
-      }
-    },
-    "hero": {
-      "title": {
-        "manga": "Manga",
-        "translator": "Traducteur"
-      },
-      "subtitle": "Traduction de Manga Alimentée par l'IA",
-      "description": "Vous avez déjà voulu lire un manga qui n'était pas encore traduit ? Notre traducteur alimenté par l'IA brise la barrière linguistique, apportant les mangas non traduits aux lecteurs du monde entier en temps réel."
-    },
-    "features": {
-      "realtime": {
-        "title": "Traduction Temps Réel",
-        "description": "Traduisez instantanément les planches de manga sans attendre les sorties officielles"
-      },
-      "multilang": {
-        "title": "Plusieurs Langues",
-        "description": "Support pour les traductions entre japonais, anglais, français et plus"
-      },
-      "contextaware": {
-        "title": "Conscient du Contexte",
-        "description": "Notre IA comprend les relations entre personnages et le contexte narratif"
-      }
-    },
-    "approach": {
-      "title": "Notre Approche",
-      "paragraph1": "Notre projet utilise Manga109, un jeu de données renommé dans le domaine, fréquemment employé pour la détection de bulles de dialogue, la reconnaissance optique de caractères (OCR), et la reconnaissance d'émotions dans les illustrations.",
-      "paragraph2": "Cette collection complète sert de base pour entraîner nos modèles d'IA à comprendre le langage visuel unique du manga et traduire le texte avec précision tout en préservant le contexte."
-    },
-    "images": {
-      "manga109": {
-        "alt": "Jeu de données Manga 109",
-        "caption": "Source: http://www.manga109.org/ja/index.html"
-      },
-      "example": {
-        "alt": "Exemple de traduction Manga IA",
-        "caption": "Exemple de sortie de notre système de traduction automatique"
-      }
-    },
-    "process": {
-      "title": "Processus de Développement",
-      "step1": {
-        "title": "Développement du Prototype",
-        "description": "Nous avons commencé par exploiter les outils existants pour construire rapidement un prototype fonctionnel qui pourrait démontrer le concept."
-      },
-      "step2": {
-        "title": "Composants Principaux",
-        "description": "Notre système consiste en la détection de bulles avec segmentation U-Net, extraction de texte basée sur OCR, et intégration de traduction automatique."
-      },
-      "step3": {
-        "title": "Traduction et Réinsertion",
-        "description": "Après traduction, nous utilisons le traitement d'image avancé pour replacer le texte traduit dans les bulles de dialogue tout en respectant le contexte visuel."
-      },
-      "step4": {
-        "title": "Raffinement Continu",
-        "description": "Nous améliorons constamment nos modèles pour gérer les défis comme les différences de longueur de texte et maintenir l'intégrité artistique."
-      }
-    },
-    "future": {
-      "title": "Améliorations Futures",
-      "textResizing": {
-        "title": "Redimensionnement Dynamique du Texte",
-        "description": "Ajustement intelligent de la taille de police et de la mise en page du texte pour assurer un ajustement approprié dans les bulles de dialogue de tailles et formes variées."
-      },
-      "genderDetection": {
-        "title": "Détection du Genre des Personnages",
-        "description": "Analyser les indices visuels pour détecter le genre des personnages, améliorant la précision de traduction pour les langues avec genre grammatical comme le français."
-      },
-      "characterId": {
-        "title": "Identification des Personnages",
-        "description": "Reconnaître les personnages récurrents pour maintenir des modèles de parole cohérents et des traits de personnalité tout au long des traductions."
-      },
-      "contextAware": {
-        "title": "Traduction Consciente du Contexte",
-        "description": "Incorporer le contexte narratif et l'information visuelle pour produire des traductions plus naturelles et précises qui respectent le ton de l'histoire."
-      }
-    },
-    "team": {
-      "title": "Rencontrez Notre Équipe",
-      "description": "Un groupe diversifié d'experts passionnés par l'apport du manga aux audiences mondiales grâce à la technologie d'IA de pointe.",
-      "theophile": {
-        "description": ""
-      },
-      "loic": {
-        "description": ""
-      },
-      "xavier": {
-        "description": ""
-      },
-      "louisjacob": {
-        "description": ""
-      },
-      "johnwilliam": {
-        "description": ""
-      }
-    }
-  },
-  "decisionTree": {
-    "meta": {
-      "title": "TreeCore - Simplifier les Données Complexes pour de Meilleurs Insights",
-      "description": "Découvrez comment les arbres de décision simplifient les ensembles de données complexes tout en maintenant l'interprétabilité. Apprenez-en plus sur notre projet de recherche et l'équipe qui en est à l'origine.",
-      "keywords": "Arbre de Décision, Science des Données, Interprétabilité, Recherche, Modèles Simplifiés"
-    },
-    "hero": {
-      "title": "TreeCore",
-      "description1": "TreeCore est un projet de recherche du Club IA qui explore des approches innovantes pour optimiser l’utilisation des forêts d’arbres décisionnels, un type de modèle très utilisé en apprentissage automatique. L’objectif principal est double : d’abord, réduire intelligemment les jeux de données en ne conservant que les exemples les plus pertinents, puis étudier combien d’exemples sont réellement nécessaires pour reconstruire un arbre de décision déjà entraîné.",
-      "description2": "Les étudiants impliqués dans ce projet sont amenés à concevoir, coder et tester des algorithmes en Python, à manipuler des jeux de données variés, à comparer différentes stratégies d’entraînement et à interpréter les résultats. Le projet met l’accent autant sur la rigueur scientifique que sur la créativité dans la résolution de problèmes. C’est une occasion idéale d’apprendre concrètement à mener un projet de recherche en IA, de la revue de littérature jusqu’à la validation expérimentale, en passant par la programmation et l’analyse critique.",
-      "description3": "Si tu es curieux, que tu aimes comprendre comment fonctionnent les modèles d’IA en profondeur et que tu veux participer à un projet stimulant au sein d’une équipe, TreeCore est fait pour toi. Peu importe ton niveau exact, si tu es motivé à apprendre et à t’investir, tu pourras y trouver ta place que ce soit dans le code, l’analyse ou même la vulgarisation. Le projet se poursuit à l’automne et accueille volontiers de nouveaux membres.",
-      "imageAlt": "Illustration d'un arbre de décision"
-    },
-    "team": {
-      "title": "Rencontrez l'équipe derrière le projet"
     }
   },
   "nutrinov": {
     "hero": {
       "title": "NutriNov",
-      "subtitle": "Innovation Alimentaire & Entrepreneuriat IA",
-      "paragraph1": "NutriNov est un projet entrepreneurial innovant visant à révolutionner le secteur de l'alimentation grâce à l'intelligence artificielle. Notre mission est d'identifier et résoudre des problèmes concrets liés à l'alimentation en développant des solutions technologiques créatives et viables.",
-      "paragraph2": "En partenariat avec Open Food Facts, nous exploitons une base de données ouverte et complète sur les produits alimentaires pour créer des systèmes intelligents répondant aux besoins réels des consommateurs et professionnels de l'industrie.",
-      "image": {
-        "alt": "Interface NutriNov - Innovation Alimentaire"
-      }
+      "paragraph1": "NutriNov est un projet entrepreneurial : identifier un vrai problème alimentaire, puis développer un prototype technologique viable pour le résoudre.",
+      "paragraph2": "En partenariat avec Open Food Facts, nous exploitons une base de données ouverte et complète sur les produits alimentaires pour créer des systèmes intelligents répondant aux besoins réels des consommateurs et professionnels de l'industrie."
     },
     "roles": {
       "title": "Profils Recherchés",
-      "subtitle": "Rejoins une équipe pluridisciplinaire",
       "speaker": {
         "title": "Le Speaker",
         "skills": [
@@ -822,27 +691,6 @@
         }
       ]
     },
-    "technologies": {
-      "title": "Technologies & Compétences",
-      "software": {
-        "title": "Logiciels",
-        "items": ["Python", "SQL / NoSQL", "PowerBI", "Figma", "Outils de design"]
-      },
-      "hardware": {
-        "title": "Matériel",
-        "items": ["À déterminer selon le prototype développé"]
-      },
-      "skills": {
-        "title": "Compétences clés",
-        "items": [
-          "Entrepreneuriat",
-          "Analyse de données",
-          "Développement web/mobile",
-          "Pitch et présentation",
-          "Design thinking"
-        ]
-      }
-    },
     "benefits": {
       "title": "Pourquoi rejoindre ce projet?",
       "items": [
@@ -868,15 +716,12 @@
     },
     "cta": {
       "title": "Prêt à innover dans l'alimentaire?",
-      "subtitle": "Rejoins NutriNov et participe à la révolution alimentaire!",
-      "description": "Que tu sois passionné par l'entrepreneuriat, la technologie ou l'innovation alimentaire, ta place est dans notre équipe.",
-      "button": "Rejoindre NutriNov"
+      "subtitle": "Rejoins NutriNov et développe un vrai prototype, du problème jusqu'au pitch.",
+      "description": "Peu importe ton profil — speaker, innovateur, entrepreneur, designer ou analyste — ton équipe t'attend."
     }
   },
   "poppy": {
     "hero": {
-      "title": "Poppy Simulation",
-      "subtitle": "Reinforcement Learning pour Robot Humanoïde",
       "paragraph1": "Le projet Poppy Simulation vise à développer une intelligence artificielle basée sur le Reinforcement Learning pour apprendre à un robot humanoïde Poppy à marcher de manière autonome et stable.",
       "paragraph2": "L'entraînement s'effectue dans un environnement de simulation sophistiqué pour obtenir une démarche robuste et adaptative, avec une perspective de déploiement futur sur le robot physique. Ce projet explore les défis passionnants du transfert Sim-to-Real.",
       "image": {
@@ -895,27 +740,6 @@
       "main": {
         "title": "Objectif Principal",
         "description": "Développer un modèle de Reinforcement Learning capable de faire marcher le robot Poppy en simulation de façon robuste et stable."
-      },
-      "deliverables": {
-        "title": "Livrables Attendus",
-        "items": [
-          {
-            "title": "Environnement de simulation fonctionnel",
-            "description": "Setup complet de l'environnement virtuel Poppy"
-          },
-          {
-            "title": "Modèle RL entraîné",
-            "description": "Modèle optimisé pour une marche stable et robuste"
-          },
-          {
-            "title": "Documentation technique",
-            "description": "Documentation complète des algorithmes implémentés"
-          },
-          {
-            "title": "Pipeline Sim2Real",
-            "description": "Préparation au transfert simulation vers robot physique"
-          }
-        ]
       }
     },
     "timeline": {
@@ -1014,15 +838,12 @@
     },
     "resources": {
       "title": "Ressources & Références",
-      "poppy": "Documentation officielle du projet Poppy",
-      "vooban": "Support et expertise de Vooban",
-      "github": "Repository GitHub du projet (à venir)"
+      "poppy": "Documentation officielle du projet Poppy"
     },
     "cta": {
       "title": "Prêt à faire marcher Poppy?",
       "subtitle": "Rejoins l'équipe et donne vie à l'intelligence robotique!",
-      "description": "Si tu es passionné par le Reinforcement Learning, la robotique ou l'IA appliquée, ce projet est pour toi.",
-      "button": "Rejoindre Poppy Simulation"
+      "description": "Si tu es passionné par le Reinforcement Learning, la robotique ou l'IA appliquée, ce projet est pour toi."
     }
   },
   "poppyConception": {
@@ -1101,52 +922,6 @@
         }
       ]
     },
-    "skills": {
-      "title": "Compétences Développées",
-      "items": [
-        {
-          "title": "Fabrication additive",
-          "description": "Maîtrise de l'impression 3D et de la préparation des fichiers"
-        },
-        {
-          "title": "Mécanique & Robotique",
-          "description": "Assemblage, ajustement et intégration de systèmes mécaniques"
-        },
-        {
-          "title": "Électronique embarquée",
-          "description": "Soudure, câblage et conception de circuits"
-        },
-        {
-          "title": "Programmation Python/C++",
-          "description": "Contrôle de moteurs, capteurs et systèmes embarqués"
-        },
-        {
-          "title": "Travail en équipe",
-          "description": "Collaboration multidisciplinaire sur un projet concret"
-        }
-      ]
-    },
-    "benefits": {
-      "title": "Pourquoi Rejoindre Ce Projet?",
-      "items": [
-        {
-          "title": "Robot réel",
-          "description": "Participez à la création d'un vrai robot humanoïde que vous pourrez voir fonctionner"
-        },
-        {
-          "title": "Open-source",
-          "description": "Découvrez la robotique open-source et contribuez à un projet accessible à tous"
-        },
-        {
-          "title": "Équipe passionnée",
-          "description": "Collaborez avec des étudiants motivés partageant votre passion pour le hardware"
-        },
-        {
-          "title": "Expérience valorisante",
-          "description": "Ajoutez une expérience concrète et impressionnante à votre CV"
-        }
-      ]
-    },
     "resources": {
       "title": "Ressources & Références",
       "poppy": "Documentation officielle du projet Poppy"
@@ -1154,14 +929,11 @@
     "cta": {
       "title": "Prêt à construire Poppy?",
       "subtitle": "Rejoins l'équipe et donne vie à un robot humanoïde!",
-      "description": "Si tu es passionné par le hardware, l'impression 3D ou la robotique, ce projet est fait pour toi.",
-      "button": "Rejoindre Poppy Conception"
+      "description": "Si tu es passionné par le hardware, l'impression 3D ou la robotique, ce projet est fait pour toi."
     }
   },
   "sgdbeyond": {
     "hero": {
-      "title": "Stochastic Gradient Descent, and Beyond!",
-      "subtitle": "Recherche en Optimisation Stochastique",
       "paragraph1": "Vous êtes-vous déjà demandé pourquoi votre modèle d'IA converge parfois vers une solution médiocre alors qu'il pourrait faire tellement mieux ? La réponse se cache souvent dans l'algorithme d'optimisation.",
       "paragraph2": "La descente de gradient stochastique (SGD) est le moteur derrière l'entraînement de pratiquement tous les modèles de deep learning. Pourtant, malgré 20 ans d'utilisation, cet algorithme reste imparfait : il se coince dans des minima locaux et rate souvent les meilleures solutions.",
       "image": {
@@ -1171,13 +943,10 @@
     "team": {
       "title": "Leadership",
       "lead": "Team Lead: Benjamin Leblanc",
-      "type": "Type: Publication scientifique",
       "size": "Effectif recherché: 5 membres"
     },
     "mission": {
-      "title": "Notre Mission",
       "understanding": {
-        "title": "Comprendre Pourquoi",
         "description": "Analyser en profondeur pourquoi SGD se coince dans des minima locaux et rate les meilleures solutions"
       },
       "hypothesis": {
@@ -1185,14 +954,11 @@
         "description": "Injecter du « bruit » intelligent dans le processus d'optimisation pourrait aider le modèle à explorer de meilleures solutions"
       },
       "goal": {
-        "title": "Objectif Concret",
         "description": "Publier nos résultats dans une conférence de type workshop"
       },
       "status": "Le projet est déjà bien avancé — les avenues de recherche prometteuses sont identifiées et l'exploitation a commencé. Vous rejoignez une équipe en pleine action !"
     },
     "objectives": {
-      "title": "Objectifs & Livrables",
-      "main": "Soumettre un article de recherche dans une conférence de type workshop",
       "deliverables": {
         "title": "Livrables Attendus",
         "items": [
@@ -1241,30 +1007,6 @@
         }
       ]
     },
-    "technologies": {
-      "title": "Technologies & Compétences",
-      "software": {
-        "title": "Stack Logiciel",
-        "items": ["Python", "PyTorch / TensorFlow", "Jupyter Notebooks", "LaTeX", "GPU Computing"]
-      },
-      "hardware": {
-        "title": "Matériel",
-        "items": [
-          "GPU (accès fourni pour les expérimentations)",
-          "Cluster de calcul haute performance"
-        ]
-      },
-      "skills": {
-        "title": "Compétences Visées",
-        "items": [
-          "Optimisation stochastique",
-          "Théorie des probabilités",
-          "Deep Learning",
-          "Rédaction scientifique",
-          "Analyse expérimentale"
-        ]
-      }
-    },
     "profiles": {
       "title": "Profils Recherchés",
       "programmer": {
@@ -1311,10 +1053,7 @@
       ]
     },
     "cta": {
-      "title": "Prêt à Optimiser l'Optimisation ?",
-      "subtitle": "Rejoignez l'équipe de recherche et contribuez à la science !",
-      "description": "Si vous aimez la théorie mathématique, la programmation et la recherche scientifique, ce projet combine tout ce que vous aimez.",
-      "button": "Rejoindre la Recherche"
+      "description": "Si vous aimez la théorie mathématique, la programmation et la recherche scientifique, ce projet combine tout ce que vous aimez."
     }
   },
   "canlock": {
@@ -1323,13 +1062,11 @@
       "description": "Projet partenaire avec Thales pour la détection intelligente d'attaques sur le bus CAN des véhicules."
     },
     "hero": {
-      "badge": "Projet Partenaire",
       "title": "CANlock",
       "subtitle": "Sécurisez les véhicules de demain avec l'IA",
       "description": "Aidez une équipe en cybersécurité à sécuriser une flotte de véhicules terrestres en étudiant les signaux échangés entre les capteurs et les actuateurs via le bus de données CAN (Controller Area Network). L'objectif : assurer la sécurité globale du véhicule, et par extension, celle de ses occupants.",
       "members": "1-2 membres recherchés",
-      "teamLead": "Team Lead : Loïc Baret",
-      "cybersecurityLabel": "Cybersécurité Automobile"
+      "teamLead": "Team Lead : Loïc Baret"
     },
     "profiles": {
       "title": "Profils Recherchés",
@@ -1349,7 +1086,6 @@
       ]
     },
     "challenge": {
-      "title": "Le Défi",
       "threat": {
         "title": "La Menace",
         "description": "Les véhicules modernes intègrent de plus en plus d'unités électroniques embarquées qui échangent des données critiques via le bus CAN. Un attaquant qui accède au réseau CAN peut :",
@@ -1444,7 +1180,6 @@
     },
     "whyJoin": {
       "title": "Pourquoi Rejoindre CANlock ?",
-      "intro": "Tu vas aimer ce projet si...",
       "items": [
         {
           "title": "Challenge Industriel",
@@ -1462,14 +1197,15 @@
     },
     "cta": {
       "title": "Prêt à protéger les véhicules de demain ?",
-      "subtitle": "Rejoins l'équipe CANlock !",
-      "discord": "Rejoindre sur Discord"
+      "subtitle": "Rejoins l'équipe CANlock !"
+    },
+    "team": {
+      "title": "Équipe"
     }
   },
   "drone": {
     "hero": {
       "title": "Drone Laser Tag",
-      "subtitle": "Compétition de Drones Autonomes",
       "paragraph1": "Le projet consiste à concevoir un drone et un algorithme de conduite autonome pour lui permettre de compétitionner dans une compétition de laser tag pour drones.",
       "paragraph2": "On sort des terrains battus, et on part à l'aventure à la frontière de ce que la technologie nous permet. Le tout, en compétition contre les autres grandes Universités du Québec ! Attache ta tuque, parce que ça va être un projet pas comme les autres.",
       "image": {
@@ -1521,8 +1257,6 @@
     },
     "objectives": {
       "title": "Objectifs du Projet",
-      "main": "Gagner la compétition",
-      "subtitle": "Plus précisément, le projet consiste à :",
       "drone": {
         "title": "Construire le Drone",
         "items": [
@@ -1560,32 +1294,6 @@
         "Esprit compétitif et travail d'équipe"
       ]
     },
-    "technologies": {
-      "title": "Technologies & Compétences",
-      "hardware": {
-        "title": "Matériels",
-        "items": [
-          "Drone FPV personnalisé",
-          "Caméras (mono et stéréo)",
-          "Lidar et ToF",
-          "Blaster et receiver laser",
-          "IMU et capteurs",
-          "Isaac Sim"
-        ]
-      },
-      "skills": {
-        "title": "Compétences Visées",
-        "items": [
-          "Programmation embarquée",
-          "Électronique et télécommunications",
-          "Reinforcement Learning",
-          "Computer Vision et Deep Learning",
-          "Robotique mobile",
-          "Pilotage FPV",
-          "Prototypage rapide"
-        ]
-      }
-    },
     "benefits": {
       "title": "Pourquoi Rejoindre Ce Projet ?",
       "items": [
@@ -1606,8 +1314,7 @@
     "cta": {
       "title": "Prêt pour l'Aventure ?",
       "subtitle": "Rejoignez l'équipe et participez à une compétition unique !",
-      "description": "Si tu es prêt à mettre du temps, que tu aimes les défis techniques extrêmes et que tu veux gagner, ce projet est fait pour toi.",
-      "button": "Rejoindre l'Équipe Drone"
+      "description": "Si tu es prêt à mettre du temps, que tu aimes les défis techniques extrêmes et que tu veux gagner, ce projet est fait pour toi."
     }
   },
   "avionCargo": {
@@ -1616,14 +1323,11 @@
       "description": "Projet Avion-Cargo : système d'atterrissage autonome par vision par ordinateur avec détection de marqueurs ArUco, estimation 3D et précision inférieure à 10 cm."
     },
     "simple": {
-      "badge": "Projet autonome",
-      "precisionBadge": "Précision cible : < 10 cm",
       "title": "Avion-Cargo",
       "subtitle": "Atterrissage autonome de précision par vision par ordinateur",
       "description1": "Le projet Avion-Cargo consiste à développer un système d'atterrissage de précision entièrement autonome utilisant la vision par ordinateur et l'intelligence artificielle.",
       "description2": "L'objectif est de détecter des marqueurs ArUco à l'aide d'une caméra embarquée, d'estimer la position 3D en temps réel, puis de guider l'aéronef afin d'effectuer un atterrissage avec une précision inférieure à 10 cm, tout en permettant la récupération de charges utiles.",
       "imageAlt": "Avion-Cargo – atterrissage autonome de précision",
-      "imageBadge": "Atterrissage autonome",
       "technologiesTitle": "Technologies principales",
       "technologies": ["OpenCV", "ArduPilot", "Navigation intelligente"],
       "pipelineTitle": "Pipeline de fonctionnement",
@@ -1657,171 +1361,16 @@
         "Estimer la position 3D en temps réel puis guider l'aéronef.",
         "Effectuer un atterrissage avec une précision inférieure à 10 cm et récupérer des charges utiles."
       ]
-    },
-    "hero": {
-      "badge": "Projet Autonome",
-      "precisionBadge": "< 10 cm de précision",
-      "title": "Avion-Cargo",
-      "subtitle": "Atterrissage autonome de précision par vision par ordinateur",
-      "description1": "Le projet Avion-Cargo consiste à développer un système d'atterrissage de précision entièrement autonome utilisant la vision par ordinateur et l'intelligence artificielle.",
-      "description2": "L'objectif est de détecter des marqueurs ArUco à l'aide d'une caméra embarquée, d'estimer la position 3D en temps réel, puis de guider l'aéronef afin d'effectuer un atterrissage avec une précision inférieure à 10 cm, tout en permettant la récupération de charges utiles.",
-      "members": "Membres recherchés",
-      "precision": "Précision cible : < 10 cm",
-      "imageBadge": "Atterrissage autonome"
-    },
-    "stats": [
-      {
-        "value": "< 10 cm",
-        "label": "Précision d'atterrissage",
-        "sub": "Objectif de précision cible"
-      },
-      {
-        "value": "ArUco",
-        "label": "Marqueurs de navigation",
-        "sub": "Détection en temps réel"
-      },
-      {
-        "value": "3D",
-        "label": "Estimation de position",
-        "sub": "Vision par ordinateur embarquée"
-      }
-    ],
-    "pipeline": {
-      "title": "Pipeline de fonctionnement",
-      "subtitle": "Du décollage à l'atterrissage : comment le système guide l'aéronef de manière autonome",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Capture vidéo",
-          "description": "La caméra embarquée capture le flux vidéo en temps réel pendant le vol."
-        },
-        {
-          "step": "2",
-          "title": "Détection ArUco",
-          "description": "OpenCV détecte les marqueurs ArUco dans l'image et extrait leurs coordonnées 2D."
-        },
-        {
-          "step": "3",
-          "title": "Estimation 3D",
-          "description": "L'algorithme calcule la position et l'orientation 3D de l'aéronef par rapport à la cible."
-        },
-        {
-          "step": "4",
-          "title": "Guidage intelligent",
-          "description": "Les algorithmes de navigation calculent les corrections de trajectoire et transmettent les commandes à ArduPilot."
-        },
-        {
-          "step": "5",
-          "title": "Atterrissage & récupération",
-          "description": "L'aéronef se pose avec une précision < 10 cm et permet la récupération de charges utiles."
-        }
-      ]
-    },
-    "objectives": {
-      "title": "Objectifs du projet",
-      "items": [
-        {
-          "title": "🎯 Vision & Détection",
-          "items": [
-            "Détecter des marqueurs ArUco en temps réel depuis une caméra embarquée",
-            "Estimer la pose 3D (position + orientation) avec précision",
-            "Assurer la robustesse dans des conditions d'éclairage variées",
-            "Optimiser les performances pour un traitement embarqué"
-          ]
-        },
-        {
-          "title": "🚀 Navigation & Livraison",
-          "items": [
-            "Atteindre une précision d'atterrissage inférieure à 10 cm",
-            "Intégrer avec ArduPilot pour les commandes de vol",
-            "Développer des algorithmes de guidage intelligent",
-            "Permettre la récupération autonome de charges utiles"
-          ]
-        }
-      ]
-    },
-    "tech": {
-      "title": "Technologies & Outils",
-      "items": [
-        {
-          "name": "OpenCV",
-          "type": "vision"
-        },
-        {
-          "name": "ArduPilot",
-          "type": "autopilote"
-        },
-        {
-          "name": "Python",
-          "type": "langage"
-        },
-        {
-          "name": "Marqueurs ArUco",
-          "type": "navigation"
-        },
-        {
-          "name": "MAVLink",
-          "type": "protocole"
-        },
-        {
-          "name": "NumPy",
-          "type": "calcul"
-        },
-        {
-          "name": "Raspberry Pi / Jetson",
-          "type": "matériel"
-        },
-        {
-          "name": "PID / Guidage",
-          "type": "contrôle"
-        }
-      ]
-    },
-    "roles": {
-      "title": "Profils recherchés",
-      "items": [
-        {
-          "title": "Vision par ordinateur & IA",
-          "count": "2–3 membres",
-          "description": "Implémenter et optimiser la détection de marqueurs ArUco, l'estimation de pose 3D et les algorithmes de traitement d'image embarqués.",
-          "skills": [
-            "OpenCV",
-            "Python",
-            "Computer Vision",
-            "Estimation de pose",
-            "Traitement d'image"
-          ]
-        },
-        {
-          "title": "Navigation & Systèmes embarqués",
-          "count": "2–3 membres",
-          "description": "Développer les algorithmes de guidage, intégrer ArduPilot via MAVLink et mettre au point les contrôleurs de vol autonome.",
-          "skills": ["ArduPilot", "MAVLink", "Python", "Contrôle PID", "Systèmes embarqués"]
-        }
-      ]
-    },
-    "cta": {
-      "title": "Prêt à faire atterrir l'IA ?",
-      "subtitle": "Rejoins l'équipe Avion-Cargo et travaille sur un système de navigation autonome réel !",
-      "discord": "Rejoindre sur Discord"
     }
-  },
-  "avion-cargo": {
-    "title": "Avion-Cargo",
-    "description": "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm."
   },
   "asldecoder": {
     "meta": {
-      "title": "Reconnaissance du Langage des Signes par IA",
-      "description": "ASL Decoder : système Raspberry Pi avec caméra pour la reconnaissance des gestes du langage des signes américain en temps réel grâce à l'intelligence artificielle.",
-      "keywords": "ASL, langage des signes, reconnaissance gestuelle, Raspberry Pi, IA, computer vision, accessibilité, Club IA ULaval"
-    },
-    "status": {
-      "completed": "Projet terminé !"
+      "description": "ASL Decoder : système Raspberry Pi avec caméra pour la reconnaissance des gestes du langage des signes américain en temps réel grâce à l'intelligence artificielle."
     },
     "hero": {
       "subtitle": "Reconnaissance du Langage des Signes",
-      "description": "Développer un système Raspberry Pi avec une caméra qui prédit les mouvements de la main à l'aide du langage des signes américain (ASL). Ce projet combine vision par ordinateur et apprentissage automatique pour rendre la communication plus accessible."
+      "description": "Développer un système Raspberry Pi avec une caméra qui prédit les mouvements de la main à l'aide du langage des signes américain (ASL). Ce projet combine vision par ordinateur et apprentissage automatique pour rendre la communication plus accessible.",
+      "imageAlt": "Montage Raspberry Pi et caméra du décodeur ASL"
     },
     "features": {
       "title": "Caractéristiques du Projet",
@@ -1851,10 +1400,14 @@
     },
     "team": {
       "title": "L'Équipe",
-      "subtitle": "Les membres qui ont réalisé ce projet"
+      "leadRole": "Chef d'équipe"
     }
   },
   "common": {
-    "backToProjects": "Retour aux projets"
+    "backToProjects": "Retour aux projets",
+    "close": "Fermer",
+    "scrollToTop": "Retour en haut de la page",
+    "toggleNavigation": "Ouvrir ou fermer le menu de navigation",
+    "mobileNavigation": "Navigation mobile"
   }
 }
