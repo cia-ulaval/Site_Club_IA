@@ -1,27 +1,22 @@
 import type { LogoCarouselItem } from '../components/ui/logo-carousel';
 
-/* Every organization backing the club. Home's partner rail and the
-   Collaboration page's sponsor wall are the same set of marks and drifted
-   apart while they were two hand-kept lists — the same logo pointed at two
-   different URLs, and COFOMO appeared on one surface only. */
+/* Current sponsors only, grouped by tier (Or > Argent > Bronze). Home's
+   partner rail and the Collaboration page's sponsor wall share this list. */
 export const partners: LogoCarouselItem[] = [
-  {
-    src: '/banner/LogoDepartementInfo.webp',
-    href: 'https://www.ift.ulaval.ca/',
-    alt: "Département d'informatique - Université Laval",
-  },
+  // Or
   { src: '/banner/aesgul.webp', href: 'https://www.aesgul.com/accueil', alt: 'AESGUL' },
+  { src: '/banner/logo-vooban.webp', href: 'https://vooban.com/', alt: 'Vooban' },
+  { src: '/banner/utilim.webp', href: 'https://www.utili-m.com/', alt: 'Utili-M' },
+  // Argent
   { src: '/banner/asetin.webp', href: 'https://www.asetin.ca/', alt: 'ASETIN' },
-  { src: '/banner/avenirti.webp', href: 'https://monavenirti.org/', alt: 'MonAvenir TI' },
-  { src: '/banner/LogoTracel.webp', href: 'https://tracel.ai/', alt: 'Tracel AI' },
-  { src: '/banner/SiFiLabs.webp', href: 'https://sifilabs.com/', alt: 'SiFi Labs' },
-  { src: '/banner/ingeno.webp', href: 'https://ingeno.ca/fr/', alt: 'Ingeno' },
-  { src: '/banner/LogoVooban.webp', href: 'https://vooban.com/', alt: 'Vooban' },
-  { src: '/banner/LogoCofomo.webp', href: 'https://www.cofomo.com/', alt: 'COFOMO' },
   {
-    src: '/banner/SDP.webp',
-    href: 'https://sdp.ulaval.ca/',
-    alt: 'Service du développement professionnel - Université Laval',
+    src: '/banner/bentley.webp',
+    href: 'https://www.bentley.com/',
+    alt: 'Bentley Systems',
   },
-  { src: '/banner/LogoCRTI.webp', href: 'https://crti.ulaval.ca/', alt: 'CRTI' },
+  { src: '/banner/avenirti.webp', href: 'https://monavenirti.org/', alt: 'MonAvenir TI' },
+  // Bronze
+  { src: '/banner/cadeul.webp', href: 'https://www.cadeul.com/', alt: 'CADEUL' },
+  { src: '/banner/logo-cofomo.webp', href: 'https://www.cofomo.com/', alt: 'COFOMO' },
+  { src: '/banner/cgi.webp', href: 'https://www.cgi.com/', alt: 'CGI' },
 ];
