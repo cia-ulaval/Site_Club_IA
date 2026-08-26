@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { memo, useEffect, useMemo, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { DIST, DUR, EASE } from '../../hooks/useMotion';
 import { cn } from '../../lib/cn';
 
@@ -13,17 +13,11 @@ interface LogoCarouselProps {
   items: LogoCarouselItem[];
   label: string;
   className?: string;
-  /** Column count at the widest breakpoint; narrower ones show fewer. */
   maxColumns?: number;
 }
 
-const CYCLE_DURATION = 2400; // ms a column holds one logo before rotating
-const CLOCK_TICK = 100; // ms between clock advances
-const COLUMN_STAGGER = 260; // ms each column trails the one before it
+const SWAP_INTERVAL_MS = 2400;
 
-/* The wall gains a column at each breakpoint rather than reflowing what is
-   already on screen. Distribution reads the *measured* count, so no logo is
-   ever bucketed into a column the current viewport does not render. */
 const BREAKPOINTS = [
   { query: '(min-width: 1280px)', columns: 6 },
   { query: '(min-width: 1024px)', columns: 5 },
@@ -51,7 +45,7 @@ function useVisibleColumns(max: number): number {
   return Math.max(1, Math.min(columns, max));
 }
 
-function shuffle<T>(arr: T[]): T[] {
+function shuffle<T>(arr: readonly T[]): T[] {
   const copy = [...arr];
   for (let i = copy.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -60,35 +54,17 @@ function shuffle<T>(arr: T[]): T[] {
   return copy;
 }
 
-/* Round-robin the shuffled items into `columnCount` buckets. Bucket lengths
-   differ by at most one and are deliberately left ragged: padding them to a
-   common length meant repeating logos, which could put the same mark on the
-   wall twice at once. A column simply cycles its own run. */
-function distribute(items: LogoCarouselItem[], columnCount: number): LogoCarouselItem[][] {
-  const columns: LogoCarouselItem[][] = Array.from({ length: columnCount }, () => []);
-  shuffle(items).forEach((item, i) => columns[i % columnCount].push(item));
-  return columns.filter((column) => column.length > 0);
+function offscreenFrom(items: LogoCarouselItem[], onscreen: LogoCarouselItem[]) {
+  return items.filter((item) => !onscreen.some((shown) => shown.src === item.src));
 }
 
-const LogoColumn = memo(function LogoColumn({
-  logos,
-  index,
-  currentTime,
+const LogoSlot = memo(function LogoSlot({
+  item,
   reduce,
 }: {
-  logos: LogoCarouselItem[];
-  index: number;
-  currentTime: number;
+  item: LogoCarouselItem;
   reduce: boolean;
 }) {
-  /* Every column reads the same clock, offset by its own position, so each
-     one crosses its rotation boundary at a different real moment — the row
-     cascades one logo at a time instead of swapping in lockstep. */
-  const offset = (currentTime + index * COLUMN_STAGGER) % (logos.length * CYCLE_DURATION);
-  const currentIndex = Math.floor(offset / CYCLE_DURATION);
-  const item = logos[currentIndex];
-  if (!item) return null;
-
   return (
     <a
       href={item.href}
@@ -100,15 +76,15 @@ const LogoColumn = memo(function LogoColumn({
     >
       <AnimatePresence mode="wait">
         <motion.img
-          key={`${item.src}-${currentIndex}`}
+          key={item.src}
           src={encodeURI(item.src)}
           alt=""
           loading="lazy"
           decoding="async"
-          initial={reduce ? false : { opacity: 0, y: DIST.near }}
+          initial={reduce ? { opacity: 0 } : { opacity: 0, y: DIST.near }}
           animate={{ opacity: 1, y: 0 }}
           exit={reduce ? { opacity: 0 } : { opacity: 0, y: -DIST.near }}
-          transition={{ duration: reduce ? 0 : DUR.base, ease: EASE.out }}
+          transition={{ duration: DUR.base, ease: EASE.out }}
           className="max-h-12 w-auto max-w-full object-contain md:max-h-16"
         />
       </AnimatePresence>
@@ -116,19 +92,6 @@ const LogoColumn = memo(function LogoColumn({
   );
 });
 
-/**
- * Cult UI's LogoCarousel, adapted to the CIA design system.
- * https://www.cult-ui.com/docs/components/logo-carousel
- *
- * Same mechanism as the original: the shuffled set is distributed round-
- * robin across columns, a single shared clock advances on one interval, and
- * each column derives its own frame from that clock offset by its index.
- * Columns therefore rotate independently and asynchronously — never all at
- * once — without needing a separate timer per column. The animated grid is
- * `aria-hidden`; every logo also lives in a plain, always-present link
- * below, so partners stay reachable regardless of what the row is
- * currently showing.
- */
 export default function LogoCarousel({
   items,
   label,
@@ -136,25 +99,48 @@ export default function LogoCarousel({
   maxColumns = 6,
 }: LogoCarouselProps) {
   const reduce = useReducedMotion() ?? false;
-  const visibleColumns = useVisibleColumns(maxColumns);
-  const columns = useMemo(() => distribute(items, visibleColumns), [items, visibleColumns]);
-  const [currentTime, setCurrentTime] = useState(0);
+  const columnCount = useVisibleColumns(Math.min(maxColumns, items.length));
+  const [onscreen, setOnscreen] = useState(() => shuffle(items).slice(0, columnCount));
+  const swapOrder = useRef<number[]>([]);
 
-  /* Nothing to rotate when every column holds a single logo, and nothing
-     *should* rotate under reduced motion — the clock drives a hard cut, not
-     just the crossfade, so leaving it running would keep swapping logos with
-     the animation stripped off. Either way the interval is never started, so
-     the rail stops re-rendering ten times a second. */
-  const rotates = !reduce && columns.some((column) => column.length > 1);
+  useEffect(() => {
+    setOnscreen((current) => {
+      if (current.length === columnCount) return current;
+      swapOrder.current = [];
+      if (current.length > columnCount) return current.slice(0, columnCount);
+      const incoming = shuffle(offscreenFrom(items, current));
+      return [...current, ...incoming.slice(0, columnCount - current.length)];
+    });
+  }, [items, columnCount]);
+
+  /* Reduced motion drops the movement, not the rotation: the slot crossfades
+     in place instead of sliding. */
+  const rotates = items.length > columnCount;
 
   useEffect(() => {
     if (!rotates) return undefined;
+
+    const swap = () =>
+      setOnscreen((current) => {
+        const offscreen = offscreenFrom(items, current);
+        if (offscreen.length === 0) return current;
+
+        if (swapOrder.current.length === 0) {
+          swapOrder.current = shuffle(current.map((_, column) => column));
+        }
+        const column = swapOrder.current.pop() as number;
+
+        const next = [...current];
+        next[column] = offscreen[Math.floor(Math.random() * offscreen.length)];
+        return next;
+      });
+
     let id = 0;
-    const start = () => {
-      id = window.setInterval(() => setCurrentTime((t) => t + CLOCK_TICK), CLOCK_TICK);
-    };
     const stop = () => window.clearInterval(id);
-    /* A backgrounded tab animates nothing anyone can see. */
+    const start = () => {
+      stop();
+      id = window.setInterval(swap, SWAP_INTERVAL_MS);
+    };
     const onVisibility = () => (document.hidden ? stop() : start());
 
     if (!document.hidden) start();
@@ -163,17 +149,17 @@ export default function LogoCarousel({
       stop();
       document.removeEventListener('visibilitychange', onVisibility);
     };
-  }, [rotates]);
+  }, [rotates, items]);
 
   return (
     <section className={cn('relative', className)} aria-label={label}>
       <div
         className="grid gap-x-8 gap-y-6"
-        style={{ gridTemplateColumns: `repeat(${columns.length}, minmax(0, 1fr))` }}
+        style={{ gridTemplateColumns: `repeat(${onscreen.length}, minmax(0, 1fr))` }}
         aria-hidden="true"
       >
-        {columns.map((logos, i) => (
-          <LogoColumn key={i} logos={logos} index={i} currentTime={currentTime} reduce={reduce} />
+        {onscreen.map((item, column) => (
+          <LogoSlot key={column} item={item} reduce={reduce} />
         ))}
       </div>
 
