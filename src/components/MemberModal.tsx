@@ -58,7 +58,7 @@ export default function MemberModal({ member, onClose }: Props) {
     >
       <motion.div
         ref={containerRef}
-        className="cia-modal flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-[20px_4px_20px_4px] shadow-2xl md:max-h-[85vh] md:flex-row"
+        className="cia-modal flex max-h-dialog w-full max-w-4xl flex-col overflow-hidden rounded-cut shadow-2xl md:max-h-dialog-md md:flex-row"
         {...m.panel}
         onClick={(e) => e.stopPropagation()}
       >
@@ -82,7 +82,7 @@ export default function MemberModal({ member, onClose }: Props) {
             ref={initialFocusRef}
             onClick={onClose}
             type="button"
-            className="absolute right-4 top-4 grid min-h-11 min-w-11 place-items-center rounded-[4px] border border-steel/25 bg-paper-raised text-ink transition-colors hover:bg-steel-soft cia-focus-ring"
+            className="absolute right-4 top-4 grid min-h-11 min-w-11 place-items-center rounded border border-steel/25 bg-paper-raised text-ink transition-colors hover:bg-steel-soft cia-focus-ring"
             aria-label={t('common.close')}
           >
             <X className="h-5 w-5" aria-hidden="true" />

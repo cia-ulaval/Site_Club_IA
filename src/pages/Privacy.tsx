@@ -51,9 +51,7 @@ function Privacy() {
         <div className="cia-measure">
           <header className="border-b border-steel/25 pb-14 md:pb-20">
             <p className="cia-meta-accent mb-5">{t('privacyPage.eyebrow')}</p>
-            <h1 className="cia-display max-w-5xl text-[clamp(3.5rem,11vw,8.5rem)]">
-              {t('privacyPage.title')}
-            </h1>
+            <h1 className="cia-display max-w-5xl text-display">{t('privacyPage.title')}</h1>
             <div className="mt-8 grid gap-5 md:grid-cols-12 md:items-end">
               <p className="max-w-2xl text-lg leading-relaxed text-ink-muted md:col-span-8">
                 {t('privacyPage.intro')}

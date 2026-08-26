@@ -9,6 +9,54 @@ export default {
         sans: ['IBM Plex Sans', 'system-ui', 'sans-serif'],
         mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
+      letterSpacing: {
+        eyebrow: '0.14em',
+        meta: '0.12em',
+        index: '0.08em',
+      },
+      fontSize: {
+        hero: 'clamp(4.5rem, 22vw, 17rem)',
+        display: 'clamp(3.5rem, 11vw, 9rem)',
+        'display-sm': 'clamp(2.5rem, 8vw, 6rem)',
+        stat: 'clamp(3.5rem, 10vw, 6.5rem)',
+      },
+      borderRadius: {
+        cut: '20px 4px 20px 4px',
+        'cut-sm': '16px 4px 16px 4px',
+        'cut-lg': '24px 4px 24px 4px',
+      },
+      aspectRatio: {
+        '3/2': '3 / 2',
+        '3/4': '3 / 4',
+        '4/3': '4 / 3',
+        '16/10': '16 / 10',
+        '21/9': '21 / 9',
+      },
+      maxWidth: {
+        read: '68ch',
+      },
+      maxHeight: {
+        dialog: '92vh',
+        'dialog-md': '85vh',
+        lightbox: '80vh',
+      },
+      objectPosition: {
+        portrait: 'center 20%',
+      },
+      scale: {
+        103: '1.03',
+      },
+      saturate: {
+        35: '.35',
+        90: '.9',
+      },
+      zIndex: {
+        70: '70',
+      },
+      transitionProperty: {
+        media: 'filter, transform',
+        chrome: 'background-color, border-color, box-shadow',
+      },
       /* Motion tokens, shared with src/hooks/useMotion.ts. Three durations
          and two curves — the same ones the JS layer animates on, so a hover
          handled in CSS and a reveal handled in Motion agree. */
@@ -29,6 +77,11 @@ export default {
          are the semantic names to reach for; the numbered `primary`/`accent`
          ramps remain for the pages that predate them. */
       colors: {
+        rule: {
+          DEFAULT: 'var(--rule)',
+          strong: 'var(--rule-strong)',
+          live: 'var(--rule-live)',
+        },
         paper: {
           DEFAULT: 'rgb(var(--color-paper) / <alpha-value>)',
           raised: 'rgb(var(--color-paper-raised) / <alpha-value>)',

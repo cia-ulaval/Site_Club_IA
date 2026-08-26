@@ -23,20 +23,17 @@ function ProjectCard({ project }: Props) {
   const { t } = useTranslation();
 
   return (
-    <Link
-      to={project.link}
-      className="group block h-full cia-focus-ring rounded-[20px_4px_20px_4px]"
-    >
+    <Link to={project.link} className="group block h-full cia-focus-ring rounded-cut">
       <MinimalCard interactive marker className="flex h-full flex-col">
         {project.image ? (
           <MinimalCardImage
             src={project.image}
             alt=""
-            frameClassName="aspect-[4/3]"
-            className={`group-hover:scale-[1.035] ${project.status === 'shipped' ? 'saturate-[0.35]' : ''}`}
+            frameClassName="aspect-4/3"
+            className={`group-hover:scale-103 ${project.status === 'shipped' ? 'saturate-35' : ''}`}
           />
         ) : (
-          <div className="cia-card-media flex aspect-[4/3] items-center justify-center">
+          <div className="cia-card-media flex aspect-4/3 items-center justify-center">
             <span className="cia-index">{t('projects.noPreview')}</span>
           </div>
         )}

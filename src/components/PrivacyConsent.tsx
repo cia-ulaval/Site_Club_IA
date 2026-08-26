@@ -74,9 +74,9 @@ export default function PrivacyConsent({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed bottom-3 left-3 right-3 z-[70] sm:bottom-5 sm:left-auto sm:right-5 sm:w-full sm:max-w-sm">
+    <div className="fixed bottom-3 left-3 right-3 z-70 sm:bottom-5 sm:left-auto sm:right-5 sm:w-full sm:max-w-sm">
       <section
-        className="cia-modal relative rounded-[16px_4px_16px_4px] p-4 shadow-2xl sm:p-5"
+        className="cia-modal relative rounded-cut-sm p-4 shadow-2xl sm:p-5"
         role="dialog"
         aria-labelledby="privacy-consent-title"
         aria-describedby="privacy-consent-description"

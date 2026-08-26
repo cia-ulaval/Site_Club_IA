@@ -39,7 +39,7 @@ function Footer({ onOpenPrivacyChoices }: FooterProps) {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 cia-mono text-xs uppercase tracking-[0.14em] text-paper/80 hover:text-paper transition-colors cia-focus-ring"
+                    className="inline-flex items-center gap-2 cia-mono text-xs uppercase tracking-eyebrow text-paper/80 hover:text-paper transition-colors cia-focus-ring"
                   >
                     <Icon className="w-4 h-4" aria-hidden="true" />
                     {label}

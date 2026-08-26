@@ -19,14 +19,14 @@ export default function MemberShiftCard({ member, onSelect, viewProfileLabel }: 
       aria-label={`${member.name} — ${viewProfileLabel}`}
       className="group"
       media={
-        <div className="relative aspect-[3/4] bg-primary-950">
+        <div className="relative aspect-3/4 bg-primary-950">
           {member.imgSrc ? (
             <img
               src={member.imgSrc}
               alt=""
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover object-[center_20%] saturate-[0.9] transition-[filter,transform] duration-base ease-out group-hover:scale-[1.025] group-hover:saturate-100"
+              className="h-full w-full object-cover object-portrait saturate-90 transition-media duration-base ease-out group-hover:scale-103 group-hover:saturate-100"
             />
           ) : (
             <div className="grid h-full w-full place-items-center">

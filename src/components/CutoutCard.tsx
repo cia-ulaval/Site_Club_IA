@@ -33,8 +33,8 @@ export default function CutoutCard({
       <MinimalCardImage
         src={src}
         alt={description}
-        frameClassName="aspect-[3/2]"
-        className="group-hover:scale-[1.035]"
+        frameClassName="aspect-3/2"
+        className="group-hover:scale-103"
         layoutId={layoutId}
       />
       <MinimalCardContent className="pb-4 pt-4">
@@ -47,7 +47,7 @@ export default function CutoutCard({
         type="button"
         onClick={onSelect}
         aria-label={`${description} — ${viewLabel}`}
-        className="absolute inset-0 z-10 rounded-[20px_4px_20px_4px] cia-focus-ring"
+        className="absolute inset-0 z-10 rounded-cut cia-focus-ring"
       >
         <span className="sr-only">{viewLabel}</span>
       </button>

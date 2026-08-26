@@ -59,7 +59,7 @@ export default function ProjectLayout({ spec }: Props) {
         <div className="cia-measure pt-6">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 cia-mono text-xs uppercase tracking-[0.14em] text-ink-muted transition-colors hover:text-accent-500 cia-focus-ring"
+            className="inline-flex items-center gap-2 cia-mono text-xs uppercase tracking-eyebrow text-ink-muted transition-colors hover:text-accent-500 cia-focus-ring"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
             {t('common.backToProjects')}
@@ -84,7 +84,7 @@ export default function ProjectLayout({ spec }: Props) {
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-[16px_4px_16px_4px] border border-[color:var(--rule)] bg-paper-raised px-5 py-3.5 font-body text-sm text-ink transition-colors hover:border-[color:var(--rule-strong)] hover:text-accent-500 cia-focus-ring"
+              className="inline-flex items-center gap-2.5 rounded-cut-sm border border-rule bg-paper-raised px-5 py-3.5 font-body text-sm text-ink transition-colors hover:border-rule-strong hover:text-accent-500 cia-focus-ring"
             >
               <Github className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span className="cia-mono break-all text-xs">

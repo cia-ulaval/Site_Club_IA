@@ -61,7 +61,7 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
   const m = useMotion();
 
   const heading = (
-    <motion.h1 className="cia-display text-[clamp(2.5rem,8vw,6rem)]" {...m.write}>
+    <motion.h1 className="cia-display text-display-sm" {...m.write}>
       {title}
     </motion.h1>
   );
@@ -100,7 +100,7 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
             <div className="mt-8 md:mt-10">{facts}</div>
           </div>
           <motion.div className="md:col-span-5" {...m.rise(0.24)}>
-            <Figure media={media} priority aspect="aspect-[4/3]" />
+            <Figure media={media} priority aspect="aspect-4/3" />
           </motion.div>
         </div>
       </header>
@@ -128,7 +128,7 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
         <Figure
           media={media}
           priority
-          aspect={edition === 'plate' ? 'aspect-[16/9] md:aspect-[21/9]' : 'aspect-[16/9]'}
+          aspect={edition === 'plate' ? 'aspect-video md:aspect-21/9' : 'aspect-video'}
         />
       </motion.div>
     </header>

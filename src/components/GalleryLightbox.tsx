@@ -30,7 +30,7 @@ export default function GalleryLightbox({ src, description, onClose }: Props) {
     >
       <motion.div
         ref={containerRef}
-        className="cia-modal relative w-full max-w-5xl overflow-hidden rounded-[24px_4px_24px_4px] shadow-2xl"
+        className="cia-modal relative w-full max-w-5xl overflow-hidden rounded-cut-lg shadow-2xl"
         /* The thumbnail morphs into this plate, so the reader keeps hold of
            which picture they opened. Under reduced motion the id is withheld
            entirely — a zero-duration layout transition still runs projection. */
@@ -41,7 +41,7 @@ export default function GalleryLightbox({ src, description, onClose }: Props) {
           src={src}
           alt={description}
           decoding="async"
-          className="h-auto max-h-[80vh] w-full object-contain"
+          className="h-auto max-h-lightbox w-full object-contain"
         />
         <div className="cia-scrim absolute inset-x-0 bottom-0 p-6 pt-20">
           <p className="font-body text-lg font-medium text-paper">{description}</p>
@@ -49,7 +49,7 @@ export default function GalleryLightbox({ src, description, onClose }: Props) {
         <button
           ref={initialFocusRef}
           type="button"
-          className="absolute right-5 top-5 rounded-[4px] bg-paper-raised p-3 text-ink shadow-sm transition-colors hover:bg-coral-dark hover:text-paper cia-focus-ring"
+          className="absolute right-5 top-5 rounded bg-paper-raised p-3 text-ink shadow-sm transition-colors hover:bg-coral-dark hover:text-paper cia-focus-ring"
           onClick={onClose}
           aria-label={t('gallery.closeLabel')}
         >

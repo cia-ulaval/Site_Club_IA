@@ -50,7 +50,7 @@ function Gallery() {
       />
 
       <header className="mx-auto w-full max-w-7xl px-6 pb-12 pt-16 md:pb-20 md:pt-24">
-        <h1 className="cia-display text-[clamp(3.75rem,13vw,10rem)]">{t('gallery.heroTitle')}</h1>
+        <h1 className="cia-display text-display">{t('gallery.heroTitle')}</h1>
         <p className="mt-8 max-w-2xl font-body text-lg leading-relaxed text-primary-400 md:text-xl">
           {t('gallery.heroSubtitle')}
         </p>
@@ -68,7 +68,7 @@ function Gallery() {
                 type="button"
                 onClick={() => setFilter(id)}
                 aria-pressed={active}
-                className={`relative inline-flex min-h-[44px] items-center pl-3 cia-mono text-xs uppercase tracking-[0.14em] transition-colors cia-focus-ring ${
+                className={`relative inline-flex min-h-11 items-center pl-3 cia-mono text-xs uppercase tracking-eyebrow transition-colors cia-focus-ring ${
                   active ? 'cia-tick text-accent-400' : 'text-primary-400 hover:text-primary-300'
                 }`}
               >

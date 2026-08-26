@@ -25,7 +25,7 @@
   /* Running prose only. Body text set across a 7xl column is unreadable,
      so paragraphs keep their own line length inside the wide measure. */
   .cia-measure-read {
-    @apply w-full max-w-[68ch];
+    @apply w-full max-w-read;
   }
 
   /* One pace for section rhythm. Sections are separated by space, not by
@@ -121,23 +121,20 @@
   }
 
   .cia-meta {
-    @apply cia-mono text-xs uppercase;
-    letter-spacing: 0.12em;
+    @apply cia-mono text-xs uppercase tracking-meta;
     color: rgb(var(--color-primary-500));
   }
 
   /* Section eyebrow. Coral marks where a new part of the page begins, so
      the accent does structural work instead of only flagging status. */
   .cia-meta-accent {
-    @apply cia-mono text-xs uppercase;
-    letter-spacing: 0.12em;
+    @apply cia-mono text-xs uppercase tracking-meta;
     color: rgb(var(--color-accent-400));
   }
 
   /* Project/section index — CIA-04, 03/10. Reads as a serial number. */
   .cia-index {
-    @apply cia-mono text-xs;
-    letter-spacing: 0.08em;
+    @apply cia-mono text-xs tracking-index;
     color: rgb(var(--color-primary-500));
   }
 
@@ -171,7 +168,7 @@
      action. Anything else that wants attention uses scale. */
 
   .cia-btn-base {
-    @apply inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-2 rounded-[4px] px-6 py-3 font-semibold transition-colors duration-quick focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
+    @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded px-6 py-3 font-semibold transition-colors duration-quick focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
   }
 
   .cia-btn-primary {
@@ -190,7 +187,7 @@
   }
 
   .cia-btn-sm {
-    @apply min-h-[44px] px-4 py-2 text-sm;
+    @apply min-h-11 px-4 py-2 text-sm;
   }
 
   /* --- Cards ---
@@ -199,10 +196,9 @@
      self-contained objects; editorial rows remain unboxed. */
 
   .cia-card {
-    @apply relative overflow-hidden transition-[background-color,border-color,box-shadow] duration-quick;
+    @apply relative overflow-hidden rounded-cut transition-chrome duration-quick;
     background: rgb(var(--color-paper-raised));
     border: 1px solid var(--rule);
-    border-radius: 20px 4px 20px 4px;
     box-shadow:
       0 1px 0 rgb(255 255 255 / 0.8) inset,
       0 18px 44px -38px rgb(var(--color-ink) / 0.55);
@@ -250,9 +246,8 @@
   /* A picture keeps the card's radius wherever it appears, so a picture in
      a section and a picture in a card are the same object. */
   .cia-figure {
-    @apply relative w-full overflow-hidden;
+    @apply relative w-full overflow-hidden rounded-cut;
     background: rgb(var(--color-steel-soft));
-    border-radius: 20px 4px 20px 4px;
   }
 
   .cia-figure img,

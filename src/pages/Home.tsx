@@ -44,10 +44,7 @@ function Home() {
           prose sits in a narrow column below it — the page opens with one
           statement, not a two-column split of equal weight. */}
       <header className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-28 pb-6 md:pb-10">
-        <motion.h1
-          className="cia-display text-[clamp(4.5rem,22vw,17rem)] mt-8 md:mt-12"
-          {...m.write}
-        >
+        <motion.h1 className="cia-display text-hero mt-8 md:mt-12" {...m.write}>
           {t('home.header.title')}
         </motion.h1>
 
@@ -65,13 +62,13 @@ function Home() {
           >
             <Link
               to="/join-us"
-              className="inline-flex h-11 items-center bg-accent-400 px-6 cia-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
+              className="inline-flex h-11 items-center bg-accent-400 px-6 cia-mono text-xs uppercase tracking-eyebrow text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
             >
               {t('home.heroCta.join')}
             </Link>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-[0.14em] text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
+              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-eyebrow text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
             >
               {t('home.heroCta.projects')}
               <ArrowRight className="w-3.5 h-3.5" />
@@ -141,7 +138,7 @@ function Home() {
           <h2 className="cia-meta">{t('home.projects.title')}</h2>
           <Link
             to="/projects"
-            className="cia-mono text-xs uppercase tracking-[0.14em] text-primary-400 hover:text-accent-300 transition-colors inline-flex items-center gap-2 cia-focus-ring"
+            className="cia-mono text-xs uppercase tracking-eyebrow text-primary-400 hover:text-accent-300 transition-colors inline-flex items-center gap-2 cia-focus-ring"
           >
             {t('home.index.all', 'Tout voir')} ({projects.length})
             <ArrowRight className="w-3.5 h-3.5" />
@@ -154,14 +151,14 @@ function Home() {
               to={lead.link}
               className="group flex flex-col md:grid md:grid-cols-12 cia-card cia-card-hover overflow-hidden cia-focus-ring"
             >
-              <div className="relative aspect-[16/10] md:aspect-auto md:col-span-7 bg-primary-950 overflow-hidden">
+              <div className="relative aspect-16/10 md:aspect-auto md:col-span-7 bg-primary-950 overflow-hidden">
                 {lead.image ? (
                   <img
                     src={lead.image}
                     alt=""
                     loading="lazy"
                     decoding="async"
-                    className={`absolute inset-0 h-full w-full object-cover transition-transform duration-base ease-out group-hover:scale-[1.03] ${lead.status === 'shipped' ? 'saturate-[0.35]' : 'saturate-[0.9] group-hover:saturate-100'}`}
+                    className={`absolute inset-0 h-full w-full object-cover transition-transform duration-base ease-out group-hover:scale-103 ${lead.status === 'shipped' ? 'saturate-35' : 'saturate-90 group-hover:saturate-100'}`}
                   />
                 ) : (
                   <div className="absolute inset-0 grid place-items-center">
@@ -178,7 +175,7 @@ function Home() {
                 <p className="font-body text-primary-400 leading-relaxed mt-4 line-clamp-4">
                   {t(`home.projects.${lead.key}.description`, lead.defaultDescription)}
                 </p>
-                <span className="cia-mono text-xs uppercase tracking-[0.14em] text-accent-400 mt-6 inline-flex items-center gap-2">
+                <span className="cia-mono text-xs uppercase tracking-eyebrow text-accent-400 mt-6 inline-flex items-center gap-2">
                   {t('home.projects.learnMore')}
                   <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
@@ -219,7 +216,7 @@ function Home() {
           <div className="md:col-span-4 md:justify-self-end">
             <Link
               to="/collaboration"
-              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-[0.14em] text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
+              className="inline-flex items-center gap-2 h-11 cia-mono text-xs uppercase tracking-eyebrow text-primary-300 hover:text-accent-300 transition-colors cia-focus-ring"
             >
               {t('home.collaboration.button')}
               <ArrowRight className="w-3.5 h-3.5" />

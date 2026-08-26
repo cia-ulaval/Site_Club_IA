@@ -139,7 +139,7 @@ const ContactForm = () => {
   };
 
   const inputClass =
-    'w-full rounded-[4px] border border-steel/60 bg-paper px-4 py-3 text-[1rem] text-ink placeholder:text-ink-muted transition-colors hover:border-steel focus:border-coral-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-dark';
+    'w-full rounded border border-steel/60 bg-paper px-4 py-3 text-base text-ink placeholder:text-ink-muted transition-colors hover:border-steel focus:border-coral-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-coral-dark';
 
   return (
     <MinimalCard marker>
@@ -253,7 +253,7 @@ function Collaboration() {
         <div className="mx-auto w-full max-w-7xl px-4 pb-24 pt-16 md:px-6 md:pt-24">
           {/* Hero */}
           <header className="mb-20 border-b border-steel/25 pb-14 md:mb-28 md:pb-20">
-            <h1 className="cia-display max-w-5xl text-[clamp(3.75rem,11vw,9rem)]">
+            <h1 className="cia-display max-w-5xl text-display">
               {t('collaborationPage.mainTitle')}
             </h1>
             <div className="mt-10 grid gap-x-12 gap-y-6 md:grid-cols-12">

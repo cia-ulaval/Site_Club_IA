@@ -40,7 +40,7 @@ function Projects() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-24 pb-24">
         <header className="cia-rule-b pb-10 md:pb-14">
-          <motion.h1 className="cia-display text-[clamp(3rem,11vw,8.5rem)]" {...m.write}>
+          <motion.h1 className="cia-display text-display" {...m.write}>
             {t('home.projects.title', 'Projects')}
           </motion.h1>
           <motion.p

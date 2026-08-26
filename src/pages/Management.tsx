@@ -75,7 +75,7 @@ function Management() {
       </AnimatePresence>
 
       <header className="mx-auto w-full max-w-7xl border-b border-steel/25 px-4 pb-16 pt-16 md:px-6 md:pb-20 md:pt-24">
-        <motion.h1 className="cia-display text-[clamp(4rem,12vw,9rem)]" {...m.write}>
+        <motion.h1 className="cia-display text-display" {...m.write}>
           {t('management.heroTitle')}
         </motion.h1>
       </header>

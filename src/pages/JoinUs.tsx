@@ -81,9 +81,7 @@ function JoinUs() {
       <section className="pb-24 pt-16 md:pt-24">
         <div className="cia-measure">
           <header className="grid gap-10 border-b border-steel/25 pb-16 md:grid-cols-12 md:items-end md:pb-20">
-            <h1 className="cia-display text-[clamp(3.75rem,10vw,8.5rem)] md:col-span-8">
-              {t('joinus.heroSubtitle')}
-            </h1>
+            <h1 className="cia-display text-display md:col-span-8">{t('joinus.heroSubtitle')}</h1>
             <div className="md:col-span-4 md:pb-2">
               <p className="mb-7 text-lg leading-relaxed text-ink-muted">
                 {t('joinus.discordText')}

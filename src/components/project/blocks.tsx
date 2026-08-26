@@ -54,7 +54,7 @@ function asItems(value: unknown): Item[] {
 export function Figure({
   media,
   className = '',
-  aspect = 'aspect-[4/3]',
+  aspect = 'aspect-4/3',
   priority = false,
   contain = false,
 }: {
@@ -156,7 +156,7 @@ function Chips({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="rounded-full border border-[color:var(--rule)] bg-paper-raised px-3.5 py-1.5 font-body text-sm text-ink-muted"
+          className="rounded-full border border-rule bg-paper-raised px-3.5 py-1.5 font-body text-sm text-ink-muted"
         >
           {item}
         </li>
@@ -312,9 +312,9 @@ export default function ProjectBlock({ block }: Props) {
           <motion.div {...m.reveal}>
             <Figure
               media={block.media}
-              aspect="aspect-[16/9]"
+              aspect="aspect-video"
               contain={block.figure}
-              className="md:aspect-[21/9]"
+              className="md:aspect-21/9"
             />
           </motion.div>
           {block.captionKey && (
@@ -463,7 +463,7 @@ export default function ProjectBlock({ block }: Props) {
           {head}
           <div className="grid items-center gap-8 md:grid-cols-12 md:gap-12">
             <div className="md:col-span-5">
-              <p className="cia-mono text-[clamp(3.5rem,10vw,6.5rem)] font-bold leading-none tracking-tight text-accent-500">
+              <p className="cia-mono text-stat font-bold leading-none tracking-tight text-accent-500">
                 {t(block.valueKey)}
               </p>
               <p className="cia-meta-accent mt-4">{t(block.labelKey)}</p>
@@ -493,7 +493,7 @@ export default function ProjectBlock({ block }: Props) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col gap-1 rounded-[16px_4px_16px_4px] border border-[color:var(--rule)] bg-paper-raised px-5 py-4 transition-colors hover:border-[color:var(--rule-strong)] sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 cia-focus-ring"
+                  className="group flex flex-col gap-1 rounded-cut-sm border border-rule bg-paper-raised px-5 py-4 transition-colors hover:border-rule-strong sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 cia-focus-ring"
                 >
                   <span className="font-heading font-semibold text-ink transition-colors group-hover:text-accent-400">
                     {t(link.labelKey)}

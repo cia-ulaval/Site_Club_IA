@@ -21,7 +21,7 @@ function Navbar() {
   ];
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `cia-mono text-xs uppercase tracking-[0.14em] transition-colors cia-focus-ring rounded-sm px-1 ${
+    `cia-mono text-xs uppercase tracking-eyebrow transition-colors cia-focus-ring rounded-sm px-1 ${
       isActive ? 'text-accent-400' : 'text-primary-400 hover:text-primary-300'
     }`;
 
@@ -31,7 +31,7 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <NavLink
             to="/"
-            className="flex items-center gap-3 min-h-[44px] cia-focus-ring rounded-sm"
+            className="flex items-center gap-3 min-h-11 cia-focus-ring rounded-sm"
             aria-label="CIA ULaval"
           >
             <img
@@ -62,13 +62,13 @@ function Navbar() {
             <LanguageToggle />
             <NavLink
               to="/join-us"
-              className="hidden h-9 items-center bg-accent-400 px-4 cia-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent-300 md:inline-flex cia-focus-ring"
+              className="hidden h-9 items-center bg-accent-400 px-4 cia-mono text-xs uppercase tracking-eyebrow text-paper transition-colors hover:bg-accent-300 md:inline-flex cia-focus-ring"
             >
               {t('navbar.joinus')}
             </NavLink>
             <button
               onClick={toggleMenu}
-              className="md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center text-primary-300 hover:text-accent-400 transition-colors cia-focus-ring"
+              className="md:hidden min-w-11 min-h-11 p-2.5 flex items-center justify-center text-primary-300 hover:text-accent-400 transition-colors cia-focus-ring"
               aria-label={t('common.toggleNavigation')}
               aria-expanded={isOpen}
             >
@@ -85,7 +85,7 @@ function Navbar() {
                 to={link.to}
                 end={link.to === '/'}
                 className={({ isActive }) =>
-                  `block py-3 cia-mono text-xs uppercase tracking-[0.14em] transition-colors cia-focus-ring ${
+                  `block py-3 cia-mono text-xs uppercase tracking-eyebrow transition-colors cia-focus-ring ${
                     isActive ? 'text-accent-400' : 'text-primary-400 hover:text-primary-300'
                   }`
                 }
@@ -96,7 +96,7 @@ function Navbar() {
             ))}
             <NavLink
               to="/join-us"
-              className="mt-3 flex h-11 items-center justify-center bg-accent-400 cia-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
+              className="mt-3 flex h-11 items-center justify-center bg-accent-400 cia-mono text-xs uppercase tracking-eyebrow text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
               onClick={toggleMenu}
             >
               {t('navbar.joinus')}

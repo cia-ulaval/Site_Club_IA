@@ -63,12 +63,12 @@ const MinimalCardImage = React.forwardRef<HTMLImageElement, MinimalCardImageProp
 
     if (!layoutId) {
       return (
-        <MinimalCardMedia className={cn('aspect-[4/3]', frameClassName)}>{image}</MinimalCardMedia>
+        <MinimalCardMedia className={cn('aspect-4/3', frameClassName)}>{image}</MinimalCardMedia>
       );
     }
 
     return (
-      <motion.div layoutId={layoutId} className={cn('cia-card-media aspect-[4/3]', frameClassName)}>
+      <motion.div layoutId={layoutId} className={cn('cia-card-media aspect-4/3', frameClassName)}>
         {image}
       </motion.div>
     );
