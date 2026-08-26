@@ -9,7 +9,7 @@ export const avionCargo: ProjectPageSpec = {
        width under the title rather than sharing a column with the prose. */
     media: {
       type: 'image',
-      src: '/project/AvionCargo.webp',
+      src: '/project/avion-cargo.webp',
       altKey: 'avionCargo.simple.imageAlt',
     },
     bodyKeys: [
@@ -40,7 +40,7 @@ export const avionCargo: ProjectPageSpec = {
   seo: {
     titleKey: 'avionCargo.meta.title',
     descriptionKey: 'avionCargo.meta.description',
-    image: '/project/AvionCargo.webp',
+    image: '/project/avion-cargo.webp',
     path: '/avion-cargo',
   },
 };

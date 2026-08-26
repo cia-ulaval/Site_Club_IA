@@ -11,7 +11,7 @@ export const ORG_NAME = 'Club Intelligence Artificielle - Université Laval';
 /** Short form for `og:site_name`, where the full name is too long. */
 export const OG_SITE_NAME = 'Club IA - Université Laval';
 
-export const DEFAULT_OG_IMAGE = '/banner/CIA_LOGO.webp';
+export const DEFAULT_OG_IMAGE = '/banner/cia-logo.webp';
 
 export const DISCORD_URL = 'https://discord.gg/ZPVwCjMpAq';
 

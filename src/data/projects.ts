@@ -36,7 +36,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     key: 'flapeeg',
-    image: '/project/FlappyBrain.webp',
+    image: '/project/flappy-brain.webp',
     defaultTitle: 'FlapEEG',
     defaultDescription:
       "Un jeu vidéo innovant contrôlé par les ondes cérébrales (EEG). Découvrez comment l'IA et la neurotechnologie permettent de piloter un oiseau virtuel par la pensée. Projet pionnier en interface cerveau-machine, ouvert à tous les profils (neuro, IA, dev, design).",
@@ -122,7 +122,7 @@ export const projects: Project[] = [
   },
   {
     key: 'avion-cargo',
-    image: '/project/AvionCargo.webp',
+    image: '/project/avion-cargo.webp',
     defaultTitle: 'Avion-Cargo',
     defaultDescription:
       "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm.",

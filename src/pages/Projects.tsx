@@ -25,7 +25,7 @@ function Projects() {
           .map((p) => p.defaultTitle)
           .join(', ')}, projets étudiants, machine learning, deep learning, Club IA ULaval`}
         path="/projects"
-        image="/project/FlappyBrain.webp"
+        image="/project/flappy-brain.webp"
         socialTitle="Projets IA - Club Intelligence Artificielle Université Laval"
         socialDescription="Découvrez nos projets innovants d'intelligence artificielle et machine learning."
         jsonLd={{
