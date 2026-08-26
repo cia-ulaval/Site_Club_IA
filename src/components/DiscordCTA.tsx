@@ -1,6 +1,6 @@
+import { SiDiscord } from '@icons-pack/react-simple-icons';
 import { ReactNode } from 'react';
 import { DISCORD_URL } from '../lib/site';
-import DiscordIcon from './DiscordIcon';
 
 interface DiscordCTAProps {
   /** Optional headline block shown above the button (already-translated nodes). */
@@ -14,7 +14,7 @@ export default function DiscordCTA({ children, label }: DiscordCTAProps) {
     <div className="text-center pt-8">
       {children && <p className="cia-body-lead mx-auto mb-6 max-w-2xl text-ink">{children}</p>}
       <a href={DISCORD_URL} target="_blank" rel="noopener noreferrer" className="cia-btn-primary">
-        <DiscordIcon className="h-5 w-5" />
+        <SiDiscord className="h-5 w-5" aria-hidden="true" />
         {label}
       </a>
     </div>

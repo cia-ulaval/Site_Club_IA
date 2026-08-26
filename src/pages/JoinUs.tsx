@@ -1,6 +1,6 @@
+import { SiDiscord } from '@icons-pack/react-simple-icons';
 import { BookOpen, Facebook, Github, Instagram, Linkedin, Mail, Rocket, Users } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import DiscordIcon from '../components/DiscordIcon';
 import Seo from '../components/Seo';
 import { openEmailDraft } from '../lib/email';
 import { DISCORD_URL, ORGANIZATION_LD, SITE, SOCIAL_LINKS } from '../lib/site';
@@ -11,7 +11,7 @@ const CONTACT_POINTS = [
   {
     kind: 'link',
     href: DISCORD_URL,
-    icon: DiscordIcon,
+    icon: SiDiscord,
     label: 'Discord',
     handle: DISCORD_URL.replace('https://', ''),
   },

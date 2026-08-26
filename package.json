@@ -23,6 +23,7 @@
     ]
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^13.15.1",
     "@vercel/analytics": "^1.1.4",
     "@vercel/speed-insights": "^1.0.4",
     "clsx": "^2.1.1",
