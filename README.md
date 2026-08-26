@@ -29,14 +29,27 @@ It’s a platform for both visibility and collaboration — designed, developed,
 
 ## Technologies Used
 
-The project leverages a mix of modern front-end technologies:
+- **React 18** + **TypeScript**, bundled by **Vite**
+- **React Router** for routing, **react-helmet-async** for per-page metadata
+- **Tailwind CSS** for styling, on top of the `cia-*` design-system utilities in `src/styles/theme.css`
+- **Framer Motion** for the small, deliberate motion vocabulary in `src/hooks/useMotion.ts`
+- **i18next** / **react-i18next** for French and English
 
-- React.js
-- Vue.js
-- HTML / CSS / JavaScript
-- Bootstrap
+There is no Vue and no Bootstrap — an earlier version of this list named both.
 
 The site is responsive, fast, and continuously evolving — with a focus on clarity, accessibility, and performance.
+
+### Local development
+
+```bash
+npm install
+npm run dev      # dev server
+npm run build    # production build
+npm run lint     # eslint
+npm run format   # prettier
+```
+
+Architecture notes for contributors live in [AGENT.md](./AGENT.md).
 
 ---
 
