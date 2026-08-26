@@ -14,6 +14,12 @@ i18n
       fr: { translation: translationFR },
     },
     fallbackLng: 'en',
+    detection: {
+      order: ['querystring', 'localStorage', 'navigator', 'htmlTag'],
+      lookupQuerystring: 'lng',
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false,
     },

@@ -13,14 +13,25 @@
       "join": "Join the club"
     },
     "projectsPage": {
-      "subtitle": "13 active projects · 40+ students · AI, hardware and applications."
+      "subtitle": "Student projects in AI, hardware and applications."
+    },
+    "stats": {
+      "projects": "Projects",
+      "members": "Members",
+      "domains": "Domains"
+    },
+    "index": {
+      "all": "View all"
+    },
+    "partnership": {
+      "label": "Partnership"
     },
     "partners": {
-      "label": "Our partners & sponsors"
+      "label": "Our partners & sponsors",
+      "carouselLabel": "CIA partners and sponsors"
     },
     "projects": {
-      "title": "Discover our innovative projects!",
-      "subtitle": "Discover our innovative projects!",
+      "title": "Our projects",
       "flapeeg": {
         "title": "FlapEEG",
         "description": "An innovative video game controlled by brain waves (EEG). Discover how AI and neurotechnology let you pilot a virtual bird with your thoughts. A pioneer brain–computer interface project open to every profile (neuro, AI, dev, design).",
@@ -86,6 +97,9 @@
       "title": "Interested in collaborating?",
       "description": "Sponsors help us achieve our goals and bring our projects to life. Interested in collaborating with us? Check out our plans.",
       "button": "View our plans"
+    },
+    "domains": {
+      "label": "Focus areas"
     }
   },
   "projects": {
@@ -94,7 +108,27 @@
       "hardware": "Hardware",
       "application": "Application",
       "robotics": "Robotics"
-    }
+    },
+    "field": {
+      "status": "Status",
+      "domain": "Domain",
+      "partner": "Partner"
+    },
+    "status": {
+      "active": "Active",
+      "shipped": "Finished"
+    },
+    "semesters": {
+      "automne2026": "Fall 2026",
+      "hiver2026": "Winter 2026",
+      "automne2025": "Fall 2025",
+      "hiver2025": "Winter 2025",
+      "automne2024": "Fall 2024",
+      "hiver2024": "Winter 2024",
+      "automne2023": "Fall 2023"
+    },
+    "noPreview": "no preview",
+    "term": "Term"
   },
   "navbar": {
     "home": "Home",
@@ -108,21 +142,102 @@
     "clubName": "Laval University AI Club",
     "slogan": "Let's bring your projects to life.",
     "connect": "Connect",
-    "copyright": "© 2025 Dereck Bélanger",
-    "openSource": "Open source project on GitHub"
+    "openSource": "Source code",
+    "clubShort": "CIA ULaval",
+    "madeBy": "Made by",
+    "privacy": "Privacy policy",
+    "privacyChoices": "Analytics choices"
+  },
+  "privacyConsent": {
+    "eyebrow": "Optional analytics",
+    "title": "Help us improve the site?",
+    "description": "With your permission, Vercel Web Analytics and Speed Insights will measure page visits, approximate location and performance. They use no cookies, and the site works the same if you decline.",
+    "learnMore": "Read the privacy policy",
+    "accept": "Allow",
+    "decline": "Decline",
+    "close": "Close analytics choices"
+  },
+  "privacyPage": {
+    "seoTitle": "Privacy Policy | CIA ULaval",
+    "seoDescription": "Learn how CIA ULaval handles information sent by email and uses optional, cookie-free audience and performance measurements.",
+    "eyebrow": "Privacy / CIA-POL-01",
+    "title": "Privacy policy",
+    "intro": "A plain-language account of what this website handles, why it is used, who may receive it and the choices available to you.",
+    "updated": "Last updated: August 25, 2026",
+    "atGlance": {
+      "title": "At a glance",
+      "contact": "The partnership form stays in your browser and only opens a draft in your email app.",
+      "analytics": "Optional Vercel audience and performance measurements remain off until you allow them.",
+      "noSale": "We do not sell personal information or use advertising pixels."
+    },
+    "responsible": {
+      "title": "Who is responsible",
+      "body": "The Club Intelligence Artificielle – Université Laval (CIA ULaval) operates this website. The person responsible for the protection of personal information at CIA ULaval is the designated contact for questions, requests and complaints about personal information."
+    },
+    "information": {
+      "title": "Information we handle and how we receive it",
+      "messages": {
+        "title": "Messages you choose to send",
+        "body": "The partnership form does not submit information to this website or a database. It prepares an email draft on your device. If you send that draft, the Club receives the required name and reply address, any optional organization and message you entered, and the usual email metadata. Nothing reaches the Club until you send the email."
+      },
+      "technical": {
+        "title": "Site delivery and optional measurements",
+        "body": "Like any hosted website, Vercel may process request data needed to deliver and secure the site, such as an IP address, request time, route and browser information. Only after you allow analytics, Vercel Web Analytics may process the route, referrer, filtered query parameters, browser, operating system, device, approximate location down to city and a request hash that rotates every 24 hours. Speed Insights measures route-level Web Vitals and related device, browser, network, country and timing information. Vercel describes these measurement results as anonymous or aggregated. We do not send custom analytics events."
+      },
+      "storage": {
+        "title": "Preferences stored on your device",
+        "body": "The site stores your selected language under “i18nextLng” and your analytics choice under “cia.analyticsConsent.v1” in browser local storage. These strictly functional values remember your choices; they are not used for advertising. Clearing this site’s browser data removes them."
+      }
+    },
+    "purposes": {
+      "title": "Why we use information",
+      "body": "We use correspondence to answer you, discuss membership or partnerships, keep necessary administrative records and protect the Club. We use technical request data to deliver and secure the site. If you opt in, we use audience and performance measurements only to understand use of the site and improve its content, loading and responsiveness."
+    },
+    "sharing": {
+      "title": "Who may receive information",
+      "body": "Messages are handled by your email provider, our institutional email service and the Club officers who need them to answer or manage the relationship. Website administrators and Vercel may access technical data only as needed to provide, secure and maintain the service. Google Fonts receives a technical request from your browser to deliver the site’s typefaces; Google states that its Fonts API does not set cookies. Links to Discord, social media, GitHub and other websites are governed by those services’ own privacy practices. We do not sell or rent personal information."
+    },
+    "transfers": {
+      "title": "Processing outside Québec",
+      "body": "Vercel, Google and email service providers may process technical or message data outside Québec and Canada where they or their subprocessors operate. Their safeguards, service agreements and the laws of those jurisdictions may apply."
+    },
+    "retention": {
+      "title": "Retention and safeguards",
+      "body": "We keep correspondence only as long as reasonably needed to answer, manage the relationship, meet administrative or legal requirements and resolve disputes, then delete or anonymize it where appropriate. Vercel measurement retention depends on the service plan and is described in its current documentation. Access is limited to people who need the information, and reasonable safeguards are used. No internet or email transmission can be guaranteed completely secure."
+    },
+    "consent": {
+      "title": "Cookies and analytics choices",
+      "body": "This site does not set advertising or analytics cookies. Because audience measurement can distinguish visits and include approximate location, both Vercel measurement tools are off by default. You can allow or decline them without losing site functionality and change your choice at any time through “Analytics choices” in the footer. If we add non-essential cookies or similar technology, we will update this policy and request consent where required."
+    },
+    "rights": {
+      "title": "Your choices and rights",
+      "body": "You may make a written request to access or correct personal information we hold about you, withdraw consent where applicable, request applicable computerized information in a portable format, or ask how a message was handled. We may verify your identity before responding. You may also complain to the Club’s Privacy Officer and, if needed, Québec’s Commission d’accès à l’information."
+    },
+    "resources": {
+      "title": "Service privacy information",
+      "analytics": "Vercel Web Analytics data practices",
+      "speedInsights": "Vercel Speed Insights data practices",
+      "vercelPrivacy": "Vercel privacy notice",
+      "googleFonts": "Google Fonts privacy information",
+      "cai": "Commission d’accès à l’information"
+    },
+    "contact": {
+      "title": "Contact the person responsible for privacy",
+      "body": "For a privacy request, question or complaint, contact the person responsible for the protection of personal information at CIA ULaval. Please describe your request clearly; do not email sensitive information unless it is necessary.",
+      "subject": "Privacy request – CIA ULaval",
+      "button": "Email the privacy contact"
+    }
   },
   "collaborationPage": {
     "mainTitle": "Become a Sponsor",
     "subtitle": "Invest in the Future of AI Research",
-    "intro": "Join our mission to push the boundaries of AI technology. Your sponsorship fuels cutting-edge research, empowers student innovators, and creates solutions that transform industries.",
+    "intro": "Your sponsorship directly funds our student projects — like FlapEEG and F1Tenth — and connects you with AI talent before they graduate.",
     "impactTitle": "Our Impact",
     "tiersTitle": "Sponsorship Tiers",
-    "mostPopular": "Most popular",
-    "projectsTitle": "Projects You'll Fund",
     "currentSponsorsTitle": "Our Current Sponsors",
     "readyTitle": "Ready to Partner?",
-    "readyText1": "Join forward-thinking organizations that are shaping the future of artificial intelligence. Our partnerships provide more than just exposure – they offer direct access to cutting-edge research, talented students, and innovative solutions.",
-    "readyText2": "Custom sponsorship packages are available for organizations with specific research interests or collaboration goals. Let's discuss how we can create value together.",
+    "readyText1": "A partnership with CIA goes beyond visibility: you get direct access to our research projects and the students running them, before they graduate.",
+    "readyText2": "Custom sponsorship packages are available for organizations with specific research or recruiting needs — write to us to discuss one.",
     "flexiblePayment": "Flexible payment options available",
     "contactTitle": "Get in Touch",
     "contactName": "Your Name",
@@ -130,8 +245,9 @@
     "contactCompany": "Company",
     "contactMessage": "How would you like to support our projects?",
     "contactButton": "Send Message",
+    "contactPrivacyNotice": "Nothing is sent from this page. The button opens a draft in your email app.",
+    "contactPrivacyLink": "How we handle your information",
     "becomeSponsorButton": "Become a {{tier}} Sponsor",
-    "progress": "Progress",
     "impactMetrics": {
       "projectsCompleted": "Projects Completed",
       "studentResearchers": "Student Researchers",
@@ -144,41 +260,39 @@
       "Gold": "Gold",
       "Platinum": "Platinum"
     },
-    "fundedProjects": {
-      "MangaTranslator AI": "MangaTranslator AI",
-      "FlapEEG": "FlapEEG",
-      "F1Tenth": "F1Tenth"
-    },
-    "fundedProjectsDescriptions": {
-      "MangaTranslator AI": "AI-powered manga translation system for real-time panel conversion.",
-      "FlapEEG": "EEG-based control system for interactive gaming.",
-      "F1Tenth": "1/10th scale Formula 1 car controlled by muscle signals."
-    },
     "tierBenefits": {
       "Your logo and link on our website": "Your logo and link on our website",
       "Your logo presented at our events": "Your logo presented at our events",
+      "Your logo presented in bold at our events": "Your logo presented in bold at our events",
+      "Your logo presented in very bold at our events": "Your logo presented in very bold at our events",
       "Your logo on our t-shirts": "Your logo on our t-shirts",
+      "Your logo in bold on our t-shirts": "Your logo in bold on our t-shirts",
+      "Your logo in very bold on our t-shirts": "Your logo in very bold on our t-shirts",
       "Special thanks on our social media": "Special thanks on our social media",
       "Distribution of your promotional materials": "Distribution of your promotional materials",
       "All Bronze benefits": "All Bronze benefits",
       "Invitation to our opening events": "Invitation to our opening events",
+      "Invitation of one member to one of our opening events": "Invitation of one member to one of our opening events",
+      "Invitation of three members to one of our opening events": "Invitation of three members to one of our opening events",
+      "Repost of an ad": "Repost of an ad",
       "Repost of two ads": "Repost of two ads",
+      "Repost of three ads": "Repost of three ads",
       "All Silver benefits": "All Silver benefits",
       "Sponsorship for one of our projects": "Sponsorship for one of our projects",
+      "Sponsorship of one of our projects": "Sponsorship of one of our projects",
       "Access to our members CV book": "Access to our members CV book",
-      "Your logo on our projects": "Your logo on our projects"
+      "Access to our CV book of student researchers": "Access to our CV book of student researchers",
+      "Your logo on our projects": "Your logo on our projects",
+      "Your logo on one of our projects": "Your logo on one of our projects"
     }
   },
   "management": {
+    "heroTitle": "Our team",
     "pageTitle": "Team and Leadership - Artificial Intelligence Club Laval University | CIA ULaval",
     "pageDescription": "Meet the leadership team of CIA ULaval: president, leaders, project managers, marketing, finance and activities. Students passionate about artificial intelligence at Laval University.",
     "pageKeywords": "AI Club team, CIA ULaval leadership, AI Club members, AI club president, AI project managers, student team, Laval University, Nathaniel D'Amours, artificial intelligence",
-    "pageAuthor": "Artificial Intelligence Club - Laval University",
     "ogTitle": "Team and Leadership - Artificial Intelligence Club Laval University",
     "ogDescription": "Discover the leadership team of CIA ULaval: president, leaders and managers passionate about artificial intelligence.",
-    "ogSiteName": "AI Club - Laval University",
-    "twitterTitle": "Team and Leadership - Artificial Intelligence Club Laval University",
-    "twitterDescription": "Meet our leadership team of students passionate about artificial intelligence.",
     "sections": {
       "president": "President",
       "leadership": "Logistics Team",
@@ -188,14 +302,10 @@
       "activitiesTeam": "Activities Team",
       "projectsTeam": "Projects Team",
       "teamLeads": "Team Leads",
-      "auxiliaryTeam": "Auxiliary Team"
+      "alumni": "Notable Past Contributors"
     },
     "roles": {
-      "roleAmen": "ASL-Decoder Team Lead & Project Manager",
-      "roleVincent": "Project Manager",
       "president": "President",
-      "vicePresident": "Vice-President",
-      "projectsLeader": "Projects Leader",
       "logisticsLeader": "Logistics Leader",
       "logisticsManager": "Logistics Manager",
       "financeLeader": "Finance Leader",
@@ -204,7 +314,6 @@
       "activitiesLeader": "Activities Leader",
       "recruitmentManager": "Recruitment Manager",
       "recruitmentAssistant": "Recruitment Assistant",
-      "engagementManager": "Engagement Manager",
       "externalRelationsManager": "External Relations Manager",
       "partnershipsManager": "Partnerships Manager",
       "treasuryManager": "Treasury Manager",
@@ -217,17 +326,9 @@
       "readingGroupManager": "Reading Group Manager",
       "socialManager": "Social Manager",
       "recognitionManager": "Recognition Manager",
-      "projectsManager": "Projects Manager",
-      "teamLead1": "Team Lead 1",
-      "teamLead2": "Team Lead 2",
-      "teamLead3": "Team Lead 3",
-      "designsAuxiliary": "Designs Assistant"
+      "projectsManager": "Projects Manager"
     },
-    "vacantPosition": "Vacant Position",
-    "positionInInterview": "Position under interview",
-    "viewLinkedIn": "View LinkedIn",
     "viewProfile": "View Profile",
-    "linkedIn": "LinkedIn",
     "modal": {
       "name": "Name",
       "role": "Role",
@@ -238,13 +339,9 @@
     },
     "aboutMe": {
       "dereck": "Hi, my name is Dereck, I am the creator of this website! I am very passionate about computer science in general but mostly AI. Outside work/school, I do mixed martial arts and love neuroscience and chess. Feel free to contact me if you have questions about the club, requests for the website or want to chat!",
-      "amen": "Hi, my name is Amen, I'm a software engineering student at Université Laval and an AI developer passionate about building intelligent systems, from robotics to real-world applications in machine learning. Outside of work and school, I lead tech communities like IEEE, project at the CIA and I enjoy exploring innovation at the intersection of AI, embedded systems, and human-machine interaction.",
       "yves": "Hi, my name is Yves, marketing leader at the club. Passionate about computer science and development, I am particularly interested in everything related to innovation and artificial intelligence.\nOutside of academics and work, I am very invested in sports, especially basketball and running. I also place great importance on music, particularly piano. Above all, Jesus Christ and my faith in Him holds the central place in my life.\nI am always open to discussions, whether to talk about AI, collaborate on projects, or contribute to the club's growth. Feel free to contact me!"
     },
     "missions": {
-      "nathaniel": "Guide leaders to respect the Club's mission, culture and vision",
-      "louis": "Manage the computing towers, the GitHub organization, and the Club's Discord servers",
-      "jade": "Guide the team to recruit 350 members per year",
       "douae": "Recruit students and follow their integration into the Club",
       "rana": "Ensure presence at visibility activities (open houses, festivals, etc.)",
       "alexandrine": "Guide the team to obtain $50,000",
@@ -253,31 +350,18 @@
       "anthony": "Manage relations with organizations at Laval University and internationally",
       "yves": "Guide the team to reach 800 LinkedIn followers",
       "hibaComm": "Create the announcements calendar and ensure follow-up",
-      "youssouf": "Design merch, visuals, the new Club logo and website",
       "dereck": "Create, maintain and update the website",
-      "eleonore": "Build connections between 500 members through 30 events",
       "ulysse": "Build connections between 500 members through 30 events",
       "william": "Organize outings (board game nights, 5@7, sports, etc.)",
       "nora": "Organize activities to recognize achievements",
-      "jordan": "Supervise 50 students in projects per session",
-      "guilhem": "Train members according to project needs",
-      "amen": "Launch new projects by recruiting Team Leads and Team Members"
+      "guilhem": "Train members according to project needs"
     },
     "structuredData": {
       "name": "Team and Leadership - Artificial Intelligence Club Laval University",
-      "description": "CIA ULaval leadership team with president, leaders and managers",
-      "organizationName": "Artificial Intelligence Club - Laval University",
-      "organizationDescription": "Student artificial intelligence club of Laval University"
+      "description": "CIA ULaval leadership team with president, leaders and managers"
     }
   },
   "gallery": {
-    "pageTitle": "Gallery - Explore EEG Projects, Competitions, and Community Events",
-    "pageDescription": "Explore our gallery showcasing EEG projects, competitions, and community events. Learn more about our journey in AI, EEG technology, and community impact.",
-    "pageKeywords": "EEG, gallery, projects, competitions, community, AI, events, formations",
-    "ogTitle": "Gallery - EEG Projects and Competitions",
-    "ogDescription": "Explore EEG projects, competitions, and community involvement in our dynamic gallery.",
-    "twitterTitle": "Gallery - EEG Projects and Competitions",
-    "twitterDescription": "Discover the EEG gallery featuring projects, competitions, community involvement, and formation discussions.",
     "heroTitle": "Club's Gallery",
     "heroSubtitle": "Explore our projects, competitions, and community involvement",
     "categories": {
@@ -317,31 +401,19 @@
         "frontImage": "CIA presentation to students",
         "kalvenPresenter": "Outside presentation",
         "kiosque": "CIA stand presentation",
-        "kiosque2": "CIA stand presentation 2",
         "presentation": "CIA presentation to students 2",
-        "rencontrecia": "CIA presentation to students 3",
         "table": "Executive team at presentation stand",
-        "table2": "Executive team at presentation stand 2",
         "table3": "Executive team at presentation stand 3",
         "testclub": "EEG signal demonstration"
       }
     },
-    "closeLabel": "Close lightbox"
+    "closeLabel": "Close lightbox",
+    "viewImage": "Enlarge"
   },
   "joinus": {
-    "pageTitle": "Join Us - Collaborate, Lead, and Grow with Our Team",
-    "pageDescription": "Join our team to collaborate on exciting projects, connect with us on Discord, and apply for roles as a Team Lead or Associate.",
-    "pageKeywords": "Join Us, Team, Discord, Apply, Team Lead, Associate, Projects, Collaboration",
-    "heroTitle": "Join Us - Be Part of Our Team",
     "heroSubtitle": "Collaborate, Lead, and Grow with Us",
     "discordText": "Connect with us on Discord to stay updated and collaborate with the team.",
     "discordButton": "Join Our Discord",
-    "applyTitle": "Apply for Roles",
-    "applyText": "Interested in becoming a Team Lead or Associate? Apply now to join our club and contribute to exciting projects.",
-    "applyButton": "Apply Here",
-    "collabTitle": "Want to Collaborate?",
-    "collabText": "We're always open to new partnerships and ideas. Discover how you can collaborate with us!",
-    "collabButton": "Learn About Collaboration",
     "valueProp": {
       "title": "Why join us?",
       "projects": {
@@ -357,30 +429,15 @@
         "description": "Connect with a vibrant community on Discord and at our events."
       }
     },
-    "socialFollow": "Follow us"
+    "socialFollow": "Follow us",
+    "emailAction": "Open your email app"
   },
   "flapeeg": {
-    "meta": {
-      "title": "FlapEEG - Revolutionizing Gaming with Thought-Controlled AI",
-      "description": "FlapEEG is a groundbreaking thought-controlled video game powered by AI and EEG technology. Discover how we trained an AI model to interpret brain signals and control the game.",
-      "keywords": "FlapEEG, EEG, thought-controlled game, brain signals, AI, video game, innovation",
-      "og": {
-        "title": "FlapEEG - Thought-Controlled Video Game",
-        "description": "Discover FlapEEG, a video game controlled by thought. Learn about our journey in training an AI model to interpret brain signals."
-      },
-      "twitter": {
-        "title": "FlapEEG - Thought-Controlled Video Game",
-        "description": "FlapEEG is a revolutionary video game controlled by thought. Learn how we trained an AI model to interpret brain signals and control the game."
-      }
-    },
     "hero": {
-      "title": "FlapEEG - Thought-Controlled Video Game",
-      "subtitle": "Introduction to FlapEEG",
       "image": {
-        "alt": "Three managers of the club, one wearing an EEG headset, smiling during a meeting"
+        "alt": "FlappyBrain game interface driven by an EEG headset"
       },
       "description": {
-        "sr": "FlapEEG is a thought-controlled video game powered by AI and EEG technology.",
         "paragraph1": "FlapEEG is a video game that is controlled by thought. We have trained an AI model to interpret brain signals and translate them into actions in the game. For this to work, we equipped ourselves with the latest EEG (electroencephalogram) technology,",
         "paragraph2": "The format of the game is simple; ever heard of flappy bird? Well, it's the same simple yet fun concept. The only difference is that you control the bird with your thoughts. The simple will to make the little character avoid obstacles is enough to make it move. We are very proud of the work we have accomplished; it may only be the beginning of a video game revolution! Think about it, what if we combined this mechanic to a VR headset? Or, what if this is the skipping stone to helping people with disabilities by giving them power from their own thoughts? The possibilities are endless."
       }
@@ -471,13 +528,7 @@
     }
   },
   "f1tenth": {
-    "meta": {
-      "title": "F1Tenth - AI-Controlled Miniature Race Car Using Muscle Signals",
-      "description": "Explore F1Tenth, a groundbreaking student project that combines AI and electromyographic muscle signals to control a miniature race car. Learn about the innovative team's challenges and achievements.",
-      "keywords": "F1Tenth, AI, muscle signals, electromyographic bracelet, miniature race car, AI projects, student innovation"
-    },
     "hero": {
-      "title": "F1Tenth - AI Meets Muscle Signals",
       "imageAlt": "F1Tenth miniature race car controlled by AI and muscle signals",
       "description1": "Thrill-seeker? This project will capture your interest! F1 Tenth is a team of students passionate about AI who have successfully combined human and machine. Using an electromyographic bracelet, they managed to control a miniature race car with their muscles.",
       "description2": "The team had to train an AI model to read muscle electrical signals and translate them into actions. This involved extensive trial and error to adjust the model's sensitivity and accuracy. The bracelet has multiple sensors, each responsible for a different response like accelerating, braking, or turning. The project was very complex because it required controlling multiple dimensions simultaneously."
@@ -520,214 +571,16 @@
       "simon": {
         "description": ""
       }
-    },
-    "sponsor": {
-      "title": "Special Thanks to those who made this project possible",
-      "description": "We would like to thank Sifi Labs for financing and helping this projet come to life. We would also like to extend our thanks to VAUL, the Laval University autonomous vehicle laboratory."
-    }
-  },
-  "lenia": {
-    "meta": {
-      "title": "Lenia - Continuous Cellular Automaton",
-      "description": "Explore Lenia, an advanced cellular automaton inspired by Conway's Game of Life. Discover emergent behaviors, self-organization, and the potential of artificial intelligence.",
-      "keywords": "Lenia, Cellular Automaton, Game of Life, Artificial Intelligence, Emergent Behaviors, Self-Organization, AI Research",
-      "og": {
-        "title": "Lenia - Continuous Cellular Automaton",
-        "description": "Discover Lenia, a continuous cellular automaton that pushes the boundaries of self-organization and emergent behaviors in artificial intelligence."
-      },
-      "twitter": {
-        "title": "Lenia - Continuous Cellular Automaton",
-        "description": "Explore Lenia, an advanced cellular automaton inspired by Conway's Game of Life. Discover emergent behaviors, self-organization, and the potential of artificial intelligence."
-      }
-    },
-    "hero": {
-      "subtitle": "What is Lenia?"
-    },
-    "features": {
-      "continuous": {
-        "title": "Continuous Automaton",
-        "description": "Beyond binary states of Game of Life"
-      },
-      "emergent": {
-        "title": "Emergent Behaviors",
-        "description": "Complex lifelike patterns emerge"
-      },
-      "research": {
-        "title": "Explorative Research",
-        "description": "Pushing boundaries of self-organization"
-      }
-    },
-    "content": {
-      "paragraph1": "Artificial intelligence isn't just about neural networks or traditional algorithms. Some systems, based on simple rules, can generate astonishingly complex behaviors. This is the case with Lenia, an advanced cellular automaton inspired by the famous Game of Life by John Conway.",
-      "paragraph2": "Unlike the Game of Life, where cells are either alive or dead and evolve in discrete steps, Lenia operates with continuous values and fluid time. This allows for the emergence of dynamic, self-organizing structures that behave in ways reminiscent of living organisms. Each pixel (or \"cell\") in Lenia has a numerical value, which can be thought of as the concentration of a chemical species. These cells interact with their surroundings using convolution filters, which determine how a cell \"perceives\" its neighbors. A convolution filter is essentially a weighted sum of nearby cell values, meaning that instead of just checking immediate neighbors, Lenia applies a structured pattern—often in the shape of a ring—to determine how different distances contribute to a cell's evolution. The result is then passed through a growth function, which decides whether a cell's value increases or decreases based on the surrounding environment. When applied across the entire grid, this process generates complex, lifelike behaviors from simple mathematical rules.",
-      "paragraph3": "Our team successfully implemented a single-channel version of Lenia, where only one \"chemical species\" exists. However, we faced challenges in extending it to three channels, where multiple interacting species (represented as RGB values in visualization) would dramatically expand the possibilities for emergent behaviors. Unlike the Game of Life, which has a well-documented \"bestiary\" of interesting starting configurations, Lenia lacks a standardized library of known patterns, making it harder to find stable and fascinating structures.",
-      "paragraph4": "This project offers an exciting opportunity to explore emergence in artificial intelligence, where complex behaviors arise from simple interactions. We invite students, researchers, and AI enthusiasts to join us in pushing the boundaries of self-organizing systems and discovering the hidden potential of Lenia."
-    },
-    "images": {
-      "pattern": {
-        "alt": "Lenia pattern example"
-      },
-      "animation": {
-        "alt": "Lenia animation example",
-        "caption": "https://levelup.gitconnected.com/playing-with-lenia-a-continuous-version-of-conways-game-of-life-a26a5a7f1680"
-      }
-    },
-    "team": {
-      "title": "The Team",
-      "theophile": {
-        "description": ""
-      },
-      "jordan": {
-        "description": ""
-      },
-      "louis": {
-        "description": ""
-      },
-      "others": {
-        "title": "And others",
-        "description": ""
-      }
-    }
-  },
-  "mangaai": {
-    "meta": {
-      "title": "Manga Translator - AI-Powered Manga Translation",
-      "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time and enjoy your favorite stories in multiple languages.",
-      "keywords": "Manga Translator, AI Manga Translation, Real-time Manga Translation, Manga109, Manga AI, Translate Manga, Japanese to English Manga Translation",
-      "og": {
-        "title": "Manga Translator - AI-Powered Manga Translation",
-        "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time."
-      },
-      "twitter": {
-        "title": "Manga Translator - AI-Powered Manga Translation",
-        "description": "Break the language barrier with our AI-powered Manga Translator. Translate manga panels in real-time and enjoy your favorite stories in multiple languages."
-      }
-    },
-    "hero": {
-      "title": {
-        "manga": "Manga",
-        "translator": "Translator"
-      },
-      "subtitle": "AI-Powered Manga Translation",
-      "description": "Ever wanted to read a manga that wasn't translated yet? Our AI-powered translator breaks the language barrier, bringing untranslated manga to readers worldwide in real-time."
-    },
-    "features": {
-      "realtime": {
-        "title": "Real-time Translation",
-        "description": "Instantly translate manga panels without waiting for official releases"
-      },
-      "multilang": {
-        "title": "Multiple Languages",
-        "description": "Support for translations between Japanese, English, French, and more"
-      },
-      "contextaware": {
-        "title": "Context-Aware",
-        "description": "Our AI understands character relationships and narrative context"
-      }
-    },
-    "approach": {
-      "title": "Our Approach",
-      "paragraph1": "Our project utilizes Manga109, a renowned dataset in the field, frequently employed for speech bubble detection, optical character recognition (OCR), and emotion recognition in illustrations.",
-      "paragraph2": "This comprehensive collection serves as the foundation for training our AI models to understand the unique visual language of manga and accurately translate text while preserving context."
-    },
-    "images": {
-      "manga109": {
-        "alt": "Manga 109 Dataset",
-        "caption": "Source: http://www.manga109.org/ja/index.html"
-      },
-      "example": {
-        "alt": "Manga AI Translation Example",
-        "caption": "Sample output from our automatic translation system"
-      }
-    },
-    "process": {
-      "title": "Development Process",
-      "step1": {
-        "title": "Prototype Development",
-        "description": "We started by leveraging existing tools to quickly build a functional prototype that could demonstrate the concept."
-      },
-      "step2": {
-        "title": "Core Components",
-        "description": "Our system consists of bubble detection with U-Net segmentation, OCR-based text extraction, and automatic translation integration."
-      },
-      "step3": {
-        "title": "Translation & Reinsertion",
-        "description": "After translation, we use advanced image processing to place the translated text back into speech bubbles while respecting visual context."
-      },
-      "step4": {
-        "title": "Continuous Refinement",
-        "description": "We're constantly improving our models to handle challenges like text length differences and maintaining artistic integrity."
-      }
-    },
-    "future": {
-      "title": "Future Enhancements",
-      "textResizing": {
-        "title": "Dynamic Text Resizing",
-        "description": "Intelligent adjustment of font size and text layout to ensure proper fitting within speech bubbles of varying sizes and shapes."
-      },
-      "genderDetection": {
-        "title": "Character Gender Detection",
-        "description": "Analyzing visual cues to detect character gender, improving translation accuracy for languages with grammatical gender like French."
-      },
-      "characterId": {
-        "title": "Character Identification",
-        "description": "Recognizing recurring characters to maintain consistent speech patterns and personality traits throughout translations."
-      },
-      "contextAware": {
-        "title": "Context-Aware Translation",
-        "description": "Incorporating narrative context and visual information to produce more natural and accurate translations that respect the story's tone."
-      }
-    },
-    "team": {
-      "title": "Meet Our Team",
-      "description": "A diverse group of experts passionate about bringing manga to global audiences through cutting-edge AI technology.",
-      "theophile": {
-        "description": ""
-      },
-      "loic": {
-        "description": ""
-      },
-      "xavier": {
-        "description": ""
-      },
-      "louisjacob": {
-        "description": ""
-      },
-      "johnwilliam": {
-        "description": ""
-      }
-    }
-  },
-  "decisionTree": {
-    "meta": {
-      "title": "TreeCore - Simplifying Complex Data for Better Insights",
-      "description": "Discover how decision trees simplify complex datasets while maintaining interpretability. Learn about our research project and the team behind it.",
-      "keywords": "Decision Tree, Data Science, Interpretability, Research, Simplified Models"
-    },
-    "hero": {
-      "title": "TreeCore",
-      "description1": "TreeCore is a research project led by the AI Club that explores innovative ways to optimize the use of decision tree ensembles — a widely used model family in machine learning. The project focuses on two main goals: first, intelligently reducing datasets by keeping only the most relevant examples; and second, studying how many examples are truly necessary to reconstruct a trained decision tree.",
-      "description2": "Students involved in the project are encouraged to design, implement, and test algorithms in Python, experiment with real datasets, compare different training strategies, and interpret the outcomes critically. The project emphasizes scientific rigor and creative problem-solving, offering a great opportunity to experience what it’s like to run a real AI research project — from literature review and ideation to coding and experimental validation.",
-      "description3": "If you're curious, enjoy digging into how machine learning models actually work, and want to contribute to a meaningful and engaging team project, TreeCore is for you. No matter your current level, if you're motivated and eager to learn, there's a place for you — whether in coding, analysis, or even communication and outreach. The project will continue in the fall, and we’re actively looking for new members to join us!",
-      "imageAlt": "Decision Tree illustration"
-    },
-    "team": {
-      "title": "Meet the team behind the project"
     }
   },
   "nutrinov": {
     "hero": {
       "title": "NutriNov",
-      "subtitle": "Food Innovation & AI Entrepreneurship",
-      "paragraph1": "NutriNov is an innovative entrepreneurial project aimed at revolutionizing the food sector through artificial intelligence. Our mission is to identify and solve concrete problems related to food by developing creative and viable technological solutions.",
-      "paragraph2": "In partnership with Open Food Facts, we leverage a comprehensive open database on food products to create intelligent systems that meet the real needs of consumers and industry professionals.",
-      "image": {
-        "alt": "NutriNov Interface - Food Innovation"
-      }
+      "paragraph1": "NutriNov is an entrepreneurial project: identify a real nutritional problem, then build a viable tech prototype to solve it.",
+      "paragraph2": "In partnership with Open Food Facts, we leverage a comprehensive open database on food products to create intelligent systems that meet the real needs of consumers and industry professionals."
     },
     "roles": {
       "title": "Profiles Sought",
-      "subtitle": "Join a multidisciplinary team",
       "speaker": {
         "title": "The Speaker",
         "skills": [
@@ -838,27 +691,6 @@
         }
       ]
     },
-    "technologies": {
-      "title": "Technologies & Skills",
-      "software": {
-        "title": "Software",
-        "items": ["Python", "SQL / NoSQL", "PowerBI", "Figma", "Design tools"]
-      },
-      "hardware": {
-        "title": "Hardware",
-        "items": ["To be determined based on the developed prototype"]
-      },
-      "skills": {
-        "title": "Key Skills",
-        "items": [
-          "Entrepreneurship",
-          "Data analysis",
-          "Web/mobile development",
-          "Pitch and presentation",
-          "Design thinking"
-        ]
-      }
-    },
     "benefits": {
       "title": "Why Join This Project?",
       "items": [
@@ -884,15 +716,12 @@
     },
     "cta": {
       "title": "Ready to Innovate in Food?",
-      "subtitle": "Join NutriNov and participate in the food revolution!",
-      "description": "Whether you're passionate about entrepreneurship, technology or food innovation, your place is on our team.",
-      "button": "Join NutriNov"
+      "subtitle": "Join NutriNov and build a real prototype, from problem to pitch.",
+      "description": "Speaker, innovator, entrepreneur, designer, or analyst — whatever your profile, your team is waiting."
     }
   },
   "poppy": {
     "hero": {
-      "title": "Poppy Simulation",
-      "subtitle": "Reinforcement Learning for Humanoid Robot",
       "paragraph1": "The Poppy Simulation project aims to develop artificial intelligence based on Reinforcement Learning to teach a Poppy humanoid robot to walk autonomously and stably.",
       "paragraph2": "Training is performed in a sophisticated simulation environment to achieve robust and adaptive walking, with a view to future deployment on the physical robot. This project explores the exciting challenges of Sim-to-Real transfer.",
       "image": {
@@ -911,27 +740,6 @@
       "main": {
         "title": "Main Objective",
         "description": "Develop a Reinforcement Learning model capable of making the Poppy robot walk in simulation in a robust and stable manner."
-      },
-      "deliverables": {
-        "title": "Expected Deliverables",
-        "items": [
-          {
-            "title": "Functional simulation environment",
-            "description": "Complete setup of the Poppy virtual environment"
-          },
-          {
-            "title": "Trained RL model",
-            "description": "Optimized model for stable and robust walking"
-          },
-          {
-            "title": "Technical documentation",
-            "description": "Complete documentation of implemented algorithms"
-          },
-          {
-            "title": "Sim2Real pipeline",
-            "description": "Preparation for simulation to physical robot transfer"
-          }
-        ]
       }
     },
     "timeline": {
@@ -1024,15 +832,12 @@
     },
     "resources": {
       "title": "Resources & References",
-      "poppy": "Official Poppy Project documentation",
-      "vooban": "Support and expertise from Vooban",
-      "github": "Project GitHub repository (coming soon)"
+      "poppy": "Official Poppy Project documentation"
     },
     "cta": {
       "title": "Ready to Make Poppy Walk?",
       "subtitle": "Join the team and bring robotic intelligence to life!",
-      "description": "If you're passionate about Reinforcement Learning, robotics, or applied AI, this project is for you.",
-      "button": "Join Poppy Simulation"
+      "description": "If you're passionate about Reinforcement Learning, robotics, or applied AI, this project is for you."
     }
   },
   "poppyConception": {
@@ -1111,52 +916,6 @@
         }
       ]
     },
-    "skills": {
-      "title": "Skills Developed",
-      "items": [
-        {
-          "title": "Additive Manufacturing",
-          "description": "Mastery of 3D printing and file preparation"
-        },
-        {
-          "title": "Mechanics & Robotics",
-          "description": "Assembly, adjustment and integration of mechanical systems"
-        },
-        {
-          "title": "Embedded Electronics",
-          "description": "Soldering, wiring and circuit design"
-        },
-        {
-          "title": "Python/C++ Programming",
-          "description": "Motor control, sensors and embedded systems"
-        },
-        {
-          "title": "Teamwork",
-          "description": "Multidisciplinary collaboration on a concrete project"
-        }
-      ]
-    },
-    "benefits": {
-      "title": "Why Join This Project?",
-      "items": [
-        {
-          "title": "Real Robot",
-          "description": "Participate in creating a real humanoid robot that you'll see working"
-        },
-        {
-          "title": "Open-Source",
-          "description": "Discover open-source robotics and contribute to an accessible project"
-        },
-        {
-          "title": "Passionate Team",
-          "description": "Collaborate with motivated students sharing your passion for hardware"
-        },
-        {
-          "title": "Valuable Experience",
-          "description": "Add a concrete and impressive experience to your resume"
-        }
-      ]
-    },
     "resources": {
       "title": "Resources & References",
       "poppy": "Official Poppy Project documentation"
@@ -1164,14 +923,11 @@
     "cta": {
       "title": "Ready to Build Poppy?",
       "subtitle": "Join the team and bring a humanoid robot to life!",
-      "description": "If you're passionate about hardware, 3D printing or robotics, this project is for you.",
-      "button": "Join Poppy Conception"
+      "description": "If you're passionate about hardware, 3D printing or robotics, this project is for you."
     }
   },
   "sgdbeyond": {
     "hero": {
-      "title": "Stochastic Gradient Descent, and Beyond!",
-      "subtitle": "Research in Stochastic Optimization",
       "paragraph1": "Have you ever wondered why your AI model sometimes converges to a mediocre solution when it could do so much better? The answer often lies in the optimization algorithm.",
       "paragraph2": "Stochastic Gradient Descent (SGD) is the engine behind training virtually all deep learning models. Yet, despite 20 years of use, this algorithm remains imperfect: it gets stuck in local minima and often misses the best solutions.",
       "image": {
@@ -1181,13 +937,10 @@
     "team": {
       "title": "Leadership",
       "lead": "Team Lead: Benjamin Leblanc",
-      "type": "Type: Scientific publication",
       "size": "Sought team size: 5 members"
     },
     "mission": {
-      "title": "Our Mission",
       "understanding": {
-        "title": "Understand Why",
         "description": "Analyze in depth why SGD gets stuck in local minima and misses the best solutions"
       },
       "hypothesis": {
@@ -1195,14 +948,11 @@
         "description": "Injecting intelligent 'noise' into the optimization process could help the model explore better solutions"
       },
       "goal": {
-        "title": "Concrete Objective",
         "description": "Publish our results in a workshop-type conference"
       },
       "status": "The project is already well advanced — promising research avenues are identified and exploitation has begun. You're joining a team in full action!"
     },
     "objectives": {
-      "title": "Objectives & Deliverables",
-      "main": "Submit a research paper to a workshop-type conference",
       "deliverables": {
         "title": "Expected Deliverables",
         "items": [
@@ -1251,27 +1001,6 @@
         }
       ]
     },
-    "technologies": {
-      "title": "Technologies & Skills",
-      "software": {
-        "title": "Software Stack",
-        "items": ["Python", "PyTorch / TensorFlow", "Jupyter Notebooks", "LaTeX", "GPU Computing"]
-      },
-      "hardware": {
-        "title": "Hardware",
-        "items": ["GPU (access provided for experiments)", "High-performance computing cluster"]
-      },
-      "skills": {
-        "title": "Target Skills",
-        "items": [
-          "Stochastic optimization",
-          "Probability theory",
-          "Deep Learning",
-          "Scientific writing",
-          "Experimental analysis"
-        ]
-      }
-    },
     "profiles": {
       "title": "Profiles Sought",
       "programmer": {
@@ -1318,10 +1047,7 @@
       ]
     },
     "cta": {
-      "title": "Ready to Optimize Optimization?",
-      "subtitle": "Join the research team and contribute to science!",
-      "description": "If you love mathematical theory, programming and scientific research, this project combines everything you love.",
-      "button": "Join the Research"
+      "description": "If you love mathematical theory, programming and scientific research, this project combines everything you love."
     }
   },
   "canlock": {
@@ -1330,13 +1056,11 @@
       "description": "Partner project with Thales for intelligent attack detection on vehicle CAN bus."
     },
     "hero": {
-      "badge": "Partner Project",
       "title": "CANlock",
       "subtitle": "Secure tomorrow's vehicles with AI",
       "description": "Help a cybersecurity team secure a fleet of ground vehicles by studying signals exchanged between sensors and actuators via the CAN (Controller Area Network) data bus. The goal: ensure the overall security of the vehicle, and by extension, that of its occupants.",
       "members": "1-2 members wanted",
-      "teamLead": "Team Lead: Loïc Baret",
-      "cybersecurityLabel": "Automotive Cybersecurity"
+      "teamLead": "Team Lead: Loïc Baret"
     },
     "profiles": {
       "title": "Profiles Wanted",
@@ -1356,7 +1080,6 @@
       ]
     },
     "challenge": {
-      "title": "The Challenge",
       "threat": {
         "title": "The Threat",
         "description": "Modern vehicles integrate more and more embedded electronic units that exchange critical data via the CAN bus. An attacker who gains access to the CAN network can:",
@@ -1451,7 +1174,6 @@
     },
     "whyJoin": {
       "title": "Why Join CANlock?",
-      "intro": "You'll love this project if...",
       "items": [
         {
           "title": "Industrial Challenge",
@@ -1469,14 +1191,15 @@
     },
     "cta": {
       "title": "Ready to protect tomorrow's vehicles?",
-      "subtitle": "Join the CANlock team!",
-      "discord": "Join on Discord"
+      "subtitle": "Join the CANlock team!"
+    },
+    "team": {
+      "title": "Team"
     }
   },
   "drone": {
     "hero": {
       "title": "Drone Laser Tag",
-      "subtitle": "Autonomous Drone Competition",
       "paragraph1": "The project consists of designing a drone and an autonomous driving algorithm to enable it to compete in a laser tag competition for drones. The objective: WIN! We'll try things, they won't work, we'll try others until it works.",
       "paragraph2": "We're stepping off the beaten path and venturing to the frontier of what technology allows us to do. All while competing against other major Quebec universities! Buckle up, because this will be a project like no other.",
       "image": {
@@ -1528,8 +1251,6 @@
     },
     "objectives": {
       "title": "Project Objectives",
-      "main": "Win the competition",
-      "subtitle": "More specifically, the project consists of:",
       "drone": {
         "title": "Build the Drone",
         "items": [
@@ -1567,32 +1288,6 @@
         "Competitive spirit and teamwork"
       ]
     },
-    "technologies": {
-      "title": "Technologies & Skills",
-      "hardware": {
-        "title": "Hardware",
-        "items": [
-          "Custom FPV Drone",
-          "Cameras (mono and stereo)",
-          "Lidar and ToF",
-          "Laser blaster and receiver",
-          "IMU and sensors",
-          "Isaac Sim"
-        ]
-      },
-      "skills": {
-        "title": "Target Skills",
-        "items": [
-          "Embedded programming",
-          "Electronics and telecommunications",
-          "Reinforcement Learning",
-          "Computer Vision and Deep Learning",
-          "Mobile robotics",
-          "FPV piloting",
-          "Rapid prototyping"
-        ]
-      }
-    },
     "benefits": {
       "title": "Why Join This Project?",
       "items": [
@@ -1613,8 +1308,7 @@
     "cta": {
       "title": "Ready for the Adventure?",
       "subtitle": "Join the team and participate in a unique competition!",
-      "description": "If you're ready to commit time, love extreme technical challenges and want to win, this project is for you.",
-      "button": "Join the Drone Team"
+      "description": "If you're ready to commit time, love extreme technical challenges and want to win, this project is for you."
     }
   },
   "avionCargo": {
@@ -1623,14 +1317,11 @@
       "description": "Avion-Cargo project: fully autonomous precision landing system using computer vision, ArUco marker detection, 3D position estimation and sub-10 cm accuracy."
     },
     "simple": {
-      "badge": "Autonomous project",
-      "precisionBadge": "Target precision: < 10 cm",
       "title": "Avion-Cargo",
       "subtitle": "Autonomous precision landing through computer vision",
       "description1": "The Avion-Cargo project focuses on developing a fully autonomous precision landing system using computer vision and artificial intelligence.",
       "description2": "The objective is to detect ArUco markers with an onboard camera, estimate the 3D position in real time, then guide the aircraft to achieve a landing precision under 10 cm while enabling payload recovery.",
       "imageAlt": "Avion-Cargo – autonomous precision landing",
-      "imageBadge": "Autonomous landing",
       "technologiesTitle": "Core technologies",
       "technologies": ["OpenCV", "ArduPilot", "Intelligent navigation"],
       "pipelineTitle": "System pipeline",
@@ -1664,161 +1355,16 @@
         "Estimate 3D position in real time, then guide the aircraft.",
         "Perform landing with precision under 10 cm and recover payloads."
       ]
-    },
-    "hero": {
-      "badge": "Autonomous Project",
-      "precisionBadge": "< 10 cm precision",
-      "title": "Avion-Cargo",
-      "subtitle": "Autonomous Precision Landing via Computer Vision",
-      "description1": "The Avion-Cargo project focuses on developing a fully autonomous precision landing system using computer vision and artificial intelligence.",
-      "description2": "The goal is to detect ArUco markers with an onboard camera, estimate the 3D position in real time, then guide the aircraft to achieve a landing precision of less than 10 cm while enabling payload recovery.",
-      "members": "Members wanted",
-      "precision": "Target precision: < 10 cm",
-      "imageBadge": "Autonomous landing"
-    },
-    "stats": [
-      {
-        "value": "< 10 cm",
-        "label": "Landing Precision",
-        "sub": "Target precision goal"
-      },
-      {
-        "value": "ArUco",
-        "label": "Navigation Markers",
-        "sub": "Real-time detection"
-      },
-      {
-        "value": "3D",
-        "label": "Position Estimation",
-        "sub": "Onboard computer vision"
-      }
-    ],
-    "pipeline": {
-      "title": "System Pipeline",
-      "subtitle": "From takeoff to touchdown: how the system guides the aircraft autonomously",
-      "steps": [
-        {
-          "step": "1",
-          "title": "Video Capture",
-          "description": "The onboard camera captures a live video feed during flight."
-        },
-        {
-          "step": "2",
-          "title": "ArUco Detection",
-          "description": "OpenCV detects ArUco markers in the frame and extracts their 2D coordinates."
-        },
-        {
-          "step": "3",
-          "title": "3D Estimation",
-          "description": "The algorithm calculates the 3D position and orientation of the aircraft relative to the target."
-        },
-        {
-          "step": "4",
-          "title": "Intelligent Guidance",
-          "description": "Navigation algorithms compute trajectory corrections and transmit commands to ArduPilot."
-        },
-        {
-          "step": "5",
-          "title": "Landing & Recovery",
-          "description": "The aircraft lands with < 10 cm precision and enables autonomous payload recovery."
-        }
-      ]
-    },
-    "objectives": {
-      "title": "Project Objectives",
-      "items": [
-        {
-          "title": "🎯 Vision & Detection",
-          "items": [
-            "Detect ArUco markers in real time from an onboard camera",
-            "Accurately estimate 3D pose (position + orientation)",
-            "Ensure robustness under varying lighting conditions",
-            "Optimize performance for embedded processing"
-          ]
-        },
-        {
-          "title": "🚀 Navigation & Delivery",
-          "items": [
-            "Achieve landing precision below 10 cm",
-            "Integrate with ArduPilot for flight commands",
-            "Develop intelligent guidance algorithms",
-            "Enable autonomous payload recovery"
-          ]
-        }
-      ]
-    },
-    "tech": {
-      "title": "Technologies & Tools",
-      "items": [
-        {
-          "name": "OpenCV",
-          "type": "vision"
-        },
-        {
-          "name": "ArduPilot",
-          "type": "autopilot"
-        },
-        {
-          "name": "Python",
-          "type": "language"
-        },
-        {
-          "name": "ArUco Markers",
-          "type": "navigation"
-        },
-        {
-          "name": "MAVLink",
-          "type": "protocol"
-        },
-        {
-          "name": "NumPy",
-          "type": "computing"
-        },
-        {
-          "name": "Raspberry Pi / Jetson",
-          "type": "hardware"
-        },
-        {
-          "name": "PID / Guidance",
-          "type": "control"
-        }
-      ]
-    },
-    "roles": {
-      "title": "Profiles Wanted",
-      "items": [
-        {
-          "title": "Computer Vision & AI",
-          "count": "2–3 members",
-          "description": "Implement and optimize ArUco marker detection, 3D pose estimation and embedded image processing algorithms.",
-          "skills": ["OpenCV", "Python", "Computer Vision", "Pose Estimation", "Image Processing"]
-        },
-        {
-          "title": "Navigation & Embedded Systems",
-          "count": "2–3 members",
-          "description": "Develop guidance algorithms, integrate ArduPilot via MAVLink and tune autonomous flight controllers.",
-          "skills": ["ArduPilot", "MAVLink", "Python", "PID Control", "Embedded Systems"]
-        }
-      ]
-    },
-    "cta": {
-      "title": "Ready to land AI?",
-      "subtitle": "Join the Avion-Cargo team and work on a real autonomous navigation system!",
-      "discord": "Join on Discord"
     }
   },
   "asldecoder": {
     "meta": {
-      "title": "AI-Powered Sign Language Recognition",
-      "description": "ASL Decoder: Raspberry Pi system with camera for real-time American Sign Language gesture recognition using artificial intelligence.",
-      "keywords": "ASL, sign language, gesture recognition, Raspberry Pi, AI, computer vision, accessibility, Club IA ULaval"
-    },
-    "status": {
-      "completed": "Project completed!"
+      "description": "ASL Decoder: Raspberry Pi system with camera for real-time American Sign Language gesture recognition using artificial intelligence."
     },
     "hero": {
       "subtitle": "Sign Language Recognition",
-      "description": "Develop a Raspberry Pi system with a camera that predicts hand movements using American Sign Language (ASL). This project combines computer vision and machine learning to make communication more accessible."
+      "description": "Develop a Raspberry Pi system with a camera that predicts hand movements using American Sign Language (ASL). This project combines computer vision and machine learning to make communication more accessible.",
+      "imageAlt": "Raspberry Pi and camera rig of the ASL decoder"
     },
     "features": {
       "title": "Project Features",
@@ -1848,10 +1394,14 @@
     },
     "team": {
       "title": "The Team",
-      "subtitle": "The members who made this project happen"
+      "leadRole": "Team Lead"
     }
   },
   "common": {
-    "backToProjects": "Back to projects"
+    "backToProjects": "Back to projects",
+    "close": "Close",
+    "scrollToTop": "Scroll to top",
+    "toggleNavigation": "Toggle navigation menu",
+    "mobileNavigation": "Mobile navigation"
   }
 }
