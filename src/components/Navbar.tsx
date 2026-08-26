@@ -20,65 +20,74 @@ function Navbar() {
     { to: '/collaboration', label: t('navbar.collaboration') },
   ];
 
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `cia-mono text-xs uppercase tracking-[0.14em] transition-colors cia-focus-ring rounded-sm px-1 ${
+      isActive ? 'text-accent-400' : 'text-primary-400 hover:text-primary-300'
+    }`;
+
   return (
-    <nav className="sticky top-0 z-50 theme-glass-nav">
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className="sticky top-0 z-50 cia-nav">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16">
           <NavLink
             to="/"
-            className="flex items-center space-x-2 min-w-[44px] min-h-[44px] cia-focus-ring rounded-md"
+            className="flex items-center gap-3 min-h-[44px] cia-focus-ring rounded-sm"
+            aria-label="CIA ULaval"
           >
-            <img src="/banner/CIA_LOGO.webp" alt="CIA Logo" width={35} height={35} />
-            <span className="text-xl font-bold theme-text-gradient">CIA</span>
+            <img
+              src="/banner/CIA_LOGO.webp"
+              alt=""
+              width={38}
+              height={38}
+              loading="eager"
+              decoding="async"
+            />
+            <span className="flex items-baseline gap-2">
+              <span className="font-heading text-lg font-bold tracking-tight text-primary-300">
+                CIA
+              </span>
+              <span className="cia-index hidden sm:inline">ULAVAL</span>
+            </span>
           </NavLink>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  `text-accent-500 hover:text-accent-300 transition-colors rounded-md px-1 cia-focus-ring ${isActive ? 'text-accent-300 font-semibold' : ''}`
-                }
-              >
+              <NavLink key={link.to} to={link.to} className={linkClass} end={link.to === '/'}>
                 {link.label}
               </NavLink>
             ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <LanguageToggle />
             <NavLink
               to="/join-us"
-              className={({ isActive }) =>
-                `px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 cia-focus-ring ${
-                  isActive
-                    ? 'bg-accent-400 text-base-inverse'
-                    : 'bg-accent-500 hover:bg-accent-400 text-base-inverse'
-                }`
-              }
+              className="hidden h-9 items-center bg-accent-400 px-4 cia-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent-300 md:inline-flex cia-focus-ring"
             >
               {t('navbar.joinus')}
             </NavLink>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <LanguageToggle />
             <button
               onClick={toggleMenu}
-              className="md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center theme-text-secondary hover:text-accent-300 transition-colors rounded-md cia-focus-ring"
-              aria-label="Toggle navigation menu"
+              className="md:hidden min-w-[44px] min-h-[44px] p-2.5 flex items-center justify-center text-primary-300 hover:text-accent-400 transition-colors cia-focus-ring"
+              aria-label={t('common.toggleNavigation')}
               aria-expanded={isOpen}
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
 
         {isOpen && (
-          <div className="md:hidden pb-4" aria-label="Mobile navigation">
+          <div className="pb-4 pt-2 md:hidden cia-rule" aria-label={t('common.mobileNavigation')}>
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
+                end={link.to === '/'}
                 className={({ isActive }) =>
-                  `block text-accent-500 hover:text-accent-300 transition-colors rounded-md px-2 cia-focus-ring ${isActive ? 'text-accent-300 font-semibold' : ''} py-2`
+                  `block py-3 cia-mono text-xs uppercase tracking-[0.14em] transition-colors cia-focus-ring ${
+                    isActive ? 'text-accent-400' : 'text-primary-400 hover:text-primary-300'
+                  }`
                 }
                 onClick={toggleMenu}
               >
@@ -87,13 +96,7 @@ function Navbar() {
             ))}
             <NavLink
               to="/join-us"
-              className={({ isActive }) =>
-                `block mt-2 px-4 py-2 rounded-full text-sm font-semibold text-center transition-all duration-200 cia-focus-ring ${
-                  isActive
-                    ? 'bg-accent-400 text-base-inverse'
-                    : 'bg-accent-500 hover:bg-accent-400 text-base-inverse'
-                }`
-              }
+              className="mt-3 flex h-11 items-center justify-center bg-accent-400 cia-mono text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-accent-300 cia-focus-ring"
               onClick={toggleMenu}
             >
               {t('navbar.joinus')}
