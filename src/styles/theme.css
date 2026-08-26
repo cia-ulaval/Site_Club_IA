@@ -1,373 +1,303 @@
-@tailwind components;
-
-@layer components {
-  .theme-page-bg {
-    @apply bg-base relative;
-    isolation: isolate;
-    overflow: hidden;
-    background-color: rgb(var(--color-base));
-    background-image:
-      radial-gradient(
-        900px circle at 12% 8%,
-        rgb(var(--color-primary-500) / 0.26) 0%,
-        transparent 46%
-      ),
-      radial-gradient(
-        980px circle at 84% 14%,
-        rgb(var(--color-accent-500) / 0.24) 0%,
-        transparent 52%
-      ),
-      linear-gradient(180deg, rgb(var(--color-base) / 1) 0%, rgb(var(--color-base) / 1) 100%);
-  }
-
-  .theme-page-bg::before {
-    content: '';
-    position: absolute;
-    inset: -16%;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(
-        120deg,
-        transparent 20%,
-        rgb(var(--color-primary-500) / 0.4) 34%,
-        transparent 46%
-      ),
-      linear-gradient(
-        -128deg,
-        transparent 52%,
-        rgb(var(--color-accent-500) / 0.48) 66%,
-        transparent 82%
-      );
-    background-size:
-      195% 190%,
-      185% 180%;
-    opacity: 0.84;
-    transform: translate3d(-3%, -1%, 0);
-    animation: theme-bg-pan 20s ease-in-out infinite alternate;
-  }
-
-  .theme-page-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-image:
-      radial-gradient(140% 100% at 50% 0%, transparent 58%, rgb(var(--color-base) / 0.56) 100%),
-      linear-gradient(
-        34deg,
-        transparent 70%,
-        rgb(var(--color-accent-500) / 0.2) 80%,
-        transparent 90%
-      );
-    background-size:
-      100% 100%,
-      190% 190%;
-    opacity: 0.94;
-  }
-
-  .theme-page-bg > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  @keyframes theme-bg-pan {
-    0% {
-      transform: translate3d(-3%, -1%, 0);
-      background-position:
-        0% 0%,
-        100% 100%;
-      opacity: 0.74;
-    }
-    100% {
-      transform: translate3d(3%, 2%, 0);
-      background-position:
-        18% 14%,
-        84% 80%;
-      opacity: 0.92;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .theme-page-bg::before {
-      animation: none;
-    }
-  }
-
-  .theme-glass-nav {
-    @apply bg-base border-b !border-accent-500/40;
-  }
-
-  .theme-text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-500 to-primary-500;
-  }
-
-  /* Primary content shell used across project detail pages. */
-  .theme-content-shell {
-    @apply w-full md:w-11/12 lg:w-3/4 mx-auto px-4 md:px-6 py-8 md:py-16 rounded-lg md:rounded-2xl border !border-accent-500/40 transition-colors duration-300;
-  }
-
-  .theme-content-shell:hover {
-    @apply !border-accent-500;
-  }
-
-  /* Shared media frame for video/image blocks with accent glow. */
-  .theme-media-frame {
-    @apply relative w-full aspect-video overflow-hidden rounded-lg shadow-2xl;
-    box-shadow: 0 0 50px rgb(var(--color-primary-500) / 0.2);
-  }
-
-  /* Hero callout card used on top sections. */
-  .theme-hero-highlight {
-    @apply backdrop-blur-lg bg-base/40 rounded-xl p-6 border !border-accent-500/30;
-    animation: pulse-accent 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  @keyframes pulse-accent {
-    0%,
-    100% {
-      box-shadow: 0 0 100px rgb(var(--color-accent-500) / 0.3);
-    }
-    50% {
-      box-shadow: 0 0 150px rgb(var(--color-primary-500) / 0.5);
-    }
-  }
-
-  .theme-text-accent {
-    @apply text-accent-500;
-  }
-
-  .theme-hover-text-accent {
-    @apply hover:text-accent-300;
-  }
-
-  .theme-text-secondary {
-    @apply text-accent-300;
-  }
-
-  .theme-text-muted {
-    @apply text-neutral-400;
-  }
-
-  .theme-border-soft {
-    @apply !border-accent-500/20;
-  }
-
-  .theme-border-accent {
-    @apply !border-accent-500;
-  }
-
-  .theme-hover-border-accent {
-    @apply hover:!border-accent-500;
-  }
-
-  .theme-focus-border-accent {
-    @apply focus:!border-accent-500;
-  }
-
-  .theme-border-accent-important {
-    @apply !border-accent-500/30;
-  }
-
-  .theme-surface-primary {
-    @apply bg-gradient-to-br from-primary-500/20 via-accent-500/10 to-base/40;
-  }
-
-  .theme-surface-secondary {
-    @apply bg-gradient-to-br from-base/40 to-primary-500/10;
-  }
-
-  .theme-btn-gradient {
-    @apply bg-gradient-to-r from-primary-500 via-primary-500 to-primary-500 hover:from-primary-300 hover:via-primary-300 hover:to-primary-300 text-base-inverse;
-  }
-
-  .theme-btn-solid {
-    @apply bg-primary-500 text-base-inverse;
-  }
-
-  .theme-btn-solid-hover {
-    @apply hover:bg-primary-300;
-  }
-
-  .theme-btn-secondary {
-    @apply bg-accent-500 text-base-inverse hover:bg-accent-300;
-  }
-
-  .theme-link-accent {
-    @apply text-accent-500 hover:text-accent-300;
-  }
-
-  .theme-chip-inactive {
-    @apply bg-primary-500/20 text-base-inverse border !border-accent-500/35 hover:bg-primary-300/30 hover:!border-accent-300/60;
-  }
-
-  .theme-focus-ring-accent {
-    @apply focus:ring-accent-300;
-  }
-
-  .theme-modal-surface {
-    @apply bg-gradient-to-br from-primary-500/25 via-primary-500/15 to-base border !border-accent-500/35;
-  }
-
-  .theme-overlay-dark {
-    @apply bg-gradient-to-t from-base/80 via-base/50 to-transparent;
-  }
-
-  .theme-border-card {
-    border: 2px solid rgb(var(--color-accent-500));
-  }
-
-  .theme-shadow-accent-soft {
-    box-shadow: 0 2px 12px 0 rgb(var(--color-primary-500) / 0.15);
-  }
-
-  /* Accent utilities for logo splash color */
-  .theme-accent-dot {
-    @apply relative;
-  }
-
-  .theme-accent-dot::before {
-    content: '';
-    @apply absolute w-2 h-2 bg-accent-500 rounded-full;
-  }
-
-  .theme-accent-glow {
-    box-shadow: 0 0 30px rgb(var(--color-accent-500) / 0.4);
-  }
-
-  .theme-accent-border {
-    @apply !border-accent-500/40 hover:!border-accent-500/70;
-  }
-}
-
 /* ============================================================
-   CIA Design System — cia-* utilities
-   Use these for all new code. The theme-* classes above are
-   kept for backward compatibility. Never mix the two in the
-   same element — pick one system and migrate progressively.
+   CIA design system — the `cia-*` component utilities.
+
+   One system. An earlier `theme-*` set sat alongside this one "for
+   backward compatibility"; by the end it was 23 dead rules and a
+   handful of one-line aliases for a single Tailwind utility, so the
+   survivors were folded in here and the aliases inlined.
+
+   Direction: an instrument surface. Depth comes from rules and
+   spacing, never from tinted gradients stacked behind content.
    ============================================================ */
+
+@tailwind components;
 
 @layer components {
   /* --- Layout --- */
 
-  .cia-container {
-    @apply w-full max-w-7xl mx-auto px-4 md:px-6;
+  /* The site measure. Navbar, Footer, Home, the Projects index and every
+     project page use this exact box, so a page lines up with the chrome
+     around it. */
+  .cia-measure {
+    @apply mx-auto w-full max-w-7xl px-4 md:px-6;
   }
 
-  .cia-section {
-    @apply mb-12 sm:mb-20;
+  /* Running prose only. Body text set across a 7xl column is unreadable,
+     so paragraphs keep their own line length inside the wide measure. */
+  .cia-measure-read {
+    @apply w-full max-w-[68ch];
   }
 
-  .cia-section-sm {
-    @apply mb-8 sm:mb-12;
+  /* One pace for section rhythm. Sections are separated by space, not by
+     rules, and the gap is a single top edge so adjacent sections cannot
+     sum their padding into a hole. */
+  .cia-pace {
+    @apply pt-14 md:pt-20;
   }
 
-  .cia-section-lg {
-    @apply mb-20 sm:mb-28;
+  .cia-pace-tight {
+    @apply pt-10 md:pt-12;
+  }
+
+  .cia-pace-open {
+    @apply pt-16 md:pt-24;
+  }
+
+  /* --- Ground and chrome --- */
+
+  /* Flat ground. No tiled pattern behind the page: a background texture
+     competes with everything laid on it — partner marks and photographs
+     worst of all — and buys nothing the layout's own alignment does not
+     already say. */
+  .cia-page-bg {
+    @apply bg-paper;
+  }
+
+  .cia-nav {
+    @apply border-b;
+    background: rgb(var(--color-paper) / 0.9);
+    border-color: var(--rule);
+    backdrop-filter: blur(16px) saturate(130%);
+  }
+
+  .cia-footer {
+    color: rgb(var(--color-paper));
+    background: rgb(var(--color-steel));
+    border-top: 6px solid rgb(var(--color-coral));
+  }
+
+  /* --- Instrument surface ---
+     The visible grid. Rules are structural: they mark where the measuring
+     grid runs, so they are always hairline and never decorative borders
+     around arbitrary boxes. */
+
+  .cia-rule {
+    border-top: 1px solid var(--rule);
+  }
+
+  .cia-rule-b {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .cia-rule-l {
+    border-left: 1px solid var(--rule);
+  }
+
+  /* Column tick — the short mark where a grid column meets a rule. Coral,
+     because a tick is the instrument marking a reading. Centered on the
+     parent's own height rather than pinned to its top edge, so it lines up
+     with the text regardless of the parent's line-height or padding. */
+  .cia-tick::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 2px;
+    height: 12px;
+    transform: translateY(-50%);
+    background: var(--rule-live);
+  }
+
+  /* Section eyebrow rule — the short coral mark that opens a run of
+     content. */
+  .cia-eyebrow-rule {
+    @apply flex items-center gap-3;
+  }
+
+  .cia-eyebrow-rule::before {
+    content: '';
+    @apply block h-px w-8 shrink-0;
+    background: rgb(var(--color-accent-500));
+  }
+
+  /* --- Readout type ---
+     Monospace carries every machine-written value: codes, statuses,
+     domains, dates, counts. Prose stays in IBM Plex Sans. The split is the
+     rule — if a human wrote it, it is not mono. */
+
+  .cia-mono {
+    font-family: var(--font-mono);
+    font-feature-settings: 'tnum' 1;
+  }
+
+  .cia-meta {
+    @apply cia-mono text-xs uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(var(--color-primary-500));
+  }
+
+  /* Section eyebrow. Coral marks where a new part of the page begins, so
+     the accent does structural work instead of only flagging status. */
+  .cia-meta-accent {
+    @apply cia-mono text-xs uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(var(--color-accent-400));
+  }
+
+  /* Project/section index — CIA-04, 03/10. Reads as a serial number. */
+  .cia-index {
+    @apply cia-mono text-xs;
+    letter-spacing: 0.08em;
+    color: rgb(var(--color-primary-500));
   }
 
   /* --- Typography --- */
 
-  .cia-heading-hero {
-    @apply font-heading text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight;
-  }
-
-  .cia-heading-page {
-    @apply font-heading text-4xl sm:text-5xl font-bold leading-tight;
+  /* Display type is set solid and tight — never gradient-filled. Scale and
+     line-break control carry the emphasis instead. */
+  .cia-display {
+    @apply font-heading font-bold text-primary-300;
+    letter-spacing: -0.03em;
+    line-height: 0.94;
+    text-wrap: balance;
   }
 
   .cia-heading-section {
-    @apply font-heading text-2xl sm:text-3xl font-bold;
-  }
-
-  .cia-heading-card {
-    @apply font-heading text-xl font-semibold;
+    @apply font-heading text-2xl font-bold sm:text-3xl;
   }
 
   .cia-body-lead {
     @apply font-body text-lg leading-relaxed;
   }
 
-  .cia-body {
-    @apply font-body text-base leading-relaxed;
-  }
-
-  .cia-body-sm {
-    @apply font-body text-sm leading-relaxed;
-  }
-
-  .cia-label {
-    @apply font-body text-xs font-semibold uppercase tracking-wider;
-  }
-
   /* --- Accessibility --- */
 
   .cia-focus-ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
   }
 
-  /* --- Buttons --- */
+  /* --- Buttons ---
+     Coral is the alarm/live colour and is spent only on the one primary
+     action. Anything else that wants attention uses scale. */
 
   .cia-btn-base {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg transition-all duration-200 cursor-pointer min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+    @apply inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-2 rounded-[4px] px-6 py-3 font-semibold transition-colors duration-quick focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
   }
 
   .cia-btn-primary {
-    @apply cia-btn-base bg-primary-500 hover:bg-primary-300 text-base-inverse shadow-lg hover:shadow-xl hover:shadow-primary-600/30;
+    @apply cia-btn-base bg-primary-500 hover:bg-primary-300;
+    color: rgb(var(--color-paper));
+    box-shadow: 0 10px 24px -18px rgb(var(--color-steel) / 0.8);
   }
 
   .cia-btn-accent {
-    @apply cia-btn-base bg-accent-500 hover:bg-accent-400 text-base-inverse;
+    @apply cia-btn-base bg-accent-400 hover:bg-accent-300;
+    color: rgb(var(--color-paper));
   }
 
   .cia-btn-ghost {
-    @apply cia-btn-base border border-accent-500/40 hover:border-accent-500 text-accent-300 hover:text-accent-300 hover:bg-accent-500/10;
+    @apply cia-btn-base border border-accent-500/40 text-accent-300 hover:border-accent-500 hover:bg-accent-500/10;
   }
 
   .cia-btn-sm {
-    @apply px-4 py-2 text-sm min-h-[44px];
+    @apply min-h-[44px] px-4 py-2 text-sm;
   }
 
-  /* --- Cards --- */
+  /* --- Cards ---
+     Cult UI's composable card surface, rethemed around the logo geometry:
+     one soft corner opposes one precise corner. Cards are reserved for
+     self-contained objects; editorial rows remain unboxed. */
 
   .cia-card {
-    @apply rounded-2xl border border-primary-500/40 bg-gradient-to-br from-primary-950/85 to-primary-900/65 shadow-lg transition-all duration-200;
+    @apply relative overflow-hidden transition-[background-color,border-color,box-shadow] duration-quick;
+    background: rgb(var(--color-paper-raised));
+    border: 1px solid var(--rule);
+    border-radius: 20px 4px 20px 4px;
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.8) inset,
+      0 18px 44px -38px rgb(var(--color-ink) / 0.55);
   }
 
   .cia-card-hover {
-    @apply hover:border-primary-400 hover:shadow-xl hover:shadow-primary-900/20 cursor-pointer;
+    @apply cursor-pointer;
   }
 
-  .cia-card-content {
-    @apply p-6;
+  .cia-card-hover:hover {
+    border-color: var(--rule-strong);
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.9) inset,
+      0 22px 52px -38px rgb(var(--color-steel) / 0.72);
   }
 
-  /* --- Badges --- */
-
-  .cia-badge {
-    @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-full border;
+  .cia-card-media {
+    @apply relative overflow-hidden;
+    background: rgb(var(--color-steel-soft));
+    border-radius: 16px 2px 16px 2px;
   }
 
-  .cia-badge-primary {
-    @apply cia-badge bg-primary-500/20 text-primary-300 border-primary-500/40;
+  .cia-card-marker::before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 1.25rem;
+    width: 2.75rem;
+    height: 3px;
+    background: rgb(var(--color-coral));
   }
 
-  .cia-badge-accent {
-    @apply cia-badge bg-accent-500/20 text-accent-300 border-accent-500/40;
+  /* Emphasis without weight. The one section a page wants to single out
+     sits on a soft tinted panel with the card's own geometry — a light
+     surface lifted off the paper, not a full-bleed steel band. */
+  .cia-panel-soft {
+    @apply p-6 md:p-10;
+    background: rgb(var(--color-steel-soft) / 0.6);
+    border-radius: 24px 6px 24px 6px;
   }
 
-  .cia-badge-success {
-    @apply cia-badge bg-success-500/20 text-success-400 border-success-500/30;
+  /* --- Media --- */
+
+  /* A picture keeps the card's radius wherever it appears, so a picture in
+     a section and a picture in a card are the same object. */
+  .cia-figure {
+    @apply relative w-full overflow-hidden;
+    background: rgb(var(--color-steel-soft));
+    border-radius: 20px 4px 20px 4px;
   }
 
-  .cia-badge-neutral {
-    @apply cia-badge bg-neutral-800/60 text-neutral-300 border-neutral-700/40;
+  .cia-figure img,
+  .cia-figure video {
+    @apply absolute inset-0 h-full w-full object-cover;
   }
 
-  /* --- Divider --- */
+  /* A diagram carries its meaning in the whole frame, so it is contained
+     and padded rather than cropped to fill one. */
+  .cia-figure-contain img,
+  .cia-figure-contain video {
+    object-fit: contain;
+    padding: clamp(0.75rem, 2.5vw, 2rem);
+  }
 
-  .cia-divider {
-    @apply border-t border-primary-800/60 my-8 sm:my-12;
+  /* Legibility scrim over media — the one place a gradient earns its keep,
+     because it models light falling off, not decoration. */
+  .cia-scrim {
+    background: linear-gradient(
+      to top,
+      rgb(var(--color-ink) / 0.88),
+      rgb(var(--color-ink) / 0.3) 58%,
+      transparent
+    );
+  }
+
+  /* A modal is a panel lifted off the bench: raised value, coral top edge
+     to show it is the live surface. */
+  .cia-modal {
+    background: rgb(var(--color-paper-raised));
+    border: 1px solid var(--rule);
+    border-top: 2px solid var(--rule-live);
+  }
+}
+
+/* Motion written in JS does not inherit this block — Motion sets inline
+   styles through rAF. Anything animated in JS goes through `useMotion()`,
+   which returns inert variants when `reduce` is set. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

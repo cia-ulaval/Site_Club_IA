@@ -4,66 +4,65 @@
 @tailwind utilities;
 
 :root {
-  --font-heading: 'Space Grotesk', system-ui, sans-serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-heading: 'IBM Plex Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  --color-base: 0 0 0;
-  --color-base-inverse: 255 255 255;
+  /* Warm paper lets the steel and coral read as brand colours without
+     turning the interface into a dark control panel. */
+  --color-paper: 248 246 239;
+  --color-paper-raised: 255 254 250;
+  --color-ink: 30 47 55;
+  --color-ink-muted: 78 96 104;
+  --color-steel: 63 98 115;
+  --color-steel-soft: 226 233 234;
+  --color-coral: 237 100 106;
+  --color-coral-dark: 177 55 65;
 
-  --color-neutral-100: 243 244 246;
-  --color-neutral-200: 229 231 235;
-  --color-neutral-300: 209 213 219;
-  --color-neutral-400: 156 163 175;
-  --color-neutral-500: 107 114 128;
-  --color-neutral-600: 75 85 99;
-  --color-neutral-700: 55 65 81;
-  --color-neutral-800: 31 41 55;
-  --color-neutral-900: 17 24 39;
+  /* Hairline used for the visible grid: rules, column ticks, spec-row dividers. */
+  --rule: rgb(var(--color-steel) / 0.22);
+  --rule-strong: rgb(var(--color-steel) / 0.48);
+  /* Coral rule marks a live or selected row. */
+  --rule-live: rgb(var(--color-accent-500) / 0.85);
 
-  --color-primary-300: 172 185 192;
-  --color-primary-400: 125 145 156;
-  --color-primary-500: 59 93 112;
-  --color-primary-600: 49 79 95;
-  --color-primary-700: 40 65 79;
-  --color-primary-800: 30 50 61;
-  --color-primary-900: 21 35 43;
-  --color-primary-950: 14 23 29;
+  /* Steel ramp, brightened across the board: 300/400/500 all carry running
+     text at some size, so each clears 4.5:1 on the paper above. Only the
+     steps something actually uses are declared — the ramp used to run
+     200..950 plus parallel `neutral`, `info`, `success` and `warning`
+     ramps, none of which any rule or component referenced. */
+  --color-primary-300: 38 70 84;
+  --color-primary-400: 54 86 101;
+  --color-primary-500: 63 98 115;
+  --color-primary-600: 99 128 141;
+  --color-primary-950: 239 243 241;
 
-  --color-accent-300: 244 148 148;
-  --color-accent-400: 240 124 126;
-  --color-accent-500: 236 100 104;
-  --color-accent-600: 209 82 86;
-  --color-accent-700: 176 66 70;
-  --color-accent-800: 140 51 55;
-  --color-accent-900: 105 37 41;
-  --color-accent-950: 72 24 28;
-
-  --color-info-400: 96 165 250;
-  --color-info-500: 59 130 246;
-  --color-info-600: 37 99 235;
-
-  --color-success-400: 74 222 128;
-  --color-success-500: 34 197 94;
-
-  --color-warning-300: 252 211 77;
-  --color-warning-400: 251 191 36;
-  --color-warning-500: 245 158 11;
-  --color-warning-600: 217 119 6;
-  --color-warning-700: 180 83 9;
-  --color-warning-800: 146 64 14;
-  --color-warning-900: 120 53 15;
+  /* Coral ramp. 300 and 400 are darkened for text on paper; 500 is the
+     brand coral itself, used for rules and markers. */
+  --color-accent-300: 155 45 55;
+  --color-accent-400: 190 61 70;
+  --color-accent-500: 237 100 106;
 }
 
 @layer base {
+  /* No `scroll-behavior: smooth` here: it would also capture the
+     `window.scrollTo(0, 0)` in ScrollToTop, so every route change would
+     slow-scroll the newly mounted page instead of jumping. The two places
+     that do want a smooth scroll ask for it per call, via
+     `scrollBehavior()` in hooks/useMotion.ts. */
   html {
-    background-color: rgb(var(--color-accent-500));
+    background-color: rgb(var(--color-paper));
   }
 
   body {
-    @apply bg-base text-neutral-100;
+    @apply bg-paper text-ink;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    color: rgb(var(--color-ink));
+    background: rgb(var(--color-coral) / 0.32);
   }
 
   h1,
