@@ -3,30 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { DEFAULT_OG_IMAGE, OG_SITE_NAME, ORG_NAME, SITE } from '../lib/site';
 
 interface SeoProps {
-  /** Full `<title>`, including any suffix. */
   title: string;
   description: string;
   keywords?: string;
-  /** Site-relative route, e.g. `/projects`. Drives canonical and `og:url`. */
   path: string;
-  /** Site-relative image path; falls back to the club logo. */
   image?: string;
-  /** Social headline where the page title is too long for a card. */
   socialTitle?: string;
-  /** Social blurb where the meta description is too long for a card. */
   socialDescription?: string;
-  /** Structured data. Objects are serialized; strings are emitted verbatim. */
   jsonLd?: string | object;
 }
 
-/* Every page shipped the same twenty-odd Helmet lines with three values
-   swapped, so the boilerplate drifted: some pages set `og:type`, some
-   didn't, and the Twitter card copy diverged from the Open Graph copy for
-   no reason anyone recorded. One component, one shape.
-
-   Open Graph and Twitter deliberately carry identical copy — the earlier
-   split maintained two nearly-identical strings per page and no consumer
-   ever distinguished them. */
 export default function Seo({
   title,
   description,

@@ -12,8 +12,6 @@ import {
   MinimalCardTitle,
 } from '../ui/minimal-card';
 
-/* i18n `returnObjects` is typed loosely and a missing key returns the key
-   string, so both helpers narrow defensively rather than trusting it. */
 function asStrings(value: unknown): string[] {
   return Array.isArray(value) ? value.filter((v): v is string => typeof v === 'string') : [];
 }
@@ -21,13 +19,9 @@ function asStrings(value: unknown): string[] {
 interface Item {
   title: string;
   description?: string;
-  /** A real interval or phase label the copy already carries. */
   meta?: string;
 }
 
-/* Pages disagree on field names for the same thing: `description`/`desc`
-   for the body, `period`/`weeks` for an interval, and `phase` as either
-   the title or the label depending on whether a `title` sits beside it. */
 function asItems(value: unknown): Item[] {
   if (!Array.isArray(value)) return [];
   return value.flatMap((v) => {
@@ -48,9 +42,6 @@ function asItems(value: unknown): Item[] {
   });
 }
 
-/* A picture, in the card geometry the rest of the site uses. `contain`
-   is for diagrams, which carry their meaning in the whole frame and are
-   ruined by a crop; everything else fills. */
 export function Figure({
   media,
   className = '',
@@ -91,10 +82,6 @@ export function Figure({
   );
 }
 
-/* Section head, at the scale the Projects index uses for a term heading.
-   The first pass set every one of these at display size, so a page had
-   eight things all shouting at the same volume and no way to tell the
-   page's title from its fourth subsection. */
 function SectionHead({ titleKey, subtitleKey }: { titleKey?: string; subtitleKey?: string }) {
   const { t } = useTranslation();
   if (!titleKey && !subtitleKey) return null;
@@ -130,8 +117,6 @@ export function Body({
           );
         }
 
-        /* Fragments joined back into one sentence. A space between runs is
-           right for every case here — the copy was split at word breaks. */
         return (
           <p key={para.runs.map((r) => r.key).join('|')} className={cls}>
             {para.runs.map((run, i) => (
@@ -149,7 +134,6 @@ export function Body({
   );
 }
 
-/* Short values as chips. Light, on the raised surface the cards use. */
 function Chips({ items }: { items: string[] }) {
   return (
     <ul className="flex flex-wrap gap-2">
@@ -173,7 +157,6 @@ export default function ProjectBlock({ block }: Props) {
   const { t } = useTranslation();
   const m = useMotion();
 
-  /* Emphasis is a soft tinted panel, not a change of ground. */
   const soft = block.tone === 'invert';
   const pace = block.pace
     ? { tight: 'cia-pace-tight', normal: 'cia-pace', open: 'cia-pace-open' }[block.pace]
@@ -191,11 +174,6 @@ export default function ProjectBlock({ block }: Props) {
     />
   );
 
-  /* Sections do not animate on arrival. Every one of them used to carry
-     the same viewport fade-up, which meant the page never held still
-     while you read down it and the move told you nothing you couldn't
-     already see. What survives on a project page is the cover and the
-     figures — the places where motion is doing work. */
   const wrap = (children: ReactNode) => (
     <section id={block.id} className={pace}>
       <div className="cia-measure">
@@ -205,24 +183,16 @@ export default function ProjectBlock({ block }: Props) {
   );
 
   switch (block.kind) {
-    /* Prose beside a picture. `flip` alternates the reading direction so
-       consecutive sections do not stack into one slab. */
     case 'split':
       return wrap(
         <>
           {head}
-          {/* Top-aligned, not centred: a short paragraph centred against a
-              16:9 picture floats in the middle of its column with a gap
-              above it and no edge to line up with. */}
           <div className="grid items-start gap-8 md:grid-cols-2 md:gap-12">
             <div className={`space-y-4 ${block.flip ? 'md:order-2' : ''}`}>
               <Body keys={block.bodyKeys} />
             </div>
             {block.media && (
               <motion.div className={block.flip ? 'md:order-1' : ''} {...m.reveal}>
-                {/* 16:9, not 4:3 — the media beside a section is almost
-                    always a screen recording or a screenshot, and the
-                    taller frame was cropping the sides off them. */}
                 <Figure media={block.media} aspect="aspect-video" />
               </motion.div>
             )}
@@ -230,7 +200,6 @@ export default function ProjectBlock({ block }: Props) {
         </>
       );
 
-    /* The quiet section. One measured column, nothing beside it. */
     case 'prose':
       return wrap(
         <>
@@ -241,8 +210,6 @@ export default function ProjectBlock({ block }: Props) {
         </>
       );
 
-    /* A callout. On a soft panel it needs no second container, so the
-       body just sits in the measure. */
     case 'panel':
       return wrap(
         <>
@@ -258,7 +225,6 @@ export default function ProjectBlock({ block }: Props) {
         </>
       );
 
-    /* Parallel lists, one card each. */
     case 'columns': {
       const cols = block.cols ?? (block.columns.length >= 3 ? 3 : 2);
       return wrap(
@@ -280,9 +246,6 @@ export default function ProjectBlock({ block }: Props) {
               );
               return (
                 <div key={col.titleKey}>
-                  {/* On a soft panel the columns drop their own card: a
-                      panel holding cards holding lists is three nested
-                      containers saying one thing. */}
                   {soft ? (
                     list
                   ) : (
@@ -303,9 +266,6 @@ export default function ProjectBlock({ block }: Props) {
       );
     }
 
-    /* A picture on its own. Wide, but still inside the measure and still
-       carrying the card geometry — a full-bleed band belongs to a
-       different, heavier site than this one. */
     case 'plate':
       return wrap(
         <>
@@ -367,8 +327,6 @@ export default function ProjectBlock({ block }: Props) {
       );
     }
 
-    /* A sequence. Cards in order, each led by its step number or the real
-       interval the copy already names. */
     case 'steps': {
       const items = asItems(t(block.itemsKey, { returnObjects: true }));
       const prefix = block.metaPrefixKey ? t(block.metaPrefixKey) : '';
@@ -424,9 +382,6 @@ export default function ProjectBlock({ block }: Props) {
       );
     }
 
-    /* Open positions. One card per seat: what it does, what it needs.
-       Seats that list required skills need the room; bare ones tile three
-       up so a set of three fills its row instead of orphaning one. */
     case 'roles': {
       const dense = block.roles.some((r) => r.skillsKey);
       return wrap(
@@ -456,7 +411,6 @@ export default function ProjectBlock({ block }: Props) {
       );
     }
 
-    /* The page's one figure, set large in coral. */
     case 'stat':
       return wrap(
         <>
@@ -508,8 +462,6 @@ export default function ProjectBlock({ block }: Props) {
         </>
       );
 
-    /* The roster. One card per person, so every contributor gets the same
-       weight — which is the point of printing the names at all. */
     case 'team':
       return wrap(
         <>

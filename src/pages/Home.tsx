@@ -12,8 +12,6 @@ import { ORGANIZATION_LD } from '../lib/site';
 
 const FEATURED = 3;
 
-/* Fixed order so the ledger below reads the same on every load — a
-   filter's iteration order isn't a promise, a declared list is. */
 const DOMAIN_ORDER = ['iaml', 'hardware', 'application', 'robotics'] as const;
 
 function Home() {
@@ -40,9 +38,6 @@ function Home() {
         jsonLd={{ '@context': 'https://schema.org', ...ORGANIZATION_LD }}
       />
 
-      {/* Masthead. The mark is set as large as the viewport allows and the
-          prose sits in a narrow column below it — the page opens with one
-          statement, not a two-column split of equal weight. */}
       <header className="max-w-7xl mx-auto px-4 md:px-6 pt-16 md:pt-28 pb-6 md:pb-10">
         <motion.h1 className="cia-display text-hero mt-8 md:mt-12" {...m.write}>
           {t('home.header.title')}
@@ -76,10 +71,6 @@ function Home() {
           </motion.div>
         </div>
 
-        {/* Readout strip, set as a ruled instrument panel rather than three
-            numbers floating in whitespace. Every figure is counted from the
-            index, so it cannot drift out of date the way a written-in
-            number does. */}
         <dl className="grid grid-cols-3 mt-14 md:mt-20 border-t-2 border-coral">
           {[
             { v: `${projects.length}+`, k: 'home.stats.projects', d: 'Projets' },
@@ -99,9 +90,6 @@ function Home() {
         </dl>
       </header>
 
-      {/* About, paired with a real breakdown of what the club works on — a
-          large statement balanced by a tighter data column, not a lone
-          paragraph adrift in the page. */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 pt-8 pb-16 md:pt-10 md:pb-24">
         <div className="grid md:grid-cols-12 gap-x-12 gap-y-12">
           <div className="md:col-span-7">
@@ -130,9 +118,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Featured entries. The first project runs as an editorial lead —
-          full-width, image and copy at real size — so the section reads as
-          one of these things mattering most, not three equal tiles. */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 cia-rule">
         <div className="flex items-baseline justify-between gap-6 mb-8 md:mb-10">
           <h2 className="cia-meta">{t('home.projects.title')}</h2>
@@ -195,10 +180,6 @@ function Home() {
         )}
       </section>
 
-      {/* Partners and the sponsor ask share one section on purpose: one
-          audience (organizations backing the club), read top to bottom as
-          "who's already with us" into "join them" rather than split across
-          a two-column band with an unrelated neighbour. */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20 cia-rule">
         <p className="cia-meta mb-8">{t('home.partners.label')}</p>
         <LogoCarousel items={partners} label={t('home.partners.carouselLabel')} />

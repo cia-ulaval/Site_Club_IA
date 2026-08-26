@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
-// imports de pages
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Management from './pages/Management';
@@ -21,7 +20,6 @@ import ASLDecoder from './pages/ASLDecoder';
 import AvionCargo from './pages/AvionCargo';
 import Privacy from './pages/Privacy';
 
-// Components
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';

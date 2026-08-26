@@ -57,13 +57,7 @@ export default {
         media: 'filter, transform',
         chrome: 'background-color, border-color, box-shadow',
       },
-      /* Motion tokens, shared with src/hooks/useMotion.ts. Three durations
-         and two curves — the same ones the JS layer animates on, so a hover
-         handled in CSS and a reveal handled in Motion agree. */
       transitionDuration: {
-        /* Bare `transition-colors` and friends resolve to this, so a
-           utility written without an explicit duration still lands on a
-           system value instead of Tailwind's stock 150ms. */
         DEFAULT: '180ms',
         quick: '180ms',
         base: '420ms',
@@ -73,9 +67,6 @@ export default {
         out: 'cubic-bezier(0.22, 1, 0.36, 1)',
         'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
-      /* Only the steps something references. `paper`/`ink`/`steel`/`coral`
-         are the semantic names to reach for; the numbered `primary`/`accent`
-         ramps remain for the pages that predate them. */
       colors: {
         rule: {
           DEFAULT: 'var(--rule)',

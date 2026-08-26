@@ -8,10 +8,6 @@ interface Props {
   viewProfileLabel: string;
 }
 
-/* A personnel card on the bench: portrait in a ruled cell, with a drawer
-   that shifts up on hover or focus to reveal the role and mission. The
-   drawer animates `height: auto` rather than a fixed pixel height, so it
-   survives a French role title that runs to three lines. */
 export default function MemberShiftCard({ member, onSelect, viewProfileLabel }: Props) {
   return (
     <ShiftCard

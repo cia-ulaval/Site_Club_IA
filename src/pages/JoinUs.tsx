@@ -5,8 +5,6 @@ import Seo from '../components/Seo';
 import { openEmailDraft } from '../lib/email';
 import { DISCORD_URL, ORGANIZATION_LD, SITE, SOCIAL_LINKS } from '../lib/site';
 
-/* Every real point of contact for the club: a project team, admin roles,
-   or general questions all route through one of these. */
 const CONTACT_POINTS = [
   {
     kind: 'link',
@@ -40,7 +38,6 @@ const CONTACT_POINTS = [
   },
 ] as const;
 
-/* The three reasons to join, in the order the page argues them. */
 const VALUE_PROPS = [
   { icon: Rocket, key: 'projects' },
   { icon: BookOpen, key: 'formations' },

@@ -5,10 +5,8 @@ interface EmailDraft {
   body?: string;
 }
 
-/* Keep addresses out of the source markup, JSON-LD and compiled bundle as
-   plain strings. They are decoded only when a visitor deliberately opens an
-   email draft, which blocks basic source harvesters without adding a fragile
-   CAPTCHA or mail relay. */
+/* Addresses are held as code points to keep them out of the source markup,
+   the JSON-LD and the compiled bundle, where scrapers read them. */
 const MAILBOX_CODE_POINTS: Record<ClubMailbox, readonly number[]> = {
   general: [99, 105, 97, 64, 117, 108, 97, 118, 97, 108, 46, 99, 97],
   partnerships: [

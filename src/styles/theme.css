@@ -1,36 +1,14 @@
-/* ============================================================
-   CIA design system — the `cia-*` component utilities.
-
-   One system. An earlier `theme-*` set sat alongside this one "for
-   backward compatibility"; by the end it was 23 dead rules and a
-   handful of one-line aliases for a single Tailwind utility, so the
-   survivors were folded in here and the aliases inlined.
-
-   Direction: an instrument surface. Depth comes from rules and
-   spacing, never from tinted gradients stacked behind content.
-   ============================================================ */
-
 @tailwind components;
 
 @layer components {
-  /* --- Layout --- */
-
-  /* The site measure. Navbar, Footer, Home, the Projects index and every
-     project page use this exact box, so a page lines up with the chrome
-     around it. */
   .cia-measure {
     @apply mx-auto w-full max-w-7xl px-4 md:px-6;
   }
 
-  /* Running prose only. Body text set across a 7xl column is unreadable,
-     so paragraphs keep their own line length inside the wide measure. */
   .cia-measure-read {
     @apply w-full max-w-read;
   }
 
-  /* One pace for section rhythm. Sections are separated by space, not by
-     rules, and the gap is a single top edge so adjacent sections cannot
-     sum their padding into a hole. */
   .cia-pace {
     @apply pt-14 md:pt-20;
   }
@@ -43,12 +21,6 @@
     @apply pt-16 md:pt-24;
   }
 
-  /* --- Ground and chrome --- */
-
-  /* Flat ground. No tiled pattern behind the page: a background texture
-     competes with everything laid on it — partner marks and photographs
-     worst of all — and buys nothing the layout's own alignment does not
-     already say. */
   .cia-page-bg {
     @apply bg-paper;
   }
@@ -66,11 +38,6 @@
     border-top: 6px solid rgb(var(--color-coral));
   }
 
-  /* --- Instrument surface ---
-     The visible grid. Rules are structural: they mark where the measuring
-     grid runs, so they are always hairline and never decorative borders
-     around arbitrary boxes. */
-
   .cia-rule {
     border-top: 1px solid var(--rule);
   }
@@ -83,10 +50,6 @@
     border-left: 1px solid var(--rule);
   }
 
-  /* Column tick — the short mark where a grid column meets a rule. Coral,
-     because a tick is the instrument marking a reading. Centered on the
-     parent's own height rather than pinned to its top edge, so it lines up
-     with the text regardless of the parent's line-height or padding. */
   .cia-tick::before {
     content: '';
     position: absolute;
@@ -98,8 +61,6 @@
     background: var(--rule-live);
   }
 
-  /* Section eyebrow rule — the short coral mark that opens a run of
-     content. */
   .cia-eyebrow-rule {
     @apply flex items-center gap-3;
   }
@@ -109,11 +70,6 @@
     @apply block h-px w-8 shrink-0;
     background: rgb(var(--color-accent-500));
   }
-
-  /* --- Readout type ---
-     Monospace carries every machine-written value: codes, statuses,
-     domains, dates, counts. Prose stays in IBM Plex Sans. The split is the
-     rule — if a human wrote it, it is not mono. */
 
   .cia-mono {
     font-family: var(--font-mono);
@@ -125,23 +81,16 @@
     color: rgb(var(--color-primary-500));
   }
 
-  /* Section eyebrow. Coral marks where a new part of the page begins, so
-     the accent does structural work instead of only flagging status. */
   .cia-meta-accent {
     @apply cia-mono text-xs uppercase tracking-meta;
     color: rgb(var(--color-accent-400));
   }
 
-  /* Project/section index — CIA-04, 03/10. Reads as a serial number. */
   .cia-index {
     @apply cia-mono text-xs tracking-index;
     color: rgb(var(--color-primary-500));
   }
 
-  /* --- Typography --- */
-
-  /* Display type is set solid and tight — never gradient-filled. Scale and
-     line-break control carry the emphasis instead. */
   .cia-display {
     @apply font-heading font-bold text-primary-300;
     letter-spacing: -0.03em;
@@ -157,15 +106,9 @@
     @apply font-body text-lg leading-relaxed;
   }
 
-  /* --- Accessibility --- */
-
   .cia-focus-ring {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
   }
-
-  /* --- Buttons ---
-     Coral is the alarm/live colour and is spent only on the one primary
-     action. Anything else that wants attention uses scale. */
 
   .cia-btn-base {
     @apply inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded px-6 py-3 font-semibold transition-colors duration-quick focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-paper;
@@ -189,11 +132,6 @@
   .cia-btn-sm {
     @apply min-h-11 px-4 py-2 text-sm;
   }
-
-  /* --- Cards ---
-     Cult UI's composable card surface, rethemed around the logo geometry:
-     one soft corner opposes one precise corner. Cards are reserved for
-     self-contained objects; editorial rows remain unboxed. */
 
   .cia-card {
     @apply relative overflow-hidden rounded-cut transition-chrome duration-quick;
@@ -232,19 +170,12 @@
     background: rgb(var(--color-coral));
   }
 
-  /* Emphasis without weight. The one section a page wants to single out
-     sits on a soft tinted panel with the card's own geometry — a light
-     surface lifted off the paper, not a full-bleed steel band. */
   .cia-panel-soft {
     @apply p-6 md:p-10;
     background: rgb(var(--color-steel-soft) / 0.6);
     border-radius: 24px 6px 24px 6px;
   }
 
-  /* --- Media --- */
-
-  /* A picture keeps the card's radius wherever it appears, so a picture in
-     a section and a picture in a card are the same object. */
   .cia-figure {
     @apply relative w-full overflow-hidden rounded-cut;
     background: rgb(var(--color-steel-soft));
@@ -255,16 +186,12 @@
     @apply absolute inset-0 h-full w-full object-cover;
   }
 
-  /* A diagram carries its meaning in the whole frame, so it is contained
-     and padded rather than cropped to fill one. */
   .cia-figure-contain img,
   .cia-figure-contain video {
     object-fit: contain;
     padding: clamp(0.75rem, 2.5vw, 2rem);
   }
 
-  /* Legibility scrim over media — the one place a gradient earns its keep,
-     because it models light falling off, not decoration. */
   .cia-scrim {
     background: linear-gradient(
       to top,
@@ -274,8 +201,6 @@
     );
   }
 
-  /* A modal is a panel lifted off the bench: raised value, coral top edge
-     to show it is the live surface. */
   .cia-modal {
     background: rgb(var(--color-paper-raised));
     border: 1px solid var(--rule);
@@ -283,9 +208,8 @@
   }
 }
 
-/* Motion written in JS does not inherit this block — Motion sets inline
-   styles through rAF. Anything animated in JS goes through `useMotion()`,
-   which returns inert variants when `reduce` is set. */
+/* Motion writes inline styles through rAF and does not inherit this block.
+   Anything animated in JS goes through `useMotion()` instead. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

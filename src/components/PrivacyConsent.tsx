@@ -32,9 +32,8 @@ export function useAnalyticsConsent() {
   const choose = (nextChoice: Exclude<AnalyticsConsent, null>) => {
     const wasPersisted = storeConsent(nextChoice);
 
-    /* The Vercel packages inject scripts without an unmount cleanup. Reloading
-       after a revocation is the reliable way to stop an already-running
-       measurement session; the stored denial prevents reinjection. */
+    /* The Vercel analytics packages inject their scripts with no unmount
+       cleanup, so revoking consent needs a reload to actually drop them. */
     if (choice === 'granted' && nextChoice === 'denied' && wasPersisted) {
       window.location.reload();
       return;

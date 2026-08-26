@@ -12,9 +12,6 @@ function Projects() {
 
   return (
     <>
-      {/* Named projects are pulled from the live index rather than typed in:
-          the previous copy still advertised MangaAI, Lenia and Decision Tree,
-          none of which have had a page on the site for some time. */}
       <Seo
         title="Projets IA - Club Intelligence Artificielle Université Laval | CIA ULaval"
         description={`Découvrez les projets innovants du Club IA ULaval : ${projects
@@ -51,9 +48,6 @@ function Projects() {
           </motion.p>
         </header>
 
-        {/* One section per term. Only one exists today, but a project's
-            `semester` is the single thing that needs editing to move it —
-            no layout changes required as more terms are added. */}
         {SEMESTERS.map((semester) => {
           const inTerm = projects.filter((project) => project.semester === semester);
           if (inTerm.length === 0) return null;

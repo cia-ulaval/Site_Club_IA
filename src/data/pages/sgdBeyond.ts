@@ -2,10 +2,6 @@ import type { ProjectPageSpec } from '../projectPages';
 
 const JSON_LD = `{"@context":"https://schema.org","@type":"ResearchProject","name":"Stochastic Gradient Descent, and Beyond!","description":"Projet de recherche en optimisation stochastique visant à améliorer SGD par injection de bruit intelligent","provider":{"@type":"Organization","name":"Club Intelligence Artificielle - Université Laval","url":"https://cia.ift.ulaval.ca"},"author":{"@type":"Person","name":"Benjamin Leblanc","jobTitle":"Team Lead"},"about":["Stochastic Optimization","Deep Learning","Machine Learning","Scientific Research"],"keywords":["SGD","optimization","deep learning","research","gradient descent"]}`;
 
-/* A paper, not a device: there is nothing to photograph, so the page opens
-   on the title alone. The hypothesis, what the team wants to understand
-   and what it is aiming at were three separate panels on the old page —
-   they are one argument, so they are now one reading column. */
 export const sgdBeyond: ProjectPageSpec = {
   key: 'sgd-beyond',
   edition: 'readout',

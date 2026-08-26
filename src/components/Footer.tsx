@@ -68,11 +68,7 @@ function Footer({ onOpenPrivacyChoices }: FooterProps) {
             >
               {t('footer.privacyChoices')}
             </button>
-            {/* `noopener` without `noreferrer` on purpose: it closes the
-                reverse-tabnabbing hole just as well, while still sending the
-                Referer so evoweb can see referrals from this site. Link
-                equity is unaffected either way — only `nofollow` would
-                change that. */}
+            {/* `noopener` without `noreferrer`, so the referrer still credits the site. */}
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a
               href="https://evoweb.ca"

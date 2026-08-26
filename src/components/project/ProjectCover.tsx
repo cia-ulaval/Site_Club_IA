@@ -13,9 +13,6 @@ interface Props {
   project?: Project;
 }
 
-/* The facts a project carries: where it stands, what field it is in,
-   which term, who with. A short mono run under the lede — the same
-   register the Home page uses for its counts, not a spec table. */
 function Facts({ project }: { project?: Project }) {
   const { t } = useTranslation();
   if (!project) return null;
@@ -54,9 +51,6 @@ function Facts({ project }: { project?: Project }) {
   );
 }
 
-/* How the page opens. The title and lede are the same shape on every
-   project — that consistency is what makes the page readable — and the
-   edition decides only how the project's picture is used. */
 export default function ProjectCover({ edition, title, bodyKeys, media, project }: Props) {
   const m = useMotion();
 
@@ -78,9 +72,6 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
     </motion.div>
   );
 
-  /* Lede and facts share the width rather than stacking down the left
-     edge — stacked, they left the whole right half of a 7xl measure
-     empty and the page opened on a hole. */
   const intro = (
     <div className="mt-7 grid gap-8 md:mt-9 md:grid-cols-12 md:gap-12">
       <div className="md:col-span-7">{lede}</div>
@@ -88,8 +79,6 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
     </div>
   );
 
-  /* field — the project is an object, so the picture stands beside the
-     title rather than under it. */
   if (edition === 'field' && media) {
     return (
       <header className="cia-measure cia-rule-b pb-12 pt-10 md:pb-16 md:pt-16">
@@ -107,7 +96,6 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
     );
   }
 
-  /* readout — no picture exists, so the type and the facts carry it. */
   if (edition === 'readout' || !media) {
     return (
       <header className="cia-measure cia-rule-b pb-12 pt-10 md:pb-16 md:pt-16">
@@ -117,9 +105,6 @@ export default function ProjectCover({ edition, title, bodyKeys, media, project 
     );
   }
 
-  /* plate and dossier — the title leads, the picture follows it wide.
-     `plate` runs the picture at a cinematic crop because the project has
-     a photograph strong enough to carry one; `dossier` keeps it calmer. */
   return (
     <header className="cia-measure pb-2 pt-10 md:pt-16">
       {heading}

@@ -1,17 +1,6 @@
-/* The executive roster. Held as data rather than as eight arrays built
-   inside the component: the page rebuilt every member object on every
-   render purely because the role strings were translated in place, and a
-   section could only be reordered by moving a JSX call.
-
-   Roles come either as an i18n key (`roleKey`) or as a literal (`role`) —
-   a project team lead's title carries the project's own name and was never
-   translated. Same split the project index uses for its titles. */
-
 export interface TeamMemberSource {
   name: string;
-  /** Translated role. */
   roleKey?: string;
-  /** Untranslated role, for titles that name a project. */
   role?: string;
   missionKey?: string;
   aboutKey?: string;
@@ -23,7 +12,6 @@ export interface TeamMemberSource {
 
 interface TeamSection {
   titleKey: string;
-  /** The president's section is set larger; every other pole is equal. */
   emphasis?: boolean;
   members: TeamMemberSource[];
 }
@@ -300,8 +288,6 @@ export const teamSections: TeamSection[] = [
   },
 ];
 
-/* Past executives, across several mandates. A sober list, not the portrait
-   grid the sitting team gets. */
 export const alumni: { name: string; roleKey: string }[] = [
   { name: 'Nathaniel D’Amours', roleKey: 'management.roles.president' },
   { name: 'Louis-Étienne Messier', roleKey: 'management.roles.logisticsLeader' },
@@ -310,8 +296,6 @@ export const alumni: { name: string; roleKey: string }[] = [
   { name: 'Youssouf Boubechiche', roleKey: 'management.roles.designsManager' },
 ];
 
-/* The subset the Organization's structured data names — the pole leads,
-   each of whom has a public profile to point `sameAs` at. */
 export const LEADERSHIP_LD_NAMES = [
   'Cyrille Bernier',
   'Rana Azemdroub',

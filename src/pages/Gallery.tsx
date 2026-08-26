@@ -39,8 +39,6 @@ function Gallery() {
             'Galerie photos du Club IA ULaval présentant nos projets, compétitions, formations et événements communautaires',
           creator: ORGANIZATION_LD,
           image: `${SITE}/implication/front-image.webp`,
-          /* Counted, not typed: the written-in figure said 18 for a set of
-             twenty and had no way of noticing. */
           numberOfItems: galleryImages.length,
           mainEntity: galleryImages.map((image) => ({
             '@type': 'ImageObject',
@@ -57,8 +55,6 @@ function Gallery() {
       </header>
 
       <section className="mx-auto w-full max-w-7xl px-6 pb-24">
-        {/* Filters read as instrument switches: a mono label that goes coral
-            and gains a tick when it is the active channel. */}
         <div className="mb-12 flex flex-wrap gap-x-8 gap-y-3 py-4 cia-rule cia-rule-b">
           {FILTERS.map((id) => {
             const active = filter === id;

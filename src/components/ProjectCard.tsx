@@ -15,10 +15,6 @@ interface Props {
   project: Project;
 }
 
-/* The project unit for grid contexts (Home's teaser, the Projects index):
-   a static plate, one image, no hover-swapped preview pane — the same
-   MinimalCard system Gallery and Management already use, so every index
-   on the site reads as one family of cards. */
 function ProjectCard({ project }: Props) {
   const { t } = useTranslation();
 

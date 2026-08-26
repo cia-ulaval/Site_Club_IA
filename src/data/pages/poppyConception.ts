@@ -1,8 +1,5 @@
 import type { ProjectPageSpec } from '../projectPages';
 
-/* The build half of Poppy: printing, wiring, assembling. Its sibling page
-   is the simulation half, so the two open on deliberately opposite sides —
-   this one leads with the photograph on the left. */
 export const poppyConception: ProjectPageSpec = {
   key: 'poppy-conception',
   edition: 'dossier',

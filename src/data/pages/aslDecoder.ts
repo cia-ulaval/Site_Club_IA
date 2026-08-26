@@ -1,7 +1,5 @@
 import type { ProjectPageSpec } from '../projectPages';
 
-/* The one shipped project in the index. Nothing here is a recruitment
-   pitch, so the page is short and closes without a Discord ask. */
 export const aslDecoder: ProjectPageSpec = {
   key: 'asldecoder',
   edition: 'dossier',

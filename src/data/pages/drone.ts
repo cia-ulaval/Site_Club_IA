@@ -2,9 +2,6 @@ import type { ProjectPageSpec } from '../projectPages';
 
 const JSON_LD = `{"@context":"https://schema.org","@type":"Event","name":"Compétition de Drone Laser Tag","description":"Compétition universitaire de drones autonomes avec IA embarquée et laser tag","organizer":{"@type":"Organization","name":"Club Intelligence Artificielle - Université Laval","url":"https://cia.ift.ulaval.ca"},"performer":{"@type":"Person","name":"Anthony Lavertu","jobTitle":"Team Lead"},"sponsor":[{"@type":"Person","name":"Philippe Giguère"},{"@type":"Organization","name":"Tracel AI"}],"eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","keywords":["drone","IA","reinforcement learning","robotique","compétition"]}`;
 
-/* The largest crew in the index and the only project with a scoreboard.
-   The page is a call for ten people, so the staffing table is the centre
-   of it and everything else is what the seats are being hired to build. */
 export const drone: ProjectPageSpec = {
   key: 'drone',
   edition: 'field',
@@ -62,8 +59,6 @@ export const drone: ProjectPageSpec = {
         },
       ],
     },
-    /* The conditions are the one thing on the page a candidate must read
-       before deciding, so they get the quiet measured column. */
     {
       kind: 'list',
       tone: 'invert',

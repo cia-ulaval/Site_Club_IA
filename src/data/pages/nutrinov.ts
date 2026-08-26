@@ -2,9 +2,6 @@ import type { ProjectPageSpec } from '../projectPages';
 
 const JSON_LD = `{"@context":"https://schema.org","@type":"Course","name":"NutriNov - Projet Entrepreneurial IA Alimentaire","description":"Projet entrepreneurial innovant visant à révolutionner le secteur alimentaire grâce à l'intelligence artificielle","provider":{"@type":"Organization","name":"Club Intelligence Artificielle - Université Laval","url":"https://cia.ift.ulaval.ca"},"instructor":{"@type":"Person","name":"Éloïse Prevot","jobTitle":"Team Lead"},"teaches":["Entrepreneurship","Data Analysis","Web Development","Pitch Presentation","Design Thinking"],"keywords":["NutriNov","Open Food Facts","entrepreneuriat","IA","alimentation"]}`;
 
-/* The only entrepreneurial project in the index: it recruits for pitch and
-   design seats, not just engineering ones, so the staffing table carries
-   more of the page than the technical sections do. */
 export const nutrinov: ProjectPageSpec = {
   key: 'nutrinov',
   edition: 'dossier',
@@ -62,8 +59,6 @@ export const nutrinov: ProjectPageSpec = {
         },
       ],
     },
-    /* Nine phases, each already labelled with its own — the interval is
-       the useful index here, not a running count. */
     {
       kind: 'steps',
       titleKey: 'nutrinov.objectives.title',

@@ -1,8 +1,5 @@
 import type { ProjectPageSpec } from '../projectPages';
 
-/* No photograph exists for this one, and the project's whole argument is
-   a number — so the page opens on type alone and spends its one display
-   figure on the false-positive rate. */
 export const canlock: ProjectPageSpec = {
   key: 'canlock',
   edition: 'readout',
@@ -84,9 +81,6 @@ export const canlock: ProjectPageSpec = {
         },
       ],
     },
-    /* What the project runs on beside what a member walks away with —
-       genuinely parallel, so they share one block. Tool names stay literal
-       rather than being routed through i18n to come back unchanged. */
     {
       kind: 'columns',
       titleKey: 'canlock.tech.title',

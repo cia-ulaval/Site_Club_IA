@@ -1,13 +1,5 @@
-/* Single source for the project index. Home and the Projects page both
-   render codes and statuses from here so the two can never disagree. */
-
-/* 'shipped' is the finished tag: the team's work on the project is done.
-   'active' means a team is currently recruiting/working on it. */
 export type ProjectStatus = 'active' | 'shipped';
 
-/* Every term the club has run, newest first — the Projects page renders
-   one section per entry here (skipping any with no projects assigned) and
-   reassigning a project is just editing its `semester` below. */
 export const SEMESTERS = [
   'automne2026',
   'hiver2026',
@@ -29,7 +21,6 @@ export interface Project {
   category: 'iaml' | 'hardware' | 'application' | 'robotics';
   status: ProjectStatus;
   semester: Semester;
-  /* Named only where the project's own description already states it. */
   partner?: string;
 }
 

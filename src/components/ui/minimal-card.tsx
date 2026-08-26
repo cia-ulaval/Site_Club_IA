@@ -2,13 +2,6 @@ import * as React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '../../lib/cn';
 
-/**
- * Adapted from Cult UI's MIT-licensed MinimalCard.
- * https://www.cult-ui.com/docs/components/minimal-card
- *
- * The compound API is preserved, while the demo radii, shadows, typography,
- * and Next.js Image dependency are replaced by the CIA design system.
- */
 const MinimalCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
@@ -38,10 +31,6 @@ MinimalCardMedia.displayName = 'MinimalCardMedia';
 
 interface MinimalCardImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   frameClassName?: string;
-  /** When set, the media frame becomes the source of a shared layout
-   *  transition — the same id on a destination element morphs this box
-   *  into it. Leave undefined (including under reduced motion) to opt out
-   *  of layout animation entirely. */
   layoutId?: string;
 }
 

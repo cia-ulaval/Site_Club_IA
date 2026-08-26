@@ -5,8 +5,6 @@ export const avionCargo: ProjectPageSpec = {
   edition: 'field',
   titleKey: 'avionCargo.simple.title',
   hero: {
-    /* The landing photograph is the point of this project, so it runs full
-       width under the title rather than sharing a column with the prose. */
     media: {
       type: 'image',
       src: '/project/avion-cargo.webp',

@@ -8,8 +8,6 @@
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Warm paper lets the steel and coral read as brand colours without
-     turning the interface into a dark control panel. */
   --color-paper: 248 246 239;
   --color-paper-raised: 255 254 250;
   --color-ink: 30 47 55;
@@ -19,36 +17,24 @@
   --color-coral: 237 100 106;
   --color-coral-dark: 177 55 65;
 
-  /* Hairline used for the visible grid: rules, column ticks, spec-row dividers. */
   --rule: rgb(var(--color-steel) / 0.22);
   --rule-strong: rgb(var(--color-steel) / 0.48);
-  /* Coral rule marks a live or selected row. */
   --rule-live: rgb(var(--color-accent-500) / 0.85);
 
-  /* Steel ramp, brightened across the board: 300/400/500 all carry running
-     text at some size, so each clears 4.5:1 on the paper above. Only the
-     steps something actually uses are declared — the ramp used to run
-     200..950 plus parallel `neutral`, `info`, `success` and `warning`
-     ramps, none of which any rule or component referenced. */
   --color-primary-300: 38 70 84;
   --color-primary-400: 54 86 101;
   --color-primary-500: 63 98 115;
   --color-primary-600: 99 128 141;
   --color-primary-950: 239 243 241;
 
-  /* Coral ramp. 300 and 400 are darkened for text on paper; 500 is the
-     brand coral itself, used for rules and markers. */
   --color-accent-300: 155 45 55;
   --color-accent-400: 190 61 70;
   --color-accent-500: 237 100 106;
 }
 
 @layer base {
-  /* No `scroll-behavior: smooth` here: it would also capture the
-     `window.scrollTo(0, 0)` in ScrollToTop, so every route change would
-     slow-scroll the newly mounted page instead of jumping. The two places
-     that do want a smooth scroll ask for it per call, via
-     `scrollBehavior()` in hooks/useMotion.ts. */
+  /* No `scroll-behavior: smooth`: it also captures router navigations, which
+     then crawl the whole page height instead of jumping. */
   html {
     background-color: rgb(var(--color-paper));
   }

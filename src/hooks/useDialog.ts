@@ -9,18 +9,6 @@ const FOCUSABLE = [
   '[tabindex]:not([tabindex="-1"])',
 ].join(', ');
 
-/**
- * Modal plumbing, for a component that is mounted only while its dialog is
- * open: locks the page behind it, moves focus in, keeps Tab inside, closes
- * on Escape, and hands focus back to whatever opened it.
- *
- * The lightbox and the member card each grew their own copy of this, and
- * the two had already drifted — one trapped `input`/`textarea`, the other
- * didn't, so a dialog with a field could tab out of itself.
- *
- * Returns refs to spread onto the dialog container and the element that
- * should hold focus first (normally the close button).
- */
 export function useDialog<
   Container extends HTMLElement = HTMLDivElement,
   Initial extends HTMLElement = HTMLButtonElement,
@@ -28,11 +16,6 @@ export function useDialog<
   const containerRef = useRef<Container>(null);
   const initialFocusRef = useRef<Initial>(null);
 
-  /* Held in a ref so the effect below can run exactly once. Callers pass an
-     inline `() => setOpen(null)`, which is a new function on every parent
-     render — as a dependency it would tear the trap down and rebuild it
-     mid-dialog, snapping focus back to the close button and losing the
-     record of what to restore focus to on the way out. */
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
 

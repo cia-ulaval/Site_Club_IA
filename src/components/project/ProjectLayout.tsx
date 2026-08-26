@@ -13,10 +13,6 @@ interface Props {
   spec: ProjectPageSpec;
 }
 
-/* One shell for every project page, inside the same measure as the rest
-   of the site. A page's identity comes from its edition — how its
-   picture is used — and from the blocks it composes, not from a
-   different layout language per project. */
 export default function ProjectLayout({ spec }: Props) {
   const { t } = useTranslation();
 
@@ -28,8 +24,7 @@ export default function ProjectLayout({ spec }: Props) {
     ? t(spec.seo.descriptionKey)
     : (spec.seo.description ??
       (project ? t(`home.projects.${project.key}.description`, project.defaultDescription) : ''));
-  /* `||`, not `??`: a project with no picture carries `image: ''`, and an
-     empty string would otherwise pass through as a valid og:image. */
+  /* `||`, not `??`: a project with no picture carries `image: ''`. */
   const seoImage = spec.seo.image || project?.image || '/banner/cia-logo.webp';
   const url = `${SITE}${spec.seo.path}`;
 

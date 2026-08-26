@@ -3,9 +3,7 @@ import { ReactNode } from 'react';
 import { DISCORD_URL } from '../lib/site';
 
 interface DiscordCTAProps {
-  /** Optional headline block shown above the button (already-translated nodes). */
   children?: ReactNode;
-  /** Translated button label. */
   label: string;
 }
 

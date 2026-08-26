@@ -21,9 +21,6 @@ interface Props {
   onClose: () => void;
 }
 
-/* A labelled run in the profile column. Every field on the card is the same
-   shape — a mono caption over its value — so it is one component rather than
-   the four hand-repeated copies this file used to carry. */
 function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <div>

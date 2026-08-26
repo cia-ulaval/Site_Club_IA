@@ -8,18 +8,13 @@ import {
 
 interface Props {
   src: string;
-  /** Already-translated description; doubles as the alt text. */
   description: string;
-  /** Already-translated category label shown in the inset strip. */
   category: string;
   onSelect: () => void;
   viewLabel: string;
-  /** Shared-layout id linking this thumbnail to the lightbox plate. */
   layoutId?: string;
 }
 
-/* Gallery adaptation of Cult UI's MinimalCard: the photograph is the focal
-   point and its metadata sits on paper instead of fighting a dark scrim. */
 export default function CutoutCard({
   src,
   description,

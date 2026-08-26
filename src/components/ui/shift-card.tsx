@@ -12,13 +12,6 @@ interface ShiftCardProps extends Omit<MotionButtonProps, 'children'> {
   badge?: React.ReactNode;
 }
 
-/**
- * Adapted from Cult UI's MIT-licensed ShiftCard.
- * https://www.cult-ui.com/docs/components/shift-card
- *
- * This version uses a semantic button, supports focus as well as hover, and
- * animates to content height instead of the source component's fixed 194px.
- */
 const ShiftCard = React.forwardRef<HTMLButtonElement, ShiftCardProps>(
   (
     {

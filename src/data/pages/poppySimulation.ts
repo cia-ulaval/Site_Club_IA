@@ -2,10 +2,6 @@ import type { ProjectPageSpec } from '../projectPages';
 
 const JSON_LD = `{"@context":"https://schema.org","@type":"ResearchProject","name":"Poppy Simulation - Reinforcement Learning pour Robot Humanoïde","description":"Développement d'une IA basée sur le Reinforcement Learning pour apprendre à un robot humanoïde Poppy à marcher","provider":{"@type":"Organization","name":"Club Intelligence Artificielle - Université Laval","url":"https://cia.ift.ulaval.ca"},"author":[{"@type":"Person","name":"Baptiste Bonin","jobTitle":"Team Lead"},{"@type":"Person","name":"Jonathan Caron-Roberge","jobTitle":"Team Lead"}],"sponsor":{"@type":"Organization","name":"Vooban"},"about":["Reinforcement Learning","Robotics","Simulation","Artificial Intelligence","Sim2Real"],"keywords":["Poppy","robot humanoïde","reinforcement learning","RL","simulation robotique"]}`;
 
-/* The simulation half of Poppy. The render is the only picture of work
-   that happens entirely inside a machine, so it runs full width under the
-   title rather than sharing a column — the opposite opening to its
-   sibling conception page. */
 export const poppySimulation: ProjectPageSpec = {
   key: 'poppy-simulation',
   edition: 'plate',

@@ -10,7 +10,6 @@ import { scrollBehavior } from '../hooks/useMotion';
 import { openEmailDraft } from '../lib/email';
 import { ORGANIZATION_LD, SITE } from '../lib/site';
 
-// Tier colours are small editorial markers; the shared card remains neutral.
 const sponsorshipTiers = [
   {
     name: 'Bronze',
@@ -251,7 +250,6 @@ function Collaboration() {
 
       <section>
         <div className="mx-auto w-full max-w-7xl px-4 pb-24 pt-16 md:px-6 md:pt-24">
-          {/* Hero */}
           <header className="mb-20 border-b border-steel/25 pb-14 md:mb-28 md:pb-20">
             <h1 className="cia-display max-w-5xl text-display">
               {t('collaborationPage.mainTitle')}
@@ -266,7 +264,6 @@ function Collaboration() {
             </div>
           </header>
 
-          {/* Impact Metrics */}
           <section className="mb-24">
             <h2 className="cia-display mb-12 text-4xl md:text-5xl">
               {t('collaborationPage.impactTitle')}
@@ -278,7 +275,6 @@ function Collaboration() {
             </div>
           </section>
 
-          {/* Current Sponsors — social proof BEFORE the pricing ask */}
           <section className="mb-24 border-t border-steel/25 pt-16">
             <h2 className="cia-display mb-8 text-4xl md:text-5xl">
               {t('collaborationPage.currentSponsorsTitle')}
@@ -286,7 +282,6 @@ function Collaboration() {
             <LogoCarousel items={partners} label={t('home.partners.carouselLabel')} />
           </section>
 
-          {/* Sponsorship Tiers */}
           <section className="mb-24 border-t border-steel/25 pt-16">
             <h2 className="cia-display mb-12 text-4xl md:text-5xl">
               {t('collaborationPage.tiersTitle')}
@@ -298,7 +293,6 @@ function Collaboration() {
             </div>
           </section>
 
-          {/* Contact Section */}
           <section className="grid grid-cols-1 items-start gap-12 border-t border-steel/25 pt-16 lg:grid-cols-2">
             <div>
               <h2 className="cia-display mb-6 text-4xl md:text-5xl">

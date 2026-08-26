@@ -1,15 +1,9 @@
-/* The gallery's contents. A flat list with the category on each row rather
-   than a map of arrays: the page only ever needed "all of them" or "the ones
-   in this category", and the nested shape forced a flatMap plus a cast on
-   every render to get either. */
-
 export const GALLERY_CATEGORIES = ['formation', 'competition', 'project', 'community'] as const;
 
 type GalleryCategory = (typeof GALLERY_CATEGORIES)[number];
 
 export interface GalleryImage {
   src: string;
-  /** i18n key for the caption, which doubles as the image's alt text. */
   descKey: string;
   category: GalleryCategory;
 }

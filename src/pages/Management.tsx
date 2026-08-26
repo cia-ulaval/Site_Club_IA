@@ -13,7 +13,6 @@ function Management() {
   const m = useMotion();
   const [selected, setSelected] = useState<TeamMember | null>(null);
 
-  /* One place where the stored member becomes a displayable one. */
   const resolve = (member: TeamMemberSource): TeamMember => ({
     name: member.name,
     role: member.roleKey ? t(member.roleKey) : (member.role ?? ''),
@@ -30,9 +29,6 @@ function Management() {
     people: section.members.map(resolve),
   }));
 
-  /* Named leads, looked up from the roster so a role change lands in the
-     structured data too — the previous copy hard-coded nine people, one of
-     whom had already left the executive. */
   const leadershipLd = useMemo(() => {
     const byName = new Map(
       teamSections.flatMap((s) => s.members).map((member) => [member.name, member])
@@ -81,8 +77,6 @@ function Management() {
       </header>
 
       <div className="pb-16">
-        {/* Every pole uses the same card unit, so seniority reads from order
-            and heading scale rather than from a bigger box. */}
         {sections.map(({ titleKey, emphasis, people }) => (
           <section key={titleKey} className="mx-auto max-w-7xl px-4 pt-14 md:px-6">
             <h2

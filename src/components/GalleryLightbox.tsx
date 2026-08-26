@@ -6,14 +6,10 @@ import { useMotion } from '../hooks/useMotion';
 
 interface Props {
   src: string;
-  /** Already-translated caption; doubles as the alt text. */
   description: string;
   onClose: () => void;
 }
 
-/* The enlarged plate. Its own component so it is mounted only while open,
-   which is what lets `useDialog` own the focus trap and the scroll lock
-   instead of the page tracking an "is the lightbox showing" flag. */
 export default function GalleryLightbox({ src, description, onClose }: Props) {
   const { t } = useTranslation();
   const m = useMotion();
@@ -31,9 +27,6 @@ export default function GalleryLightbox({ src, description, onClose }: Props) {
       <motion.div
         ref={containerRef}
         className="cia-modal relative w-full max-w-5xl overflow-hidden rounded-cut-lg shadow-2xl"
-        /* The thumbnail morphs into this plate, so the reader keeps hold of
-           which picture they opened. Under reduced motion the id is withheld
-           entirely — a zero-duration layout transition still runs projection. */
         {...(m.reduce ? m.panel : { layoutId: `gallery-${src}`, transition: m.shared })}
         onClick={(e) => e.stopPropagation()}
       >
