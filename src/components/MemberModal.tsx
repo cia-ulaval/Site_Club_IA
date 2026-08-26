@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Globe, X, User } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { Github, Globe, Linkedin, User, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useDialog } from '../hooks/useDialog';
+import { useMotion } from '../hooks/useMotion';
 
 export interface TeamMember {
   name: string;
@@ -11,173 +14,128 @@ export interface TeamMember {
   github?: string;
   portfolio?: string;
   additionalDetails?: string;
-  isVacant?: boolean;
 }
 
-interface MemberModalProps {
+interface Props {
   member: TeamMember;
   onClose: () => void;
-  translations: {
-    name: string;
-    role: string;
-    mission: string;
-    aboutMe: string;
-    connect: string;
-    noDetails: string;
-  };
 }
 
-const MemberModal: React.FC<MemberModalProps> = ({ member, onClose, translations }) => {
-  const hasLinks = member.linkedIn || member.github || member.portfolio;
-  const hasContent = member.mission || member.additionalDetails || hasLinks;
+/* A labelled run in the profile column. Every field on the card is the same
+   shape — a mono caption over its value — so it is one component rather than
+   the four hand-repeated copies this file used to carry. */
+function Field({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div>
+      <span className="text-accent-300 text-sm font-medium uppercase tracking-wider">{label}</span>
+      {children}
+    </div>
+  );
+}
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [onClose]);
+const PROFILE_LINKS = [
+  { key: 'linkedIn', label: 'LinkedIn', Icon: Linkedin, className: 'cia-btn-primary' },
+  { key: 'github', label: 'GitHub', Icon: Github, className: 'cia-btn-accent' },
+  { key: 'portfolio', label: 'Portfolio', Icon: Globe, className: 'cia-btn-primary' },
+] as const;
+
+export default function MemberModal({ member, onClose }: Props) {
+  const { t } = useTranslation();
+  const m = useMotion();
+  const { containerRef, initialFocusRef } = useDialog(onClose);
+
+  const links = PROFILE_LINKS.filter((link) => member[link.key]);
+  const hasContent = member.mission || member.additionalDetails || links.length > 0;
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-base/80 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/75 p-3 backdrop-blur-sm sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="member-modal-name"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      {...m.overlay}
       onClick={onClose}
     >
       <motion.div
-        className="theme-modal-surface rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden shadow-2xl flex"
-        initial={{ scale: 0.9, opacity: 0, y: 20 }}
-        animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.9, opacity: 0, y: 20 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        ref={containerRef}
+        className="cia-modal flex max-h-[92vh] w-full max-w-4xl flex-col overflow-hidden rounded-[20px_4px_20px_4px] shadow-2xl md:max-h-[85vh] md:flex-row"
+        {...m.panel}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Left Side - Full Height Image */}
-        <div className="w-1/3 relative bg-gradient-to-b from-primary-950 to-base flex-shrink-0">
+        <div className="relative h-52 w-full flex-shrink-0 bg-steel-soft md:h-auto md:w-1/3">
           {member.imgSrc ? (
-            <img src={member.imgSrc} alt={member.name} className="w-full h-full object-cover" />
+            <img
+              src={member.imgSrc}
+              alt={member.name}
+              decoding="async"
+              className="h-full w-full object-cover"
+            />
           ) : (
-            <div className="w-full h-full flex items-center justify-center bg-primary-900/20">
-              <User className="w-24 h-24 theme-text-accent" />
+            <div className="flex h-full w-full items-center justify-center">
+              <User className="h-20 w-20 text-steel" aria-hidden="true" />
             </div>
           )}
-          {/* Gradient overlay at bottom */}
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-base/60 to-transparent" />
         </div>
 
-        {/* Right Side - Content */}
-        <div className="w-2/3 p-8 overflow-y-auto relative">
-          {/* Close Button */}
+        <div className="relative w-full overflow-y-auto p-5 sm:p-7 md:w-2/3 md:p-8">
           <button
+            ref={initialFocusRef}
             onClick={onClose}
-            autoFocus
-            className="absolute top-4 right-4 p-2 min-w-[44px] min-h-[44px] flex items-center justify-center bg-primary-900/50 hover:bg-accent-300 rounded-full transition-colors cia-focus-ring"
-            aria-label="Close"
+            type="button"
+            className="absolute right-4 top-4 grid min-h-11 min-w-11 place-items-center rounded-[4px] border border-steel/25 bg-paper-raised text-ink transition-colors hover:bg-steel-soft cia-focus-ring"
+            aria-label={t('common.close')}
           >
-            <X className="w-5 h-5 text-base-inverse" />
+            <X className="h-5 w-5" aria-hidden="true" />
           </button>
 
-          {/* Content with bullet-point style layout */}
           <div className="space-y-6 pr-8">
-            {/* Name */}
-            <div>
-              <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
-                {translations.name}
-              </span>
-              <h2 id="member-modal-name" className="text-3xl font-bold text-base-inverse mt-1">
+            <Field label={t('management.modal.name')}>
+              <h2 id="member-modal-name" className="mt-1 pr-12 text-3xl font-bold text-ink">
                 {member.name}
               </h2>
-            </div>
+            </Field>
 
-            {/* Role */}
-            <div>
-              <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
-                {translations.role}
-              </span>
-              <p className="text-xl text-primary-300 mt-1">{member.role}</p>
-            </div>
+            <Field label={t('management.modal.role')}>
+              <p className="mt-1 text-xl text-primary-300">{member.role}</p>
+            </Field>
 
-            {/* Mission */}
             {member.mission && (
-              <div>
-                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
-                  {translations.mission}
-                </span>
-                <p className="theme-text-secondary mt-1 leading-relaxed">{member.mission}</p>
-              </div>
+              <Field label={t('management.modal.mission')}>
+                <p className="mt-1 leading-relaxed text-ink-muted">{member.mission}</p>
+              </Field>
             )}
 
-            {/* About Me / Additional Details */}
             {member.additionalDetails && (
-              <div>
-                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
-                  {translations.aboutMe}
-                </span>
-                <p className="theme-text-secondary mt-1 leading-relaxed">
-                  {member.additionalDetails}
-                </p>
-              </div>
+              <Field label={t('management.modal.aboutMe')}>
+                <p className="mt-1 leading-relaxed text-ink-muted">{member.additionalDetails}</p>
+              </Field>
             )}
 
-            {/* Connect */}
-            {hasLinks && (
-              <div>
-                <span className="theme-text-accent text-sm font-medium uppercase tracking-wider">
-                  {translations.connect}
-                </span>
-                <div className="flex flex-wrap gap-3 mt-3">
-                  {member.linkedIn && (
+            {links.length > 0 && (
+              <Field label={t('management.modal.connect')}>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {links.map(({ key, label, Icon, className }) => (
                     <a
-                      href={member.linkedIn}
+                      key={key}
+                      href={member[key]}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-300 text-base-inverse rounded-lg transition-colors"
+                      className={`${className} cia-btn-sm`}
                     >
-                      <Linkedin className="w-4 h-4" />
-                      <span className="text-sm font-medium">LinkedIn</span>
+                      <Icon className="h-4 w-4" aria-hidden="true" />
+                      <span className="text-sm font-medium">{label}</span>
                     </a>
-                  )}
-                  {member.github && (
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 theme-btn-secondary rounded-lg transition-colors"
-                    >
-                      <Github className="w-4 h-4" />
-                      <span className="text-sm font-medium">GitHub</span>
-                    </a>
-                  )}
-                  {member.portfolio && (
-                    <a
-                      href={member.portfolio}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-primary-500 hover:bg-primary-300 text-base-inverse rounded-lg transition-colors"
-                    >
-                      <Globe className="w-4 h-4" />
-                      <span className="text-sm font-medium">Portfolio</span>
-                    </a>
-                  )}
+                  ))}
                 </div>
-              </div>
+              </Field>
             )}
 
-            {/* No details message */}
             {!hasContent && (
-              <p className="theme-text-muted italic mt-8">{translations.noDetails}</p>
+              <p className="text-ink-muted mt-8 italic">{t('management.modal.noDetails')}</p>
             )}
           </div>
         </div>
       </motion.div>
     </motion.div>
   );
-};
-
-export default MemberModal;
+}

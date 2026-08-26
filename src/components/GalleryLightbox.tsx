@@ -1,0 +1,61 @@
+import { motion } from 'framer-motion';
+import { X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import { useDialog } from '../hooks/useDialog';
+import { useMotion } from '../hooks/useMotion';
+
+interface Props {
+  src: string;
+  /** Already-translated caption; doubles as the alt text. */
+  description: string;
+  onClose: () => void;
+}
+
+/* The enlarged plate. Its own component so it is mounted only while open,
+   which is what lets `useDialog` own the focus trap and the scroll lock
+   instead of the page tracking an "is the lightbox showing" flag. */
+export default function GalleryLightbox({ src, description, onClose }: Props) {
+  const { t } = useTranslation();
+  const m = useMotion();
+  const { containerRef, initialFocusRef } = useDialog(onClose);
+
+  return (
+    <motion.div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label={description}
+      {...m.overlay}
+      onClick={onClose}
+    >
+      <motion.div
+        ref={containerRef}
+        className="cia-modal relative w-full max-w-5xl overflow-hidden rounded-[24px_4px_24px_4px] shadow-2xl"
+        /* The thumbnail morphs into this plate, so the reader keeps hold of
+           which picture they opened. Under reduced motion the id is withheld
+           entirely — a zero-duration layout transition still runs projection. */
+        {...(m.reduce ? m.panel : { layoutId: `gallery-${src}`, transition: m.shared })}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <img
+          src={src}
+          alt={description}
+          decoding="async"
+          className="h-auto max-h-[80vh] w-full object-contain"
+        />
+        <div className="cia-scrim absolute inset-x-0 bottom-0 p-6 pt-20">
+          <p className="font-body text-lg font-medium text-paper">{description}</p>
+        </div>
+        <button
+          ref={initialFocusRef}
+          type="button"
+          className="absolute right-5 top-5 rounded-[4px] bg-paper-raised p-3 text-ink shadow-sm transition-colors hover:bg-coral-dark hover:text-paper cia-focus-ring"
+          onClick={onClose}
+          aria-label={t('gallery.closeLabel')}
+        >
+          <X className="h-6 w-6" aria-hidden="true" />
+        </button>
+      </motion.div>
+    </motion.div>
+  );
+}
