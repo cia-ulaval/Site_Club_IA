@@ -32,22 +32,7 @@ It’s a platform for both visibility and collaboration — designed, developed,
 - **React 18** + **TypeScript**, bundled by **Vite**
 - **React Router** for routing, **react-helmet-async** for per-page metadata
 - **Tailwind CSS** for styling, on top of the `cia-*` design-system utilities in `src/styles/theme.css`
-- **Framer Motion** for the small, deliberate motion vocabulary in `src/hooks/useMotion.ts`
 - **i18next** / **react-i18next** for French and English
-
-There is no Vue and no Bootstrap — an earlier version of this list named both.
-
-The site is responsive, fast, and continuously evolving — with a focus on clarity, accessibility, and performance.
-
-### Local development
-
-```bash
-npm install
-npm run dev      # dev server
-npm run build    # production build
-npm run lint     # eslint
-npm run format   # prettier
-```
 
 Architecture notes for contributors live in [AGENT.md](./AGENT.md).
 
@@ -70,8 +55,6 @@ We welcome all contributions:
 
 The source code of this website is licensed under the MIT License.  
 However, all visual assets (including logos, images, and branding elements) are the property of the Artificial Intelligence Club at Université Laval and **are not** covered by the MIT license.
-
-Please contact us before reusing these assets in other projects or media.
 
 ### Getting Started
 
@@ -98,9 +81,6 @@ make format
 ```bash
 make ci-check
 ```
-
-The GitHub Actions workflow runs `make ci-check`, so local and remote checks stay identical.
-
 ---
 
 ## Connect With Us
@@ -121,16 +101,4 @@ For questions or ideas, feel free to reach out. We’re always open to connectin
 
   Creator and responsible for the codebase, architecture, design implementation, and ongoing maintenance.
 
-### Contributors
-
-- **William Blanchet Lafrenière** - [@VillyGH](https://github.com/VillyGH)
-
-  Currently developping a solution for the ability to play a demo of flapeeg directly on the website.
-
-We welcome contributions from the community! See the section above on how to get involved.
-
 ---
-
-<p align="center">
-  Built by students, for the future. Powered by collaboration.
-</p>
