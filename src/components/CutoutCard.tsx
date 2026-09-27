@@ -9,10 +9,11 @@ import {
 interface Props {
   src: string;
   description: string;
-  category: string;
+  /** Omitted where the category is already the page's filter. */
+  category?: string;
   onSelect: () => void;
   viewLabel: string;
-  layoutId?: string;
+  loading?: 'eager' | 'lazy';
 }
 
 export default function CutoutCard({
@@ -21,7 +22,7 @@ export default function CutoutCard({
   category,
   onSelect,
   viewLabel,
-  layoutId,
+  loading,
 }: Props) {
   return (
     <MinimalCard interactive marker className="group p-2">
@@ -30,10 +31,10 @@ export default function CutoutCard({
         alt={description}
         frameClassName="aspect-3/2"
         className="group-hover:scale-103"
-        layoutId={layoutId}
+        loading={loading}
       />
-      <MinimalCardContent className="pb-4 pt-4">
-        <MinimalCardEyebrow>{category}</MinimalCardEyebrow>
+      <MinimalCardContent className="px-3 pb-3 pt-3 sm:px-4 sm:pb-4 sm:pt-4 md:p-4">
+        {category && <MinimalCardEyebrow>{category}</MinimalCardEyebrow>}
         <MinimalCardDescription className="mt-0 line-clamp-2 text-ink">
           {description}
         </MinimalCardDescription>

@@ -95,7 +95,7 @@ export const teamSections: TeamSection[] = [
       {
         name: 'Maëli Morneau',
         roleKey: 'management.roles.designsManager',
-        imgSrc: '/portrait/maeli-morneau.jpg',
+        imgSrc: '/portrait/maeli-morneau.webp',
       },
       {
         name: 'Dereck Bélanger',
@@ -244,6 +244,16 @@ export const teamSections: TeamSection[] = [
         name: 'Akram Omari',
         role: 'FlapEEG Team Lead',
         imgSrc: '/portrait/akram.webp',
+      },
+      {
+        name: 'Khadidiatou Seck Dieng',
+        role: 'BioVision Team Lead',
+        imgSrc: '/portrait/khadidiatou-seck.webp',
+      },
+      {
+        name: 'Nourhane Anani',
+        role: 'BioVision Team Lead',
+        imgSrc: '/portrait/nourhane-anani.webp',
       },
     ],
   },

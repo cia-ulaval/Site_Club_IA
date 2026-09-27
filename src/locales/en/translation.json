@@ -443,7 +443,15 @@
       }
     },
     "closeLabel": "Close lightbox",
-    "viewImage": "Enlarge"
+    "viewImage": "Enlarge",
+    "filterLabel": "Filter photos by category",
+    "seeAll": "See all {{count}}",
+    "showing": "{{shown}} of {{total}} photos",
+    "loadMore": "Load more photos",
+    "backToAll": "← Back to all photos",
+    "counter": "{{index}} / {{total}}",
+    "previous": "Previous photo",
+    "next": "Next photo"
   },
   "joinus": {
     "heroSubtitle": "Collaborate, Lead, and Grow with Us",

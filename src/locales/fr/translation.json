@@ -443,7 +443,15 @@
       }
     },
     "closeLabel": "Fermer la lightbox",
-    "viewImage": "Agrandir"
+    "viewImage": "Agrandir",
+    "filterLabel": "Filtrer les photos par catégorie",
+    "seeAll": "Voir les {{count}}",
+    "showing": "{{shown}} sur {{total}} photos",
+    "loadMore": "Afficher plus de photos",
+    "backToAll": "← Retour à toutes les photos",
+    "counter": "{{index}} / {{total}}",
+    "previous": "Photo précédente",
+    "next": "Photo suivante"
   },
   "joinus": {
     "heroSubtitle": "Collaborez, dirigez et grandissez avec nous",

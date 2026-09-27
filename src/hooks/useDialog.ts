@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 
 const FOCUSABLE = [
   'a[href]',
@@ -19,7 +19,9 @@ export function useDialog<
   const closeRef = useRef(onClose);
   closeRef.current = onClose;
 
-  useEffect(() => {
+  /* Layout effect: the scroll lock lands in the same frame the dialog mounts and
+     unmounts, so the scrollbar never visibly appears or vanishes on its own. */
+  useLayoutEffect(() => {
     const previouslyFocused =
       document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
