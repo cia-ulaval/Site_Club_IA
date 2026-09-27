@@ -54,7 +54,7 @@ export default {
         70: '70',
       },
       transitionProperty: {
-        media: 'filter, transform',
+        media: 'filter, transform, opacity',
         chrome: 'background-color, border-color, box-shadow',
       },
       transitionDuration: {

@@ -35,15 +35,31 @@ interface MinimalCardImageProps extends React.ImgHTMLAttributes<HTMLImageElement
 }
 
 const MinimalCardImage = React.forwardRef<HTMLImageElement, MinimalCardImageProps>(
-  ({ className, frameClassName, alt, loading = 'lazy', layoutId, ...props }, ref) => {
+  ({ className, frameClassName, alt, loading = 'lazy', layoutId, onLoad, ...props }, ref) => {
+    const [loaded, setLoaded] = React.useState(false);
+    const setRefs = React.useCallback(
+      (img: HTMLImageElement | null) => {
+        // A cached image can finish before onLoad is attached.
+        if (img?.complete) setLoaded(true);
+        if (typeof ref === 'function') ref(img);
+        else if (ref) ref.current = img;
+      },
+      [ref]
+    );
+
     const image = (
       <img
-        ref={ref}
+        ref={setRefs}
         alt={alt}
         loading={loading}
         decoding="async"
+        onLoad={(event) => {
+          setLoaded(true);
+          onLoad?.(event);
+        }}
         className={cn(
-          'absolute inset-0 h-full w-full object-cover transition-transform duration-base ease-out',
+          'absolute inset-0 h-full w-full object-cover transition-[transform,opacity] duration-base ease-out',
+          loaded ? 'opacity-100' : 'opacity-0',
           className
         )}
         {...props}

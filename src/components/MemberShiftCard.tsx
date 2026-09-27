@@ -1,4 +1,5 @@
 import { User } from 'lucide-react';
+import { useState } from 'react';
 import type { TeamMember } from './MemberModal';
 import { ShiftCard } from './ui/shift-card';
 
@@ -9,6 +10,8 @@ interface Props {
 }
 
 export default function MemberShiftCard({ member, onSelect, viewProfileLabel }: Props) {
+  const [loaded, setLoaded] = useState(false);
+
   return (
     <ShiftCard
       onClick={() => onSelect(member)}
@@ -18,11 +21,15 @@ export default function MemberShiftCard({ member, onSelect, viewProfileLabel }: 
         <div className="relative aspect-3/4 bg-primary-950">
           {member.imgSrc ? (
             <img
+              ref={(img) => {
+                // A cached image can finish before onLoad is attached.
+                if (img?.complete) setLoaded(true);
+              }}
               src={member.imgSrc}
               alt=""
-              loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover object-portrait saturate-90 transition-media duration-base ease-out group-hover:scale-103 group-hover:saturate-100"
+              onLoad={() => setLoaded(true)}
+              className={`h-full w-full object-cover object-portrait saturate-90 transition-media duration-base ease-out group-hover:scale-103 group-hover:saturate-100 ${loaded ? 'opacity-100' : 'opacity-0'}`}
             />
           ) : (
             <div className="grid h-full w-full place-items-center">
