@@ -205,45 +205,9 @@ export const teamSections: TeamSection[] = [
     titleKey: 'management.sections.teamLeads',
     members: [
       {
-        name: 'Benjamin Leblanc',
-        role: 'SGD-Beyond Team Lead',
-        imgSrc: '/portrait/benjamin-leblanc.webp',
-        linkedIn: 'https://www.linkedin.com/in/benjamin-leblanc-a9217128b/',
-      },
-      {
-        name: 'Eloïse Prevot',
-        role: 'NutriNov Team Lead',
-        imgSrc: '/portrait/eloise.webp',
-        linkedIn: 'https://www.linkedin.com/in/eloise-prevot/',
-      },
-      {
-        name: 'Cyrille Bernier',
-        role: 'Poppy Humanoid (Conception) Team Lead',
-        imgSrc: '/portrait/cyrille-bernier.webp',
-        linkedIn: 'https://www.linkedin.com/in/cyrille-bernier-31208a252/',
-      },
-      {
-        name: 'Baptiste Gabriel Bonin',
-        role: 'Poppy Humanoid (Simulation) Team Lead',
-        imgSrc: '/portrait/baptiste.webp',
-        linkedIn: 'https://www.linkedin.com/in/baptiste-bonin/',
-      },
-      {
-        name: 'Deoth Guei',
-        role: 'F1 Jedi Team Lead',
-        imgSrc: '/portrait/deoth.webp',
-        linkedIn: 'https://www.linkedin.com/in/deoth-guei-382269191/',
-      },
-      {
-        name: 'Jérôme Collet',
-        role: 'F1 Jedi Team Lead (Team 2)',
-        imgSrc: '/portrait/jerome.webp',
-        linkedIn: 'https://ca.linkedin.com/in/jérôme-collet-577953199',
-      },
-      {
-        name: 'Akram Omari',
-        role: 'FlapEEG Team Lead',
-        imgSrc: '/portrait/akram.webp',
+        name: 'Ala Edine',
+        role: 'Synthetic Consumer Lab Team Lead',
+        imgSrc: '/portrait/ala-edine.webp',
       },
       {
         name: 'Khadidiatou Seck Dieng',

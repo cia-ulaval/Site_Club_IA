@@ -101,6 +101,10 @@
         "title": "HemoMentor",
         "description": "An assistant that watches a hemolysis machine's interface through a camera and shows the user where to press. Vision-language models, local inference and hand tracking, with no change to the equipment."
       },
+      "synthetic-consumer-lab": {
+        "title": "Synthetic Consumer Lab",
+        "description": "Simulating populations to better understand their decisions. The project builds virtual populations of intelligent agents with varied profiles, using public data (Statistics Canada, Institut de la statistique du Québec), to predict reactions to a new product or service before it ships."
+      },
       "imageComing": "Project image coming soon",
       "learnMore": "Learn more",
       "github": "GitHub"
@@ -1693,6 +1697,21 @@
     "cta": {
       "title": "HemoMentor starts in the Fall 2026 session.",
       "subtitle": "The prototype is due by the end of May 2027."
+    }
+  },
+  "syntheticconsumerlab": {
+    "meta": {
+      "title": "Synthetic Consumer Lab — Synthetic Population Simulation | Club IA ULaval",
+      "description": "Synthetic Consumer Lab: virtual populations of intelligent agents to predict how consumers react to a new product or service. Club IA ULaval project, Fall 2026."
+    },
+    "hero": {
+      "subtitle": "Simulating populations to better understand their decisions",
+      "paragraph1": "How can you predict how a population will react to a new product, service, or change before you even roll it out? Synthetic Consumer Lab explores this idea by building virtual populations made up of intelligent agents with varied profiles."
+    },
+    "mission": {
+      "title": "Virtual agents, real decisions",
+      "paragraph1": "Using public data such as Statistics Canada and the Institut de la statistique du Québec, the team will build agents representing different demographic and socioeconomic profiles. Language models will then let these agents make decisions and react to different scenarios.",
+      "paragraph2": "The project combines multi-agent simulation, data processing, and generative AI to explore new ways of studying consumer and population behaviour."
     }
   },
   "asldecoder": {
