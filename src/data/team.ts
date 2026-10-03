@@ -210,6 +210,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/ala-edine.webp',
       },
       {
+        name: 'Marc-Olivier Beaudry',
+        role: 'Drone - Laser Tag Team Lead',
+        imgSrc: '/portrait/marc-olivier-beaudry.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
