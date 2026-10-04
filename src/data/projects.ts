@@ -193,7 +193,6 @@ export const projects: Project[] = [
     category: 'application',
     status: 'active',
     semester: 'automne2026',
-    recruiting: true,
   },
   {
     key: 'canlock',
