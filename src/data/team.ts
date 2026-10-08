@@ -225,6 +225,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/louis-felix-emond.webp',
       },
       {
+        name: 'Yanis Larabi',
+        role: 'F1 Jedi Team Lead',
+        imgSrc: '/portrait/yanis-larabi.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
