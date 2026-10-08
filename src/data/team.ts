@@ -215,6 +215,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/marc-olivier-beaudry.webp',
       },
       {
+        name: 'Yohann Ekissi',
+        role: 'Poppy Humanoid (Simulation) Team Lead',
+        imgSrc: '/portrait/yohann-ekissi.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
