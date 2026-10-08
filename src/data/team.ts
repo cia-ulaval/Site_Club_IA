@@ -235,6 +235,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/firas-saidani.webp',
       },
       {
+        name: 'Noureddine Faleh',
+        role: 'NavFlow Team Lead',
+        imgSrc: '/portrait/noureddine-faleh.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
