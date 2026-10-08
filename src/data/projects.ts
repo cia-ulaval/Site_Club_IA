@@ -184,6 +184,17 @@ export const projects: Project[] = [
     semester: 'hiver2025',
   },
   {
+    key: 'synthetic-consumer-lab',
+    image: '',
+    defaultTitle: 'Synthetic Consumer Lab',
+    defaultDescription:
+      'Simuler des populations pour mieux comprendre leurs décisions. Le projet crée des populations virtuelles composées d’agents intelligents aux profils variés, à partir de données publiques (Statistique Canada, Institut de la statistique du Québec), pour prédire les réactions à un nouveau produit ou service avant son déploiement.',
+    link: '/synthetic-consumer-lab',
+    category: 'application',
+    status: 'active',
+    semester: 'automne2026',
+  },
+  {
     key: 'canlock',
     image: '',
     defaultTitle: 'CANlock',
