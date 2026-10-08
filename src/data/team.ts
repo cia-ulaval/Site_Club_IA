@@ -230,6 +230,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/yanis-larabi.webp',
       },
       {
+        name: 'Firas Saïdani',
+        role: 'HemoMentor Team Lead',
+        imgSrc: '/portrait/firas-saidani.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
