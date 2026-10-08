@@ -220,6 +220,11 @@ export const teamSections: TeamSection[] = [
         imgSrc: '/portrait/yohann-ekissi.webp',
       },
       {
+        name: 'Louis-Félix Emond',
+        role: 'Avion-Cargo Team Lead',
+        imgSrc: '/portrait/louis-felix-emond.webp',
+      },
+      {
         name: 'Khadidiatou Seck Dieng',
         role: 'BioVision Team Lead',
         imgSrc: '/portrait/khadidiatou-seck.webp',
