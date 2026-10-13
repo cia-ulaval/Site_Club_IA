@@ -5,7 +5,11 @@ export const poppyConception: ProjectPageSpec = {
   edition: 'dossier',
   titleKey: 'poppyConception.hero.title',
   hero: {
-    media: { type: 'image', src: '/project/poppy.webp', altKey: 'poppyConception.hero.title' },
+    media: {
+      type: 'image',
+      src: '/project/poppy-conception.webp',
+      altKey: 'poppyConception.hero.title',
+    },
     bodyKeys: [
       'poppyConception.hero.subtitle',
       'poppyConception.hero.paragraph1',
@@ -50,7 +54,7 @@ export const poppyConception: ProjectPageSpec = {
   seo: {
     titleKey: 'poppyConception.meta.title',
     descriptionKey: 'poppyConception.meta.description',
-    image: '/project/poppy.webp',
+    image: '/project/poppy-conception.webp',
     path: '/poppy-conception',
   },
 };

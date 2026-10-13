@@ -42,16 +42,15 @@ export const projects: Project[] = [
   },
   {
     key: 'f1tenth',
-    image: '/project/f1tenthcar.webp',
+    image: '/project/f1tenth-car.webp',
     defaultTitle: 'F1Tenth',
     defaultDescription:
-      "En partenariat avec le club étudiant VAUL (propriétaire de la voiture F1TENTH), développer un mode de contrôle via bracelet EMG. Objectif : détecter les mouvements du bras à partir des signaux musculaires, les interpréter avec de l'IA, puis les convertir en commandes de pilotage (direction/vitesse) pour contrôler le véhicule. Projet axé sur EMG et IA.",
+      "F1 Tenth (alias F1-Jedi) : piloter une voiture de course miniature à l'échelle 1/10 avec les gestes de la main. Un bracelet EMG mesure l'activité musculaire — fléchir le pouce accélère, tourner le poignet dirige — et l'équipe s'entraîne d'abord en simulation dans TrackMania avant de risquer la vraie voiture.",
     link: '/f1tenth',
     github: 'https://github.com/cia-ulaval/F1-team-1',
     category: 'hardware',
     status: 'active',
     semester: 'automne2024',
-    partner: 'VAUL',
     recruiting: true,
   },
   {
@@ -59,7 +58,7 @@ export const projects: Project[] = [
     image: '/project/drone.webp',
     defaultTitle: 'Drone - Laser Tag',
     defaultDescription:
-      'Développez un système laser clé en main pour une compétition FPV autonome : capteur 180°, émission, PCB custom et logiciel de gestion centralisé. Partenaire académique : Philippe Giguère.',
+      "Lancez une compétition interuniversitaire de laser tag entre drones autonomes : système d'armement laser complet avec PCB maison, capteurs infrarouges 180° et ordinateur central qui empêche la triche et affiche le classement en direct. Partenaire académique : Philippe Giguère.",
     link: '/drone',
     github: 'https://github.com/cia-ulaval/drone',
     category: 'hardware',
@@ -70,7 +69,7 @@ export const projects: Project[] = [
   },
   {
     key: 'poppy-conception',
-    image: '/project/poppy.webp',
+    image: '/project/poppy-conception.webp',
     defaultTitle: 'Poppy Humanoid (Conception)',
     defaultDescription:
       "Impression 3D, assemblage des articulations et intégration électronique d'un humanoïde open-source. Rejoignez le projet pour participer à la conception technique.",
@@ -82,7 +81,7 @@ export const projects: Project[] = [
   },
   {
     key: 'poppy-simulation',
-    image: '/project/poppysimulation.webp',
+    image: '/project/poppy-simulation.webp',
     defaultTitle: 'Poppy Humanoid (Simulation)',
     defaultDescription:
       "Apprenez à un robot à marcher en développant des algorithmes RL en simulation, puis transférez-les sur le robot réel. Rejoignez le projet pour explorer l'IA robotique.",
@@ -123,7 +122,7 @@ export const projects: Project[] = [
     image: '/project/avion-cargo.webp',
     defaultTitle: 'Avion-Cargo',
     defaultDescription:
-      "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm.",
+      "Un avion cargo autonome, de la structure à l'IA embarquée. Sa pièce vedette, AUTOLANDER, détecte des marqueurs ArUco via une caméra sur Raspberry Pi pour viser un atterrissage de précision à moins d'un pixel d'erreur.",
     link: '/avion-cargo',
     github: 'https://github.com/cia-ulaval/avion-cargo',
     category: 'hardware',
@@ -174,7 +173,7 @@ export const projects: Project[] = [
   },
   {
     key: 'asldecoder',
-    image: '/project/asl.webp',
+    image: '/project/asl-decoder.webp',
     defaultTitle: 'ASL Decoder',
     defaultDescription:
       "Système Raspberry Pi avec caméra pour la reconnaissance du langage des signes américain (ASL) en temps réel grâce à l'IA. Projet terminé combinant vision par ordinateur et apprentissage automatique.",

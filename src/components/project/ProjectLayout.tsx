@@ -25,7 +25,7 @@ export default function ProjectLayout({ spec }: Props) {
     : (spec.seo.description ??
       (project ? t(`home.projects.${project.key}.description`, project.defaultDescription) : ''));
   /* `||`, not `??`: a project with no picture carries `image: ''`. */
-  const seoImage = spec.seo.image || project?.image || '/banner/cia-logo.webp';
+  const seoImage = spec.seo.image || project?.image || '/banner/cia.webp';
   const url = `${SITE}${spec.seo.path}`;
 
   return (

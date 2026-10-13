@@ -40,7 +40,7 @@
       },
       "f1tenth": {
         "title": "F1Tenth",
-        "description": "En partenariat avec le club étudiant VAUL (propriétaire de la voiture F1TENTH), développer un mode de contrôle via bracelet EMG. Objectif : détecter les mouvements du bras à partir des signaux musculaires, les interpréter avec de l'IA, puis les convertir en commandes de pilotage (direction/vitesse) pour contrôler le véhicule. Projet axé sur EMG et IA.",
+        "description": "F1 Tenth (alias F1-Jedi) : piloter une voiture de course miniature à l'échelle 1/10 avec les gestes de la main. Un bracelet EMG mesure l'activité musculaire — fléchir le pouce accélère, tourner le poignet dirige — et l'équipe s'entraîne d'abord en simulation dans TrackMania avant de risquer la vraie voiture.",
         "homeDescription": "Contrôlez une voiture F1TENTH via bracelet EMG : l'IA traduit les mouvements du bras en direction et vitesse."
       },
       "decisiontree": {
@@ -59,7 +59,7 @@
       "drone": {
         "title": "Drone - Laser Tag",
         "homeDescription": "Concevez et construisez un drone FPV autonome pour concourir dans une compétition de laser tag.",
-        "description": "Développez un système laser clé en main pour une compétition FPV autonome : capteur 180°, émission, PCB custom et logiciel de gestion centralisé. Partenaire académique : Philippe Giguère."
+        "description": "Lancez une compétition interuniversitaire de laser tag entre drones autonomes : système d'armement laser complet avec PCB maison, capteurs infrarouges 180° et ordinateur central qui empêche la triche et affiche le classement en direct. Partenaire académique : Philippe Giguère."
       },
       "poppy-conception": {
         "title": "Poppy Humanoid (Conception)",
@@ -90,7 +90,7 @@
       "github": "GitHub",
       "avion-cargo": {
         "title": "Avion-Cargo",
-        "description": "Système d'atterrissage autonome de précision par vision par ordinateur. Détection de marqueurs ArUco, estimation 3D en temps réel et guidage intelligent pour des atterrissages < 10 cm."
+        "description": "Un avion cargo autonome, de la structure à l'IA embarquée. Sa pièce vedette, AUTOLANDER, détecte des marqueurs ArUco via une caméra sur Raspberry Pi pour viser un atterrissage de précision à moins d'un pixel d'erreur."
       },
       "navflow": {
         "title": "NavFlow",
@@ -418,32 +418,36 @@
     },
     "images": {
       "formation": {
-        "tuto2": "Premier tutoriel CIA"
+        "tuto2": "Premier tutoriel CIA",
+        "presentationAws": "Présentation AWS — Amazon en personne est venu rencontrer le club, une visite hors du commun"
       },
       "competition": {
-        "competition1": "Gagnants du concours 2024",
-        "competition2": "Pendant la compétition",
-        "competition3": "Pendant la compétition 2",
-        "competitionA2024": "Pendant la compétition 3"
+        "competition1": "Podium du Hackathon 2024",
+        "competition2": "Nuit de code pendant le Hackathon 2024",
+        "competition3": "Les équipes à l'œuvre pendant le Hackathon 2024"
       },
       "project": {
-        "club2024": "Première réunion pour le projet flapeeg 2024",
-        "clubrencontre": "Deuxième réunion pour le projet flapeeg 2024",
         "f1tenth": "Réunion F1Tenth",
         "f1tenthcar": "Voiture F1Tenth",
-        "flappycard": "Réunion Flapeeg hiver 2025"
+        "flappycard": "Réunion Flapeeg hiver 2025",
+        "poppyHumanoidAssemble": "Robot Poppy Humanoid assemblé",
+        "journeeDev1": "Journée dev sur le projet Poppy Humanoid",
+        "journeeDev2": "Journée dev, circuit logique"
       },
       "community": {
-        "filleclub": "Club Femmes et IA",
         "eegPresentation": "Présentation EEG aux étudiants",
         "flappyeegmain": "Équipe exécutive avec le projet flapeeg",
         "frontImage": "Présentation CIA aux étudiants",
         "kalvenPresenter": "Présentation externe",
         "kiosque": "Présentation stand CIA",
-        "presentation": "Présentation CIA aux étudiants 2",
         "table": "Équipe exécutive au stand de présentation",
-        "table3": "Équipe exécutive au stand de présentation 3",
-        "testclub": "Démonstration signal EEG"
+        "testclub": "Démonstration signal EEG",
+        "soireePickFighter": "Soirée club : présentation des projets",
+        "soireePoutine": "Soirée club : jeux et poutine",
+        "agileQuebecPartenaires": "Conférence Agile Québec : nos partenaires",
+        "agileQuebecPoppy": "Conférence Agile Québec : démonstration de Poppy Humanoid",
+        "soireeEquipeExterieur": "Soirée d'équipe entre membres du club",
+        "flapeegSalonDemo": "Démonstration FlapEEG en salon professionnel"
       }
     },
     "closeLabel": "Fermer la lightbox",
@@ -577,47 +581,12 @@
   "f1tenth": {
     "hero": {
       "imageAlt": "Voiture de course miniature F1Tenth contrôlée par IA et signaux musculaires",
-      "description1": "Amateur de sensations fortes? Ce projet va captiver votre intérêt! F1 Tenth est une équipe d'étudiants passionnés d'IA qui ont réussi à combiner l'humain et la machine.",
-      "description2": "L'équipe a dû entraîner un modèle d'IA pour lire les signaux électriques musculaires et les traduire en actions."
+      "description1": "F1 Tenth (alias F1-Jedi) : piloter une voiture de course miniature à l'échelle 1/10 avec les gestes de la main. Un bracelet EMG mesure l'activité musculaire — fléchir le pouce accélère, tourner le poignet dirige.",
+      "description2": "L'équipe a entraîné un modèle d'IA pour lire les signaux électriques musculaires et les traduire en commandes de pilotage, en s'entraînant d'abord en simulation dans le jeu TrackMania avant de risquer la vraie voiture."
     },
-    "team1": {
-      "title": "Rencontrez l'équipe 1",
-      "deoth": {
-        "description": "Chef d'équipe, étude de faisabilité, et plus"
-      },
-      "theophile": {
-        "description": "A aidé avec la conception, la recherche, le développement et plus"
-      },
-      "felix": {
-        "description": "A aidé avec le développement logiciel, l'optimisation et la validation"
-      },
-      "melek": {
-        "description": "A aidé avec le développement logiciel, l'optimisation et la validation"
-      },
-      "amy": {
-        "description": "Intégration avec F1 Tenth et partenariat"
-      },
-      "kahina": {
-        "description": "Optimisation de partenariat et intégration"
-      }
-    },
-    "team2": {
-      "title": "Rencontrez l'équipe 2",
-      "alban": {
-        "description": "Chef d'équipe"
-      },
-      "alexandre": {
-        "description": ""
-      },
-      "jade": {
-        "description": ""
-      },
-      "karima": {
-        "description": ""
-      },
-      "simon": {
-        "description": ""
-      }
+    "team": {
+      "title": "Équipe",
+      "leads": "Team Lead : Yanis Larabi"
     }
   },
   "nutrinov": {
@@ -1366,13 +1335,13 @@
   "avionCargo": {
     "meta": {
       "title": "Avion-Cargo – Atterrissage autonome de précision | Club IA ULaval",
-      "description": "Projet Avion-Cargo : système d'atterrissage autonome par vision par ordinateur avec détection de marqueurs ArUco, estimation 3D et précision inférieure à 10 cm."
+      "description": "Projet Avion-Cargo : conception d'un avion cargo autonome et de son système d'atterrissage de précision AUTOLANDER, par détection de marqueurs ArUco et vision par ordinateur embarquée sur Raspberry Pi."
     },
     "simple": {
       "title": "Avion-Cargo",
       "subtitle": "Atterrissage autonome de précision par vision par ordinateur",
-      "description1": "Le projet Avion-Cargo consiste à développer un système d'atterrissage de précision entièrement autonome utilisant la vision par ordinateur et l'intelligence artificielle.",
-      "description2": "L'objectif est de détecter des marqueurs ArUco à l'aide d'une caméra embarquée, d'estimer la position 3D en temps réel, puis de guider l'aéronef afin d'effectuer un atterrissage avec une précision inférieure à 10 cm, tout en permettant la récupération de charges utiles.",
+      "description1": "Le projet Avion-Cargo consiste à concevoir un avion cargo autonome de bout en bout — structure, électronique et intelligence artificielle embarquée.",
+      "description2": "Sa pièce vedette, AUTOLANDER, vise un atterrissage de précision : une caméra sur Raspberry Pi repère des marqueurs ArUco et calcule en temps réel la position et l'orientation de l'appareil, avec un objectif de moins d'un pixel d'erreur pour poser l'avion pile sur sa cible, tout en permettant la récupération de charges utiles.",
       "imageAlt": "Avion-Cargo – atterrissage autonome de précision",
       "technologiesTitle": "Technologies principales",
       "technologies": ["OpenCV", "ArduPilot", "Navigation intelligente"],
@@ -1381,7 +1350,7 @@
       "pipelineSteps": [
         {
           "title": "Capture vidéo",
-          "description": "Une caméra embarquée observe la zone d'atterrissage en temps réel."
+          "description": "Une caméra embarquée sur Raspberry Pi observe la zone d'atterrissage en temps réel."
         },
         {
           "title": "Détection ArUco",
@@ -1397,15 +1366,15 @@
         },
         {
           "title": "Atterrissage et récupération",
-          "description": "L'atterrissage vise une précision inférieure à 10 cm et permet la récupération de charges utiles."
+          "description": "L'atterrissage vise moins d'un pixel d'erreur de détection et permet la récupération de charges utiles."
         }
       ],
       "summaryTitle": "Description du projet",
       "summaryItems": [
-        "Développer un système d'atterrissage de précision entièrement autonome.",
-        "Détecter des marqueurs ArUco avec une caméra embarquée.",
-        "Estimer la position 3D en temps réel puis guider l'aéronef.",
-        "Effectuer un atterrissage avec une précision inférieure à 10 cm et récupérer des charges utiles."
+        "Concevoir un avion cargo autonome, de la structure à l'IA embarquée.",
+        "Détecter des marqueurs ArUco avec une caméra sur Raspberry Pi.",
+        "Estimer la position et l'orientation en temps réel puis guider l'aéronef.",
+        "Effectuer un atterrissage de précision, avec un objectif de moins d'un pixel d'erreur, et récupérer des charges utiles."
       ]
     }
   },

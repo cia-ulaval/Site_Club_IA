@@ -35,7 +35,7 @@ function Navbar() {
             aria-label="CIA ULaval"
           >
             <img
-              src="/banner/cia-logo.webp"
+              src="/banner/cia.webp"
               alt=""
               width={38}
               height={38}
