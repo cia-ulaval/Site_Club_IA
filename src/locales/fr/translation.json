@@ -103,6 +103,10 @@
       "hemomentor": {
         "title": "HemoMentor",
         "description": "Un assistant qui observe l'interface d'une machine d'hémolyse avec une caméra et montre à l'utilisateur où appuyer. Modèles vision-langage, inférence locale et suivi de la main, sans aucune modification de l'équipement."
+      },
+      "synthetic-consumer-lab": {
+        "title": "Synthetic Consumer Lab",
+        "description": "Simuler des populations pour mieux comprendre leurs décisions. Le projet crée des populations virtuelles composées d’agents intelligents aux profils variés, à partir de données publiques (Statistique Canada, Institut de la statistique du Québec), pour prédire les réactions à un nouveau produit ou service avant son déploiement."
       }
     },
     "collaboration": {
@@ -1699,6 +1703,21 @@
     "cta": {
       "title": "HemoMentor démarre à la session d'automne 2026.",
       "subtitle": "Le prototype est attendu pour la fin mai 2027."
+    }
+  },
+  "syntheticconsumerlab": {
+    "meta": {
+      "title": "Synthetic Consumer Lab — Simulation de populations synthétiques | Club IA ULaval",
+      "description": "Synthetic Consumer Lab : des populations virtuelles d'agents intelligents pour prédire la réaction des consommateurs à un nouveau produit ou service. Projet du Club IA ULaval, automne 2026."
+    },
+    "hero": {
+      "subtitle": "Simuler des populations pour mieux comprendre leurs décisions",
+      "paragraph1": "Comment prédire la réaction d'une population à un nouveau produit, service ou changement avant même de le déployer ? Synthetic Consumer Lab explore cette idée en créant des populations virtuelles composées d'agents intelligents aux profils variés."
+    },
+    "mission": {
+      "title": "Des agents virtuels, des décisions réelles",
+      "paragraph1": "À partir de données publiques comme celles de Statistique Canada et de l'Institut de la statistique du Québec, l'équipe développera des agents représentant différents profils démographiques et socioéconomiques. Des modèles de langage permettront ensuite à ces agents de prendre des décisions et de réagir à différents scénarios.",
+      "paragraph2": "Le projet combine simulation multi-agents, traitement de données et IA générative afin d'explorer de nouvelles façons d'étudier le comportement des consommateurs et des populations."
     }
   },
   "asldecoder": {

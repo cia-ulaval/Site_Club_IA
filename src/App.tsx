@@ -21,6 +21,7 @@ import AvionCargo from './pages/AvionCargo';
 import NavFlow from './pages/NavFlow';
 import BioVision from './pages/BioVision';
 import HemoMentor from './pages/HemoMentor';
+import SyntheticConsumerLab from './pages/SyntheticConsumerLab';
 import Privacy from './pages/Privacy';
 
 import Navbar from './components/Navbar';
@@ -55,6 +56,7 @@ function App() {
             <Route path="/navflow" element={<NavFlow />} />
             <Route path="/biovision" element={<BioVision />} />
             <Route path="/hemomentor" element={<HemoMentor />} />
+            <Route path="/synthetic-consumer-lab" element={<SyntheticConsumerLab />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/collaboration" element={<Collaboration />} />
             <Route path="/join-us" element={<JoinUs />} />
