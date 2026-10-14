@@ -40,7 +40,7 @@
       },
       "f1tenth": {
         "title": "F1Tenth",
-        "description": "In partnership with the VAUL student club (owner of the F1TENTH car), develop a control mode via EMG bracelet. Objective: detect arm movements from muscle signals, interpret them with AI, then convert them into driving commands (steering/speed) to control the vehicle. Project focused on EMG and AI.",
+        "description": "F1 Tenth (aka F1-Jedi): drive a 1/10-scale miniature race car with hand gestures. An EMG armband reads muscle activity — flexing your thumb accelerates, twisting your wrist steers — and the team trains first in simulation inside TrackMania before risking the real car.",
         "homeDescription": "Control a 1/10 F1TENTH car with an EMG bracelet: AI turns arm movement into steering and speed."
       },
       "decisiontree": {
@@ -63,7 +63,7 @@
       "drone": {
         "title": "Drone - Laser Tag",
         "homeDescription": "Design and build an autonomous FPV drone to compete in a laser tag competition.",
-        "description": "Build a turnkey laser system for an autonomous FPV competition: 180° sensor, emission module, custom PCB, and centralized management software. Academic partner: Philippe Giguère."
+        "description": "Launch an interuniversity laser tag competition between autonomous drones: a full laser weapon system with a custom PCB, 180° infrared sensors, and a central computer that prevents cheating and shows a live leaderboard. Academic partner: Philippe Giguère."
       },
       "sgd-beyond": {
         "title": "SGD - Beyond",
@@ -87,7 +87,7 @@
       },
       "avion-cargo": {
         "title": "Avion-Cargo",
-        "description": "Autonomous precision landing system using computer vision. ArUco marker detection, real-time 3D estimation and intelligent guidance for sub-10 cm landings."
+        "description": "An autonomous cargo plane, from structure to onboard AI. Its showcase piece, AUTOLANDER, detects ArUco markers via a Raspberry Pi camera to target a precision landing under one pixel of error."
       },
       "navflow": {
         "title": "NavFlow",
@@ -418,32 +418,36 @@
     },
     "images": {
       "formation": {
-        "tuto2": "First CIA tutorial"
+        "tuto2": "First CIA tutorial",
+        "presentationAws": "AWS presentation — Amazon itself came to meet the club, an exceptional visit"
       },
       "competition": {
-        "competition1": "Competition winners 2024",
-        "competition2": "During competition",
-        "competition3": "During competition 2",
-        "competitionA2024": "During competition 3"
+        "competition1": "Hackathon 2024 podium",
+        "competition2": "Coding through the night at Hackathon 2024",
+        "competition3": "Teams hard at work at Hackathon 2024"
       },
       "project": {
-        "club2024": "First meeting for flapeeg project 2024",
-        "clubrencontre": "Second meeting for flapeeg project 2024",
         "f1tenth": "F1Tenth meeting",
         "f1tenthcar": "F1Tenth car",
-        "flappycard": "Flapeeg meeting winter 2025"
+        "flappycard": "Flapeeg meeting winter 2025",
+        "poppyHumanoidAssemble": "Assembled Poppy Humanoid robot",
+        "journeeDev1": "Dev day on the Poppy Humanoid project",
+        "journeeDev2": "Dev day, logic circuit"
       },
       "community": {
-        "filleclub": "Women and AI club",
         "eegPresentation": "EEG presentation to students",
         "flappyeegmain": "Executive team with flapeeg project",
         "frontImage": "CIA presentation to students",
         "kalvenPresenter": "Outside presentation",
         "kiosque": "CIA stand presentation",
-        "presentation": "CIA presentation to students 2",
         "table": "Executive team at presentation stand",
-        "table3": "Executive team at presentation stand 3",
-        "testclub": "EEG signal demonstration"
+        "testclub": "EEG signal demonstration",
+        "soireePickFighter": "Club social: project showcase",
+        "soireePoutine": "Club social: games and poutine",
+        "agileQuebecPartenaires": "Agile Québec conference: our partners",
+        "agileQuebecPoppy": "Agile Québec conference: Poppy Humanoid demo",
+        "soireeEquipeExterieur": "Team social evening with club members",
+        "flapeegSalonDemo": "FlapEEG demo at an industry conference"
       }
     },
     "closeLabel": "Close lightbox",
@@ -577,8 +581,12 @@
   "f1tenth": {
     "hero": {
       "imageAlt": "F1Tenth miniature race car controlled by AI and muscle signals",
-      "description1": "Thrill-seeker? This project will capture your interest! F1 Tenth is a team of students passionate about AI who have successfully combined human and machine. Using an electromyographic bracelet, they managed to control a miniature race car with their muscles.",
-      "description2": "The team had to train an AI model to read muscle electrical signals and translate them into actions. This involved extensive trial and error to adjust the model's sensitivity and accuracy. The bracelet has multiple sensors, each responsible for a different response like accelerating, braking, or turning. The project was very complex because it required controlling multiple dimensions simultaneously."
+      "description1": "F1 Tenth (aka F1-Jedi): drive a 1/10-scale miniature race car with hand gestures. An EMG armband reads muscle activity — flexing your thumb accelerates, twisting your wrist steers.",
+      "description2": "The team trained an AI model to read muscle electrical signals and translate them into driving commands, training first in simulation inside the game TrackMania before risking the real car."
+    },
+    "team": {
+      "title": "Team",
+      "leads": "Team Lead: Yanis Larabi"
     },
     "team1": {
       "title": "Meet Team 1",
@@ -1360,13 +1368,13 @@
   "avionCargo": {
     "meta": {
       "title": "Cargo Plane – Autonomous Precision Landing | Club IA ULaval",
-      "description": "Avion-Cargo project: fully autonomous precision landing system using computer vision, ArUco marker detection, 3D position estimation and sub-10 cm accuracy."
+      "description": "Avion-Cargo project: design of an autonomous cargo plane and its AUTOLANDER precision landing system, using ArUco marker detection and onboard computer vision on a Raspberry Pi."
     },
     "simple": {
       "title": "Avion-Cargo",
       "subtitle": "Autonomous precision landing through computer vision",
-      "description1": "The Avion-Cargo project focuses on developing a fully autonomous precision landing system using computer vision and artificial intelligence.",
-      "description2": "The objective is to detect ArUco markers with an onboard camera, estimate the 3D position in real time, then guide the aircraft to achieve a landing precision under 10 cm while enabling payload recovery.",
+      "description1": "The Avion-Cargo project is about designing an autonomous cargo plane end to end — structure, electronics, and onboard artificial intelligence.",
+      "description2": "Its current showcase piece, AUTOLANDER, targets precision landing: a Raspberry Pi camera spots ArUco markers and computes the aircraft's position and orientation in real time, aiming for under one pixel of error to land right on target, while enabling payload recovery.",
       "imageAlt": "Avion-Cargo – autonomous precision landing",
       "technologiesTitle": "Core technologies",
       "technologies": ["OpenCV", "ArduPilot", "Intelligent navigation"],
@@ -1375,7 +1383,7 @@
       "pipelineSteps": [
         {
           "title": "Video capture",
-          "description": "An onboard camera monitors the landing zone in real time."
+          "description": "An onboard Raspberry Pi camera monitors the landing zone in real time."
         },
         {
           "title": "ArUco detection",
@@ -1391,15 +1399,15 @@
         },
         {
           "title": "Landing and recovery",
-          "description": "Landing targets sub-10 cm precision and enables payload recovery."
+          "description": "Landing targets under one pixel of detection error and enables payload recovery."
         }
       ],
       "summaryTitle": "Project description",
       "summaryItems": [
-        "Develop a fully autonomous precision landing system.",
-        "Detect ArUco markers with an onboard camera.",
-        "Estimate 3D position in real time, then guide the aircraft.",
-        "Perform landing with precision under 10 cm and recover payloads."
+        "Design an autonomous cargo plane, from structure to onboard AI.",
+        "Detect ArUco markers with a Raspberry Pi camera.",
+        "Estimate position and orientation in real time, then guide the aircraft.",
+        "Perform a precision landing, targeting under one pixel of error, and recover payloads."
       ]
     }
   },

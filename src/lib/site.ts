@@ -4,7 +4,7 @@ export const ORG_NAME = 'Club Intelligence Artificielle - Université Laval';
 
 export const OG_SITE_NAME = 'Club IA - Université Laval';
 
-export const DEFAULT_OG_IMAGE = '/banner/cia-logo.webp';
+export const DEFAULT_OG_IMAGE = '/banner/cia.webp';
 
 /* Headcount claimed on Home and on the sponsorship page. One constant so the
    two cannot drift apart again; update it when the club recounts. */

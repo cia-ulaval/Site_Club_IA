@@ -5,7 +5,7 @@ export const aslDecoder: ProjectPageSpec = {
   edition: 'dossier',
   titleKey: 'home.projects.asldecoder.title',
   hero: {
-    media: { type: 'image', src: '/project/asl.webp', altKey: 'asldecoder.hero.imageAlt' },
+    media: { type: 'image', src: '/project/asl-decoder.webp', altKey: 'asldecoder.hero.imageAlt' },
     bodyKeys: ['asldecoder.hero.subtitle', 'asldecoder.hero.description'],
   },
   blocks: [
@@ -48,7 +48,7 @@ export const aslDecoder: ProjectPageSpec = {
   seo: {
     title: 'ASL Decoder - Reconnaissance du Langage des Signes par IA',
     descriptionKey: 'asldecoder.meta.description',
-    image: '/project/asl.webp',
+    image: '/project/asl-decoder.webp',
     path: '/asl-decoder',
   },
 };

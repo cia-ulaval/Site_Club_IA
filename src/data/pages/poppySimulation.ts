@@ -9,7 +9,7 @@ export const poppySimulation: ProjectPageSpec = {
   hero: {
     media: {
       type: 'image',
-      src: '/project/poppysimulation.webp',
+      src: '/project/poppy-simulation.webp',
       altKey: 'poppy.hero.image.alt',
     },
     bodyKeys: ['poppy.hero.paragraph1', 'poppy.hero.paragraph2'],
@@ -86,7 +86,7 @@ export const poppySimulation: ProjectPageSpec = {
     title: 'Poppy Simulation - Robot Humanoïde IA Apprentissage | Club IA ULaval',
     description:
       'Poppy Simulation : projet de Reinforcement Learning pour apprendre à un robot humanoïde à marcher. RL, simulation robotique, Sim2Real au Club IA ULaval.',
-    image: '/project/poppysimulation.webp',
+    image: '/project/poppy-simulation.webp',
     path: '/poppy-simulation',
     jsonLd: JSON_LD,
   },

@@ -13,8 +13,13 @@ export const thumbOf = (src: string) => `/thumbs${src}`;
 
 export const galleryImages: GalleryImage[] = [
   {
-    src: '/formation/tuto2.webp',
+    src: '/formation/atelier-code.webp',
     descKey: 'gallery.images.formation.tuto2',
+    category: 'formation',
+  },
+  {
+    src: '/formation/presentation-aws.webp',
+    descKey: 'gallery.images.formation.presentationAws',
     category: 'formation',
   },
 
@@ -33,46 +38,41 @@ export const galleryImages: GalleryImage[] = [
     descKey: 'gallery.images.competition.competition3',
     category: 'competition',
   },
-  {
-    src: '/competition/competition-a2024-1.webp',
-    descKey: 'gallery.images.competition.competitionA2024',
-    category: 'competition',
-  },
 
-  {
-    src: '/project/club2024.webp',
-    descKey: 'gallery.images.project.club2024',
-    category: 'project',
-  },
-  {
-    src: '/project/clubrencontre.webp',
-    descKey: 'gallery.images.project.clubrencontre',
-    category: 'project',
-  },
   { src: '/project/f1tenth.webp', descKey: 'gallery.images.project.f1tenth', category: 'project' },
   {
-    src: '/project/f1tenthcar.webp',
+    src: '/project/f1tenth-car.webp',
     descKey: 'gallery.images.project.f1tenthcar',
     category: 'project',
   },
   {
-    src: '/project/flappycard.webp',
+    src: '/project/flapeeg-reunion-hiver2025.webp',
     descKey: 'gallery.images.project.flappycard',
+    category: 'project',
+  },
+  {
+    src: '/project/poppy-humanoid.webp',
+    descKey: 'gallery.images.project.poppyHumanoidAssemble',
+    category: 'project',
+  },
+  {
+    src: '/project/journee-dev-poppy.webp',
+    descKey: 'gallery.images.project.journeeDev1',
+    category: 'project',
+  },
+  {
+    src: '/project/journee-dev-circuit.webp',
+    descKey: 'gallery.images.project.journeeDev2',
     category: 'project',
   },
 
   {
-    src: '/implication/filleclub.webp',
-    descKey: 'gallery.images.community.filleclub',
-    category: 'community',
-  },
-  {
-    src: '/implication/eeg-presentation.webp',
+    src: '/implication/presentation-eeg-etudiants.webp',
     descKey: 'gallery.images.community.eegPresentation',
     category: 'community',
   },
   {
-    src: '/implication/flappyeegmain.webp',
+    src: '/implication/flapeeg-equipe.webp',
     descKey: 'gallery.images.community.flappyeegmain',
     category: 'community',
   },
@@ -82,7 +82,7 @@ export const galleryImages: GalleryImage[] = [
     category: 'community',
   },
   {
-    src: '/implication/kalven-presenter.webp',
+    src: '/implication/presentation-externe.webp',
     descKey: 'gallery.images.community.kalvenPresenter',
     category: 'community',
   },
@@ -92,23 +92,43 @@ export const galleryImages: GalleryImage[] = [
     category: 'community',
   },
   {
-    src: '/implication/presentation.webp',
-    descKey: 'gallery.images.community.presentation',
-    category: 'community',
-  },
-  {
-    src: '/implication/table.webp',
+    src: '/implication/stand-equipe.webp',
     descKey: 'gallery.images.community.table',
     category: 'community',
   },
   {
-    src: '/implication/table3.webp',
-    descKey: 'gallery.images.community.table3',
+    src: '/implication/flapeeg-demo-signal.webp',
+    descKey: 'gallery.images.community.testclub',
     category: 'community',
   },
   {
-    src: '/implication/testclub.webp',
-    descKey: 'gallery.images.community.testclub',
+    src: '/implication/soiree-pick-fighter.webp',
+    descKey: 'gallery.images.community.soireePickFighter',
+    category: 'community',
+  },
+  {
+    src: '/implication/soiree-poutine.webp',
+    descKey: 'gallery.images.community.soireePoutine',
+    category: 'community',
+  },
+  {
+    src: '/implication/agile-quebec-partenaires.webp',
+    descKey: 'gallery.images.community.agileQuebecPartenaires',
+    category: 'community',
+  },
+  {
+    src: '/implication/agile-quebec-poppy.webp',
+    descKey: 'gallery.images.community.agileQuebecPoppy',
+    category: 'community',
+  },
+  {
+    src: '/implication/soiree-equipe-exterieur.webp',
+    descKey: 'gallery.images.community.soireeEquipeExterieur',
+    category: 'community',
+  },
+  {
+    src: '/implication/flapeeg-salon-demo.webp',
+    descKey: 'gallery.images.community.flapeegSalonDemo',
     category: 'community',
   },
 ];
