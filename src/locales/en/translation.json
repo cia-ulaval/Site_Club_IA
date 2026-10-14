@@ -587,6 +587,45 @@
     "team": {
       "title": "Team",
       "leads": "Team Lead: Yanis Larabi"
+    },
+    "team1": {
+      "title": "Meet Team 1",
+      "deoth": {
+        "description": "Team Lead, feasibility study, and more"
+      },
+      "theophile": {
+        "description": "Helped with conception, research, development and more"
+      },
+      "felix": {
+        "description": "Helped with software development, optimization, and validation"
+      },
+      "melek": {
+        "description": "Helped with software development, optimization, and validation"
+      },
+      "amy": {
+        "description": "Integration with F1 Tenth and partnership"
+      },
+      "kahina": {
+        "description": "Partnership optimization and integration"
+      }
+    },
+    "team2": {
+      "title": "Meet Team 2",
+      "alban": {
+        "description": "Team Lead"
+      },
+      "alexandre": {
+        "description": ""
+      },
+      "jade": {
+        "description": ""
+      },
+      "karima": {
+        "description": ""
+      },
+      "simon": {
+        "description": ""
+      }
     }
   },
   "nutrinov": {
